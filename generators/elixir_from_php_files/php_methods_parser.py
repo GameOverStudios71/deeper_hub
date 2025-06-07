@@ -44,122 +44,124 @@ def indent_lines(content, prefix):
     indented_lines = ['    ' + prefix + ' ' + line for line in lines]
     return '\n'.join(indented_lines)
 
+# Função para limpar texto de documentação, removendo ou escapando caracteres inválidos
+def clean_docstring(text):
+    if text is None:
+        return ""
+    # Substitui caracteres de escape Unicode inválidos ou problemáticos
+    text = text.encode('ascii', 'ignore').decode('ascii')
+    # Escapa caracteres problemáticos como @
+    text = text.replace('@', '\\@')
+    # Corrige a indentação das linhas para corresponder ao nível do heredoc
+    lines = text.splitlines()
+    cleaned_lines = ["  " + line for line in lines]
+    return "\n".join(cleaned_lines).replace('"""', '"')
+
 # Funcao para extrair metodos e assinaturas de um arquivo PHP e gerar arquivo Elixir
 def parse_php_file(file_path, elixir_base_dir):
-    relative_path = os.path.relpath(file_path, php_dir)
-    elixir_file_path = os.path.join(elixir_base_dir, os.path.splitext(relative_path)[0] + ".ex")
-    elixir_dir_path = os.path.dirname(elixir_file_path)
-    ensure_directory(elixir_dir_path)
-    
-    with open(file_path, 'r', encoding='utf-8') as file:
+    with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
         content = file.read()
-        
-        # Encontrar todas as declarações de classes e interfaces
-        class_matches = re.finditer(r'(class|interface)\s+(\w+)\s*(?:extends\s+(\w+))?\s*(?:implements\s+([^\{]*))?\s*\{', content)
-        for class_match in class_matches:
-            type_declaration = class_match.group(1)
-            class_name = class_match.group(2)
-            extends = class_match.group(3) if class_match.group(3) else None
-            implements = class_match.group(4) if class_match.group(4) else None
-            class_start = class_match.start()
-            class_end = find_matching_brace(content, class_start)
-            class_content = content[class_start:class_end + 1]
-            
-            # Extrair métodos
-            methods = []
-            method_matches = re.finditer(r'(?:public|protected|private)?\s*(static)?\s*function\s+(\w+)\s*\(([^)]*)\)\s*(?::\s*(\w+))?\s*(?:{|$|;)', class_content)
-            for method_match in method_matches:
-                is_static = bool(method_match.group(1))
-                method_name = to_snake_case(method_match.group(2))
-                params = method_match.group(3).strip()
-                return_type = method_match.group(4) if method_match.group(4) else None
-                method_start = method_match.start()
-                method_end = find_matching_brace(class_content, method_start) if '{' in class_content[method_start:method_start+1] else method_start + class_content[method_start:].find(';') + 1
-                method_content = class_content[method_start:method_end + 1]
-                methods.append({
-                    'name': method_name,
-                    'params': params,
-                    'return_type': return_type,
-                    'content': method_content,
-                    'is_static': is_static
-                })
 
-            # Gerar conteúdo do arquivo Elixir
-            if type_declaration == 'interface':
-                elixir_module_name = "DeeperHub.Inc.Protocols." + class_name
-                elixir_file_path = os.path.join(elixir_dir, class_name + ".ex")
-                elixir_content = '''
-defprotocol ''' + elixir_module_name + ''' do
-  @moduledoc """
-  Protocolo gerado automaticamente a partir da interface PHP ''' + file_path + '''
-  """
-'''
-                for method in methods:
-                    method_name = method['name']
-                    params = method['params'].strip()
-                    return_type = method['return_type'] if method['return_type'] else 'any'
-                    commented_content = indent_lines(method['content'], '#')
-                    elixir_content += '''
-  @doc """
-  Funcao correspondente ao metodo PHP ''' + method_name + '''
+    # Extrair classes ou interfaces
+    class_pattern = r'(class|interface)\s+(\w+)\s*(?:extends\s+(\w+))?\s*(?:implements\s+([\w,\s]+))?\s*{([\s\S]*?)}'
+    class_matches = re.finditer(class_pattern, content)
+    for class_match in class_matches:
+        type_declaration = class_match.group(1)
+        class_name = class_match.group(2)
+        extends = class_match.group(3) if class_match.group(3) else None
+        implements = class_match.group(4).split(',') if class_match.group(4) else []
+        implements = [imp.strip() for imp in implements if imp.strip()]
+        class_content = class_match.group(5)
 
-  ## Parametros
-    - ''' + params.replace(',', '\n    - ') + '''
+        # Extrair documentação da classe
+        class_start = class_match.start()
+        class_docstring = extract_docstring(content[:class_start])
+        class_docstring = clean_docstring(class_docstring)
 
-  ## Retorno
-    - ''' + return_type + '''
-  """
-  def ''' + method_name + '''(params)
-'''
-                elixir_content += '''end
-'''
-            else: # class
-                elixir_module_name = "DeeperHub.Inc.Classes." + class_name
-                elixir_file_path = os.path.join(elixir_base_dir, os.path.splitext(relative_path)[0] + ".ex")
-                elixir_content = '''
-defmodule ''' + elixir_module_name + ''' do
-  @moduledoc """
-  Modulo gerado automaticamente a partir do arquivo PHP ''' + file_path + '''
-  """
-'''
-                if extends:
-                    elixir_content += '''
-  # Heranca de ''' + extends + '''
-'''
-                if implements:
-                    elixir_content += '''
-  # Implementa interfaces: ''' + implements + '''
-'''
-                for method in methods:
-                    method_name = method['name']
-                    params = method['params'].strip()
-                    return_type = method['return_type'] if method['return_type'] else 'any'
-                    commented_content = indent_lines(method['content'], '#')
-                    is_static = method['is_static']
-                    elixir_content += '''
-  @doc """
-  Funcao correspondente ao metodo PHP ''' + method_name + '''
+        # Extrair métodos
+        methods = []
+        method_pattern = r'(?:public|protected|private)?\s*(static)?\s*function\s+(\w+)\s*\(([^)]*)\)\s*(?::\s*(\w+))?\s*(?:{([\s\S]*?)}|;)'
+        method_matches = re.finditer(method_pattern, class_content)
+        for method_match in method_matches:
+            is_static = bool(method_match.group(1))
+            method_name = to_snake_case(method_match.group(2))
+            params = method_match.group(3).strip()
+            return_type = method_match.group(4) if method_match.group(4) else None
+            method_start = method_match.start()
+            method_body = method_match.group(5) if method_match.group(5) else ""
+            method_docstring = extract_docstring(class_content[:method_start])
+            method_docstring = clean_docstring(method_docstring)
 
-  ## Parametros
-    - ''' + params.replace(',', '\n    - ') + '''
+            # Indentar corpo do método como comentário
+            if method_body:
+                method_body_lines = method_body.splitlines()
+                indented_body = "\n".join(["    # " + line.rstrip() for line in method_body_lines if line.strip()])
+            else:
+                indented_body = "# TODO: Implementacao futura"
 
-  ## Retorno
-    - ''' + return_type + '''
-  """
-  def ''' + method_name + '''(params) do
-    # TODO: Implementacao futura
-    ''' + commented_content + '''
-    :ok
-  end
-'''
-                elixir_content += '''end
-'''
+            methods.append({
+                'name': method_name,
+                'params': params,
+                'return_type': return_type,
+                'body': indented_body,
+                'docstring': method_docstring,
+                'is_static': is_static
+            })
 
-            # Escrever conteúdo no arquivo Elixir
-            ensure_directory(os.path.dirname(elixir_file_path))
-            with open(elixir_file_path, 'w', encoding='utf-8') as elixir_file:
-                elixir_file.write(elixir_content)
-            print(f"Arquivo Elixir gerado: {elixir_file_path}")
+        # Determinar diretório de saída com base no tipo de declaração
+        if type_declaration == 'interface':
+            output_dir = os.path.join(elixir_base_dir, 'interfaces')
+        else:
+            output_dir = os.path.join(elixir_base_dir, 'classes')
+
+        os.makedirs(output_dir, exist_ok=True)
+        elixir_file_path = os.path.join(output_dir, f"{class_name}.ex")
+
+        # Gerar conteúdo Elixir
+        class_name_capitalized = class_name[0].upper() + class_name[1:] if class_name else class_name
+        elixir_content = f"defmodule {class_name_capitalized} do\n"
+        if class_docstring:
+            elixir_content += f"  @moduledoc \"\"\"\n{class_docstring}\n  \"\"\"\n"
+        else:
+            elixir_content += f"  @moduledoc \"\"\"\nDocumentacao para o modulo {class_name_capitalized}.\n  \"\"\"\n"
+
+        if extends:
+            elixir_content += f"  # Herda de {extends}\n"
+        if implements:
+            elixir_content += f"  # Implementa interfaces: {', '.join(implements)}\n"
+
+        if type_declaration == 'interface':
+            for method in methods:
+                method_name = method['name']
+                if method['docstring']:
+                    elixir_content += f"\n  @doc \"\"\"\n  {method['docstring']}\n  \"\"\"\n"
+                else:
+                    elixir_content += f"\n  @doc \"\"\"\n  Funcao correspondente ao metodo PHP {method_name}\n  \"\"\"\n"
+                elixir_content += f"  def {method_name}(_params) do\n    :ok\n  end\n"
+        else:
+            for method in methods:
+                method_name = method['name']
+                if method['docstring']:
+                    elixir_content += f"\n  @doc \"\"\"\n  {method['docstring']}\n  \"\"\"\n"
+                else:
+                    elixir_content += f"\n  @doc \"\"\"\n  Funcao correspondente ao metodo PHP {method_name}\n  \"\"\"\n"
+                elixir_content += f"  def {method_name}(_params) do\n{method['body']}\n    :ok\n  end\n"
+
+        elixir_content += "end\n"
+
+        with open(elixir_file_path, 'w', encoding='utf-8') as elixir_file:
+            elixir_file.write(elixir_content)
+
+        print(f"Arquivo Elixir gerado: {elixir_file_path}")
+
+# Funcao para extrair documentacao de um bloco de código
+def extract_docstring(content):
+    docstring_pattern = r'/\*\*(.*?)\*/'
+    docstring_match = re.search(docstring_pattern, content, re.DOTALL)
+    if docstring_match:
+        return docstring_match.group(1).strip()
+    else:
+        return None
 
 # Funcao principal para processar todos os arquivos PHP
 def process_php_files(php_dir, elixir_dir):
