@@ -1,9 +1,22 @@
 import os
 import re
+import shutil
 
 # Diretorios de entrada e saida
 php_dir = r"C:\\Users\\Admin\\deeper_hub\\una\\"
 elixir_dir = r"C:\\Users\\Admin\\deeper_hub\\lib\\deeper_hub\\services\\"
+
+# Função para apagar diretórios de saída
+def delete_output_directories():
+    services_dir = elixir_dir
+    if os.path.exists(services_dir):
+        try:
+            shutil.rmtree(services_dir)
+            print(f"Diretório {services_dir} apagado com sucesso.")
+        except Exception as e:
+            print(f"Erro ao apagar diretório {services_dir}: {e}")
+    else:
+        print(f"Diretório {services_dir} não encontrado.")
 
 def to_snake_case(name):
     name = name.lstrip('_')
@@ -19,7 +32,7 @@ def to_snake_case(name):
 
 # Função para verificar se o diretório deve ser ignorado
 def deve_ignorar_diretorio(diretorio):
-    return bool(re.search(r'periodic|scripts|samples|russian|mailchimp|english|developer|install|upgrade|xero|api|artificer|azure|cas_|charts|chat|datafox|decorous|dolphin|drupal|editor|elasticsearch|facebook|fontawesome|froala|google|intercom|linkedin|lucid|mailchip|nexus|oauth2|ocean|okta|opencv|plyr|profiler|protean|se_migration|shopify|smtpmailer|snipcart|stripe_connect|twitter|una_connect|xero|update', diretorio, re.IGNORECASE))
+    return bool(re.search(r'tests|periodic|scripts|samples|russian|mailchimp|english|developer|install|upgrade|xero|api|artificer|azure|cas_|charts|chat|datafox|decorous|dolphin|drupal|editor|elasticsearch|facebook|fontawesome|froala|google|intercom|linkedin|lucid|mailchip|nexus|oauth2|ocean|okta|opencv|plyr|profiler|protean|se_migration|shopify|smtpmailer|snipcart|stripe_connect|twitter|una_connect|xero|update', diretorio, re.IGNORECASE))
 
 # Funcao para criar diretorios necessarios
 def ensure_directory(directory):
@@ -50,8 +63,8 @@ def clean_docstring(text):
         return ""
     # Substitui caracteres de escape Unicode inválidos ou problemáticos
     text = text.encode('ascii', 'ignore').decode('ascii')
-    # Escapa caracteres problemáticos como @
-    text = text.replace('@', '\\@')
+    # Escapa caracteres problemáticos como @ e barra invertida
+    text = text.replace('@', '\\@').replace('\\', '\\\\')
     # Corrige a indentação das linhas para corresponder ao nível do heredoc
     lines = text.splitlines()
     cleaned_lines = ["  " + line for line in lines]
@@ -165,15 +178,15 @@ def extract_docstring(content):
 
 # Funcao principal para processar todos os arquivos PHP
 def process_php_files(php_dir, elixir_dir):
-    for root, _, files in os.walk(php_dir):
-        # Verificar se o diretório atual deve ser ignorado
-        if deve_ignorar_diretorio(root):
-            continue
+    delete_output_directories()
+    for root, dirs, files in os.walk(php_dir):
+        dirs[:] = [d for d in dirs if not deve_ignorar_diretorio(d)]
         for file in files:
             if file.endswith('.php'):
                 file_path = os.path.join(root, file)
-                print(f"Processando: {file_path}")
-                parse_php_file(file_path, elixir_dir)
+                relative_path = os.path.relpath(file_path, php_dir)
+                elixir_base_dir = os.path.join(elixir_dir, os.path.dirname(relative_path))
+                parse_php_file(file_path, elixir_base_dir)
     
     print("Processamento concluido. Arquivos Elixir gerados.")
 
