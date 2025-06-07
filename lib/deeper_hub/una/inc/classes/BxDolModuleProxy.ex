@@ -1,0 +1,162 @@
+
+defmodule DeeperHub.Inc.Classes.BxDolModuleProxy do
+  @moduledoc """
+  Modulo gerado automaticamente a partir do arquivo PHP C://Users//Admin//deeper_hub//una//inc/classes/BxDolModuleProxy.php
+  """
+
+  @doc """
+  Funcao correspondente ao metodo PHP __construct
+
+  ## Parametros
+    - sObjectType,oProxifiedObject
+
+  ## Retorno
+    - any
+  """
+  def init(%{}) do
+    # TODO: Implementacao futura
+        # 
+    # 
+    #     function __construct($sObjectType, $oProxifiedObject)
+    #     {
+    #         $this->_sObjectType = $sObjectType;
+    #         $this->_oProxifiedObject = $oProxifiedObject;
+    #     }
+    :ok
+  end
+
+  @doc """
+  Funcao correspondente ao metodo PHP __call
+
+  ## Parametros
+    - sMethodName,aArguments
+
+  ## Retorno
+    - any
+  """
+  def __call(%{}) do
+    # TODO: Implementacao futura
+        # public function __call($sMethodName, $aArguments)
+    #     {
+    #         if (is_callable(array($this->_oProxifiedObject, $sMethodName))) {
+    # 
+    #             // check if we need to include css&js files
+    #             if ('module_template' == $this->_sObjectType && !empty($this->_oProxifiedObject->aMethodsToCallAddJsCss)) {
+    #                 foreach ($this->_oProxifiedObject->aMethodsToCallAddJsCss as $s) {
+    #                     if (0 === strpos($sMethodName, $s)) {
+    #                         $this->_oProxifiedObject->addCssJs();
+    #                         break;
+    #                     }
+    #                 }
+    #             }
+    #             
+    #             $oModule = ('module_template' == $this->_sObjectType ? $this->_oProxifiedObject->getModule() : null);
+    # 
+    #             // make it possible to override the call or arguments
+    #             $res = null;
+    #             
+    #             /**
+    #              * @hooks
+    #              * @hookdef hook-module_template_method_call-method_name 'module_template_method_call', '{method_name}' - hook to override a method from template class in a module
+    #              * - $unit_name - equals `module_template_method_call`
+    #              * - $action - method name
+    #              * - $object_id - not used
+    #              * - $sender_id - not used
+    #              * - $extra_params - array of additional params with the following array keys:
+    #              *      - `module` - [object] an instance of a module, @see BxDolModule
+    #              *      - `args` - [array] by ref, array with method call arguments, can be overridden in hook processing
+    #              *      - `override_result` - [mixed] by ref, method call response, if equals to 'null', the default method will be called, can be overridden in hook processing
+    #              * @hook @ref hook-module_template_method_call-method_name
+    #              */
+    #             bx_alert($this->_sObjectType . '_method_call', $sMethodName, 0, 0, [
+    #                 'module' => $oModule, 
+    #                 'args' => &$aArguments, 
+    #                 'override_result' => &$res
+    #             ]);
+    #             if (null !== $res)
+    #                 return $res;
+    # 
+    #             // call original method
+    #             return call_user_func_array(array($this->_oProxifiedObject, $sMethodName), $aArguments);
+    #         }
+    #         else {
+    #             $sClass = get_class($this->_oProxifiedObject);
+    #             trigger_error('Method ' . $sMethodName . ' was not found for the class ' . $sClass, E_USER_ERROR);
+    #         }
+    #     }
+    :ok
+  end
+
+  @doc """
+  Funcao correspondente ao metodo PHP getClassName
+
+  ## Parametros
+    - nenhum
+
+  ## Retorno
+    - any
+  """
+  def getClassName(%{}) do
+    # TODO: Implementacao futura
+        # public function getClassName()
+    #     {
+    #         return get_class($this->_oProxifiedObject);
+    #     }
+    :ok
+  end
+
+  @doc """
+  Funcao correspondente ao metodo PHP isMethodExists
+
+  ## Parametros
+    - s
+
+  ## Retorno
+    - any
+  """
+  def isMethodExists(%{}) do
+    # TODO: Implementacao futura
+        # public function isMethodExists($s)
+    #     {
+    #         return method_exists($this->_oProxifiedObject, $s);
+    #     }
+    :ok
+  end
+
+  @doc """
+  Funcao correspondente ao metodo PHP getNotificationEmail
+
+  ## Parametros
+    - iRecipient,&aEvent
+
+  ## Retorno
+    - any
+  """
+  def getNotificationEmail(%{}) do
+    # TODO: Implementacao futura
+        # public function getNotificationEmail($iRecipient, &$aEvent)
+    #     {
+    #         return $this->_oProxifiedObject->getNotificationEmail($iRecipient, $aEvent);
+    #     }
+    :ok
+  end
+
+  @doc """
+  Funcao correspondente ao metodo PHP getNotificationPush
+
+  ## Parametros
+    - iRecipient,&aEvent
+
+  ## Retorno
+    - any
+  """
+  def getNotificationPush(%{}) do
+    # TODO: Implementacao futura
+        # public function getNotificationPush($iRecipient, &$aEvent)
+    #     {
+    #         return $this->_oProxifiedObject->getNotificationPush($iRecipient, $aEvent);
+    #     }
+    :ok
+  end
+
+end
