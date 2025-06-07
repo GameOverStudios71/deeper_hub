@@ -25,4 +25,4 @@ deeper_hub-*.tar
 
 /mingw64.7z
 
-deeper_hub/services/
+/lib/deeper_hub/services/
