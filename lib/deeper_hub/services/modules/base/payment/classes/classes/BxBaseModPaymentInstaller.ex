@@ -1,0 +1,12 @@
+defmodule BxBaseModPaymentInstaller do
+  @moduledoc """
+  * Copyright (c) UNA, Inc - https://una.io
+   * MIT License - https://opensource.org/licenses/MIT
+   *
+   * \\@defgroup    BasePayment Base classes for Payment like modules
+   * \\@ingroup     UnaModules
+   *
+   * \\@{
+  """
+  # Herda de BxBaseModGeneralInstaller
+end

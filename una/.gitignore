@@ -26,18 +26,7 @@ cs_fixer_tmp*
 .php_cs.cache
 
 # Exclude tests files
-build.properties
-composer.phar
-tests/vendor
-tests/composer.phar
-samples/img/*
-modules/boonex/acl_api
-modules/boonex/ether
-modules/boonex/market_api
-modules/boonex/media
-modules/boonex/messenger
-modules/boonex/una_mods
-modules/vendor
+tests/
 
 # Exclude IDE project folder
 .idea
