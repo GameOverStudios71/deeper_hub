@@ -1,0 +1,45 @@
+
+defmodule DeeperHub.Inc.Classes.BxDolGridSubscribedMe do
+  @moduledoc """
+  Modulo gerado automaticamente a partir do arquivo PHP C:\\Users\\Admin\\deeper_hub\\una\\inc\classes\BxDolGridSubscribedMe.php
+  """
+
+  # Heranca de BxDolGridConnectionIn
+
+  @doc """
+  Funcao correspondente ao metodo PHP __construct
+
+  ## Parametros
+    - $aOptions
+    -  $oTemplate = false
+
+  ## Retorno
+    - any
+  """
+  def __construct(params) do
+    # TODO: Implementacao futura
+        # public function __construct ($aOptions, $oTemplate = false)
+    #     {
+    #         parent::__construct ($aOptions, $oTemplate);
+    # 
+    :ok
+  end
+
+  @doc """
+  Funcao correspondente ao metodo PHP performActionSubscribe
+
+  ## Parametros
+    - 
+
+  ## Retorno
+    - any
+  """
+  def performActionSubscribe(params) do
+    # TODO: Implementacao futura
+        # public function performActionSubscribe()
+    #     {
+    #         return parent::performActionAdd();
+    # 
+    :ok
+  end
+end
