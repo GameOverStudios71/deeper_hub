@@ -2,47 +2,67 @@ import os
 import re
 import shutil
 
-# Diretorios de entrada e saida
+# ==============================================================================
+# CONFIGURAÇÃO: Verifique e ajuste estes caminhos conforme necessário.
+# ==============================================================================
+
 php_dir = r"C:\\Users\\Admin\\deeper_hub\\una\\"
 elixir_dir = r"C:\\Users\\Admin\\deeper_hub\\lib\\deeper_hub\\services\\"
 
-# Função para apagar diretórios de saída
+# ==============================================================================
+# SCRIPT DE MIGRAÇÃO (Nenhuma alteração necessária abaixo)
+# ==============================================================================
+
 def delete_output_directories():
-    services_dir = elixir_dir
-    if os.path.exists(services_dir):
+    """Apaga o diretório de saída para garantir uma execução limpa."""
+    print(f"Atenção: O conteúdo do diretório '{elixir_dir}' será apagado.")
+    if os.path.exists(elixir_dir):
         try:
-            shutil.rmtree(services_dir)
-            print(f"Diretório {services_dir} apagado com sucesso.")
+            shutil.rmtree(elixir_dir)
+            print(f"Diretório {elixir_dir} apagado com sucesso.")
         except Exception as e:
-            print(f"Erro ao apagar diretório {services_dir}: {e}")
-    else:
-        print(f"Diretório {services_dir} não encontrado.")
+            print(f"Erro ao apagar diretório {elixir_dir}: {e}")
+            exit()
+    os.makedirs(elixir_dir, exist_ok=True)
 
 def to_snake_case(name):
-    name = name.lstrip('_')
-    result = ''
-    for i, char in enumerate(name):
-        if i == 0:
-            result += char.lower()
-        elif i > 0 and char.isupper():
-            result += char
-        else:
-            result += char.lower()
-    return result
+    """Converte uma string de camelCase para snake_case (usado para arquivos e parâmetros)."""
+    name = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
+    name = re.sub('([a-z0-9])([A-Z])', r'\1_\2', name).lower()
+    return name.lstrip('$')
 
-# Função para verificar se o diretório deve ser ignorado
+def to_elixir_function_name(name):
+    """Converte um nome de método PHP para um nome de função Elixir válido,
+       mantendo o camelCase mas garantindo que a primeira letra seja minúscula."""
+    if not name:
+        return ""
+    return name[0].lower() + name[1:]
+
+def convert_php_params_to_elixir(php_params_str):
+    """Converte uma string de parâmetros PHP para uma lista de parâmetros Elixir,
+       prefixando-os com '_' para evitar warnings de variável não utilizada."""
+    if not php_params_str.strip():
+        return ""
+    params = re.split(r',\s*', php_params_str)
+    elixir_params = []
+    for param in params:
+        match = re.search(r'\$([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)', param)
+        if match:
+            var_name = match.group(1)
+            elixir_params.append("_" + to_snake_case(var_name))
+            
+    return ", ".join(elixir_params)
+
 def deve_ignorar_diretorio(diretorio):
-    return bool(re.search(r'tests|periodic|scripts|samples|russian|mailchimp|english|developer|install|upgrade|xero|api|artificer|azure|cas_|charts|chat|datafox|decorous|dolphin|drupal|editor|elasticsearch|facebook|fontawesome|froala|google|intercom|linkedin|lucid|mailchip|nexus|oauth2|ocean|okta|opencv|plyr|profiler|protean|se_migration|shopify|smtpmailer|snipcart|stripe_connect|twitter|una_connect|xero|update', diretorio, re.IGNORECASE))
+    """Verifica se um diretório deve ser ignorado com base em uma lista de padrões."""
+    return bool(re.search(r'tests|periodic|samples|russian|mailchimp|english|developer|install|upgrade|xero|api|artificer|azure|cas_|charts|chat|datafox|decorous|dolphin|drupal|editor|elasticsearch|facebook|fontawesome|froala|google|intercom|linkedin|lucid|mailchip|nexus|oauth2|ocean|okta|opencv|plyr|profiler|protean|se_migration|shopify|smtpmailer|snipcart|stripe_connect|twitter|una_connect|xero|update', diretorio, re.IGNORECASE))
 
-# Funcao para criar diretorios necessarios
-def ensure_directory(directory):
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-
-# Funcao para encontrar o fechamento de um bloco de código
-def find_matching_brace(content, start):
+def find_matching_brace(content, start_index):
+    """Encontra a chave '}' correspondente a uma chave '{' inicial."""
+    if start_index < 0 or content[start_index] != '{':
+        return -1
     brace_count = 1
-    for i, char in enumerate(content[start+1:], start+1):
+    for i, char in enumerate(content[start_index+1:], start_index+1):
         if char == '{':
             brace_count += 1
         elif char == '}':
@@ -51,144 +71,143 @@ def find_matching_brace(content, start):
                 return i
     return -1
 
-# Funcao para indentar linhas de código
-def indent_lines(content, prefix):
-    lines = content.split('\n')
-    indented_lines = ['    ' + prefix + ' ' + line for line in lines]
-    return '\n'.join(indented_lines)
-
-# Função para limpar texto de documentação, removendo ou escapando caracteres inválidos
 def clean_docstring(text):
+    """Limpa a documentação (PHPDoc) para ser usada no Elixir, preservando a indentação interna."""
     if text is None:
         return ""
-    # Substitui caracteres de escape Unicode inválidos ou problemáticos
-    text = text.encode('ascii', 'ignore').decode('ascii')
-    # Escapa caracteres problemáticos como @ e barra invertida
-    text = text.replace('\\@', '\\\\@').replace('\\', '\\\\')
-    # Corrige a indentação das linhas para corresponder ao nível do heredoc
+    if text.startswith('/**'):
+        text = text[3:]
+    if text.endswith('*/'):
+        text = text[:-2]
+    
     lines = text.splitlines()
-    cleaned_lines = ["  " + line for line in lines]
-    return "\n".join(cleaned_lines).replace('"""', '\"')
+    cleaned_lines = []
+    for line in lines:
+        stripped_line = line.lstrip()
+        if stripped_line.startswith('*'):
+            content_part = stripped_line[1:]
+            if content_part.startswith(' '):
+                content_part = content_part[1:]
+            indent_size = len(line) - len(stripped_line)
+            indentation = line[:indent_size]
+            final_line = indentation + content_part
+        else:
+            final_line = line
+        cleaned_lines.append("  " + final_line.rstrip())
 
-# Funcao para extrair metodos e assinaturas de um arquivo PHP e gerar arquivo Elixir
+    result = "\n".join(cleaned_lines)
+    return result.replace('\\', '\\\\').replace('"""', '\\"\\"\\"')
+
 def parse_php_file(file_path, elixir_base_dir):
-    with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
-        content = file.read()
+    """Analisa um arquivo PHP e gera arquivos Elixir para CADA classe/interface encontrada."""
+    try:
+        with open(file_path, 'r', encoding='utf-8', errors='ignore') as file:
+            content = file.read()
+    except Exception as e:
+        print(f"  -> Erro ao ler o arquivo {file_path}: {e}")
+        return
 
-    # Extrair classes ou interfaces
-    class_pattern = r'(class|interface)\s+(\w+)\s*(?:extends\s+(\w+))?\s*(?:implements\s+([\w,\s]+))?\s*{([\s\S]*?)}'
-    class_matches = re.finditer(class_pattern, content)
-    for class_match in class_matches:
-        type_declaration = class_match.group(1)
-        class_name = class_match.group(2)
-        extends = class_match.group(3) if class_match.group(3) else None
-        implements = class_match.group(4).split(',') if class_match.group(4) else []
-        implements = [imp.strip() for imp in implements if imp.strip()]
-        class_content = class_match.group(5)
+    # <<< MODIFICADO: Expressão regular mais robusta para `extends` e `implements` >>>
+    class_pattern = r'((?:/\*\*(?:[^*]|\*(?!/))*?\*/\s*)?)(?:abstract\s+|final\s+)?(class|interface)\s+([\w\\]+)\s*(?:extends\s+([^ \t\n\r{]+))?\s*(?:implements\s+(.+?))?\s*{'
+    
+    for class_match in re.finditer(class_pattern, content):
+        
+        doc_raw, type_decl, class_name, extends, implements_str = class_match.groups()
+        class_doc = clean_docstring(doc_raw)
+        
+        if implements_str:
+            implements = [imp.strip().replace('\\', '.') for imp in implements_str.split(',')]
+        else:
+            implements = []
 
-        # Extrair documentação da classe
-        class_start = class_match.start()
-        class_docstring = extract_docstring(content[:class_start])
-        class_docstring = clean_docstring(class_docstring)
+        body_start = class_match.end() - 1
+        body_end = find_matching_brace(content, body_start)
+        if body_end == -1:
+            print(f"  -> Aviso: Não foi possível encontrar o corpo correspondente para '{class_name}' em {file_path}")
+            continue
+        
+        class_content = content[body_start + 1 : body_end]
 
-        # Extrair métodos
-        methods = []
-        method_pattern = r'(?:public|protected|private)?\s*(static)?\s*function\s+(\w+)\s*\(([^)]*)\)\s*(?::\s*(\w+))?\s*(?:{([\s\S]*?)}|;)'
-        method_matches = re.finditer(method_pattern, class_content)
-        for method_match in method_matches:
-            is_static = bool(method_match.group(1))
-            method_name = to_snake_case(method_match.group(2))
-            params = method_match.group(3).strip()
-            return_type = method_match.group(4) if method_match.group(4) else None
-            method_start = method_match.start()
-            method_body = method_match.group(5) if method_match.group(5) else ""
-            method_docstring = extract_docstring(class_content[:method_start])
-            method_docstring = clean_docstring(method_docstring)
-
-            # Indentar corpo do método como comentário
-            if method_body:
-                method_body_lines = method_body.splitlines()
-                indented_body = "\n".join(["    # " + line.rstrip() for line in method_body_lines if line.strip()])
+        elixir_module_name = class_name
+        if type_decl == 'interface':
+            if class_name.startswith('i'):
+                elixir_module_name = class_name[1:].capitalize() + 'Interface'
             else:
-                indented_body = "# TODO: Implementacao futura"
+                elixir_module_name = class_name.capitalize() + 'Interface'
+
+        methods = []
+        method_pattern = r'(/\*\*(?:[^*]|\*(?!/))*?\*/\s*)?(?:public|protected|private|static|\s)*\s*function\s+(&)?\s*([\w]+)\s*\(([^)]*)\)'
+        
+        for method_match in re.finditer(method_pattern, class_content, re.DOTALL):
+            method_doc_raw, _, method_name, php_params = method_match.groups()
+            
+            method_body = ""
+            method_def_end = method_match.end()
+            body_char_match = re.search(r'\s*({|;)', class_content[method_def_end:])
+            if body_char_match and body_char_match.group(1) == '{':
+                body_start_rel = method_def_end + body_char_match.start(1)
+                body_start_abs = body_start_rel + 1
+                body_end_abs = find_matching_brace(class_content, body_start_rel)
+                if body_end_abs != -1:
+                    method_body = class_content[body_start_abs:body_end_abs]
 
             methods.append({
-                'name': method_name,
-                'params': params,
-                'return_type': return_type,
-                'body': indented_body,
-                'docstring': method_docstring,
-                'is_static': is_static
+                'name': to_elixir_function_name(method_name),
+                'params': convert_php_params_to_elixir(php_params),
+                'body': "\n".join(["    # " + line.rstrip() for line in method_body.splitlines()]) if method_body else "    # Corpo do método não definido no PHP (abstrato ou de interface).",
+                'docstring': clean_docstring(method_doc_raw),
             })
-
-        # Determinar diretório de saída com base no tipo de declaração
-        if type_declaration == 'interface':
-            output_dir = os.path.join(elixir_base_dir, 'interfaces')
-        else:
-            output_dir = os.path.join(elixir_base_dir, 'classes')
-
+        
+        output_dir = os.path.join(elixir_base_dir, 'classes' if type_decl == 'class' else 'interfaces')
         os.makedirs(output_dir, exist_ok=True)
-        elixir_file_path = os.path.join(output_dir, f"{class_name}.ex")
+        elixir_file_path = os.path.join(output_dir, f"{to_snake_case(elixir_module_name)}.ex")
 
-        # Gerar conteúdo Elixir
-        class_name_capitalized = class_name[0].upper() + class_name[1:] if class_name else class_name
-        elixir_content = f"defmodule {class_name_capitalized} do\n"
-        if class_docstring:
-            elixir_content += f"  @moduledoc \"\"\"\n{class_docstring}\n  \"\"\"\n"
-        else:
-            elixir_content += f"  @moduledoc \"\"\"\n  Documentacao para o modulo {class_name_capitalized}.\n  \"\"\"\n"
+        doc_reference = f"  Original file: {file_path}"
+        doc_content = f"{doc_reference}\n\n{class_doc}" if class_doc.strip() else f"{doc_reference}\n\n  Módulo para {elixir_module_name}."
+        
+        elixir_content = f"defmodule DeeperHub.Services.{elixir_module_name} do\n"
+        elixir_content += f"  @moduledoc \"\"\"\n{doc_content}\n  \"\"\"\n"
 
         if extends:
-            elixir_content += f"  # Herda de {extends}\n"
+            elixir_content += f"\n  # Herda de: {extends.replace('\\', '.')}\n"
         if implements:
-            elixir_content += f"  # Implementa interfaces: {', '.join(implements)}\n"
+            elixir_content += f"  # Implementa: {', '.join(implements)}\n"
 
-        if type_declaration == 'interface':
-            for method in methods:
-                method_name = method['name']
-                if method['docstring']:
-                    elixir_content += f"\n  @doc \"\"\"\n{method['docstring']}\n  \"\"\"\n"
-                else:
-                    elixir_content += f"\n  @doc \"\"\"\n  Funcao correspondente ao metodo PHP {method_name}\n  \"\"\"\n"
-                elixir_content += f"  def {method_name}(_params) do\n    :ok\n  end\n"
-        else:
-            for method in methods:
-                method_name = method['name']
-                if method['docstring']:
-                    elixir_content += f"\n  @doc \"\"\"\n{method['docstring']}\n  \"\"\"\n"
-                else:
-                    elixir_content += f"\n  @doc \"\"\"\n  Funcao correspondente ao metodo PHP {method_name}\n  \"\"\"\n"
-                elixir_content += f"  def {method_name}(_params) do\n{method['body']}\n    :ok\n  end\n"
+        for method in methods:
+            elixir_content += "\n"
+            if method['docstring'].strip():
+                elixir_content += f"  @doc \"\"\"\n{method['docstring']}\n  \"\"\"\n"
+            
+            elixir_content += f"  def {method['name']}({method['params']}) do\n"
+            elixir_content += f"{method['body']}\n"
+            elixir_content += "    :ok\n"
+            elixir_content += "  end\n"
 
         elixir_content += "end\n"
 
         with open(elixir_file_path, 'w', encoding='utf-8') as elixir_file:
             elixir_file.write(elixir_content)
+        print(f"  -> Arquivo Elixir gerado: {elixir_file_path}")
 
-        print(f"Arquivo Elixir gerado: {elixir_file_path}")
-
-# Funcao para extrair documentacao de um bloco de código
-def extract_docstring(content):
-    docstring_pattern = r'/\*\*(.*?)\*/'
-    docstring_match = re.search(docstring_pattern, content, re.DOTALL)
-    if docstring_match:
-        return docstring_match.group(1).strip()
-    else:
-        return None
-
-# Funcao principal para processar todos os arquivos PHP
-def process_php_files(php_dir, elixir_dir):
+def process_php_files(root_php_dir, root_elixir_dir):
+    """Função principal que orquestra todo o processo de conversão."""
     delete_output_directories()
-    for root, dirs, files in os.walk(php_dir):
+    
+    print("\nIniciando varredura dos arquivos PHP...")
+    file_count = 0
+    for root, dirs, files in os.walk(root_php_dir):
         dirs[:] = [d for d in dirs if not deve_ignorar_diretorio(d)]
+        
         for file in files:
             if file.endswith('.php'):
                 file_path = os.path.join(root, file)
-                relative_path = os.path.relpath(file_path, php_dir)
-                elixir_base_dir = os.path.join(elixir_dir, os.path.dirname(relative_path))
+                print(f"Processando: {file_path}")
+                relative_path_dir = os.path.dirname(os.path.relpath(file_path, root_php_dir))
+                elixir_base_dir = os.path.join(root_elixir_dir, relative_path_dir)
                 parse_php_file(file_path, elixir_base_dir)
+                file_count += 1
     
-    print("Processamento concluido. Arquivos Elixir gerados.")
+    print(f"\nProcessamento concluído. {file_count} arquivos PHP analisados.")
 
 if __name__ == "__main__":
     process_php_files(php_dir, elixir_dir)
