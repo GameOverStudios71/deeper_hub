@@ -64,11 +64,11 @@ def clean_docstring(text):
     # Substitui caracteres de escape Unicode inválidos ou problemáticos
     text = text.encode('ascii', 'ignore').decode('ascii')
     # Escapa caracteres problemáticos como @ e barra invertida
-    text = text.replace('@', '\\@').replace('\\', '\\\\')
+    text = text.replace('\\@', '\\\\@').replace('\\', '\\\\')
     # Corrige a indentação das linhas para corresponder ao nível do heredoc
     lines = text.splitlines()
     cleaned_lines = ["  " + line for line in lines]
-    return "\n".join(cleaned_lines).replace('"""', '"')
+    return "\n".join(cleaned_lines).replace('"""', '\"')
 
 # Funcao para extrair metodos e assinaturas de um arquivo PHP e gerar arquivo Elixir
 def parse_php_file(file_path, elixir_base_dir):
