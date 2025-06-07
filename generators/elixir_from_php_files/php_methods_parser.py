@@ -123,7 +123,7 @@ def parse_php_file(file_path, elixir_base_dir):
         if class_docstring:
             elixir_content += f"  @moduledoc \"\"\"\n{class_docstring}\n  \"\"\"\n"
         else:
-            elixir_content += f"  @moduledoc \"\"\"\nDocumentacao para o modulo {class_name_capitalized}.\n  \"\"\"\n"
+            elixir_content += f"  @moduledoc \"\"\"\n  Documentacao para o modulo {class_name_capitalized}.\n  \"\"\"\n"
 
         if extends:
             elixir_content += f"  # Herda de {extends}\n"
@@ -134,7 +134,7 @@ def parse_php_file(file_path, elixir_base_dir):
             for method in methods:
                 method_name = method['name']
                 if method['docstring']:
-                    elixir_content += f"\n  @doc \"\"\"\n  {method['docstring']}\n  \"\"\"\n"
+                    elixir_content += f"\n  @doc \"\"\"\n{method['docstring']}\n  \"\"\"\n"
                 else:
                     elixir_content += f"\n  @doc \"\"\"\n  Funcao correspondente ao metodo PHP {method_name}\n  \"\"\"\n"
                 elixir_content += f"  def {method_name}(_params) do\n    :ok\n  end\n"
@@ -142,7 +142,7 @@ def parse_php_file(file_path, elixir_base_dir):
             for method in methods:
                 method_name = method['name']
                 if method['docstring']:
-                    elixir_content += f"\n  @doc \"\"\"\n  {method['docstring']}\n  \"\"\"\n"
+                    elixir_content += f"\n  @doc \"\"\"\n{method['docstring']}\n  \"\"\"\n"
                 else:
                     elixir_content += f"\n  @doc \"\"\"\n  Funcao correspondente ao metodo PHP {method_name}\n  \"\"\"\n"
                 elixir_content += f"  def {method_name}(_params) do\n{method['body']}\n    :ok\n  end\n"
