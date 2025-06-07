@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnectionOut do
   # Heranca de BxDolGridConnectionIn
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnectionOut do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnectionOut do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _delete
+  Funcao correspondente ao metodo PHP delete
 
   ## Parametros
     - $mixedId
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnectionOut do
   ## Retorno
     - any
   """
-  def _delete(params) do
+  def delete(params) do
     # TODO: Implementacao futura
         # protected function _delete ($mixedId)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnectionQuery do
   # Heranca de BxDolDb
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnectionQuery do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject)
     #     {
@@ -355,7 +355,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnectionQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getConnectionsQuery
+  Funcao correspondente ao metodo PHP getConnectionsQuery
 
   ## Parametros
     - $sWhere
@@ -369,7 +369,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnectionQuery do
   ## Retorno
     - any
   """
-  def _getConnectionsQuery(params) do
+  def getConnectionsQuery(params) do
     # TODO: Implementacao futura
         # protected function _getConnectionsQuery ($sWhere, $sJoin = '', $sFields = '*', $isMutual = false, $iStart = 0, $iLimit = BX_CONNECTIONS_LIST_LIMIT, $iOrder = BX_CONNECTIONS_ORDER_NONE)
     #     {
@@ -459,7 +459,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnectionQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getConnectionsQueryCount
+  Funcao correspondente ao metodo PHP getConnectionsQueryCount
 
   ## Parametros
     - $sWhere
@@ -470,7 +470,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnectionQuery do
   ## Retorno
     - any
   """
-  def _getConnectionsQueryCount(params) do
+  def getConnectionsQueryCount(params) do
     # TODO: Implementacao futura
         # protected function _getConnectionsQueryCount ($sWhere, $sJoin = '', $isMutual = false, $sFields = '`c`.`id`')
     #     {
@@ -480,7 +480,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnectionQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getOrderClause
+  Funcao correspondente ao metodo PHP getOrderClause
 
   ## Parametros
     - $iOrder = BX_CONNECTIONS_ORDER_NONE
@@ -489,7 +489,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnectionQuery do
   ## Retorno
     - any
   """
-  def _getOrderClause(params) do
+  def getOrderClause(params) do
     # TODO: Implementacao futura
         # protected function _getOrderClause ($iOrder = BX_CONNECTIONS_ORDER_NONE, $sTable = '')
     #     {

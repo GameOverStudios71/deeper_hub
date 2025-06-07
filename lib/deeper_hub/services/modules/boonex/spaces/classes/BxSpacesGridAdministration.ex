@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesGridAdministration do
   # Heranca de BxBaseModGroupsGridAdministration
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesGridAdministration do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -27,7 +27,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isCheckboxDisabled
+  Funcao correspondente ao metodo PHP isCheckboxDisabled
 
   ## Parametros
     - $aRow
@@ -35,7 +35,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesGridAdministration do
   ## Retorno
     - any
   """
-  def _isCheckboxDisabled(params) do
+  def isCheckboxDisabled(params) do
     # TODO: Implementacao futura
         # protected function _isCheckboxDisabled($aRow)
     #     {

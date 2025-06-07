@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsAlertsResponse do
   # Heranca de BxBaseModGeneralAlertsResponse
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsAlertsResponse do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -43,7 +43,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsAlertsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processProfileAdd
+  Funcao correspondente ao metodo PHP processProfileAdd
 
   ## Parametros
     - $oAlert
@@ -51,7 +51,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsAlertsResponse do
   ## Retorno
     - any
   """
-  def _processProfileAdd(params) do
+  def processProfileAdd(params) do
     # TODO: Implementacao futura
         # protected function _processProfileAdd($oAlert)
     #     {
@@ -61,7 +61,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsAlertsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processProfileDelete
+  Funcao correspondente ao metodo PHP processProfileDelete
 
   ## Parametros
     - $oAlert
@@ -69,7 +69,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsAlertsResponse do
   ## Retorno
     - any
   """
-  def _processProfileDelete(params) do
+  def processProfileDelete(params) do
     # TODO: Implementacao futura
         # protected function _processProfileDelete($oAlert)
     #     {

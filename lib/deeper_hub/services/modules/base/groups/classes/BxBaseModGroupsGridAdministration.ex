@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridAdministration do
   # Heranca de BxBaseModProfileGridAdministration
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridAdministration do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _switcherChecked2State
+  Funcao correspondente ao metodo PHP switcherChecked2State
 
   ## Parametros
     - $isChecked
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridAdministration do
   ## Retorno
     - any
   """
-  def _switcherChecked2State(params) do
+  def switcherChecked2State(params) do
     # TODO: Implementacao futura
         # protected function _switcherChecked2State($isChecked)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _switcherState2Checked
+  Funcao correspondente ao metodo PHP switcherState2Checked
 
   ## Parametros
     - $mixedState
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridAdministration do
   ## Retorno
     - any
   """
-  def _switcherState2Checked(params) do
+  def switcherState2Checked(params) do
     # TODO: Implementacao futura
         # protected function _switcherState2Checked($mixedState)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _enable
+  Funcao correspondente ao metodo PHP enable
 
   ## Parametros
     - $mixedId
@@ -71,7 +71,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridAdministration do
   ## Retorno
     - any
   """
-  def _enable(params) do
+  def enable(params) do
     # TODO: Implementacao futura
         # protected function _enable ($mixedId, $isChecked)
     #     {
@@ -81,7 +81,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellName
+  Funcao correspondente ao metodo PHP getCellName
 
   ## Parametros
     - $mixedValue
@@ -92,7 +92,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellName(params) do
+  def getCellName(params) do
     # TODO: Implementacao futura
         # protected function _getCellName($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -102,7 +102,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -110,7 +110,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridAdministration do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls()
     #     {
@@ -120,7 +120,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -132,7 +132,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridAdministration do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {

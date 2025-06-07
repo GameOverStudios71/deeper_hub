@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   # Heranca de BxBaseModGroupsMenuViewActionsAll
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemJoinCourseProfile
+  Funcao correspondente ao metodo PHP getMenuItemJoinCourseProfile
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemJoinCourseProfile(params) do
+  def getMenuItemJoinCourseProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemJoinCourseProfile($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditCourseCover
+  Funcao correspondente ao metodo PHP getMenuItemEditCourseCover
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditCourseCover(params) do
+  def getMenuItemEditCourseCover(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditCourseCover($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditCourseProfile
+  Funcao correspondente ao metodo PHP getMenuItemEditCourseProfile
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditCourseProfile(params) do
+  def getMenuItemEditCourseProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditCourseProfile($aItem)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditCoursePricing
+  Funcao correspondente ao metodo PHP getMenuItemEditCoursePricing
 
   ## Parametros
     - $aItem
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditCoursePricing(params) do
+  def getMenuItemEditCoursePricing(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditCoursePricing($aItem)
     #     {
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemInviteToCourse
+  Funcao correspondente ao metodo PHP getMenuItemInviteToCourse
 
   ## Parametros
     - $aItem
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemInviteToCourse(params) do
+  def getMenuItemInviteToCourse(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemInviteToCourse($aItem)
     #     {
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteCourseProfile
+  Funcao correspondente ao metodo PHP getMenuItemDeleteCourseProfile
 
   ## Parametros
     - $aItem
@@ -124,7 +124,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteCourseProfile(params) do
+  def getMenuItemDeleteCourseProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteCourseProfile($aItem)
     #     {
@@ -134,7 +134,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemApproveCourseProfile
+  Funcao correspondente ao metodo PHP getMenuItemApproveCourseProfile
 
   ## Parametros
     - $aItem
@@ -142,7 +142,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemApproveCourseProfile(params) do
+  def getMenuItemApproveCourseProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemApproveCourseProfile($aItem)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsCommon do
   # Heranca de BxCreditsGridWithdrawalsAdministration
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsCommon do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -82,7 +82,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsCommon do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -94,7 +94,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsCommon do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {

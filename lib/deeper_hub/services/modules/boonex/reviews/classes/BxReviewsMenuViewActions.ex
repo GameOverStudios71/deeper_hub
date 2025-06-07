@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxReviewsMenuViewActions do
   # Heranca de BxBaseModTextMenuViewActions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxReviewsMenuViewActions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxReviewsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditReview
+  Funcao correspondente ao metodo PHP getMenuItemEditReview
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxReviewsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemEditReview(params) do
+  def getMenuItemEditReview(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditReview($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxReviewsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteReview
+  Funcao correspondente ao metodo PHP getMenuItemDeleteReview
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxReviewsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteReview(params) do
+  def getMenuItemDeleteReview(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteReview($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxReviewsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isContentPublic
+  Funcao correspondente ao metodo PHP isContentPublic
 
   ## Parametros
     - $iContentId
@@ -71,7 +71,7 @@ defmodule DeeperHub.Inc.Classes.BxReviewsMenuViewActions do
   ## Retorno
     - any
   """
-  def _isContentPublic(params) do
+  def isContentPublic(params) do
     # TODO: Implementacao futura
         # protected function _isContentPublic($iContentId, $aPublicGroups = []) {
     #         $CNF = &$this->_oModule->_oConfig->CNF;

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   # Heranca de BxDolFile
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sHost
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($sHost, $sLogin, $sPassword, $sPath = '/')
     #     {
@@ -68,7 +68,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _copyFile
+  Funcao correspondente ao metodo PHP copyFile
 
   ## Parametros
     - $sFilePathFrom
@@ -77,7 +77,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   ## Retorno
     - any
   """
-  def _copyFile(params) do
+  def copyFile(params) do
     # TODO: Implementacao futura
         # protected function _copyFile($sFilePathFrom, $sFilePathTo)
     #     {
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _deleteDirectory
+  Funcao correspondente ao metodo PHP deleteDirectory
 
   ## Parametros
     - $sPath
@@ -96,7 +96,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   ## Retorno
     - any
   """
-  def _deleteDirectory(params) do
+  def deleteDirectory(params) do
     # TODO: Implementacao futura
         # protected function _deleteDirectory($sPath)
     #     {
@@ -108,7 +108,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _parseFile
+  Funcao correspondente ao metodo PHP parseFile
 
   ## Parametros
     - $sFilePath
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   ## Retorno
     - any
   """
-  def _parseFile(params) do
+  def parseFile(params) do
     # TODO: Implementacao futura
         # protected function _parseFile($sFilePath)
     #     {
@@ -126,7 +126,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isFile
+  Funcao correspondente ao metodo PHP isFile
 
   ## Parametros
     - $sFilePath
@@ -134,7 +134,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   ## Retorno
     - any
   """
-  def _isFile(params) do
+  def isFile(params) do
     # TODO: Implementacao futura
         # protected function _isFile($sFilePath)
     #     {
@@ -144,7 +144,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isDirectory
+  Funcao correspondente ao metodo PHP isDirectory
 
   ## Parametros
     - $sFilePath
@@ -152,7 +152,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   ## Retorno
     - any
   """
-  def _isDirectory(params) do
+  def isDirectory(params) do
     # TODO: Implementacao futura
         # protected function _isDirectory($sFilePath)
     #     {
@@ -162,7 +162,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setPermissions
+  Funcao correspondente ao metodo PHP setPermissions
 
   ## Parametros
     - $sPath
@@ -171,7 +171,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   ## Retorno
     - any
   """
-  def _setPermissions(params) do
+  def setPermissions(params) do
     # TODO: Implementacao futura
         # protected function _setPermissions($sPath, $sMode)
     #     {
@@ -184,7 +184,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _mkDirR
+  Funcao correspondente ao metodo PHP mkDirR
 
   ## Parametros
     - $sPath
@@ -192,7 +192,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFtp do
   ## Retorno
     - any
   """
-  def _mkDirR(params) do
+  def mkDirR(params) do
     # TODO: Implementacao futura
         # protected function _mkDirR($sPath)
     #     {

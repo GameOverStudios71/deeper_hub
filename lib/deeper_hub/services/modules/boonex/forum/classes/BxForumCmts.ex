@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxForumCmts do
   # Heranca de BxTemplCmts
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -17,7 +17,7 @@ defmodule DeeperHub.Inc.Classes.BxForumCmts do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($sSystem, $iId, $iInit = 1)
     #     {
@@ -120,7 +120,7 @@ defmodule DeeperHub.Inc.Classes.BxForumCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCounterItems
+  Funcao correspondente ao metodo PHP getCounterItems
 
   ## Parametros
     - $iCmtsLimit
@@ -129,7 +129,7 @@ defmodule DeeperHub.Inc.Classes.BxForumCmts do
   ## Retorno
     - any
   """
-  def _getCounterItems(params) do
+  def getCounterItems(params) do
     # TODO: Implementacao futura
         # protected function _getCounterItems($iCmtsLimit, $iCmtsStart = 0)
     #     {
@@ -139,7 +139,7 @@ defmodule DeeperHub.Inc.Classes.BxForumCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFormObject
+  Funcao correspondente ao metodo PHP getFormObject
 
   ## Parametros
     - $sAction = BX_CMT_ACTION_POST
@@ -147,7 +147,7 @@ defmodule DeeperHub.Inc.Classes.BxForumCmts do
   ## Retorno
     - any
   """
-  def _getFormObject(params) do
+  def getFormObject(params) do
     # TODO: Implementacao futura
         # protected function _getFormObject($sAction = BX_CMT_ACTION_POST)
     #     {

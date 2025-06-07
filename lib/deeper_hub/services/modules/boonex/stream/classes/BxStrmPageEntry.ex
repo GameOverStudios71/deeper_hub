@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmPageEntry do
   # Heranca de BxBaseModTextPageEntry
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmPageEntry do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmPageEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isAvailablePage
+  Funcao correspondente ao metodo PHP isAvailablePage
 
   ## Parametros
     - $a
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmPageEntry do
   ## Retorno
     - any
   """
-  def _isAvailablePage(params) do
+  def isAvailablePage(params) do
     # TODO: Implementacao futura
         # protected function _isAvailablePage($a)
     #     {
@@ -45,7 +45,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmPageEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setSubmenu
+  Funcao correspondente ao metodo PHP setSubmenu
 
   ## Parametros
     - $aParams
@@ -53,7 +53,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmPageEntry do
   ## Retorno
     - any
   """
-  def _setSubmenu(params) do
+  def setSubmenu(params) do
     # TODO: Implementacao futura
         # protected function _setSubmenu($aParams)
     #     {

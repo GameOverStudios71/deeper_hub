@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridTours do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridTours do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridTours do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellPage
+  Funcao correspondente ao metodo PHP getCellPage
 
   ## Parametros
     - $mixedValue
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridTours do
   ## Retorno
     - any
   """
-  def _getCellPage(params) do
+  def getCellPage(params) do
     # TODO: Implementacao futura
         # protected function _getCellPage($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -47,7 +47,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridTours do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellItems
+  Funcao correspondente ao metodo PHP getCellItems
 
   ## Parametros
     - $mixedValue
@@ -58,7 +58,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridTours do
   ## Retorno
     - any
   """
-  def _getCellItems(params) do
+  def getCellItems(params) do
     # TODO: Implementacao futura
         # protected function _getCellItems($mixedValue, $sKey, $aField, $aRow)
     #     {

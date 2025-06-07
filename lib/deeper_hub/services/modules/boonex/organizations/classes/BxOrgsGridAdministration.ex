@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsGridAdministration do
   # Heranca de BxBaseModProfileGridAdministration
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsGridAdministration do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -38,7 +38,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsGridAdministration do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -49,7 +49,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -57,7 +57,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsGridAdministration do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls()
     #     {

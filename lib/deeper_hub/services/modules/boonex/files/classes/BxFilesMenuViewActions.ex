@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   # Heranca de BxFilesMenuViewActions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -78,7 +78,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItem
+  Funcao correspondente ao metodo PHP getMenuItem
 
   ## Parametros
     - $aItem
@@ -86,7 +86,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   ## Retorno
     - any
   """
-  def _getMenuItem(params) do
+  def getMenuItem(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItem ($aItem) {
     #         //first two items suppose to appear in a row without a title, the rest must go to more-auto along with a title
@@ -96,7 +96,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemBookmark
+  Funcao correspondente ao metodo PHP getMenuItemBookmark
 
   ## Parametros
     - $aItem
@@ -104,7 +104,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   ## Retorno
     - any
   """
-  def _getMenuItemBookmark(params) do
+  def getMenuItemBookmark(params) do
     # TODO: Implementacao futura
         # public function _getMenuItemBookmark($aItem) {
     #         if (!isLogged()) return false;
@@ -113,7 +113,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteFileQuick
+  Funcao correspondente ao metodo PHP getMenuItemDeleteFileQuick
 
   ## Parametros
     - $aItem
@@ -121,7 +121,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteFileQuick(params) do
+  def getMenuItemDeleteFileQuick(params) do
     # TODO: Implementacao futura
         # public function _getMenuItemDeleteFileQuick($aItem) {
     #         if (!$this->_bAllowEditOptions) return false;
@@ -130,7 +130,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemMoveTo
+  Funcao correspondente ao metodo PHP getMenuItemMoveTo
 
   ## Parametros
     - $aItem
@@ -138,7 +138,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   ## Retorno
     - any
   """
-  def _getMenuItemMoveTo(params) do
+  def getMenuItemMoveTo(params) do
     # TODO: Implementacao futura
         # public function _getMenuItemMoveTo($aItem) {
     #         if (!$this->_bAllowEditOptions) return false;
@@ -147,7 +147,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditTitle
+  Funcao correspondente ao metodo PHP getMenuItemEditTitle
 
   ## Parametros
     - $aItem
@@ -155,7 +155,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   ## Retorno
     - any
   """
-  def _getMenuItemEditTitle(params) do
+  def getMenuItemEditTitle(params) do
     # TODO: Implementacao futura
         # public function _getMenuItemEditTitle($aItem) {
     #         if (!$this->_bAllowEditOptions) return false;
@@ -182,7 +182,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getJsCodeMoreAuto
+  Funcao correspondente ao metodo PHP getJsCodeMoreAuto
 
   ## Parametros
     - 
@@ -190,7 +190,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   ## Retorno
     - any
   """
-  def _getJsCodeMoreAuto(params) do
+  def getJsCodeMoreAuto(params) do
     # TODO: Implementacao futura
         # protected function _getJsCodeMoreAuto()
     #     {
@@ -200,7 +200,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addJsCss
+  Funcao correspondente ao metodo PHP addJsCss
 
   ## Parametros
     - 
@@ -208,7 +208,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   ## Retorno
     - any
   """
-  def _addJsCss(params) do
+  def addJsCss(params) do
     # TODO: Implementacao futura
         # protected function _addJsCss()
     #     {
@@ -218,7 +218,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTemplateVars
+  Funcao correspondente ao metodo PHP getTemplateVars
 
   ## Parametros
     - 
@@ -226,7 +226,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   ## Retorno
     - any
   """
-  def _getTemplateVars(params) do
+  def getTemplateVars(params) do
     # TODO: Implementacao futura
         # protected function _getTemplateVars() {
     #         $aResult = parent::_getTemplateVars();
@@ -235,7 +235,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getJsObjectMenuTools
+  Funcao correspondente ao metodo PHP getJsObjectMenuTools
 
   ## Parametros
     - 
@@ -243,7 +243,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesMenuViewActionsInline do
   ## Retorno
     - any
   """
-  def _getJsObjectMenuTools(params) do
+  def getJsObjectMenuTools(params) do
     # TODO: Implementacao futura
         # protected function _getJsObjectMenuTools() {
     #         return $this->_sJsObjectMenuTools;

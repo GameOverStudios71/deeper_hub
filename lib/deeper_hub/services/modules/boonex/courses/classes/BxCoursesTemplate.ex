@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesTemplate do
   # Heranca de BxBaseModGroupsTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct(&$oConfig, &$oDb)
     #     {
@@ -220,7 +220,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _entryNodeItems
+  Funcao correspondente ao metodo PHP entryNodeItems
 
   ## Parametros
     - $iProfileId
@@ -231,7 +231,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesTemplate do
   ## Retorno
     - any
   """
-  def _entryNodeItems(params) do
+  def entryNodeItems(params) do
     # TODO: Implementacao futura
         # protected function _entryNodeItems($iProfileId, $iContentId, $aNode, $iUsage)
     #     {
@@ -241,7 +241,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getNodeStatus
+  Funcao correspondente ao metodo PHP getNodeStatus
 
   ## Parametros
     - $iProfileId
@@ -251,7 +251,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesTemplate do
   ## Retorno
     - any
   """
-  def _getNodeStatus(params) do
+  def getNodeStatus(params) do
     # TODO: Implementacao futura
         # protected function _getNodeStatus($iProfileId, $iContentId, $iNodeId)
     #     {

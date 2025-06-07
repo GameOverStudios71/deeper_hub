@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolInformer do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolInformer do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct()
     #     {
@@ -29,7 +29,7 @@ defmodule DeeperHub.Inc.Classes.BxDolInformer do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __clone
+  Funcao correspondente ao metodo PHP clone
 
   ## Parametros
     - 
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxDolInformer do
   ## Retorno
     - any
   """
-  def __clone(params) do
+  def clone(params) do
     # TODO: Implementacao futura
         # public function __clone()
     #     {
@@ -142,7 +142,7 @@ defmodule DeeperHub.Inc.Classes.BxDolInformer do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addPermanentMessages
+  Funcao correspondente ao metodo PHP addPermanentMessages
 
   ## Parametros
     - 
@@ -150,7 +150,7 @@ defmodule DeeperHub.Inc.Classes.BxDolInformer do
   ## Retorno
     - any
   """
-  def _addPermanentMessages(params) do
+  def addPermanentMessages(params) do
     # TODO: Implementacao futura
         # protected function _addPermanentMessages ()
     #     {

@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($aOptions)
     #     {
@@ -103,7 +103,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _replaceMarkers
+  Funcao correspondente ao metodo PHP replaceMarkers
 
   ## Parametros
     - 
@@ -111,7 +111,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _replaceMarkers(params) do
+  def replaceMarkers(params) do
     # TODO: Implementacao futura
         # protected function _replaceMarkers ()
     #     {
@@ -121,7 +121,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getData
+  Funcao correspondente ao metodo PHP getData
 
   ## Parametros
     - $sFilter
@@ -133,7 +133,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _getData(params) do
+  def getData(params) do
     # TODO: Implementacao futura
         # protected function _getData ($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -143,7 +143,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataArray
+  Funcao correspondente ao metodo PHP getDataArray
 
   ## Parametros
     - $sFilter
@@ -155,7 +155,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _getDataArray(params) do
+  def getDataArray(params) do
     # TODO: Implementacao futura
         # protected function _getDataArray ($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -166,7 +166,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -178,7 +178,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql ($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #    {
@@ -188,7 +188,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSqlCounter
+  Funcao correspondente ao metodo PHP getDataSqlCounter
 
   ## Parametros
     - $sQuery
@@ -197,7 +197,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _getDataSqlCounter(params) do
+  def getDataSqlCounter(params) do
     # TODO: Implementacao futura
         # protected function _getDataSqlCounter($sQuery, $sFilter)
     #     {
@@ -207,7 +207,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _modifyDataSqlWhereClause
+  Funcao correspondente ao metodo PHP modifyDataSqlWhereClause
 
   ## Parametros
     - $sQuery
@@ -217,7 +217,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _modifyDataSqlWhereClause(params) do
+  def modifyDataSqlWhereClause(params) do
     # TODO: Implementacao futura
         # protected function _modifyDataSqlWhereClause($sQuery, $sFilter, &$sOrderByFilter)
     #     {
@@ -228,7 +228,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSqlWhereClause
+  Funcao correspondente ao metodo PHP getDataSqlWhereClause
 
   ## Parametros
     - $sFilter
@@ -237,7 +237,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _getDataSqlWhereClause(params) do
+  def getDataSqlWhereClause(params) do
     # TODO: Implementacao futura
         # protected function _getDataSqlWhereClause($sFilter, &$sOrderByFilter)
     #     {
@@ -248,7 +248,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSqlOrderClause
+  Funcao correspondente ao metodo PHP getDataSqlOrderClause
 
   ## Parametros
     - $sOrderByFilter
@@ -259,7 +259,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _getDataSqlOrderClause(params) do
+  def getDataSqlOrderClause(params) do
     # TODO: Implementacao futura
         # protected function _getDataSqlOrderClause ($sOrderByFilter, $sOrderField, $sOrderDir, $bFieldsOnly = false)
     #     {
@@ -269,7 +269,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellData
+  Funcao correspondente ao metodo PHP getCellData
 
   ## Parametros
     - $sKey
@@ -279,7 +279,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _getCellData(params) do
+  def getCellData(params) do
     # TODO: Implementacao futura
         # protected function _getCellData($sKey, $aField, $aRow)
     #     {
@@ -291,7 +291,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _cmp
+  Funcao correspondente ao metodo PHP cmp
 
   ## Parametros
     - $r1
@@ -300,7 +300,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _cmp(params) do
+  def cmp(params) do
     # TODO: Implementacao futura
         # protected function _cmp ($r1, $r2)
     #     {
@@ -310,7 +310,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _genMethodName
+  Funcao correspondente ao metodo PHP genMethodName
 
   ## Parametros
     - $s
@@ -318,7 +318,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _genMethodName(params) do
+  def genMethodName(params) do
     # TODO: Implementacao futura
         # protected function _genMethodName ($s)
     #     {
@@ -328,7 +328,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVisibleGrid
+  Funcao correspondente ao metodo PHP isVisibleGrid
 
   ## Parametros
     - $a
@@ -336,7 +336,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _isVisibleGrid(params) do
+  def isVisibleGrid(params) do
     # TODO: Implementacao futura
         # protected function _isVisibleGrid ($a)
     #     {
@@ -347,7 +347,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterValue
+  Funcao correspondente ao metodo PHP getFilterValue
 
   ## Parametros
     - 
@@ -355,7 +355,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _getFilterValue(params) do
+  def getFilterValue(params) do
     # TODO: Implementacao futura
         # protected function _getFilterValue()
     #     {
@@ -365,7 +365,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getOrderFields
+  Funcao correspondente ao metodo PHP getOrderFields
 
   ## Parametros
     - $bTranslatable = false
@@ -373,7 +373,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _getOrderFields(params) do
+  def getOrderFields(params) do
     # TODO: Implementacao futura
         # protected function _getOrderFields($bTranslatable = false)
     #     {
@@ -383,7 +383,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getOrderFieldsTranslatable
+  Funcao correspondente ao metodo PHP getOrderFieldsTranslatable
 
   ## Parametros
     - 
@@ -391,7 +391,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _getOrderFieldsTranslatable(params) do
+  def getOrderFieldsTranslatable(params) do
     # TODO: Implementacao futura
         # protected function _getOrderFieldsTranslatable()
     #     {
@@ -401,7 +401,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getOrderValue
+  Funcao correspondente ao metodo PHP getOrderValue
 
   ## Parametros
     - 
@@ -409,7 +409,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGrid do
   ## Retorno
     - any
   """
-  def _getOrderValue(params) do
+  def getOrderValue(params) do
     # TODO: Implementacao futura
         # protected function _getOrderValue()
     #     {

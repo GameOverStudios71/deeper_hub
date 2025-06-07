@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   # Heranca de BxBaseModGeneralMenuSnippetMeta
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -102,7 +102,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemBefriend
+  Funcao correspondente ao metodo PHP getMenuItemBefriend
 
   ## Parametros
     - $aItem
@@ -110,7 +110,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemBefriend(params) do
+  def getMenuItemBefriend(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemBefriend($aItem)
     #     {
@@ -121,7 +121,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemUnfriend
+  Funcao correspondente ao metodo PHP getMenuItemUnfriend
 
   ## Parametros
     - $aItem
@@ -129,7 +129,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemUnfriend(params) do
+  def getMenuItemUnfriend(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemUnfriend($aItem)
     #     {
@@ -139,7 +139,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemSubscribe
+  Funcao correspondente ao metodo PHP getMenuItemSubscribe
 
   ## Parametros
     - $aItem
@@ -147,7 +147,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemSubscribe(params) do
+  def getMenuItemSubscribe(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemSubscribe($aItem)
     #     {
@@ -158,7 +158,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemUnsubscribe
+  Funcao correspondente ao metodo PHP getMenuItemUnsubscribe
 
   ## Parametros
     - $aItem
@@ -166,7 +166,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemUnsubscribe(params) do
+  def getMenuItemUnsubscribe(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemUnsubscribe($aItem)
     #     {
@@ -176,7 +176,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemIgnoreBefriend
+  Funcao correspondente ao metodo PHP getMenuItemIgnoreBefriend
 
   ## Parametros
     - $aItem
@@ -184,7 +184,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemIgnoreBefriend(params) do
+  def getMenuItemIgnoreBefriend(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemIgnoreBefriend($aItem)
     #     {
@@ -194,7 +194,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemIgnoreSubscribe
+  Funcao correspondente ao metodo PHP getMenuItemIgnoreSubscribe
 
   ## Parametros
     - $aItem
@@ -202,7 +202,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemIgnoreSubscribe(params) do
+  def getMenuItemIgnoreSubscribe(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemIgnoreSubscribe($aItem)
     #     {
@@ -212,7 +212,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemFriends
+  Funcao correspondente ao metodo PHP getMenuItemFriends
 
   ## Parametros
     - $aItem
@@ -220,7 +220,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemFriends(params) do
+  def getMenuItemFriends(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemFriends($aItem)
     #     {
@@ -231,7 +231,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemFriendsMutual
+  Funcao correspondente ao metodo PHP getMenuItemFriendsMutual
 
   ## Parametros
     - $aItem
@@ -239,7 +239,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemFriendsMutual(params) do
+  def getMenuItemFriendsMutual(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemFriendsMutual($aItem)
     #     {
@@ -250,7 +250,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemSubscribers
+  Funcao correspondente ao metodo PHP getMenuItemSubscribers
 
   ## Parametros
     - $aItem
@@ -258,7 +258,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemSubscribers(params) do
+  def getMenuItemSubscribers(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemSubscribers($aItem)
     #     {
@@ -268,7 +268,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemMembership
+  Funcao correspondente ao metodo PHP getMenuItemMembership
 
   ## Parametros
     - $aItem
@@ -276,7 +276,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemMembership(params) do
+  def getMenuItemMembership(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemMembership($aItem)
     #     {
@@ -287,7 +287,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemConnection
+  Funcao correspondente ao metodo PHP getMenuItemConnection
 
   ## Parametros
     - $sConnection
@@ -297,7 +297,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemConnection(params) do
+  def getMenuItemConnection(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemConnection($sConnection, $sAction, &$aItem)
     #     {
@@ -308,7 +308,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemRecommendation
+  Funcao correspondente ao metodo PHP getMenuItemRecommendation
 
   ## Parametros
     - $sObject
@@ -318,7 +318,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemRecommendation(params) do
+  def getMenuItemRecommendation(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemRecommendation($sObject, $sAction, $aItem)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileDb do
   # Heranca de BxBaseModGeneralDb
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileDb do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct(&$oConfig)
     #     {
@@ -132,7 +132,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getEntriesBySearchIds
+  Funcao correspondente ao metodo PHP getEntriesBySearchIds
 
   ## Parametros
     - $aParams
@@ -146,7 +146,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileDb do
   ## Retorno
     - any
   """
-  def _getEntriesBySearchIds(params) do
+  def getEntriesBySearchIds(params) do
     # TODO: Implementacao futura
         # protected function _getEntriesBySearchIds($aParams, &$aMethod, &$sSelectClause, &$sJoinClause, &$sWhereClause, &$sOrderClause, &$sLimitClause)
     #     {

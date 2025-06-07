@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketPageBrowse do
   # Heranca de BxBaseModTextPageBrowse
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketPageBrowse do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketPageBrowse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addJsCss
+  Funcao correspondente ao metodo PHP addJsCss
 
   ## Parametros
     - 
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketPageBrowse do
   ## Retorno
     - any
   """
-  def _addJsCss(params) do
+  def addJsCss(params) do
     # TODO: Implementacao futura
         # protected function _addJsCss()
     #     {

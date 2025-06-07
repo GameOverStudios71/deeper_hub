@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   # Heranca de BxTemplVote
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($sSystem, $iId, $iInit = true, $oTemplate = false)
     #     {
@@ -233,7 +233,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVote
+  Funcao correspondente ao metodo PHP isVote
 
   ## Parametros
     - $iObjectId = 0
@@ -242,7 +242,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   ## Retorno
     - any
   """
-  def _isVote(params) do
+  def isVote(params) do
     # TODO: Implementacao futura
         # protected function _isVote($iObjectId = 0, $bForceGet = false)
     #     {
@@ -252,7 +252,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isDuplicate
+  Funcao correspondente ao metodo PHP isDuplicate
 
   ## Parametros
     - $iObjectId
@@ -263,7 +263,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   ## Retorno
     - any
   """
-  def _isDuplicate(params) do
+  def isDuplicate(params) do
     # TODO: Implementacao futura
         # protected function _isDuplicate($iObjectId, $iAuthorId, $iAuthorIp, $bVoted)
     #     {
@@ -273,7 +273,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getVoteData
+  Funcao correspondente ao metodo PHP getVoteData
 
   ## Parametros
     - 
@@ -281,7 +281,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   ## Retorno
     - any
   """
-  def _getVoteData(params) do
+  def getVoteData(params) do
     # TODO: Implementacao futura
         # protected function _getVoteData()
     #     {
@@ -291,7 +291,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _returnVoteData
+  Funcao correspondente ao metodo PHP returnVoteData
 
   ## Parametros
     - $iObjectId
@@ -304,7 +304,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   ## Retorno
     - any
   """
-  def _returnVoteData(params) do
+  def returnVoteData(params) do
     # TODO: Implementacao futura
         # protected function _returnVoteData($iObjectId, $iAuthorId, $iAuthorIp, $aData, $bVoted, $aParams = [])
     #     {
@@ -314,7 +314,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _returnVoteDataForSocket
+  Funcao correspondente ao metodo PHP returnVoteDataForSocket
 
   ## Parametros
     - $aData
@@ -323,7 +323,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   ## Retorno
     - any
   """
-  def _returnVoteDataForSocket(params) do
+  def returnVoteDataForSocket(params) do
     # TODO: Implementacao futura
         # protected function _returnVoteDataForSocket($aData, $aMask = [])
     #     {
@@ -333,7 +333,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIconDoWithTrack
+  Funcao correspondente ao metodo PHP getIconDoWithTrack
 
   ## Parametros
     - $bVoted
@@ -342,7 +342,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   ## Retorno
     - any
   """
-  def _getIconDoWithTrack(params) do
+  def getIconDoWithTrack(params) do
     # TODO: Implementacao futura
         # protected function _getIconDoWithTrack($bVoted, $aTrack = [])
     #     {
@@ -352,7 +352,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getEmojiDoWithTrack
+  Funcao correspondente ao metodo PHP getEmojiDoWithTrack
 
   ## Parametros
     - $bVoted
@@ -361,7 +361,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   ## Retorno
     - any
   """
-  def _getEmojiDoWithTrack(params) do
+  def getEmojiDoWithTrack(params) do
     # TODO: Implementacao futura
         # protected function _getEmojiDoWithTrack($bVoted, $aTrack = [])
     #     {
@@ -371,7 +371,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getImageDoWithTrack
+  Funcao correspondente ao metodo PHP getImageDoWithTrack
 
   ## Parametros
     - $bVoted
@@ -380,7 +380,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   ## Retorno
     - any
   """
-  def _getImageDoWithTrack(params) do
+  def getImageDoWithTrack(params) do
     # TODO: Implementacao futura
         # protected function _getImageDoWithTrack($bVoted, $aTrack = [])
     #     {
@@ -390,7 +390,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTitleDoWithTrack
+  Funcao correspondente ao metodo PHP getTitleDoWithTrack
 
   ## Parametros
     - $bVoted
@@ -399,7 +399,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   ## Retorno
     - any
   """
-  def _getTitleDoWithTrack(params) do
+  def getTitleDoWithTrack(params) do
     # TODO: Implementacao futura
         # protected function _getTitleDoWithTrack($bVoted, $aTrack = [])
     #     {
@@ -409,7 +409,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTitleDoBy
+  Funcao correspondente ao metodo PHP getTitleDoBy
 
   ## Parametros
     - $aParams = []
@@ -417,7 +417,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactions do
   ## Retorno
     - any
   """
-  def _getTitleDoBy(params) do
+  def getTitleDoBy(params) do
     # TODO: Implementacao futura
         # protected function _getTitleDoBy($aParams = [])
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsTemplate do
   # Heranca de BxBaseModTextTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$oConfig, &$oDb)
@@ -156,7 +156,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _entryBreadcrumb
+  Funcao correspondente ao metodo PHP entryBreadcrumb
 
   ## Parametros
     - $iCategory
@@ -166,7 +166,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsTemplate do
   ## Retorno
     - any
   """
-  def _entryBreadcrumb(params) do
+  def entryBreadcrumb(params) do
     # TODO: Implementacao futura
         # protected function _entryBreadcrumb($iCategory, &$oPermalink, &$aTmplVarsItems)
     #     {

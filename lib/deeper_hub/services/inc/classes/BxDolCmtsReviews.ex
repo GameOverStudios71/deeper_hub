@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmtsReviews do
   # Heranca de BxTemplCmts
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmtsReviews do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($sSystem, $iId, $iInit = true, $oTemplate = false)
     #     {
@@ -210,7 +210,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmtsReviews do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _triggerComment
+  Funcao correspondente ao metodo PHP triggerComment
 
   ## Parametros
     - 
@@ -218,7 +218,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmtsReviews do
   ## Retorno
     - any
   """
-  def _triggerComment(params) do
+  def triggerComment(params) do
     # TODO: Implementacao futura
         # protected function _triggerComment()
     #     {
@@ -229,7 +229,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmtsReviews do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIconDo
+  Funcao correspondente ao metodo PHP getIconDo
 
   ## Parametros
     - 
@@ -237,7 +237,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmtsReviews do
   ## Retorno
     - any
   """
-  def _getIconDo(params) do
+  def getIconDo(params) do
     # TODO: Implementacao futura
         # protected function _getIconDo()
     #     {
@@ -247,7 +247,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmtsReviews do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTitleDo
+  Funcao correspondente ao metodo PHP getTitleDo
 
   ## Parametros
     - 
@@ -255,7 +255,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmtsReviews do
   ## Retorno
     - any
   """
-  def _getTitleDo(params) do
+  def getTitleDo(params) do
     # TODO: Implementacao futura
         # protected function _getTitleDo()
     #     {

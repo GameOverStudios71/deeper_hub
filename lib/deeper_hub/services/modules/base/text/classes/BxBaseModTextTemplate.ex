@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextTemplate do
   # Heranca de BxBaseModGeneralTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addCssJsPolls
+  Funcao correspondente ao metodo PHP addCssJsPolls
 
   ## Parametros
     - $bDynamic = false
@@ -78,7 +78,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextTemplate do
   ## Retorno
     - any
   """
-  def _addCssJsPolls(params) do
+  def addCssJsPolls(params) do
     # TODO: Implementacao futura
         # protected function _addCssJsPolls($bDynamic = false)
     #     {
@@ -323,7 +323,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getUnitName
+  Funcao correspondente ao metodo PHP getUnitName
 
   ## Parametros
     - $aData
@@ -332,7 +332,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextTemplate do
   ## Retorno
     - any
   """
-  def _getUnitName(params) do
+  def getUnitName(params) do
     # TODO: Implementacao futura
         # protected function _getUnitName($aData, $sTemplateName = 'unit.html')
     #     {
@@ -342,7 +342,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getUnitClass
+  Funcao correspondente ao metodo PHP getUnitClass
 
   ## Parametros
     - $aData
@@ -351,7 +351,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextTemplate do
   ## Retorno
     - any
   """
-  def _getUnitClass(params) do
+  def getUnitClass(params) do
     # TODO: Implementacao futura
         # protected function _getUnitClass($aData, $sTemplateName = 'unit.html')
     #     {
@@ -361,7 +361,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getUnitHtmlId
+  Funcao correspondente ao metodo PHP getUnitHtmlId
 
   ## Parametros
     - $aData
@@ -370,7 +370,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextTemplate do
   ## Retorno
     - any
   """
-  def _getUnitHtmlId(params) do
+  def getUnitHtmlId(params) do
     # TODO: Implementacao futura
         # protected function _getUnitHtmlId($aData, $sTemplateName = 'unit.html')
     #     {
@@ -380,7 +380,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getHeaderImageParams
+  Funcao correspondente ao metodo PHP getHeaderImageParams
 
   ## Parametros
     - 
@@ -388,7 +388,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextTemplate do
   ## Retorno
     - any
   """
-  def _getHeaderImageParams(params) do
+  def getHeaderImageParams(params) do
     # TODO: Implementacao futura
         # protected function _getHeaderImageParams()
     #     {
@@ -398,7 +398,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getHeaderImage
+  Funcao correspondente ao metodo PHP getHeaderImage
 
   ## Parametros
     - $aData
@@ -406,7 +406,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextTemplate do
   ## Retorno
     - any
   """
-  def _getHeaderImage(params) do
+  def getHeaderImage(params) do
     # TODO: Implementacao futura
         # protected function _getHeaderImage($aData)
     #     {

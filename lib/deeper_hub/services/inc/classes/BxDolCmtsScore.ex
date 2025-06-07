@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmtsScore do
   # Heranca de BxTemplScore
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmtsScore do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($sSystem, $iId, $iInit = true, $oTemplate = false)
     #     {
@@ -28,7 +28,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmtsScore do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isAllowedVoteByObject
+  Funcao correspondente ao metodo PHP isAllowedVoteByObject
 
   ## Parametros
     - $aObject
@@ -36,7 +36,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmtsScore do
   ## Retorno
     - any
   """
-  def _isAllowedVoteByObject(params) do
+  def isAllowedVoteByObject(params) do
     # TODO: Implementacao futura
         # protected function _isAllowedVoteByObject($aObject)
     #     {

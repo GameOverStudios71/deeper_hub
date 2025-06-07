@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuViewActionsAll do
   # Heranca de BxBaseModProfileMenuViewActionsAll
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isContentPublic
+  Funcao correspondente ao metodo PHP isContentPublic
 
   ## Parametros
     - $iContentId
@@ -35,7 +35,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _isContentPublic(params) do
+  def isContentPublic(params) do
     # TODO: Implementacao futura
         # protected function _isContentPublic($iContentId, $aPublicGroups = [])
     #     {
@@ -45,7 +45,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemProfileFanAdd
+  Funcao correspondente ao metodo PHP getMenuItemProfileFanAdd
 
   ## Parametros
     - $aItem
@@ -53,7 +53,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemProfileFanAdd(params) do
+  def getMenuItemProfileFanAdd(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemProfileFanAdd($aItem)
     #     {
@@ -63,7 +63,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemProfileFanAddPaid
+  Funcao correspondente ao metodo PHP getMenuItemProfileFanAddPaid
 
   ## Parametros
     - $aItem
@@ -71,7 +71,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemProfileFanAddPaid(params) do
+  def getMenuItemProfileFanAddPaid(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemProfileFanAddPaid($aItem)
     #     {
@@ -81,7 +81,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemProfileFanRemove
+  Funcao correspondente ao metodo PHP getMenuItemProfileFanRemove
 
   ## Parametros
     - $aItem
@@ -89,7 +89,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemProfileFanRemove(params) do
+  def getMenuItemProfileFanRemove(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemProfileFanRemove($aItem)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnections do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnections do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -118,7 +118,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _delete
+  Funcao correspondente ao metodo PHP delete
 
   ## Parametros
     - $mixedId
@@ -126,7 +126,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnections do
   ## Retorno
     - any
   """
-  def _delete(params) do
+  def delete(params) do
     # TODO: Implementacao futura
         # protected function _delete ($mixedId)
     #     {
@@ -136,7 +136,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellName
+  Funcao correspondente ao metodo PHP getCellName
 
   ## Parametros
     - $mixedValue
@@ -147,7 +147,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnections do
   ## Retorno
     - any
   """
-  def _getCellName(params) do
+  def getCellName(params) do
     # TODO: Implementacao futura
         # protected function _getCellName ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -158,7 +158,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellInfo
+  Funcao correspondente ao metodo PHP getCellInfo
 
   ## Parametros
     - $mixedValue
@@ -169,7 +169,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnections do
   ## Retorno
     - any
   """
-  def _getCellInfo(params) do
+  def getCellInfo(params) do
     # TODO: Implementacao futura
         # protected function _getCellInfo ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -179,7 +179,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareIds
+  Funcao correspondente ao metodo PHP prepareIds
 
   ## Parametros
     - 
@@ -187,7 +187,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnections do
   ## Retorno
     - any
   """
-  def _prepareIds(params) do
+  def prepareIds(params) do
     # TODO: Implementacao futura
         # protected function _prepareIds ()
     #     {
@@ -197,7 +197,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __prepareIds
+  Funcao correspondente ao metodo PHP prepareIds
 
   ## Parametros
     - $mixedId
@@ -205,7 +205,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridConnections do
   ## Retorno
     - any
   """
-  def __prepareIds(params) do
+  def prepareIds(params) do
     # TODO: Implementacao futura
         # protected function __prepareIds ($mixedId)
     #     {

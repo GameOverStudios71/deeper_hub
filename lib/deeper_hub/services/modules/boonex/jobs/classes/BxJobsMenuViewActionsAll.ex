@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   # Heranca de BxBaseModGroupsMenuViewActionsAll
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemJoinJobProfile
+  Funcao correspondente ao metodo PHP getMenuItemJoinJobProfile
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemJoinJobProfile(params) do
+  def getMenuItemJoinJobProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemJoinJobProfile($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditJobCover
+  Funcao correspondente ao metodo PHP getMenuItemEditJobCover
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditJobCover(params) do
+  def getMenuItemEditJobCover(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditJobCover($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditJobProfile
+  Funcao correspondente ao metodo PHP getMenuItemEditJobProfile
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditJobProfile(params) do
+  def getMenuItemEditJobProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditJobProfile($aItem)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemJobQuestionnaire
+  Funcao correspondente ao metodo PHP getMenuItemJobQuestionnaire
 
   ## Parametros
     - $aItem
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemJobQuestionnaire(params) do
+  def getMenuItemJobQuestionnaire(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemJobQuestionnaire($aItem)
     #     {
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemJobPricing
+  Funcao correspondente ao metodo PHP getMenuItemJobPricing
 
   ## Parametros
     - $aItem
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemJobPricing(params) do
+  def getMenuItemJobPricing(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemJobPricing($aItem)
     #     {
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemInviteToJob
+  Funcao correspondente ao metodo PHP getMenuItemInviteToJob
 
   ## Parametros
     - $aItem
@@ -124,7 +124,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemInviteToJob(params) do
+  def getMenuItemInviteToJob(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemInviteToJob($aItem)
     #     {
@@ -134,7 +134,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteJobProfile
+  Funcao correspondente ao metodo PHP getMenuItemDeleteJobProfile
 
   ## Parametros
     - $aItem
@@ -142,7 +142,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteJobProfile(params) do
+  def getMenuItemDeleteJobProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteJobProfile($aItem)
     #     {
@@ -152,7 +152,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemApproveJobProfile
+  Funcao correspondente ao metodo PHP getMenuItemApproveJobProfile
 
   ## Parametros
     - $aItem
@@ -160,7 +160,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemApproveJobProfile(params) do
+  def getMenuItemApproveJobProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemApproveJobProfile($aItem)
     #     {

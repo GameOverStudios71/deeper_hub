@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridLevels do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridLevels do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridLevels do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellPeriod
+  Funcao correspondente ao metodo PHP getCellPeriod
 
   ## Parametros
     - $mixedValue
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridLevels do
   ## Retorno
     - any
   """
-  def _getCellPeriod(params) do
+  def getCellPeriod(params) do
     # TODO: Implementacao futura
         # protected function _getCellPeriod($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -48,7 +48,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridLevels do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellPrice
+  Funcao correspondente ao metodo PHP getCellPrice
 
   ## Parametros
     - $mixedValue
@@ -59,7 +59,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridLevels do
   ## Retorno
     - any
   """
-  def _getCellPrice(params) do
+  def getCellPrice(params) do
     # TODO: Implementacao futura
         # protected function _getCellPrice($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridLevels do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellTrial
+  Funcao correspondente ao metodo PHP getCellTrial
 
   ## Parametros
     - $mixedValue
@@ -81,7 +81,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridLevels do
   ## Retorno
     - any
   """
-  def _getCellTrial(params) do
+  def getCellTrial(params) do
     # TODO: Implementacao futura
         # protected function _getCellTrial($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -91,7 +91,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridLevels do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIds
+  Funcao correspondente ao metodo PHP getIds
 
   ## Parametros
     - 
@@ -99,7 +99,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridLevels do
   ## Retorno
     - any
   """
-  def _getIds(params) do
+  def getIds(params) do
     # TODO: Implementacao futura
         # protected function _getIds()
     #     {

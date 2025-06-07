@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsResponse do
   # Heranca de BxBaseModNotificationsResponse
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsResponse do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -264,7 +264,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getObjectOwnerId
+  Funcao correspondente ao metodo PHP getObjectOwnerId
 
   ## Parametros
     - $aExtras
@@ -272,7 +272,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsResponse do
   ## Retorno
     - any
   """
-  def _getObjectOwnerId(params) do
+  def getObjectOwnerId(params) do
     # TODO: Implementacao futura
         # protected function _getObjectOwnerId($aExtras)
     #     {
@@ -282,7 +282,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSource
+  Funcao correspondente ao metodo PHP getSource
 
   ## Parametros
     - $aExtras
@@ -290,7 +290,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsResponse do
   ## Retorno
     - any
   """
-  def _getSource(params) do
+  def getSource(params) do
     # TODO: Implementacao futura
         # protected function _getSource($aExtras)
     #     {
@@ -300,7 +300,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDate
+  Funcao correspondente ao metodo PHP getDate
 
   ## Parametros
     - $aExtras
@@ -308,7 +308,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsResponse do
   ## Retorno
     - any
   """
-  def _getDate(params) do
+  def getDate(params) do
     # TODO: Implementacao futura
         # protected function _getDate($aExtras)
     #     {

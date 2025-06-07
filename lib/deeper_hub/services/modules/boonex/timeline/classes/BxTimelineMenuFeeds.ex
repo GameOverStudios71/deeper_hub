@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuFeeds do
   # Heranca de BxTemplMenu
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuFeeds do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuFeeds do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTemplateVars
+  Funcao correspondente ao metodo PHP getTemplateVars
 
   ## Parametros
     - 
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuFeeds do
   ## Retorno
     - any
   """
-  def _getTemplateVars(params) do
+  def getTemplateVars(params) do
     # TODO: Implementacao futura
         # protected function _getTemplateVars ()
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuFeeds do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItem
+  Funcao correspondente ao metodo PHP getMenuItem
 
   ## Parametros
     - $a
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuFeeds do
   ## Retorno
     - any
   """
-  def _getMenuItem(params) do
+  def getMenuItem(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItem ($a)
     #     {

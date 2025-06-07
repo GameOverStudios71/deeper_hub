@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   # Heranca de BxDolGridConnections
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -118,7 +118,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellRole
+  Funcao correspondente ao metodo PHP getCellRole
 
   ## Parametros
     - $mixedValue
@@ -129,7 +129,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getCellRole(params) do
+  def getCellRole(params) do
     # TODO: Implementacao futura
         # protected function _getCellRole($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -139,7 +139,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellHeaderRoleAdded
+  Funcao correspondente ao metodo PHP getCellHeaderRoleAdded
 
   ## Parametros
     - $sKey
@@ -148,7 +148,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getCellHeaderRoleAdded(params) do
+  def getCellHeaderRoleAdded(params) do
     # TODO: Implementacao futura
         # protected function _getCellHeaderRoleAdded($sKey, $aField)
     #     {
@@ -159,7 +159,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellRoleAdded
+  Funcao correspondente ao metodo PHP getCellRoleAdded
 
   ## Parametros
     - $mixedValue
@@ -170,7 +170,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getCellRoleAdded(params) do
+  def getCellRoleAdded(params) do
     # TODO: Implementacao futura
         # protected function _getCellRoleAdded($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -180,7 +180,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellHeaderRoleExpired
+  Funcao correspondente ao metodo PHP getCellHeaderRoleExpired
 
   ## Parametros
     - $sKey
@@ -189,7 +189,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getCellHeaderRoleExpired(params) do
+  def getCellHeaderRoleExpired(params) do
     # TODO: Implementacao futura
         # protected function _getCellHeaderRoleExpired($sKey, $aField)
     #     {
@@ -200,7 +200,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellRoleExpired
+  Funcao correspondente ao metodo PHP getCellRoleExpired
 
   ## Parametros
     - $mixedValue
@@ -211,7 +211,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getCellRoleExpired(params) do
+  def getCellRoleExpired(params) do
     # TODO: Implementacao futura
         # protected function _getCellRoleExpired($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -221,7 +221,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getActionQuestionnaire
+  Funcao correspondente ao metodo PHP getActionQuestionnaire
 
   ## Parametros
     - $sType
@@ -234,7 +234,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getActionQuestionnaire(params) do
+  def getActionQuestionnaire(params) do
     # TODO: Implementacao futura
         # protected function _getActionQuestionnaire ($sType, $sKey, $a, $isSmall = false, $isDisabled = false, $aRow = [])
     #     {
@@ -244,7 +244,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getActionSetRole
+  Funcao correspondente ao metodo PHP getActionSetRole
 
   ## Parametros
     - $sType
@@ -257,7 +257,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getActionSetRole(params) do
+  def getActionSetRole(params) do
     # TODO: Implementacao futura
         # protected function _getActionSetRole ($sType, $sKey, $a, $isSmall = false, $isDisabled = false, $aRow = [])
     #     {
@@ -271,7 +271,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getActionSetRoleSubmit
+  Funcao correspondente ao metodo PHP getActionSetRoleSubmit
 
   ## Parametros
     - $sType
@@ -284,7 +284,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getActionSetRoleSubmit(params) do
+  def getActionSetRoleSubmit(params) do
     # TODO: Implementacao futura
         # protected function _getActionSetRoleSubmit ($sType, $sKey, $a, $isSmall = false, $isDisabled = false, $aRow = [])
     #     {
@@ -294,7 +294,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getActionAccept
+  Funcao correspondente ao metodo PHP getActionAccept
 
   ## Parametros
     - $sType
@@ -307,7 +307,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getActionAccept(params) do
+  def getActionAccept(params) do
     # TODO: Implementacao futura
         # protected function _getActionAccept ($sType, $sKey, $a, $isSmall = false, $isDisabled = false, $aRow = [])
     #     {
@@ -318,7 +318,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getActionDelete
+  Funcao correspondente ao metodo PHP getActionDelete
 
   ## Parametros
     - $sType
@@ -331,7 +331,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getActionDelete(params) do
+  def getActionDelete(params) do
     # TODO: Implementacao futura
         # protected function _getActionDelete ($sType, $sKey, $a, $isSmall = false, $isDisabled = false, $aRow = [])
     #     {
@@ -342,7 +342,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getActionDeleteAndBan
+  Funcao correspondente ao metodo PHP getActionDeleteAndBan
 
   ## Parametros
     - $sType
@@ -355,7 +355,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getActionDeleteAndBan(params) do
+  def getActionDeleteAndBan(params) do
     # TODO: Implementacao futura
         # protected function _getActionDeleteAndBan ($sType, $sKey, $a, $isSmall = false, $isDisabled = false, $aRow = [])
     #     {
@@ -365,7 +365,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getActionToAdmins
+  Funcao correspondente ao metodo PHP getActionToAdmins
 
   ## Parametros
     - $sType
@@ -378,7 +378,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getActionToAdmins(params) do
+  def getActionToAdmins(params) do
     # TODO: Implementacao futura
         # protected function _getActionToAdmins ($sType, $sKey, $a, $isSmall = false, $isDisabled = false, $aRow = [])
     #     {
@@ -389,7 +389,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getActionFromAdmins
+  Funcao correspondente ao metodo PHP getActionFromAdmins
 
   ## Parametros
     - $sType
@@ -402,7 +402,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getActionFromAdmins(params) do
+  def getActionFromAdmins(params) do
     # TODO: Implementacao futura
         # protected function _getActionFromAdmins ($sType, $sKey, $a, $isSmall = false, $isDisabled = false, $aRow = [])
     #     {
@@ -413,7 +413,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getActionManageAdmins
+  Funcao correspondente ao metodo PHP getActionManageAdmins
 
   ## Parametros
     - $sType
@@ -426,7 +426,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getActionManageAdmins(params) do
+  def getActionManageAdmins(params) do
     # TODO: Implementacao futura
         # protected function _getActionManageAdmins ($sType, $sKey, $a, $isSmall = false, $isDisabled = false, $aRow = [])
     #     {
@@ -472,7 +472,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _performActionAdmins
+  Funcao correspondente ao metodo PHP performActionAdmins
 
   ## Parametros
     - $sFunc
@@ -480,7 +480,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _performActionAdmins(params) do
+  def performActionAdmins(params) do
     # TODO: Implementacao futura
         # public function _performActionAdmins($sFunc)
     #     {
@@ -490,7 +490,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _delete
+  Funcao correspondente ao metodo PHP delete
 
   ## Parametros
     - $mixedId
@@ -498,7 +498,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _delete(params) do
+  def delete(params) do
     # TODO: Implementacao futura
         # protected function _delete ($mixedId)
     #     {
@@ -508,7 +508,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareGroupProfileAndMemberProfile
+  Funcao correspondente ao metodo PHP prepareGroupProfileAndMemberProfile
 
   ## Parametros
     - $iId1
@@ -517,7 +517,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _prepareGroupProfileAndMemberProfile(params) do
+  def prepareGroupProfileAndMemberProfile(params) do
     # TODO: Implementacao futura
         # protected function _prepareGroupProfileAndMemberProfile($iId1, $iId2)
     #     {
@@ -528,7 +528,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -536,7 +536,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls()
     #     {
@@ -546,7 +546,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterSelectOne
+  Funcao correspondente ao metodo PHP getFilterSelectOne
 
   ## Parametros
     - $sFilterName
@@ -557,7 +557,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getFilterSelectOne(params) do
+  def getFilterSelectOne(params) do
     # TODO: Implementacao futura
         # protected function _getFilterSelectOne($sFilterName, $sFilterValue, $aFilterValues, $bAddSelectOne = true)
     #     {
@@ -568,7 +568,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSearchInput
+  Funcao correspondente ao metodo PHP getSearchInput
 
   ## Parametros
     - 
@@ -576,7 +576,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getSearchInput(params) do
+  def getSearchInput(params) do
     # TODO: Implementacao futura
         # protected function _getSearchInput()
     #     {
@@ -586,7 +586,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addJsCss
+  Funcao correspondente ao metodo PHP addJsCss
 
   ## Parametros
     - 
@@ -594,7 +594,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _addJsCss(params) do
+  def addJsCss(params) do
     # TODO: Implementacao futura
         # protected function _addJsCss()
     #     {
@@ -604,7 +604,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -616,7 +616,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -626,7 +626,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _roleItoS
+  Funcao correspondente ao metodo PHP roleItoS
 
   ## Parametros
     - $iRole
@@ -634,7 +634,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _roleItoS(params) do
+  def roleItoS(params) do
     # TODO: Implementacao futura
         # protected function _roleItoS($iRole)
     #     {
@@ -644,7 +644,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _roleStoI
+  Funcao correspondente ao metodo PHP roleStoI
 
   ## Parametros
     - $sRole
@@ -652,7 +652,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridConnections do
   ## Retorno
     - any
   """
-  def _roleStoI(params) do
+  def roleStoI(params) do
     # TODO: Implementacao futura
         # protected function _roleStoI($sRole)
     #     {

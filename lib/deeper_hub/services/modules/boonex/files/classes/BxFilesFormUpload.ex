@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesFormUpload do
   # Heranca de BxBaseModFilesFormUpload
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aInfo
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxFilesFormUpload do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aInfo, $oTemplate = false)
     #     {

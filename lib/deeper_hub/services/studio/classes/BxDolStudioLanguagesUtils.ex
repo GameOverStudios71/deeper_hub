@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioLanguagesUtils do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioLanguagesUtils do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct()
     #     {
@@ -29,7 +29,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioLanguagesUtils do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __clone
+  Funcao correspondente ao metodo PHP clone
 
   ## Parametros
     - 
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioLanguagesUtils do
   ## Retorno
     - any
   """
-  def __clone(params) do
+  def clone(params) do
     # TODO: Implementacao futura
         # public function __clone()
     #     {
@@ -434,7 +434,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioLanguagesUtils do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _restoreLanguageByModule
+  Funcao correspondente ao metodo PHP restoreLanguageByModule
 
   ## Parametros
     - $aLanguage
@@ -444,7 +444,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioLanguagesUtils do
   ## Retorno
     - any
   """
-  def _restoreLanguageByModule(params) do
+  def restoreLanguageByModule(params) do
     # TODO: Implementacao futura
         # protected function _restoreLanguageByModule($aLanguage, $sPath, $mixedModule)
     #     {

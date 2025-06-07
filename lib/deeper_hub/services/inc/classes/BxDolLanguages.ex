@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct()
     #     {
@@ -29,7 +29,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __clone
+  Funcao correspondente ao metodo PHP clone
 
   ## Parametros
     - 
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def __clone(params) do
+  def clone(params) do
     # TODO: Implementacao futura
         # public function __clone()
     #     {
@@ -354,7 +354,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t
+  Funcao correspondente ao metodo PHP t
 
   ## Parametros
     - 
@@ -362,7 +362,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t(params) do
+  def t(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -374,7 +374,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t_err
+  Funcao correspondente ao metodo PHP t_err
 
   ## Parametros
     - 
@@ -382,7 +382,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t_err(params) do
+  def t_err(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -394,7 +394,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t_action
+  Funcao correspondente ao metodo PHP t_action
 
   ## Parametros
     - 
@@ -402,7 +402,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t_action(params) do
+  def t_action(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -414,7 +414,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t_ext
+  Funcao correspondente ao metodo PHP t_ext
 
   ## Parametros
     - $key
@@ -423,7 +423,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t_ext(params) do
+  def t_ext(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -435,7 +435,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t_format_size
+  Funcao correspondente ao metodo PHP t_format_size
 
   ## Parametros
     - $iSize
@@ -443,7 +443,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t_format_size(params) do
+  def t_format_size(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -461,7 +461,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t_format_duration
+  Funcao correspondente ao metodo PHP t_format_duration
 
   ## Parametros
     - $iTime
@@ -469,7 +469,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t_format_duration(params) do
+  def t_format_duration(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -481,7 +481,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t_format_currency
+  Funcao correspondente ao metodo PHP t_format_currency
 
   ## Parametros
     - $fPrice
@@ -492,7 +492,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t_format_currency(params) do
+  def t_format_currency(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -505,7 +505,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t_format_extensions
+  Funcao correspondente ao metodo PHP t_format_extensions
 
   ## Parametros
     - $mixedExtensions
@@ -513,7 +513,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t_format_extensions(params) do
+  def t_format_extensions(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -603,7 +603,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t
+  Funcao correspondente ao metodo PHP t
 
   ## Parametros
     - 
@@ -611,7 +611,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t(params) do
+  def t(params) do
     # TODO: Implementacao futura
         # 
     #     function _t()
@@ -622,7 +622,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t_err
+  Funcao correspondente ao metodo PHP t_err
 
   ## Parametros
     - 
@@ -630,7 +630,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t_err(params) do
+  def t_err(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -642,7 +642,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t_action
+  Funcao correspondente ao metodo PHP t_action
 
   ## Parametros
     - 
@@ -650,7 +650,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t_action(params) do
+  def t_action(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -662,7 +662,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t_ext
+  Funcao correspondente ao metodo PHP t_ext
 
   ## Parametros
     - $key
@@ -671,7 +671,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t_ext(params) do
+  def t_ext(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -683,7 +683,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t_format_size
+  Funcao correspondente ao metodo PHP t_format_size
 
   ## Parametros
     - $iSize
@@ -691,7 +691,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t_format_size(params) do
+  def t_format_size(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -703,7 +703,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t_format_duration
+  Funcao correspondente ao metodo PHP t_format_duration
 
   ## Parametros
     - $iTime
@@ -711,7 +711,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t_format_duration(params) do
+  def t_format_duration(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -723,7 +723,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t_format_currency
+  Funcao correspondente ao metodo PHP t_format_currency
 
   ## Parametros
     - $fPrice
@@ -733,7 +733,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t_format_currency(params) do
+  def t_format_currency(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -745,7 +745,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t_format_currency_ext
+  Funcao correspondente ao metodo PHP t_format_currency_ext
 
   ## Parametros
     - $fPrice
@@ -754,7 +754,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t_format_currency_ext(params) do
+  def t_format_currency_ext(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -766,7 +766,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _t_format_extensions
+  Funcao correspondente ao metodo PHP t_format_extensions
 
   ## Parametros
     - $mixedExtensions
@@ -774,7 +774,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLanguages do
   ## Retorno
     - any
   """
-  def _t_format_extensions(params) do
+  def t_format_extensions(params) do
     # TODO: Implementacao futura
         # 
     # 

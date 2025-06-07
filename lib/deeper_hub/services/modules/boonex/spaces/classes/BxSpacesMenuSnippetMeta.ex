@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuSnippetMeta do
   # Heranca de BxBaseModGroupsMenuSnippetMeta
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemParent
+  Funcao correspondente ao metodo PHP getMenuItemParent
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemParent(params) do
+  def getMenuItemParent(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemParent($aItem)
     #     {

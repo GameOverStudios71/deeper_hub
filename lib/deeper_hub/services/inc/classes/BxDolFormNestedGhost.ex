@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFormNestedGhost do
   # Heranca de BxTemplFormView
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sName
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFormNestedGhost do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct($sName, $aForm, $sSubmitName = false, $oTemplate = false)

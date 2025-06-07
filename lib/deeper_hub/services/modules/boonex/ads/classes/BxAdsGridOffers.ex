@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffers do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffers do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAuthorId
+  Funcao correspondente ao metodo PHP getCellAuthorId
 
   ## Parametros
     - $mixedValue
@@ -91,7 +91,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffers do
   ## Retorno
     - any
   """
-  def _getCellAuthorId(params) do
+  def getCellAuthorId(params) do
     # TODO: Implementacao futura
         # protected function _getCellAuthorId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -101,7 +101,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAmount
+  Funcao correspondente ao metodo PHP getCellAmount
 
   ## Parametros
     - $mixedValue
@@ -112,7 +112,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffers do
   ## Retorno
     - any
   """
-  def _getCellAmount(params) do
+  def getCellAmount(params) do
     # TODO: Implementacao futura
         # protected function _getCellAmount($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -122,7 +122,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAdded
+  Funcao correspondente ao metodo PHP getCellAdded
 
   ## Parametros
     - $mixedValue
@@ -133,7 +133,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffers do
   ## Retorno
     - any
   """
-  def _getCellAdded(params) do
+  def getCellAdded(params) do
     # TODO: Implementacao futura
         # protected function _getCellAdded($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -143,7 +143,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellStatus
+  Funcao correspondente ao metodo PHP getCellStatus
 
   ## Parametros
     - $mixedValue
@@ -154,7 +154,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffers do
   ## Retorno
     - any
   """
-  def _getCellStatus(params) do
+  def getCellStatus(params) do
     # TODO: Implementacao futura
         # protected function _getCellStatus($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -164,7 +164,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -176,7 +176,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffers do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -187,7 +187,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getId
+  Funcao correspondente ao metodo PHP getId
 
   ## Parametros
     - 
@@ -195,7 +195,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffers do
   ## Retorno
     - any
   """
-  def _getId(params) do
+  def getId(params) do
     # TODO: Implementacao futura
         # protected function _getId()
     #     {

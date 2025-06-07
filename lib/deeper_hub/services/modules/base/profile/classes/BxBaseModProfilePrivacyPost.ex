@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfilePrivacyPost do
   # Heranca de BxTemplPrivacy
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfilePrivacyPost do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aOptions, $oTemplate = false)
     #     {
@@ -81,7 +81,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfilePrivacyPost do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isSelectGroupCustomItems
+  Funcao correspondente ao metodo PHP isSelectGroupCustomItems
 
   ## Parametros
     - $aParams
@@ -89,7 +89,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfilePrivacyPost do
   ## Retorno
     - any
   """
-  def _isSelectGroupCustomItems(params) do
+  def isSelectGroupCustomItems(params) do
     # TODO: Implementacao futura
         # protected function _isSelectGroupCustomItems($aParams)
     #     {

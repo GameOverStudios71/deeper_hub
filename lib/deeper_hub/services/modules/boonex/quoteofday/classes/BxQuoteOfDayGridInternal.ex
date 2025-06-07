@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxQuoteOfDayGridInternal do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxQuoteOfDayGridInternal do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxQuoteOfDayGridInternal do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellText
+  Funcao correspondente ao metodo PHP getCellText
 
   ## Parametros
     - $mixedValue
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxQuoteOfDayGridInternal do
   ## Retorno
     - any
   """
-  def _getCellText(params) do
+  def getCellText(params) do
     # TODO: Implementacao futura
         # protected function _getCellText($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -101,7 +101,7 @@ defmodule DeeperHub.Inc.Classes.BxQuoteOfDayGridInternal do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getId
+  Funcao correspondente ao metodo PHP getId
 
   ## Parametros
     - 
@@ -109,7 +109,7 @@ defmodule DeeperHub.Inc.Classes.BxQuoteOfDayGridInternal do
   ## Retorno
     - any
   """
-  def _getId(params) do
+  def getId(params) do
     # TODO: Implementacao futura
         # protected function _getId()
     #     {

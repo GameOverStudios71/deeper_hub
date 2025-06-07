@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsModule do
   # Heranca de BxBaseModTextModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -416,7 +416,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceGetNotificationsScoreMedia
+  Funcao correspondente ao metodo PHP serviceGetNotificationsScoreMedia
 
   ## Parametros
     - $sType
@@ -425,7 +425,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsModule do
   ## Retorno
     - any
   """
-  def _serviceGetNotificationsScoreMedia(params) do
+  def serviceGetNotificationsScoreMedia(params) do
     # TODO: Implementacao futura
         # protected function _serviceGetNotificationsScoreMedia($sType, $aEvent)
     #     {
@@ -544,7 +544,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _buildRssParams
+  Funcao correspondente ao metodo PHP buildRssParams
 
   ## Parametros
     - $sMode
@@ -553,7 +553,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsModule do
   ## Retorno
     - any
   """
-  def _buildRssParams(params) do
+  def buildRssParams(params) do
     # TODO: Implementacao futura
         # protected function _buildRssParams($sMode, $aArgs)
     #     {        

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosTemplate do
   # Heranca de BxBaseModTextTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct(&$oConfig, &$oDb)
     #     {
@@ -145,7 +145,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getUnitImage
+  Funcao correspondente ao metodo PHP getUnitImage
 
   ## Parametros
     - $sField
@@ -155,7 +155,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosTemplate do
   ## Retorno
     - any
   """
-  def _getUnitImage(params) do
+  def getUnitImage(params) do
     # TODO: Implementacao futura
         # protected function _getUnitImage ($sField, $sTranscoder, &$aData)
     #     {
@@ -165,7 +165,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkDuration
+  Funcao correspondente ao metodo PHP checkDuration
 
   ## Parametros
     - &$aContentInfo
@@ -173,7 +173,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosTemplate do
   ## Retorno
     - any
   """
-  def _checkDuration(params) do
+  def checkDuration(params) do
     # TODO: Implementacao futura
         # protected function _checkDuration(&$aContentInfo) 
     #     {

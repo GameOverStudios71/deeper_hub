@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRssFactory do
   # Heranca de BxDol
 
   @doc """
-  Funcao correspondente ao metodo PHP GenRssByData
+  Funcao correspondente ao metodo PHP genRssByData
 
   ## Parametros
     - $aRssData
@@ -17,7 +17,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRssFactory do
   ## Retorno
     - any
   """
-  def GenRssByData(params) do
+  def genRssByData(params) do
     # TODO: Implementacao futura
         # 
     #     function GenRssByData($aRssData, $sUnitTitleC, $sMainLink)
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRssFactory do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP GenRssByCustomData
+  Funcao correspondente ao metodo PHP genRssByCustomData
 
   ## Parametros
     - $aRssData
@@ -47,7 +47,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRssFactory do
   ## Retorno
     - any
   """
-  def GenRssByCustomData(params) do
+  def genRssByCustomData(params) do
     # TODO: Implementacao futura
         # 
     #     function GenRssByCustomData($aRssData, $sUnitTitleC, $sMainLink, $aFields, $sImage = '', $iPID = 0)

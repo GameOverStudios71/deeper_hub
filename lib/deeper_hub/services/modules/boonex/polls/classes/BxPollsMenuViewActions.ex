@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsMenuViewActions do
   # Heranca de BxBaseModTextMenuViewActions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsMenuViewActions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditPoll
+  Funcao correspondente ao metodo PHP getMenuItemEditPoll
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemEditPoll(params) do
+  def getMenuItemEditPoll(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditPoll($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeletePoll
+  Funcao correspondente ao metodo PHP getMenuItemDeletePoll
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDeletePoll(params) do
+  def getMenuItemDeletePoll(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeletePoll($aItem)
     #     {

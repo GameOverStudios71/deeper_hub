@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketFormEntry do
   # Heranca de BxBaseModTextFormEntry
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aInfo
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketFormEntry do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aInfo, $oTemplate = false)
     #     {
@@ -65,7 +65,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _associalFileWithContent
+  Funcao correspondente ao metodo PHP associalFileWithContent
 
   ## Parametros
     - $oStorage
@@ -77,7 +77,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketFormEntry do
   ## Retorno
     - any
   """
-  def _associalFileWithContent(params) do
+  def associalFileWithContent(params) do
     # TODO: Implementacao futura
         # protected function _associalFileWithContent($oStorage, $iFileId, $iProfileId, $iContentId, $sPictureField = '')
     #     {
@@ -87,7 +87,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPhotoGhostTmplVars
+  Funcao correspondente ao metodo PHP getPhotoGhostTmplVars
 
   ## Parametros
     - $aContentInfo = []
@@ -95,7 +95,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketFormEntry do
   ## Retorno
     - any
   """
-  def _getPhotoGhostTmplVars(params) do
+  def getPhotoGhostTmplVars(params) do
     # TODO: Implementacao futura
         # protected function _getPhotoGhostTmplVars($aContentInfo = [])
     #     {

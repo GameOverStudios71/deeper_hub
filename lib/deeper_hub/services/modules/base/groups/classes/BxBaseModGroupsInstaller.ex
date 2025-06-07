@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsInstaller do
   # Heranca de BxBaseModProfileInstaller
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aConfig
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsInstaller do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aConfig)
     #     {

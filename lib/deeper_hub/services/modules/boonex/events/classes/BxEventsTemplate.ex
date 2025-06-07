@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsTemplate do
   # Heranca de BxBaseModGroupsTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$oConfig, &$oDb)
@@ -45,7 +45,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getBrowsingFiltersContent
+  Funcao correspondente ao metodo PHP getBrowsingFiltersContent
 
   ## Parametros
     - $aParams
@@ -53,7 +53,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsTemplate do
   ## Retorno
     - any
   """
-  def _getBrowsingFiltersContent(params) do
+  def getBrowsingFiltersContent(params) do
     # TODO: Implementacao futura
         # protected function _getBrowsingFiltersContent($aParams)
     #     {

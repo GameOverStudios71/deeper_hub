@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridBlockLog do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridBlockLog do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridBlockLog do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellIp
+  Funcao correspondente ao metodo PHP getCellIp
 
   ## Parametros
     - $mixedValue
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridBlockLog do
   ## Retorno
     - any
   """
-  def _getCellIp(params) do
+  def getCellIp(params) do
     # TODO: Implementacao futura
         # protected function _getCellIp ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -47,7 +47,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridBlockLog do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellProfileId
+  Funcao correspondente ao metodo PHP getCellProfileId
 
   ## Parametros
     - $mixedValue
@@ -58,7 +58,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridBlockLog do
   ## Retorno
     - any
   """
-  def _getCellProfileId(params) do
+  def getCellProfileId(params) do
     # TODO: Implementacao futura
         # protected function _getCellProfileId ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -68,7 +68,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridBlockLog do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellType
+  Funcao correspondente ao metodo PHP getCellType
 
   ## Parametros
     - $mixedValue
@@ -79,7 +79,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridBlockLog do
   ## Retorno
     - any
   """
-  def _getCellType(params) do
+  def getCellType(params) do
     # TODO: Implementacao futura
         # protected function _getCellType ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -89,7 +89,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridBlockLog do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAdded
+  Funcao correspondente ao metodo PHP getCellAdded
 
   ## Parametros
     - $mixedValue
@@ -100,7 +100,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridBlockLog do
   ## Retorno
     - any
   """
-  def _getCellAdded(params) do
+  def getCellAdded(params) do
     # TODO: Implementacao futura
         # protected function _getCellAdded ($mixedValue, $sKey, $aField, $aRow)
     #     {

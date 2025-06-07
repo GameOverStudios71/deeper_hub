@@ -86,7 +86,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStorageS3v4alt do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _upload
+  Funcao correspondente ao metodo PHP upload
 
   ## Parametros
     - $sInputFile
@@ -97,7 +97,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStorageS3v4alt do
   ## Retorno
     - any
   """
-  def _upload(params) do
+  def upload(params) do
     # TODO: Implementacao futura
         # protected function _upload($sInputFile, $sUri, $sACL, $aRequestHeaders)
     #     {

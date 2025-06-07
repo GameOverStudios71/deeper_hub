@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridCommissions do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridCommissions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridCommissions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAclId
+  Funcao correspondente ao metodo PHP getCellAclId
 
   ## Parametros
     - $mixedValue
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridCommissions do
   ## Retorno
     - any
   """
-  def _getCellAclId(params) do
+  def getCellAclId(params) do
     # TODO: Implementacao futura
         # protected function _getCellAclId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -47,7 +47,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridCommissions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellPercentage
+  Funcao correspondente ao metodo PHP getCellPercentage
 
   ## Parametros
     - $mixedValue
@@ -58,7 +58,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridCommissions do
   ## Retorno
     - any
   """
-  def _getCellPercentage(params) do
+  def getCellPercentage(params) do
     # TODO: Implementacao futura
         # protected function _getCellPercentage($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -68,7 +68,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridCommissions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellInstallment
+  Funcao correspondente ao metodo PHP getCellInstallment
 
   ## Parametros
     - $mixedValue
@@ -79,7 +79,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridCommissions do
   ## Retorno
     - any
   """
-  def _getCellInstallment(params) do
+  def getCellInstallment(params) do
     # TODO: Implementacao futura
         # protected function _getCellInstallment($mixedValue, $sKey, $aField, $aRow)
     #     {

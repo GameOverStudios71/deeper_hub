@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxClssDb do
   # Heranca de BxBaseModTextDb
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxClssDb do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -63,7 +63,7 @@ defmodule DeeperHub.Inc.Classes.BxClssDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getNextPrevEntry
+  Funcao correspondente ao metodo PHP getNextPrevEntry
 
   ## Parametros
     - $iClassId
@@ -73,7 +73,7 @@ defmodule DeeperHub.Inc.Classes.BxClssDb do
   ## Retorno
     - any
   """
-  def _getNextPrevEntry(params) do
+  def getNextPrevEntry(params) do
     # TODO: Implementacao futura
         # protected function _getNextPrevEntry ($iClassId, $sSorting = 'DESC', $sOp = '<=')
     #     {        
@@ -386,7 +386,7 @@ defmodule DeeperHub.Inc.Classes.BxClssDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _removeCourseAdminsFromProfilesArray
+  Funcao correspondente ao metodo PHP removeCourseAdminsFromProfilesArray
 
   ## Parametros
     - $iProfileConextId
@@ -395,7 +395,7 @@ defmodule DeeperHub.Inc.Classes.BxClssDb do
   ## Retorno
     - any
   """
-  def _removeCourseAdminsFromProfilesArray(params) do
+  def removeCourseAdminsFromProfilesArray(params) do
     # TODO: Implementacao futura
         # protected function _removeCourseAdminsFromProfilesArray($iProfileConextId, $a)
     #     {

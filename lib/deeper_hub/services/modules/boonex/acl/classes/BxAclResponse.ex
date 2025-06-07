@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAclResponse do
   # Heranca de BxDolAlertsResponse
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxAclResponse do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -42,7 +42,7 @@ defmodule DeeperHub.Inc.Classes.BxAclResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processSystemPageOutputBlockAclLevel
+  Funcao correspondente ao metodo PHP processSystemPageOutputBlockAclLevel
 
   ## Parametros
     - $oAlert
@@ -50,7 +50,7 @@ defmodule DeeperHub.Inc.Classes.BxAclResponse do
   ## Retorno
     - any
   """
-  def _processSystemPageOutputBlockAclLevel(params) do
+  def processSystemPageOutputBlockAclLevel(params) do
     # TODO: Implementacao futura
         # protected function _processSystemPageOutputBlockAclLevel($oAlert)
     #     {
@@ -60,7 +60,7 @@ defmodule DeeperHub.Inc.Classes.BxAclResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processAclDeleted
+  Funcao correspondente ao metodo PHP processAclDeleted
 
   ## Parametros
     - $oAlert
@@ -68,7 +68,7 @@ defmodule DeeperHub.Inc.Classes.BxAclResponse do
   ## Retorno
     - any
   """
-  def _processAclDeleted(params) do
+  def processAclDeleted(params) do
     # TODO: Implementacao futura
         # protected function _processAclDeleted($oAlert)
     #     {

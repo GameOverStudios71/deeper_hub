@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReport do
   # Heranca de BxDolObject
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReport do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($sSystem, $iId, $iInit = true, $oTemplate = false)
     #     {
@@ -306,7 +306,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReport do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getReport
+  Funcao correspondente ao metodo PHP getReport
 
   ## Parametros
     - $iObjectId = 0
@@ -315,7 +315,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReport do
   ## Retorno
     - any
   """
-  def _getReport(params) do
+  def getReport(params) do
     # TODO: Implementacao futura
         # protected function _getReport($iObjectId = 0, $bForceGet = false)
     #     {
@@ -326,7 +326,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReport do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isReport
+  Funcao correspondente ao metodo PHP isReport
 
   ## Parametros
     - $iObjectId = 0
@@ -335,7 +335,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReport do
   ## Retorno
     - any
   """
-  def _isReport(params) do
+  def isReport(params) do
     # TODO: Implementacao futura
         # protected function _isReport($iObjectId = 0, $bForceGet = false)
     #     {
@@ -345,7 +345,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReport do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTrack
+  Funcao correspondente ao metodo PHP getTrack
 
   ## Parametros
     - $iObjectId
@@ -354,7 +354,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReport do
   ## Retorno
     - any
   """
-  def _getTrack(params) do
+  def getTrack(params) do
     # TODO: Implementacao futura
         # protected function _getTrack($iObjectId, $iAuthorId)
     #     {
@@ -364,7 +364,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReport do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIconDoReport
+  Funcao correspondente ao metodo PHP getIconDoReport
 
   ## Parametros
     - $bPerformed
@@ -372,7 +372,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReport do
   ## Retorno
     - any
   """
-  def _getIconDoReport(params) do
+  def getIconDoReport(params) do
     # TODO: Implementacao futura
         # protected function _getIconDoReport($bPerformed)
     #     {
@@ -382,7 +382,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReport do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTitleDoReport
+  Funcao correspondente ao metodo PHP getTitleDoReport
 
   ## Parametros
     - $bPerformed
@@ -390,7 +390,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReport do
   ## Retorno
     - any
   """
-  def _getTitleDoReport(params) do
+  def getTitleDoReport(params) do
     # TODO: Implementacao futura
         # protected function _getTitleDoReport($bPerformed)
     #     {
@@ -401,7 +401,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReport do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFormObject
+  Funcao correspondente ao metodo PHP getFormObject
 
   ## Parametros
     - 
@@ -409,7 +409,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReport do
   ## Retorno
     - any
   """
-  def _getFormObject(params) do
+  def getFormObject(params) do
     # TODO: Implementacao futura
         # protected function _getFormObject()
     #     {

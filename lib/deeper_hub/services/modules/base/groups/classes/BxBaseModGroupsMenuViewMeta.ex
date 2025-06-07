@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuViewMeta do
   # Heranca de BxBaseModProfileMenuViewMeta
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuViewMeta do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuViewMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemMembers
+  Funcao correspondente ao metodo PHP getMenuItemMembers
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuViewMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemMembers(params) do
+  def getMenuItemMembers(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemMembers($aItem)
     #     {

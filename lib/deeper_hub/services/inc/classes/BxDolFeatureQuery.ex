@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFeatureQuery do
   # Heranca de BxDolObjectQuery
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFeatureQuery do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct(&$oModule)
     #     {
@@ -101,7 +101,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFeatureQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _updateTriggerTable
+  Funcao correspondente ao metodo PHP updateTriggerTable
 
   ## Parametros
     - $iObjectId
@@ -110,7 +110,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFeatureQuery do
   ## Retorno
     - any
   """
-  def _updateTriggerTable(params) do
+  def updateTriggerTable(params) do
     # TODO: Implementacao futura
         # protected function _updateTriggerTable($iObjectId, $aEntry)
     #     {

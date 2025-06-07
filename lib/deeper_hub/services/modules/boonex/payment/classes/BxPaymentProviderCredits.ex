@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderCredits do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aConfig
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderCredits do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -123,7 +123,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderCredits do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _finalizeCheckout
+  Funcao correspondente ao metodo PHP finalizeCheckout
 
   ## Parametros
     - &$aData
@@ -131,7 +131,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderCredits do
   ## Retorno
     - any
   """
-  def _finalizeCheckout(params) do
+  def finalizeCheckout(params) do
     # TODO: Implementacao futura
         # protected function _finalizeCheckout(&$aData)
     #     {
@@ -141,7 +141,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderCredits do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _constructCustomData
+  Funcao correspondente ao metodo PHP constructCustomData
 
   ## Parametros
     - 
@@ -149,7 +149,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderCredits do
   ## Retorno
     - any
   """
-  def _constructCustomData(params) do
+  def constructCustomData(params) do
     # TODO: Implementacao futura
         # protected function _constructCustomData()
     #     {
@@ -159,7 +159,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderCredits do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _deconstructCustomData
+  Funcao correspondente ao metodo PHP deconstructCustomData
 
   ## Parametros
     - $data
@@ -167,7 +167,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderCredits do
   ## Retorno
     - any
   """
-  def _deconstructCustomData(params) do
+  def deconstructCustomData(params) do
     # TODO: Implementacao futura
         # protected function _deconstructCustomData($data)
     #     {
@@ -177,7 +177,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderCredits do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAmountByPending
+  Funcao correspondente ao metodo PHP getAmountByPending
 
   ## Parametros
     - $aPending
@@ -185,7 +185,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderCredits do
   ## Retorno
     - any
   """
-  def _getAmountByPending(params) do
+  def getAmountByPending(params) do
     # TODO: Implementacao futura
         # protected function _getAmountByPending($aPending)
     #     {

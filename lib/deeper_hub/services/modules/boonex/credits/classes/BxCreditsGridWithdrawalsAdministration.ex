@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   # Heranca de BxCreditsGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -45,7 +45,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellProfileId
+  Funcao correspondente ao metodo PHP getCellProfileId
 
   ## Parametros
     - $mixedValue
@@ -56,7 +56,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   ## Retorno
     - any
   """
-  def _getCellProfileId(params) do
+  def getCellProfileId(params) do
     # TODO: Implementacao futura
         # protected function _getCellProfileId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -66,7 +66,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellPerformerId
+  Funcao correspondente ao metodo PHP getCellPerformerId
 
   ## Parametros
     - $mixedValue
@@ -77,7 +77,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   ## Retorno
     - any
   """
-  def _getCellPerformerId(params) do
+  def getCellPerformerId(params) do
     # TODO: Implementacao futura
         # protected function _getCellPerformerId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -87,7 +87,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAmount
+  Funcao correspondente ao metodo PHP getCellAmount
 
   ## Parametros
     - $mixedValue
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   ## Retorno
     - any
   """
-  def _getCellAmount(params) do
+  def getCellAmount(params) do
     # TODO: Implementacao futura
         # protected function _getCellAmount($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -108,7 +108,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellOrder
+  Funcao correspondente ao metodo PHP getCellOrder
 
   ## Parametros
     - $mixedValue
@@ -119,7 +119,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   ## Retorno
     - any
   """
-  def _getCellOrder(params) do
+  def getCellOrder(params) do
     # TODO: Implementacao futura
         # protected function _getCellOrder($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -129,7 +129,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAdded
+  Funcao correspondente ao metodo PHP getCellAdded
 
   ## Parametros
     - $mixedValue
@@ -140,7 +140,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   ## Retorno
     - any
   """
-  def _getCellAdded(params) do
+  def getCellAdded(params) do
     # TODO: Implementacao futura
         # protected function _getCellAdded($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -150,7 +150,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellConfirmed
+  Funcao correspondente ao metodo PHP getCellConfirmed
 
   ## Parametros
     - $mixedValue
@@ -161,7 +161,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   ## Retorno
     - any
   """
-  def _getCellConfirmed(params) do
+  def getCellConfirmed(params) do
     # TODO: Implementacao futura
         # protected function _getCellConfirmed($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -171,7 +171,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellStatus
+  Funcao correspondente ao metodo PHP getCellStatus
 
   ## Parametros
     - $mixedValue
@@ -182,7 +182,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   ## Retorno
     - any
   """
-  def _getCellStatus(params) do
+  def getCellStatus(params) do
     # TODO: Implementacao futura
         # protected function _getCellStatus($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -192,7 +192,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addJsCss
+  Funcao correspondente ao metodo PHP addJsCss
 
   ## Parametros
     - 
@@ -200,7 +200,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridWithdrawalsAdministration do
   ## Retorno
     - any
   """
-  def _addJsCss(params) do
+  def addJsCss(params) do
     # TODO: Implementacao futura
         # protected function _addJsCss()
     #     {

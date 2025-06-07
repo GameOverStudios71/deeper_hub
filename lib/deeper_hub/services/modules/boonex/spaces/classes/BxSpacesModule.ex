@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesModule do
   # Heranca de BxBaseModGroupsModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$aModule)
@@ -174,7 +174,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _modGroupsCheckAllowedSubscribeAdd
+  Funcao correspondente ao metodo PHP modGroupsCheckAllowedSubscribeAdd
 
   ## Parametros
     - &$aDataEntry
@@ -183,7 +183,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesModule do
   ## Retorno
     - any
   """
-  def _modGroupsCheckAllowedSubscribeAdd(params) do
+  def modGroupsCheckAllowedSubscribeAdd(params) do
     # TODO: Implementacao futura
         # public function _modGroupsCheckAllowedSubscribeAdd(&$aDataEntry, $isPerformAction = false)
     #     {

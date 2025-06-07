@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   # Heranca de BxBaseModTextMenuSnippetMeta
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemReplyAuthor
+  Funcao correspondente ao metodo PHP getMenuItemReplyAuthor
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemReplyAuthor(params) do
+  def getMenuItemReplyAuthor(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemReplyAuthor($aItem)
     #     {
@@ -45,7 +45,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemReplyDate
+  Funcao correspondente ao metodo PHP getMenuItemReplyDate
 
   ## Parametros
     - $aItem
@@ -53,7 +53,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemReplyDate(params) do
+  def getMenuItemReplyDate(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemReplyDate($aItem)
     #     {
@@ -64,7 +64,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemReplyText
+  Funcao correspondente ao metodo PHP getMenuItemReplyText
 
   ## Parametros
     - $aItem
@@ -72,7 +72,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemReplyText(params) do
+  def getMenuItemReplyText(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemReplyText($aItem)
     #     {
@@ -83,7 +83,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemAuthor
+  Funcao correspondente ao metodo PHP getMenuItemAuthor
 
   ## Parametros
     - $aItem
@@ -91,7 +91,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemAuthor(params) do
+  def getMenuItemAuthor(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemAuthor($aItem)
     #     {
@@ -102,7 +102,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemCategory
+  Funcao correspondente ao metodo PHP getMenuItemCategory
 
   ## Parametros
     - $aItem
@@ -110,7 +110,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemCategory(params) do
+  def getMenuItemCategory(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemCategory($aItem)
     #     {
@@ -120,7 +120,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemScores
+  Funcao correspondente ao metodo PHP getMenuItemScores
 
   ## Parametros
     - $aItem
@@ -129,7 +129,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemScores(params) do
+  def getMenuItemScores(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemScores($aItem, $aParams = [])
     #     {
@@ -141,7 +141,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemComments
+  Funcao correspondente ao metodo PHP getMenuItemComments
 
   ## Parametros
     - $aItem
@@ -150,7 +150,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemComments(params) do
+  def getMenuItemComments(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemComments($aItem, $aParams = [])
     #     {
@@ -161,7 +161,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemBadges
+  Funcao correspondente ao metodo PHP getMenuItemBadges
 
   ## Parametros
     - $aItem
@@ -169,7 +169,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemBadges(params) do
+  def getMenuItemBadges(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemBadges($aItem)
     #     {
@@ -180,7 +180,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemSticked
+  Funcao correspondente ao metodo PHP getMenuItemSticked
 
   ## Parametros
     - $aItem
@@ -188,7 +188,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemSticked(params) do
+  def getMenuItemSticked(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemSticked($aItem)
     #     {
@@ -199,7 +199,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemLocked
+  Funcao correspondente ao metodo PHP getMenuItemLocked
 
   ## Parametros
     - $aItem
@@ -207,7 +207,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemLocked(params) do
+  def getMenuItemLocked(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemLocked($aItem)
     #     {
@@ -218,7 +218,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemStatus
+  Funcao correspondente ao metodo PHP getMenuItemStatus
 
   ## Parametros
     - $aItem
@@ -226,7 +226,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemStatus(params) do
+  def getMenuItemStatus(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemStatus($aItem)
     #     {

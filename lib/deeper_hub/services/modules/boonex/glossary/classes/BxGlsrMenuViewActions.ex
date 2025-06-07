@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxGlsrMenuViewActions do
   # Heranca de BxBaseModTextMenuViewActions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxGlsrMenuViewActions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxGlsrMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditGlossary
+  Funcao correspondente ao metodo PHP getMenuItemEditGlossary
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxGlsrMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemEditGlossary(params) do
+  def getMenuItemEditGlossary(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditGlossary($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxGlsrMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteGlossary
+  Funcao correspondente ao metodo PHP getMenuItemDeleteGlossary
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxGlsrMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteGlossary(params) do
+  def getMenuItemDeleteGlossary(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteGlossary($aItem)
     #     {

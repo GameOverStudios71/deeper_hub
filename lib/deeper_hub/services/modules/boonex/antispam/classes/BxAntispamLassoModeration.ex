@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamLassoModeration do
   # Heranca de BxDol
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamLassoModeration do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -82,7 +82,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamLassoModeration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _call
+  Funcao correspondente ao metodo PHP call
 
   ## Parametros
     - $sRequest
@@ -93,7 +93,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamLassoModeration do
   ## Retorno
     - any
   """
-  def _call(params) do
+  def call(params) do
     # TODO: Implementacao futura
         # protected function _call($sRequest, $aParams, $sMethod = 'post-json', $aHeaders = [])
     #     {
@@ -102,7 +102,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamLassoModeration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processEventContent
+  Funcao correspondente ao metodo PHP processEventContent
 
   ## Parametros
     - $sModule
@@ -113,7 +113,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamLassoModeration do
   ## Retorno
     - any
   """
-  def _processEventContent(params) do
+  def processEventContent(params) do
     # TODO: Implementacao futura
         # protected function _processEventContent($sModule, $iContentId, $sStatus, $aAnalysis)
     #     {
@@ -123,7 +123,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamLassoModeration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _onHarmfulContentFound
+  Funcao correspondente ao metodo PHP onHarmfulContentFound
 
   ## Parametros
     - $sModule
@@ -132,7 +132,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamLassoModeration do
   ## Retorno
     - any
   """
-  def _onHarmfulContentFound(params) do
+  def onHarmfulContentFound(params) do
     # TODO: Implementacao futura
         # protected function _onHarmfulContentFound($sModule, $iContentId)
     #     {
@@ -142,7 +142,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamLassoModeration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getId
+  Funcao correspondente ao metodo PHP getId
 
   ## Parametros
     - $s
@@ -150,7 +150,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamLassoModeration do
   ## Retorno
     - any
   """
-  def _getId(params) do
+  def getId(params) do
     # TODO: Implementacao futura
         # protected function _getId($s)
     #     {

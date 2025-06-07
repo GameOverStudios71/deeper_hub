@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   # Heranca de BxBaseModNotificationsTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$oConfig, &$oDb)
@@ -157,7 +157,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processContent
+  Funcao correspondente ao metodo PHP processContent
 
   ## Parametros
     - &$aEvent
@@ -165,7 +165,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   ## Retorno
     - any
   """
-  def _processContent(params) do
+  def processContent(params) do
     # TODO: Implementacao futura
         # protected function _processContent(&$aEvent)
     #     {
@@ -175,7 +175,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getContent
+  Funcao correspondente ao metodo PHP getContent
 
   ## Parametros
     - &$aEvent
@@ -183,7 +183,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   ## Retorno
     - any
   """
-  def _getContent(params) do
+  def getContent(params) do
     # TODO: Implementacao futura
         # protected function _getContent(&$aEvent)
     #     {
@@ -193,7 +193,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getContentLangKey
+  Funcao correspondente ao metodo PHP getContentLangKey
 
   ## Parametros
     - &$aEvent
@@ -201,7 +201,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   ## Retorno
     - any
   """
-  def _getContentLangKey(params) do
+  def getContentLangKey(params) do
     # TODO: Implementacao futura
         # protected function _getContentLangKey(&$aEvent)
     #     {
@@ -211,7 +211,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _parseContentLangKey
+  Funcao correspondente ao metodo PHP parseContentLangKey
 
   ## Parametros
     - $sLangKey
@@ -220,7 +220,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   ## Retorno
     - any
   """
-  def _parseContentLangKey(params) do
+  def parseContentLangKey(params) do
     # TODO: Implementacao futura
         # protected function _parseContentLangKey($sLangKey, &$aEvent)
     #     {
@@ -233,7 +233,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getContentLink
+  Funcao correspondente ao metodo PHP getContentLink
 
   ## Parametros
     - &$aEvent
@@ -241,7 +241,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   ## Retorno
     - any
   """
-  def _getContentLink(params) do
+  def getContentLink(params) do
     # TODO: Implementacao futura
         # protected function _getContentLink(&$aEvent)
     #     {
@@ -251,7 +251,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getLink
+  Funcao correspondente ao metodo PHP getLink
 
   ## Parametros
     - $sLink
@@ -259,7 +259,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   ## Retorno
     - any
   """
-  def _getLink(params) do
+  def getLink(params) do
     # TODO: Implementacao futura
         # protected function _getLink($sLink)
     #     {
@@ -271,7 +271,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isInContext
+  Funcao correspondente ao metodo PHP isInContext
 
   ## Parametros
     - &$aEvent
@@ -279,7 +279,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsTemplate do
   ## Retorno
     - any
   """
-  def _isInContext(params) do
+  def isInContext(params) do
     # TODO: Implementacao futura
         # protected function _isInContext(&$aEvent)
     #     {

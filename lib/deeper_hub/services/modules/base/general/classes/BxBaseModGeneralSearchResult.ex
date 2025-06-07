@@ -374,7 +374,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPseudFromParam
+  Funcao correspondente ao metodo PHP getPseudFromParam
 
   ## Parametros
     - 
@@ -382,7 +382,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralSearchResult do
   ## Retorno
     - any
   """
-  def _getPseudFromParam(params) do
+  def getPseudFromParam(params) do
     # TODO: Implementacao futura
         # 
     # 

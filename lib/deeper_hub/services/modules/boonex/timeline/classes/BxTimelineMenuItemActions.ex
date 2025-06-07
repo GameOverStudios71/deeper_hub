@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   # Heranca de BxTemplMenuCustom
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemItemView
+  Funcao correspondente ao metodo PHP getMenuItemItemView
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   ## Retorno
     - any
   """
-  def _getMenuItemItemView(params) do
+  def getMenuItemItemView(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemItemView($aItem)
     #     {
@@ -63,7 +63,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemItemComment
+  Funcao correspondente ao metodo PHP getMenuItemItemComment
 
   ## Parametros
     - $aItem
@@ -71,7 +71,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   ## Retorno
     - any
   """
-  def _getMenuItemItemComment(params) do
+  def getMenuItemItemComment(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemItemComment($aItem)
     #     {
@@ -85,7 +85,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemItemVote
+  Funcao correspondente ao metodo PHP getMenuItemItemVote
 
   ## Parametros
     - $aItem
@@ -93,7 +93,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   ## Retorno
     - any
   """
-  def _getMenuItemItemVote(params) do
+  def getMenuItemItemVote(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemItemVote($aItem)
     #     {
@@ -104,7 +104,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemItemReaction
+  Funcao correspondente ao metodo PHP getMenuItemItemReaction
 
   ## Parametros
     - $aItem
@@ -112,7 +112,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   ## Retorno
     - any
   """
-  def _getMenuItemItemReaction(params) do
+  def getMenuItemItemReaction(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemItemReaction($aItem)
     #     {
@@ -123,7 +123,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemItemScore
+  Funcao correspondente ao metodo PHP getMenuItemItemScore
 
   ## Parametros
     - $aItem
@@ -131,7 +131,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   ## Retorno
     - any
   """
-  def _getMenuItemItemScore(params) do
+  def getMenuItemItemScore(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemItemScore($aItem)
     #     {
@@ -142,7 +142,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemItemReport
+  Funcao correspondente ao metodo PHP getMenuItemItemReport
 
   ## Parametros
     - $aItem
@@ -150,7 +150,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   ## Retorno
     - any
   """
-  def _getMenuItemItemReport(params) do
+  def getMenuItemItemReport(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemItemReport($aItem)
     #     {
@@ -161,7 +161,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemItemRepost
+  Funcao correspondente ao metodo PHP getMenuItemItemRepost
 
   ## Parametros
     - $aItem
@@ -169,7 +169,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   ## Retorno
     - any
   """
-  def _getMenuItemItemRepost(params) do
+  def getMenuItemItemRepost(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemItemRepost($aItem)
     #     {
@@ -180,7 +180,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDefault
+  Funcao correspondente ao metodo PHP getMenuItemDefault
 
   ## Parametros
     - $aItem
@@ -188,7 +188,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDefault(params) do
+  def getMenuItemDefault(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDefault ($aItem)
     #     {
@@ -199,7 +199,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDefaultApi
+  Funcao correspondente ao metodo PHP getMenuItemDefaultApi
 
   ## Parametros
     - $aItem
@@ -207,7 +207,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDefaultApi(params) do
+  def getMenuItemDefaultApi(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDefaultApi ($aItem)
     #     {
@@ -217,7 +217,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemElementApi
+  Funcao correspondente ao metodo PHP getMenuItemElementApi
 
   ## Parametros
     - $aItem
@@ -226,7 +226,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   ## Retorno
     - any
   """
-  def _getMenuItemElementApi(params) do
+  def getMenuItemElementApi(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemElementApi($aItem, $aElement)
     #     {
@@ -237,7 +237,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVisible
+  Funcao correspondente ao metodo PHP isVisible
 
   ## Parametros
     - $a
@@ -245,7 +245,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   ## Retorno
     - any
   """
-  def _isVisible(params) do
+  def isVisible(params) do
     # TODO: Implementacao futura
         # protected function _isVisible ($a)
     #     {
@@ -256,7 +256,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTmplContentItem
+  Funcao correspondente ao metodo PHP getTmplContentItem
 
   ## Parametros
     - 
@@ -264,7 +264,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuItemActions do
   ## Retorno
     - any
   """
-  def _getTmplContentItem(params) do
+  def getTmplContentItem(params) do
     # TODO: Implementacao futura
         # protected function _getTmplContentItem()
     #     {

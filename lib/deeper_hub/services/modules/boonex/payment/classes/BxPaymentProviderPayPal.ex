@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPal do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aConfig
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPal do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct($aConfig)
@@ -68,7 +68,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPal do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _registerCheckout
+  Funcao correspondente ao metodo PHP registerCheckout
 
   ## Parametros
     - &$aData
@@ -76,7 +76,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPal do
   ## Retorno
     - any
   """
-  def _registerCheckout(params) do
+  def registerCheckout(params) do
     # TODO: Implementacao futura
         # protected function _registerCheckout(&$aData)
     #     {
@@ -87,7 +87,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPal do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _validateCheckout
+  Funcao correspondente ao metodo PHP validateCheckout
 
   ## Parametros
     - &$aData
@@ -96,7 +96,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPal do
   ## Retorno
     - any
   """
-  def _validateCheckout(params) do
+  def validateCheckout(params) do
     # TODO: Implementacao futura
         # protected function _validateCheckout(&$aData, &$aPending)
     #     {
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPal do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _readValidationData
+  Funcao correspondente ao metodo PHP readValidationData
 
   ## Parametros
     - $sConnectionUrl
@@ -115,7 +115,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPal do
   ## Retorno
     - any
   """
-  def _readValidationData(params) do
+  def readValidationData(params) do
     # TODO: Implementacao futura
         # protected function _readValidationData($sConnectionUrl, $sRequest)
     #     {
@@ -125,7 +125,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPal do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getReceivedAmount
+  Funcao correspondente ao metodo PHP getReceivedAmount
 
   ## Parametros
     - $sCurrencyCode
@@ -134,7 +134,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPal do
   ## Retorno
     - any
   """
-  def _getReceivedAmount(params) do
+  def getReceivedAmount(params) do
     # TODO: Implementacao futura
         # protected function _getReceivedAmount($sCurrencyCode, &$aResultData)
     #     {
@@ -144,7 +144,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPal do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _constructCustomData
+  Funcao correspondente ao metodo PHP constructCustomData
 
   ## Parametros
     - 
@@ -152,7 +152,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPal do
   ## Retorno
     - any
   """
-  def _constructCustomData(params) do
+  def constructCustomData(params) do
     # TODO: Implementacao futura
         # protected function _constructCustomData()
     # 	{
@@ -162,7 +162,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPal do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _deconstructCustomData
+  Funcao correspondente ao metodo PHP deconstructCustomData
 
   ## Parametros
     - $data
@@ -170,7 +170,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPal do
   ## Retorno
     - any
   """
-  def _deconstructCustomData(params) do
+  def deconstructCustomData(params) do
     # TODO: Implementacao futura
         # protected function _deconstructCustomData($data)
     # 	{

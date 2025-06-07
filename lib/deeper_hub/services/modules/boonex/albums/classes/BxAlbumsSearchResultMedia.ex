@@ -66,7 +66,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsSearchResultMedia do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _updateCurrentForOrderByGhosts
+  Funcao correspondente ao metodo PHP updateCurrentForOrderByGhosts
 
   ## Parametros
     - 
@@ -74,7 +74,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsSearchResultMedia do
   ## Retorno
     - any
   """
-  def _updateCurrentForOrderByGhosts(params) do
+  def updateCurrentForOrderByGhosts(params) do
     # TODO: Implementacao futura
         # protected function _updateCurrentForOrderByGhosts()
     #     {

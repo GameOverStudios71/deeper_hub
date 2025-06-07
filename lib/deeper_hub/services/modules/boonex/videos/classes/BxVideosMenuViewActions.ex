@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosMenuViewActions do
   # Heranca de BxBaseModTextMenuViewActions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosMenuViewActions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditVideo
+  Funcao correspondente ao metodo PHP getMenuItemEditVideo
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemEditVideo(params) do
+  def getMenuItemEditVideo(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditVideo($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteVideo
+  Funcao correspondente ao metodo PHP getMenuItemDeleteVideo
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteVideo(params) do
+  def getMenuItemDeleteVideo(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteVideo($aItem)
     #     {

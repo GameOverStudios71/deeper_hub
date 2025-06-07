@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRecommendation do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRecommendation do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($aObject)
     #     {
@@ -262,7 +262,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRecommendation do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getContextName
+  Funcao correspondente ao metodo PHP getContextName
 
   ## Parametros
     - 
@@ -270,7 +270,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRecommendation do
   ## Retorno
     - any
   """
-  def _getContextName(params) do
+  def getContextName(params) do
     # TODO: Implementacao futura
         # protected function _getContextName()
     #     {
@@ -279,7 +279,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRecommendation do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCriterionParams
+  Funcao correspondente ao metodo PHP getCriterionParams
 
   ## Parametros
     - $iProfileId
@@ -288,7 +288,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRecommendation do
   ## Retorno
     - any
   """
-  def _getCriterionParams(params) do
+  def getCriterionParams(params) do
     # TODO: Implementacao futura
         # protected function _getCriterionParams($iProfileId, $aParams)
     #     {

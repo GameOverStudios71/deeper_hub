@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPersonsMenuViewActionsAll do
   # Heranca de BxBaseModProfileMenuViewActionsAll
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxPersonsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxPersonsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditPersonsCover
+  Funcao correspondente ao metodo PHP getMenuItemEditPersonsCover
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxPersonsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditPersonsCover(params) do
+  def getMenuItemEditPersonsCover(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditPersonsCover($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxPersonsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditPersonsProfile
+  Funcao correspondente ao metodo PHP getMenuItemEditPersonsProfile
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxPersonsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditPersonsProfile(params) do
+  def getMenuItemEditPersonsProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditPersonsProfile($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxPersonsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeletePersonsProfile
+  Funcao correspondente ao metodo PHP getMenuItemDeletePersonsProfile
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxPersonsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemDeletePersonsProfile(params) do
+  def getMenuItemDeletePersonsProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeletePersonsProfile($aItem)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxPersonsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeletePersonsAccount
+  Funcao correspondente ao metodo PHP getMenuItemDeletePersonsAccount
 
   ## Parametros
     - $aItem
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxPersonsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemDeletePersonsAccount(params) do
+  def getMenuItemDeletePersonsAccount(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeletePersonsAccount($aItem)
     #     {
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxPersonsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeletePersonsAccountContent
+  Funcao correspondente ao metodo PHP getMenuItemDeletePersonsAccountContent
 
   ## Parametros
     - $aItem
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxPersonsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemDeletePersonsAccountContent(params) do
+  def getMenuItemDeletePersonsAccountContent(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeletePersonsAccountContent($aItem)
     #     {

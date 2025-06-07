@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   # Heranca de BxBaseModTextModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$aModule)
@@ -769,7 +769,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceRegisterItem
+  Funcao correspondente ao metodo PHP serviceRegisterItem
 
   ## Parametros
     - $iClientId
@@ -783,7 +783,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   ## Retorno
     - any
   """
-  def _serviceRegisterItem(params) do
+  def serviceRegisterItem(params) do
     # TODO: Implementacao futura
         # protected function _serviceRegisterItem($iClientId, $iSellerId, $iItemId, $iItemCount, $sOrder, $sLicense, $sType)
     #     {
@@ -793,7 +793,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceReregisterItem
+  Funcao correspondente ao metodo PHP serviceReregisterItem
 
   ## Parametros
     - $iClientId
@@ -806,7 +806,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   ## Retorno
     - any
   """
-  def _serviceReregisterItem(params) do
+  def serviceReregisterItem(params) do
     # TODO: Implementacao futura
         # protected function _serviceReregisterItem($iClientId, $iSellerId, $iItemIdOld, $iItemIdNew, $sOrder, $sType)
     #     {
@@ -816,7 +816,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceUnregisterItem
+  Funcao correspondente ao metodo PHP serviceUnregisterItem
 
   ## Parametros
     - $iClientId
@@ -830,7 +830,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   ## Retorno
     - any
   """
-  def _serviceUnregisterItem(params) do
+  def serviceUnregisterItem(params) do
     # TODO: Implementacao futura
         # protected function _serviceUnregisterItem($iClientId, $iSellerId, $iItemId, $iItemCount, $sOrder, $sLicense, $sType)
     #     {
@@ -994,7 +994,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getBlockLicenses
+  Funcao correspondente ao metodo PHP getBlockLicenses
 
   ## Parametros
     - $sType = ''
@@ -1002,7 +1002,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   ## Retorno
     - any
   """
-  def _getBlockLicenses(params) do
+  def getBlockLicenses(params) do
     # TODO: Implementacao futura
         # protected function _getBlockLicenses($sType = '') 
     #     {
@@ -1012,7 +1012,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getContentInfo
+  Funcao correspondente ao metodo PHP getContentInfo
 
   ## Parametros
     - $iContentId = 0
@@ -1020,7 +1020,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   ## Retorno
     - any
   """
-  def _getContentInfo(params) do
+  def getContentInfo(params) do
     # TODO: Implementacao futura
         # protected function _getContentInfo($iContentId = 0)
     #     {
@@ -1031,7 +1031,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _performHideProduct
+  Funcao correspondente ao metodo PHP performHideProduct
 
   ## Parametros
     - $aDataEntry
@@ -1039,7 +1039,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   ## Retorno
     - any
   """
-  def _performHideProduct(params) do
+  def performHideProduct(params) do
     # TODO: Implementacao futura
         # protected function _performHideProduct($aDataEntry) {
     #         $CNF = &$this->_oConfig->CNF;
@@ -1048,7 +1048,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _performUnhideProduct
+  Funcao correspondente ao metodo PHP performUnhideProduct
 
   ## Parametros
     - $aDataEntry
@@ -1056,7 +1056,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketModule do
   ## Retorno
     - any
   """
-  def _performUnhideProduct(params) do
+  def performUnhideProduct(params) do
     # TODO: Implementacao futura
         # protected function _performUnhideProduct($aDataEntry) {
     #         $CNF = &$this->_oConfig->CNF;

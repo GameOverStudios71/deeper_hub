@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolQueueEmailQuery do
   # Heranca de BxDolQueueQuery
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolQueueEmailQuery do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {

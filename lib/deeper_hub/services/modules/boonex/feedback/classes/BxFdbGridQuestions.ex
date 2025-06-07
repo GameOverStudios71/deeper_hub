@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbGridQuestions do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbGridQuestions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -102,7 +102,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbGridQuestions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _delete
+  Funcao correspondente ao metodo PHP delete
 
   ## Parametros
     - $mixedId
@@ -110,7 +110,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbGridQuestions do
   ## Retorno
     - any
   """
-  def _delete(params) do
+  def delete(params) do
     # TODO: Implementacao futura
         # protected function _delete($mixedId)
     #     {
@@ -120,7 +120,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbGridQuestions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _switcherChecked2State
+  Funcao correspondente ao metodo PHP switcherChecked2State
 
   ## Parametros
     - $isChecked
@@ -128,7 +128,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbGridQuestions do
   ## Retorno
     - any
   """
-  def _switcherChecked2State(params) do
+  def switcherChecked2State(params) do
     # TODO: Implementacao futura
         # protected function _switcherChecked2State($isChecked)
     #     {
@@ -138,7 +138,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbGridQuestions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _switcherState2Checked
+  Funcao correspondente ao metodo PHP switcherState2Checked
 
   ## Parametros
     - $mixedState
@@ -146,7 +146,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbGridQuestions do
   ## Retorno
     - any
   """
-  def _switcherState2Checked(params) do
+  def switcherState2Checked(params) do
     # TODO: Implementacao futura
         # protected function _switcherState2Checked($mixedState)
     #     {
@@ -156,7 +156,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbGridQuestions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellSwitcher
+  Funcao correspondente ao metodo PHP getCellSwitcher
 
   ## Parametros
     - $mixedValue
@@ -167,7 +167,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbGridQuestions do
   ## Retorno
     - any
   """
-  def _getCellSwitcher(params) do
+  def getCellSwitcher(params) do
     # TODO: Implementacao futura
         # protected function _getCellSwitcher ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -177,7 +177,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbGridQuestions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAdded
+  Funcao correspondente ao metodo PHP getCellAdded
 
   ## Parametros
     - $mixedValue
@@ -188,7 +188,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbGridQuestions do
   ## Retorno
     - any
   """
-  def _getCellAdded(params) do
+  def getCellAdded(params) do
     # TODO: Implementacao futura
         # protected function _getCellAdded($mixedValue, $sKey, $aField, $aRow)
     #     {

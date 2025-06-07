@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralTemplate do
   # Heranca de BxDolModuleTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct(&$oConfig, &$oDb)
     #     {
@@ -549,7 +549,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addCssJsPolls
+  Funcao correspondente ao metodo PHP addCssJsPolls
 
   ## Parametros
     - $bDynamic = false
@@ -557,7 +557,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralTemplate do
   ## Retorno
     - any
   """
-  def _addCssJsPolls(params) do
+  def addCssJsPolls(params) do
     # TODO: Implementacao futura
         # protected function _addCssJsPolls($bDynamic = false)
     #     {
@@ -567,7 +567,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPollAnswers
+  Funcao correspondente ao metodo PHP getPollAnswers
 
   ## Parametros
     - $aPoll
@@ -576,7 +576,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralTemplate do
   ## Retorno
     - any
   """
-  def _getPollAnswers(params) do
+  def getPollAnswers(params) do
     # TODO: Implementacao futura
         # protected function _getPollAnswers($aPoll, $bDynamic = false)
     #     {
@@ -586,7 +586,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPollResults
+  Funcao correspondente ao metodo PHP getPollResults
 
   ## Parametros
     - $aPoll
@@ -595,7 +595,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralTemplate do
   ## Retorno
     - any
   """
-  def _getPollResults(params) do
+  def getPollResults(params) do
     # TODO: Implementacao futura
         # protected function _getPollResults($aPoll, $bDynamic = false)
     #     {
@@ -605,7 +605,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _embedChecks
+  Funcao correspondente ao metodo PHP embedChecks
 
   ## Parametros
     - $sStorageKey
@@ -614,7 +614,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralTemplate do
   ## Retorno
     - any
   """
-  def _embedChecks(params) do
+  def embedChecks(params) do
     # TODO: Implementacao futura
         # protected function _embedChecks($sStorageKey, $iFileId)
     #     {
@@ -625,7 +625,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getImageSettings
+  Funcao correspondente ao metodo PHP getImageSettings
 
   ## Parametros
     - $sSettings
@@ -633,7 +633,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralTemplate do
   ## Retorno
     - any
   """
-  def _getImageSettings(params) do
+  def getImageSettings(params) do
     # TODO: Implementacao futura
         # 
     #     
@@ -645,7 +645,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareImage
+  Funcao correspondente ao metodo PHP prepareImage
 
   ## Parametros
     - $aData
@@ -659,7 +659,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralTemplate do
   ## Retorno
     - any
   """
-  def _prepareImage(params) do
+  def prepareImage(params) do
     # TODO: Implementacao futura
         # 
     # 

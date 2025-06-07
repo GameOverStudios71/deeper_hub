@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsFormEntry do
   # Heranca de BxBaseModTextFormEntry
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aInfo
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsFormEntry do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aInfo, $oTemplate = false)
     #     {
@@ -233,7 +233,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPhotoGhostTmplVars
+  Funcao correspondente ao metodo PHP getPhotoGhostTmplVars
 
   ## Parametros
     - $aContentInfo = []
@@ -241,7 +241,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsFormEntry do
   ## Retorno
     - any
   """
-  def _getPhotoGhostTmplVars(params) do
+  def getPhotoGhostTmplVars(params) do
     # TODO: Implementacao futura
         # protected function _getPhotoGhostTmplVars($aContentInfo = [])
     #     {
@@ -251,7 +251,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSingleField
+  Funcao correspondente ao metodo PHP getSingleField
 
   ## Parametros
     - 
@@ -259,7 +259,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsFormEntry do
   ## Retorno
     - any
   """
-  def _getSingleField(params) do
+  def getSingleField(params) do
     # TODO: Implementacao futura
         # protected function _getSingleField()
     #     {
@@ -269,7 +269,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _initCategoryFields
+  Funcao correspondente ao metodo PHP initCategoryFields
 
   ## Parametros
     - $iCategory = 0
@@ -277,7 +277,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsFormEntry do
   ## Retorno
     - any
   """
-  def _initCategoryFields(params) do
+  def initCategoryFields(params) do
     # TODO: Implementacao futura
         # protected function _initCategoryFields($iCategory = 0)
     #     {
@@ -287,7 +287,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isChangeUserForAdmins
+  Funcao correspondente ao metodo PHP isChangeUserForAdmins
 
   ## Parametros
     - $sDisplay
@@ -295,7 +295,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsFormEntry do
   ## Retorno
     - any
   """
-  def _isChangeUserForAdmins(params) do
+  def isChangeUserForAdmins(params) do
     # TODO: Implementacao futura
         # protected function _isChangeUserForAdmins($sDisplay)
     #     {
@@ -305,7 +305,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAuthorId
+  Funcao correspondente ao metodo PHP getAuthorId
 
   ## Parametros
     - 
@@ -313,7 +313,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsFormEntry do
   ## Retorno
     - any
   """
-  def _getAuthorId(params) do
+  def getAuthorId(params) do
     # TODO: Implementacao futura
         # protected function _getAuthorId()
     #     {
@@ -323,7 +323,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSourceType
+  Funcao correspondente ao metodo PHP getSourceType
 
   ## Parametros
     - 
@@ -331,7 +331,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsFormEntry do
   ## Retorno
     - any
   """
-  def _getSourceType(params) do
+  def getSourceType(params) do
     # TODO: Implementacao futura
         # protected function _getSourceType()
     #     {

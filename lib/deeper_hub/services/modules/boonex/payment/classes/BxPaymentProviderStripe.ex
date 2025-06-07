@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aConfig
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct($aConfig)
@@ -169,7 +169,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _createToken
+  Funcao correspondente ao metodo PHP createToken
 
   ## Parametros
     - $aCard
@@ -177,7 +177,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   ## Retorno
     - any
   """
-  def _createToken(params) do
+  def createToken(params) do
     # TODO: Implementacao futura
         # protected function _createToken($aCard)
     #     {
@@ -188,7 +188,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _createCustomer
+  Funcao correspondente ao metodo PHP createCustomer
 
   ## Parametros
     - $sType
@@ -198,7 +198,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   ## Retorno
     - any
   """
-  def _createCustomer(params) do
+  def createCustomer(params) do
     # TODO: Implementacao futura
         # protected function _createCustomer($sType, $sToken, $aClient)
     #     {
@@ -208,7 +208,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _createCharge
+  Funcao correspondente ao metodo PHP createCharge
 
   ## Parametros
     - $sToken
@@ -219,7 +219,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   ## Retorno
     - any
   """
-  def _createCharge(params) do
+  def createCharge(params) do
     # TODO: Implementacao futura
         # protected function _createCharge($sToken, $iPendingId, &$aClient, &$aCartInfo)
     #     {
@@ -230,7 +230,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _createSubscription
+  Funcao correspondente ao metodo PHP createSubscription
 
   ## Parametros
     - $sToken
@@ -241,7 +241,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   ## Retorno
     - any
   """
-  def _createSubscription(params) do
+  def createSubscription(params) do
     # TODO: Implementacao futura
         # protected function _createSubscription($sToken, $iPendingId, &$aClient, &$aCartInfo)
     #     {
@@ -252,7 +252,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _createCard
+  Funcao correspondente ao metodo PHP createCard
 
   ## Parametros
     - $sType
@@ -262,7 +262,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   ## Retorno
     - any
   """
-  def _createCard(params) do
+  def createCard(params) do
     # TODO: Implementacao futura
         # protected function _createCard($sType, $sCustomerId, $sToken)
     #     {
@@ -275,7 +275,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrieveCard
+  Funcao correspondente ao metodo PHP retrieveCard
 
   ## Parametros
     - $sCustomerId
@@ -284,7 +284,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   ## Retorno
     - any
   """
-  def _retrieveCard(params) do
+  def retrieveCard(params) do
     # TODO: Implementacao futura
         # protected function _retrieveCard($sCustomerId, $sCardId = '') {
     #         try {
@@ -294,7 +294,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrieveCoupon
+  Funcao correspondente ao metodo PHP retrieveCoupon
 
   ## Parametros
     - $sId
@@ -302,7 +302,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   ## Retorno
     - any
   """
-  def _retrieveCoupon(params) do
+  def retrieveCoupon(params) do
     # TODO: Implementacao futura
         # protected function _retrieveCoupon($sId) {
     #         try {
@@ -312,7 +312,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getVerificationCodeCharge
+  Funcao correspondente ao metodo PHP getVerificationCodeCharge
 
   ## Parametros
     - $iVendorId
@@ -323,7 +323,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   ## Retorno
     - any
   """
-  def _getVerificationCodeCharge(params) do
+  def getVerificationCodeCharge(params) do
     # TODO: Implementacao futura
         # protected function _getVerificationCodeCharge($iVendorId, $iCustomerId, $fAmount, $sCurrency)
     #     {
@@ -338,7 +338,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkVerificationCodeCharge
+  Funcao correspondente ao metodo PHP checkVerificationCodeCharge
 
   ## Parametros
     - $iVendorId
@@ -348,7 +348,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   ## Retorno
     - any
   """
-  def _checkVerificationCodeCharge(params) do
+  def checkVerificationCodeCharge(params) do
     # TODO: Implementacao futura
         # protected function _checkVerificationCodeCharge($iVendorId, $iCustomerId, $aResult)
     #     {
@@ -358,7 +358,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getVerificationCodeSubscription
+  Funcao correspondente ao metodo PHP getVerificationCodeSubscription
 
   ## Parametros
     - $iVendorId
@@ -369,7 +369,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   ## Retorno
     - any
   """
-  def _getVerificationCodeSubscription(params) do
+  def getVerificationCodeSubscription(params) do
     # TODO: Implementacao futura
         # protected function _getVerificationCodeSubscription($iVendorId, $iCustomerId, $sSubscription, $sCurrency)
     #     {
@@ -384,7 +384,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkVerificationCodeSubscription
+  Funcao correspondente ao metodo PHP checkVerificationCodeSubscription
 
   ## Parametros
     - $iVendorId
@@ -394,7 +394,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripe do
   ## Retorno
     - any
   """
-  def _checkVerificationCodeSubscription(params) do
+  def checkVerificationCodeSubscription(params) do
     # TODO: Implementacao futura
         # protected function _checkVerificationCodeSubscription($iVendorId, $iCustomerId, $aResult)
     #     {

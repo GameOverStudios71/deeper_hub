@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderGeneric do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aConfig
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderGeneric do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aConfig)
     #     {

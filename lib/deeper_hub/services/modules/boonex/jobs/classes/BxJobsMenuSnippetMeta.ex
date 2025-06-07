@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuSnippetMeta do
   # Heranca de BxBaseModGroupsMenuSnippetMeta
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDateStart
+  Funcao correspondente ao metodo PHP getMenuItemDateStart
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemDateStart(params) do
+  def getMenuItemDateStart(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDateStart($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDateEnd
+  Funcao correspondente ao metodo PHP getMenuItemDateEnd
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemDateEnd(params) do
+  def getMenuItemDateEnd(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDateEnd($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemBudget
+  Funcao correspondente ao metodo PHP getMenuItemBudget
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxJobsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemBudget(params) do
+  def getMenuItemBudget(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemBudget($aItem)
     #     {

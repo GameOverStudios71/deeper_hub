@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsTemplate do
   # Heranca de BxBaseModGroupsTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$oConfig, &$oDb)
@@ -27,7 +27,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getUnitClass
+  Funcao correspondente ao metodo PHP getUnitClass
 
   ## Parametros
     - $aData
@@ -36,7 +36,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsTemplate do
   ## Retorno
     - any
   """
-  def _getUnitClass(params) do
+  def getUnitClass(params) do
     # TODO: Implementacao futura
         # protected function _getUnitClass($aData, $sTemplateName = 'unit.html')
     #     {
@@ -46,7 +46,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getUnitSize
+  Funcao correspondente ao metodo PHP getUnitSize
 
   ## Parametros
     - $aData
@@ -55,7 +55,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsTemplate do
   ## Retorno
     - any
   """
-  def _getUnitSize(params) do
+  def getUnitSize(params) do
     # TODO: Implementacao futura
         # protected function _getUnitSize($aData, $sTemplateName = 'unit.html')
     #     {

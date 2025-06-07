@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsFormEntry do
   # Heranca de BxBaseModGroupsFormEntry
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aInfo
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsFormEntry do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aInfo, $oTemplate = false)
     #     {
@@ -84,7 +84,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isSameDayEvent
+  Funcao correspondente ao metodo PHP isSameDayEvent
 
   ## Parametros
     - 
@@ -92,7 +92,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsFormEntry do
   ## Retorno
     - any
   """
-  def _isSameDayEvent(params) do
+  def isSameDayEvent(params) do
     # TODO: Implementacao futura
         # protected function _isSameDayEvent()
     #     {
@@ -102,7 +102,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getStartEnd
+  Funcao correspondente ao metodo PHP getStartEnd
 
   ## Parametros
     - 
@@ -110,7 +110,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsFormEntry do
   ## Retorno
     - any
   """
-  def _getStartEnd(params) do
+  def getStartEnd(params) do
     # TODO: Implementacao futura
         # protected function _getStartEnd()
     #     {

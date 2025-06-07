@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxMassMailerGridCampaigns do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxMassMailerGridCampaigns do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxMassMailerGridCampaigns do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAdded
+  Funcao correspondente ao metodo PHP getCellAdded
 
   ## Parametros
     - $mixedValue
@@ -109,7 +109,7 @@ defmodule DeeperHub.Inc.Classes.BxMassMailerGridCampaigns do
   ## Retorno
     - any
   """
-  def _getCellAdded(params) do
+  def getCellAdded(params) do
     # TODO: Implementacao futura
         # protected function _getCellAdded($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -119,7 +119,7 @@ defmodule DeeperHub.Inc.Classes.BxMassMailerGridCampaigns do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellSegments
+  Funcao correspondente ao metodo PHP getCellSegments
 
   ## Parametros
     - $mixedValue
@@ -130,7 +130,7 @@ defmodule DeeperHub.Inc.Classes.BxMassMailerGridCampaigns do
   ## Retorno
     - any
   """
-  def _getCellSegments(params) do
+  def getCellSegments(params) do
     # TODO: Implementacao futura
         # protected function _getCellSegments($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -140,7 +140,7 @@ defmodule DeeperHub.Inc.Classes.BxMassMailerGridCampaigns do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDateSent
+  Funcao correspondente ao metodo PHP getCellDateSent
 
   ## Parametros
     - $mixedValue
@@ -151,7 +151,7 @@ defmodule DeeperHub.Inc.Classes.BxMassMailerGridCampaigns do
   ## Retorno
     - any
   """
-  def _getCellDateSent(params) do
+  def getCellDateSent(params) do
     # TODO: Implementacao futura
         # protected function _getCellDateSent($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -161,7 +161,7 @@ defmodule DeeperHub.Inc.Classes.BxMassMailerGridCampaigns do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellIsOnePerAccount
+  Funcao correspondente ao metodo PHP getCellIsOnePerAccount
 
   ## Parametros
     - $mixedValue
@@ -172,7 +172,7 @@ defmodule DeeperHub.Inc.Classes.BxMassMailerGridCampaigns do
   ## Retorno
     - any
   """
-  def _getCellIsOnePerAccount(params) do
+  def getCellIsOnePerAccount(params) do
     # TODO: Implementacao futura
         # protected function _getCellIsOnePerAccount($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -182,7 +182,7 @@ defmodule DeeperHub.Inc.Classes.BxMassMailerGridCampaigns do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAuthor
+  Funcao correspondente ao metodo PHP getCellAuthor
 
   ## Parametros
     - $mixedValue
@@ -193,7 +193,7 @@ defmodule DeeperHub.Inc.Classes.BxMassMailerGridCampaigns do
   ## Retorno
     - any
   """
-  def _getCellAuthor(params) do
+  def getCellAuthor(params) do
     # TODO: Implementacao futura
         # protected function _getCellAuthor($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -203,7 +203,7 @@ defmodule DeeperHub.Inc.Classes.BxMassMailerGridCampaigns do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVisibleGrid
+  Funcao correspondente ao metodo PHP isVisibleGrid
 
   ## Parametros
     - $a
@@ -211,7 +211,7 @@ defmodule DeeperHub.Inc.Classes.BxMassMailerGridCampaigns do
   ## Retorno
     - any
   """
-  def _isVisibleGrid(params) do
+  def isVisibleGrid(params) do
     # TODO: Implementacao futura
         # protected function _isVisibleGrid ($a)
     #     {

@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sRootPath = BX_DIRECTORY_PATH_ROOT
@@ -19,7 +19,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($sRootPath = BX_DIRECTORY_PATH_ROOT, $sRootUrl = BX_DOL_URL_ROOT)
     #     {
@@ -30,7 +30,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __clone
+  Funcao correspondente ao metodo PHP clone
 
   ## Parametros
     - 
@@ -38,7 +38,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def __clone(params) do
+  def clone(params) do
     # TODO: Implementacao futura
         # public function __clone()
     #     {
@@ -1988,7 +1988,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _compileJs
+  Funcao correspondente ao metodo PHP compileJs
 
   ## Parametros
     - $sAbsolutePath
@@ -1997,7 +1997,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _compileJs(params) do
+  def compileJs(params) do
     # TODO: Implementacao futura
         # 
     #     function _compileJs($sAbsolutePath, &$aIncluded)
@@ -2009,7 +2009,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _minifyJs
+  Funcao correspondente ao metodo PHP minifyJs
 
   ## Parametros
     - $s
@@ -2017,7 +2017,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _minifyJs(params) do
+  def minifyJs(params) do
     # TODO: Implementacao futura
         # 
     # 	function _minifyJs($s)
@@ -2029,7 +2029,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _wrapInTagJs
+  Funcao correspondente ao metodo PHP wrapInTagJs
 
   ## Parametros
     - $sFile
@@ -2037,7 +2037,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _wrapInTagJs(params) do
+  def wrapInTagJs(params) do
     # TODO: Implementacao futura
         # 
     #     function _wrapInTagJs($sFile)
@@ -2049,7 +2049,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _wrapInTagJsCode
+  Funcao correspondente ao metodo PHP wrapInTagJsCode
 
   ## Parametros
     - $sCode
@@ -2057,7 +2057,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _wrapInTagJsCode(params) do
+  def wrapInTagJsCode(params) do
     # TODO: Implementacao futura
         # 
     #     function _wrapInTagJsCode($sCode)
@@ -2246,7 +2246,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _compileCss
+  Funcao correspondente ao metodo PHP compileCss
 
   ## Parametros
     - $sAbsolutePath
@@ -2255,7 +2255,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _compileCss(params) do
+  def compileCss(params) do
     # TODO: Implementacao futura
         # 
     #     function _compileCss($sAbsolutePath, &$aIncluded)
@@ -2267,7 +2267,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _lessCss
+  Funcao correspondente ao metodo PHP lessCss
 
   ## Parametros
     - $mixed
@@ -2275,7 +2275,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _lessCss(params) do
+  def lessCss(params) do
     # TODO: Implementacao futura
         # 
     #     function _lessCss($mixed)
@@ -2287,7 +2287,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _minifyCss
+  Funcao correspondente ao metodo PHP minifyCss
 
   ## Parametros
     - $s
@@ -2295,7 +2295,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _minifyCss(params) do
+  def minifyCss(params) do
     # TODO: Implementacao futura
         # 
     #     function _minifyCss($s)
@@ -2306,7 +2306,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _wrapInTagCss
+  Funcao correspondente ao metodo PHP wrapInTagCss
 
   ## Parametros
     - $sFile
@@ -2314,7 +2314,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _wrapInTagCss(params) do
+  def wrapInTagCss(params) do
     # TODO: Implementacao futura
         # 
     #     function _wrapInTagCss($sFile)
@@ -2326,7 +2326,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _wrapInTagCssCode
+  Funcao correspondente ao metodo PHP wrapInTagCssCode
 
   ## Parametros
     - $sCode
@@ -2334,7 +2334,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _wrapInTagCssCode(params) do
+  def wrapInTagCssCode(params) do
     # TODO: Implementacao futura
         # 
     #     function _wrapInTagCssCode($sCode)
@@ -2385,7 +2385,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _includeFiles
+  Funcao correspondente ao metodo PHP includeFiles
 
   ## Parametros
     - $sType
@@ -2395,7 +2395,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _includeFiles(params) do
+  def includeFiles(params) do
     # TODO: Implementacao futura
         # 
     #     function _includeFiles($sType, &$aFiles, $bWrap = true)
@@ -2406,7 +2406,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processFiles
+  Funcao correspondente ao metodo PHP processFiles
 
   ## Parametros
     - $sType
@@ -2418,7 +2418,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _processFiles(params) do
+  def processFiles(params) do
     # TODO: Implementacao futura
         # 
     #     function _processFiles($sType, $sAction, $mixedFiles, $bDynamic = false, $bSystem = false)
@@ -2430,7 +2430,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _locateFile
+  Funcao correspondente ao metodo PHP locateFile
 
   ## Parametros
     - $sType
@@ -2439,7 +2439,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _locateFile(params) do
+  def locateFile(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -2453,7 +2453,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _parseContent
+  Funcao correspondente ao metodo PHP parseContent
 
   ## Parametros
     - $sContent
@@ -2463,7 +2463,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _parseContent(params) do
+  def parseContent(params) do
     # TODO: Implementacao futura
         # 
     #     function _parseContent($sContent, $aVariables, $mixedKeyWrapperHtml = null)
@@ -2474,7 +2474,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _compileContent
+  Funcao correspondente ao metodo PHP compileContent
 
   ## Parametros
     - $sContent
@@ -2486,7 +2486,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _compileContent(params) do
+  def compileContent(params) do
     # TODO: Implementacao futura
         # 
     #     function _compileContent($sContent, $aVarName, $iVarDepth, $aVarValues, $mixedKeyWrapperHtml = null)
@@ -2497,7 +2497,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAbsoluteLocation
+  Funcao correspondente ao metodo PHP getAbsoluteLocation
 
   ## Parametros
     - $sType
@@ -2508,7 +2508,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _getAbsoluteLocation(params) do
+  def getAbsoluteLocation(params) do
     # TODO: Implementacao futura
         # 
     #     function _getAbsoluteLocation($sType, $sFolder, $sName, $sCheckIn = BX_DOL_TEMPLATE_CHECK_IN_BOTH)
@@ -2519,7 +2519,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAbsoluteLocationJs
+  Funcao correspondente ao metodo PHP getAbsoluteLocationJs
 
   ## Parametros
     - $sType
@@ -2528,7 +2528,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _getAbsoluteLocationJs(params) do
+  def getAbsoluteLocationJs(params) do
     # TODO: Implementacao futura
         # 
     #     function _getAbsoluteLocationJs($sType, $sName)
@@ -2539,7 +2539,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAbsoluteLocationCss
+  Funcao correspondente ao metodo PHP getAbsoluteLocationCss
 
   ## Parametros
     - $sType
@@ -2548,7 +2548,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _getAbsoluteLocationCss(params) do
+  def getAbsoluteLocationCss(params) do
     # TODO: Implementacao futura
         # 
     #     function _getAbsoluteLocationCss($sType, $sName)
@@ -2559,7 +2559,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getInlineData
+  Funcao correspondente ao metodo PHP getInlineData
 
   ## Parametros
     - $sType
@@ -2569,7 +2569,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _getInlineData(params) do
+  def getInlineData(params) do
     # TODO: Implementacao futura
         # 
     #     function _getInlineData($sType, $sName, $sCheckIn)
@@ -2582,7 +2582,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCacheFileName
+  Funcao correspondente ao metodo PHP getCacheFileName
 
   ## Parametros
     - $sType
@@ -2591,7 +2591,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _getCacheFileName(params) do
+  def getCacheFileName(params) do
     # TODO: Implementacao futura
         # 
     #     function _getCacheFileName($sType, $sAbsolutePath)
@@ -2602,7 +2602,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getKeyWrappers
+  Funcao correspondente ao metodo PHP getKeyWrappers
 
   ## Parametros
     - $mixedKeyWrapperHtml
@@ -2610,7 +2610,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _getKeyWrappers(params) do
+  def getKeyWrappers(params) do
     # TODO: Implementacao futura
         # 
     #     function _getKeyWrappers($mixedKeyWrapperHtml)
@@ -2621,7 +2621,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processJsTranslations
+  Funcao correspondente ao metodo PHP processJsTranslations
 
   ## Parametros
     - 
@@ -2629,7 +2629,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _processJsTranslations(params) do
+  def processJsTranslations(params) do
     # TODO: Implementacao futura
         # 
     #     function _processJsTranslations()
@@ -2640,7 +2640,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processJsOptions
+  Funcao correspondente ao metodo PHP processJsOptions
 
   ## Parametros
     - 
@@ -2648,7 +2648,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _processJsOptions(params) do
+  def processJsOptions(params) do
     # TODO: Implementacao futura
         # 
     #     function _processJsOptions()
@@ -2659,7 +2659,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processJsImages
+  Funcao correspondente ao metodo PHP processJsImages
 
   ## Parametros
     - 
@@ -2667,7 +2667,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _processJsImages(params) do
+  def processJsImages(params) do
     # TODO: Implementacao futura
         # 
     #     function _processJsImages()
@@ -2678,7 +2678,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getLoaderUrl
+  Funcao correspondente ao metodo PHP getLoaderUrl
 
   ## Parametros
     - $sType
@@ -2687,7 +2687,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTemplate do
   ## Retorno
     - any
   """
-  def _getLoaderUrl(params) do
+  def getLoaderUrl(params) do
     # TODO: Implementacao futura
         # 
     #     function _getLoaderUrl($sType, $sName)

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFeature do
   # Heranca de BxDolObject
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFeature do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($sSystem, $iId, $iInit = true, $oTemplate = false)
     #     {
@@ -158,7 +158,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFeature do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIconDoFeature
+  Funcao correspondente ao metodo PHP getIconDoFeature
 
   ## Parametros
     - $bPerformed
@@ -166,7 +166,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFeature do
   ## Retorno
     - any
   """
-  def _getIconDoFeature(params) do
+  def getIconDoFeature(params) do
     # TODO: Implementacao futura
         # protected function _getIconDoFeature($bPerformed)
     #     {
@@ -176,7 +176,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFeature do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTitleDoFeature
+  Funcao correspondente ao metodo PHP getTitleDoFeature
 
   ## Parametros
     - $bPerformed
@@ -184,7 +184,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFeature do
   ## Retorno
     - any
   """
-  def _getTitleDoFeature(params) do
+  def getTitleDoFeature(params) do
     # TODO: Implementacao futura
         # protected function _getTitleDoFeature($bPerformed)
     #     {
@@ -194,7 +194,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFeature do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareAuditParams
+  Funcao correspondente ao metodo PHP prepareAuditParams
 
   ## Parametros
     - 
@@ -202,7 +202,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFeature do
   ## Retorno
     - any
   """
-  def _prepareAuditParams(params) do
+  def prepareAuditParams(params) do
     # TODO: Implementacao futura
         # private function _prepareAuditParams()
     #     {

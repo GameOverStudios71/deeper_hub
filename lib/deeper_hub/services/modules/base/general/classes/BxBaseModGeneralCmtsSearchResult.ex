@@ -90,7 +90,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralCmtsSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPseud
+  Funcao correspondente ao metodo PHP getPseud
 
   ## Parametros
     - 
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralCmtsSearchResult do
   ## Retorno
     - any
   """
-  def _getPseud(params) do
+  def getPseud(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralCmtsSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _joinTableUniqueIds
+  Funcao correspondente ao metodo PHP joinTableUniqueIds
 
   ## Parametros
     - 
@@ -124,7 +124,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralCmtsSearchResult do
   ## Retorno
     - any
   """
-  def _joinTableUniqueIds(params) do
+  def joinTableUniqueIds(params) do
     # TODO: Implementacao futura
         # protected function _joinTableUniqueIds()
     #     {

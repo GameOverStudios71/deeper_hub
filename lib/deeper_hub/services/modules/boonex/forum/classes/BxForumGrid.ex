@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -64,7 +64,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getRowHead
+  Funcao correspondente ao metodo PHP getRowHead
 
   ## Parametros
     - 
@@ -72,7 +72,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getRowHead(params) do
+  def getRowHead(params) do
     # TODO: Implementacao futura
         # protected function _getRowHead ()
     #     {
@@ -82,7 +82,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDefault
+  Funcao correspondente ao metodo PHP getCellDefault
 
   ## Parametros
     - $mixedValue
@@ -93,7 +93,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getCellDefault(params) do
+  def getCellDefault(params) do
     # TODO: Implementacao futura
         # protected function _getCellDefault ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -103,7 +103,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAuthor
+  Funcao correspondente ao metodo PHP getCellAuthor
 
   ## Parametros
     - $mixedValue
@@ -114,7 +114,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getCellAuthor(params) do
+  def getCellAuthor(params) do
     # TODO: Implementacao futura
         # protected function _getCellAuthor($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -124,7 +124,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellCategory
+  Funcao correspondente ao metodo PHP getCellCategory
 
   ## Parametros
     - $mixedValue
@@ -135,7 +135,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getCellCategory(params) do
+  def getCellCategory(params) do
     # TODO: Implementacao futura
         # protected function _getCellCategory($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -145,7 +145,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellRating
+  Funcao correspondente ao metodo PHP getCellRating
 
   ## Parametros
     - $mixedValue
@@ -156,7 +156,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getCellRating(params) do
+  def getCellRating(params) do
     # TODO: Implementacao futura
         # protected function _getCellRating($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -166,7 +166,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellParticipants
+  Funcao correspondente ao metodo PHP getCellParticipants
 
   ## Parametros
     - $mixedValue
@@ -177,7 +177,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getCellParticipants(params) do
+  def getCellParticipants(params) do
     # TODO: Implementacao futura
         # protected function _getCellParticipants($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -187,7 +187,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellText
+  Funcao correspondente ao metodo PHP getCellText
 
   ## Parametros
     - $mixedValue
@@ -198,7 +198,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getCellText(params) do
+  def getCellText(params) do
     # TODO: Implementacao futura
         # protected function _getCellText($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -208,7 +208,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addJsCss
+  Funcao correspondente ao metodo PHP addJsCss
 
   ## Parametros
     - 
@@ -216,7 +216,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _addJsCss(params) do
+  def addJsCss(params) do
     # TODO: Implementacao futura
         # protected function _addJsCss()
     #     {
@@ -226,7 +226,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -238,7 +238,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -248,7 +248,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSqlOrderClause
+  Funcao correspondente ao metodo PHP getDataSqlOrderClause
 
   ## Parametros
     - $sOrderByFilter
@@ -259,7 +259,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getDataSqlOrderClause(params) do
+  def getDataSqlOrderClause(params) do
     # TODO: Implementacao futura
         # protected function _getDataSqlOrderClause($sOrderByFilter, $sOrderField, $sOrderDir, $bFieldsOnly = false)
     #     {
@@ -269,7 +269,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSqlSelectFromGroup
+  Funcao correspondente ao metodo PHP getSqlSelectFromGroup
 
   ## Parametros
     - $aGrp
@@ -277,7 +277,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getSqlSelectFromGroup(params) do
+  def getSqlSelectFromGroup(params) do
     # TODO: Implementacao futura
         # protected function _getSqlSelectFromGroup($aGrp)
     #     {
@@ -288,7 +288,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSqlSelectFromCondition
+  Funcao correspondente ao metodo PHP getSqlSelectFromCondition
 
   ## Parametros
     - $aCnd
@@ -296,7 +296,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getSqlSelectFromCondition(params) do
+  def getSqlSelectFromCondition(params) do
     # TODO: Implementacao futura
         # protected function _getSqlSelectFromCondition($aCnd)
     #     {
@@ -306,7 +306,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSqlJoinFromGroup
+  Funcao correspondente ao metodo PHP getSqlJoinFromGroup
 
   ## Parametros
     - $aGrp
@@ -314,7 +314,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getSqlJoinFromGroup(params) do
+  def getSqlJoinFromGroup(params) do
     # TODO: Implementacao futura
         # protected function _getSqlJoinFromGroup($aGrp)
     #     {
@@ -325,7 +325,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSqlJoinFromCondition
+  Funcao correspondente ao metodo PHP getSqlJoinFromCondition
 
   ## Parametros
     - $aCnd
@@ -333,7 +333,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getSqlJoinFromCondition(params) do
+  def getSqlJoinFromCondition(params) do
     # TODO: Implementacao futura
         # protected function _getSqlJoinFromCondition($aCnd)
     #     {
@@ -343,7 +343,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSqlWhereFromGroup
+  Funcao correspondente ao metodo PHP getSqlWhereFromGroup
 
   ## Parametros
     - $aGrp
@@ -351,7 +351,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getSqlWhereFromGroup(params) do
+  def getSqlWhereFromGroup(params) do
     # TODO: Implementacao futura
         # protected function _getSqlWhereFromGroup($aGrp)
     #     {
@@ -362,7 +362,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSqlWhereFromCondition
+  Funcao correspondente ao metodo PHP getSqlWhereFromCondition
 
   ## Parametros
     - $aCnd
@@ -370,7 +370,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getSqlWhereFromCondition(params) do
+  def getSqlWhereFromCondition(params) do
     # TODO: Implementacao futura
         # protected function _getSqlWhereFromCondition($aCnd)
     #     {
@@ -380,7 +380,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSqlGroupByFromGroup
+  Funcao correspondente ao metodo PHP getSqlGroupByFromGroup
 
   ## Parametros
     - $aGrp
@@ -388,7 +388,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getSqlGroupByFromGroup(params) do
+  def getSqlGroupByFromGroup(params) do
     # TODO: Implementacao futura
         # protected function _getSqlGroupByFromGroup($aGrp)
     #     {
@@ -399,7 +399,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSqlGroupByFromCondition
+  Funcao correspondente ao metodo PHP getSqlGroupByFromCondition
 
   ## Parametros
     - $aCnd
@@ -407,7 +407,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getSqlGroupByFromCondition(params) do
+  def getSqlGroupByFromCondition(params) do
     # TODO: Implementacao futura
         # protected function _getSqlGroupByFromCondition($aCnd)
     #     {
@@ -417,7 +417,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSqlWhereFromConditionAuthorComment
+  Funcao correspondente ao metodo PHP getSqlWhereFromConditionAuthorComment
 
   ## Parametros
     - $aCnd
@@ -425,7 +425,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getSqlWhereFromConditionAuthorComment(params) do
+  def getSqlWhereFromConditionAuthorComment(params) do
     # TODO: Implementacao futura
         # protected function _getSqlWhereFromConditionAuthorComment($aCnd)
     #     {
@@ -435,7 +435,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSqlWhereFromConditionKeywordComment
+  Funcao correspondente ao metodo PHP getSqlWhereFromConditionKeywordComment
 
   ## Parametros
     - $aCnd
@@ -443,7 +443,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getSqlWhereFromConditionKeywordComment(params) do
+  def getSqlWhereFromConditionKeywordComment(params) do
     # TODO: Implementacao futura
         # protected function _getSqlWhereFromConditionKeywordComment($aCnd)
     #     {
@@ -453,7 +453,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -461,7 +461,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls ()
     #     {
@@ -471,7 +471,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSearchInput
+  Funcao correspondente ao metodo PHP getSearchInput
 
   ## Parametros
     - 
@@ -479,7 +479,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getSearchInput(params) do
+  def getSearchInput(params) do
     # TODO: Implementacao futura
         # protected function _getSearchInput()
     #     {
@@ -489,7 +489,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterSelectOne
+  Funcao correspondente ao metodo PHP getFilterSelectOne
 
   ## Parametros
     - $sFilterName
@@ -499,7 +499,7 @@ defmodule DeeperHub.Inc.Classes.BxForumGrid do
   ## Retorno
     - any
   """
-  def _getFilterSelectOne(params) do
+  def getFilterSelectOne(params) do
     # TODO: Implementacao futura
         # protected function _getFilterSelectOne($sFilterName, $sFilterValue, $aFilterValues)
     #     {

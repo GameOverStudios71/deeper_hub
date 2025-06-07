@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsTemplate do
   # Heranca de BxBaseModTextTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$oConfig, &$oDb)
@@ -181,7 +181,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getGetBlockMenu
+  Funcao correspondente ao metodo PHP getGetBlockMenu
 
   ## Parametros
     - $aData
@@ -190,7 +190,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsTemplate do
   ## Retorno
     - any
   """
-  def _getGetBlockMenu(params) do
+  def getGetBlockMenu(params) do
     # TODO: Implementacao futura
         # protected function _getGetBlockMenu($aData, $sSelected = '')
     #     {
@@ -200,7 +200,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getGetBlockContentSubentries
+  Funcao correspondente ao metodo PHP getGetBlockContentSubentries
 
   ## Parametros
     - $aData
@@ -209,7 +209,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsTemplate do
   ## Retorno
     - any
   """
-  def _getGetBlockContentSubentries(params) do
+  def getGetBlockContentSubentries(params) do
     # TODO: Implementacao futura
         # protected function _getGetBlockContentSubentries($aData, $bDynamic = false)
     #     {
@@ -219,7 +219,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getGetBlockContentResults
+  Funcao correspondente ao metodo PHP getGetBlockContentResults
 
   ## Parametros
     - $aData
@@ -228,7 +228,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsTemplate do
   ## Retorno
     - any
   """
-  def _getGetBlockContentResults(params) do
+  def getGetBlockContentResults(params) do
     # TODO: Implementacao futura
         # protected function _getGetBlockContentResults($aData, $bDynamic = false)
     #     {

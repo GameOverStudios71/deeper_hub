@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   # Heranca de BxBaseModTextAlertsResponse
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -43,7 +43,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processProfileApprove
+  Funcao correspondente ao metodo PHP processProfileApprove
 
   ## Parametros
     - $oAlert
@@ -51,7 +51,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   ## Retorno
     - any
   """
-  def _processProfileApprove(params) do
+  def processProfileApprove(params) do
     # TODO: Implementacao futura
         # protected function _processProfileApprove($oAlert)
     #     {
@@ -61,7 +61,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processProfileActivate
+  Funcao correspondente ao metodo PHP processProfileActivate
 
   ## Parametros
     - $oAlert
@@ -69,7 +69,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   ## Retorno
     - any
   """
-  def _processProfileActivate(params) do
+  def processProfileActivate(params) do
     # TODO: Implementacao futura
         # protected function _processProfileActivate($oAlert)
     #     {
@@ -79,7 +79,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processProfileDisapprove
+  Funcao correspondente ao metodo PHP processProfileDisapprove
 
   ## Parametros
     - $oAlert
@@ -87,7 +87,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   ## Retorno
     - any
   """
-  def _processProfileDisapprove(params) do
+  def processProfileDisapprove(params) do
     # TODO: Implementacao futura
         # protected function _processProfileDisapprove($oAlert)
     #     {
@@ -97,7 +97,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processProfileSuspend
+  Funcao correspondente ao metodo PHP processProfileSuspend
 
   ## Parametros
     - $oAlert
@@ -105,7 +105,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   ## Retorno
     - any
   """
-  def _processProfileSuspend(params) do
+  def processProfileSuspend(params) do
     # TODO: Implementacao futura
         # protected function _processProfileSuspend($oAlert)
     #     {
@@ -115,7 +115,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processProfileChangeStatus
+  Funcao correspondente ao metodo PHP processProfileChangeStatus
 
   ## Parametros
     - $oAlert
@@ -123,7 +123,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   ## Retorno
     - any
   """
-  def _processProfileChangeStatus(params) do
+  def processProfileChangeStatus(params) do
     # TODO: Implementacao futura
         # protected function _processProfileChangeStatus($oAlert)
     #     {
@@ -133,7 +133,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processBxTimelineGetView
+  Funcao correspondente ao metodo PHP processBxTimelineGetView
 
   ## Parametros
     - $oAlert
@@ -141,7 +141,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   ## Retorno
     - any
   """
-  def _processBxTimelineGetView(params) do
+  def processBxTimelineGetView(params) do
     # TODO: Implementacao futura
         # protected function _processBxTimelineGetView($oAlert)
     #     {
@@ -152,7 +152,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processBxTimelineGetExternalPost
+  Funcao correspondente ao metodo PHP processBxTimelineGetExternalPost
 
   ## Parametros
     - $oAlert
@@ -160,7 +160,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsAlertsResponse do
   ## Retorno
     - any
   """
-  def _processBxTimelineGetExternalPost(params) do
+  def processBxTimelineGetExternalPost(params) do
     # TODO: Implementacao futura
         # protected function _processBxTimelineGetExternalPost($oAlert)
     #     {

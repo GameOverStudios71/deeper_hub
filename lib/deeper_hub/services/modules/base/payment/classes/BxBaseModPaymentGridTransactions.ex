@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -64,7 +64,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellHeaderAuthorId
+  Funcao correspondente ao metodo PHP getCellHeaderAuthorId
 
   ## Parametros
     - $sKey
@@ -73,7 +73,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   ## Retorno
     - any
   """
-  def _getCellHeaderAuthorId(params) do
+  def getCellHeaderAuthorId(params) do
     # TODO: Implementacao futura
         # protected function _getCellHeaderAuthorId ($sKey, $aField)
     #     {
@@ -84,7 +84,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellClientId
+  Funcao correspondente ao metodo PHP getCellClientId
 
   ## Parametros
     - $mixedValue
@@ -95,7 +95,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   ## Retorno
     - any
   """
-  def _getCellClientId(params) do
+  def getCellClientId(params) do
     # TODO: Implementacao futura
         # protected function _getCellClientId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -105,7 +105,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellSellerId
+  Funcao correspondente ao metodo PHP getCellSellerId
 
   ## Parametros
     - $mixedValue
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   ## Retorno
     - any
   """
-  def _getCellSellerId(params) do
+  def getCellSellerId(params) do
     # TODO: Implementacao futura
         # protected function _getCellSellerId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -126,7 +126,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAuthorId
+  Funcao correspondente ao metodo PHP getCellAuthorId
 
   ## Parametros
     - $mixedValue
@@ -137,7 +137,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   ## Retorno
     - any
   """
-  def _getCellAuthorId(params) do
+  def getCellAuthorId(params) do
     # TODO: Implementacao futura
         # protected function _getCellAuthorId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -148,7 +148,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellItem
+  Funcao correspondente ao metodo PHP getCellItem
 
   ## Parametros
     - $mixedValue
@@ -159,7 +159,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   ## Retorno
     - any
   """
-  def _getCellItem(params) do
+  def getCellItem(params) do
     # TODO: Implementacao futura
         # protected function _getCellItem($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -169,7 +169,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAmount
+  Funcao correspondente ao metodo PHP getCellAmount
 
   ## Parametros
     - $mixedValue
@@ -180,7 +180,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   ## Retorno
     - any
   """
-  def _getCellAmount(params) do
+  def getCellAmount(params) do
     # TODO: Implementacao futura
         # protected function _getCellAmount($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -191,7 +191,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDate
+  Funcao correspondente ao metodo PHP getCellDate
 
   ## Parametros
     - $mixedValue
@@ -202,7 +202,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   ## Retorno
     - any
   """
-  def _getCellDate(params) do
+  def getCellDate(params) do
     # TODO: Implementacao futura
         # protected function _getCellDate($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -212,7 +212,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDefaultDate
+  Funcao correspondente ao metodo PHP getCellDefaultDate
 
   ## Parametros
     - $mixedValue
@@ -223,7 +223,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   ## Retorno
     - any
   """
-  def _getCellDefaultDate(params) do
+  def getCellDefaultDate(params) do
     # TODO: Implementacao futura
         # protected function _getCellDefaultDate($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -234,7 +234,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDefaultDateTime
+  Funcao correspondente ao metodo PHP getCellDefaultDateTime
 
   ## Parametros
     - $mixedValue
@@ -245,7 +245,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   ## Retorno
     - any
   """
-  def _getCellDefaultDateTime(params) do
+  def getCellDefaultDateTime(params) do
     # TODO: Implementacao futura
         # protected function _getCellDefaultDateTime($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -256,7 +256,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSearchInput
+  Funcao correspondente ao metodo PHP getSearchInput
 
   ## Parametros
     - 
@@ -264,7 +264,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridTransactions do
   ## Retorno
     - any
   """
-  def _getSearchInput(params) do
+  def getSearchInput(params) do
     # TODO: Implementacao futura
         # protected function _getSearchInput()
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   # Heranca de BxBaseModGeneralGridAdministration
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -81,7 +81,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _switcherChecked2State
+  Funcao correspondente ao metodo PHP switcherChecked2State
 
   ## Parametros
     - $isChecked
@@ -89,7 +89,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   ## Retorno
     - any
   """
-  def _switcherChecked2State(params) do
+  def switcherChecked2State(params) do
     # TODO: Implementacao futura
         # protected function _switcherChecked2State($isChecked)
     #     {
@@ -99,7 +99,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _enable
+  Funcao correspondente ao metodo PHP enable
 
   ## Parametros
     - $mixedId
@@ -108,7 +108,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   ## Retorno
     - any
   """
-  def _enable(params) do
+  def enable(params) do
     # TODO: Implementacao futura
         # protected function _enable ($mixedId, $isChecked)
     #     {
@@ -118,7 +118,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -130,7 +130,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -140,7 +140,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSqlInner
+  Funcao correspondente ao metodo PHP getDataSqlInner
 
   ## Parametros
     - $sFilter
@@ -152,7 +152,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   ## Retorno
     - any
   """
-  def _getDataSqlInner(params) do
+  def getDataSqlInner(params) do
     # TODO: Implementacao futura
         # protected function _getDataSqlInner($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -162,7 +162,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -170,7 +170,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls()
     #     {
@@ -180,7 +180,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControlsAPI
+  Funcao correspondente ao metodo PHP getFilterControlsAPI
 
   ## Parametros
     - $aFilters = []
@@ -188,7 +188,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   ## Retorno
     - any
   """
-  def _getFilterControlsAPI(params) do
+  def getFilterControlsAPI(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControlsAPI($aFilters = [])
     #     {
@@ -200,7 +200,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellSwitcher
+  Funcao correspondente ao metodo PHP getCellSwitcher
 
   ## Parametros
     - $mixedValue
@@ -211,7 +211,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellSwitcher(params) do
+  def getCellSwitcher(params) do
     # TODO: Implementacao futura
         # protected function _getCellSwitcher ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -222,7 +222,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellFullname
+  Funcao correspondente ao metodo PHP getCellFullname
 
   ## Parametros
     - $mixedValue
@@ -233,7 +233,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellFullname(params) do
+  def getCellFullname(params) do
     # TODO: Implementacao futura
         # protected function _getCellFullname($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -243,7 +243,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellLastOnline
+  Funcao correspondente ao metodo PHP getCellLastOnline
 
   ## Parametros
     - $mixedValue
@@ -254,7 +254,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellLastOnline(params) do
+  def getCellLastOnline(params) do
     # TODO: Implementacao futura
         # protected function _getCellLastOnline($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -265,7 +265,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAddedTs
+  Funcao correspondente ao metodo PHP getCellAddedTs
 
   ## Parametros
     - $mixedValue
@@ -276,7 +276,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellAddedTs(params) do
+  def getCellAddedTs(params) do
     # TODO: Implementacao futura
         # protected function _getCellAddedTs($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -286,7 +286,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAccount
+  Funcao correspondente ao metodo PHP getCellAccount
 
   ## Parametros
     - $mixedValue
@@ -297,7 +297,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellAccount(params) do
+  def getCellAccount(params) do
     # TODO: Implementacao futura
         # protected function _getCellAccount($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -307,7 +307,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getProfileObject
+  Funcao correspondente ao metodo PHP getProfileObject
 
   ## Parametros
     - $iId
@@ -315,7 +315,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   ## Retorno
     - any
   """
-  def _getProfileObject(params) do
+  def getProfileObject(params) do
     # TODO: Implementacao futura
         # protected function _getProfileObject($iId)
     #     {
@@ -325,7 +325,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getProfileId
+  Funcao correspondente ao metodo PHP getProfileId
 
   ## Parametros
     - $iId
@@ -333,7 +333,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   ## Retorno
     - any
   """
-  def _getProfileId(params) do
+  def getProfileId(params) do
     # TODO: Implementacao futura
         # protected function _getProfileId($iId)
     #     {
@@ -343,7 +343,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getId
+  Funcao correspondente ao metodo PHP getId
 
   ## Parametros
     - 
@@ -351,7 +351,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileGridAdministration do
   ## Retorno
     - any
   """
-  def _getId(params) do
+  def getId(params) do
     # TODO: Implementacao futura
         # protected function _getId()
     #     {

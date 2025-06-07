@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolSms do
   # Heranca de BxDolFactoryObject
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -17,7 +17,7 @@ defmodule DeeperHub.Inc.Classes.BxDolSms do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($aObject, $oTemplate = null, $sDbClassName = 'BxDolSmsQuery')
     #     {
@@ -86,7 +86,7 @@ defmodule DeeperHub.Inc.Classes.BxDolSms do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _writeLog
+  Funcao correspondente ao metodo PHP writeLog
 
   ## Parametros
     - $sString
@@ -94,7 +94,7 @@ defmodule DeeperHub.Inc.Classes.BxDolSms do
   ## Retorno
     - any
   """
-  def _writeLog(params) do
+  def writeLog(params) do
     # TODO: Implementacao futura
         # protected function _writeLog($sString)
     #     {

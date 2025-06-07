@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   # Heranca de BxDol
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ()
     #     {
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _action
+  Funcao correspondente ao metodo PHP action
 
   ## Parametros
     - $sCache
@@ -115,7 +115,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   ## Retorno
     - any
   """
-  def _action(params) do
+  def action(params) do
     # TODO: Implementacao futura
         # protected function _action($sCache, $sMode = 'clear')
     #     {
@@ -125,7 +125,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _clearObject
+  Funcao correspondente ao metodo PHP clearObject
 
   ## Parametros
     - $oCache
@@ -134,7 +134,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   ## Retorno
     - any
   """
-  def _clearObject(params) do
+  def clearObject(params) do
     # TODO: Implementacao futura
         # protected function _clearObject($oCache, $sPrefix)
     #     {
@@ -145,7 +145,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _clearFile
+  Funcao correspondente ao metodo PHP clearFile
 
   ## Parametros
     - $sPrefix
@@ -154,7 +154,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   ## Retorno
     - any
   """
-  def _clearFile(params) do
+  def clearFile(params) do
     # TODO: Implementacao futura
         # protected function _clearFile($sPrefix, $sPath)
     #     {
@@ -165,7 +165,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _clearPurifier
+  Funcao correspondente ao metodo PHP clearPurifier
 
   ## Parametros
     - 
@@ -173,7 +173,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   ## Retorno
     - any
   """
-  def _clearPurifier(params) do
+  def clearPurifier(params) do
     # TODO: Implementacao futura
         # protected function _clearPurifier()
     #     {
@@ -183,7 +183,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _clearOpcache
+  Funcao correspondente ao metodo PHP clearOpcache
 
   ## Parametros
     - 
@@ -191,7 +191,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   ## Retorno
     - any
   """
-  def _clearOpcache(params) do
+  def clearOpcache(params) do
     # TODO: Implementacao futura
         # protected function _clearOpcache()
     #     {
@@ -202,7 +202,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _clearCustom
+  Funcao correspondente ao metodo PHP clearCustom
 
   ## Parametros
     - 
@@ -210,7 +210,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   ## Retorno
     - any
   """
-  def _clearCustom(params) do
+  def clearCustom(params) do
     # TODO: Implementacao futura
         # protected function _clearCustom()
     #     {
@@ -220,7 +220,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _clearUnsupported
+  Funcao correspondente ao metodo PHP clearUnsupported
 
   ## Parametros
     - 
@@ -228,7 +228,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   ## Retorno
     - any
   """
-  def _clearUnsupported(params) do
+  def clearUnsupported(params) do
     # TODO: Implementacao futura
         # protected function _clearUnsupported()
     #     {
@@ -238,7 +238,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSizeObject
+  Funcao correspondente ao metodo PHP getSizeObject
 
   ## Parametros
     - $oCache
@@ -247,7 +247,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   ## Retorno
     - any
   """
-  def _getSizeObject(params) do
+  def getSizeObject(params) do
     # TODO: Implementacao futura
         # protected function _getSizeObject($oCache, $sPrefix)
     #     {
@@ -257,7 +257,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSizeFile
+  Funcao correspondente ao metodo PHP getSizeFile
 
   ## Parametros
     - $sPrefix
@@ -266,7 +266,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   ## Retorno
     - any
   """
-  def _getSizeFile(params) do
+  def getSizeFile(params) do
     # TODO: Implementacao futura
         # protected function _getSizeFile($sPrefix, $sPath)
     #     {
@@ -277,7 +277,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSizeOpcache
+  Funcao correspondente ao metodo PHP getSizeOpcache
 
   ## Parametros
     - 
@@ -285,7 +285,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   ## Retorno
     - any
   """
-  def _getSizeOpcache(params) do
+  def getSizeOpcache(params) do
     # TODO: Implementacao futura
         # protected function _getSizeOpcache()
     #     {
@@ -296,7 +296,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSizeUnsupported
+  Funcao correspondente ao metodo PHP getSizeUnsupported
 
   ## Parametros
     - 
@@ -304,7 +304,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheUtilities do
   ## Retorno
     - any
   """
-  def _getSizeUnsupported(params) do
+  def getSizeUnsupported(params) do
     # TODO: Implementacao futura
         # protected function _getSizeUnsupported()
     #     {

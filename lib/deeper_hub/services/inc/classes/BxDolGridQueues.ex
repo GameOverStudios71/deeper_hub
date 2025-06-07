@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridQueues do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataArray
+  Funcao correspondente ao metodo PHP getDataArray
 
   ## Parametros
     - $sFilter
@@ -19,7 +19,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridQueues do
   ## Retorno
     - any
   """
-  def _getDataArray(params) do
+  def getDataArray(params) do
     # TODO: Implementacao futura
         # protected function _getDataArray($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -29,7 +29,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridQueues do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -38,7 +38,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridQueues do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -48,7 +48,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridQueues do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellFailed
+  Funcao correspondente ao metodo PHP getCellFailed
 
   ## Parametros
     - $mixedValue
@@ -59,7 +59,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridQueues do
   ## Retorno
     - any
   """
-  def _getCellFailed(params) do
+  def getCellFailed(params) do
     # TODO: Implementacao futura
         # protected function _getCellFailed ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -69,7 +69,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridQueues do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAll
+  Funcao correspondente ao metodo PHP getCellAll
 
   ## Parametros
     - $mixedValue
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridQueues do
   ## Retorno
     - any
   """
-  def _getCellAll(params) do
+  def getCellAll(params) do
     # TODO: Implementacao futura
         # protected function _getCellAll ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -90,7 +90,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridQueues do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellCount
+  Funcao correspondente ao metodo PHP getCellCount
 
   ## Parametros
     - $sField
@@ -101,7 +101,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridQueues do
   ## Retorno
     - any
   """
-  def _getCellCount(params) do
+  def getCellCount(params) do
     # TODO: Implementacao futura
         # protected function _getCellCount ($sField, $sKey, $aField, $aRow)
     #     {
@@ -130,7 +130,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridQueues do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVisibleGrid
+  Funcao correspondente ao metodo PHP isVisibleGrid
 
   ## Parametros
     - $a
@@ -138,7 +138,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridQueues do
   ## Retorno
     - any
   """
-  def _isVisibleGrid(params) do
+  def isVisibleGrid(params) do
     # TODO: Implementacao futura
         # protected function _isVisibleGrid ($a)
     #     {

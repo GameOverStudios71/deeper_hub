@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFavorite do
   # Heranca de BxDolObject
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFavorite do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($sSystem, $iId, $iInit = true, $oTemplate = false)
     #     {
@@ -309,7 +309,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFavorite do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFavorite
+  Funcao correspondente ao metodo PHP getFavorite
 
   ## Parametros
     - $iObjectId = 0
@@ -318,7 +318,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFavorite do
   ## Retorno
     - any
   """
-  def _getFavorite(params) do
+  def getFavorite(params) do
     # TODO: Implementacao futura
         # protected function _getFavorite($iObjectId = 0, $bForceGet = false)
     #     {
@@ -329,7 +329,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFavorite do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIconDoFavorite
+  Funcao correspondente ao metodo PHP getIconDoFavorite
 
   ## Parametros
     - $bPerformed
@@ -337,7 +337,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFavorite do
   ## Retorno
     - any
   """
-  def _getIconDoFavorite(params) do
+  def getIconDoFavorite(params) do
     # TODO: Implementacao futura
         # protected function _getIconDoFavorite($bPerformed)
     #     {
@@ -347,7 +347,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFavorite do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTitleDoFavorite
+  Funcao correspondente ao metodo PHP getTitleDoFavorite
 
   ## Parametros
     - $bPerformed
@@ -355,7 +355,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFavorite do
   ## Retorno
     - any
   """
-  def _getTitleDoFavorite(params) do
+  def getTitleDoFavorite(params) do
     # TODO: Implementacao futura
         # protected function _getTitleDoFavorite($bPerformed)
     #     {
@@ -365,7 +365,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFavorite do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFormObject
+  Funcao correspondente ao metodo PHP getFormObject
 
   ## Parametros
     - $sDisplayName
@@ -373,7 +373,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFavorite do
   ## Retorno
     - any
   """
-  def _getFormObject(params) do
+  def getFormObject(params) do
     # TODO: Implementacao futura
         # protected function _getFormObject($sDisplayName)
     #     {

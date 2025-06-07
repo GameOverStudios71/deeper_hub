@@ -5,7 +5,7 @@ defmodule DeeperHub.Inc.Classes.SMSRU do
   """
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $ApiKey
@@ -13,7 +13,7 @@ defmodule DeeperHub.Inc.Classes.SMSRU do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -297,7 +297,7 @@ defmodule DeeperHub.Inc.Classes.SMSRU do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP Request
+  Funcao correspondente ao metodo PHP request
 
   ## Parametros
     - $url
@@ -306,7 +306,7 @@ defmodule DeeperHub.Inc.Classes.SMSRU do
   ## Retorno
     - any
   """
-  def Request(params) do
+  def request(params) do
     # TODO: Implementacao futura
         # private function Request($url, $post = FALSE) {
     # 		if ($post) {
@@ -316,7 +316,7 @@ defmodule DeeperHub.Inc.Classes.SMSRU do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP CheckReplyError
+  Funcao correspondente ao metodo PHP checkReplyError
 
   ## Parametros
     - $res
@@ -325,7 +325,7 @@ defmodule DeeperHub.Inc.Classes.SMSRU do
   ## Retorno
     - any
   """
-  def CheckReplyError(params) do
+  def checkReplyError(params) do
     # TODO: Implementacao futura
         # private function CheckReplyError($res, $action) {
     # 

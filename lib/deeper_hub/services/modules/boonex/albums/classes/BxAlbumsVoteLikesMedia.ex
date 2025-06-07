@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsVoteLikesMedia do
   # Heranca de BxTemplVoteLikes
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -17,7 +17,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsVoteLikesMedia do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($sSystem, $iId, $iInit = 1)
     #     {
@@ -27,7 +27,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsVoteLikesMedia do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isAllowedVoteByObject
+  Funcao correspondente ao metodo PHP isAllowedVoteByObject
 
   ## Parametros
     - $aObject
@@ -35,7 +35,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsVoteLikesMedia do
   ## Retorno
     - any
   """
-  def _isAllowedVoteByObject(params) do
+  def isAllowedVoteByObject(params) do
     # TODO: Implementacao futura
         # protected function _isAllowedVoteByObject($aObject)
     #     {

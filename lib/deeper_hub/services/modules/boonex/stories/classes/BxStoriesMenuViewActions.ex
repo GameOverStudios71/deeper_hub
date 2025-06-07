@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxStoriesMenuViewActions do
   # Heranca de BxBaseModTextMenuViewActions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxStoriesMenuViewActions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxStoriesMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemAddMediaToStory
+  Funcao correspondente ao metodo PHP getMenuItemAddMediaToStory
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxStoriesMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemAddMediaToStory(params) do
+  def getMenuItemAddMediaToStory(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemAddMediaToStory($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxStoriesMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditStory
+  Funcao correspondente ao metodo PHP getMenuItemEditStory
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxStoriesMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemEditStory(params) do
+  def getMenuItemEditStory(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditStory($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxStoriesMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteStory
+  Funcao correspondente ao metodo PHP getMenuItemDeleteStory
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxStoriesMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteStory(params) do
+  def getMenuItemDeleteStory(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteStory($aItem)
     #     {

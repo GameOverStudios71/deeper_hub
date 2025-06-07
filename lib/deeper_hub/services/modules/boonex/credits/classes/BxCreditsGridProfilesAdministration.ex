@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridProfilesAdministration do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridProfilesAdministration do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridProfilesAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellId
+  Funcao correspondente ao metodo PHP getCellId
 
   ## Parametros
     - $mixedValue
@@ -55,7 +55,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridProfilesAdministration do
   ## Retorno
     - any
   """
-  def _getCellId(params) do
+  def getCellId(params) do
     # TODO: Implementacao futura
         # protected function _getCellId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -65,7 +65,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridProfilesAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellBalanceCleared
+  Funcao correspondente ao metodo PHP getCellBalanceCleared
 
   ## Parametros
     - $mixedValue
@@ -76,7 +76,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridProfilesAdministration do
   ## Retorno
     - any
   """
-  def _getCellBalanceCleared(params) do
+  def getCellBalanceCleared(params) do
     # TODO: Implementacao futura
         # protected function _getCellBalanceCleared($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -86,7 +86,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridProfilesAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getProfile
+  Funcao correspondente ao metodo PHP getProfile
 
   ## Parametros
     - $mixedValue
@@ -94,7 +94,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridProfilesAdministration do
   ## Retorno
     - any
   """
-  def _getProfile(params) do
+  def getProfile(params) do
     # TODO: Implementacao futura
         # protected function _getProfile($mixedValue) 
     #     {

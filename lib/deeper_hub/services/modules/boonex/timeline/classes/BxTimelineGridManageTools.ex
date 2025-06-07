@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridManageTools do
   # Heranca de BxBaseModGeneralGridAdministration
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridManageTools do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridManageTools do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDescription
+  Funcao correspondente ao metodo PHP getCellDescription
 
   ## Parametros
     - $mixedValue
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridManageTools do
   ## Retorno
     - any
   """
-  def _getCellDescription(params) do
+  def getCellDescription(params) do
     # TODO: Implementacao futura
         # protected function _getCellDescription($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -47,7 +47,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridManageTools do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDate
+  Funcao correspondente ao metodo PHP getCellDate
 
   ## Parametros
     - $mixedValue
@@ -58,7 +58,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridManageTools do
   ## Retorno
     - any
   """
-  def _getCellDate(params) do
+  def getCellDate(params) do
     # TODO: Implementacao futura
         # protected function _getCellDate($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -69,7 +69,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridManageTools do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _switcherChecked2State
+  Funcao correspondente ao metodo PHP switcherChecked2State
 
   ## Parametros
     - $isChecked
@@ -77,7 +77,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridManageTools do
   ## Retorno
     - any
   """
-  def _switcherChecked2State(params) do
+  def switcherChecked2State(params) do
     # TODO: Implementacao futura
         # protected function _switcherChecked2State($isChecked)
     #     {
@@ -87,7 +87,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridManageTools do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _switcherState2Checked
+  Funcao correspondente ao metodo PHP switcherState2Checked
 
   ## Parametros
     - $mixedState
@@ -95,7 +95,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridManageTools do
   ## Retorno
     - any
   """
-  def _switcherState2Checked(params) do
+  def switcherState2Checked(params) do
     # TODO: Implementacao futura
         # protected function _switcherState2Checked($mixedState)
     #     {
@@ -105,7 +105,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridManageTools do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _enable
+  Funcao correspondente ao metodo PHP enable
 
   ## Parametros
     - $mixedId
@@ -114,7 +114,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridManageTools do
   ## Retorno
     - any
   """
-  def _enable(params) do
+  def enable(params) do
     # TODO: Implementacao futura
         # protected function _enable ($mixedId, $isChecked)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   # Heranca de BxBaseModGroupsMenuViewActionsAll
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemJoinOrganizationProfile
+  Funcao correspondente ao metodo PHP getMenuItemJoinOrganizationProfile
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemJoinOrganizationProfile(params) do
+  def getMenuItemJoinOrganizationProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemJoinOrganizationProfile($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditOrganizationCover
+  Funcao correspondente ao metodo PHP getMenuItemEditOrganizationCover
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditOrganizationCover(params) do
+  def getMenuItemEditOrganizationCover(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditOrganizationCover($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditOrganizationProfile
+  Funcao correspondente ao metodo PHP getMenuItemEditOrganizationProfile
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditOrganizationProfile(params) do
+  def getMenuItemEditOrganizationProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditOrganizationProfile($aItem)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditOrganizationPricing
+  Funcao correspondente ao metodo PHP getMenuItemEditOrganizationPricing
 
   ## Parametros
     - $aItem
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditOrganizationPricing(params) do
+  def getMenuItemEditOrganizationPricing(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditOrganizationPricing($aItem)
     #     {
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemInviteToOrganization
+  Funcao correspondente ao metodo PHP getMenuItemInviteToOrganization
 
   ## Parametros
     - $aItem
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemInviteToOrganization(params) do
+  def getMenuItemInviteToOrganization(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemInviteToOrganization($aItem)
     #     {
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteOrganizationProfile
+  Funcao correspondente ao metodo PHP getMenuItemDeleteOrganizationProfile
 
   ## Parametros
     - $aItem
@@ -124,7 +124,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteOrganizationProfile(params) do
+  def getMenuItemDeleteOrganizationProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteOrganizationProfile($aItem)
     #     {
@@ -134,7 +134,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteOrganizationAccount
+  Funcao correspondente ao metodo PHP getMenuItemDeleteOrganizationAccount
 
   ## Parametros
     - $aItem
@@ -142,7 +142,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteOrganizationAccount(params) do
+  def getMenuItemDeleteOrganizationAccount(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteOrganizationAccount($aItem)
     #     {
@@ -152,7 +152,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteOrganizationAccountContent
+  Funcao correspondente ao metodo PHP getMenuItemDeleteOrganizationAccountContent
 
   ## Parametros
     - $aItem
@@ -160,7 +160,7 @@ defmodule DeeperHub.Inc.Classes.BxOrgsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteOrganizationAccountContent(params) do
+  def getMenuItemDeleteOrganizationAccountContent(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteOrganizationAccountContent($aItem)
     #     {

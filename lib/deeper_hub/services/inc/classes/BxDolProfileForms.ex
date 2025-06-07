@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileForms do
   # Heranca de BxDolFactory
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileForms do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct ()
     #     {
@@ -25,7 +25,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileForms do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _redirectAndExit
+  Funcao correspondente ao metodo PHP redirectAndExit
 
   ## Parametros
     - $sUrl
@@ -35,7 +35,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileForms do
   ## Retorno
     - any
   """
-  def _redirectAndExit(params) do
+  def redirectAndExit(params) do
     # TODO: Implementacao futura
         # protected function _redirectAndExit ($sUrl, $isPermalink = true, $aMarkers = false)
     #     {
@@ -46,7 +46,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileForms do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _replaceMarkers
+  Funcao correspondente ao metodo PHP replaceMarkers
 
   ## Parametros
     - $mixed
@@ -55,7 +55,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileForms do
   ## Retorno
     - any
   """
-  def _replaceMarkers(params) do
+  def replaceMarkers(params) do
     # TODO: Implementacao futura
         # protected function _replaceMarkers ($mixed, $aMarkers)
     #     {

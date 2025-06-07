@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsConfig do
   # Heranca de BxBaseModGeneralConfig
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsConfig do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -478,7 +478,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsConfig do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getConversionRate
+  Funcao correspondente ao metodo PHP getConversionRate
 
   ## Parametros
     - $sType
@@ -486,7 +486,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsConfig do
   ## Retorno
     - any
   """
-  def _getConversionRate(params) do
+  def getConversionRate(params) do
     # TODO: Implementacao futura
         # protected function _getConversionRate($sType)
     #     {

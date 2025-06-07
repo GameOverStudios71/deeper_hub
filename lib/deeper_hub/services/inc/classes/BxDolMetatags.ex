@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMetatags do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMetatags do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($aObject)
     #     {
@@ -846,7 +846,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMetatags do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _metaAdd
+  Funcao correspondente ao metodo PHP metaAdd
 
   ## Parametros
     - $iId
@@ -861,7 +861,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMetatags do
   ## Retorno
     - any
   """
-  def _metaAdd(params) do
+  def metaAdd(params) do
     # TODO: Implementacao futura
         # protected function _metaAdd($iId, $s, $sPreg, $sFuncDelete, $sFuncAdd, $sFuncGet, $iMaxItems, $sAlertName) 
     #     {

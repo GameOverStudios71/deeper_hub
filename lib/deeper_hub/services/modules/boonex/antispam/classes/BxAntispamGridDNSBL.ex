@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridDNSBL do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridDNSBL do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridDNSBL do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addJsCss
+  Funcao correspondente ao metodo PHP addJsCss
 
   ## Parametros
     - 
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridDNSBL do
   ## Retorno
     - any
   """
-  def _addJsCss(params) do
+  def addJsCss(params) do
     # TODO: Implementacao futura
         # protected function _addJsCss()
     #     {
@@ -178,7 +178,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridDNSBL do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellChain
+  Funcao correspondente ao metodo PHP getCellChain
 
   ## Parametros
     - $mixedValue
@@ -189,7 +189,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridDNSBL do
   ## Retorno
     - any
   """
-  def _getCellChain(params) do
+  def getCellChain(params) do
     # TODO: Implementacao futura
         # protected function _getCellChain ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -199,7 +199,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridDNSBL do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellZonedomain
+  Funcao correspondente ao metodo PHP getCellZonedomain
 
   ## Parametros
     - $mixedValue
@@ -210,7 +210,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridDNSBL do
   ## Retorno
     - any
   """
-  def _getCellZonedomain(params) do
+  def getCellZonedomain(params) do
     # TODO: Implementacao futura
         # protected function _getCellZonedomain ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -220,7 +220,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridDNSBL do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellComment
+  Funcao correspondente ao metodo PHP getCellComment
 
   ## Parametros
     - $mixedValue
@@ -231,7 +231,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridDNSBL do
   ## Retorno
     - any
   """
-  def _getCellComment(params) do
+  def getCellComment(params) do
     # TODO: Implementacao futura
         # protected function _getCellComment ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -241,7 +241,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridDNSBL do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellActions
+  Funcao correspondente ao metodo PHP getCellActions
 
   ## Parametros
     - $mixedValue
@@ -252,7 +252,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridDNSBL do
   ## Retorno
     - any
   """
-  def _getCellActions(params) do
+  def getCellActions(params) do
     # TODO: Implementacao futura
         # protected function _getCellActions ($mixedValue, $sKey, $aField, $aRow)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridItems do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridItems do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridItems do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -38,7 +38,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridItems do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -49,7 +49,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridItems do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellElement
+  Funcao correspondente ao metodo PHP getCellElement
 
   ## Parametros
     - $mixedValue
@@ -60,7 +60,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridItems do
   ## Retorno
     - any
   """
-  def _getCellElement(params) do
+  def getCellElement(params) do
     # TODO: Implementacao futura
         # protected function _getCellElement($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -176,7 +176,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridItems do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -184,7 +184,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridItems do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls ()
     #     {
@@ -194,7 +194,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridItems do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addJsCss
+  Funcao correspondente ao metodo PHP addJsCss
 
   ## Parametros
     - 
@@ -202,7 +202,7 @@ defmodule DeeperHub.Inc.Classes.BxHelpToursGridItems do
   ## Retorno
     - any
   """
-  def _addJsCss(params) do
+  def addJsCss(params) do
     # TODO: Implementacao futura
         # protected function _addJsCss()
     #     {

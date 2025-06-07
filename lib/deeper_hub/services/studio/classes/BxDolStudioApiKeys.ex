@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioApiKeys do
   # Heranca de BxTemplStudioGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioApiKeys do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioApiKeys do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _performActionAdd
+  Funcao correspondente ao metodo PHP performActionAdd
 
   ## Parametros
     - $aForm
@@ -35,7 +35,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioApiKeys do
   ## Retorno
     - any
   """
-  def _performActionAdd(params) do
+  def performActionAdd(params) do
     # TODO: Implementacao futura
         # public function _performActionAdd($aForm, $aCustomValues = []) 
     #     {

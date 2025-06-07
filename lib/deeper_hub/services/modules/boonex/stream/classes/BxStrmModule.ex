@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmModule do
   # Heranca de BxBaseModTextModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -323,7 +323,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getImagesForTimelinePost
+  Funcao correspondente ao metodo PHP getImagesForTimelinePost
 
   ## Parametros
     - $aEvent
@@ -334,7 +334,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmModule do
   ## Retorno
     - any
   """
-  def _getImagesForTimelinePost(params) do
+  def getImagesForTimelinePost(params) do
     # TODO: Implementacao futura
         # protected function _getImagesForTimelinePost($aEvent, $aContentInfo, $sUrl, $aBrowseParams = [])
     #     {

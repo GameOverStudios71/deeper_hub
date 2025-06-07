@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactionsQuery do
   # Heranca de BxDolVoteQuery
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactionsQuery do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct(&$oModule)
     #     {
@@ -85,7 +85,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactionsQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _updateTriggerTable
+  Funcao correspondente ao metodo PHP updateTriggerTable
 
   ## Parametros
     - $iObjectId
@@ -94,7 +94,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactionsQuery do
   ## Retorno
     - any
   """
-  def _updateTriggerTable(params) do
+  def updateTriggerTable(params) do
     # TODO: Implementacao futura
         # protected function _updateTriggerTable($iObjectId, $aEntry)
     #     {
@@ -104,7 +104,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactionsQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _deleteAuthorEntriesTableMain
+  Funcao correspondente ao metodo PHP deleteAuthorEntriesTableMain
 
   ## Parametros
     - $aTrack
@@ -112,7 +112,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteReactionsQuery do
   ## Retorno
     - any
   """
-  def _deleteAuthorEntriesTableMain(params) do
+  def deleteAuthorEntriesTableMain(params) do
     # TODO: Implementacao futura
         # protected function _deleteAuthorEntriesTableMain($aTrack)
     #     {

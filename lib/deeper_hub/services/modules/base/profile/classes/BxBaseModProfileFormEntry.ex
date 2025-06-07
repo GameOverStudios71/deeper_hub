@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileFormEntry do
   # Heranca de BxBaseModGeneralFormEntry
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aInfo
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileFormEntry do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aInfo, $oTemplate = false)
     #     {   
@@ -172,7 +172,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _associalFileWithContent
+  Funcao correspondente ao metodo PHP associalFileWithContent
 
   ## Parametros
     - $oStorage
@@ -184,7 +184,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileFormEntry do
   ## Retorno
     - any
   """
-  def _associalFileWithContent(params) do
+  def associalFileWithContent(params) do
     # TODO: Implementacao futura
         # protected function _associalFileWithContent($oStorage, $iFileId, $iProfileId, $iContentId, $sPictureField = '')
     #     {
@@ -194,7 +194,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isAdmin
+  Funcao correspondente ao metodo PHP isAdmin
 
   ## Parametros
     - $iContentId = 0
@@ -202,7 +202,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileFormEntry do
   ## Retorno
     - any
   """
-  def _isAdmin(params) do
+  def isAdmin(params) do
     # TODO: Implementacao futura
         # protected function _isAdmin ($iContentId = 0)
     #     {

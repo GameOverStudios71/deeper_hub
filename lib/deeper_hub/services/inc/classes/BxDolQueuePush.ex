@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolQueuePush do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolQueuePush do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct()
     #     {
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxDolQueuePush do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _send
+  Funcao correspondente ao metodo PHP send
 
   ## Parametros
     - $iProfileId
@@ -79,7 +79,7 @@ defmodule DeeperHub.Inc.Classes.BxDolQueuePush do
   ## Retorno
     - any
   """
-  def _send(params) do
+  def send(params) do
     # TODO: Implementacao futura
         # protected function _send($iProfileId, $sMessage)
     #     {

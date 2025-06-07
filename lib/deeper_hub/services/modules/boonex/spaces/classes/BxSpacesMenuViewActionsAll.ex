@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   # Heranca de BxBaseModGroupsMenuViewActionsAll
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemJoinSpaceProfile
+  Funcao correspondente ao metodo PHP getMenuItemJoinSpaceProfile
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemJoinSpaceProfile(params) do
+  def getMenuItemJoinSpaceProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemJoinSpaceProfile($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditSpaceCover
+  Funcao correspondente ao metodo PHP getMenuItemEditSpaceCover
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditSpaceCover(params) do
+  def getMenuItemEditSpaceCover(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditSpaceCover($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditSpaceProfile
+  Funcao correspondente ao metodo PHP getMenuItemEditSpaceProfile
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditSpaceProfile(params) do
+  def getMenuItemEditSpaceProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditSpaceProfile($aItem)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditSpacePricing
+  Funcao correspondente ao metodo PHP getMenuItemEditSpacePricing
 
   ## Parametros
     - $aItem
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditSpacePricing(params) do
+  def getMenuItemEditSpacePricing(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditSpacePricing($aItem)
     #     {
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemInviteToSpace
+  Funcao correspondente ao metodo PHP getMenuItemInviteToSpace
 
   ## Parametros
     - $aItem
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemInviteToSpace(params) do
+  def getMenuItemInviteToSpace(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemInviteToSpace($aItem)
     #     {
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteSpaceProfile
+  Funcao correspondente ao metodo PHP getMenuItemDeleteSpaceProfile
 
   ## Parametros
     - $aItem
@@ -124,7 +124,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteSpaceProfile(params) do
+  def getMenuItemDeleteSpaceProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteSpaceProfile($aItem)
     #     {
@@ -134,7 +134,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemApproveSpaceProfile
+  Funcao correspondente ao metodo PHP getMenuItemApproveSpaceProfile
 
   ## Parametros
     - $aItem
@@ -142,7 +142,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemApproveSpaceProfile(params) do
+  def getMenuItemApproveSpaceProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemApproveSpaceProfile($aItem)
     #     {
@@ -152,7 +152,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemRate
+  Funcao correspondente ao metodo PHP getMenuItemRate
 
   ## Parametros
     - $aItem
@@ -161,7 +161,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemRate(params) do
+  def getMenuItemRate(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemRate($aItem, $aParams = [])
     #     {

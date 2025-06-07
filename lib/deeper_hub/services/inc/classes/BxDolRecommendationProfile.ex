@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRecommendationProfile do
   # Heranca de BxTemplRecommendation
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRecommendationProfile do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($aOptions, $oTemplate)
     #     {

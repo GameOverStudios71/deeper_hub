@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   # Heranca de BxDolModuleDb
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct(&$oConfig)
     #     {
@@ -411,7 +411,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _deletePolls
+  Funcao correspondente ao metodo PHP deletePolls
 
   ## Parametros
     - &$aPolls
@@ -419,7 +419,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   ## Retorno
     - any
   """
-  def _deletePolls(params) do
+  def deletePolls(params) do
     # TODO: Implementacao futura
         # protected function _deletePolls(&$aPolls)
     #     {
@@ -429,7 +429,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _deletePollAnswers
+  Funcao correspondente ao metodo PHP deletePollAnswers
 
   ## Parametros
     - &$aAnswers
@@ -437,7 +437,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   ## Retorno
     - any
   """
-  def _deletePollAnswers(params) do
+  def deletePollAnswers(params) do
     # TODO: Implementacao futura
         # protected function _deletePollAnswers(&$aAnswers)
     #     {
@@ -447,7 +447,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getEntriesBySearchIds
+  Funcao correspondente ao metodo PHP getEntriesBySearchIds
 
   ## Parametros
     - $aParams
@@ -461,7 +461,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   ## Retorno
     - any
   """
-  def _getEntriesBySearchIds(params) do
+  def getEntriesBySearchIds(params) do
     # TODO: Implementacao futura
         # protected function _getEntriesBySearchIds($aParams, &$aMethod, &$sSelectClause, &$sJoinClause, &$sWhereClause, &$sOrderClause, &$sLimitClause)
     #     {
@@ -471,7 +471,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addCustomConditions
+  Funcao correspondente ao metodo PHP addCustomConditions
 
   ## Parametros
     - $aParams
@@ -485,7 +485,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   ## Retorno
     - any
   """
-  def _addCustomConditions(params) do
+  def addCustomConditions(params) do
     # TODO: Implementacao futura
         # protected function _addCustomConditions($aParams, &$aMethod, &$sSelectClause, &$sJoinClause, &$sWhereClause, &$sOrderClause, &$sLimitClause)
     #     {
@@ -495,7 +495,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addConditionsForAuthorStatus
+  Funcao correspondente ao metodo PHP addConditionsForAuthorStatus
 
   ## Parametros
     - $aParams
@@ -509,7 +509,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   ## Retorno
     - any
   """
-  def _addConditionsForAuthorStatus(params) do
+  def addConditionsForAuthorStatus(params) do
     # TODO: Implementacao futura
         # protected function _addConditionsForAuthorStatus($aParams, &$aMethod, &$sSelectClause, &$sJoinClause, &$sWhereClause, &$sOrderClause, &$sLimitClause)
     #     {
@@ -519,7 +519,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addConditionsForCf
+  Funcao correspondente ao metodo PHP addConditionsForCf
 
   ## Parametros
     - $aParams
@@ -533,7 +533,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   ## Retorno
     - any
   """
-  def _addConditionsForCf(params) do
+  def addConditionsForCf(params) do
     # TODO: Implementacao futura
         # protected function _addConditionsForCf($aParams, &$aMethod, &$sSelectClause, &$sJoinClause, &$sWhereClause, &$sOrderClause, &$sLimitClause)
     #     {
@@ -543,7 +543,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getEntriesBySearchIdsOrder
+  Funcao correspondente ao metodo PHP getEntriesBySearchIdsOrder
 
   ## Parametros
     - $aParams
@@ -552,7 +552,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   ## Retorno
     - any
   """
-  def _getEntriesBySearchIdsOrder(params) do
+  def getEntriesBySearchIdsOrder(params) do
     # TODO: Implementacao futura
         # protected function _getEntriesBySearchIdsOrder($aParams, &$sOrderClause)
     #     {
@@ -562,7 +562,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getEbsiLike
+  Funcao correspondente ao metodo PHP getEbsiLike
 
   ## Parametros
     - $sValue
@@ -570,7 +570,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralDb do
   ## Retorno
     - any
   """
-  def _getEbsiLike(params) do
+  def getEbsiLike(params) do
     # TODO: Implementacao futura
         # protected function _getEbsiLike($sValue)
     #     {

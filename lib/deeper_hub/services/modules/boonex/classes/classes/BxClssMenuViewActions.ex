@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxClssMenuViewActions do
   # Heranca de BxBaseModTextMenuViewActions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxClssMenuViewActions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxClssMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditClass
+  Funcao correspondente ao metodo PHP getMenuItemEditClass
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxClssMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemEditClass(params) do
+  def getMenuItemEditClass(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditClass($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxClssMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteClass
+  Funcao correspondente ao metodo PHP getMenuItemDeleteClass
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxClssMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteClass(params) do
+  def getMenuItemDeleteClass(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteClass($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxClssMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemCompleteClass
+  Funcao correspondente ao metodo PHP getMenuItemCompleteClass
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxClssMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemCompleteClass(params) do
+  def getMenuItemCompleteClass(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemCompleteClass($aItem)
     #     {

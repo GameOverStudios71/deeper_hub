@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenuQuery do
   # Heranca de BxDolDb
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenuQuery do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject)
     #     {
@@ -137,7 +137,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenuQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemsHierarchy
+  Funcao correspondente ao metodo PHP getMenuItemsHierarchy
 
   ## Parametros
     - $sSet
@@ -148,7 +148,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenuQuery do
   ## Retorno
     - any
   """
-  def _getMenuItemsHierarchy(params) do
+  def getMenuItemsHierarchy(params) do
     # TODO: Implementacao futura
         # public function _getMenuItemsHierarchy($sSet, $iParentId, $aWithSubitems, &$aResult)
     #     {

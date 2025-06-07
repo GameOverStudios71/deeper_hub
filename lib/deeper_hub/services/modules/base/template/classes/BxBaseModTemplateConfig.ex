@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateConfig do
   # Heranca de BxBaseModGeneralConfig
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateConfig do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aModule)
     #     {
@@ -207,7 +207,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateConfig do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _calculateValuesHeight
+  Funcao correspondente ao metodo PHP calculateValuesHeight
 
   ## Parametros
     - 
@@ -215,7 +215,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateConfig do
   ## Retorno
     - any
   """
-  def _calculateValuesHeight(params) do
+  def calculateValuesHeight(params) do
     # TODO: Implementacao futura
         # protected function _calculateValuesHeight()
     #     {
@@ -225,7 +225,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateConfig do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _calculateValuesAspectRatio
+  Funcao correspondente ao metodo PHP calculateValuesAspectRatio
 
   ## Parametros
     - $sType
@@ -235,7 +235,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateConfig do
   ## Retorno
     - any
   """
-  def _calculateValuesAspectRatio(params) do
+  def calculateValuesAspectRatio(params) do
     # TODO: Implementacao futura
         # protected function _calculateValuesAspectRatio($sType, $sUrl, $aInfo)
     #     {
@@ -245,7 +245,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateConfig do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _str2px
+  Funcao correspondente ao metodo PHP str2px
 
   ## Parametros
     - $sValue
@@ -253,7 +253,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateConfig do
   ## Retorno
     - any
   """
-  def _str2px(params) do
+  def str2px(params) do
     # TODO: Implementacao futura
         # protected function _str2px($sValue)
     #     {

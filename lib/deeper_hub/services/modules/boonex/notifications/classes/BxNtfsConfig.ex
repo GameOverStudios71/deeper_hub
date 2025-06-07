@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsConfig do
   # Heranca de BxBaseModNotificationsConfig
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsConfig do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aModule)
     #     {
@@ -369,7 +369,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsConfig do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getProfileBasedModulesData
+  Funcao correspondente ao metodo PHP getProfileBasedModulesData
 
   ## Parametros
     - 
@@ -377,7 +377,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsConfig do
   ## Retorno
     - any
   """
-  def _getProfileBasedModulesData(params) do
+  def getProfileBasedModulesData(params) do
     # TODO: Implementacao futura
         # protected function _getProfileBasedModulesData() 
     #     {

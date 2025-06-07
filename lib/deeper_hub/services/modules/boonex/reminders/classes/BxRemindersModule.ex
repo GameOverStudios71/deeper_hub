@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersModule do
   # Heranca de BxBaseModGeneralModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$aModule)
@@ -139,7 +139,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceCheckAllowedViewForProfile
+  Funcao correspondente ao metodo PHP serviceCheckAllowedViewForProfile
 
   ## Parametros
     - $aDataEntry
@@ -149,7 +149,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersModule do
   ## Retorno
     - any
   """
-  def _serviceCheckAllowedViewForProfile(params) do
+  def serviceCheckAllowedViewForProfile(params) do
     # TODO: Implementacao futura
         # protected function _serviceCheckAllowedViewForProfile ($aDataEntry, $isPerformAction, $iProfileId)
     #     {

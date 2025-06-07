@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentTemplate do
   # Heranca de BxBaseModPaymentTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -442,7 +442,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _displayBlockHistory
+  Funcao correspondente ao metodo PHP displayBlockHistory
 
   ## Parametros
     - $sObject
@@ -452,7 +452,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentTemplate do
   ## Retorno
     - any
   """
-  def _displayBlockHistory(params) do
+  def displayBlockHistory(params) do
     # TODO: Implementacao futura
         # protected function _displayBlockHistory($sObject, $iClientId, $iSellerId = 0)
     #     {
@@ -462,7 +462,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _displaySubscriptionData
+  Funcao correspondente ao metodo PHP displaySubscriptionData
 
   ## Parametros
     - $sType
@@ -471,7 +471,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentTemplate do
   ## Retorno
     - any
   """
-  def _displaySubscriptionData(params) do
+  def displaySubscriptionData(params) do
     # TODO: Implementacao futura
         # protected function _displaySubscriptionData($sType, $iId)
     #     {

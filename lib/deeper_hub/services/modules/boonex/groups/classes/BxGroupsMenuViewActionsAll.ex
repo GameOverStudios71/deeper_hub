@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   # Heranca de BxBaseModGroupsMenuViewActionsAll
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemJoinGroupProfile
+  Funcao correspondente ao metodo PHP getMenuItemJoinGroupProfile
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemJoinGroupProfile(params) do
+  def getMenuItemJoinGroupProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemJoinGroupProfile($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditGroupCover
+  Funcao correspondente ao metodo PHP getMenuItemEditGroupCover
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditGroupCover(params) do
+  def getMenuItemEditGroupCover(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditGroupCover($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditGroupProfile
+  Funcao correspondente ao metodo PHP getMenuItemEditGroupProfile
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditGroupProfile(params) do
+  def getMenuItemEditGroupProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditGroupProfile($aItem)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditGroupPricing
+  Funcao correspondente ao metodo PHP getMenuItemEditGroupPricing
 
   ## Parametros
     - $aItem
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditGroupPricing(params) do
+  def getMenuItemEditGroupPricing(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditGroupPricing($aItem)
     #     {
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemInviteToGroup
+  Funcao correspondente ao metodo PHP getMenuItemInviteToGroup
 
   ## Parametros
     - $aItem
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemInviteToGroup(params) do
+  def getMenuItemInviteToGroup(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemInviteToGroup($aItem)
     #     {
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteGroupProfile
+  Funcao correspondente ao metodo PHP getMenuItemDeleteGroupProfile
 
   ## Parametros
     - $aItem
@@ -124,7 +124,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteGroupProfile(params) do
+  def getMenuItemDeleteGroupProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteGroupProfile($aItem)
     #     {
@@ -134,7 +134,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemApproveGroupProfile
+  Funcao correspondente ao metodo PHP getMenuItemApproveGroupProfile
 
   ## Parametros
     - $aItem
@@ -142,7 +142,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemApproveGroupProfile(params) do
+  def getMenuItemApproveGroupProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemApproveGroupProfile($aItem)
     #     {

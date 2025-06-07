@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationTemplate do
   # Heranca de BxBaseModNotificationsTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct(&$oConfig, &$oDb)
     #     {

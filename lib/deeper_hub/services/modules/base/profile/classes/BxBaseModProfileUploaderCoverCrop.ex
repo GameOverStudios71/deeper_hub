@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileUploaderCoverCrop do
   # Heranca de BxTemplUploaderHTML5
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileUploaderCoverCrop do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aObject, $sStorageObject, $sUniqId, $oTemplate)
     #     {

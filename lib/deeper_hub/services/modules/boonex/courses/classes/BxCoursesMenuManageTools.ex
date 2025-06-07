@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuManageTools do
   # Heranca de BxBaseModGroupsMenuManageTools
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuManageTools do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {

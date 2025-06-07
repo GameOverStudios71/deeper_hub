@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   # Heranca de BxBaseModPaymentGridTransactions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellProvider
+  Funcao correspondente ao metodo PHP getCellProvider
 
   ## Parametros
     - $mixedValue
@@ -55,7 +55,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   ## Retorno
     - any
   """
-  def _getCellProvider(params) do
+  def getCellProvider(params) do
     # TODO: Implementacao futura
         # protected function _getCellProvider($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -65,7 +65,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellSubscriptionId
+  Funcao correspondente ao metodo PHP getCellSubscriptionId
 
   ## Parametros
     - $mixedValue
@@ -76,7 +76,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   ## Retorno
     - any
   """
-  def _getCellSubscriptionId(params) do
+  def getCellSubscriptionId(params) do
     # TODO: Implementacao futura
         # protected function _getCellSubscriptionId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -86,7 +86,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDateAdd
+  Funcao correspondente ao metodo PHP getCellDateAdd
 
   ## Parametros
     - $mixedValue
@@ -97,7 +97,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   ## Retorno
     - any
   """
-  def _getCellDateAdd(params) do
+  def getCellDateAdd(params) do
     # TODO: Implementacao futura
         # protected function _getCellDateAdd($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -107,7 +107,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDateNext
+  Funcao correspondente ao metodo PHP getCellDateNext
 
   ## Parametros
     - $mixedValue
@@ -118,7 +118,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   ## Retorno
     - any
   """
-  def _getCellDateNext(params) do
+  def getCellDateNext(params) do
     # TODO: Implementacao futura
         # protected function _getCellDateNext($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -129,7 +129,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellStatus
+  Funcao correspondente ao metodo PHP getCellStatus
 
   ## Parametros
     - $mixedValue
@@ -140,7 +140,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   ## Retorno
     - any
   """
-  def _getCellStatus(params) do
+  def getCellStatus(params) do
     # TODO: Implementacao futura
         # protected function _getCellStatus($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -150,7 +150,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addJsCss
+  Funcao correspondente ao metodo PHP addJsCss
 
   ## Parametros
     - 
@@ -158,7 +158,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   ## Retorno
     - any
   """
-  def _addJsCss(params) do
+  def addJsCss(params) do
     # TODO: Implementacao futura
         # protected function _addJsCss()
     #     {
@@ -168,7 +168,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _delete
+  Funcao correspondente ao metodo PHP delete
 
   ## Parametros
     - $mixedId
@@ -176,7 +176,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridSbsAdministration do
   ## Retorno
     - any
   """
-  def _delete(params) do
+  def delete(params) do
     # TODO: Implementacao futura
         # protected function _delete ($mixedId)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentFormDetails do
   # Heranca de BxTemplFormView
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aInfo
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentFormDetails do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 

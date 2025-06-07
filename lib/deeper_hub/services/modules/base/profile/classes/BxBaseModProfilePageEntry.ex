@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfilePageEntry do
   # Heranca de BxBaseModGeneralPageEntry
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfilePageEntry do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -46,7 +46,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfilePageEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVisiblePage
+  Funcao correspondente ao metodo PHP isVisiblePage
 
   ## Parametros
     - $a
@@ -54,7 +54,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfilePageEntry do
   ## Retorno
     - any
   """
-  def _isVisiblePage(params) do
+  def isVisiblePage(params) do
     # TODO: Implementacao futura
         # protected function _isVisiblePage ($a)
     #     {

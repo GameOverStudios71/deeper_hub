@@ -5,6 +5,18 @@ import re
 php_dir = r"C:\\Users\\Admin\\deeper_hub\\una\\"
 elixir_dir = r"C:\\Users\\Admin\\deeper_hub\\lib\\deeper_hub\\services\\"
 
+def to_snake_case(name):
+    name = name.lstrip('_')
+    result = ''
+    for i, char in enumerate(name):
+        if i == 0:
+            result += char.lower()
+        elif i > 0 and char.isupper():
+            result += char
+        else:
+            result += char.lower()
+    return result
+
 # Função para verificar se o diretório deve ser ignorado
 def deve_ignorar_diretorio(diretorio):
     return bool(re.search(r'periodic|scripts|samples|russian|mailchimp|english|developer|install|upgrade|xero|api|artificer|azure|cas_|charts|chat|datafox|decorous|dolphin|drupal|editor|elasticsearch|facebook|fontawesome|froala|google|intercom|linkedin|lucid|mailchip|nexus|oauth2|ocean|okta|opencv|plyr|profiler|protean|se_migration|shopify|smtpmailer|snipcart|stripe_connect|twitter|una_connect|xero|update', diretorio, re.IGNORECASE))
@@ -58,7 +70,7 @@ def parse_php_file(file_path, elixir_base_dir):
             method_matches = re.finditer(r'(?:public|protected|private)?\s*(static)?\s*function\s+(\w+)\s*\(([^)]*)\)\s*(?::\s*(\w+))?\s*(?:{|$|;)', class_content)
             for method_match in method_matches:
                 is_static = bool(method_match.group(1))
-                method_name = method_match.group(2)
+                method_name = to_snake_case(method_match.group(2))
                 params = method_match.group(3).strip()
                 return_type = method_match.group(4) if method_match.group(4) else None
                 method_start = method_match.start()

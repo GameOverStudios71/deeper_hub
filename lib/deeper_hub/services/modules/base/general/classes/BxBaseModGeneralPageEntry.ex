@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralPageEntry do
   # Heranca de BxTemplPage
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralPageEntry do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralPageEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isAvailablePage
+  Funcao correspondente ao metodo PHP isAvailablePage
 
   ## Parametros
     - $a
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralPageEntry do
   ## Retorno
     - any
   """
-  def _isAvailablePage(params) do
+  def isAvailablePage(params) do
     # TODO: Implementacao futura
         # protected function _isAvailablePage ($a)
     #     {
@@ -81,7 +81,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralPageEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVisiblePage
+  Funcao correspondente ao metodo PHP isVisiblePage
 
   ## Parametros
     - $a
@@ -89,7 +89,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralPageEntry do
   ## Retorno
     - any
   """
-  def _isVisiblePage(params) do
+  def isVisiblePage(params) do
     # TODO: Implementacao futura
         # protected function _isVisiblePage ($a)
     #     {
@@ -99,7 +99,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralPageEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPageAccessDeniedMsg
+  Funcao correspondente ao metodo PHP getPageAccessDeniedMsg
 
   ## Parametros
     - $mixedMsg = false
@@ -107,7 +107,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralPageEntry do
   ## Retorno
     - any
   """
-  def _getPageAccessDeniedMsg(params) do
+  def getPageAccessDeniedMsg(params) do
     # TODO: Implementacao futura
         # protected function _getPageAccessDeniedMsg ($mixedMsg = false)
     #     {
@@ -117,7 +117,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralPageEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPageMetaDesc
+  Funcao correspondente ao metodo PHP getPageMetaDesc
 
   ## Parametros
     - 
@@ -125,7 +125,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralPageEntry do
   ## Retorno
     - any
   """
-  def _getPageMetaDesc(params) do
+  def getPageMetaDesc(params) do
     # TODO: Implementacao futura
         # protected function _getPageMetaDesc()
     #     {
@@ -135,7 +135,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralPageEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getThumbForMetaObject
+  Funcao correspondente ao metodo PHP getThumbForMetaObject
 
   ## Parametros
     - 
@@ -143,7 +143,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralPageEntry do
   ## Retorno
     - any
   """
-  def _getThumbForMetaObject(params) do
+  def getThumbForMetaObject(params) do
     # TODO: Implementacao futura
         # protected function _getThumbForMetaObject ()
     #     {
@@ -153,7 +153,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralPageEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPageCacheParams
+  Funcao correspondente ao metodo PHP getPageCacheParams
 
   ## Parametros
     - 
@@ -161,7 +161,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralPageEntry do
   ## Retorno
     - any
   """
-  def _getPageCacheParams(params) do
+  def getPageCacheParams(params) do
     # TODO: Implementacao futura
         # protected function _getPageCacheParams ()
     #     {

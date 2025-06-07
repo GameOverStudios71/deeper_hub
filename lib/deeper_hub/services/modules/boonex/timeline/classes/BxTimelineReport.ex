@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineReport do
   # Heranca de BxTemplReport
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -17,7 +17,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineReport do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct($sSystem, $iId, $iInit = 1)

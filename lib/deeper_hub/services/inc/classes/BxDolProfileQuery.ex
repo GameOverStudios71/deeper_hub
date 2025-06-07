@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileQuery do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileQuery do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct()
     #     {
@@ -29,7 +29,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __clone
+  Funcao correspondente ao metodo PHP clone
 
   ## Parametros
     - 
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileQuery do
   ## Retorno
     - any
   """
-  def __clone(params) do
+  def clone(params) do
     # TODO: Implementacao futura
         # public function __clone()
     #     {
@@ -303,7 +303,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataByField
+  Funcao correspondente ao metodo PHP getDataByField
 
   ## Parametros
     - $sField
@@ -312,7 +312,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileQuery do
   ## Retorno
     - any
   """
-  def _getDataByField(params) do
+  def getDataByField(params) do
     # TODO: Implementacao futura
         # protected function _getDataByField ($sField, $sValue)
     #     {
@@ -487,7 +487,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFieldByField
+  Funcao correspondente ao metodo PHP getFieldByField
 
   ## Parametros
     - $sFieldRequested
@@ -497,7 +497,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileQuery do
   ## Retorno
     - any
   """
-  def _getFieldByField(params) do
+  def getFieldByField(params) do
     # TODO: Implementacao futura
         # protected function _getFieldByField ($sFieldRequested, $sFieldSearch, $sValue)
     #     {
@@ -507,7 +507,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _updateField
+  Funcao correspondente ao metodo PHP updateField
 
   ## Parametros
     - $iId
@@ -517,7 +517,7 @@ defmodule DeeperHub.Inc.Classes.BxDolProfileQuery do
   ## Retorno
     - any
   """
-  def _updateField(params) do
+  def updateField(params) do
     # TODO: Implementacao futura
         # protected function _updateField ($iId, $sFieldForUpdate, $sValue)
     #     {

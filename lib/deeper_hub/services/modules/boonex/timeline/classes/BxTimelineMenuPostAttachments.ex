@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuPostAttachments do
   # Heranca de BxTemplMenu
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuPostAttachments do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -63,7 +63,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuPostAttachments do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItem
+  Funcao correspondente ao metodo PHP getMenuItem
 
   ## Parametros
     - $a
@@ -71,7 +71,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineMenuPostAttachments do
   ## Retorno
     - any
   """
-  def _getMenuItem(params) do
+  def getMenuItem(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItem($a)
     #     {

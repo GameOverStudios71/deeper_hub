@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -138,7 +138,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _enable
+  Funcao correspondente ao metodo PHP enable
 
   ## Parametros
     - $mixedId
@@ -147,7 +147,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   ## Retorno
     - any
   """
-  def _enable(params) do
+  def enable(params) do
     # TODO: Implementacao futura
         # protected function _enable ($mixedId, $isChecked)
     #     {
@@ -158,7 +158,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isCheckboxDisabled
+  Funcao correspondente ao metodo PHP isCheckboxDisabled
 
   ## Parametros
     - $aRow
@@ -166,7 +166,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   ## Retorno
     - any
   """
-  def _isCheckboxDisabled(params) do
+  def isCheckboxDisabled(params) do
     # TODO: Implementacao futura
         # protected function _isCheckboxDisabled($aRow)
     #     {
@@ -176,7 +176,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -184,7 +184,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls()
     #     {
@@ -195,7 +195,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellValue
+  Funcao correspondente ao metodo PHP getCellValue
 
   ## Parametros
     - $mixedValue
@@ -206,7 +206,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   ## Retorno
     - any
   """
-  def _getCellValue(params) do
+  def getCellValue(params) do
     # TODO: Implementacao futura
         # protected function _getCellValue($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -220,7 +220,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellUnit
+  Funcao correspondente ao metodo PHP getCellUnit
 
   ## Parametros
     - $mixedValue
@@ -231,7 +231,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   ## Retorno
     - any
   """
-  def _getCellUnit(params) do
+  def getCellUnit(params) do
     # TODO: Implementacao futura
         # protected function _getCellUnit($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -241,7 +241,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellType
+  Funcao correspondente ao metodo PHP getCellType
 
   ## Parametros
     - $mixedValue
@@ -252,7 +252,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   ## Retorno
     - any
   """
-  def _getCellType(params) do
+  def getCellType(params) do
     # TODO: Implementacao futura
         # protected function _getCellType($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -262,7 +262,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellTitle
+  Funcao correspondente ao metodo PHP getCellTitle
 
   ## Parametros
     - $mixedValue
@@ -273,7 +273,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   ## Retorno
     - any
   """
-  def _getCellTitle(params) do
+  def getCellTitle(params) do
     # TODO: Implementacao futura
         # protected function _getCellTitle($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -284,7 +284,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getData
+  Funcao correspondente ao metodo PHP getData
 
   ## Parametros
     - $sFilter
@@ -296,7 +296,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   ## Retorno
     - any
   """
-  def _getData(params) do
+  def getData(params) do
     # TODO: Implementacao futura
         # protected function _getData ($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -307,7 +307,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -319,7 +319,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -329,7 +329,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _updateSettingTitle
+  Funcao correspondente ao metodo PHP updateSettingTitle
 
   ## Parametros
     - $sTitle
@@ -338,7 +338,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   ## Retorno
     - any
   """
-  def _updateSettingTitle(params) do
+  def updateSettingTitle(params) do
     # TODO: Implementacao futura
         # protected function _updateSettingTitle($sTitle, &$aRow)
     #     {
@@ -348,7 +348,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isSettingsGroupValid
+  Funcao correspondente ao metodo PHP isSettingsGroupValid
 
   ## Parametros
     - &$aRow
@@ -356,7 +356,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsGridSettingsAdministration do
   ## Retorno
     - any
   """
-  def _isSettingsGroupValid(params) do
+  def isSettingsGroupValid(params) do
     # TODO: Implementacao futura
         # protected function _isSettingsGroupValid(&$aRow)
     #     {

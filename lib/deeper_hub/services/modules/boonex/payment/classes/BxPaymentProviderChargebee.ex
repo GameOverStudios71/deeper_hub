@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aConfig
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -348,7 +348,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSite
+  Funcao correspondente ao metodo PHP getSite
 
   ## Parametros
     - 
@@ -356,7 +356,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   ## Retorno
     - any
   """
-  def _getSite(params) do
+  def getSite(params) do
     # TODO: Implementacao futura
         # protected function _getSite()
     #     {
@@ -366,7 +366,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getApiKey
+  Funcao correspondente ao metodo PHP getApiKey
 
   ## Parametros
     - 
@@ -374,7 +374,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   ## Retorno
     - any
   """
-  def _getApiKey(params) do
+  def getApiKey(params) do
     # TODO: Implementacao futura
         # protected function _getApiKey()
     #     {
@@ -384,7 +384,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processEvent
+  Funcao correspondente ao metodo PHP processEvent
 
   ## Parametros
     - 
@@ -392,7 +392,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   ## Retorno
     - any
   """
-  def _processEvent(params) do
+  def processEvent(params) do
     # TODO: Implementacao futura
         # protected function _processEvent()
     #     {
@@ -402,7 +402,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processEventPaymentSucceeded
+  Funcao correspondente ao metodo PHP processEventPaymentSucceeded
 
   ## Parametros
     - &$aEvent
@@ -410,7 +410,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   ## Retorno
     - any
   """
-  def _processEventPaymentSucceeded(params) do
+  def processEventPaymentSucceeded(params) do
     # TODO: Implementacao futura
         # protected function _processEventPaymentSucceeded(&$aEvent)
     #     {
@@ -420,7 +420,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processEventPaymentRefunded
+  Funcao correspondente ao metodo PHP processEventPaymentRefunded
 
   ## Parametros
     - &$aEvent
@@ -428,7 +428,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   ## Retorno
     - any
   """
-  def _processEventPaymentRefunded(params) do
+  def processEventPaymentRefunded(params) do
     # TODO: Implementacao futura
         # protected function _processEventPaymentRefunded(&$aEvent)
     #     {
@@ -438,7 +438,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processEventSubscriptionCancelled
+  Funcao correspondente ao metodo PHP processEventSubscriptionCancelled
 
   ## Parametros
     - &$aEvent
@@ -446,7 +446,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   ## Retorno
     - any
   """
-  def _processEventSubscriptionCancelled(params) do
+  def processEventSubscriptionCancelled(params) do
     # TODO: Implementacao futura
         # protected function _processEventSubscriptionCancelled(&$aEvent)
     #     {
@@ -456,7 +456,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataTransaction
+  Funcao correspondente ao metodo PHP getDataTransaction
 
   ## Parametros
     - &$aEvent
@@ -465,7 +465,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   ## Retorno
     - any
   """
-  def _getDataTransaction(params) do
+  def getDataTransaction(params) do
     # TODO: Implementacao futura
         # protected function _getDataTransaction(&$aEvent, $sWithStatusCheck = '')
     #     {
@@ -475,7 +475,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSubscription
+  Funcao correspondente ao metodo PHP getDataSubscription
 
   ## Parametros
     - &$aEvent
@@ -484,7 +484,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderChargebee do
   ## Retorno
     - any
   """
-  def _getDataSubscription(params) do
+  def getDataSubscription(params) do
     # TODO: Implementacao futura
         # protected function _getDataSubscription(&$aEvent, $sWithStatusCheck = '')
     #     {

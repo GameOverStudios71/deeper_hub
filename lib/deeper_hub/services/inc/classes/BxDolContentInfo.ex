@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolContentInfo do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolContentInfo do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($sSystem)
     #     {
@@ -601,7 +601,7 @@ defmodule DeeperHub.Inc.Classes.BxDolContentInfo do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _call
+  Funcao correspondente ao metodo PHP call
 
   ## Parametros
     - $sMethod
@@ -609,7 +609,7 @@ defmodule DeeperHub.Inc.Classes.BxDolContentInfo do
   ## Retorno
     - any
   """
-  def _call(params) do
+  def call(params) do
     # TODO: Implementacao futura
         # protected function _call($sMethod)
     #     {

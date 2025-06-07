@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridRelations do
   # Heranca de BxDolGridConnectionOut
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridRelations do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridRelations do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellRelation
+  Funcao correspondente ao metodo PHP getCellRelation
 
   ## Parametros
     - $mixedValue
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridRelations do
   ## Retorno
     - any
   """
-  def _getCellRelation(params) do
+  def getCellRelation(params) do
     # TODO: Implementacao futura
         # protected function _getCellRelation ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -47,7 +47,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridRelations do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellMutual
+  Funcao correspondente ao metodo PHP getCellMutual
 
   ## Parametros
     - $mixedValue
@@ -58,7 +58,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridRelations do
   ## Retorno
     - any
   """
-  def _getCellMutual(params) do
+  def getCellMutual(params) do
     # TODO: Implementacao futura
         # protected function _getCellMutual($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -68,7 +68,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridRelations do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxDolGridRelations do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql ($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {

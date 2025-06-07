@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamModule do
   # Heranca de BxDolModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct(&$aModule)
     #     {
@@ -599,7 +599,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _grid
+  Funcao correspondente ao metodo PHP grid
 
   ## Parametros
     - $sObjectGrid
@@ -607,7 +607,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamModule do
   ## Retorno
     - any
   """
-  def _grid(params) do
+  def grid(params) do
     # TODO: Implementacao futura
         # protected function _grid ($sObjectGrid)
     #     {

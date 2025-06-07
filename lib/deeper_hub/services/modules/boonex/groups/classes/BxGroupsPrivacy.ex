@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsPrivacy do
   # Heranca de BxBaseModGroupsPrivacy
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxGroupsPrivacy do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aOptions, $oTemplate = false)
     #     {

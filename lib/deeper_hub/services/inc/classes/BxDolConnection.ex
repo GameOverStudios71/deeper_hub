@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($aObject)
     #     {
@@ -277,7 +277,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _action
+  Funcao correspondente ao metodo PHP action
 
   ## Parametros
     - $iInitiator
@@ -290,7 +290,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   ## Retorno
     - any
   """
-  def _action(params) do
+  def action(params) do
     # TODO: Implementacao futura
         # protected function _action ($iInitiator, $iContent, $sMethod, $sErrorKey, $isMutual = false, $isInvert = false)
     #     {
@@ -1174,7 +1174,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkAllowedConnect
+  Funcao correspondente ao metodo PHP checkAllowedConnect
 
   ## Parametros
     - $iInitiator
@@ -1188,7 +1188,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   ## Retorno
     - any
   """
-  def _checkAllowedConnect(params) do
+  def checkAllowedConnect(params) do
     # TODO: Implementacao futura
         # protected function _checkAllowedConnect ($iInitiator, $iContent, $isPerformAction = false, $isMutual = false, $isInvertResult = false, $isSwap = false, $isCheckExists = true)
     #     {
@@ -1198,7 +1198,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkAllowedConnectInitiator
+  Funcao correspondente ao metodo PHP checkAllowedConnectInitiator
 
   ## Parametros
     - $oInitiator
@@ -1207,7 +1207,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   ## Retorno
     - any
   """
-  def _checkAllowedConnectInitiator(params) do
+  def checkAllowedConnectInitiator(params) do
     # TODO: Implementacao futura
         # protected function _checkAllowedConnectInitiator ($oInitiator, $isPerformAction = false)
     #     {
@@ -1217,7 +1217,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkAllowedConnectContent
+  Funcao correspondente ao metodo PHP checkAllowedConnectContent
 
   ## Parametros
     - $oContent
@@ -1225,7 +1225,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   ## Retorno
     - any
   """
-  def _checkAllowedConnectContent(params) do
+  def checkAllowedConnectContent(params) do
     # TODO: Implementacao futura
         # protected function _checkAllowedConnectContent ($oContent)
     #     {
@@ -1235,7 +1235,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isTriggerable
+  Funcao correspondente ao metodo PHP isTriggerable
 
   ## Parametros
     - $mixedMutual
@@ -1243,7 +1243,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   ## Retorno
     - any
   """
-  def _isTriggerable(params) do
+  def isTriggerable(params) do
     # TODO: Implementacao futura
         # protected function _isTriggerable($mixedMutual)
     #     {
@@ -1253,7 +1253,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _updateTriggerValue
+  Funcao correspondente ao metodo PHP updateTriggerValue
 
   ## Parametros
     - $iInitiator
@@ -1263,7 +1263,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   ## Retorno
     - any
   """
-  def _updateTriggerValue(params) do
+  def updateTriggerValue(params) do
     # TODO: Implementacao futura
         # protected function _updateTriggerValue($iInitiator, $iContent, $iValue)
     #     {
@@ -1275,7 +1275,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTriggerValueByContentType
+  Funcao correspondente ao metodo PHP getTriggerValueByContentType
 
   ## Parametros
     - $sContentType
@@ -1284,7 +1284,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   ## Retorno
     - any
   """
-  def _getTriggerValueByContentType(params) do
+  def getTriggerValueByContentType(params) do
     # TODO: Implementacao futura
         # protected function _getTriggerValueByContentType($sContentType, $iParticipantId)
     #     {
@@ -1297,7 +1297,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTriggerObject
+  Funcao correspondente ao metodo PHP getTriggerObject
 
   ## Parametros
     - $sType
@@ -1307,7 +1307,7 @@ defmodule DeeperHub.Inc.Classes.BxDolConnection do
   ## Retorno
     - any
   """
-  def _getTriggerObject(params) do
+  def getTriggerObject(params) do
     # TODO: Implementacao futura
         # protected function _getTriggerObject($sType, $iInitiator, $iContent)
     #     {

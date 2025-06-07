@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -118,7 +118,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDateStart
+  Funcao correspondente ao metodo PHP getCellDateStart
 
   ## Parametros
     - $mixedValue
@@ -129,7 +129,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   ## Retorno
     - any
   """
-  def _getCellDateStart(params) do
+  def getCellDateStart(params) do
     # TODO: Implementacao futura
         # protected function _getCellDateStart($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -139,7 +139,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDateEnd
+  Funcao correspondente ao metodo PHP getCellDateEnd
 
   ## Parametros
     - $mixedValue
@@ -150,7 +150,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   ## Retorno
     - any
   """
-  def _getCellDateEnd(params) do
+  def getCellDateEnd(params) do
     # TODO: Implementacao futura
         # protected function _getCellDateEnd($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -160,7 +160,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDate
+  Funcao correspondente ao metodo PHP getCellDate
 
   ## Parametros
     - $mixedValue
@@ -171,7 +171,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   ## Retorno
     - any
   """
-  def _getCellDate(params) do
+  def getCellDate(params) do
     # TODO: Implementacao futura
         # protected function _getCellDate($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -181,7 +181,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellData
+  Funcao correspondente ao metodo PHP getCellData
 
   ## Parametros
     - $sKey
@@ -191,7 +191,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   ## Retorno
     - any
   """
-  def _getCellData(params) do
+  def getCellData(params) do
     # TODO: Implementacao futura
         # protected function _getCellData($sKey, $aField, $aRow)
     #     {
@@ -202,7 +202,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -214,7 +214,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -224,7 +224,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVisibleGrid
+  Funcao correspondente ao metodo PHP isVisibleGrid
 
   ## Parametros
     - $a
@@ -232,7 +232,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   ## Retorno
     - any
   """
-  def _isVisibleGrid(params) do
+  def isVisibleGrid(params) do
     # TODO: Implementacao futura
         # protected function _isVisibleGrid ($a)
     #     {
@@ -242,7 +242,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIds
+  Funcao correspondente ao metodo PHP getIds
 
   ## Parametros
     - 
@@ -250,7 +250,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsGridSessionsManage do
   ## Retorno
     - any
   """
-  def _getIds(params) do
+  def getIds(params) do
     # TODO: Implementacao futura
         # protected function _getIds()
     #     {

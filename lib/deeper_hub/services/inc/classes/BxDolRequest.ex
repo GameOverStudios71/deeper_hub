@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRequest do
   # Heranca de BxDol
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRequest do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct()
@@ -207,7 +207,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRequest do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _perform
+  Funcao correspondente ao metodo PHP perform
 
   ## Parametros
     - $aModule
@@ -219,7 +219,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRequest do
   ## Retorno
     - any
   """
-  def _perform(params) do
+  def perform(params) do
     # TODO: Implementacao futura
         # protected static function _perform($aModule, $sClass, $sMethod, $aParams, $bTerminateOnError = true)
     #     {
@@ -229,7 +229,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRequest do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _require
+  Funcao correspondente ao metodo PHP require
 
   ## Parametros
     - $aModule
@@ -238,7 +238,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRequest do
   ## Retorno
     - any
   """
-  def _require(params) do
+  def require(params) do
     # TODO: Implementacao futura
         # protected static function _require($aModule, $sClass)
     #     {
@@ -249,7 +249,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRequest do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _methodExists
+  Funcao correspondente ao metodo PHP methodExists
 
   ## Parametros
     - $mixedModule
@@ -261,7 +261,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRequest do
   ## Retorno
     - any
   """
-  def _methodExists(params) do
+  def methodExists(params) do
     # TODO: Implementacao futura
         # protected static function _methodExists($mixedModule, $sMethodType, $sMethodName, $sClass = "Module", $bIgnoreInactive = false)
     #     {
@@ -271,7 +271,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRequest do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _error
+  Funcao correspondente ao metodo PHP error
 
   ## Parametros
     - $sType
@@ -281,7 +281,7 @@ defmodule DeeperHub.Inc.Classes.BxDolRequest do
   ## Retorno
     - any
   """
-  def _error(params) do
+  def error(params) do
     # TODO: Implementacao futura
         # protected static function _error($sType, $sParam1 = '', $sParam2 = '')
     #     {

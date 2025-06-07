@@ -28,7 +28,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setAccountConfirmationConditions
+  Funcao correspondente ao metodo PHP setAccountConfirmationConditions
 
   ## Parametros
     - $aParams
@@ -36,7 +36,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileSearchResult do
   ## Retorno
     - any
   """
-  def _setAccountConfirmationConditions(params) do
+  def setAccountConfirmationConditions(params) do
     # TODO: Implementacao futura
         # protected function _setAccountConfirmationConditions($aParams)
     #     {
@@ -46,7 +46,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setConnectionsConditions
+  Funcao correspondente ao metodo PHP setConnectionsConditions
 
   ## Parametros
     - $aParams
@@ -54,7 +54,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileSearchResult do
   ## Retorno
     - any
   """
-  def _setConnectionsConditions(params) do
+  def setConnectionsConditions(params) do
     # TODO: Implementacao futura
         # protected function _setConnectionsConditions ($aParams)
     #     {
@@ -64,7 +64,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setFamiliarConnectionsConditions
+  Funcao correspondente ao metodo PHP setFamiliarConnectionsConditions
 
   ## Parametros
     - $aParams
@@ -72,7 +72,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileSearchResult do
   ## Retorno
     - any
   """
-  def _setFamiliarConnectionsConditions(params) do
+  def setFamiliarConnectionsConditions(params) do
     # TODO: Implementacao futura
         # protected function _setFamiliarConnectionsConditions ($aParams)
     #     {
@@ -82,7 +82,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setConditionsForRecommended
+  Funcao correspondente ao metodo PHP setConditionsForRecommended
 
   ## Parametros
     - 
@@ -90,7 +90,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileSearchResult do
   ## Retorno
     - any
   """
-  def _setConditionsForRecommended(params) do
+  def setConditionsForRecommended(params) do
     # TODO: Implementacao futura
         # protected function _setConditionsForRecommended ()
     #     {
@@ -99,7 +99,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setAclConditions
+  Funcao correspondente ao metodo PHP setAclConditions
 
   ## Parametros
     - $aParams
@@ -107,7 +107,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileSearchResult do
   ## Retorno
     - any
   """
-  def _setAclConditions(params) do
+  def setAclConditions(params) do
     # TODO: Implementacao futura
         # protected function _setAclConditions ($aParams)
     #     {
@@ -117,7 +117,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setFavoriteConditions
+  Funcao correspondente ao metodo PHP setFavoriteConditions
 
   ## Parametros
     - $sMode
@@ -127,7 +127,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileSearchResult do
   ## Retorno
     - any
   """
-  def _setFavoriteConditions(params) do
+  def setFavoriteConditions(params) do
     # TODO: Implementacao futura
         # protected function _setFavoriteConditions($sMode, $aParams, &$oProfileAuthor)
     #     {

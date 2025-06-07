@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aModule
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct($aModule)
@@ -1570,7 +1570,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceGetNotificationsScore
+  Funcao correspondente ao metodo PHP serviceGetNotificationsScore
 
   ## Parametros
     - $sType
@@ -1579,7 +1579,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _serviceGetNotificationsScore(params) do
+  def serviceGetNotificationsScore(params) do
     # TODO: Implementacao futura
         # protected function _serviceGetNotificationsScore($sType, $aEvent)
     #     {
@@ -3547,7 +3547,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceGetBlockViews
+  Funcao correspondente ao metodo PHP serviceGetBlockViews
 
   ## Parametros
     - $aBrowseParams = []
@@ -3555,7 +3555,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _serviceGetBlockViews(params) do
+  def serviceGetBlockViews(params) do
     # TODO: Implementacao futura
         # protected function _serviceGetBlockViews($aBrowseParams = [])
     #     {
@@ -3565,7 +3565,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isAllowedRepost
+  Funcao correspondente ao metodo PHP isAllowedRepost
 
   ## Parametros
     - $aEvent
@@ -3574,7 +3574,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _isAllowedRepost(params) do
+  def isAllowedRepost(params) do
     # TODO: Implementacao futura
         # protected function _isAllowedRepost($aEvent, $bPerform = false)
     #     {
@@ -3584,7 +3584,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isAllowedMute
+  Funcao correspondente ao metodo PHP isAllowedMute
 
   ## Parametros
     - $bPerform = false
@@ -3592,7 +3592,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _isAllowedMute(params) do
+  def isAllowedMute(params) do
     # TODO: Implementacao futura
         # protected function _isAllowedMute($bPerform = false)
     #     {
@@ -3603,7 +3603,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isAllowedPin
+  Funcao correspondente ao metodo PHP isAllowedPin
 
   ## Parametros
     - $aEvent
@@ -3612,7 +3612,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _isAllowedPin(params) do
+  def isAllowedPin(params) do
     # TODO: Implementacao futura
         # protected function _isAllowedPin($aEvent, $bPerform = false)
     #     {
@@ -3622,7 +3622,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isAllowedStick
+  Funcao correspondente ao metodo PHP isAllowedStick
 
   ## Parametros
     - $aEvent
@@ -3631,7 +3631,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _isAllowedStick(params) do
+  def isAllowedStick(params) do
     # TODO: Implementacao futura
         # protected function _isAllowedStick($aEvent, $bPerform = false)
     #     {
@@ -3641,7 +3641,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isAllowedPromote
+  Funcao correspondente ao metodo PHP isAllowedPromote
 
   ## Parametros
     - $aEvent
@@ -3650,7 +3650,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _isAllowedPromote(params) do
+  def isAllowedPromote(params) do
     # TODO: Implementacao futura
         # protected function _isAllowedPromote($aEvent, $bPerform = false)
     #     {
@@ -3661,7 +3661,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _deleteLinks
+  Funcao correspondente ao metodo PHP deleteLinks
 
   ## Parametros
     - $iId
@@ -3669,7 +3669,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _deleteLinks(params) do
+  def deleteLinks(params) do
     # TODO: Implementacao futura
         # protected function _deleteLinks($iId)
     #     {
@@ -3679,7 +3679,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processMetas
+  Funcao correspondente ao metodo PHP processMetas
 
   ## Parametros
     - $iId
@@ -3688,7 +3688,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _processMetas(params) do
+  def processMetas(params) do
     # TODO: Implementacao futura
         # protected function _processMetas($iId, $sText)
     #     {
@@ -3698,7 +3698,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkMedia
+  Funcao correspondente ao metodo PHP checkMedia
 
   ## Parametros
     - $sType
@@ -3709,7 +3709,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _checkMedia(params) do
+  def checkMedia(params) do
     # TODO: Implementacao futura
         # protected function _checkMedia($sType, $iContentId, $aItemIds, $iProfileId = 0)
     #     {
@@ -3720,7 +3720,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _saveMedia
+  Funcao correspondente ao metodo PHP saveMedia
 
   ## Parametros
     - $sType
@@ -3732,7 +3732,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _saveMedia(params) do
+  def saveMedia(params) do
     # TODO: Implementacao futura
         # protected function _saveMedia($sType, $iContentId, $aItemIds, $iProfileId = 0, $isAssociateWithContent = false)
     #     {
@@ -3743,7 +3743,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _deleteMedia
+  Funcao correspondente ao metodo PHP deleteMedia
 
   ## Parametros
     - $sType
@@ -3752,7 +3752,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _deleteMedia(params) do
+  def deleteMedia(params) do
     # TODO: Implementacao futura
         # protected function _deleteMedia($sType, $iContentId)
     #     {
@@ -3762,7 +3762,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setParamsType
+  Funcao correspondente ao metodo PHP setParamsType
 
   ## Parametros
     - $sType
@@ -3771,7 +3771,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _setParamsType(params) do
+  def setParamsType(params) do
     # TODO: Implementacao futura
         # protected function _setParamsType($sType, &$aParams)
     #     {
@@ -3782,7 +3782,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareParams
+  Funcao correspondente ao metodo PHP prepareParams
 
   ## Parametros
     - $aParams
@@ -3790,7 +3790,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _prepareParams(params) do
+  def prepareParams(params) do
     # TODO: Implementacao futura
         # protected function _prepareParams($aParams)
     #     {
@@ -3801,7 +3801,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareParamsGet
+  Funcao correspondente ao metodo PHP prepareParamsGet
 
   ## Parametros
     - $mParams = false
@@ -3809,7 +3809,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _prepareParamsGet(params) do
+  def prepareParamsGet(params) do
     # TODO: Implementacao futura
         # protected function _prepareParamsGet($mParams = false)
     #     {
@@ -3819,7 +3819,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareTextForSave
+  Funcao correspondente ao metodo PHP prepareTextForSave
 
   ## Parametros
     - $s
@@ -3827,7 +3827,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _prepareTextForSave(params) do
+  def prepareTextForSave(params) do
     # TODO: Implementacao futura
         # protected function _prepareTextForSave($s)
     #     {
@@ -3837,7 +3837,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareFormForAutoSubmit
+  Funcao correspondente ao metodo PHP prepareFormForAutoSubmit
 
   ## Parametros
     - &$oForm
@@ -3846,7 +3846,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _prepareFormForAutoSubmit(params) do
+  def prepareFormForAutoSubmit(params) do
     # TODO: Implementacao futura
         # protected function _prepareFormForAutoSubmit(&$oForm, &$aValues)
     #     {
@@ -3856,7 +3856,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFieldValue
+  Funcao correspondente ao metodo PHP getFieldValue
 
   ## Parametros
     - $sField
@@ -3865,7 +3865,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineModule do
   ## Retorno
     - any
   """
-  def _getFieldValue(params) do
+  def getFieldValue(params) do
     # TODO: Implementacao futura
         # protected function _getFieldValue($sField, $iContentId)
     #     {

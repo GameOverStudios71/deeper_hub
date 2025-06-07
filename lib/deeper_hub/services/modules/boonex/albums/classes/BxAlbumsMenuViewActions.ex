@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActions do
   # Heranca de BxBaseModTextMenuViewActions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemAddImagesToAlbum
+  Funcao correspondente ao metodo PHP getMenuItemAddImagesToAlbum
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemAddImagesToAlbum(params) do
+  def getMenuItemAddImagesToAlbum(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemAddImagesToAlbum($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditAlbum
+  Funcao correspondente ao metodo PHP getMenuItemEditAlbum
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemEditAlbum(params) do
+  def getMenuItemEditAlbum(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditAlbum($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteAlbum
+  Funcao correspondente ao metodo PHP getMenuItemDeleteAlbum
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteAlbum(params) do
+  def getMenuItemDeleteAlbum(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteAlbum($aItem)
     #     {

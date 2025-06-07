@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsModule do
   # Heranca de BxBaseModNotificationsModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct($aModule)
@@ -465,7 +465,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareParams
+  Funcao correspondente ao metodo PHP prepareParams
 
   ## Parametros
     - $sType = ''
@@ -477,7 +477,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsModule do
   ## Retorno
     - any
   """
-  def _prepareParams(params) do
+  def prepareParams(params) do
     # TODO: Implementacao futura
         # protected function _prepareParams($sType = '', $iOwnerId = 0, $iStart = -1, $iPerPage = -1, $aModules = [])
     #     {
@@ -487,7 +487,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareParamsGet
+  Funcao correspondente ao metodo PHP prepareParamsGet
 
   ## Parametros
     - 
@@ -495,7 +495,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsModule do
   ## Retorno
     - any
   """
-  def _prepareParamsGet(params) do
+  def prepareParamsGet(params) do
     # TODO: Implementacao futura
         # protected function _prepareParamsGet()
     #     {

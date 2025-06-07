@@ -86,7 +86,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _updateCurrentForAuthor
+  Funcao correspondente ao metodo PHP updateCurrentForAuthor
 
   ## Parametros
     - $sMode
@@ -96,7 +96,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextSearchResult do
   ## Retorno
     - any
   """
-  def _updateCurrentForAuthor(params) do
+  def updateCurrentForAuthor(params) do
     # TODO: Implementacao futura
         # protected function _updateCurrentForAuthor($sMode, $aParams, &$oProfileAuthor)
     #     {
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _updateCurrentForContext
+  Funcao correspondente ao metodo PHP updateCurrentForContext
 
   ## Parametros
     - $sMode
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextSearchResult do
   ## Retorno
     - any
   """
-  def _updateCurrentForContext(params) do
+  def updateCurrentForContext(params) do
     # TODO: Implementacao futura
         # protected function _updateCurrentForContext($sMode, $aParams, &$oProfileContext)
     #     {
@@ -126,7 +126,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _updateCurrentForFavorite
+  Funcao correspondente ao metodo PHP updateCurrentForFavorite
 
   ## Parametros
     - $sMode
@@ -136,7 +136,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextSearchResult do
   ## Retorno
     - any
   """
-  def _updateCurrentForFavorite(params) do
+  def updateCurrentForFavorite(params) do
     # TODO: Implementacao futura
         # protected function _updateCurrentForFavorite($sMode, $aParams, &$oProfileAuthor)
     #     {
@@ -146,7 +146,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPseud
+  Funcao correspondente ao metodo PHP getPseud
 
   ## Parametros
     - 
@@ -154,7 +154,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextSearchResult do
   ## Retorno
     - any
   """
-  def _getPseud(params) do
+  def getPseud(params) do
     # TODO: Implementacao futura
         # 
     # 

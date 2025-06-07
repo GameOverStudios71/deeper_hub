@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioPermissionsActions do
   # Heranca de BxTemplStudioGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioPermissionsActions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioPermissionsActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processFilter
+  Funcao correspondente ao metodo PHP processFilter
 
   ## Parametros
     - $sFilter
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioPermissionsActions do
   ## Retorno
     - any
   """
-  def _processFilter(params) do
+  def processFilter(params) do
     # TODO: Implementacao futura
         # protected function _processFilter($sFilter)
     #     {
@@ -45,7 +45,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioPermissionsActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isRowDisabled
+  Funcao correspondente ao metodo PHP isRowDisabled
 
   ## Parametros
     - $aRow
@@ -53,7 +53,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioPermissionsActions do
   ## Retorno
     - any
   """
-  def _isRowDisabled(params) do
+  def isRowDisabled(params) do
     # TODO: Implementacao futura
         # protected function _isRowDisabled($aRow)
     #     {
@@ -63,7 +63,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioPermissionsActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -75,7 +75,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioPermissionsActions do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {

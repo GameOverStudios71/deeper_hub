@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsModule do
   # Heranca de BxBaseModGeneralModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$aModule)
@@ -871,7 +871,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceRegisterItem
+  Funcao correspondente ao metodo PHP serviceRegisterItem
 
   ## Parametros
     - $iClientId
@@ -885,7 +885,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsModule do
   ## Retorno
     - any
   """
-  def _serviceRegisterItem(params) do
+  def serviceRegisterItem(params) do
     # TODO: Implementacao futura
         # protected function _serviceRegisterItem($iClientId, $iSellerId, $iItemId, $iItemCount, $sOrder, $sLicense, $sType)
     #     {
@@ -895,7 +895,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceUnregisterItem
+  Funcao correspondente ao metodo PHP serviceUnregisterItem
 
   ## Parametros
     - $iClientId
@@ -909,7 +909,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsModule do
   ## Retorno
     - any
   """
-  def _serviceUnregisterItem(params) do
+  def serviceUnregisterItem(params) do
     # TODO: Implementacao futura
         # protected function _serviceUnregisterItem($iClientId, $iSellerId, $iItemId, $iItemCount, $sOrder, $sLicense, $sType)
     #     {
@@ -919,7 +919,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getBlockOrders
+  Funcao correspondente ao metodo PHP getBlockOrders
 
   ## Parametros
     - $sType
@@ -927,7 +927,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsModule do
   ## Retorno
     - any
   """
-  def _getBlockOrders(params) do
+  def getBlockOrders(params) do
     # TODO: Implementacao futura
         # protected function _getBlockOrders($sType) 
     #     {
@@ -937,7 +937,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getBlockHistory
+  Funcao correspondente ao metodo PHP getBlockHistory
 
   ## Parametros
     - $sType
@@ -945,7 +945,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsModule do
   ## Retorno
     - any
   """
-  def _getBlockHistory(params) do
+  def getBlockHistory(params) do
     # TODO: Implementacao futura
         # protected function _getBlockHistory($sType) 
     #     {
@@ -955,7 +955,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getBlockWithdrawals
+  Funcao correspondente ao metodo PHP getBlockWithdrawals
 
   ## Parametros
     - $sType
@@ -963,7 +963,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsModule do
   ## Retorno
     - any
   """
-  def _getBlockWithdrawals(params) do
+  def getBlockWithdrawals(params) do
     # TODO: Implementacao futura
         # protected function _getBlockWithdrawals($sType) 
     #     {
@@ -973,7 +973,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getBlockProfiles
+  Funcao correspondente ao metodo PHP getBlockProfiles
 
   ## Parametros
     - $sType
@@ -981,7 +981,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsModule do
   ## Retorno
     - any
   """
-  def _getBlockProfiles(params) do
+  def getBlockProfiles(params) do
     # TODO: Implementacao futura
         # protected function _getBlockProfiles($sType) 
     #     {

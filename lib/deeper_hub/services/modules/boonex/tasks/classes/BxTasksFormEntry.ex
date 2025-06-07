@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxTasksFormEntry do
   # Heranca de BxBaseModTextFormEntry
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aInfo
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxTasksFormEntry do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aInfo, $oTemplate = false)
     #     {
@@ -46,7 +46,7 @@ defmodule DeeperHub.Inc.Classes.BxTasksFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setAssignments
+  Funcao correspondente ao metodo PHP setAssignments
 
   ## Parametros
     - $iContentId
@@ -55,7 +55,7 @@ defmodule DeeperHub.Inc.Classes.BxTasksFormEntry do
   ## Retorno
     - any
   """
-  def _setAssignments(params) do
+  def setAssignments(params) do
     # TODO: Implementacao futura
         # protected function _setAssignments($iContentId, $aMembers)
     #     {

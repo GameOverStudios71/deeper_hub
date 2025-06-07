@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   # Heranca de BxDolInstallerUtils
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aConfig
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aConfig)
     #     {
@@ -587,7 +587,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _onInstallBefore
+  Funcao correspondente ao metodo PHP onInstallBefore
 
   ## Parametros
     - 
@@ -595,7 +595,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   ## Retorno
     - any
   """
-  def _onInstallBefore(params) do
+  def onInstallBefore(params) do
     # TODO: Implementacao futura
         # protected function _onInstallBefore()
     #     {
@@ -605,7 +605,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _onInstallAfter
+  Funcao correspondente ao metodo PHP onInstallAfter
 
   ## Parametros
     - 
@@ -613,7 +613,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   ## Retorno
     - any
   """
-  def _onInstallAfter(params) do
+  def onInstallAfter(params) do
     # TODO: Implementacao futura
         # protected function _onInstallAfter()
     #     {
@@ -623,7 +623,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _onEnableBefore
+  Funcao correspondente ao metodo PHP onEnableBefore
 
   ## Parametros
     - 
@@ -631,7 +631,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   ## Retorno
     - any
   """
-  def _onEnableBefore(params) do
+  def onEnableBefore(params) do
     # TODO: Implementacao futura
         # protected function _onEnableBefore()
     #     {
@@ -641,7 +641,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _onEnableAfter
+  Funcao correspondente ao metodo PHP onEnableAfter
 
   ## Parametros
     - 
@@ -649,7 +649,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   ## Retorno
     - any
   """
-  def _onEnableAfter(params) do
+  def onEnableAfter(params) do
     # TODO: Implementacao futura
         # protected function _onEnableAfter()
     #     {
@@ -659,7 +659,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _onDisableBefore
+  Funcao correspondente ao metodo PHP onDisableBefore
 
   ## Parametros
     - 
@@ -667,7 +667,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   ## Retorno
     - any
   """
-  def _onDisableBefore(params) do
+  def onDisableBefore(params) do
     # TODO: Implementacao futura
         # protected function _onDisableBefore()
     #     {
@@ -677,7 +677,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _onDisableAfter
+  Funcao correspondente ao metodo PHP onDisableAfter
 
   ## Parametros
     - 
@@ -685,7 +685,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   ## Retorno
     - any
   """
-  def _onDisableAfter(params) do
+  def onDisableAfter(params) do
     # TODO: Implementacao futura
         # protected function _onDisableAfter()
     #     {
@@ -695,7 +695,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _onUninstallBefore
+  Funcao correspondente ao metodo PHP onUninstallBefore
 
   ## Parametros
     - 
@@ -703,7 +703,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   ## Retorno
     - any
   """
-  def _onUninstallBefore(params) do
+  def onUninstallBefore(params) do
     # TODO: Implementacao futura
         # protected function _onUninstallBefore()
     #     {
@@ -718,7 +718,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _onUninstallAfter
+  Funcao correspondente ao metodo PHP onUninstallAfter
 
   ## Parametros
     - 
@@ -726,7 +726,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   ## Retorno
     - any
   """
-  def _onUninstallAfter(params) do
+  def onUninstallAfter(params) do
     # TODO: Implementacao futura
         # protected function _onUninstallAfter()
     #     {
@@ -736,7 +736,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _displayResult
+  Funcao correspondente ao metodo PHP displayResult
 
   ## Parametros
     - $sAction
@@ -747,7 +747,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   ## Retorno
     - any
   """
-  def _displayResult(params) do
+  def displayResult(params) do
     # TODO: Implementacao futura
         # protected function _displayResult($sAction, $bResult, $sResult = '', $bHtmlResponse = true)
     #     {
@@ -758,7 +758,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFileManager
+  Funcao correspondente ao metodo PHP getFileManager
 
   ## Parametros
     - 
@@ -766,7 +766,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   ## Retorno
     - any
   """
-  def _getFileManager(params) do
+  def getFileManager(params) do
     # TODO: Implementacao futura
         # protected function _getFileManager()
     #     {
@@ -776,7 +776,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isCompatibleWith
+  Funcao correspondente ao metodo PHP isCompatibleWith
 
   ## Parametros
     - 
@@ -784,7 +784,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioInstaller do
   ## Retorno
     - any
   """
-  def _isCompatibleWith(params) do
+  def isCompatibleWith(params) do
     # TODO: Implementacao futura
         # protected function _isCompatibleWith()
     #     {

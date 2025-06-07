@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   # Heranca de BxBaseModPaymentProvider
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aConfig
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -203,7 +203,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPublicKey
+  Funcao correspondente ao metodo PHP getPublicKey
 
   ## Parametros
     - 
@@ -211,7 +211,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _getPublicKey(params) do
+  def getPublicKey(params) do
     # TODO: Implementacao futura
         # protected function _getPublicKey()
     #     {
@@ -221,7 +221,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSecretKey
+  Funcao correspondente ao metodo PHP getSecretKey
 
   ## Parametros
     - 
@@ -229,7 +229,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _getSecretKey(params) do
+  def getSecretKey(params) do
     # TODO: Implementacao futura
         # protected function _getSecretKey()
     #     {
@@ -239,7 +239,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrieveCustomer
+  Funcao correspondente ao metodo PHP retrieveCustomer
 
   ## Parametros
     - $sType
@@ -248,7 +248,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _retrieveCustomer(params) do
+  def retrieveCustomer(params) do
     # TODO: Implementacao futura
         # protected function _retrieveCustomer($sType, $sId)
     #     {
@@ -258,7 +258,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrieveCharge
+  Funcao correspondente ao metodo PHP retrieveCharge
 
   ## Parametros
     - $sId
@@ -266,7 +266,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _retrieveCharge(params) do
+  def retrieveCharge(params) do
     # TODO: Implementacao futura
         # protected function _retrieveCharge($sId)
     #     {
@@ -276,7 +276,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrieveSubscription
+  Funcao correspondente ao metodo PHP retrieveSubscription
 
   ## Parametros
     - $sCustomerId
@@ -285,7 +285,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _retrieveSubscription(params) do
+  def retrieveSubscription(params) do
     # TODO: Implementacao futura
         # protected function _retrieveSubscription($sCustomerId, $sSubscriptionId)
     #     {
@@ -296,7 +296,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _cancelSubscription
+  Funcao correspondente ao metodo PHP cancelSubscription
 
   ## Parametros
     - $sCustomerId
@@ -305,7 +305,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _cancelSubscription(params) do
+  def cancelSubscription(params) do
     # TODO: Implementacao futura
         # protected function _cancelSubscription($sCustomerId, $sSubscriptionId)
     #     {
@@ -316,7 +316,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrievePaymentMethod
+  Funcao correspondente ao metodo PHP retrievePaymentMethod
 
   ## Parametros
     - $sPaymentMethodId
@@ -324,7 +324,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _retrievePaymentMethod(params) do
+  def retrievePaymentMethod(params) do
     # TODO: Implementacao futura
         # protected function _retrievePaymentMethod($sPaymentMethodId)
     #     {
@@ -334,7 +334,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrieveProduct
+  Funcao correspondente ao metodo PHP retrieveProduct
 
   ## Parametros
     - $sId
@@ -342,7 +342,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _retrieveProduct(params) do
+  def retrieveProduct(params) do
     # TODO: Implementacao futura
         # protected function _retrieveProduct($sId)
     #     {
@@ -352,7 +352,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _listPlans
+  Funcao correspondente ao metodo PHP listPlans
 
   ## Parametros
     - $iLimit = 100
@@ -360,7 +360,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _listPlans(params) do
+  def listPlans(params) do
     # TODO: Implementacao futura
         # protected function _listPlans($iLimit = 100)
     #     {
@@ -371,7 +371,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrieveEvent
+  Funcao correspondente ao metodo PHP retrieveEvent
 
   ## Parametros
     - $sId
@@ -379,7 +379,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _retrieveEvent(params) do
+  def retrieveEvent(params) do
     # TODO: Implementacao futura
         # protected function _retrieveEvent($sId) {
     #         try {
@@ -389,7 +389,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processEvent
+  Funcao correspondente ao metodo PHP processEvent
 
   ## Parametros
     - 
@@ -397,7 +397,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _processEvent(params) do
+  def processEvent(params) do
     # TODO: Implementacao futura
         # protected function _processEvent()
     #     {
@@ -407,7 +407,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processEventInvoicePaymentSucceeded
+  Funcao correspondente ao metodo PHP processEventInvoicePaymentSucceeded
 
   ## Parametros
     - &$aEvent
@@ -415,7 +415,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _processEventInvoicePaymentSucceeded(params) do
+  def processEventInvoicePaymentSucceeded(params) do
     # TODO: Implementacao futura
         # protected function _processEventInvoicePaymentSucceeded(&$aEvent)
     #     {
@@ -425,7 +425,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processEventChargeRefunded
+  Funcao correspondente ao metodo PHP processEventChargeRefunded
 
   ## Parametros
     - &$aEvent
@@ -433,7 +433,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _processEventChargeRefunded(params) do
+  def processEventChargeRefunded(params) do
     # TODO: Implementacao futura
         # protected function _processEventChargeRefunded(&$aEvent)
     #     {
@@ -443,7 +443,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processEventCustomerSubscriptionDeleted
+  Funcao correspondente ao metodo PHP processEventCustomerSubscriptionDeleted
 
   ## Parametros
     - &$aEvent
@@ -451,7 +451,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _processEventCustomerSubscriptionDeleted(params) do
+  def processEventCustomerSubscriptionDeleted(params) do
     # TODO: Implementacao futura
         # protected function _processEventCustomerSubscriptionDeleted(&$aEvent)
     #     {
@@ -461,7 +461,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processException
+  Funcao correspondente ao metodo PHP processException
 
   ## Parametros
     - $sMessage
@@ -470,7 +470,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _processException(params) do
+  def processException(params) do
     # TODO: Implementacao futura
         # protected function _processException($sMessage, &$oException)
     #     {
@@ -480,7 +480,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getData
+  Funcao correspondente ao metodo PHP getData
 
   ## Parametros
     - &$aEvent
@@ -489,7 +489,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _getData(params) do
+  def getData(params) do
     # TODO: Implementacao futura
         # protected function _getData(&$aEvent, $bRetrieve = true)
     #     {
@@ -500,7 +500,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataInvoicePaymentSucceeded
+  Funcao correspondente ao metodo PHP getDataInvoicePaymentSucceeded
 
   ## Parametros
     - &$aEvent
@@ -509,7 +509,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _getDataInvoicePaymentSucceeded(params) do
+  def getDataInvoicePaymentSucceeded(params) do
     # TODO: Implementacao futura
         # protected function _getDataInvoicePaymentSucceeded(&$aEvent, $bRetrieve = true)
     #     {
@@ -520,7 +520,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataChangeDetailsRecurring
+  Funcao correspondente ao metodo PHP getDataChangeDetailsRecurring
 
   ## Parametros
     - $iPendingId
@@ -528,7 +528,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeBasic do
   ## Retorno
     - any
   """
-  def _getDataChangeDetailsRecurring(params) do
+  def getDataChangeDetailsRecurring(params) do
     # TODO: Implementacao futura
         # protected function _getDataChangeDetailsRecurring($iPendingId)
     #     {

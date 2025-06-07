@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   # Heranca de BxBaseModGeneralGridAdministration
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _switcherChecked2State
+  Funcao correspondente ao metodo PHP switcherChecked2State
 
   ## Parametros
     - $isChecked
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   ## Retorno
     - any
   """
-  def _switcherChecked2State(params) do
+  def switcherChecked2State(params) do
     # TODO: Implementacao futura
         # protected function _switcherChecked2State($isChecked)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _enable
+  Funcao correspondente ao metodo PHP enable
 
   ## Parametros
     - $mixedId
@@ -53,7 +53,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   ## Retorno
     - any
   """
-  def _enable(params) do
+  def enable(params) do
     # TODO: Implementacao futura
         # protected function _enable ($mixedId, $isChecked)
     #     {
@@ -63,7 +63,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -75,7 +75,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -85,7 +85,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -93,7 +93,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls()
     #     {
@@ -103,7 +103,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControlsAPI
+  Funcao correspondente ao metodo PHP getFilterControlsAPI
 
   ## Parametros
     - $aFilters = []
@@ -111,7 +111,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   ## Retorno
     - any
   """
-  def _getFilterControlsAPI(params) do
+  def getFilterControlsAPI(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControlsAPI($aFilters = [])
     #     {
@@ -123,7 +123,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellTitle
+  Funcao correspondente ao metodo PHP getCellTitle
 
   ## Parametros
     - $mixedValue
@@ -134,7 +134,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellTitle(params) do
+  def getCellTitle(params) do
     # TODO: Implementacao futura
         # protected function _getCellTitle($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -144,7 +144,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAdded
+  Funcao correspondente ao metodo PHP getCellAdded
 
   ## Parametros
     - $mixedValue
@@ -155,7 +155,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellAdded(params) do
+  def getCellAdded(params) do
     # TODO: Implementacao futura
         # protected function _getCellAdded($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -166,7 +166,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAuthor
+  Funcao correspondente ao metodo PHP getCellAuthor
 
   ## Parametros
     - $mixedValue
@@ -177,7 +177,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellAuthor(params) do
+  def getCellAuthor(params) do
     # TODO: Implementacao futura
         # protected function _getCellAuthor($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -188,7 +188,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getEntryLink
+  Funcao correspondente ao metodo PHP getEntryLink
 
   ## Parametros
     - $mixedValue
@@ -197,7 +197,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextGridAdministration do
   ## Retorno
     - any
   """
-  def _getEntryLink(params) do
+  def getEntryLink(params) do
     # TODO: Implementacao futura
         # protected function _getEntryLink($mixedValue, $aRow)
     #     {

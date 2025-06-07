@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCronProfile do
   # Heranca de BxDolCron
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCronProfile do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -43,7 +43,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCronProfile do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processContentFilters
+  Funcao correspondente ao metodo PHP processContentFilters
 
   ## Parametros
     - 
@@ -51,7 +51,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCronProfile do
   ## Retorno
     - any
   """
-  def _processContentFilters(params) do
+  def processContentFilters(params) do
     # TODO: Implementacao futura
         # protected function _processContentFilters()
     #     {

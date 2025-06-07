@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesView do
   # Heranca de BxBaseModGroupsGridPrices
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesView do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -173,7 +173,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesView do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellRoleId
+  Funcao correspondente ao metodo PHP getCellRoleId
 
   ## Parametros
     - $mixedValue
@@ -184,7 +184,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesView do
   ## Retorno
     - any
   """
-  def _getCellRoleId(params) do
+  def getCellRoleId(params) do
     # TODO: Implementacao futura
         # protected function _getCellRoleId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -194,7 +194,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesView do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -206,7 +206,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesView do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -216,7 +216,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesView do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isLifetime
+  Funcao correspondente ao metodo PHP isLifetime
 
   ## Parametros
     - $aRow
@@ -224,7 +224,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesView do
   ## Retorno
     - any
   """
-  def _isLifetime(params) do
+  def isLifetime(params) do
     # TODO: Implementacao futura
         # protected function _isLifetime($aRow)
     #     {

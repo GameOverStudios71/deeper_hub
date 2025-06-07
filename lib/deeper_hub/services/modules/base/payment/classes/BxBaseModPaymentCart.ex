@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentCart do
   # Heranca de BxDol
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentCart do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -141,7 +141,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentCart do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _parseByVendor
+  Funcao correspondente ao metodo PHP parseByVendor
 
   ## Parametros
     - $iUserId
@@ -149,7 +149,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentCart do
   ## Retorno
     - any
   """
-  def _parseByVendor(params) do
+  def parseByVendor(params) do
     # TODO: Implementacao futura
         # protected function _parseByVendor($iUserId)
     #     {                            
@@ -159,7 +159,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentCart do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _parseByModule
+  Funcao correspondente ao metodo PHP parseByModule
 
   ## Parametros
     - $iUserId
@@ -167,7 +167,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentCart do
   ## Retorno
     - any
   """
-  def _parseByModule(params) do
+  def parseByModule(params) do
     # TODO: Implementacao futura
         # protected function _parseByModule($iUserId)
     #     {
@@ -177,7 +177,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentCart do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _reparseBy
+  Funcao correspondente ao metodo PHP reparseBy
 
   ## Parametros
     - $aItems
@@ -186,7 +186,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentCart do
   ## Retorno
     - any
   """
-  def _reparseBy(params) do
+  def reparseBy(params) do
     # TODO: Implementacao futura
         # protected function _reparseBy($aItems, $sKey)
     #     {

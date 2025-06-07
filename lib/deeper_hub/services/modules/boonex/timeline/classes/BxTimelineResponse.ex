@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   # Heranca de BxBaseModNotificationsResponse
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -47,7 +47,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareEventCommentAdded
+  Funcao correspondente ao metodo PHP prepareEventCommentAdded
 
   ## Parametros
     - $oAlert
@@ -56,7 +56,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _prepareEventCommentAdded(params) do
+  def prepareEventCommentAdded(params) do
     # TODO: Implementacao futura
         # protected function _prepareEventCommentAdded($oAlert, &$aEvent)
     #     {
@@ -69,7 +69,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getEventUpdateCommentEdited
+  Funcao correspondente ao metodo PHP getEventUpdateCommentEdited
 
   ## Parametros
     - &$oAlert
@@ -78,7 +78,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _getEventUpdateCommentEdited(params) do
+  def getEventUpdateCommentEdited(params) do
     # TODO: Implementacao futura
         # protected function _getEventUpdateCommentEdited(&$oAlert, &$aHandler)
     #     {
@@ -91,7 +91,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getEventDelete
+  Funcao correspondente ao metodo PHP getEventDelete
 
   ## Parametros
     - &$oAlert
@@ -100,7 +100,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _getEventDelete(params) do
+  def getEventDelete(params) do
     # TODO: Implementacao futura
         # protected function _getEventDelete(&$oAlert, &$aHandler)
     #     {
@@ -113,7 +113,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getEventDeleteCommentDeleted
+  Funcao correspondente ao metodo PHP getEventDeleteCommentDeleted
 
   ## Parametros
     - &$oAlert
@@ -122,7 +122,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _getEventDeleteCommentDeleted(params) do
+  def getEventDeleteCommentDeleted(params) do
     # TODO: Implementacao futura
         # protected function _getEventDeleteCommentDeleted(&$oAlert, &$aHandler)
     #     {
@@ -135,7 +135,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getStatus
+  Funcao correspondente ao metodo PHP getStatus
 
   ## Parametros
     - $aExtras
@@ -144,7 +144,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _getStatus(params) do
+  def getStatus(params) do
     # TODO: Implementacao futura
         # protected function _getStatus($aExtras, $sField = 'status')
     #     {
@@ -154,7 +154,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFieldValue
+  Funcao correspondente ao metodo PHP getFieldValue
 
   ## Parametros
     - $aExtras
@@ -163,7 +163,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _getFieldValue(params) do
+  def getFieldValue(params) do
     # TODO: Implementacao futura
         # protected function _getFieldValue($aExtras, $sField)
     #     {
@@ -173,7 +173,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processSystemClearCache
+  Funcao correspondente ao metodo PHP processSystemClearCache
 
   ## Parametros
     - $oAlert
@@ -181,7 +181,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _processSystemClearCache(params) do
+  def processSystemClearCache(params) do
     # TODO: Implementacao futura
         # protected function _processSystemClearCache($oAlert)
     #     {
@@ -192,7 +192,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processSystemEnable
+  Funcao correspondente ao metodo PHP processSystemEnable
 
   ## Parametros
     - $oAlert
@@ -200,7 +200,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _processSystemEnable(params) do
+  def processSystemEnable(params) do
     # TODO: Implementacao futura
         # protected function _processSystemEnable($oAlert)
     #     {
@@ -210,7 +210,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processSystemDisable
+  Funcao correspondente ao metodo PHP processSystemDisable
 
   ## Parametros
     - $oAlert
@@ -218,7 +218,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _processSystemDisable(params) do
+  def processSystemDisable(params) do
     # TODO: Implementacao futura
         # protected function _processSystemDisable($oAlert)
     #     {
@@ -228,7 +228,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processSystemSaveSetting
+  Funcao correspondente ao metodo PHP processSystemSaveSetting
 
   ## Parametros
     - $oAlert
@@ -236,7 +236,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _processSystemSaveSetting(params) do
+  def processSystemSaveSetting(params) do
     # TODO: Implementacao futura
         # protected function _processSystemSaveSetting($oAlert)
     #     {
@@ -246,7 +246,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processAccountConfirm
+  Funcao correspondente ao metodo PHP processAccountConfirm
 
   ## Parametros
     - $oAlert
@@ -254,7 +254,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _processAccountConfirm(params) do
+  def processAccountConfirm(params) do
     # TODO: Implementacao futura
         # protected function _processAccountConfirm($oAlert)
     #     {
@@ -264,7 +264,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processAccountUnconfirm
+  Funcao correspondente ao metodo PHP processAccountUnconfirm
 
   ## Parametros
     - $oAlert
@@ -272,7 +272,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _processAccountUnconfirm(params) do
+  def processAccountUnconfirm(params) do
     # TODO: Implementacao futura
         # protected function _processAccountUnconfirm($oAlert)
     #     {
@@ -282,7 +282,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processProfileApprove
+  Funcao correspondente ao metodo PHP processProfileApprove
 
   ## Parametros
     - $oAlert
@@ -290,7 +290,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _processProfileApprove(params) do
+  def processProfileApprove(params) do
     # TODO: Implementacao futura
         # protected function _processProfileApprove($oAlert)
     #     {
@@ -300,7 +300,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processProfileDisapprove
+  Funcao correspondente ao metodo PHP processProfileDisapprove
 
   ## Parametros
     - $oAlert
@@ -308,7 +308,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _processProfileDisapprove(params) do
+  def processProfileDisapprove(params) do
     # TODO: Implementacao futura
         # protected function _processProfileDisapprove($oAlert)
     #     {
@@ -318,7 +318,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processProfileActivate
+  Funcao correspondente ao metodo PHP processProfileActivate
 
   ## Parametros
     - $oAlert
@@ -326,7 +326,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _processProfileActivate(params) do
+  def processProfileActivate(params) do
     # TODO: Implementacao futura
         # protected function _processProfileActivate($oAlert)
     #     {
@@ -336,7 +336,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processProfileSuspend
+  Funcao correspondente ao metodo PHP processProfileSuspend
 
   ## Parametros
     - $oAlert
@@ -344,7 +344,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _processProfileSuspend(params) do
+  def processProfileSuspend(params) do
     # TODO: Implementacao futura
         # protected function _processProfileSuspend($oAlert)
     #     {
@@ -354,7 +354,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _clearCache
+  Funcao correspondente ao metodo PHP clearCache
 
   ## Parametros
     - 
@@ -362,7 +362,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _clearCache(params) do
+  def clearCache(params) do
     # TODO: Implementacao futura
         # protected function _clearCache()
     #     {
@@ -373,7 +373,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processBxTimelineVideosMp4Transcoded
+  Funcao correspondente ao metodo PHP processBxTimelineVideosMp4Transcoded
 
   ## Parametros
     - $oAlert
@@ -381,7 +381,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineResponse do
   ## Retorno
     - any
   """
-  def _processBxTimelineVideosMp4Transcoded(params) do
+  def processBxTimelineVideosMp4Transcoded(params) do
     # TODO: Implementacao futura
         # protected function _processBxTimelineVideosMp4Transcoded($oAlert)
     #     {

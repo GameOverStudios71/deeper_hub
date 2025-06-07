@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolImageResize do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolImageResize do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct()
     #     {
@@ -29,7 +29,7 @@ defmodule DeeperHub.Inc.Classes.BxDolImageResize do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __clone
+  Funcao correspondente ao metodo PHP clone
 
   ## Parametros
     - 
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxDolImageResize do
   ## Retorno
     - any
   """
-  def __clone(params) do
+  def clone(params) do
     # TODO: Implementacao futura
         # public function __clone()
     #     {
@@ -340,7 +340,7 @@ defmodule DeeperHub.Inc.Classes.BxDolImageResize do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getImageSize
+  Funcao correspondente ao metodo PHP getImageSize
 
   ## Parametros
     - $sPath
@@ -348,7 +348,7 @@ defmodule DeeperHub.Inc.Classes.BxDolImageResize do
   ## Retorno
     - any
   """
-  def _getImageSize(params) do
+  def getImageSize(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -401,7 +401,7 @@ defmodule DeeperHub.Inc.Classes.BxDolImageResize do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _grayscale
+  Funcao correspondente ao metodo PHP grayscale
 
   ## Parametros
     - $sSrcImage
@@ -410,7 +410,7 @@ defmodule DeeperHub.Inc.Classes.BxDolImageResize do
   ## Retorno
     - any
   """
-  def _grayscale(params) do
+  def grayscale(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -422,7 +422,7 @@ defmodule DeeperHub.Inc.Classes.BxDolImageResize do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _removeTransparency
+  Funcao correspondente ao metodo PHP removeTransparency
 
   ## Parametros
     - $oImg
@@ -430,7 +430,7 @@ defmodule DeeperHub.Inc.Classes.BxDolImageResize do
   ## Retorno
     - any
   """
-  def _removeTransparency(params) do
+  def removeTransparency(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -442,7 +442,7 @@ defmodule DeeperHub.Inc.Classes.BxDolImageResize do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _resize
+  Funcao correspondente ao metodo PHP resize
 
   ## Parametros
     - $sSrcImage
@@ -451,7 +451,7 @@ defmodule DeeperHub.Inc.Classes.BxDolImageResize do
   ## Retorno
     - any
   """
-  def _resize(params) do
+  def resize(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -463,7 +463,7 @@ defmodule DeeperHub.Inc.Classes.BxDolImageResize do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _applyWatermark
+  Funcao correspondente ao metodo PHP applyWatermark
 
   ## Parametros
     - $sSrcImage
@@ -478,7 +478,7 @@ defmodule DeeperHub.Inc.Classes.BxDolImageResize do
   ## Retorno
     - any
   """
-  def _applyWatermark(params) do
+  def applyWatermark(params) do
     # TODO: Implementacao futura
         # 
     # 

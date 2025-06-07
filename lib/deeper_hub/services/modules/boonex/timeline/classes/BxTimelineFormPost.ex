@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   # Heranca de BxBaseModGeneralFormEntry
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aInfo
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aInfo, $oTemplate = false)
     #     {
@@ -209,7 +209,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _initPrivacyFields
+  Funcao correspondente ao metodo PHP initPrivacyFields
 
   ## Parametros
     - 
@@ -217,7 +217,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   ## Retorno
     - any
   """
-  def _initPrivacyFields(params) do
+  def initPrivacyFields(params) do
     # TODO: Implementacao futura
         # protected function _initPrivacyFields()
     #     {
@@ -227,7 +227,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _preparePrivacyField
+  Funcao correspondente ao metodo PHP preparePrivacyField
 
   ## Parametros
     - $sField
@@ -236,7 +236,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   ## Retorno
     - any
   """
-  def _preparePrivacyField(params) do
+  def preparePrivacyField(params) do
     # TODO: Implementacao futura
         # protected function _preparePrivacyField($sField, $sPrivacyObject)
     #     {
@@ -246,7 +246,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _initPrivacyField
+  Funcao correspondente ao metodo PHP initPrivacyField
 
   ## Parametros
     - $sField
@@ -255,7 +255,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   ## Retorno
     - any
   """
-  def _initPrivacyField(params) do
+  def initPrivacyField(params) do
     # TODO: Implementacao futura
         # protected function _initPrivacyField($sField, $sPrivacyObject)
     #     {
@@ -265,7 +265,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _preloadPrivacyField
+  Funcao correspondente ao metodo PHP preloadPrivacyField
 
   ## Parametros
     - $sField
@@ -275,7 +275,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   ## Retorno
     - any
   """
-  def _preloadPrivacyField(params) do
+  def preloadPrivacyField(params) do
     # TODO: Implementacao futura
         # protected function _preloadPrivacyField($sField, $sPrivacyObject, $aValues)
     #     {
@@ -285,7 +285,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getGhostTmplVars
+  Funcao correspondente ao metodo PHP getGhostTmplVars
 
   ## Parametros
     - $sName
@@ -294,7 +294,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   ## Retorno
     - any
   """
-  def _getGhostTmplVars(params) do
+  def getGhostTmplVars(params) do
     # TODO: Implementacao futura
         # protected function _getGhostTmplVars($sName, $aContentInfo = [])
     #     {
@@ -308,7 +308,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPhotoGhostTmplVars
+  Funcao correspondente ao metodo PHP getPhotoGhostTmplVars
 
   ## Parametros
     - $aContentInfo = []
@@ -316,7 +316,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   ## Retorno
     - any
   """
-  def _getPhotoGhostTmplVars(params) do
+  def getPhotoGhostTmplVars(params) do
     # TODO: Implementacao futura
         # protected function _getPhotoGhostTmplVars($aContentInfo = [])
     #     {
@@ -328,7 +328,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _resetMode
+  Funcao correspondente ao metodo PHP resetMode
 
   ## Parametros
     - 
@@ -336,7 +336,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineFormPost do
   ## Retorno
     - any
   """
-  def _resetMode(params) do
+  def resetMode(params) do
     # TODO: Implementacao futura
         # protected function _resetMode()
     #     {

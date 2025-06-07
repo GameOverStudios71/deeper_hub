@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateModule do
   # Heranca de BxBaseModGeneralModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$aModule)

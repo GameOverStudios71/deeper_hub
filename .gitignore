@@ -24,3 +24,5 @@ deeper_hub-*.tar
 /una/
 
 /mingw64.7z
+
+/lib/deeper_hub/services/

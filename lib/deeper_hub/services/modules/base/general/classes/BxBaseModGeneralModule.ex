@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   # Heranca de BxDolModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -523,7 +523,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareBrowsingFiltersParamsGet
+  Funcao correspondente ao metodo PHP prepareBrowsingFiltersParamsGet
 
   ## Parametros
     - $mParams = false
@@ -531,7 +531,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _prepareBrowsingFiltersParamsGet(params) do
+  def prepareBrowsingFiltersParamsGet(params) do
     # TODO: Implementacao futura
         # protected function _prepareBrowsingFiltersParamsGet($mParams = false)
     #     {
@@ -1884,7 +1884,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceGetNotificationsScore
+  Funcao correspondente ao metodo PHP serviceGetNotificationsScore
 
   ## Parametros
     - $sType
@@ -1893,7 +1893,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _serviceGetNotificationsScore(params) do
+  def serviceGetNotificationsScore(params) do
     # TODO: Implementacao futura
         # protected function _serviceGetNotificationsScore($sType, $aEvent)
     #     {
@@ -2427,7 +2427,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceCheckAllowedViewForProfile
+  Funcao correspondente ao metodo PHP serviceCheckAllowedViewForProfile
 
   ## Parametros
     - $aDataEntry
@@ -2437,7 +2437,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _serviceCheckAllowedViewForProfile(params) do
+  def serviceCheckAllowedViewForProfile(params) do
     # TODO: Implementacao futura
         # protected function _serviceCheckAllowedViewForProfile ($aDataEntry, $isPerformAction, $iProfileId)
     #     {
@@ -2447,7 +2447,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceBrowse
+  Funcao correspondente ao metodo PHP serviceBrowse
 
   ## Parametros
     - $sMode
@@ -2460,7 +2460,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _serviceBrowse(params) do
+  def serviceBrowse(params) do
     # TODO: Implementacao futura
         # public function _serviceBrowse ($sMode, $aParams = false, $iDesignBox = BX_DB_PADDING_DEF, $bDisplayEmptyMsg = false, $bAjaxPaginate = true, $sClassSearchResult = 'SearchResult')
     #     {
@@ -2633,7 +2633,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _alertParams
+  Funcao correspondente ao metodo PHP alertParams
 
   ## Parametros
     - $aContentInfo
@@ -2641,7 +2641,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _alertParams(params) do
+  def alertParams(params) do
     # TODO: Implementacao futura
         # protected function _alertParams($aContentInfo)
     #     {
@@ -2725,7 +2725,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addLink
+  Funcao correspondente ao metodo PHP addLink
 
   ## Parametros
     - &$oForm
@@ -2733,7 +2733,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _addLink(params) do
+  def addLink(params) do
     # TODO: Implementacao futura
         # protected function _addLink(&$oForm)
     #     {
@@ -2927,7 +2927,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isModerator
+  Funcao correspondente ao metodo PHP isModerator
 
   ## Parametros
     - $isPerformAction = false
@@ -2935,7 +2935,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _isModerator(params) do
+  def isModerator(params) do
     # TODO: Implementacao futura
         # public function _isModerator ($isPerformAction = false)
     #     {
@@ -2945,7 +2945,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isModeratorForProfile
+  Funcao correspondente ao metodo PHP isModeratorForProfile
 
   ## Parametros
     - $isPerformAction = false
@@ -2954,7 +2954,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _isModeratorForProfile(params) do
+  def isModeratorForProfile(params) do
     # TODO: Implementacao futura
         # public function _isModeratorForProfile($isPerformAction = false, $iProfileId = false)
     #     {
@@ -2964,7 +2964,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isAdministrator
+  Funcao correspondente ao metodo PHP isAdministrator
 
   ## Parametros
     - $isPerformAction = false
@@ -2972,7 +2972,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _isAdministrator(params) do
+  def isAdministrator(params) do
     # TODO: Implementacao futura
         # public function _isAdministrator ($isPerformAction = false)
     #     {
@@ -2982,7 +2982,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isAdministratorForProfile
+  Funcao correspondente ao metodo PHP isAdministratorForProfile
 
   ## Parametros
     - $isPerformAction = false
@@ -2991,7 +2991,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _isAdministratorForProfile(params) do
+  def isAdministratorForProfile(params) do
     # TODO: Implementacao futura
         # public function _isAdministratorForProfile($isPerformAction = false, $iProfileId = false)
     #     {
@@ -3001,7 +3001,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFavoriteListUrl
+  Funcao correspondente ao metodo PHP getFavoriteListUrl
 
   ## Parametros
     - $iListId
@@ -3010,7 +3010,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _getFavoriteListUrl(params) do
+  def getFavoriteListUrl(params) do
     # TODO: Implementacao futura
         # public function _getFavoriteListUrl ($iListId, $iProfileId)
     #     {
@@ -3058,7 +3058,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceEntityForm
+  Funcao correspondente ao metodo PHP serviceEntityForm
 
   ## Parametros
     - $sFormMethod
@@ -3070,7 +3070,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _serviceEntityForm(params) do
+  def serviceEntityForm(params) do
     # TODO: Implementacao futura
         # protected function _serviceEntityForm ($sFormMethod, $iContentId = 0, $sDisplay = false, $sCheckFunction = false, $bErrorMsg = true)
     #     {
@@ -3080,7 +3080,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceTemplateFunc
+  Funcao correspondente ao metodo PHP serviceTemplateFunc
 
   ## Parametros
     - $sFunc
@@ -3090,7 +3090,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _serviceTemplateFunc(params) do
+  def serviceTemplateFunc(params) do
     # TODO: Implementacao futura
         # protected function _serviceTemplateFunc ($sFunc, $iContentId, $sFuncGetContent = 'getContentInfoById')
     #     {
@@ -3100,7 +3100,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getApproveForm
+  Funcao correspondente ao metodo PHP getApproveForm
 
   ## Parametros
     - $iContentId
@@ -3109,7 +3109,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _getApproveForm(params) do
+  def getApproveForm(params) do
     # TODO: Implementacao futura
         # protected function _getApproveForm($iContentId, $aContentInfo)
     #     {
@@ -3119,7 +3119,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _sendApproveMessage
+  Funcao correspondente ao metodo PHP sendApproveMessage
 
   ## Parametros
     - $iContentId
@@ -3129,7 +3129,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _sendApproveMessage(params) do
+  def sendApproveMessage(params) do
     # TODO: Implementacao futura
         # protected function _sendApproveMessage($iContentId, $aContentInfo, &$oForm)
     #     {
@@ -3139,7 +3139,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processModerationNotifications
+  Funcao correspondente ao metodo PHP processModerationNotifications
 
   ## Parametros
     - $aContentInfo
@@ -3147,7 +3147,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _processModerationNotifications(params) do
+  def processModerationNotifications(params) do
     # TODO: Implementacao futura
         # protected function _processModerationNotifications($aContentInfo)
     #     {
@@ -3157,7 +3157,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _rss
+  Funcao correspondente ao metodo PHP rss
 
   ## Parametros
     - $aArgs
@@ -3166,7 +3166,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _rss(params) do
+  def rss(params) do
     # TODO: Implementacao futura
         # protected function _rss ($aArgs, $sClass = 'SearchResult')
     #     {
@@ -3176,7 +3176,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getContent
+  Funcao correspondente ao metodo PHP getContent
 
   ## Parametros
     - $iContentId = 0
@@ -3185,7 +3185,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _getContent(params) do
+  def getContent(params) do
     # TODO: Implementacao futura
         # protected function _getContent($iContentId = 0, $sFuncGetContent = true)
     #     {
@@ -3196,7 +3196,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _entityComments
+  Funcao correspondente ao metodo PHP entityComments
 
   ## Parametros
     - $sObject
@@ -3205,7 +3205,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _entityComments(params) do
+  def entityComments(params) do
     # TODO: Implementacao futura
         # protected function _entityComments ($sObject, $iId = 0)
     #     {
@@ -3216,7 +3216,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFields
+  Funcao correspondente ao metodo PHP getFields
 
   ## Parametros
     - $iContentId
@@ -3224,7 +3224,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _getFields(params) do
+  def getFields(params) do
     # TODO: Implementacao futura
         # protected function _getFields($iContentId)
     #     {
@@ -3234,7 +3234,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFieldValue
+  Funcao correspondente ao metodo PHP getFieldValue
 
   ## Parametros
     - $sField
@@ -3243,7 +3243,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _getFieldValue(params) do
+  def getFieldValue(params) do
     # TODO: Implementacao futura
         # protected function _getFieldValue($sField, $iContentId)
     #     {
@@ -3253,7 +3253,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFieldValueThumb
+  Funcao correspondente ao metodo PHP getFieldValueThumb
 
   ## Parametros
     - $sField
@@ -3263,7 +3263,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _getFieldValueThumb(params) do
+  def getFieldValueThumb(params) do
     # TODO: Implementacao futura
         # protected function _getFieldValueThumb($sField, $iContentId, $sTranscoder = '') 
     #     {
@@ -3273,7 +3273,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getLablesBreadcrumbsArray
+  Funcao correspondente ao metodo PHP getLablesBreadcrumbsArray
 
   ## Parametros
     - $iLabelId
@@ -3282,7 +3282,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _getLablesBreadcrumbsArray(params) do
+  def getLablesBreadcrumbsArray(params) do
     # TODO: Implementacao futura
         # private function _getLablesBreadcrumbsArray($iLabelId, &$aBreadcrumbs)
     # 	{
@@ -3292,7 +3292,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getLablesBrowseUrl
+  Funcao correspondente ao metodo PHP getLablesBrowseUrl
 
   ## Parametros
     - $iLabelId
@@ -3300,7 +3300,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _getLablesBrowseUrl(params) do
+  def getLablesBrowseUrl(params) do
     # TODO: Implementacao futura
         # private function _getLablesBrowseUrl($iLabelId)
     # 	{
@@ -3310,7 +3310,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getLablesTreeLevel
+  Funcao correspondente ao metodo PHP getLablesTreeLevel
 
   ## Parametros
     - $aBreadcrumbs
@@ -3319,7 +3319,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralModule do
   ## Retorno
     - any
   """
-  def _getLablesTreeLevel(params) do
+  def getLablesTreeLevel(params) do
     # TODO: Implementacao futura
         # private function _getLablesTreeLevel($aBreadcrumbs, $iParent = 0)
     # 	{

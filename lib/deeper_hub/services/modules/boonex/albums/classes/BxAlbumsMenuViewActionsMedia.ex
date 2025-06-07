@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActionsMedia do
   # Heranca de BxAlbumsMenuViewActions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActionsMedia do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActionsMedia do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isContentPublic
+  Funcao correspondente ao metodo PHP isContentPublic
 
   ## Parametros
     - $iMediaId
@@ -53,7 +53,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActionsMedia do
   ## Retorno
     - any
   """
-  def _isContentPublic(params) do
+  def isContentPublic(params) do
     # TODO: Implementacao futura
         # protected function _isContentPublic($iMediaId, $aPublicGroups = [])
     #     {
@@ -63,7 +63,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActionsMedia do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemAddImagesToAlbum
+  Funcao correspondente ao metodo PHP getMenuItemAddImagesToAlbum
 
   ## Parametros
     - $aItem
@@ -71,7 +71,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActionsMedia do
   ## Retorno
     - any
   """
-  def _getMenuItemAddImagesToAlbum(params) do
+  def getMenuItemAddImagesToAlbum(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemAddImagesToAlbum($aItem)
     #     {
@@ -81,7 +81,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActionsMedia do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditAlbum
+  Funcao correspondente ao metodo PHP getMenuItemEditAlbum
 
   ## Parametros
     - $aItem
@@ -89,7 +89,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActionsMedia do
   ## Retorno
     - any
   """
-  def _getMenuItemEditAlbum(params) do
+  def getMenuItemEditAlbum(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditAlbum($aItem)
     #     {
@@ -99,7 +99,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActionsMedia do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditImage
+  Funcao correspondente ao metodo PHP getMenuItemEditImage
 
   ## Parametros
     - $aItem
@@ -107,7 +107,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActionsMedia do
   ## Retorno
     - any
   """
-  def _getMenuItemEditImage(params) do
+  def getMenuItemEditImage(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditImage($aItem)
     #     {
@@ -117,7 +117,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActionsMedia do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteImage
+  Funcao correspondente ao metodo PHP getMenuItemDeleteImage
 
   ## Parametros
     - $aItem
@@ -125,7 +125,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActionsMedia do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteImage(params) do
+  def getMenuItemDeleteImage(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteImage($aItem)
     #     {
@@ -135,7 +135,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActionsMedia do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemMoveImage
+  Funcao correspondente ao metodo PHP getMenuItemMoveImage
 
   ## Parametros
     - $aItem
@@ -143,7 +143,7 @@ defmodule DeeperHub.Inc.Classes.BxAlbumsMenuViewActionsMedia do
   ## Retorno
     - any
   """
-  def _getMenuItemMoveImage(params) do
+  def getMenuItemMoveImage(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemMoveImage($aItem)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosModule do
   # Heranca de BxBaseModFilesModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$aModule)
@@ -190,7 +190,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getVideosForTimelinePost
+  Funcao correspondente ao metodo PHP getVideosForTimelinePost
 
   ## Parametros
     - $aEvent
@@ -201,7 +201,7 @@ defmodule DeeperHub.Inc.Classes.BxVideosModule do
   ## Retorno
     - any
   """
-  def _getVideosForTimelinePost(params) do
+  def getVideosForTimelinePost(params) do
     # TODO: Implementacao futura
         # protected function _getVideosForTimelinePost($aEvent, $aContentInfo, $sUrl, $aBrowseParams = [])
     #     {

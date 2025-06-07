@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsTemplate do
   # Heranca de BxBaseModProfileTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -107,7 +107,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getUnitClass
+  Funcao correspondente ao metodo PHP getUnitClass
 
   ## Parametros
     - $aData
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsTemplate do
   ## Retorno
     - any
   """
-  def _getUnitClass(params) do
+  def getUnitClass(params) do
     # TODO: Implementacao futura
         # protected function _getUnitClass($aData, $sTemplateName = 'unit.html')
     #     {
@@ -126,7 +126,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getUnitSize
+  Funcao correspondente ao metodo PHP getUnitSize
 
   ## Parametros
     - $aData
@@ -135,7 +135,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsTemplate do
   ## Retorno
     - any
   """
-  def _getUnitSize(params) do
+  def getUnitSize(params) do
     # TODO: Implementacao futura
         # protected function _getUnitSize($aData, $sTemplateName = 'unit.html')
     #     {
@@ -145,7 +145,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isUnitThumb
+  Funcao correspondente ao metodo PHP isUnitThumb
 
   ## Parametros
     - $aData
@@ -154,7 +154,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsTemplate do
   ## Retorno
     - any
   """
-  def _isUnitThumb(params) do
+  def isUnitThumb(params) do
     # TODO: Implementacao futura
         # protected function _isUnitThumb($aData, $sTemplateName = 'unit.html')
     #     {
@@ -164,7 +164,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _image
+  Funcao correspondente ao metodo PHP image
 
   ## Parametros
     - $sField
@@ -176,7 +176,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsTemplate do
   ## Retorno
     - any
   """
-  def _image(params) do
+  def image(params) do
     # TODO: Implementacao futura
         # 
     # 

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuCategories do
   # Heranca de BxTemplMenu
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuCategories do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aObject, $oTemplate)
     #     {
@@ -65,7 +65,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuCategories do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItem
+  Funcao correspondente ao metodo PHP getMenuItem
 
   ## Parametros
     - $a
@@ -73,7 +73,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuCategories do
   ## Retorno
     - any
   """
-  def _getMenuItem(params) do
+  def getMenuItem(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItem($a)
     #     {

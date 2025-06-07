@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlMenuViewActionsAll do
   # Heranca de BxBaseModGroupsMenuViewActionsAll
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditChannelCover
+  Funcao correspondente ao metodo PHP getMenuItemEditChannelCover
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditChannelCover(params) do
+  def getMenuItemEditChannelCover(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditChannelCover($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditChannelProfile
+  Funcao correspondente ao metodo PHP getMenuItemEditChannelProfile
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditChannelProfile(params) do
+  def getMenuItemEditChannelProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditChannelProfile($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteChannelProfile
+  Funcao correspondente ao metodo PHP getMenuItemDeleteChannelProfile
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteChannelProfile(params) do
+  def getMenuItemDeleteChannelProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteChannelProfile($aItem)
     #     {

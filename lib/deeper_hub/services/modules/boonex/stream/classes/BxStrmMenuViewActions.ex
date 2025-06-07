@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmMenuViewActions do
   # Heranca de BxBaseModTextMenuViewActions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmMenuViewActions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditStream
+  Funcao correspondente ao metodo PHP getMenuItemEditStream
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemEditStream(params) do
+  def getMenuItemEditStream(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditStream($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteStream
+  Funcao correspondente ao metodo PHP getMenuItemDeleteStream
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteStream(params) do
+  def getMenuItemDeleteStream(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteStream($aItem)
     #     {

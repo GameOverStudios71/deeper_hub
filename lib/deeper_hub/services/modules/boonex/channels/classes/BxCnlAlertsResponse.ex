@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlAlertsResponse do
   # Heranca de BxBaseModGroupsAlertsResponse
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlAlertsResponse do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -43,7 +43,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlAlertsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processSystemSaveSetting
+  Funcao correspondente ao metodo PHP processSystemSaveSetting
 
   ## Parametros
     - $oAlert
@@ -51,7 +51,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlAlertsResponse do
   ## Retorno
     - any
   """
-  def _processSystemSaveSetting(params) do
+  def processSystemSaveSetting(params) do
     # TODO: Implementacao futura
         # protected function _processSystemSaveSetting($oAlert)
     #     {

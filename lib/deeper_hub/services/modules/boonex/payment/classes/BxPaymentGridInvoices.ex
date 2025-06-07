@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridInvoices do
   # Heranca de BxBaseModPaymentGridInvoices
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridInvoices do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridInvoices do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFormObject
+  Funcao correspondente ao metodo PHP getFormObject
 
   ## Parametros
     - $sAction
@@ -53,7 +53,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridInvoices do
   ## Retorno
     - any
   """
-  def _getFormObject(params) do
+  def getFormObject(params) do
     # TODO: Implementacao futura
         # protected function _getFormObject($sAction, $iId = 0)
     #     {

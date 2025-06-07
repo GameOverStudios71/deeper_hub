@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   # Heranca de BxBaseModGeneralModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$aModule)
@@ -102,7 +102,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _createProfile
+  Funcao correspondente ao metodo PHP createProfile
 
   ## Parametros
     - $aProfileInfo
@@ -111,7 +111,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   ## Retorno
     - any
   """
-  def _createProfile(params) do
+  def createProfile(params) do
     # TODO: Implementacao futura
         # 
     #     function _createProfile($aProfileInfo, $sAlternativeName = '')
@@ -122,7 +122,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _convertRemoteFields
+  Funcao correspondente ao metodo PHP convertRemoteFields
 
   ## Parametros
     - $aProfileInfo
@@ -131,7 +131,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   ## Retorno
     - any
   """
-  def _convertRemoteFields(params) do
+  def convertRemoteFields(params) do
     # TODO: Implementacao futura
         # protected function _convertRemoteFields($aProfileInfo, $sAlternativeName = '')
     #     {
@@ -144,7 +144,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _createProfileRaw
+  Funcao correspondente ao metodo PHP createProfileRaw
 
   ## Parametros
     - $aProfileInfo
@@ -155,7 +155,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   ## Retorno
     - any
   """
-  def _createProfileRaw(params) do
+  def createProfileRaw(params) do
     # TODO: Implementacao futura
         # 
     #     function _createProfileRaw($aProfileInfo, $sAlternativeName = '', $isAutoFriends = true, $isSetLoggedIn = true)
@@ -168,7 +168,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processImage
+  Funcao correspondente ao metodo PHP processImage
 
   ## Parametros
     - $aFieldsProfile
@@ -178,7 +178,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   ## Retorno
     - any
   """
-  def _processImage(params) do
+  def processImage(params) do
     # TODO: Implementacao futura
         # protected function _processImage($aFieldsProfile, $iAccountProfileId, $oFormHelperProfile)
     #     {
@@ -189,7 +189,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getJoinPage
+  Funcao correspondente ao metodo PHP getJoinPage
 
   ## Parametros
     - $aProfileFields
@@ -198,7 +198,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   ## Retorno
     - any
   """
-  def _getJoinPage(params) do
+  def getJoinPage(params) do
     # TODO: Implementacao futura
         # 
     #     function _getJoinPage($aProfileFields, $iRemoteProfileId)
@@ -209,7 +209,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getRedirectUrl
+  Funcao correspondente ao metodo PHP getRedirectUrl
 
   ## Parametros
     - $iProfileId
@@ -218,7 +218,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   ## Retorno
     - any
   """
-  def _getRedirectUrl(params) do
+  def getRedirectUrl(params) do
     # TODO: Implementacao futura
         # 
     #     function _getRedirectUrl($iProfileId, $isExistingProfile = false)
@@ -229,7 +229,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _redirect
+  Funcao correspondente ao metodo PHP redirect
 
   ## Parametros
     - $sUrl
@@ -238,7 +238,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   ## Retorno
     - any
   """
-  def _redirect(params) do
+  def redirect(params) do
     # TODO: Implementacao futura
         # protected function _redirect($sUrl, $iStatus = 302)
     #     {
@@ -248,7 +248,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _genToken
+  Funcao correspondente ao metodo PHP genToken
 
   ## Parametros
     - $bReturn = false
@@ -256,7 +256,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   ## Retorno
     - any
   """
-  def _genToken(params) do
+  def genToken(params) do
     # TODO: Implementacao futura
         # protected function _genToken($bReturn = false)
     #     {
@@ -266,7 +266,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getToken
+  Funcao correspondente ao metodo PHP getToken
 
   ## Parametros
     - 
@@ -274,7 +274,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   ## Retorno
     - any
   """
-  def _getToken(params) do
+  def getToken(params) do
     # TODO: Implementacao futura
         # protected function _getToken()
     #     {
@@ -284,7 +284,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getExistingAccount
+  Funcao correspondente ao metodo PHP getExistingAccount
 
   ## Parametros
     - $aProfileInfo
@@ -294,7 +294,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   ## Retorno
     - any
   """
-  def _getExistingAccount(params) do
+  def getExistingAccount(params) do
     # TODO: Implementacao futura
         # protected function _getExistingAccount($aProfileInfo, &$aFieldsAccount, &$aFieldsProfile)
     #     {
@@ -304,7 +304,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _genPwd
+  Funcao correspondente ao metodo PHP genPwd
 
   ## Parametros
     - $aProfileInfo
@@ -314,7 +314,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   ## Retorno
     - any
   """
-  def _genPwd(params) do
+  def genPwd(params) do
     # TODO: Implementacao futura
         # protected function _genPwd($aProfileInfo, &$aFieldsAccount, &$aFieldsProfile)
     #     {
@@ -324,7 +324,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isSetPendingApprovalAccount
+  Funcao correspondente ao metodo PHP isSetPendingApprovalAccount
 
   ## Parametros
     - $aProfileInfo
@@ -334,7 +334,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   ## Retorno
     - any
   """
-  def _isSetPendingApprovalAccount(params) do
+  def isSetPendingApprovalAccount(params) do
     # TODO: Implementacao futura
         # protected function _isSetPendingApprovalAccount($aProfileInfo, &$aFieldsAccount, &$aFieldsProfile)
     #     {
@@ -344,7 +344,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isSetPendingApprovalProfile
+  Funcao correspondente ao metodo PHP isSetPendingApprovalProfile
 
   ## Parametros
     - $aProfileInfo
@@ -355,7 +355,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModConnectModule do
   ## Retorno
     - any
   """
-  def _isSetPendingApprovalProfile(params) do
+  def isSetPendingApprovalProfile(params) do
     # TODO: Implementacao futura
         # protected function _isSetPendingApprovalProfile($aProfileInfo, $oFormHelperProfile, &$aFieldsAccount, &$aFieldsProfile)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStorageQuery do
   # Heranca de BxDolDb
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStorageQuery do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject)
     #     {
@@ -381,7 +381,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStorageQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFileBy
+  Funcao correspondente ao metodo PHP getFileBy
 
   ## Parametros
     - $sField
@@ -390,7 +390,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStorageQuery do
   ## Retorno
     - any
   """
-  def _getFileBy(params) do
+  def getFileBy(params) do
     # TODO: Implementacao futura
         # protected function _getFileBy($sField, $sValue)
     #     {

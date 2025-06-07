@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPaginate do
   # Heranca de BxDol
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aParams
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPaginate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aParams, $oTemplate = null)
     #     {
@@ -272,7 +272,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPaginate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getReplacement
+  Funcao correspondente ao metodo PHP getReplacement
 
   ## Parametros
     - 
@@ -280,7 +280,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPaginate do
   ## Retorno
     - any
   """
-  def _getReplacement(params) do
+  def getReplacement(params) do
     # TODO: Implementacao futura
         # protected function _getReplacement()
     #     {
@@ -293,7 +293,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPaginate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPageChangeUrl
+  Funcao correspondente ao metodo PHP getPageChangeUrl
 
   ## Parametros
     - $aReplacement
@@ -301,7 +301,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPaginate do
   ## Retorno
     - any
   """
-  def _getPageChangeUrl(params) do
+  def getPageChangeUrl(params) do
     # TODO: Implementacao futura
         # protected function _getPageChangeUrl($aReplacement)
     #     {
@@ -311,7 +311,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPaginate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPageChangeOnClick
+  Funcao correspondente ao metodo PHP getPageChangeOnClick
 
   ## Parametros
     - $aReplacement
@@ -319,7 +319,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPaginate do
   ## Retorno
     - any
   """
-  def _getPageChangeOnClick(params) do
+  def getPageChangeOnClick(params) do
     # TODO: Implementacao futura
         # protected function _getPageChangeOnClick($aReplacement)
     #     {
@@ -328,7 +328,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPaginate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getButtonIconPrev
+  Funcao correspondente ao metodo PHP getButtonIconPrev
 
   ## Parametros
     - 
@@ -336,7 +336,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPaginate do
   ## Retorno
     - any
   """
-  def _getButtonIconPrev(params) do
+  def getButtonIconPrev(params) do
     # TODO: Implementacao futura
         # protected function _getButtonIconPrev()
     #     {
@@ -346,7 +346,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPaginate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getButtonIconNext
+  Funcao correspondente ao metodo PHP getButtonIconNext
 
   ## Parametros
     - 
@@ -354,7 +354,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPaginate do
   ## Retorno
     - any
   """
-  def _getButtonIconNext(params) do
+  def getButtonIconNext(params) do
     # TODO: Implementacao futura
         # protected function _getButtonIconNext()
     #     {

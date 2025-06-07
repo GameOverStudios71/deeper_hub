@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOptionsApi do
   # Heranca de BxTemplStudioOptions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sType = ''
@@ -17,7 +17,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOptionsApi do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($sType = '', $mixedCategory = '', $sMix = '')
     #     {

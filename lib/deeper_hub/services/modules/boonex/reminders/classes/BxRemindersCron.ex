@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersCron do
   # Heranca de BxDolCron
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersCron do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -45,7 +45,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersCron do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkDateBeginBirthday
+  Funcao correspondente ao metodo PHP checkDateBeginBirthday
 
   ## Parametros
     - &$oProfile
@@ -58,7 +58,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersCron do
   ## Retorno
     - any
   """
-  def _checkDateBeginBirthday(params) do
+  def checkDateBeginBirthday(params) do
     # TODO: Implementacao futura
         # protected function _checkDateBeginBirthday(&$oProfile, &$aProfile, $iDays, $iNowYear, $iNowMonth, $iNowDay)
     #     {
@@ -69,7 +69,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersCron do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkDateBeginAnniversary
+  Funcao correspondente ao metodo PHP checkDateBeginAnniversary
 
   ## Parametros
     - &$oProfile
@@ -82,7 +82,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersCron do
   ## Retorno
     - any
   """
-  def _checkDateBeginAnniversary(params) do
+  def checkDateBeginAnniversary(params) do
     # TODO: Implementacao futura
         # protected function _checkDateBeginAnniversary(&$oProfile, &$aProfile, $iDays, $iNowYear, $iNowMonth, $iNowDay)
     #     {
@@ -92,7 +92,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersCron do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkDate
+  Funcao correspondente ao metodo PHP checkDate
 
   ## Parametros
     - &$oProfile
@@ -105,7 +105,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersCron do
   ## Retorno
     - any
   """
-  def _checkDate(params) do
+  def checkDate(params) do
     # TODO: Implementacao futura
         # protected function _checkDate(&$oProfile, $sDate, $iDays, $iNowYear, $iNowMonth, $iNowDay)
     #     {
@@ -115,7 +115,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersCron do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkDateBegin
+  Funcao correspondente ao metodo PHP checkDateBegin
 
   ## Parametros
     - $sDate
@@ -126,7 +126,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersCron do
   ## Retorno
     - any
   """
-  def _checkDateBegin(params) do
+  def checkDateBegin(params) do
     # TODO: Implementacao futura
         # protected function _checkDateBegin($sDate, $iDays, $iNowMonth, $iNowDay) 
     #     {
@@ -136,7 +136,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersCron do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFriendsIds
+  Funcao correspondente ao metodo PHP getFriendsIds
 
   ## Parametros
     - $iProfileId
@@ -144,7 +144,7 @@ defmodule DeeperHub.Inc.Classes.BxRemindersCron do
   ## Retorno
     - any
   """
-  def _getFriendsIds(params) do
+  def getFriendsIds(params) do
     # TODO: Implementacao futura
         # protected function _getFriendsIds($iProfileId)
     #     {

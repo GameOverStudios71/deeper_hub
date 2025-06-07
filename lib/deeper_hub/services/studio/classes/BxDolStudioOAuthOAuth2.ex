@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct()
     #     {
@@ -29,7 +29,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __clone
+  Funcao correspondente ao metodo PHP clone
 
   ## Parametros
     - 
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   ## Retorno
     - any
   """
-  def __clone(params) do
+  def clone(params) do
     # TODO: Implementacao futura
         # public function __clone()
     #     {
@@ -154,7 +154,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCredential
+  Funcao correspondente ao metodo PHP getCredential
 
   ## Parametros
     - $sName
@@ -162,7 +162,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   ## Retorno
     - any
   """
-  def _getCredential(params) do
+  def getCredential(params) do
     # TODO: Implementacao futura
         # protected function _getCredential($sName)
     #     {
@@ -172,7 +172,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _genState
+  Funcao correspondente ao metodo PHP genState
 
   ## Parametros
     - 
@@ -180,7 +180,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   ## Retorno
     - any
   """
-  def _genState(params) do
+  def genState(params) do
     # TODO: Implementacao futura
         # protected function _genState()
     #     {
@@ -190,7 +190,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getState
+  Funcao correspondente ao metodo PHP getState
 
   ## Parametros
     - 
@@ -198,7 +198,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   ## Retorno
     - any
   """
-  def _getState(params) do
+  def getState(params) do
     # TODO: Implementacao futura
         # protected function _getState()
     #     {
@@ -208,7 +208,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _genCsrfToken
+  Funcao correspondente ao metodo PHP genCsrfToken
 
   ## Parametros
     - 
@@ -216,7 +216,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   ## Retorno
     - any
   """
-  def _genCsrfToken(params) do
+  def genCsrfToken(params) do
     # TODO: Implementacao futura
         # protected function _genCsrfToken()
     #     {
@@ -227,7 +227,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCsrfToken
+  Funcao correspondente ao metodo PHP getCsrfToken
 
   ## Parametros
     - 
@@ -235,7 +235,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   ## Retorno
     - any
   """
-  def _getCsrfToken(params) do
+  def getCsrfToken(params) do
     # TODO: Implementacao futura
         # protected function _getCsrfToken()
     #     {
@@ -246,7 +246,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _genStateToken
+  Funcao correspondente ao metodo PHP genStateToken
 
   ## Parametros
     - 
@@ -254,7 +254,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   ## Retorno
     - any
   """
-  def _genStateToken(params) do
+  def genStateToken(params) do
     # TODO: Implementacao futura
         # protected function _genStateToken()
     #     {
@@ -264,7 +264,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getStateToken
+  Funcao correspondente ao metodo PHP getStateToken
 
   ## Parametros
     - 
@@ -272,7 +272,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioOAuthOAuth2 do
   ## Retorno
     - any
   """
-  def _getStateToken(params) do
+  def getStateToken(params) do
     # TODO: Implementacao futura
         # protected function _getStateToken()
     #     {

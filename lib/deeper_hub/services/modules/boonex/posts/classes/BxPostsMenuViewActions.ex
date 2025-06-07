@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPostsMenuViewActions do
   # Heranca de BxBaseModTextMenuViewActions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxPostsMenuViewActions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxPostsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditPost
+  Funcao correspondente ao metodo PHP getMenuItemEditPost
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxPostsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemEditPost(params) do
+  def getMenuItemEditPost(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditPost($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxPostsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeletePost
+  Funcao correspondente ao metodo PHP getMenuItemDeletePost
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxPostsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDeletePost(params) do
+  def getMenuItemDeletePost(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeletePost($aItem)
     #     {

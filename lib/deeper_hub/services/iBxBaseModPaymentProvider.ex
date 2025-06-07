@@ -39,7 +39,7 @@ defprotocol DeeperHub.Inc.Protocols.iBxBaseModPaymentProvider do
   def finalizedCheckout(params)
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aConfig
@@ -47,7 +47,7 @@ defprotocol DeeperHub.Inc.Protocols.iBxBaseModPaymentProvider do
   ## Retorno
     - any
   """
-  def __construct(params)
+  def construct(params)
 
   @doc """
   Funcao correspondente ao metodo PHP initOptions

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesSearchResult do
   # Heranca de BxBaseModGroupsSearchResult
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sMode = ''
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesSearchResult do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct($sMode = '', $aParams = false)
@@ -49,7 +49,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPseud
+  Funcao correspondente ao metodo PHP getPseud
 
   ## Parametros
     - 
@@ -57,7 +57,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesSearchResult do
   ## Retorno
     - any
   """
-  def _getPseud(params) do
+  def getPseud(params) do
     # TODO: Implementacao futura
         # 
     # 

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketTemplate do
   # Heranca de BxBaseModTextTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct(&$oConfig, &$oDb)
     #     {
@@ -156,7 +156,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getHeaderImageParams
+  Funcao correspondente ao metodo PHP getHeaderImageParams
 
   ## Parametros
     - 
@@ -164,7 +164,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketTemplate do
   ## Retorno
     - any
   """
-  def _getHeaderImageParams(params) do
+  def getHeaderImageParams(params) do
     # TODO: Implementacao futura
         # protected function _getHeaderImageParams()
     #     {
@@ -174,7 +174,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getHeaderImage
+  Funcao correspondente ao metodo PHP getHeaderImage
 
   ## Parametros
     - $aData
@@ -182,7 +182,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketTemplate do
   ## Retorno
     - any
   """
-  def _getHeaderImage(params) do
+  def getHeaderImage(params) do
     # TODO: Implementacao futura
         # protected function _getHeaderImage($aData)
     #     {
@@ -192,7 +192,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareImage
+  Funcao correspondente ao metodo PHP prepareImage
 
   ## Parametros
     - $aData
@@ -206,7 +206,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketTemplate do
   ## Retorno
     - any
   """
-  def _prepareImage(params) do
+  def prepareImage(params) do
     # TODO: Implementacao futura
         # 
     #     

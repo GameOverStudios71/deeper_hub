@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentModule do
   # Heranca de BxBaseModPaymentModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -984,7 +984,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _invoicesIssue
+  Funcao correspondente ao metodo PHP invoicesIssue
 
   ## Parametros
     - 
@@ -992,7 +992,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentModule do
   ## Retorno
     - any
   """
-  def _invoicesIssue(params) do
+  def invoicesIssue(params) do
     # TODO: Implementacao futura
         # protected function _invoicesIssue()
     #     {
@@ -1002,7 +1002,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _invoicesCheck
+  Funcao correspondente ao metodo PHP invoicesCheck
 
   ## Parametros
     - 
@@ -1010,7 +1010,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentModule do
   ## Retorno
     - any
   """
-  def _invoicesCheck(params) do
+  def invoicesCheck(params) do
     # TODO: Implementacao futura
         # protected function _invoicesCheck()
     #     {

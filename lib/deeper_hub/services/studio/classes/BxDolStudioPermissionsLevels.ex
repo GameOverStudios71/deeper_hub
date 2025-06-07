@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioPermissionsLevels do
   # Heranca de BxTemplStudioGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioPermissionsLevels do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioPermissionsLevels do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _switcherChecked2State
+  Funcao correspondente ao metodo PHP switcherChecked2State
 
   ## Parametros
     - $isChecked
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioPermissionsLevels do
   ## Retorno
     - any
   """
-  def _switcherChecked2State(params) do
+  def switcherChecked2State(params) do
     # TODO: Implementacao futura
         # protected function _switcherChecked2State($isChecked)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioPermissionsLevels do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _switcherState2Checked
+  Funcao correspondente ao metodo PHP switcherState2Checked
 
   ## Parametros
     - $mixedState
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioPermissionsLevels do
   ## Retorno
     - any
   """
-  def _switcherState2Checked(params) do
+  def switcherState2Checked(params) do
     # TODO: Implementacao futura
         # protected function _switcherState2Checked($mixedState)
     #     {

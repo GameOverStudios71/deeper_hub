@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesVoteStars do
   # Heranca de BxTemplVoteStars
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -17,7 +17,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesVoteStars do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($sSystem, $iId, $iInit = 1)
     #     {
@@ -45,7 +45,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesVoteStars do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCounterLabel
+  Funcao correspondente ao metodo PHP getCounterLabel
 
   ## Parametros
     - $iCount
@@ -54,7 +54,7 @@ defmodule DeeperHub.Inc.Classes.BxSpacesVoteStars do
   ## Retorno
     - any
   """
-  def _getCounterLabel(params) do
+  def getCounterLabel(params) do
     # TODO: Implementacao futura
         # protected function _getCounterLabel($iCount, $aParams = [])
     #     {

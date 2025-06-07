@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridBans do
   # Heranca de BxDolGridConnections
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridBans do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -45,7 +45,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridBans do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAdded
+  Funcao correspondente ao metodo PHP getCellAdded
 
   ## Parametros
     - $mixedValue
@@ -56,7 +56,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridBans do
   ## Retorno
     - any
   """
-  def _getCellAdded(params) do
+  def getCellAdded(params) do
     # TODO: Implementacao futura
         # protected function _getCellAdded ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -66,7 +66,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridBans do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _delete
+  Funcao correspondente ao metodo PHP delete
 
   ## Parametros
     - $mixedId
@@ -74,7 +74,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridBans do
   ## Retorno
     - any
   """
-  def _delete(params) do
+  def delete(params) do
     # TODO: Implementacao futura
         # protected function _delete ($mixedId)
     #     {

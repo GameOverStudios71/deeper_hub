@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamIP do
   # Heranca de BxDol
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamIP do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -156,7 +156,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamIP do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isIpListed
+  Funcao correspondente ao metodo PHP isIpListed
 
   ## Parametros
     - $sType
@@ -165,7 +165,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamIP do
   ## Retorno
     - any
   """
-  def _isIpListed(params) do
+  def isIpListed(params) do
     # TODO: Implementacao futura
         # protected function _isIpListed($sType, $sIp)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesModule do
   # Heranca de BxBaseModGroupsModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$aModule)
@@ -175,7 +175,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _autoPassNodes
+  Funcao correspondente ao metodo PHP autoPassNodes
 
   ## Parametros
     - $iProfileId
@@ -184,7 +184,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesModule do
   ## Retorno
     - any
   """
-  def _autoPassNodes(params) do
+  def autoPassNodes(params) do
     # TODO: Implementacao futura
         # protected function _autoPassNodes($iProfileId, $iNodeId)
     #     {
@@ -728,7 +728,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getOptionsContentModules
+  Funcao correspondente ao metodo PHP getOptionsContentModules
 
   ## Parametros
     - 
@@ -736,7 +736,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesModule do
   ## Retorno
     - any
   """
-  def _getOptionsContentModules(params) do
+  def getOptionsContentModules(params) do
     # TODO: Implementacao futura
         # protected function _getOptionsContentModules()
     #     {
@@ -746,7 +746,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _performHideCourseProfile
+  Funcao correspondente ao metodo PHP performHideCourseProfile
 
   ## Parametros
     - $aDataEntry
@@ -754,7 +754,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesModule do
   ## Retorno
     - any
   """
-  def _performHideCourseProfile(params) do
+  def performHideCourseProfile(params) do
     # TODO: Implementacao futura
         # protected function _performHideCourseProfile($aDataEntry)
     #     {
@@ -764,7 +764,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _performUnhideCourseProfile
+  Funcao correspondente ao metodo PHP performUnhideCourseProfile
 
   ## Parametros
     - $aDataEntry
@@ -772,7 +772,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesModule do
   ## Retorno
     - any
   """
-  def _performUnhideCourseProfile(params) do
+  def performUnhideCourseProfile(params) do
     # TODO: Implementacao futura
         # protected function _performUnhideCourseProfile($aDataEntry)
     #     {

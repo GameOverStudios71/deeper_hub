@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPrivacyQuery do
   # Heranca de BxDolDb
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPrivacyQuery do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -421,7 +421,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPrivacyQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAction
+  Funcao correspondente ao metodo PHP getAction
 
   ## Parametros
     - $sModule
@@ -430,7 +430,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPrivacyQuery do
   ## Retorno
     - any
   """
-  def _getAction(params) do
+  def getAction(params) do
     # TODO: Implementacao futura
         # protected function _getAction($sModule, $sAction)
     #     {
@@ -448,7 +448,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPrivacyQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _insertGroupCustomItem
+  Funcao correspondente ao metodo PHP insertGroupCustomItem
 
   ## Parametros
     - $sTable
@@ -457,7 +457,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPrivacyQuery do
   ## Retorno
     - any
   """
-  def _insertGroupCustomItem(params) do
+  def insertGroupCustomItem(params) do
     # TODO: Implementacao futura
         # protected function _insertGroupCustomItem($sTable, $aParamsSet)
     #     {
@@ -468,7 +468,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPrivacyQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _deleteGroupCustomItem
+  Funcao correspondente ao metodo PHP deleteGroupCustomItem
 
   ## Parametros
     - $sTable
@@ -477,7 +477,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPrivacyQuery do
   ## Retorno
     - any
   """
-  def _deleteGroupCustomItem(params) do
+  def deleteGroupCustomItem(params) do
     # TODO: Implementacao futura
         # protected function _deleteGroupCustomItem($sTable, $aParamsWhere)
     #     {

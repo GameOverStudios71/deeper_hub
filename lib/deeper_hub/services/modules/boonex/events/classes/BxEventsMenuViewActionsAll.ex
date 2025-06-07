@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   # Heranca de BxBaseModGroupsMenuViewActionsAll
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuAttrs
+  Funcao correspondente ao metodo PHP getMenuAttrs
 
   ## Parametros
     - $aMenuItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuAttrs(params) do
+  def getMenuAttrs(params) do
     # TODO: Implementacao futura
         # protected function _getMenuAttrs ($aMenuItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemJoinEventProfile
+  Funcao correspondente ao metodo PHP getMenuItemJoinEventProfile
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemJoinEventProfile(params) do
+  def getMenuItemJoinEventProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemJoinEventProfile($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditEventCover
+  Funcao correspondente ao metodo PHP getMenuItemEditEventCover
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditEventCover(params) do
+  def getMenuItemEditEventCover(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditEventCover($aItem)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditEventProfile
+  Funcao correspondente ao metodo PHP getMenuItemEditEventProfile
 
   ## Parametros
     - $aItem
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditEventProfile(params) do
+  def getMenuItemEditEventProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditEventProfile($aItem)
     #     {
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEventQuestionnaire
+  Funcao correspondente ao metodo PHP getMenuItemEventQuestionnaire
 
   ## Parametros
     - $aItem
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEventQuestionnaire(params) do
+  def getMenuItemEventQuestionnaire(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEventQuestionnaire($aItem)
     #     {
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEventSessions
+  Funcao correspondente ao metodo PHP getMenuItemEventSessions
 
   ## Parametros
     - $aItem
@@ -124,7 +124,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEventSessions(params) do
+  def getMenuItemEventSessions(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEventSessions($aItem)
     #     {
@@ -134,7 +134,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEventPricing
+  Funcao correspondente ao metodo PHP getMenuItemEventPricing
 
   ## Parametros
     - $aItem
@@ -142,7 +142,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEventPricing(params) do
+  def getMenuItemEventPricing(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEventPricing($aItem)
     #     {
@@ -152,7 +152,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemInviteToEvent
+  Funcao correspondente ao metodo PHP getMenuItemInviteToEvent
 
   ## Parametros
     - $aItem
@@ -160,7 +160,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemInviteToEvent(params) do
+  def getMenuItemInviteToEvent(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemInviteToEvent($aItem)
     #     {
@@ -170,7 +170,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteEventProfile
+  Funcao correspondente ao metodo PHP getMenuItemDeleteEventProfile
 
   ## Parametros
     - $aItem
@@ -178,7 +178,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteEventProfile(params) do
+  def getMenuItemDeleteEventProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteEventProfile($aItem)
     #     {
@@ -188,7 +188,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemApproveEventProfile
+  Funcao correspondente ao metodo PHP getMenuItemApproveEventProfile
 
   ## Parametros
     - $aItem
@@ -196,7 +196,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemApproveEventProfile(params) do
+  def getMenuItemApproveEventProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemApproveEventProfile($aItem)
     #     {
@@ -206,7 +206,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemProfileCheckIn
+  Funcao correspondente ao metodo PHP getMenuItemProfileCheckIn
 
   ## Parametros
     - $aItem
@@ -214,7 +214,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemProfileCheckIn(params) do
+  def getMenuItemProfileCheckIn(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemProfileCheckIn($aItem)
     #     {

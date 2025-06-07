@@ -5,7 +5,7 @@ defmodule DeeperHub.Inc.Classes.BxDolModuleProxy do
   """
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sObjectType
@@ -14,7 +14,7 @@ defmodule DeeperHub.Inc.Classes.BxDolModuleProxy do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxDolModuleProxy do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __call
+  Funcao correspondente ao metodo PHP call
 
   ## Parametros
     - $sMethodName
@@ -35,7 +35,7 @@ defmodule DeeperHub.Inc.Classes.BxDolModuleProxy do
   ## Retorno
     - any
   """
-  def __call(params) do
+  def call(params) do
     # TODO: Implementacao futura
         # public function __call($sMethodName, $aArguments)
     #     {

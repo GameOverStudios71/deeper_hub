@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isCheckboxDisabled
+  Funcao correspondente ao metodo PHP isCheckboxDisabled
 
   ## Parametros
     - $aRow
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   ## Retorno
     - any
   """
-  def _isCheckboxDisabled(params) do
+  def isCheckboxDisabled(params) do
     # TODO: Implementacao futura
         # protected function _isCheckboxDisabled($aRow)
     #     {
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAlertUnit
+  Funcao correspondente ao metodo PHP getCellAlertUnit
 
   ## Parametros
     - $mixedValue
@@ -127,7 +127,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   ## Retorno
     - any
   """
-  def _getCellAlertUnit(params) do
+  def getCellAlertUnit(params) do
     # TODO: Implementacao futura
         # protected function _getCellAlertUnit($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -137,7 +137,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAlertAction
+  Funcao correspondente ao metodo PHP getCellAlertAction
 
   ## Parametros
     - $mixedValue
@@ -148,7 +148,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   ## Retorno
     - any
   """
-  def _getCellAlertAction(params) do
+  def getCellAlertAction(params) do
     # TODO: Implementacao futura
         # protected function _getCellAlertAction($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -158,7 +158,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -166,7 +166,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls()
     #     {
@@ -176,7 +176,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterSelectOne
+  Funcao correspondente ao metodo PHP getFilterSelectOne
 
   ## Parametros
     - $sFilterName
@@ -187,7 +187,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   ## Retorno
     - any
   """
-  def _getFilterSelectOne(params) do
+  def getFilterSelectOne(params) do
     # TODO: Implementacao futura
         # protected function _getFilterSelectOne($sFilterName, $sFilterValue, $aFilterValues, $bAddSelectOne = true)
     #     {
@@ -198,7 +198,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSearchInput
+  Funcao correspondente ao metodo PHP getSearchInput
 
   ## Parametros
     - 
@@ -206,7 +206,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   ## Retorno
     - any
   """
-  def _getSearchInput(params) do
+  def getSearchInput(params) do
     # TODO: Implementacao futura
         # protected function _getSearchInput()
     #     {
@@ -216,7 +216,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -228,7 +228,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -239,7 +239,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _performActionEnable
+  Funcao correspondente ao metodo PHP performActionEnable
 
   ## Parametros
     - $isChecked
@@ -247,7 +247,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   ## Retorno
     - any
   """
-  def _performActionEnable(params) do
+  def performActionEnable(params) do
     # TODO: Implementacao futura
         # protected function _performActionEnable($isChecked)
     #     {
@@ -257,7 +257,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIds
+  Funcao correspondente ao metodo PHP getIds
 
   ## Parametros
     - 
@@ -265,7 +265,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   ## Retorno
     - any
   """
-  def _getIds(params) do
+  def getIds(params) do
     # TODO: Implementacao futura
         # protected function _getIds()
     #     {
@@ -275,7 +275,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTitleByUnit
+  Funcao correspondente ao metodo PHP getTitleByUnit
 
   ## Parametros
     - $sUnit
@@ -283,7 +283,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationGridHandlers do
   ## Retorno
     - any
   """
-  def _getTitleByUnit(params) do
+  def getTitleByUnit(params) do
     # TODO: Implementacao futura
         # protected function _getTitleByUnit($sUnit)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileCmts do
   # Heranca de BxTemplCmts
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -17,7 +17,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileCmts do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -47,7 +47,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isPostAllowed
+  Funcao correspondente ao metodo PHP isPostAllowed
 
   ## Parametros
     - $isPerformAction = false
@@ -55,7 +55,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileCmts do
   ## Retorno
     - any
   """
-  def _isPostAllowed(params) do
+  def isPostAllowed(params) do
     # TODO: Implementacao futura
         # protected function _isPostAllowed ($isPerformAction = false)
     #     {

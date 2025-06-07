@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineDb do
   # Heranca de BxBaseModNotificationsDb
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineDb do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$oConfig)
@@ -890,7 +890,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterAddon
+  Funcao correspondente ao metodo PHP getFilterAddon
 
   ## Parametros
     - $iOwnerId
@@ -899,7 +899,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineDb do
   ## Retorno
     - any
   """
-  def _getFilterAddon(params) do
+  def getFilterAddon(params) do
     # TODO: Implementacao futura
         # protected function _getFilterAddon($iOwnerId, $sFilter)
     #     {
@@ -909,7 +909,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSqlPartsEvents
+  Funcao correspondente ao metodo PHP getSqlPartsEvents
 
   ## Parametros
     - $aParams
@@ -917,7 +917,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineDb do
   ## Retorno
     - any
   """
-  def _getSqlPartsEvents(params) do
+  def getSqlPartsEvents(params) do
     # TODO: Implementacao futura
         # protected function _getSqlPartsEvents($aParams)
     #     {
@@ -927,7 +927,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSqlPartsEventsListStatusAdmin
+  Funcao correspondente ao metodo PHP getSqlPartsEventsListStatusAdmin
 
   ## Parametros
     - $aParams
@@ -935,7 +935,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineDb do
   ## Retorno
     - any
   """
-  def _getSqlPartsEventsListStatusAdmin(params) do
+  def getSqlPartsEventsListStatusAdmin(params) do
     # TODO: Implementacao futura
         # protected function _getSqlPartsEventsListStatusAdmin($aParams)
     #     {
@@ -946,7 +946,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSqlPartsEventsList
+  Funcao correspondente ao metodo PHP getSqlPartsEventsList
 
   ## Parametros
     - $aParams
@@ -954,7 +954,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineDb do
   ## Retorno
     - any
   """
-  def _getSqlPartsEventsList(params) do
+  def getSqlPartsEventsList(params) do
     # TODO: Implementacao futura
         # protected function _getSqlPartsEventsList($aParams)
     #     {
@@ -964,7 +964,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isList
+  Funcao correspondente ao metodo PHP isList
 
   ## Parametros
     - $aParams
@@ -972,7 +972,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineDb do
   ## Retorno
     - any
   """
-  def _isList(params) do
+  def isList(params) do
     # TODO: Implementacao futura
         # protected function _isList($aParams)
     #     {

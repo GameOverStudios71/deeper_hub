@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsFormsEntryHelper do
   # Heranca de BxBaseModProfileFormsEntryHelper
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $oModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsFormsEntryHelper do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($oModule)
     #     {
@@ -65,7 +65,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsFormsEntryHelper do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getProfileAndContentData
+  Funcao correspondente ao metodo PHP getProfileAndContentData
 
   ## Parametros
     - $iContentId
@@ -73,7 +73,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsFormsEntryHelper do
   ## Retorno
     - any
   """
-  def _getProfileAndContentData(params) do
+  def getProfileAndContentData(params) do
     # TODO: Implementacao futura
         # protected function _getProfileAndContentData ($iContentId)
     #     {
@@ -83,7 +83,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsFormsEntryHelper do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processPermissionsCheckForViewDataForm
+  Funcao correspondente ao metodo PHP processPermissionsCheckForViewDataForm
 
   ## Parametros
     - $aContentInfo
@@ -92,7 +92,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsFormsEntryHelper do
   ## Retorno
     - any
   """
-  def _processPermissionsCheckForViewDataForm(params) do
+  def processPermissionsCheckForViewDataForm(params) do
     # TODO: Implementacao futura
         # protected function _processPermissionsCheckForViewDataForm ($aContentInfo, $oProfile)
     #     {

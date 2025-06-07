@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridBundles do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridBundles do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridBundles do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellPrice
+  Funcao correspondente ao metodo PHP getCellPrice
 
   ## Parametros
     - $mixedValue
@@ -73,7 +73,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridBundles do
   ## Retorno
     - any
   """
-  def _getCellPrice(params) do
+  def getCellPrice(params) do
     # TODO: Implementacao futura
         # protected function _getCellPrice ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -83,7 +83,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridBundles do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addJsCss
+  Funcao correspondente ao metodo PHP addJsCss
 
   ## Parametros
     - 
@@ -91,7 +91,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridBundles do
   ## Retorno
     - any
   """
-  def _addJsCss(params) do
+  def addJsCss(params) do
     # TODO: Implementacao futura
         # protected function _addJsCss()
     #     {
@@ -101,7 +101,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridBundles do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVisibleGrid
+  Funcao correspondente ao metodo PHP isVisibleGrid
 
   ## Parametros
     - $a
@@ -109,7 +109,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridBundles do
   ## Retorno
     - any
   """
-  def _isVisibleGrid(params) do
+  def isVisibleGrid(params) do
     # TODO: Implementacao futura
         # protected function _isVisibleGrid ($a)
     #     {
@@ -119,7 +119,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridBundles do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _delete
+  Funcao correspondente ao metodo PHP delete
 
   ## Parametros
     - $mixedId
@@ -127,7 +127,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridBundles do
   ## Retorno
     - any
   """
-  def _delete(params) do
+  def delete(params) do
     # TODO: Implementacao futura
         # protected function _delete ($mixedId)
     #     {

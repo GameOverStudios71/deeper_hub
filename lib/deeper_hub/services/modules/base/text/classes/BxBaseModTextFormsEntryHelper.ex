@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextFormsEntryHelper do
   # Heranca de BxBaseModGeneralFormsEntryHelper
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $oModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextFormsEntryHelper do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($oModule)
     #     {
@@ -43,7 +43,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextFormsEntryHelper do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getProfileAndContentData
+  Funcao correspondente ao metodo PHP getProfileAndContentData
 
   ## Parametros
     - $iContentId
@@ -51,7 +51,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextFormsEntryHelper do
   ## Retorno
     - any
   """
-  def _getProfileAndContentData(params) do
+  def getProfileAndContentData(params) do
     # TODO: Implementacao futura
         # protected function _getProfileAndContentData ($iContentId)
     #     {

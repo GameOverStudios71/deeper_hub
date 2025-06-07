@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenu do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenu do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($aObject)
     #     {
@@ -438,7 +438,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenu do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setCollapsed
+  Funcao correspondente ao metodo PHP setCollapsed
 
   ## Parametros
     - $sName
@@ -447,7 +447,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenu do
   ## Retorno
     - any
   """
-  def _setCollapsed(params) do
+  def setCollapsed(params) do
     # TODO: Implementacao futura
         # protected function _setCollapsed($sName, $mixedValue)
     #     {
@@ -457,7 +457,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenu do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isSelected
+  Funcao correspondente ao metodo PHP isSelected
 
   ## Parametros
     - $a
@@ -465,7 +465,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenu do
   ## Retorno
     - any
   """
-  def _isSelected(params) do
+  def isSelected(params) do
     # TODO: Implementacao futura
         # protected function _isSelected ($a)
     #     {
@@ -476,7 +476,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenu do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isActive
+  Funcao correspondente ao metodo PHP isActive
 
   ## Parametros
     - $a
@@ -484,7 +484,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenu do
   ## Retorno
     - any
   """
-  def _isActive(params) do
+  def isActive(params) do
     # TODO: Implementacao futura
         # protected function _isActive ($a)
     #     {
@@ -495,7 +495,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenu do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVisible
+  Funcao correspondente ao metodo PHP isVisible
 
   ## Parametros
     - $a
@@ -503,7 +503,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenu do
   ## Retorno
     - any
   """
-  def _isVisible(params) do
+  def isVisible(params) do
     # TODO: Implementacao futura
         # protected function _isVisible ($a)
     #     {
@@ -514,7 +514,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenu do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getVisibilityClass
+  Funcao correspondente ao metodo PHP getVisibilityClass
 
   ## Parametros
     - $a
@@ -522,7 +522,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenu do
   ## Retorno
     - any
   """
-  def _getVisibilityClass(params) do
+  def getVisibilityClass(params) do
     # TODO: Implementacao futura
         # protected function _getVisibilityClass($a)
     #     {
@@ -537,7 +537,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenu do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _replaceMarkers
+  Funcao correspondente ao metodo PHP replaceMarkers
 
   ## Parametros
     - $a
@@ -545,7 +545,7 @@ defmodule DeeperHub.Inc.Classes.BxDolMenu do
   ## Retorno
     - any
   """
-  def _replaceMarkers(params) do
+  def replaceMarkers(params) do
     # TODO: Implementacao futura
         # protected function _replaceMarkers ($a)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxClssModule do
   # Heranca de BxBaseModTextModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxClssModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$aModule)
@@ -138,7 +138,7 @@ defmodule DeeperHub.Inc.Classes.BxClssModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _actionAddEditModule
+  Funcao correspondente ao metodo PHP actionAddEditModule
 
   ## Parametros
     - $iProfileConextId = 0
@@ -148,7 +148,7 @@ defmodule DeeperHub.Inc.Classes.BxClssModule do
   ## Retorno
     - any
   """
-  def _actionAddEditModule(params) do
+  def actionAddEditModule(params) do
     # TODO: Implementacao futura
         # protected function _actionAddEditModule($iProfileConextId = 0, $iModuleId = 0, $sFormat = 'json')
     #     {
@@ -158,7 +158,7 @@ defmodule DeeperHub.Inc.Classes.BxClssModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _validateActionAndGetContextProfile
+  Funcao correspondente ao metodo PHP validateActionAndGetContextProfile
 
   ## Parametros
     - $iProfileConextId = 0
@@ -167,7 +167,7 @@ defmodule DeeperHub.Inc.Classes.BxClssModule do
   ## Retorno
     - any
   """
-  def _validateActionAndGetContextProfile(params) do
+  def validateActionAndGetContextProfile(params) do
     # TODO: Implementacao futura
         # protected function _validateActionAndGetContextProfile($iProfileConextId = 0, $sFormat = 'json')
     #     {
@@ -251,7 +251,7 @@ defmodule DeeperHub.Inc.Classes.BxClssModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceNextClass
+  Funcao correspondente ao metodo PHP serviceNextClass
 
   ## Parametros
     - $iClassId
@@ -260,7 +260,7 @@ defmodule DeeperHub.Inc.Classes.BxClssModule do
   ## Retorno
     - any
   """
-  def _serviceNextClass(params) do
+  def serviceNextClass(params) do
     # TODO: Implementacao futura
         # protected function _serviceNextClass ($iClassId, $sFunc)
     #     {
@@ -271,7 +271,7 @@ defmodule DeeperHub.Inc.Classes.BxClssModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getClassRow
+  Funcao correspondente ao metodo PHP getClassRow
 
   ## Parametros
     - $aClass
@@ -282,7 +282,7 @@ defmodule DeeperHub.Inc.Classes.BxClssModule do
   ## Retorno
     - any
   """
-  def _getClassRow(params) do
+  def getClassRow(params) do
     # TODO: Implementacao futura
         # protected function _getClassRow ($aClass, &$iCounterCompleted = null, &$iCounterAvail = null, &$iCounterNa = null)
     #     {
@@ -411,7 +411,7 @@ defmodule DeeperHub.Inc.Classes.BxClssModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceCheckAllowedViewForProfile
+  Funcao correspondente ao metodo PHP serviceCheckAllowedViewForProfile
 
   ## Parametros
     - $aDataEntry
@@ -421,7 +421,7 @@ defmodule DeeperHub.Inc.Classes.BxClssModule do
   ## Retorno
     - any
   """
-  def _serviceCheckAllowedViewForProfile(params) do
+  def serviceCheckAllowedViewForProfile(params) do
     # TODO: Implementacao futura
         # protected function _serviceCheckAllowedViewForProfile ($aDataEntry, $isPerformAction, $iProfileId)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -135,7 +135,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -143,7 +143,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls ()
     #     {
@@ -153,7 +153,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSearchInput
+  Funcao correspondente ao metodo PHP getSearchInput
 
   ## Parametros
     - 
@@ -161,7 +161,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   ## Retorno
     - any
   """
-  def _getSearchInput(params) do
+  def getSearchInput(params) do
     # TODO: Implementacao futura
         # protected function _getSearchInput()
     #     {
@@ -171,7 +171,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterSelectOne
+  Funcao correspondente ao metodo PHP getFilterSelectOne
 
   ## Parametros
     - $sFilterName
@@ -181,7 +181,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   ## Retorno
     - any
   """
-  def _getFilterSelectOne(params) do
+  def getFilterSelectOne(params) do
     # TODO: Implementacao futura
         # protected function _getFilterSelectOne($sFilterName, $sFilterValue, $aFilterValues)
     #     {
@@ -192,7 +192,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellNip
+  Funcao correspondente ao metodo PHP getCellNip
 
   ## Parametros
     - $mixedValue
@@ -203,7 +203,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   ## Retorno
     - any
   """
-  def _getCellNip(params) do
+  def getCellNip(params) do
     # TODO: Implementacao futura
         # protected function _getCellNip($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -213,7 +213,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDate
+  Funcao correspondente ao metodo PHP getCellDate
 
   ## Parametros
     - $mixedValue
@@ -224,7 +224,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   ## Retorno
     - any
   """
-  def _getCellDate(params) do
+  def getCellDate(params) do
     # TODO: Implementacao futura
         # protected function _getCellDate($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -235,7 +235,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellStatus
+  Funcao correspondente ao metodo PHP getCellStatus
 
   ## Parametros
     - $mixedValue
@@ -246,7 +246,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   ## Retorno
     - any
   """
-  def _getCellStatus(params) do
+  def getCellStatus(params) do
     # TODO: Implementacao futura
         # protected function _getCellStatus($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -256,7 +256,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellJoinedAccount
+  Funcao correspondente ao metodo PHP getCellJoinedAccount
 
   ## Parametros
     - $mixedValue
@@ -267,7 +267,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   ## Retorno
     - any
   """
-  def _getCellJoinedAccount(params) do
+  def getCellJoinedAccount(params) do
     # TODO: Implementacao futura
         # protected function _getCellJoinedAccount($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -277,7 +277,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -289,7 +289,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -299,7 +299,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSqlOrderClause
+  Funcao correspondente ao metodo PHP getDataSqlOrderClause
 
   ## Parametros
     - $sOrderByFilter
@@ -310,7 +310,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   ## Retorno
     - any
   """
-  def _getDataSqlOrderClause(params) do
+  def getDataSqlOrderClause(params) do
     # TODO: Implementacao futura
         # protected function _getDataSqlOrderClause ($sOrderByFilter, $sOrderField, $sOrderDir, $bFieldsOnly = false)
     #     {
@@ -320,7 +320,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getId
+  Funcao correspondente ao metodo PHP getId
 
   ## Parametros
     - 
@@ -328,7 +328,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   ## Retorno
     - any
   """
-  def _getId(params) do
+  def getId(params) do
     # TODO: Implementacao futura
         # protected function _getId()
     #     {
@@ -338,7 +338,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIds
+  Funcao correspondente ao metodo PHP getIds
 
   ## Parametros
     - 
@@ -346,7 +346,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridRequests do
   ## Retorno
     - any
   """
-  def _getIds(params) do
+  def getIds(params) do
     # TODO: Implementacao futura
         # protected function _getIds()
     #     {

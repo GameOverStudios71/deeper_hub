@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsVoteSubentries do
   # Heranca de BxTemplVoteLikes
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -17,7 +17,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsVoteSubentries do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -159,7 +159,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsVoteSubentries do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIconDo
+  Funcao correspondente ao metodo PHP getIconDo
 
   ## Parametros
     - $bVoted
@@ -167,7 +167,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsVoteSubentries do
   ## Retorno
     - any
   """
-  def _getIconDo(params) do
+  def getIconDo(params) do
     # TODO: Implementacao futura
         # protected function _getIconDo($bVoted)
     #     {
@@ -177,7 +177,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsVoteSubentries do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTitleDo
+  Funcao correspondente ao metodo PHP getTitleDo
 
   ## Parametros
     - $bVoted
@@ -185,7 +185,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsVoteSubentries do
   ## Retorno
     - any
   """
-  def _getTitleDo(params) do
+  def getTitleDo(params) do
     # TODO: Implementacao futura
         # protected function _getTitleDo($bVoted)
     #     {
@@ -195,7 +195,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsVoteSubentries do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isShowDoVote
+  Funcao correspondente ao metodo PHP isShowDoVote
 
   ## Parametros
     - $aParams
@@ -205,7 +205,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsVoteSubentries do
   ## Retorno
     - any
   """
-  def _isShowDoVote(params) do
+  def isShowDoVote(params) do
     # TODO: Implementacao futura
         # protected function _isShowDoVote($aParams, $isAllowedVote, $bCount)
     #     {
@@ -215,7 +215,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsVoteSubentries do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTmplContentElementBlock
+  Funcao correspondente ao metodo PHP getTmplContentElementBlock
 
   ## Parametros
     - 
@@ -223,7 +223,7 @@ defmodule DeeperHub.Inc.Classes.BxPollsVoteSubentries do
   ## Retorno
     - any
   """
-  def _getTmplContentElementBlock(params) do
+  def getTmplContentElementBlock(params) do
     # TODO: Implementacao futura
         # protected function _getTmplContentElementBlock()
     #     {

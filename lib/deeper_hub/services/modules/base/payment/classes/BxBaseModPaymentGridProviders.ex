@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridProviders do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridProviders do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridProviders do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellForVisitor
+  Funcao correspondente ao metodo PHP getCellForVisitor
 
   ## Parametros
     - $mixedValue
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridProviders do
   ## Retorno
     - any
   """
-  def _getCellForVisitor(params) do
+  def getCellForVisitor(params) do
     # TODO: Implementacao futura
         # protected function _getCellForVisitor($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -47,7 +47,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridProviders do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellForSingle
+  Funcao correspondente ao metodo PHP getCellForSingle
 
   ## Parametros
     - $mixedValue
@@ -58,7 +58,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridProviders do
   ## Retorno
     - any
   """
-  def _getCellForSingle(params) do
+  def getCellForSingle(params) do
     # TODO: Implementacao futura
         # protected function _getCellForSingle($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -68,7 +68,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridProviders do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellForRecurring
+  Funcao correspondente ao metodo PHP getCellForRecurring
 
   ## Parametros
     - $mixedValue
@@ -79,7 +79,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridProviders do
   ## Retorno
     - any
   """
-  def _getCellForRecurring(params) do
+  def getCellForRecurring(params) do
     # TODO: Implementacao futura
         # protected function _getCellForRecurring($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -89,7 +89,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridProviders do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellSingleSeller
+  Funcao correspondente ao metodo PHP getCellSingleSeller
 
   ## Parametros
     - $mixedValue
@@ -100,7 +100,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridProviders do
   ## Retorno
     - any
   """
-  def _getCellSingleSeller(params) do
+  def getCellSingleSeller(params) do
     # TODO: Implementacao futura
         # protected function _getCellSingleSeller($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -110,7 +110,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridProviders do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellTimeTracker
+  Funcao correspondente ao metodo PHP getCellTimeTracker
 
   ## Parametros
     - $mixedValue
@@ -121,7 +121,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridProviders do
   ## Retorno
     - any
   """
-  def _getCellTimeTracker(params) do
+  def getCellTimeTracker(params) do
     # TODO: Implementacao futura
         # protected function _getCellTimeTracker($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -131,7 +131,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridProviders do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellValue
+  Funcao correspondente ao metodo PHP getCellValue
 
   ## Parametros
     - $mixedValue
@@ -139,7 +139,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridProviders do
   ## Retorno
     - any
   """
-  def _getCellValue(params) do
+  def getCellValue(params) do
     # TODO: Implementacao futura
         # protected function _getCellValue($mixedValue)
     #     {

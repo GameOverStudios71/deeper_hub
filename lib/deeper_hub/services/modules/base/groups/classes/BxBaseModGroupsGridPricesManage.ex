@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesManage do
   # Heranca de BxBaseModGroupsGridPrices
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesManage do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -154,7 +154,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addJsCss
+  Funcao correspondente ao metodo PHP addJsCss
 
   ## Parametros
     - 
@@ -162,7 +162,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesManage do
   ## Retorno
     - any
   """
-  def _addJsCss(params) do
+  def addJsCss(params) do
     # TODO: Implementacao futura
         # protected function _addJsCss()
     #     {
@@ -172,7 +172,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -180,7 +180,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesManage do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls()
     #     {
@@ -190,7 +190,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -202,7 +202,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesManage do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -213,7 +213,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVisibleGrid
+  Funcao correspondente ao metodo PHP isVisibleGrid
 
   ## Parametros
     - $a
@@ -221,7 +221,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsGridPricesManage do
   ## Retorno
     - any
   """
-  def _isVisibleGrid(params) do
+  def isVisibleGrid(params) do
     # TODO: Implementacao futura
         # protected function _isVisibleGrid ($a)
     #     {

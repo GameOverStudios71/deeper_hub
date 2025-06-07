@@ -394,7 +394,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFormCheckerHelper do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _passDate
+  Funcao correspondente ao metodo PHP passDate
 
   ## Parametros
     - $s
@@ -403,7 +403,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFormCheckerHelper do
   ## Retorno
     - any
   """
-  def _passDate(params) do
+  def passDate(params) do
     # TODO: Implementacao futura
         # public function _passDate ($s, $iFormat)
     #     {
@@ -509,7 +509,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFormCheckerHelper do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _passPreg
+  Funcao correspondente ao metodo PHP passPreg
 
   ## Parametros
     - $s
@@ -518,7 +518,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFormCheckerHelper do
   ## Retorno
     - any
   """
-  def _passPreg(params) do
+  def passPreg(params) do
     # TODO: Implementacao futura
         # public function _passPreg ($s, $r)
     #     {
@@ -693,7 +693,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFormCheckerHelper do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isEmptyArray
+  Funcao correspondente ao metodo PHP isEmptyArray
 
   ## Parametros
     - $a
@@ -701,7 +701,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFormCheckerHelper do
   ## Retorno
     - any
   """
-  def _isEmptyArray(params) do
+  def isEmptyArray(params) do
     # TODO: Implementacao futura
         # public function _isEmptyArray ($a)
     #     {
@@ -711,7 +711,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFormCheckerHelper do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isFullArray
+  Funcao correspondente ao metodo PHP isFullArray
 
   ## Parametros
     - $a
@@ -719,7 +719,7 @@ defmodule DeeperHub.Inc.Classes.BxDolFormCheckerHelper do
   ## Retorno
     - any
   """
-  def _isFullArray(params) do
+  def isFullArray(params) do
     # TODO: Implementacao futura
         # public function _isFullArray ($a)
     #     {

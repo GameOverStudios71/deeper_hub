@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPermalinks do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPermalinks do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct()
     #     {
@@ -47,7 +47,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPermalinks do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __clone
+  Funcao correspondente ao metodo PHP clone
 
   ## Parametros
     - 
@@ -55,7 +55,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPermalinks do
   ## Retorno
     - any
   """
-  def __clone(params) do
+  def clone(params) do
     # TODO: Implementacao futura
         # public function __clone()
     #     {
@@ -146,7 +146,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPermalinks do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isEnabled
+  Funcao correspondente ao metodo PHP isEnabled
 
   ## Parametros
     - $sLink
@@ -154,7 +154,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPermalinks do
   ## Retorno
     - any
   """
-  def _isEnabled(params) do
+  def isEnabled(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -166,7 +166,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPermalinks do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _fixUrlAmpersand
+  Funcao correspondente ao metodo PHP fixUrlAmpersand
 
   ## Parametros
     - $sLink
@@ -174,7 +174,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPermalinks do
   ## Retorno
     - any
   """
-  def _fixUrlAmpersand(params) do
+  def fixUrlAmpersand(params) do
     # TODO: Implementacao futura
         # protected function _fixUrlAmpersand($sLink)
     #     {
@@ -184,7 +184,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPermalinks do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _fixUrl
+  Funcao correspondente ao metodo PHP fixUrl
 
   ## Parametros
     - $sLink
@@ -192,7 +192,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPermalinks do
   ## Retorno
     - any
   """
-  def _fixUrl(params) do
+  def fixUrl(params) do
     # TODO: Implementacao futura
         # protected function _fixUrl($sLink)
     #     {

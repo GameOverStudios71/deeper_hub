@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -21,7 +21,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($sSystem, $iId, $iInit = true, $oTemplate = false)
     #     {
@@ -468,7 +468,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAuthorId
+  Funcao correspondente ao metodo PHP getAuthorId
 
   ## Parametros
     - 
@@ -476,7 +476,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def _getAuthorId(params) do
+  def getAuthorId(params) do
     # TODO: Implementacao futura
         # protected function _getAuthorId ()
     #     {
@@ -486,7 +486,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAuthorPassword
+  Funcao correspondente ao metodo PHP getAuthorPassword
 
   ## Parametros
     - 
@@ -494,7 +494,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def _getAuthorPassword(params) do
+  def getAuthorPassword(params) do
     # TODO: Implementacao futura
         # protected function _getAuthorPassword ()
     #     {
@@ -504,7 +504,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAuthorIp
+  Funcao correspondente ao metodo PHP getAuthorIp
 
   ## Parametros
     - 
@@ -512,7 +512,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def _getAuthorIp(params) do
+  def getAuthorIp(params) do
     # TODO: Implementacao futura
         # protected function _getAuthorIp ()
     #     {
@@ -522,7 +522,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAuthorInfo
+  Funcao correspondente ao metodo PHP getAuthorInfo
 
   ## Parametros
     - $iAuthorId = 0
@@ -530,7 +530,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def _getAuthorInfo(params) do
+  def getAuthorInfo(params) do
     # TODO: Implementacao futura
         # protected function _getAuthorInfo($iAuthorId = 0)
     #     {
@@ -540,7 +540,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAuthorObject
+  Funcao correspondente ao metodo PHP getAuthorObject
 
   ## Parametros
     - $iAuthorId = 0
@@ -548,7 +548,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def _getAuthorObject(params) do
+  def getAuthorObject(params) do
     # TODO: Implementacao futura
         # protected function _getAuthorObject($iAuthorId = 0)
     #     {
@@ -559,7 +559,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _trigger
+  Funcao correspondente ao metodo PHP trigger
 
   ## Parametros
     - 
@@ -567,7 +567,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def _trigger(params) do
+  def trigger(params) do
     # TODO: Implementacao futura
         # protected function _trigger()
     #     {
@@ -578,7 +578,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _triggerValue
+  Funcao correspondente ao metodo PHP triggerValue
 
   ## Parametros
     - $iValue
@@ -586,7 +586,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def _triggerValue(params) do
+  def triggerValue(params) do
     # TODO: Implementacao futura
         # protected function _triggerValue($iValue)
     #     {
@@ -597,7 +597,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _replaceMarkers
+  Funcao correspondente ao metodo PHP replaceMarkers
 
   ## Parametros
     - $mixed
@@ -605,7 +605,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def _replaceMarkers(params) do
+  def replaceMarkers(params) do
     # TODO: Implementacao futura
         # protected function _replaceMarkers ($mixed)
     #     {
@@ -615,7 +615,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareParamsData
+  Funcao correspondente ao metodo PHP prepareParamsData
 
   ## Parametros
     - $aParams
@@ -623,7 +623,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def _prepareParamsData(params) do
+  def prepareParamsData(params) do
     # TODO: Implementacao futura
         # protected function _prepareParamsData($aParams)
     #     {
@@ -638,7 +638,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTmplContentElementBlock
+  Funcao correspondente ao metodo PHP getTmplContentElementBlock
 
   ## Parametros
     - 
@@ -646,7 +646,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def _getTmplContentElementBlock(params) do
+  def getTmplContentElementBlock(params) do
     # TODO: Implementacao futura
         # protected function _getTmplContentElementBlock()
     #     {
@@ -656,7 +656,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTmplContentElementInline
+  Funcao correspondente ao metodo PHP getTmplContentElementInline
 
   ## Parametros
     - 
@@ -664,7 +664,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def _getTmplContentElementInline(params) do
+  def getTmplContentElementInline(params) do
     # TODO: Implementacao futura
         # protected function _getTmplContentElementInline()
     #     {
@@ -674,7 +674,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTmplContentDoAction
+  Funcao correspondente ao metodo PHP getTmplContentDoAction
 
   ## Parametros
     - 
@@ -682,7 +682,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def _getTmplContentDoAction(params) do
+  def getTmplContentDoAction(params) do
     # TODO: Implementacao futura
         # protected function _getTmplContentDoAction()
     #     {
@@ -692,7 +692,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTmplContentDoActionLabel
+  Funcao correspondente ao metodo PHP getTmplContentDoActionLabel
 
   ## Parametros
     - 
@@ -700,7 +700,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def _getTmplContentDoActionLabel(params) do
+  def getTmplContentDoActionLabel(params) do
     # TODO: Implementacao futura
         # protected function _getTmplContentDoActionLabel()
     #     {
@@ -710,7 +710,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTmplContentCounter
+  Funcao correspondente ao metodo PHP getTmplContentCounter
 
   ## Parametros
     - 
@@ -718,7 +718,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def _getTmplContentCounter(params) do
+  def getTmplContentCounter(params) do
     # TODO: Implementacao futura
         # protected function _getTmplContentCounter()
     #     {
@@ -728,7 +728,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTmplContentCounterLabel
+  Funcao correspondente ao metodo PHP getTmplContentCounterLabel
 
   ## Parametros
     - 
@@ -736,7 +736,7 @@ defmodule DeeperHub.Inc.Classes.BxDolObject do
   ## Retorno
     - any
   """
-  def _getTmplContentCounterLabel(params) do
+  def getTmplContentCounterLabel(params) do
     # TODO: Implementacao futura
         # protected function _getTmplContentCounterLabel()
     #     {

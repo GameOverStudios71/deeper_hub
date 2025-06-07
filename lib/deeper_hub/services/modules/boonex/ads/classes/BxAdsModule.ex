@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   # Heranca de BxBaseModTextModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -881,7 +881,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceGetNotificationsByEntryAndAction
+  Funcao correspondente ao metodo PHP serviceGetNotificationsByEntryAndAction
 
   ## Parametros
     - $aEvent
@@ -890,7 +890,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   ## Retorno
     - any
   """
-  def _serviceGetNotificationsByEntryAndAction(params) do
+  def serviceGetNotificationsByEntryAndAction(params) do
     # TODO: Implementacao futura
         # protected function _serviceGetNotificationsByEntryAndAction($aEvent, $sAction)
     #     {
@@ -900,7 +900,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceGetNotificationsByOfferAndAction
+  Funcao correspondente ao metodo PHP serviceGetNotificationsByOfferAndAction
 
   ## Parametros
     - $aEvent
@@ -909,7 +909,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   ## Retorno
     - any
   """
-  def _serviceGetNotificationsByOfferAndAction(params) do
+  def serviceGetNotificationsByOfferAndAction(params) do
     # TODO: Implementacao futura
         # protected function _serviceGetNotificationsByOfferAndAction($aEvent, $sAction)
     #     {
@@ -1073,7 +1073,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _registerCartItemProduct
+  Funcao correspondente ao metodo PHP registerCartItemProduct
 
   ## Parametros
     - $iClientId
@@ -1086,7 +1086,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   ## Retorno
     - any
   """
-  def _registerCartItemProduct(params) do
+  def registerCartItemProduct(params) do
     # TODO: Implementacao futura
         # protected function _registerCartItemProduct($iClientId, $iSellerId, $aCommodity, $iItemCount, $sOrder, $sLicense)
     #     {
@@ -1096,7 +1096,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _registerCartItemPromotion
+  Funcao correspondente ao metodo PHP registerCartItemPromotion
 
   ## Parametros
     - $iClientId
@@ -1109,7 +1109,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   ## Retorno
     - any
   """
-  def _registerCartItemPromotion(params) do
+  def registerCartItemPromotion(params) do
     # TODO: Implementacao futura
         # protected function _registerCartItemPromotion($iClientId, $iSellerId, $aCommodity, $iItemCount, $sOrder, $sLicense)
     #     {
@@ -1231,7 +1231,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _unregisterCartItemProduct
+  Funcao correspondente ao metodo PHP unregisterCartItemProduct
 
   ## Parametros
     - $iClientId
@@ -1244,7 +1244,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   ## Retorno
     - any
   """
-  def _unregisterCartItemProduct(params) do
+  def unregisterCartItemProduct(params) do
     # TODO: Implementacao futura
         # protected function _unregisterCartItemProduct($iClientId, $iSellerId, $aCommodity, $iItemCount, $sOrder, $sLicense)
     #     {
@@ -1254,7 +1254,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _unregisterCartItemPromotion
+  Funcao correspondente ao metodo PHP unregisterCartItemPromotion
 
   ## Parametros
     - $iClientId
@@ -1267,7 +1267,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   ## Retorno
     - any
   """
-  def _unregisterCartItemPromotion(params) do
+  def unregisterCartItemPromotion(params) do
     # TODO: Implementacao futura
         # protected function _unregisterCartItemPromotion($iClientId, $iSellerId, $aCommodity, $iItemCount, $sOrder, $sLicense)
     #     {
@@ -2072,7 +2072,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _actionMarkAs
+  Funcao correspondente ao metodo PHP actionMarkAs
 
   ## Parametros
     - $sAction
@@ -2080,7 +2080,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   ## Retorno
     - any
   """
-  def _actionMarkAs(params) do
+  def actionMarkAs(params) do
     # TODO: Implementacao futura
         # protected function _actionMarkAs($sAction)
     #     {
@@ -2090,7 +2090,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _actionChangeStatus
+  Funcao correspondente ao metodo PHP actionChangeStatus
 
   ## Parametros
     - $sStatus
@@ -2098,7 +2098,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   ## Retorno
     - any
   """
-  def _actionChangeStatus(params) do
+  def actionChangeStatus(params) do
     # TODO: Implementacao futura
         # protected function _actionChangeStatus($sStatus)
     #     {
@@ -2108,7 +2108,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceEntityForm
+  Funcao correspondente ao metodo PHP serviceEntityForm
 
   ## Parametros
     - $sFormMethod
@@ -2120,7 +2120,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   ## Retorno
     - any
   """
-  def _serviceEntityForm(params) do
+  def serviceEntityForm(params) do
     # TODO: Implementacao futura
         # protected function _serviceEntityForm ($sFormMethod, $iContentId = 0, $sDisplay = false, $sCheckFunction = false, $bErrorMsg = true)
     #     {
@@ -2130,7 +2130,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCategoryOptions
+  Funcao correspondente ao metodo PHP getCategoryOptions
 
   ## Parametros
     - $iParentId
@@ -2139,7 +2139,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   ## Retorno
     - any
   """
-  def _getCategoryOptions(params) do
+  def getCategoryOptions(params) do
     # TODO: Implementacao futura
         # protected function _getCategoryOptions($iParentId, &$aValues)
     #     {
@@ -2149,7 +2149,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSearchableFields
+  Funcao correspondente ao metodo PHP getSearchableFields
 
   ## Parametros
     - $mixedDisplayType = ''
@@ -2157,7 +2157,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   ## Retorno
     - any
   """
-  def _getSearchableFields(params) do
+  def getSearchableFields(params) do
     # TODO: Implementacao futura
         # protected function _getSearchableFields($mixedDisplayType = '')
     #     {
@@ -2167,7 +2167,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getBlockLicenses
+  Funcao correspondente ao metodo PHP getBlockLicenses
 
   ## Parametros
     - $sType = ''
@@ -2175,7 +2175,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   ## Retorno
     - any
   """
-  def _getBlockLicenses(params) do
+  def getBlockLicenses(params) do
     # TODO: Implementacao futura
         # protected function _getBlockLicenses($sType = '') 
     #     {
@@ -2185,7 +2185,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _alertParamsOffer
+  Funcao correspondente ao metodo PHP alertParamsOffer
 
   ## Parametros
     - $aContentInfo
@@ -2194,7 +2194,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsModule do
   ## Retorno
     - any
   """
-  def _alertParamsOffer(params) do
+  def alertParamsOffer(params) do
     # TODO: Implementacao futura
         # protected function _alertParamsOffer($aContentInfo, $aOfferInfo)
     #     {

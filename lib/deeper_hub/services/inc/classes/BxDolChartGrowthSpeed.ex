@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolChartGrowthSpeed do
   # Heranca de BxDolChart
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolChartGrowthSpeed do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($aObject)
     #     {
@@ -25,7 +25,7 @@ defmodule DeeperHub.Inc.Classes.BxDolChartGrowthSpeed do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataByInterval
+  Funcao correspondente ao metodo PHP getDataByInterval
 
   ## Parametros
     - $iFrom
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxDolChartGrowthSpeed do
   ## Retorno
     - any
   """
-  def _getDataByInterval(params) do
+  def getDataByInterval(params) do
     # TODO: Implementacao futura
         # protected function _getDataByInterval($iFrom, $iTo)
     #     {

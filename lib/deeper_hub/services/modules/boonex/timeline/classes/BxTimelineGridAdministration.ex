@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridAdministration do
   # Heranca de BxTimelineGridManageTools
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridAdministration do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellStatus
+  Funcao correspondente ao metodo PHP getCellStatus
 
   ## Parametros
     - $mixedValue
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellStatus(params) do
+  def getCellStatus(params) do
     # TODO: Implementacao futura
         # protected function _getCellStatus($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -47,7 +47,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellOwnerId
+  Funcao correspondente ao metodo PHP getCellOwnerId
 
   ## Parametros
     - $mixedValue
@@ -58,7 +58,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellOwnerId(params) do
+  def getCellOwnerId(params) do
     # TODO: Implementacao futura
         # protected function _getCellOwnerId($mixedValue, $sKey, $aField, $aRow)
     #     {

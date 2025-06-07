@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -38,7 +38,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -49,7 +49,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellSize
+  Funcao correspondente ao metodo PHP getCellSize
 
   ## Parametros
     - $mixedValue
@@ -60,7 +60,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   ## Retorno
     - any
   """
-  def _getCellSize(params) do
+  def getCellSize(params) do
     # TODO: Implementacao futura
         # protected function _getCellSize ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAdded
+  Funcao correspondente ao metodo PHP getCellAdded
 
   ## Parametros
     - $mixedValue
@@ -81,7 +81,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   ## Retorno
     - any
   """
-  def _getCellAdded(params) do
+  def getCellAdded(params) do
     # TODO: Implementacao futura
         # protected function _getCellAdded ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -145,7 +145,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareAction
+  Funcao correspondente ao metodo PHP prepareAction
 
   ## Parametros
     - 
@@ -153,7 +153,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   ## Retorno
     - any
   """
-  def _prepareAction(params) do
+  def prepareAction(params) do
     # TODO: Implementacao futura
         # protected function _prepareAction() 
     #     {
@@ -163,7 +163,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _delete
+  Funcao correspondente ao metodo PHP delete
 
   ## Parametros
     - $iFileId
@@ -171,7 +171,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   ## Retorno
     - any
   """
-  def _delete(params) do
+  def delete(params) do
     # TODO: Implementacao futura
         # protected function _delete($iFileId)
     #     {
@@ -182,7 +182,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _download
+  Funcao correspondente ao metodo PHP download
 
   ## Parametros
     - $iFileId
@@ -190,7 +190,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   ## Retorno
     - any
   """
-  def _download(params) do
+  def download(params) do
     # TODO: Implementacao futura
         # protected function _download($iFileId)
     #     {
@@ -201,7 +201,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _publish
+  Funcao correspondente ao metodo PHP publish
 
   ## Parametros
     - $iFileId
@@ -210,7 +210,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   ## Retorno
     - any
   """
-  def _publish(params) do
+  def publish(params) do
     # TODO: Implementacao futura
         # protected function _publish($iFileId, &$sErrorMsg)
     #     {
@@ -220,7 +220,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _actionWithStorage
+  Funcao correspondente ao metodo PHP actionWithStorage
 
   ## Parametros
     - $iFileId
@@ -228,7 +228,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmGridRecordings do
   ## Retorno
     - any
   """
-  def _actionWithStorage(params) do
+  def actionWithStorage(params) do
     # TODO: Implementacao futura
         # protected function _actionWithStorage($iFileId)
     #     {

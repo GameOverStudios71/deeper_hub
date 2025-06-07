@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileConfig do
   # Heranca de BxBaseModGeneralConfig
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileConfig do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -101,7 +101,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileConfig do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _initRoles
+  Funcao correspondente ao metodo PHP initRoles
 
   ## Parametros
     - 
@@ -109,7 +109,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileConfig do
   ## Retorno
     - any
   """
-  def _initRoles(params) do
+  def initRoles(params) do
     # TODO: Implementacao futura
         # protected function _initRoles()
     #     {

@@ -210,7 +210,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmEngineOvenMediaEngine do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _signUrl
+  Funcao correspondente ao metodo PHP signUrl
 
   ## Parametros
     - $sBaseUrl
@@ -219,7 +219,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmEngineOvenMediaEngine do
   ## Retorno
     - any
   """
-  def _signUrl(params) do
+  def signUrl(params) do
     # TODO: Implementacao futura
         # protected function _signUrl($sBaseUrl, $sPolicySecret)
     #     {
@@ -229,7 +229,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmEngineOvenMediaEngine do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _base64URLEncode
+  Funcao correspondente ao metodo PHP base64URLEncode
 
   ## Parametros
     - $s
@@ -237,7 +237,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmEngineOvenMediaEngine do
   ## Retorno
     - any
   """
-  def _base64URLEncode(params) do
+  def base64URLEncode(params) do
     # TODO: Implementacao futura
         # protected function _base64URLEncode($s)
     #     {
@@ -247,7 +247,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmEngineOvenMediaEngine do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _apiRequest
+  Funcao correspondente ao metodo PHP apiRequest
 
   ## Parametros
     - $sUri
@@ -257,7 +257,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmEngineOvenMediaEngine do
   ## Retorno
     - any
   """
-  def _apiRequest(params) do
+  def apiRequest(params) do
     # TODO: Implementacao futura
         # protected function _apiRequest($sUri, $sMethod = 'get', $aBody = [])
     #     {

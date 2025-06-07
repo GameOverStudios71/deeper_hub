@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct()
     #     {
@@ -29,7 +29,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __clone
+  Funcao correspondente ao metodo PHP clone
 
   ## Parametros
     - 
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   ## Retorno
     - any
   """
-  def __clone(params) do
+  def clone(params) do
     # TODO: Implementacao futura
         # public function __clone()
     #     {
@@ -103,7 +103,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addSystem
+  Funcao correspondente ao metodo PHP addSystem
 
   ## Parametros
     - $sName
@@ -114,7 +114,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   ## Retorno
     - any
   """
-  def _addSystem(params) do
+  def addSystem(params) do
     # TODO: Implementacao futura
         # protected function _addSystem($sName, $iFrequency, $sServiceCall, $mixedActive = true)
     #     {
@@ -125,7 +125,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addData
+  Funcao correspondente ao metodo PHP addData
 
   ## Parametros
     - $sName
@@ -134,7 +134,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   ## Retorno
     - any
   """
-  def _addData(params) do
+  def addData(params) do
     # TODO: Implementacao futura
         # protected function _addData($sName, $iValue)
     #     {
@@ -144,7 +144,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCacheInfo
+  Funcao correspondente ao metodo PHP getCacheInfo
 
   ## Parametros
     - $sType
@@ -152,7 +152,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   ## Retorno
     - any
   """
-  def _getCacheInfo(params) do
+  def getCacheInfo(params) do
     # TODO: Implementacao futura
         # protected function _getCacheInfo($sType)
     #     {
@@ -166,7 +166,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCacheKey
+  Funcao correspondente ao metodo PHP getCacheKey
 
   ## Parametros
     - $sType
@@ -174,7 +174,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   ## Retorno
     - any
   """
-  def _getCacheKey(params) do
+  def getCacheKey(params) do
     # TODO: Implementacao futura
         # protected function _getCacheKey($sType)
     #     {
@@ -184,7 +184,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCached
+  Funcao correspondente ao metodo PHP getCached
 
   ## Parametros
     - $sType
@@ -192,7 +192,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   ## Retorno
     - any
   """
-  def _getCached(params) do
+  def getCached(params) do
     # TODO: Implementacao futura
         # protected function _getCached($sType)
     #     {
@@ -202,7 +202,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCachedSystems
+  Funcao correspondente ao metodo PHP getCachedSystems
 
   ## Parametros
     - 
@@ -210,7 +210,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   ## Retorno
     - any
   """
-  def _getCachedSystems(params) do
+  def getCachedSystems(params) do
     # TODO: Implementacao futura
         # protected function _getCachedSystems()
     #     {
@@ -220,7 +220,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCachedData
+  Funcao correspondente ao metodo PHP getCachedData
 
   ## Parametros
     - $bInit = false
@@ -228,7 +228,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   ## Retorno
     - any
   """
-  def _getCachedData(params) do
+  def getCachedData(params) do
     # TODO: Implementacao futura
         # protected function _getCachedData($bInit = false)
     #     {
@@ -238,7 +238,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _clearCached
+  Funcao correspondente ao metodo PHP clearCached
 
   ## Parametros
     - 
@@ -246,7 +246,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   ## Retorno
     - any
   """
-  def _clearCached(params) do
+  def clearCached(params) do
     # TODO: Implementacao futura
         # protected function _clearCached()
     #     {
@@ -256,7 +256,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _updateCached
+  Funcao correspondente ao metodo PHP updateCached
 
   ## Parametros
     - $sType
@@ -265,7 +265,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   ## Retorno
     - any
   """
-  def _updateCached(params) do
+  def updateCached(params) do
     # TODO: Implementacao futura
         # protected function _updateCached($sType, $aData)
     #     {
@@ -275,7 +275,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getRequestedDataBySystem
+  Funcao correspondente ao metodo PHP getRequestedDataBySystem
 
   ## Parametros
     - $aSystem
@@ -285,7 +285,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   ## Retorno
     - any
   """
-  def _getRequestedDataBySystem(params) do
+  def getRequestedDataBySystem(params) do
     # TODO: Implementacao futura
         # protected function _getRequestedDataBySystem($aSystem, $iCachedData = 0, $bInit = true)
     #     {
@@ -296,7 +296,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPageId
+  Funcao correspondente ao metodo PHP getPageId
 
   ## Parametros
     - 
@@ -304,7 +304,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   ## Retorno
     - any
   """
-  def _getPageId(params) do
+  def getPageId(params) do
     # TODO: Implementacao futura
         # protected function _getPageId()
     #     {
@@ -314,7 +314,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _encodeHash
+  Funcao correspondente ao metodo PHP encodeHash
 
   ## Parametros
     - 
@@ -322,7 +322,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   ## Retorno
     - any
   """
-  def _encodeHash(params) do
+  def encodeHash(params) do
     # TODO: Implementacao futura
         # protected function _encodeHash()
     #     {
@@ -332,7 +332,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _decodeHash
+  Funcao correspondente ao metodo PHP decodeHash
 
   ## Parametros
     - $sHash
@@ -340,7 +340,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLiveUpdates do
   ## Retorno
     - any
   """
-  def _decodeHash(params) do
+  def decodeHash(params) do
     # TODO: Implementacao futura
         # protected function _decodeHash($sHash)
     #     {

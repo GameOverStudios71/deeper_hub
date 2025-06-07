@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationAlertsResponse do
   # Heranca de BxBaseModNotificationsResponse
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationAlertsResponse do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -43,7 +43,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationAlertsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkByActionConnectionAdded
+  Funcao correspondente ao metodo PHP checkByActionConnectionAdded
 
   ## Parametros
     - $oAlert
@@ -51,7 +51,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationAlertsResponse do
   ## Retorno
     - any
   """
-  def _checkByActionConnectionAdded(params) do
+  def checkByActionConnectionAdded(params) do
     # TODO: Implementacao futura
         # protected function _checkByActionConnectionAdded($oAlert)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationAlertsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processProfileDelete
+  Funcao correspondente ao metodo PHP processProfileDelete
 
   ## Parametros
     - $oAlert
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxReputationAlertsResponse do
   ## Retorno
     - any
   """
-  def _processProfileDelete(params) do
+  def processProfileDelete(params) do
     # TODO: Implementacao futura
         # protected function _processProfileDelete($oAlert)
     #     {

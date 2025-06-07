@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuSnippetMeta do
   # Heranca de BxBaseModTextMenuSnippetMeta
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemCategory
+  Funcao correspondente ao metodo PHP getMenuItemCategory
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemCategory(params) do
+  def getMenuItemCategory(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemCategory($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemPrice
+  Funcao correspondente ao metodo PHP getMenuItemPrice
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemPrice(params) do
+  def getMenuItemPrice(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemPrice($aItem)
     #     {

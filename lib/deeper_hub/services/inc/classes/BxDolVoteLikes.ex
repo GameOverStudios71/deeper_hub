@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteLikes do
   # Heranca de BxTemplVote
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteLikes do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($sSystem, $iId, $iInit = true, $oTemplate = false)
     #     {
@@ -46,7 +46,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteLikes do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isDuplicate
+  Funcao correspondente ao metodo PHP isDuplicate
 
   ## Parametros
     - $iObjectId
@@ -57,7 +57,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteLikes do
   ## Retorno
     - any
   """
-  def _isDuplicate(params) do
+  def isDuplicate(params) do
     # TODO: Implementacao futura
         # protected function _isDuplicate($iObjectId, $iAuthorId, $iAuthorIp, $bVoted)
     #     {
@@ -67,7 +67,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteLikes do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIconDo
+  Funcao correspondente ao metodo PHP getIconDo
 
   ## Parametros
     - $bVoted
@@ -75,7 +75,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteLikes do
   ## Retorno
     - any
   """
-  def _getIconDo(params) do
+  def getIconDo(params) do
     # TODO: Implementacao futura
         # protected function _getIconDo($bVoted)
     #     {
@@ -85,7 +85,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteLikes do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getEmojiDo
+  Funcao correspondente ao metodo PHP getEmojiDo
 
   ## Parametros
     - $bVoted
@@ -93,7 +93,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteLikes do
   ## Retorno
     - any
   """
-  def _getEmojiDo(params) do
+  def getEmojiDo(params) do
     # TODO: Implementacao futura
         # protected function _getEmojiDo($bVoted)
     #     {
@@ -103,7 +103,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteLikes do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getImageDo
+  Funcao correspondente ao metodo PHP getImageDo
 
   ## Parametros
     - $bVoted
@@ -111,7 +111,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteLikes do
   ## Retorno
     - any
   """
-  def _getImageDo(params) do
+  def getImageDo(params) do
     # TODO: Implementacao futura
         # protected function _getImageDo($bVoted)
     #     {
@@ -121,7 +121,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteLikes do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTitleDo
+  Funcao correspondente ao metodo PHP getTitleDo
 
   ## Parametros
     - $bVoted
@@ -129,7 +129,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteLikes do
   ## Retorno
     - any
   """
-  def _getTitleDo(params) do
+  def getTitleDo(params) do
     # TODO: Implementacao futura
         # protected function _getTitleDo($bVoted)
     #     {
@@ -139,7 +139,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteLikes do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _useIconAs
+  Funcao correspondente ao metodo PHP useIconAs
 
   ## Parametros
     - $aParams = []
@@ -147,7 +147,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteLikes do
   ## Retorno
     - any
   """
-  def _useIconAs(params) do
+  def useIconAs(params) do
     # TODO: Implementacao futura
         # protected function _useIconAs($aParams = [])
     #     {

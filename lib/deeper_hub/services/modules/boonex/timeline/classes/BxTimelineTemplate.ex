@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   # Heranca de BxBaseModNotificationsTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -824,7 +824,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPostApi
+  Funcao correspondente ao metodo PHP getPostApi
 
   ## Parametros
     - &$aEvent
@@ -833,7 +833,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _getPostApi(params) do
+  def getPostApi(params) do
     # TODO: Implementacao futura
         # protected function _getPostApi(&$aEvent, $aParams = [])
     #     {
@@ -843,7 +843,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getShowMore
+  Funcao correspondente ao metodo PHP getShowMore
 
   ## Parametros
     - $aParams
@@ -851,7 +851,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _getShowMore(params) do
+  def getShowMore(params) do
     # TODO: Implementacao futura
         # protected function _getShowMore($aParams)
     #     {
@@ -864,7 +864,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getImagePopup
+  Funcao correspondente ao metodo PHP getImagePopup
 
   ## Parametros
     - $aParams
@@ -872,7 +872,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _getImagePopup(params) do
+  def getImagePopup(params) do
     # TODO: Implementacao futura
         # protected function _getImagePopup($aParams)
     #     {
@@ -882,7 +882,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getRepostJsClick
+  Funcao correspondente ao metodo PHP getRepostJsClick
 
   ## Parametros
     - $iOwnerId
@@ -893,7 +893,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _getRepostJsClick(params) do
+  def getRepostJsClick(params) do
     # TODO: Implementacao futura
         # protected function _getRepostJsClick($iOwnerId, $sType, $sAction, $iObjectId)
     #     {
@@ -903,7 +903,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getRepostWithJsClick
+  Funcao correspondente ao metodo PHP getRepostWithJsClick
 
   ## Parametros
     - $iReposterId
@@ -914,7 +914,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _getRepostWithJsClick(params) do
+  def getRepostWithJsClick(params) do
     # TODO: Implementacao futura
         # protected function _getRepostWithJsClick($iReposterId, $sType, $sAction, $iObjectId)
     #     {
@@ -924,7 +924,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getRepostToJsClick
+  Funcao correspondente ao metodo PHP getRepostToJsClick
 
   ## Parametros
     - $iReposterId
@@ -935,7 +935,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _getRepostToJsClick(params) do
+  def getRepostToJsClick(params) do
     # TODO: Implementacao futura
         # protected function _getRepostToJsClick($iReposterId, $sType, $sAction, $iObjectId)
     #     {
@@ -945,7 +945,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getJumpToList
+  Funcao correspondente ao metodo PHP getJumpToList
 
   ## Parametros
     - $aParams
@@ -953,7 +953,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _getJumpToList(params) do
+  def getJumpToList(params) do
     # TODO: Implementacao futura
         # protected function _getJumpToList($aParams)
     #     {
@@ -963,7 +963,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getJumpToCaledar
+  Funcao correspondente ao metodo PHP getJumpToCaledar
 
   ## Parametros
     - $aParams
@@ -971,7 +971,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _getJumpToCaledar(params) do
+  def getJumpToCaledar(params) do
     # TODO: Implementacao futura
         # protected function _getJumpToCaledar($aParams)
     #     {
@@ -981,7 +981,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTmplVarsTimelineOwner
+  Funcao correspondente ao metodo PHP getTmplVarsTimelineOwner
 
   ## Parametros
     - &$aEvent
@@ -989,7 +989,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _getTmplVarsTimelineOwner(params) do
+  def getTmplVarsTimelineOwner(params) do
     # TODO: Implementacao futura
         # protected function _getTmplVarsTimelineOwner(&$aEvent)
     #     {
@@ -999,7 +999,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTmplVarsNote
+  Funcao correspondente ao metodo PHP getTmplVarsNote
 
   ## Parametros
     - &$aEvent
@@ -1007,7 +1007,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _getTmplVarsNote(params) do
+  def getTmplVarsNote(params) do
     # TODO: Implementacao futura
         # protected function _getTmplVarsNote(&$aEvent)
     #     {
@@ -1017,7 +1017,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTmplVarsImages
+  Funcao correspondente ao metodo PHP getTmplVarsImages
 
   ## Parametros
     - $aImages
@@ -1028,7 +1028,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _getTmplVarsImages(params) do
+  def getTmplVarsImages(params) do
     # TODO: Implementacao futura
         # protected function _getTmplVarsImages($aImages, $mixedLayout, &$aEvent, &$aBrowseParams)
     #     {
@@ -1039,7 +1039,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTmplVarsVideos
+  Funcao correspondente ao metodo PHP getTmplVarsVideos
 
   ## Parametros
     - $aVideos
@@ -1050,7 +1050,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _getTmplVarsVideos(params) do
+  def getTmplVarsVideos(params) do
     # TODO: Implementacao futura
         # protected function _getTmplVarsVideos($aVideos, $mixedLayout, &$aEvent, &$aBrowseParams)
     #     {
@@ -1061,7 +1061,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTmplVarsFiles
+  Funcao correspondente ao metodo PHP getTmplVarsFiles
 
   ## Parametros
     - $aFiles
@@ -1071,7 +1071,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _getTmplVarsFiles(params) do
+  def getTmplVarsFiles(params) do
     # TODO: Implementacao futura
         # protected function _getTmplVarsFiles($aFiles, &$aEvent, &$aBrowseParams)
     #     {
@@ -1082,7 +1082,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _preparetDataActions
+  Funcao correspondente ao metodo PHP preparetDataActions
 
   ## Parametros
     - $bCommon
@@ -1092,7 +1092,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _preparetDataActions(params) do
+  def preparetDataActions(params) do
     # TODO: Implementacao futura
         # protected function _preparetDataActions($bCommon, &$aEvent, &$aResult)
     #     {
@@ -1103,7 +1103,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareTextForOutputBriefCard
+  Funcao correspondente ao metodo PHP prepareTextForOutputBriefCard
 
   ## Parametros
     - $s
@@ -1112,7 +1112,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _prepareTextForOutputBriefCard(params) do
+  def prepareTextForOutputBriefCard(params) do
     # TODO: Implementacao futura
         # protected function _prepareTextForOutputBriefCard($s, $iEventId = 0)
     #     {
@@ -1122,7 +1122,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareTextForOutput
+  Funcao correspondente ao metodo PHP prepareTextForOutput
 
   ## Parametros
     - $s
@@ -1131,7 +1131,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _prepareTextForOutput(params) do
+  def prepareTextForOutput(params) do
     # TODO: Implementacao futura
         # protected function _prepareTextForOutput($s, $iEventId = 0)
     #     {
@@ -1141,7 +1141,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _preparePrivacy
+  Funcao correspondente ao metodo PHP preparePrivacy
 
   ## Parametros
     - $sKey
@@ -1151,7 +1151,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineTemplate do
   ## Retorno
     - any
   """
-  def _preparePrivacy(params) do
+  def preparePrivacy(params) do
     # TODO: Implementacao futura
         # protected function _preparePrivacy($sKey, $aEvent, $aEventData)
     #     {

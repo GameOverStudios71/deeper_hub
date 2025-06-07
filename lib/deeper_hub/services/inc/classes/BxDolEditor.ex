@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolEditor do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolEditor do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($aObject)
     #     {
@@ -225,7 +225,7 @@ defmodule DeeperHub.Inc.Classes.BxDolEditor do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addJsCss
+  Funcao correspondente ao metodo PHP addJsCss
 
   ## Parametros
     - $bDynamicMode = false
@@ -233,7 +233,7 @@ defmodule DeeperHub.Inc.Classes.BxDolEditor do
   ## Retorno
     - any
   """
-  def _addJsCss(params) do
+  def addJsCss(params) do
     # TODO: Implementacao futura
         # protected function _addJsCss ($bDynamicMode = false)
     #     {
@@ -255,7 +255,7 @@ defmodule DeeperHub.Inc.Classes.BxDolEditor do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _replaceMarkers
+  Funcao correspondente ao metodo PHP replaceMarkers
 
   ## Parametros
     - $s
@@ -264,7 +264,7 @@ defmodule DeeperHub.Inc.Classes.BxDolEditor do
   ## Retorno
     - any
   """
-  def _replaceMarkers(params) do
+  def replaceMarkers(params) do
     # TODO: Implementacao futura
         # protected function _replaceMarkers ($s, $a)
     #     {

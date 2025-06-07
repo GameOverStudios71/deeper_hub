@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvCmts do
   # Heranca de BxTemplCmts
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvCmts do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -161,7 +161,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFormObject
+  Funcao correspondente ao metodo PHP getFormObject
 
   ## Parametros
     - $sAction = BX_CMT_ACTION_POST
@@ -169,7 +169,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvCmts do
   ## Retorno
     - any
   """
-  def _getFormObject(params) do
+  def getFormObject(params) do
     # TODO: Implementacao futura
         # protected function _getFormObject($sAction = BX_CMT_ACTION_POST)
     #     {
@@ -179,7 +179,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareAlertParams
+  Funcao correspondente ao metodo PHP prepareAlertParams
 
   ## Parametros
     - $aCmt
@@ -187,7 +187,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvCmts do
   ## Retorno
     - any
   """
-  def _prepareAlertParams(params) do
+  def prepareAlertParams(params) do
     # TODO: Implementacao futura
         # protected function _prepareAlertParams($aCmt)
     #     {
@@ -197,7 +197,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareAlertParamsReply
+  Funcao correspondente ao metodo PHP prepareAlertParamsReply
 
   ## Parametros
     - $aCmt
@@ -206,7 +206,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvCmts do
   ## Retorno
     - any
   """
-  def _prepareAlertParamsReply(params) do
+  def prepareAlertParamsReply(params) do
     # TODO: Implementacao futura
         # protected function _prepareAlertParamsReply($aCmt, $aCmtPrnt)
     #     {

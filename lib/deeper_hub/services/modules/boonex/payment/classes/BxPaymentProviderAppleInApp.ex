@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderAppleInApp do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aConfig
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderAppleInApp do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aConfig)
     #     {
@@ -102,7 +102,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderAppleInApp do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processNotification
+  Funcao correspondente ao metodo PHP processNotification
 
   ## Parametros
     - 
@@ -110,7 +110,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderAppleInApp do
   ## Retorno
     - any
   """
-  def _processNotification(params) do
+  def processNotification(params) do
     # TODO: Implementacao futura
         # protected function _processNotification()
     #     {
@@ -119,7 +119,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderAppleInApp do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processNotificationInitialBuyCustom
+  Funcao correspondente ao metodo PHP processNotificationInitialBuyCustom
 
   ## Parametros
     - $aNotification
@@ -127,7 +127,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderAppleInApp do
   ## Retorno
     - any
   """
-  def _processNotificationInitialBuyCustom(params) do
+  def processNotificationInitialBuyCustom(params) do
     # TODO: Implementacao futura
         # protected function _processNotificationInitialBuyCustom($aNotification)
     #     {
@@ -138,7 +138,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderAppleInApp do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processNotificationDidRenew
+  Funcao correspondente ao metodo PHP processNotificationDidRenew
 
   ## Parametros
     - &$aNotification
@@ -146,7 +146,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderAppleInApp do
   ## Retorno
     - any
   """
-  def _processNotificationDidRenew(params) do
+  def processNotificationDidRenew(params) do
     # TODO: Implementacao futura
         # protected function _processNotificationDidRenew(&$aNotification)
     #     {
@@ -156,7 +156,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderAppleInApp do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processNotificationRefund
+  Funcao correspondente ao metodo PHP processNotificationRefund
 
   ## Parametros
     - &$aNotification
@@ -164,7 +164,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderAppleInApp do
   ## Retorno
     - any
   """
-  def _processNotificationRefund(params) do
+  def processNotificationRefund(params) do
     # TODO: Implementacao futura
         # protected function _processNotificationRefund(&$aNotification)
     #     {
@@ -187,7 +187,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderAppleInApp do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processNotificationCancel
+  Funcao correspondente ao metodo PHP processNotificationCancel
 
   ## Parametros
     - &$aNotification
@@ -195,7 +195,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderAppleInApp do
   ## Retorno
     - any
   """
-  def _processNotificationCancel(params) do
+  def processNotificationCancel(params) do
     # TODO: Implementacao futura
         # protected function _processNotificationCancel(&$aNotification)
     #     {
@@ -213,7 +213,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderAppleInApp do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _verifyNotification
+  Funcao correspondente ao metodo PHP verifyNotification
 
   ## Parametros
     - $aParams
@@ -221,7 +221,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderAppleInApp do
   ## Retorno
     - any
   """
-  def _verifyNotification(params) do
+  def verifyNotification(params) do
     # TODO: Implementacao futura
         # protected function _verifyNotification($aParams)
     #     {

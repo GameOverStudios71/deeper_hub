@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridCarts do
   # Heranca de BxBaseModPaymentGridCarts
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridCarts do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridCarts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellVendorId
+  Funcao correspondente ao metodo PHP getCellVendorId
 
   ## Parametros
     - $mixedValue
@@ -55,7 +55,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridCarts do
   ## Retorno
     - any
   """
-  def _getCellVendorId(params) do
+  def getCellVendorId(params) do
     # TODO: Implementacao futura
         # protected function _getCellVendorId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridCarts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellItemsPrice
+  Funcao correspondente ao metodo PHP getCellItemsPrice
 
   ## Parametros
     - $mixedValue
@@ -81,7 +81,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridCarts do
   ## Retorno
     - any
   """
-  def _getCellItemsPrice(params) do
+  def getCellItemsPrice(params) do
     # TODO: Implementacao futura
         # protected function _getCellItemsPrice($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -91,7 +91,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridCarts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -99,7 +99,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridCarts do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls ()
     #     {
@@ -109,7 +109,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridCarts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataArray
+  Funcao correspondente ao metodo PHP getDataArray
 
   ## Parametros
     - $sFilter
@@ -121,7 +121,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridCarts do
   ## Retorno
     - any
   """
-  def _getDataArray(params) do
+  def getDataArray(params) do
     # TODO: Implementacao futura
         # protected function _getDataArray($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -132,7 +132,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridCarts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _delete
+  Funcao correspondente ao metodo PHP delete
 
   ## Parametros
     - $mixedId
@@ -140,7 +140,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridCarts do
   ## Retorno
     - any
   """
-  def _delete(params) do
+  def delete(params) do
     # TODO: Implementacao futura
         # protected function _delete($mixedId)
     #     {

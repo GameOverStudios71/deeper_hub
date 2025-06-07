@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvModule do
   # Heranca de BxBaseModTextModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$aModule)
@@ -458,7 +458,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isModerator
+  Funcao correspondente ao metodo PHP isModerator
 
   ## Parametros
     - $isPerformAction = false
@@ -466,7 +466,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvModule do
   ## Retorno
     - any
   """
-  def _isModerator(params) do
+  def isModerator(params) do
     # TODO: Implementacao futura
         # public function _isModerator ($isPerformAction = false)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridCommon do
   # Heranca de BxTimelineGridManageTools
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridCommon do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridCommon do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellSwitcher
+  Funcao correspondente ao metodo PHP getCellSwitcher
 
   ## Parametros
     - $mixedValue
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridCommon do
   ## Retorno
     - any
   """
-  def _getCellSwitcher(params) do
+  def getCellSwitcher(params) do
     # TODO: Implementacao futura
         # protected function _getCellSwitcher ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -48,7 +48,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridCommon do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellStatusAdmin
+  Funcao correspondente ao metodo PHP getCellStatusAdmin
 
   ## Parametros
     - $mixedValue
@@ -59,7 +59,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridCommon do
   ## Retorno
     - any
   """
-  def _getCellStatusAdmin(params) do
+  def getCellStatusAdmin(params) do
     # TODO: Implementacao futura
         # protected function _getCellStatusAdmin($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -69,7 +69,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridCommon do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isRowDisabled
+  Funcao correspondente ao metodo PHP isRowDisabled
 
   ## Parametros
     - $aRow
@@ -77,7 +77,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridCommon do
   ## Retorno
     - any
   """
-  def _isRowDisabled(params) do
+  def isRowDisabled(params) do
     # TODO: Implementacao futura
         # protected function _isRowDisabled($aRow)
     #     {
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridCommon do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -100,7 +100,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineGridCommon do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {

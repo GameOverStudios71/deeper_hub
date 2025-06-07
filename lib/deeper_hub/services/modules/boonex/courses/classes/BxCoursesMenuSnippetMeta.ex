@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuSnippetMeta do
   # Heranca de BxBaseModGroupsMenuSnippetMeta
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemReports
+  Funcao correspondente ao metodo PHP getMenuItemReports
 
   ## Parametros
     - $aItem
@@ -35,7 +35,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemReports(params) do
+  def getMenuItemReports(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemReports($aItem, $aParams = [])
     #     {
@@ -45,7 +45,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemReportObject
+  Funcao correspondente ao metodo PHP getMenuItemReportObject
 
   ## Parametros
     - $aItem
@@ -54,7 +54,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemReportObject(params) do
+  def getMenuItemReportObject(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemReportObject($aItem, $aParams = [])
     #     {
@@ -64,7 +64,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemPass
+  Funcao correspondente ao metodo PHP getMenuItemPass
 
   ## Parametros
     - $aItem
@@ -73,7 +73,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemPass(params) do
+  def getMenuItemPass(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemPass($aItem, $aParams = [])
     #     {

@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLabel do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLabel do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct()
     #     {
@@ -28,7 +28,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLabel do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __clone
+  Funcao correspondente ao metodo PHP clone
 
   ## Parametros
     - 
@@ -36,7 +36,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLabel do
   ## Retorno
     - any
   """
-  def __clone(params) do
+  def clone(params) do
     # TODO: Implementacao futura
         # public function __clone()
     #     {
@@ -230,7 +230,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLabel do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getLabelsSystem
+  Funcao correspondente ao metodo PHP getLabelsSystem
 
   ## Parametros
     - $iParentId
@@ -239,7 +239,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLabel do
   ## Retorno
     - any
   """
-  def _getLabelsSystem(params) do
+  def getLabelsSystem(params) do
     # TODO: Implementacao futura
         # protected function _getLabelsSystem($iParentId, $iLevel)
     #     {

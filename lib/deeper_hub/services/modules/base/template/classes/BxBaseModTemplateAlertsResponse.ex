@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateAlertsResponse do
   # Heranca de BxDolAlertsResponse
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateAlertsResponse do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateAlertsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processSystemSaveSetting
+  Funcao correspondente ao metodo PHP processSystemSaveSetting
 
   ## Parametros
     - $oAlert
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateAlertsResponse do
   ## Retorno
     - any
   """
-  def _processSystemSaveSetting(params) do
+  def processSystemSaveSetting(params) do
     # TODO: Implementacao futura
         # protected function _processSystemSaveSetting($oAlert)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateAlertsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processSystemChangeLogo
+  Funcao correspondente ao metodo PHP processSystemChangeLogo
 
   ## Parametros
     - $oAlert
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateAlertsResponse do
   ## Retorno
     - any
   """
-  def _processSystemChangeLogo(params) do
+  def processSystemChangeLogo(params) do
     # TODO: Implementacao futura
         # protected function _processSystemChangeLogo($oAlert)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateAlertsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isActive
+  Funcao correspondente ao metodo PHP isActive
 
   ## Parametros
     - 
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTemplateAlertsResponse do
   ## Retorno
     - any
   """
-  def _isActive(params) do
+  def isActive(params) do
     # TODO: Implementacao futura
         # protected function _isActive()
     #     {

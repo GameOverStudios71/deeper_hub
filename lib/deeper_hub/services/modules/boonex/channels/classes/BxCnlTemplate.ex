@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlTemplate do
   # Heranca de BxBaseModGroupsTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$oConfig, &$oDb)
@@ -63,7 +63,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _entryBreadcrumb
+  Funcao correspondente ao metodo PHP entryBreadcrumb
 
   ## Parametros
     - $iLabel
@@ -74,7 +74,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlTemplate do
   ## Retorno
     - any
   """
-  def _entryBreadcrumb(params) do
+  def entryBreadcrumb(params) do
     # TODO: Implementacao futura
         # protected function _entryBreadcrumb($iLabel, &$oLabel, &$oPermalink, &$aTmplVarsItems)
     #     {
@@ -84,7 +84,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _entryRelatives
+  Funcao correspondente ao metodo PHP entryRelatives
 
   ## Parametros
     - $aProfiles
@@ -92,7 +92,7 @@ defmodule DeeperHub.Inc.Classes.BxCnlTemplate do
   ## Retorno
     - any
   """
-  def _entryRelatives(params) do
+  def entryRelatives(params) do
     # TODO: Implementacao futura
         # protected function _entryRelatives($aProfiles)
     #     {

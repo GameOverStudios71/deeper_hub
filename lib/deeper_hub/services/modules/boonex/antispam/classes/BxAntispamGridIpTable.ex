@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridIpTable do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridIpTable do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridIpTable do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addJsCss
+  Funcao correspondente ao metodo PHP addJsCss
 
   ## Parametros
     - 
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridIpTable do
   ## Retorno
     - any
   """
-  def _addJsCss(params) do
+  def addJsCss(params) do
     # TODO: Implementacao futura
         # protected function _addJsCss()
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridIpTable do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _performAction
+  Funcao correspondente ao metodo PHP performAction
 
   ## Parametros
     - $sAction
@@ -90,7 +90,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridIpTable do
   ## Retorno
     - any
   """
-  def _performAction(params) do
+  def performAction(params) do
     # TODO: Implementacao futura
         # protected function _performAction($sAction, $sDisplay, $iId = 0)
     #     {
@@ -99,7 +99,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridIpTable do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellType
+  Funcao correspondente ao metodo PHP getCellType
 
   ## Parametros
     - $mixedValue
@@ -110,7 +110,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridIpTable do
   ## Retorno
     - any
   """
-  def _getCellType(params) do
+  def getCellType(params) do
     # TODO: Implementacao futura
         # protected function _getCellType ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -120,7 +120,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridIpTable do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellLastDT
+  Funcao correspondente ao metodo PHP getCellLastDT
 
   ## Parametros
     - $mixedValue
@@ -131,7 +131,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridIpTable do
   ## Retorno
     - any
   """
-  def _getCellLastDT(params) do
+  def getCellLastDT(params) do
     # TODO: Implementacao futura
         # protected function _getCellLastDT ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -141,7 +141,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridIpTable do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellFrom
+  Funcao correspondente ao metodo PHP getCellFrom
 
   ## Parametros
     - $mixedValue
@@ -152,7 +152,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridIpTable do
   ## Retorno
     - any
   """
-  def _getCellFrom(params) do
+  def getCellFrom(params) do
     # TODO: Implementacao futura
         # protected function _getCellFrom ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -162,7 +162,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridIpTable do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellTo
+  Funcao correspondente ao metodo PHP getCellTo
 
   ## Parametros
     - $mixedValue
@@ -173,7 +173,7 @@ defmodule DeeperHub.Inc.Classes.BxAntispamGridIpTable do
   ## Retorno
     - any
   """
-  def _getCellTo(params) do
+  def getCellTo(params) do
     # TODO: Implementacao futura
         # protected function _getCellTo ($mixedValue, $sKey, $aField, $aRow)
     #     {

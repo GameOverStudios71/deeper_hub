@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentSubscriptions do
   # Heranca de BxBaseModPaymentSubscriptions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentSubscriptions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct()
@@ -211,7 +211,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentSubscriptions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getBlock
+  Funcao correspondente ao metodo PHP getBlock
 
   ## Parametros
     - $sType
@@ -219,7 +219,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentSubscriptions do
   ## Retorno
     - any
   """
-  def _getBlock(params) do
+  def getBlock(params) do
     # TODO: Implementacao futura
         # protected function _getBlock($sType)
     #     {
@@ -229,7 +229,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentSubscriptions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getInterval
+  Funcao correspondente ao metodo PHP getInterval
 
   ## Parametros
     - $iPeriod
@@ -239,7 +239,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentSubscriptions do
   ## Retorno
     - any
   """
-  def _getInterval(params) do
+  def getInterval(params) do
     # TODO: Implementacao futura
         # private function _getInterval($iPeriod, $sPeriodUnit, $iTrial = 0)
     #     {

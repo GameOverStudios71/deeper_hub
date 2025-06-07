@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   # Heranca de BxDolIO
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -67,7 +67,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP GenCacheEnginesTable
+  Funcao correspondente ao metodo PHP genCacheEnginesTable
 
   ## Parametros
     - 
@@ -75,7 +75,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   ## Retorno
     - any
   """
-  def GenCacheEnginesTable(params) do
+  def genCacheEnginesTable(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -87,7 +87,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP GenTabbedPage
+  Funcao correspondente ao metodo PHP genTabbedPage
 
   ## Parametros
     - $isShowModules = false
@@ -95,7 +95,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   ## Retorno
     - any
   """
-  def GenTabbedPage(params) do
+  def genTabbedPage(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -126,7 +126,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP GenAuditPage
+  Funcao correspondente ao metodo PHP genAuditPage
 
   ## Parametros
     - 
@@ -134,7 +134,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   ## Retorno
     - any
   """
-  def GenAuditPage(params) do
+  def genAuditPage(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -146,7 +146,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getHtmlPermissionRow
+  Funcao correspondente ao metodo PHP getHtmlPermissionRow
 
   ## Parametros
     - $s
@@ -155,7 +155,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   ## Retorno
     - any
   """
-  def _getHtmlPermissionRow(params) do
+  def getHtmlPermissionRow(params) do
     # TODO: Implementacao futura
         # protected function _getHtmlPermissionRow($s, $r)
     #     {
@@ -165,7 +165,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getHtmlPermissionTable
+  Funcao correspondente ao metodo PHP getHtmlPermissionTable
 
   ## Parametros
     - $sRows
@@ -173,7 +173,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   ## Retorno
     - any
   """
-  def _getHtmlPermissionTable(params) do
+  def getHtmlPermissionTable(params) do
     # TODO: Implementacao futura
         # protected function _getHtmlPermissionTable($sRows)
     #     {
@@ -183,7 +183,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFileType
+  Funcao correspondente ao metodo PHP getFileType
 
   ## Parametros
     - $s
@@ -191,7 +191,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   ## Retorno
     - any
   """
-  def _getFileType(params) do
+  def getFileType(params) do
     # TODO: Implementacao futura
         # protected function _getFileType($s)
     #     {
@@ -201,7 +201,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkPermissionsModules
+  Funcao correspondente ao metodo PHP checkPermissionsModules
 
   ## Parametros
     - &$aMessages
@@ -209,7 +209,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioTools do
   ## Retorno
     - any
   """
-  def _checkPermissionsModules(params) do
+  def checkPermissionsModules(params) do
     # TODO: Implementacao futura
         # protected function _checkPermissionsModules(&$aMessages)
     #     {

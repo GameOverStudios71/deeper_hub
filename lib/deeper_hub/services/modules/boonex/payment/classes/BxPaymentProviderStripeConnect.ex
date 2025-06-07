@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aConfig
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -348,7 +348,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getStripe
+  Funcao correspondente ao metodo PHP getStripe
 
   ## Parametros
     - 
@@ -356,7 +356,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _getStripe(params) do
+  def getStripe(params) do
     # TODO: Implementacao futura
         # protected function _getStripe()
     #     {
@@ -367,7 +367,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrieveCustomer
+  Funcao correspondente ao metodo PHP retrieveCustomer
 
   ## Parametros
     - $sType
@@ -376,7 +376,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _retrieveCustomer(params) do
+  def retrieveCustomer(params) do
     # TODO: Implementacao futura
         # protected function _retrieveCustomer($sType, $sId)
     #     {
@@ -386,7 +386,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _createSession
+  Funcao correspondente ao metodo PHP createSession
 
   ## Parametros
     - $sType
@@ -397,7 +397,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _createSession(params) do
+  def createSession(params) do
     # TODO: Implementacao futura
         # protected function _createSession($sType, $aParams, &$aClient, &$aCartInfo)
     #     {
@@ -407,7 +407,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSession
+  Funcao correspondente ao metodo PHP getSession
 
   ## Parametros
     - $sType
@@ -416,7 +416,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _getSession(params) do
+  def getSession(params) do
     # TODO: Implementacao futura
         # protected function _getSession($sType, $sId)
     #     {
@@ -426,7 +426,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrieveSession
+  Funcao correspondente ao metodo PHP retrieveSession
 
   ## Parametros
     - $sId
@@ -434,7 +434,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _retrieveSession(params) do
+  def retrieveSession(params) do
     # TODO: Implementacao futura
         # protected function _retrieveSession($sId)
     #     {
@@ -444,7 +444,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrieveSetupIntent
+  Funcao correspondente ao metodo PHP retrieveSetupIntent
 
   ## Parametros
     - $sId
@@ -452,7 +452,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _retrieveSetupIntent(params) do
+  def retrieveSetupIntent(params) do
     # TODO: Implementacao futura
         # protected function _retrieveSetupIntent($sId)
     #     {
@@ -462,7 +462,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _createPaymentIntent
+  Funcao correspondente ao metodo PHP createPaymentIntent
 
   ## Parametros
     - $sSetupIntentId
@@ -473,7 +473,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _createPaymentIntent(params) do
+  def createPaymentIntent(params) do
     # TODO: Implementacao futura
         # protected function _createPaymentIntent($sSetupIntentId, $fAmount, $sCurrency, $bConfirm = true)
     #     {
@@ -483,7 +483,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrievePaymentIntent
+  Funcao correspondente ao metodo PHP retrievePaymentIntent
 
   ## Parametros
     - $sId
@@ -491,7 +491,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _retrievePaymentIntent(params) do
+  def retrievePaymentIntent(params) do
     # TODO: Implementacao futura
         # protected function _retrievePaymentIntent($sId)
     #     {
@@ -501,7 +501,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrieveSubscription
+  Funcao correspondente ao metodo PHP retrieveSubscription
 
   ## Parametros
     - $sCustomerId
@@ -510,7 +510,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _retrieveSubscription(params) do
+  def retrieveSubscription(params) do
     # TODO: Implementacao futura
         # protected function _retrieveSubscription($sCustomerId, $sSubscriptionId)
     #     {
@@ -520,7 +520,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _createToken
+  Funcao correspondente ao metodo PHP createToken
 
   ## Parametros
     - $aCard
@@ -528,7 +528,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _createToken(params) do
+  def createToken(params) do
     # TODO: Implementacao futura
         # protected function _createToken($aCard)
     #     {
@@ -539,7 +539,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _createCard
+  Funcao correspondente ao metodo PHP createCard
 
   ## Parametros
     - $sType
@@ -549,7 +549,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _createCard(params) do
+  def createCard(params) do
     # TODO: Implementacao futura
         # protected function _createCard($sType, $sCustomerId, $sToken)
     #     {
@@ -562,7 +562,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrieveCard
+  Funcao correspondente ao metodo PHP retrieveCard
 
   ## Parametros
     - $sCustomerId
@@ -571,7 +571,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _retrieveCard(params) do
+  def retrieveCard(params) do
     # TODO: Implementacao futura
         # protected function _retrieveCard($sCustomerId, $sCardId = '')
     #     {
@@ -582,7 +582,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrievePaymentMethod
+  Funcao correspondente ao metodo PHP retrievePaymentMethod
 
   ## Parametros
     - $sPaymentMethodId
@@ -590,7 +590,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _retrievePaymentMethod(params) do
+  def retrievePaymentMethod(params) do
     # TODO: Implementacao futura
         # protected function _retrievePaymentMethod($sPaymentMethodId)
     #     {
@@ -601,7 +601,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getVerificationCodeSession
+  Funcao correspondente ao metodo PHP getVerificationCodeSession
 
   ## Parametros
     - $iVendorId
@@ -612,7 +612,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _getVerificationCodeSession(params) do
+  def getVerificationCodeSession(params) do
     # TODO: Implementacao futura
         # protected function _getVerificationCodeSession($iVendorId, $iCustomerId, $fAmount, $sCurrency)
     #     {
@@ -627,7 +627,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkVerificationCodeSession
+  Funcao correspondente ao metodo PHP checkVerificationCodeSession
 
   ## Parametros
     - $iVendorId
@@ -637,7 +637,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _checkVerificationCodeSession(params) do
+  def checkVerificationCodeSession(params) do
     # TODO: Implementacao futura
         # protected function _checkVerificationCodeSession($iVendorId, $iCustomerId, $aResult)
     #     {
@@ -647,7 +647,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processException
+  Funcao correspondente ao metodo PHP processException
 
   ## Parametros
     - $sMessage
@@ -656,7 +656,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderStripeConnect do
   ## Retorno
     - any
   """
-  def _processException(params) do
+  def processException(params) do
     # TODO: Implementacao futura
         # protected function _processException($sMessage, &$oException)
     #     {

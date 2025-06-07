@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   # Heranca de BxBaseModTextMenuViewActions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemSubscribeDiscussion
+  Funcao correspondente ao metodo PHP getMenuItemSubscribeDiscussion
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemSubscribeDiscussion(params) do
+  def getMenuItemSubscribeDiscussion(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemSubscribeDiscussion($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemUnsubscribeDiscussion
+  Funcao correspondente ao metodo PHP getMenuItemUnsubscribeDiscussion
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemUnsubscribeDiscussion(params) do
+  def getMenuItemUnsubscribeDiscussion(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemUnsubscribeDiscussion($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemStickDiscussion
+  Funcao correspondente ao metodo PHP getMenuItemStickDiscussion
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemStickDiscussion(params) do
+  def getMenuItemStickDiscussion(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemStickDiscussion($aItem)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemUnstickDiscussion
+  Funcao correspondente ao metodo PHP getMenuItemUnstickDiscussion
 
   ## Parametros
     - $aItem
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemUnstickDiscussion(params) do
+  def getMenuItemUnstickDiscussion(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemUnstickDiscussion($aItem)
     #     {
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemLockDiscussion
+  Funcao correspondente ao metodo PHP getMenuItemLockDiscussion
 
   ## Parametros
     - $aItem
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemLockDiscussion(params) do
+  def getMenuItemLockDiscussion(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemLockDiscussion($aItem)
     #     {
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemUnlockDiscussion
+  Funcao correspondente ao metodo PHP getMenuItemUnlockDiscussion
 
   ## Parametros
     - $aItem
@@ -124,7 +124,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemUnlockDiscussion(params) do
+  def getMenuItemUnlockDiscussion(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemUnlockDiscussion($aItem)
     #     {
@@ -134,7 +134,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemHideDiscussion
+  Funcao correspondente ao metodo PHP getMenuItemHideDiscussion
 
   ## Parametros
     - $aItem
@@ -142,7 +142,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemHideDiscussion(params) do
+  def getMenuItemHideDiscussion(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemHideDiscussion($aItem)
     #     {
@@ -152,7 +152,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemUnhideDiscussion
+  Funcao correspondente ao metodo PHP getMenuItemUnhideDiscussion
 
   ## Parametros
     - $aItem
@@ -160,7 +160,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemUnhideDiscussion(params) do
+  def getMenuItemUnhideDiscussion(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemUnhideDiscussion($aItem)
     #     {
@@ -170,7 +170,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditDiscussion
+  Funcao correspondente ao metodo PHP getMenuItemEditDiscussion
 
   ## Parametros
     - $aItem
@@ -178,7 +178,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemEditDiscussion(params) do
+  def getMenuItemEditDiscussion(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditDiscussion($aItem)
     #     {
@@ -188,7 +188,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteDiscussion
+  Funcao correspondente ao metodo PHP getMenuItemDeleteDiscussion
 
   ## Parametros
     - $aItem
@@ -196,7 +196,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteDiscussion(params) do
+  def getMenuItemDeleteDiscussion(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteDiscussion($aItem)
     #     {
@@ -206,7 +206,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemResolveDiscussion
+  Funcao correspondente ao metodo PHP getMenuItemResolveDiscussion
 
   ## Parametros
     - $aItem
@@ -214,7 +214,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemResolveDiscussion(params) do
+  def getMenuItemResolveDiscussion(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemResolveDiscussion($aItem)
     #     {
@@ -224,7 +224,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemUnresolveDiscussion
+  Funcao correspondente ao metodo PHP getMenuItemUnresolveDiscussion
 
   ## Parametros
     - $aItem
@@ -232,7 +232,7 @@ defmodule DeeperHub.Inc.Classes.BxForumMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemUnresolveDiscussion(params) do
+  def getMenuItemUnresolveDiscussion(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemUnresolveDiscussion($aItem)
     #     {

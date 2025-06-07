@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxWorkspacesMenuViewActionsAll do
   # Heranca de BxBaseModProfileMenuViewActionsAll
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxWorkspacesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxWorkspacesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditWorkspacesCover
+  Funcao correspondente ao metodo PHP getMenuItemEditWorkspacesCover
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxWorkspacesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditWorkspacesCover(params) do
+  def getMenuItemEditWorkspacesCover(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditWorkspacesCover($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxWorkspacesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditWorkspacesProfile
+  Funcao correspondente ao metodo PHP getMenuItemEditWorkspacesProfile
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxWorkspacesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemEditWorkspacesProfile(params) do
+  def getMenuItemEditWorkspacesProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditWorkspacesProfile($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxWorkspacesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteWorkspacesProfile
+  Funcao correspondente ao metodo PHP getMenuItemDeleteWorkspacesProfile
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxWorkspacesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteWorkspacesProfile(params) do
+  def getMenuItemDeleteWorkspacesProfile(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteWorkspacesProfile($aItem)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxWorkspacesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteWorkspacesAccount
+  Funcao correspondente ao metodo PHP getMenuItemDeleteWorkspacesAccount
 
   ## Parametros
     - $aItem
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxWorkspacesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteWorkspacesAccount(params) do
+  def getMenuItemDeleteWorkspacesAccount(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteWorkspacesAccount($aItem)
     #     {
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxWorkspacesMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteWorkspacesAccountContent
+  Funcao correspondente ao metodo PHP getMenuItemDeleteWorkspacesAccountContent
 
   ## Parametros
     - $aItem
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxWorkspacesMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteWorkspacesAccountContent(params) do
+  def getMenuItemDeleteWorkspacesAccountContent(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteWorkspacesAccountContent($aItem)
     #     {

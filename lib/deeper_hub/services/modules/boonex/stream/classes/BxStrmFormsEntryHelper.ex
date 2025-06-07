@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmFormsEntryHelper do
   # Heranca de BxBaseModTextFormsEntryHelper
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $oModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxStrmFormsEntryHelper do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($oModule)
     #     {

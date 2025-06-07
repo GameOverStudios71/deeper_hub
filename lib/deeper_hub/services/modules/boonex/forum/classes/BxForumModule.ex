@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxForumModule do
   # Heranca de BxBaseModTextModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxForumModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$aModule)
@@ -677,7 +677,7 @@ defmodule DeeperHub.Inc.Classes.BxForumModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkAllowedConnect
+  Funcao correspondente ao metodo PHP checkAllowedConnect
 
   ## Parametros
     - &$aDataEntry
@@ -689,7 +689,7 @@ defmodule DeeperHub.Inc.Classes.BxForumModule do
   ## Retorno
     - any
   """
-  def _checkAllowedConnect(params) do
+  def checkAllowedConnect(params) do
     # TODO: Implementacao futura
         # protected function _checkAllowedConnect (&$aDataEntry, $isPerformAction, $sObjConnection, $isMutual, $isInvertResult)
     #     {
@@ -699,7 +699,7 @@ defmodule DeeperHub.Inc.Classes.BxForumModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkAllowedAction
+  Funcao correspondente ao metodo PHP checkAllowedAction
 
   ## Parametros
     - $sAction
@@ -709,7 +709,7 @@ defmodule DeeperHub.Inc.Classes.BxForumModule do
   ## Retorno
     - any
   """
-  def _checkAllowedAction(params) do
+  def checkAllowedAction(params) do
     # TODO: Implementacao futura
         # protected function _checkAllowedAction($sAction, $aDataEntry, $isPerformAction = false)
     #     {
@@ -720,7 +720,7 @@ defmodule DeeperHub.Inc.Classes.BxForumModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceBrowseTable
+  Funcao correspondente ao metodo PHP serviceBrowseTable
 
   ## Parametros
     - $aParams
@@ -729,7 +729,7 @@ defmodule DeeperHub.Inc.Classes.BxForumModule do
   ## Retorno
     - any
   """
-  def _serviceBrowseTable(params) do
+  def serviceBrowseTable(params) do
     # TODO: Implementacao futura
         # protected function _serviceBrowseTable($aParams, $isDisplayHeader = true)
     #     {
@@ -739,7 +739,7 @@ defmodule DeeperHub.Inc.Classes.BxForumModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSearchAuthorDescriptor
+  Funcao correspondente ao metodo PHP getSearchAuthorDescriptor
 
   ## Parametros
     - $aAutor
@@ -747,7 +747,7 @@ defmodule DeeperHub.Inc.Classes.BxForumModule do
   ## Retorno
     - any
   """
-  def _getSearchAuthorDescriptor(params) do
+  def getSearchAuthorDescriptor(params) do
     # TODO: Implementacao futura
         # protected function _getSearchAuthorDescriptor($aAutor)
     #     {
@@ -760,7 +760,7 @@ defmodule DeeperHub.Inc.Classes.BxForumModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSearchKeywordDescriptor
+  Funcao correspondente ao metodo PHP getSearchKeywordDescriptor
 
   ## Parametros
     - $sKeyword
@@ -768,7 +768,7 @@ defmodule DeeperHub.Inc.Classes.BxForumModule do
   ## Retorno
     - any
   """
-  def _getSearchKeywordDescriptor(params) do
+  def getSearchKeywordDescriptor(params) do
     # TODO: Implementacao futura
         # protected function _getSearchKeywordDescriptor($sKeyword)
     #     {

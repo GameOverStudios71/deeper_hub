@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteStars do
   # Heranca de BxTemplVote
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteStars do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($sSystem, $iId, $iInit = true, $oTemplate = false)
     #     {
@@ -46,7 +46,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteStars do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isDuplicate
+  Funcao correspondente ao metodo PHP isDuplicate
 
   ## Parametros
     - $iObjectId
@@ -57,7 +57,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteStars do
   ## Retorno
     - any
   """
-  def _isDuplicate(params) do
+  def isDuplicate(params) do
     # TODO: Implementacao futura
         # protected function _isDuplicate($iObjectId, $iAuthorId, $iAuthorIp, $bVoted)
     #     {
@@ -68,7 +68,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteStars do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getVote
+  Funcao correspondente ao metodo PHP getVote
 
   ## Parametros
     - $iObjectId = 0
@@ -77,7 +77,7 @@ defmodule DeeperHub.Inc.Classes.BxDolVoteStars do
   ## Retorno
     - any
   """
-  def _getVote(params) do
+  def getVote(params) do
     # TODO: Implementacao futura
         # protected function _getVote($iObjectId = 0, $bForceGet = false)
     #     {

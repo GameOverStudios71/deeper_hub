@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   # Heranca de BxBaseModProfileMenuSnippetMeta
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -47,7 +47,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemJoinPaid
+  Funcao correspondente ao metodo PHP getMenuItemJoinPaid
 
   ## Parametros
     - $aItem
@@ -55,7 +55,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemJoinPaid(params) do
+  def getMenuItemJoinPaid(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemJoinPaid($aItem)
     #     {
@@ -65,7 +65,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemJoin
+  Funcao correspondente ao metodo PHP getMenuItemJoin
 
   ## Parametros
     - $aItem
@@ -73,7 +73,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemJoin(params) do
+  def getMenuItemJoin(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemJoin($aItem)
     #     {
@@ -83,7 +83,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemLeave
+  Funcao correspondente ao metodo PHP getMenuItemLeave
 
   ## Parametros
     - $aItem
@@ -91,7 +91,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemLeave(params) do
+  def getMenuItemLeave(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemLeave($aItem)
     #     {
@@ -101,7 +101,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemIgnoreJoin
+  Funcao correspondente ao metodo PHP getMenuItemIgnoreJoin
 
   ## Parametros
     - $aItem
@@ -109,7 +109,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemIgnoreJoin(params) do
+  def getMenuItemIgnoreJoin(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemIgnoreJoin($aItem)
     #     {
@@ -119,7 +119,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemPrivacy
+  Funcao correspondente ao metodo PHP getMenuItemPrivacy
 
   ## Parametros
     - $aItem
@@ -127,7 +127,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemPrivacy(params) do
+  def getMenuItemPrivacy(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemPrivacy($aItem)
     #     {
@@ -137,7 +137,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemMembers
+  Funcao correspondente ao metodo PHP getMenuItemMembers
 
   ## Parametros
     - $aItem
@@ -145,7 +145,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemMembers(params) do
+  def getMenuItemMembers(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemMembers($aItem)
     #     {
@@ -155,7 +155,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemCountry
+  Funcao correspondente ao metodo PHP getMenuItemCountry
 
   ## Parametros
     - $aItem
@@ -163,7 +163,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemCountry(params) do
+  def getMenuItemCountry(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemCountry($aItem)
     #     {
@@ -173,7 +173,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemCountryCity
+  Funcao correspondente ao metodo PHP getMenuItemCountryCity
 
   ## Parametros
     - $aItem
@@ -181,7 +181,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemCountryCity(params) do
+  def getMenuItemCountryCity(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemCountryCity($aItem)
     #     {
@@ -191,7 +191,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemLocation
+  Funcao correspondente ao metodo PHP getMenuItemLocation
 
   ## Parametros
     - $aItem
@@ -200,7 +200,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemLocation(params) do
+  def getMenuItemLocation(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemLocation($aItem, $bCountryOnly = false)
     #     {

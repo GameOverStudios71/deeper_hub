@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentCart do
   # Heranca de BxBaseModPaymentCart
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentCart do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct()
@@ -100,7 +100,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentCart do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getInfo
+  Funcao correspondente ao metodo PHP getInfo
 
   ## Parametros
     - $sType
@@ -111,7 +111,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentCart do
   ## Retorno
     - any
   """
-  def _getInfo(params) do
+  def getInfo(params) do
     # TODO: Implementacao futura
         # protected function _getInfo($sType, $iClientId, $iSellerId, $aItems)
     #     {

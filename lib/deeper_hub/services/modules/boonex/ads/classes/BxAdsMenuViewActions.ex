@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   # Heranca de BxBaseModTextMenuViewActions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemInterested
+  Funcao correspondente ao metodo PHP getMenuItemInterested
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemInterested(params) do
+  def getMenuItemInterested(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemInterested($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemAddToCart
+  Funcao correspondente ao metodo PHP getMenuItemAddToCart
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemAddToCart(params) do
+  def getMenuItemAddToCart(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemAddToCart($aItem)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemMakeOffer
+  Funcao correspondente ao metodo PHP getMenuItemMakeOffer
 
   ## Parametros
     - $aItem
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemMakeOffer(params) do
+  def getMenuItemMakeOffer(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemMakeOffer($aItem)
     #     {
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemViewOffers
+  Funcao correspondente ao metodo PHP getMenuItemViewOffers
 
   ## Parametros
     - $aItem
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemViewOffers(params) do
+  def getMenuItemViewOffers(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemViewOffers($aItem)
     #     {
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditAd
+  Funcao correspondente ao metodo PHP getMenuItemEditAd
 
   ## Parametros
     - $aItem
@@ -124,7 +124,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemEditAd(params) do
+  def getMenuItemEditAd(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditAd($aItem)
     #     {
@@ -134,7 +134,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditAdBudget
+  Funcao correspondente ao metodo PHP getMenuItemEditAdBudget
 
   ## Parametros
     - $aItem
@@ -142,7 +142,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemEditAdBudget(params) do
+  def getMenuItemEditAdBudget(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditAdBudget($aItem)
     #     {
@@ -152,7 +152,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemViewAdPromotion
+  Funcao correspondente ao metodo PHP getMenuItemViewAdPromotion
 
   ## Parametros
     - $aItem
@@ -160,7 +160,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemViewAdPromotion(params) do
+  def getMenuItemViewAdPromotion(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemViewAdPromotion($aItem)
     #     {
@@ -170,7 +170,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteAd
+  Funcao correspondente ao metodo PHP getMenuItemDeleteAd
 
   ## Parametros
     - $aItem
@@ -178,7 +178,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteAd(params) do
+  def getMenuItemDeleteAd(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteAd($aItem)
     #     {
@@ -188,7 +188,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemShipped
+  Funcao correspondente ao metodo PHP getMenuItemShipped
 
   ## Parametros
     - $aItem
@@ -196,7 +196,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemShipped(params) do
+  def getMenuItemShipped(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemShipped($aItem)
     #     {
@@ -206,7 +206,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemReceived
+  Funcao correspondente ao metodo PHP getMenuItemReceived
 
   ## Parametros
     - $aItem
@@ -214,7 +214,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemReceived(params) do
+  def getMenuItemReceived(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemReceived($aItem)
     #     {

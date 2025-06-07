@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuSnippetMeta do
   # Heranca de BxBaseModGroupsMenuSnippetMeta
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDateStart
+  Funcao correspondente ao metodo PHP getMenuItemDateStart
 
   ## Parametros
     - $aItem
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemDateStart(params) do
+  def getMenuItemDateStart(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDateStart($aItem)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuSnippetMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDateEnd
+  Funcao correspondente ao metodo PHP getMenuItemDateEnd
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxEventsMenuSnippetMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemDateEnd(params) do
+  def getMenuItemDateEnd(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDateEnd($aItem)
     #     {

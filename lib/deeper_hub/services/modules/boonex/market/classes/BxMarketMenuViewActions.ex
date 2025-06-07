@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   # Heranca de BxBaseModTextMenuViewActions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDownload
+  Funcao correspondente ao metodo PHP getMenuItemDownload
 
   ## Parametros
     - $aItem
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDownload(params) do
+  def getMenuItemDownload(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDownload($aItem)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemAddToCart
+  Funcao correspondente ao metodo PHP getMenuItemAddToCart
 
   ## Parametros
     - $aItem
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemAddToCart(params) do
+  def getMenuItemAddToCart(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemAddToCart($aItem)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemSubscribe
+  Funcao correspondente ao metodo PHP getMenuItemSubscribe
 
   ## Parametros
     - $aItem
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemSubscribe(params) do
+  def getMenuItemSubscribe(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemSubscribe($aItem)
     #     {
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemUnhideProduct
+  Funcao correspondente ao metodo PHP getMenuItemUnhideProduct
 
   ## Parametros
     - $aItem
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemUnhideProduct(params) do
+  def getMenuItemUnhideProduct(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemUnhideProduct($aItem)
     #     {
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemHideProduct
+  Funcao correspondente ao metodo PHP getMenuItemHideProduct
 
   ## Parametros
     - $aItem
@@ -124,7 +124,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemHideProduct(params) do
+  def getMenuItemHideProduct(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemHideProduct($aItem)
     #     {
@@ -134,7 +134,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEditProduct
+  Funcao correspondente ao metodo PHP getMenuItemEditProduct
 
   ## Parametros
     - $aItem
@@ -142,7 +142,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemEditProduct(params) do
+  def getMenuItemEditProduct(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEditProduct($aItem)
     #     {
@@ -152,7 +152,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDeleteProduct
+  Funcao correspondente ao metodo PHP getMenuItemDeleteProduct
 
   ## Parametros
     - $aItem
@@ -160,7 +160,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDeleteProduct(params) do
+  def getMenuItemDeleteProduct(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDeleteProduct($aItem)
     #     {

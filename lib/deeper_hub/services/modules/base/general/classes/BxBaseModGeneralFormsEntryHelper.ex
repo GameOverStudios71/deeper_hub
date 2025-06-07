@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormsEntryHelper do
   # Heranca de BxDolProfileForms
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $oModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormsEntryHelper do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($oModule)
     #     {
@@ -404,7 +404,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormsEntryHelper do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processPermissionsCheckForViewDataForm
+  Funcao correspondente ao metodo PHP processPermissionsCheckForViewDataForm
 
   ## Parametros
     - $aContentInfo
@@ -413,7 +413,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormsEntryHelper do
   ## Retorno
     - any
   """
-  def _processPermissionsCheckForViewDataForm(params) do
+  def processPermissionsCheckForViewDataForm(params) do
     # TODO: Implementacao futura
         # protected function _processPermissionsCheckForViewDataForm ($aContentInfo, $oProfile)
     #     {
@@ -546,7 +546,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormsEntryHelper do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setAbsoluteActionUrl
+  Funcao correspondente ao metodo PHP setAbsoluteActionUrl
 
   ## Parametros
     - $sType
@@ -555,7 +555,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormsEntryHelper do
   ## Retorno
     - any
   """
-  def _setAbsoluteActionUrl(params) do
+  def setAbsoluteActionUrl(params) do
     # TODO: Implementacao futura
         # protected function _setAbsoluteActionUrl($sType, &$oForm)
     #     {
@@ -565,7 +565,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormsEntryHelper do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getRedirectFromContext
+  Funcao correspondente ao metodo PHP getRedirectFromContext
 
   ## Parametros
     - $sAction
@@ -574,7 +574,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormsEntryHelper do
   ## Retorno
     - any
   """
-  def _getRedirectFromContext(params) do
+  def getRedirectFromContext(params) do
     # TODO: Implementacao futura
         # protected function _getRedirectFromContext($sAction, $aContentInfo)
     #     {

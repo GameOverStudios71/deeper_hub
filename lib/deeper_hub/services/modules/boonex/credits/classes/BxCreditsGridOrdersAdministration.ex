@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridOrdersAdministration do
   # Heranca de BxCreditsGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridOrdersAdministration do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridOrdersAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellProfileId
+  Funcao correspondente ao metodo PHP getCellProfileId
 
   ## Parametros
     - $mixedValue
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridOrdersAdministration do
   ## Retorno
     - any
   """
-  def _getCellProfileId(params) do
+  def getCellProfileId(params) do
     # TODO: Implementacao futura
         # protected function _getCellProfileId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -47,7 +47,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridOrdersAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellBundle
+  Funcao correspondente ao metodo PHP getCellBundle
 
   ## Parametros
     - $mixedValue
@@ -58,7 +58,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridOrdersAdministration do
   ## Retorno
     - any
   """
-  def _getCellBundle(params) do
+  def getCellBundle(params) do
     # TODO: Implementacao futura
         # protected function _getCellBundle($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -72,7 +72,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridOrdersAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellType
+  Funcao correspondente ao metodo PHP getCellType
 
   ## Parametros
     - $mixedValue
@@ -83,7 +83,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridOrdersAdministration do
   ## Retorno
     - any
   """
-  def _getCellType(params) do
+  def getCellType(params) do
     # TODO: Implementacao futura
         # protected function _getCellType($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -93,7 +93,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridOrdersAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAdded
+  Funcao correspondente ao metodo PHP getCellAdded
 
   ## Parametros
     - $mixedValue
@@ -104,7 +104,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridOrdersAdministration do
   ## Retorno
     - any
   """
-  def _getCellAdded(params) do
+  def getCellAdded(params) do
     # TODO: Implementacao futura
         # protected function _getCellAdded($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -114,7 +114,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridOrdersAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellExpired
+  Funcao correspondente ao metodo PHP getCellExpired
 
   ## Parametros
     - $mixedValue
@@ -125,7 +125,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridOrdersAdministration do
   ## Retorno
     - any
   """
-  def _getCellExpired(params) do
+  def getCellExpired(params) do
     # TODO: Implementacao futura
         # protected function _getCellExpired($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -135,7 +135,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridOrdersAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getProfile
+  Funcao correspondente ao metodo PHP getProfile
 
   ## Parametros
     - $mixedValue
@@ -143,7 +143,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGridOrdersAdministration do
   ## Retorno
     - any
   """
-  def _getProfile(params) do
+  def getProfile(params) do
     # TODO: Implementacao futura
         # protected function _getProfile($mixedValue) 
     #     {

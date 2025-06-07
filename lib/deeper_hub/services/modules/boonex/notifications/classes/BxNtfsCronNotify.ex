@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsCronNotify do
   # Heranca de BxDolCron
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsCronNotify do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -43,7 +43,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsCronNotify do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _sendNotifications
+  Funcao correspondente ao metodo PHP sendNotifications
 
   ## Parametros
     - &$aEvent
@@ -51,7 +51,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsCronNotify do
   ## Retorno
     - any
   """
-  def _sendNotifications(params) do
+  def sendNotifications(params) do
     # TODO: Implementacao futura
         # protected function _sendNotifications(&$aEvent)
     #     {
@@ -61,7 +61,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsCronNotify do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addRecipient
+  Funcao correspondente ao metodo PHP addRecipient
 
   ## Parametros
     - $iUser
@@ -71,7 +71,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsCronNotify do
   ## Retorno
     - any
   """
-  def _addRecipient(params) do
+  def addRecipient(params) do
     # TODO: Implementacao futura
         # protected function _addRecipient($iUser, $sSettingType, &$aRecipients)
     #     {

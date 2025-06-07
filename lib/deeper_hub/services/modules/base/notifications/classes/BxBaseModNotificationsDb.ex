@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsDb do
   # Heranca de BxBaseModGeneralDb
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsDb do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct(&$oConfig)
     #     {
@@ -408,7 +408,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSqlPartsEvents
+  Funcao correspondente ao metodo PHP getSqlPartsEvents
 
   ## Parametros
     - $aParams
@@ -416,7 +416,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsDb do
   ## Retorno
     - any
   """
-  def _getSqlPartsEvents(params) do
+  def getSqlPartsEvents(params) do
     # TODO: Implementacao futura
         # protected function _getSqlPartsEvents($aParams)
     #     {
@@ -426,7 +426,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSqlPartsEventsList
+  Funcao correspondente ao metodo PHP getSqlPartsEventsList
 
   ## Parametros
     - $aParams
@@ -434,7 +434,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsDb do
   ## Retorno
     - any
   """
-  def _getSqlPartsEventsList(params) do
+  def getSqlPartsEventsList(params) do
     # TODO: Implementacao futura
         # protected function _getSqlPartsEventsList($aParams)
     #     {

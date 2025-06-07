@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   # Heranca de BxDolObject
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($sSystem, $iId, $iInit = true, $oTemplate = false)
     #     {
@@ -383,7 +383,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isAllowedVoteByObject
+  Funcao correspondente ao metodo PHP isAllowedVoteByObject
 
   ## Parametros
     - $aObject
@@ -391,7 +391,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   ## Retorno
     - any
   """
-  def _isAllowedVoteByObject(params) do
+  def isAllowedVoteByObject(params) do
     # TODO: Implementacao futura
         # protected function _isAllowedVoteByObject($aObject)
     #     {
@@ -401,7 +401,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _putVoteData
+  Funcao correspondente ao metodo PHP putVoteData
 
   ## Parametros
     - $iObjectId
@@ -413,7 +413,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   ## Retorno
     - any
   """
-  def _putVoteData(params) do
+  def putVoteData(params) do
     # TODO: Implementacao futura
         # protected function _putVoteData($iObjectId, $iAuthorId, $iAuthorIp, $aData, $bPerformUndo)
     #     {
@@ -423,7 +423,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _returnVoteDataForSocket
+  Funcao correspondente ao metodo PHP returnVoteDataForSocket
 
   ## Parametros
     - $aData
@@ -432,7 +432,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   ## Retorno
     - any
   """
-  def _returnVoteDataForSocket(params) do
+  def returnVoteDataForSocket(params) do
     # TODO: Implementacao futura
         # protected function _returnVoteDataForSocket($aData, $aMask = [])
     #     {
@@ -443,7 +443,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getVote
+  Funcao correspondente ao metodo PHP getVote
 
   ## Parametros
     - $iObjectId = 0
@@ -452,7 +452,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   ## Retorno
     - any
   """
-  def _getVote(params) do
+  def getVote(params) do
     # TODO: Implementacao futura
         # protected function _getVote($iObjectId = 0, $bForceGet = false)
     #     {
@@ -463,7 +463,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVote
+  Funcao correspondente ao metodo PHP isVote
 
   ## Parametros
     - $iObjectId = 0
@@ -472,7 +472,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   ## Retorno
     - any
   """
-  def _isVote(params) do
+  def isVote(params) do
     # TODO: Implementacao futura
         # protected function _isVote($iObjectId = 0, $bForceGet = false)
     #     {
@@ -482,7 +482,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isCount
+  Funcao correspondente ao metodo PHP isCount
 
   ## Parametros
     - $aScore = []
@@ -490,7 +490,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   ## Retorno
     - any
   """
-  def _isCount(params) do
+  def isCount(params) do
     # TODO: Implementacao futura
         # protected function _isCount($aScore = [])
     #     {
@@ -501,7 +501,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTrack
+  Funcao correspondente ao metodo PHP getTrack
 
   ## Parametros
     - $iObjectId
@@ -510,7 +510,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   ## Retorno
     - any
   """
-  def _getTrack(params) do
+  def getTrack(params) do
     # TODO: Implementacao futura
         # protected function _getTrack($iObjectId, $iAuthorId)
     #     {
@@ -520,7 +520,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getImageDo
+  Funcao correspondente ao metodo PHP getImageDo
 
   ## Parametros
     - $sType
@@ -528,7 +528,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   ## Retorno
     - any
   """
-  def _getImageDo(params) do
+  def getImageDo(params) do
     # TODO: Implementacao futura
         # protected function _getImageDo($sType)
     #     {
@@ -538,7 +538,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIconDo
+  Funcao correspondente ao metodo PHP getIconDo
 
   ## Parametros
     - $sType = ''
@@ -546,7 +546,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   ## Retorno
     - any
   """
-  def _getIconDo(params) do
+  def getIconDo(params) do
     # TODO: Implementacao futura
         # protected function _getIconDo($sType = '')
     #     {
@@ -556,7 +556,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTitleDo
+  Funcao correspondente ao metodo PHP getTitleDo
 
   ## Parametros
     - $sType
@@ -564,7 +564,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   ## Retorno
     - any
   """
-  def _getTitleDo(params) do
+  def getTitleDo(params) do
     # TODO: Implementacao futura
         # protected function _getTitleDo($sType)
     #     {
@@ -574,7 +574,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTitleDoBy
+  Funcao correspondente ao metodo PHP getTitleDoBy
 
   ## Parametros
     - 
@@ -582,7 +582,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   ## Retorno
     - any
   """
-  def _getTitleDoBy(params) do
+  def getTitleDoBy(params) do
     # TODO: Implementacao futura
         # protected function _getTitleDoBy()
     #     {
@@ -592,7 +592,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _encodeElementParams
+  Funcao correspondente ao metodo PHP encodeElementParams
 
   ## Parametros
     - $aParams
@@ -600,7 +600,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   ## Retorno
     - any
   """
-  def _encodeElementParams(params) do
+  def encodeElementParams(params) do
     # TODO: Implementacao futura
         # protected function _encodeElementParams($aParams)
     #     {
@@ -611,7 +611,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _decodeElementParams
+  Funcao correspondente ao metodo PHP decodeElementParams
 
   ## Parametros
     - $sParams
@@ -620,7 +620,7 @@ defmodule DeeperHub.Inc.Classes.BxDolScore do
   ## Retorno
     - any
   """
-  def _decodeElementParams(params) do
+  def decodeElementParams(params) do
     # TODO: Implementacao futura
         # protected function _decodeElementParams($sParams, $bMergeWithDefaults = true)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioUpdater do
   # Heranca de BxDolStudioInstaller
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aConfig
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioUpdater do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aConfig)
     #     {
@@ -153,7 +153,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioUpdater do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _updateLanguage
+  Funcao correspondente ao metodo PHP updateLanguage
 
   ## Parametros
     - $bInstall
@@ -164,7 +164,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioUpdater do
   ## Retorno
     - any
   """
-  def _updateLanguage(params) do
+  def updateLanguage(params) do
     # TODO: Implementacao futura
         # protected function _updateLanguage($bInstall, $aLanguage, $iCategory = 0, $sPath = '')
     #     {

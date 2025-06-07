@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLocationFieldGoogle do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getInputLocationVars
+  Funcao correspondente ao metodo PHP getInputLocationVars
 
   ## Parametros
     - &$aInput
@@ -35,7 +35,7 @@ defmodule DeeperHub.Inc.Classes.BxDolLocationFieldGoogle do
   ## Retorno
     - any
   """
-  def _getInputLocationVars(params) do
+  def getInputLocationVars(params) do
     # TODO: Implementacao futura
         # protected function _getInputLocationVars(&$aInput, $oForm)
     #     {

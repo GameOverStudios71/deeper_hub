@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoderProxy do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -19,7 +19,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoderProxy do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($aObject, $oStorage)
     #     {
@@ -66,7 +66,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoderProxy do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isImage
+  Funcao correspondente ao metodo PHP isImage
 
   ## Parametros
     - $sMimeType
@@ -74,7 +74,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoderProxy do
   ## Retorno
     - any
   """
-  def _isImage(params) do
+  def isImage(params) do
     # TODO: Implementacao futura
         # protected function _isImage($sMimeType)
     #     {
@@ -84,7 +84,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoderProxy do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVideo
+  Funcao correspondente ao metodo PHP isVideo
 
   ## Parametros
     - $sMimeType
@@ -92,7 +92,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoderProxy do
   ## Retorno
     - any
   """
-  def _isVideo(params) do
+  def isVideo(params) do
     # TODO: Implementacao futura
         # protected function _isVideo($sMimeType)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   # Heranca de BxTemplFormView
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aInfo
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aInfo, $oTemplate = false)
     #     {
@@ -27,7 +27,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isChangeUserForAdmins
+  Funcao correspondente ao metodo PHP isChangeUserForAdmins
 
   ## Parametros
     - $sDisplay
@@ -35,7 +35,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   ## Retorno
     - any
   """
-  def _isChangeUserForAdmins(params) do
+  def isChangeUserForAdmins(params) do
     # TODO: Implementacao futura
         # protected function _isChangeUserForAdmins($sDisplay)
     #     {
@@ -204,7 +204,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _associalFileWithContent
+  Funcao correspondente ao metodo PHP associalFileWithContent
 
   ## Parametros
     - $oStorage
@@ -216,7 +216,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   ## Retorno
     - any
   """
-  def _associalFileWithContent(params) do
+  def associalFileWithContent(params) do
     # TODO: Implementacao futura
         # protected function _associalFileWithContent($oStorage, $iFileId, $iProfileId, $iContentId, $sPictureField = '')
     #     {
@@ -226,7 +226,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isAdmin
+  Funcao correspondente ao metodo PHP isAdmin
 
   ## Parametros
     - $iContentId = 0
@@ -234,7 +234,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   ## Retorno
     - any
   """
-  def _isAdmin(params) do
+  def isAdmin(params) do
     # TODO: Implementacao futura
         # protected function _isAdmin ($iContentId = 0)
     #     {
@@ -283,7 +283,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _deleteFile
+  Funcao correspondente ao metodo PHP deleteFile
 
   ## Parametros
     - $iFileId
@@ -292,7 +292,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   ## Retorno
     - any
   """
-  def _deleteFile(params) do
+  def deleteFile(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -427,7 +427,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processTrackFields
+  Funcao correspondente ao metodo PHP processTrackFields
 
   ## Parametros
     - $mixedContent
@@ -435,7 +435,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   ## Retorno
     - any
   """
-  def _processTrackFields(params) do
+  def processTrackFields(params) do
     # TODO: Implementacao futura
         # protected function _processTrackFields($mixedContent)
     #     {
@@ -446,7 +446,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processMetas
+  Funcao correspondente ao metodo PHP processMetas
 
   ## Parametros
     - &$aValsToAdd
@@ -454,7 +454,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   ## Retorno
     - any
   """
-  def _processMetas(params) do
+  def processMetas(params) do
     # TODO: Implementacao futura
         # protected function _processMetas(&$aValsToAdd)
     #     {
@@ -464,7 +464,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addCssJsPrivacyField
+  Funcao correspondente ao metodo PHP addCssJsPrivacyField
 
   ## Parametros
     - $sField
@@ -474,7 +474,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   ## Retorno
     - any
   """
-  def _addCssJsPrivacyField(params) do
+  def addCssJsPrivacyField(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -486,7 +486,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _preparePrivacyField
+  Funcao correspondente ao metodo PHP preparePrivacyField
 
   ## Parametros
     - $sField
@@ -495,7 +495,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   ## Retorno
     - any
   """
-  def _preparePrivacyField(params) do
+  def preparePrivacyField(params) do
     # TODO: Implementacao futura
         # protected function _preparePrivacyField($sField, $sPrivacyObject)
     #     {
@@ -505,7 +505,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _preloadPrivacyField
+  Funcao correspondente ao metodo PHP preloadPrivacyField
 
   ## Parametros
     - $sField
@@ -515,7 +515,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   ## Retorno
     - any
   """
-  def _preloadPrivacyField(params) do
+  def preloadPrivacyField(params) do
     # TODO: Implementacao futura
         # protected function _preloadPrivacyField($sField, $sPrivacyObject, $aValues)
     #     {
@@ -525,7 +525,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _validatePrivacyField
+  Funcao correspondente ao metodo PHP validatePrivacyField
 
   ## Parametros
     - $sField
@@ -535,7 +535,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   ## Retorno
     - any
   """
-  def _validatePrivacyField(params) do
+  def validatePrivacyField(params) do
     # TODO: Implementacao futura
         # protected function _validatePrivacyField($sField, $sPrivacyObject, $aValues)
     #     {
@@ -545,7 +545,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processContextBeforeAdd
+  Funcao correspondente ao metodo PHP processContextBeforeAdd
 
   ## Parametros
     - 
@@ -553,7 +553,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   ## Retorno
     - any
   """
-  def _processContextBeforeAdd(params) do
+  def processContextBeforeAdd(params) do
     # TODO: Implementacao futura
         # protected function _processContextBeforeAdd()
     #     {
@@ -563,7 +563,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processContextAfterAdd
+  Funcao correspondente ao metodo PHP processContextAfterAdd
 
   ## Parametros
     - $iContentId
@@ -573,7 +573,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   ## Retorno
     - any
   """
-  def _processContextAfterAdd(params) do
+  def processContextAfterAdd(params) do
     # TODO: Implementacao futura
         # protected function _processContextAfterAdd($iContentId, $iContextNid, $iContextUsage = 0)
     #     {
@@ -769,7 +769,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isMulticatEnabled
+  Funcao correspondente ao metodo PHP isMulticatEnabled
 
   ## Parametros
     - 
@@ -777,7 +777,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   ## Retorno
     - any
   """
-  def _isMulticatEnabled(params) do
+  def isMulticatEnabled(params) do
     # TODO: Implementacao futura
         # protected function _isMulticatEnabled(){
     #         $CNF = $this->_oModule->_oConfig->CNF;
@@ -786,7 +786,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _replaceMarkersInControls
+  Funcao correspondente ao metodo PHP replaceMarkersInControls
 
   ## Parametros
     - $sKey = 'controls'
@@ -794,7 +794,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralFormEntry do
   ## Retorno
     - any
   """
-  def _replaceMarkersInControls(params) do
+  def replaceMarkersInControls(params) do
     # TODO: Implementacao futura
         # protected function _replaceMarkersInControls($sKey = 'controls')
     #     {

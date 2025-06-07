@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoderVideo do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -19,7 +19,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoderVideo do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($aObject, $oStorage)
     #     {
@@ -195,7 +195,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoderVideo do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _convertVideo
+  Funcao correspondente ao metodo PHP convertVideo
 
   ## Parametros
     - $sFile
@@ -207,7 +207,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoderVideo do
   ## Retorno
     - any
   """
-  def _convertVideo(params) do
+  def convertVideo(params) do
     # TODO: Implementacao futura
         # protected function _convertVideo ($sFile, $sFileOut, $sExt, $aParams, $aOptions)
     #     {
@@ -254,7 +254,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoderVideo do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getOptionSizeForVideo
+  Funcao correspondente ao metodo PHP getOptionSizeForVideo
 
   ## Parametros
     - $sFile
@@ -263,7 +263,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoderVideo do
   ## Retorno
     - any
   """
-  def _getOptionSizeForVideo(params) do
+  def getOptionSizeForVideo(params) do
     # TODO: Implementacao futura
         # protected function _getOptionSizeForVideo ($sFile, $aParams) 
     #     {
@@ -274,7 +274,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoderVideo do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFfmpegThreadsParams
+  Funcao correspondente ao metodo PHP getFfmpegThreadsParams
 
   ## Parametros
     - 
@@ -282,7 +282,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoderVideo do
   ## Retorno
     - any
   """
-  def _getFfmpegThreadsParams(params) do
+  def getFfmpegThreadsParams(params) do
     # TODO: Implementacao futura
         # protected function _getFfmpegThreadsParams ()
     #     {

@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -787,7 +787,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _servicePrepareFields
+  Funcao correspondente ao metodo PHP servicePrepareFields
 
   ## Parametros
     - $aFieldsProfile
@@ -797,7 +797,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   ## Retorno
     - any
   """
-  def _servicePrepareFields(params) do
+  def servicePrepareFields(params) do
     # TODO: Implementacao futura
         # protected function _servicePrepareFields ($aFieldsProfile, $aFieldsDefault, $aMap)
     #     {
@@ -2091,7 +2091,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _modProfileCheckAllowedSubscribeAdd
+  Funcao correspondente ao metodo PHP modProfileCheckAllowedSubscribeAdd
 
   ## Parametros
     - &$aDataEntry
@@ -2100,7 +2100,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   ## Retorno
     - any
   """
-  def _modProfileCheckAllowedSubscribeAdd(params) do
+  def modProfileCheckAllowedSubscribeAdd(params) do
     # TODO: Implementacao futura
         # public function _modProfileCheckAllowedSubscribeAdd(&$aDataEntry, $isPerformAction = false)
     #     {
@@ -2205,7 +2205,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceCheckAllowedContactForProfile
+  Funcao correspondente ao metodo PHP serviceCheckAllowedContactForProfile
 
   ## Parametros
     - $aDataEntry
@@ -2215,7 +2215,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   ## Retorno
     - any
   """
-  def _serviceCheckAllowedContactForProfile(params) do
+  def serviceCheckAllowedContactForProfile(params) do
     # TODO: Implementacao futura
         # protected function _serviceCheckAllowedContactForProfile($aDataEntry, $isPerformAction = false, $iProfileId = false)
     #     {
@@ -2266,7 +2266,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _alertParams
+  Funcao correspondente ao metodo PHP alertParams
 
   ## Parametros
     - $aContentInfo
@@ -2274,7 +2274,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   ## Retorno
     - any
   """
-  def _alertParams(params) do
+  def alertParams(params) do
     # TODO: Implementacao futura
         # protected function _alertParams($aContentInfo)
     #     {
@@ -2377,7 +2377,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemTitleProfilesFriends
+  Funcao correspondente ao metodo PHP getMenuItemTitleProfilesFriends
 
   ## Parametros
     - $sAction
@@ -2388,7 +2388,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   ## Retorno
     - any
   """
-  def _getMenuItemTitleProfilesFriends(params) do
+  def getMenuItemTitleProfilesFriends(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemTitleProfilesFriends($sAction, $iContentProfileId, $iInitiatorProfileId, &$oConnection)
     #     {
@@ -2398,7 +2398,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemTitleProfilesSubscriptions
+  Funcao correspondente ao metodo PHP getMenuItemTitleProfilesSubscriptions
 
   ## Parametros
     - $sAction
@@ -2409,7 +2409,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   ## Retorno
     - any
   """
-  def _getMenuItemTitleProfilesSubscriptions(params) do
+  def getMenuItemTitleProfilesSubscriptions(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemTitleProfilesSubscriptions($sAction, $iContentProfileId, $iInitiatorProfileId, &$oConnection)
     #     {
@@ -2438,7 +2438,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkAllowedConnect
+  Funcao correspondente ao metodo PHP checkAllowedConnect
 
   ## Parametros
     - &$aDataEntry
@@ -2451,7 +2451,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   ## Retorno
     - any
   """
-  def _checkAllowedConnect(params) do
+  def checkAllowedConnect(params) do
     # TODO: Implementacao futura
         # protected function _checkAllowedConnect (&$aDataEntry, $isPerformAction, $mixedConnection, $isMutual, $isInvertResult, $isSwap = false)
     #     {
@@ -2462,7 +2462,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _buildRssParams
+  Funcao correspondente ao metodo PHP buildRssParams
 
   ## Parametros
     - $sMode
@@ -2471,7 +2471,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   ## Retorno
     - any
   """
-  def _buildRssParams(params) do
+  def buildRssParams(params) do
     # TODO: Implementacao futura
         # protected function _buildRssParams($sMode, $aArgs)
     #     {
@@ -2481,7 +2481,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceGetTimelineProfileImage
+  Funcao correspondente ao metodo PHP serviceGetTimelineProfileImage
 
   ## Parametros
     - $aEvent
@@ -2491,7 +2491,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   ## Retorno
     - any
   """
-  def _serviceGetTimelineProfileImage(params) do
+  def serviceGetTimelineProfileImage(params) do
     # TODO: Implementacao futura
         # protected function _serviceGetTimelineProfileImage($aEvent, $aBrowseParams, $aBuildParams)
     #     {
@@ -2501,7 +2501,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceGetTimelineProfileImageAllowedView
+  Funcao correspondente ao metodo PHP serviceGetTimelineProfileImageAllowedView
 
   ## Parametros
     - $aEvent
@@ -2509,7 +2509,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   ## Retorno
     - any
   """
-  def _serviceGetTimelineProfileImageAllowedView(params) do
+  def serviceGetTimelineProfileImageAllowedView(params) do
     # TODO: Implementacao futura
         # protected function _serviceGetTimelineProfileImageAllowedView($aEvent)
     #     {
@@ -2519,7 +2519,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getContentForTimelineProfileImage
+  Funcao correspondente ao metodo PHP getContentForTimelineProfileImage
 
   ## Parametros
     - $aEvent
@@ -2531,7 +2531,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   ## Retorno
     - any
   """
-  def _getContentForTimelineProfileImage(params) do
+  def getContentForTimelineProfileImage(params) do
     # TODO: Implementacao futura
         # protected function _getContentForTimelineProfileImage($aEvent, $aBrowseParams, $aBuildParams, $aContentInfo, $aFileInfo)
     #     {
@@ -2541,7 +2541,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _entityComments
+  Funcao correspondente ao metodo PHP entityComments
 
   ## Parametros
     - $sObject
@@ -2550,7 +2550,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   ## Retorno
     - any
   """
-  def _entityComments(params) do
+  def entityComments(params) do
     # TODO: Implementacao futura
         # protected function _entityComments($sObject, $iId = 0)
     #     {
@@ -2561,7 +2561,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getContent
+  Funcao correspondente ao metodo PHP getContent
 
   ## Parametros
     - $iContentId = 0
@@ -2570,7 +2570,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileModule do
   ## Retorno
     - any
   """
-  def _getContent(params) do
+  def getContent(params) do
     # TODO: Implementacao futura
         # protected function _getContent($iContentId = 0, $sFuncGetContent = 'getContentInfoById')
     #     {

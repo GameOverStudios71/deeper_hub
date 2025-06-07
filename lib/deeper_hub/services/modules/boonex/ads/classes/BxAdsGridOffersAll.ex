@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffersAll do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffersAll do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffersAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellContentId
+  Funcao correspondente ao metodo PHP getCellContentId
 
   ## Parametros
     - $mixedValue
@@ -37,7 +37,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffersAll do
   ## Retorno
     - any
   """
-  def _getCellContentId(params) do
+  def getCellContentId(params) do
     # TODO: Implementacao futura
         # protected function _getCellContentId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -47,7 +47,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffersAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSqlOrderClause
+  Funcao correspondente ao metodo PHP getDataSqlOrderClause
 
   ## Parametros
     - $sOrderByFilter
@@ -58,7 +58,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffersAll do
   ## Retorno
     - any
   """
-  def _getDataSqlOrderClause(params) do
+  def getDataSqlOrderClause(params) do
     # TODO: Implementacao futura
         # protected function _getDataSqlOrderClause ($sOrderByFilter, $sOrderField, $sOrderDir, $bFieldsOnly = false)
     #     {
@@ -68,7 +68,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffersAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffersAll do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -90,7 +90,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffersAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getId
+  Funcao correspondente ao metodo PHP getId
 
   ## Parametros
     - 
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxAdsGridOffersAll do
   ## Retorno
     - any
   """
-  def _getId(params) do
+  def getId(params) do
     # TODO: Implementacao futura
         # protected function _getId()
     #     {

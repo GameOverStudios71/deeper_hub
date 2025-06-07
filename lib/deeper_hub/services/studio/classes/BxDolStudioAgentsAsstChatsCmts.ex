@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   # Heranca de BxTemplCmts
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($sSystem, $iId, $iInit = true, $oTemplate = false)
     #     {
@@ -232,7 +232,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getActionsBox
+  Funcao correspondente ao metodo PHP getActionsBox
 
   ## Parametros
     - &$aCmt
@@ -242,7 +242,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   ## Retorno
     - any
   """
-  def _getActionsBox(params) do
+  def getActionsBox(params) do
     # TODO: Implementacao futura
         # protected function _getActionsBox(&$aCmt, $aBp = [], $aDp = [])
     #     {
@@ -253,7 +253,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCountersBox
+  Funcao correspondente ao metodo PHP getCountersBox
 
   ## Parametros
     - &$aCmt
@@ -263,7 +263,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   ## Retorno
     - any
   """
-  def _getCountersBox(params) do
+  def getCountersBox(params) do
     # TODO: Implementacao futura
         # protected function _getCountersBox(&$aCmt, $aBp = [], $aDp = [])
     #     {
@@ -273,7 +273,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFormBox
+  Funcao correspondente ao metodo PHP getFormBox
 
   ## Parametros
     - $sType
@@ -283,7 +283,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   ## Retorno
     - any
   """
-  def _getFormBox(params) do
+  def getFormBox(params) do
     # TODO: Implementacao futura
         # protected function _getFormBox($sType, $aBp, $aDp)
     #     {
@@ -296,7 +296,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getForm
+  Funcao correspondente ao metodo PHP getForm
 
   ## Parametros
     - $sAction
@@ -306,7 +306,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   ## Retorno
     - any
   """
-  def _getForm(params) do
+  def getForm(params) do
     # TODO: Implementacao futura
         # protected function _getForm($sAction, $iId, $aDp = [])
     #     {
@@ -316,7 +316,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFormObject
+  Funcao correspondente ao metodo PHP getFormObject
 
   ## Parametros
     - $sAction = BX_CMT_ACTION_POST
@@ -324,7 +324,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   ## Retorno
     - any
   """
-  def _getFormObject(params) do
+  def getFormObject(params) do
     # TODO: Implementacao futura
         # protected function _getFormObject($sAction = BX_CMT_ACTION_POST)
     #     {
@@ -334,7 +334,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTmplVarsText
+  Funcao correspondente ao metodo PHP getTmplVarsText
 
   ## Parametros
     - $aCmt
@@ -342,7 +342,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   ## Retorno
     - any
   """
-  def _getTmplVarsText(params) do
+  def getTmplVarsText(params) do
     # TODO: Implementacao futura
         # protected function _getTmplVarsText($aCmt)
     #     {
@@ -352,7 +352,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAiData
+  Funcao correspondente ao metodo PHP getAiData
 
   ## Parametros
     - 
@@ -360,7 +360,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   ## Retorno
     - any
   """
-  def _getAiData(params) do
+  def getAiData(params) do
     # TODO: Implementacao futura
         # protected function _getAiData()
     #     {
@@ -370,7 +370,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isShowAnswerLoad
+  Funcao correspondente ao metodo PHP isShowAnswerLoad
 
   ## Parametros
     - $aCmt
@@ -378,7 +378,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   ## Retorno
     - any
   """
-  def _isShowAnswerLoad(params) do
+  def isShowAnswerLoad(params) do
     # TODO: Implementacao futura
         # protected function _isShowAnswerLoad($aCmt)
     #     {
@@ -388,7 +388,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isShowAnswerRetrieve
+  Funcao correspondente ao metodo PHP isShowAnswerRetrieve
 
   ## Parametros
     - $aCmt
@@ -396,7 +396,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioAgentsAsstChatsCmts do
   ## Retorno
     - any
   """
-  def _isShowAnswerRetrieve(params) do
+  def isShowAnswerRetrieve(params) do
     # TODO: Implementacao futura
         # protected function _isShowAnswerRetrieve($aCmt)
     #     {

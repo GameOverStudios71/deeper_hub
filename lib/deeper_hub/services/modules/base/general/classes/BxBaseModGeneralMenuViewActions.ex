@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   # Heranca de BxTemplMenuCustom
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVisible
+  Funcao correspondente ao metodo PHP isVisible
 
   ## Parametros
     - $a
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   ## Retorno
     - any
   """
-  def _isVisible(params) do
+  def isVisible(params) do
     # TODO: Implementacao futura
         # protected function _isVisible($a)
     #     {
@@ -99,7 +99,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isContentPublic
+  Funcao correspondente ao metodo PHP isContentPublic
 
   ## Parametros
     - $iContentId
@@ -108,7 +108,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   ## Retorno
     - any
   """
-  def _isContentPublic(params) do
+  def isContentPublic(params) do
     # TODO: Implementacao futura
         # protected function _isContentPublic($iContentId, $aPublicGroups = [])
     #     {
@@ -118,7 +118,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _initMenuSocialSharing
+  Funcao correspondente ao metodo PHP initMenuSocialSharing
 
   ## Parametros
     - 
@@ -126,7 +126,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   ## Retorno
     - any
   """
-  def _initMenuSocialSharing(params) do
+  def initMenuSocialSharing(params) do
     # TODO: Implementacao futura
         # protected function _initMenuSocialSharing()
     #     {
@@ -136,7 +136,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDefault
+  Funcao correspondente ao metodo PHP getMenuItemDefault
 
   ## Parametros
     - $aItem
@@ -144,7 +144,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemDefault(params) do
+  def getMenuItemDefault(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDefault($aItem)
     #     {
@@ -155,7 +155,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemRepostWithText
+  Funcao correspondente ao metodo PHP getMenuItemRepostWithText
 
   ## Parametros
     - $aItem
@@ -164,7 +164,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemRepostWithText(params) do
+  def getMenuItemRepostWithText(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemRepostWithText($aItem, $aParams = [])
     #     {
@@ -176,7 +176,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemRepostToContext
+  Funcao correspondente ao metodo PHP getMenuItemRepostToContext
 
   ## Parametros
     - $aItem
@@ -185,7 +185,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemRepostToContext(params) do
+  def getMenuItemRepostToContext(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemRepostToContext($aItem, $aParams = [])
     #     {
@@ -197,7 +197,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemByNameActionDelete
+  Funcao correspondente ao metodo PHP getMenuItemByNameActionDelete
 
   ## Parametros
     - $aItem
@@ -205,7 +205,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemByNameActionDelete(params) do
+  def getMenuItemByNameActionDelete(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemByNameActionDelete($aItem)
     #     {
@@ -215,7 +215,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemByNameActionsMore
+  Funcao correspondente ao metodo PHP getMenuItemByNameActionsMore
 
   ## Parametros
     - $aItem
@@ -223,7 +223,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuViewActions do
   ## Retorno
     - any
   """
-  def _getMenuItemByNameActionsMore(params) do
+  def getMenuItemByNameActionsMore(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemByNameActionsMore($aItem)
     #     {

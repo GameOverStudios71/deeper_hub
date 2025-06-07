@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridProcessed do
   # Heranca de BxBaseModPaymentGridOrders
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridProcessed do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridProcessed do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterClients
+  Funcao correspondente ao metodo PHP getFilterClients
 
   ## Parametros
     - 
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridProcessed do
   ## Retorno
     - any
   """
-  def _getFilterClients(params) do
+  def getFilterClients(params) do
     # TODO: Implementacao futura
         # protected function _getFilterClients()
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridProcessed do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterAuthors
+  Funcao correspondente ao metodo PHP getFilterAuthors
 
   ## Parametros
     - 
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridProcessed do
   ## Retorno
     - any
   """
-  def _getFilterAuthors(params) do
+  def getFilterAuthors(params) do
     # TODO: Implementacao futura
         # protected function _getFilterAuthors()
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridProcessed do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterModules
+  Funcao correspondente ao metodo PHP getFilterModules
 
   ## Parametros
     - 
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridProcessed do
   ## Retorno
     - any
   """
-  def _getFilterModules(params) do
+  def getFilterModules(params) do
     # TODO: Implementacao futura
         # protected function _getFilterModules()
     #     {
@@ -98,7 +98,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridProcessed do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterItems
+  Funcao correspondente ao metodo PHP getFilterItems
 
   ## Parametros
     - 
@@ -106,7 +106,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridProcessed do
   ## Retorno
     - any
   """
-  def _getFilterItems(params) do
+  def getFilterItems(params) do
     # TODO: Implementacao futura
         # protected function _getFilterItems()
     #     {
@@ -121,7 +121,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridProcessed do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -129,7 +129,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridProcessed do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls ()
     #     {
@@ -139,7 +139,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridProcessed do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -151,7 +151,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentGridProcessed do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {

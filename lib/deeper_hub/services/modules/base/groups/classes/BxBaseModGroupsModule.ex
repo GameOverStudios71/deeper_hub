@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   # Heranca de BxBaseModProfileModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$aModule)
@@ -1184,7 +1184,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceRegisterItem
+  Funcao correspondente ao metodo PHP serviceRegisterItem
 
   ## Parametros
     - $iClientId
@@ -1196,7 +1196,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   ## Retorno
     - any
   """
-  def _serviceRegisterItem(params) do
+  def serviceRegisterItem(params) do
     # TODO: Implementacao futura
         # protected function _serviceRegisterItem($iClientId, $iSellerId, $iItemId, $iItemCount, $sOrder)
     #     {
@@ -1206,7 +1206,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceReregisterItem
+  Funcao correspondente ao metodo PHP serviceReregisterItem
 
   ## Parametros
     - $iClientId
@@ -1218,7 +1218,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   ## Retorno
     - any
   """
-  def _serviceReregisterItem(params) do
+  def serviceReregisterItem(params) do
     # TODO: Implementacao futura
         # protected function _serviceReregisterItem($iClientId, $iSellerId, $iItemIdOld, $iItemIdNew, $sOrder)
     #     {
@@ -1228,7 +1228,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceUnregisterItem
+  Funcao correspondente ao metodo PHP serviceUnregisterItem
 
   ## Parametros
     - $iClientId
@@ -1240,7 +1240,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   ## Retorno
     - any
   """
-  def _serviceUnregisterItem(params) do
+  def serviceUnregisterItem(params) do
     # TODO: Implementacao futura
         # protected function _serviceUnregisterItem($iClientId, $iSellerId, $iItemId, $iItemCount, $sOrder)
     #     {
@@ -1364,7 +1364,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceGetNotification
+  Funcao correspondente ao metodo PHP serviceGetNotification
 
   ## Parametros
     - $aEvent
@@ -1374,7 +1374,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   ## Retorno
     - any
   """
-  def _serviceGetNotification(params) do
+  def serviceGetNotification(params) do
     # TODO: Implementacao futura
         # protected function _serviceGetNotification($aEvent, $sType, $sLangKey)
     #     {
@@ -1517,7 +1517,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _modGroupsCheckAllowedFanAdd
+  Funcao correspondente ao metodo PHP modGroupsCheckAllowedFanAdd
 
   ## Parametros
     - &$aDataEntry
@@ -1526,7 +1526,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   ## Retorno
     - any
   """
-  def _modGroupsCheckAllowedFanAdd(params) do
+  def modGroupsCheckAllowedFanAdd(params) do
     # TODO: Implementacao futura
         # public function _modGroupsCheckAllowedFanAdd (&$aDataEntry, $isPerformAction = false)
     #     {
@@ -1557,7 +1557,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkAllowedActionByFan
+  Funcao correspondente ao metodo PHP checkAllowedActionByFan
 
   ## Parametros
     - $sAction
@@ -1567,7 +1567,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   ## Retorno
     - any
   """
-  def _checkAllowedActionByFan(params) do
+  def checkAllowedActionByFan(params) do
     # TODO: Implementacao futura
         # protected function _checkAllowedActionByFan($sAction, $aDataEntry, $iProfileId = 0)
     #     {
@@ -1854,7 +1854,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _modGroupsCheckAllowedSubscribeAdd
+  Funcao correspondente ao metodo PHP modGroupsCheckAllowedSubscribeAdd
 
   ## Parametros
     - &$aDataEntry
@@ -1863,7 +1863,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   ## Retorno
     - any
   """
-  def _modGroupsCheckAllowedSubscribeAdd(params) do
+  def modGroupsCheckAllowedSubscribeAdd(params) do
     # TODO: Implementacao futura
         # public function _modGroupsCheckAllowedSubscribeAdd(&$aDataEntry, $isPerformAction = false)
     #     {
@@ -1873,7 +1873,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkAllowedSubscribeAdd
+  Funcao correspondente ao metodo PHP checkAllowedSubscribeAdd
 
   ## Parametros
     - &$aDataEntry
@@ -1882,7 +1882,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   ## Retorno
     - any
   """
-  def _checkAllowedSubscribeAdd(params) do
+  def checkAllowedSubscribeAdd(params) do
     # TODO: Implementacao futura
         # public function _checkAllowedSubscribeAdd (&$aDataEntry, $isPerformAction = false)
     #     {
@@ -1912,7 +1912,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkAllowedConnect
+  Funcao correspondente ao metodo PHP checkAllowedConnect
 
   ## Parametros
     - &$aDataEntry
@@ -1925,7 +1925,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   ## Retorno
     - any
   """
-  def _checkAllowedConnect(params) do
+  def checkAllowedConnect(params) do
     # TODO: Implementacao futura
         # protected function _checkAllowedConnect (&$aDataEntry, $isPerformAction, $sObjConnection, $isMutual, $isInvertResult, $isSwap = false)
     #     {
@@ -1956,7 +1956,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _alertParams
+  Funcao correspondente ao metodo PHP alertParams
 
   ## Parametros
     - $aContentInfo
@@ -1964,7 +1964,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   ## Retorno
     - any
   """
-  def _alertParams(params) do
+  def alertParams(params) do
     # TODO: Implementacao futura
         # protected function _alertParams($aContentInfo)
     #     {
@@ -2288,7 +2288,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareProfileAndGroupProfile
+  Funcao correspondente ao metodo PHP prepareProfileAndGroupProfile
 
   ## Parametros
     - $iGroupProfileId
@@ -2297,7 +2297,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsModule do
   ## Retorno
     - any
   """
-  def _prepareProfileAndGroupProfile(params) do
+  def prepareProfileAndGroupProfile(params) do
     # TODO: Implementacao futura
         # protected function _prepareProfileAndGroupProfile($iGroupProfileId, $iInitiatorId)
     #     {

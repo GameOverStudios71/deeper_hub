@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReportQuery do
   # Heranca de BxDolObjectQuery
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReportQuery do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct(&$oModule)
     #     {
@@ -156,7 +156,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReportQuery do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _deleteTrack
+  Funcao correspondente ao metodo PHP deleteTrack
 
   ## Parametros
     - $iObjectId
@@ -165,7 +165,7 @@ defmodule DeeperHub.Inc.Classes.BxDolReportQuery do
   ## Retorno
     - any
   """
-  def _deleteTrack(params) do
+  def deleteTrack(params) do
     # TODO: Implementacao futura
         # protected function _deleteTrack($iObjectId, $iAuthorId)
     #     {

@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aConfig
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -182,7 +182,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _finalizeCheckoutSingle
+  Funcao correspondente ao metodo PHP finalizeCheckoutSingle
 
   ## Parametros
     - &$aData
@@ -190,7 +190,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _finalizeCheckoutSingle(params) do
+  def finalizeCheckoutSingle(params) do
     # TODO: Implementacao futura
         # protected function _finalizeCheckoutSingle(&$aData)
     #     {
@@ -200,7 +200,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _finalizeCheckoutRecurring
+  Funcao correspondente ao metodo PHP finalizeCheckoutRecurring
 
   ## Parametros
     - &$aData
@@ -208,7 +208,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _finalizeCheckoutRecurring(params) do
+  def finalizeCheckoutRecurring(params) do
     # TODO: Implementacao futura
         # protected function _finalizeCheckoutRecurring(&$aData)
     #     {
@@ -218,7 +218,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _createSubscription
+  Funcao correspondente ao metodo PHP createSubscription
 
   ## Parametros
     - $iPendingId
@@ -228,7 +228,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _createSubscription(params) do
+  def createSubscription(params) do
     # TODO: Implementacao futura
         # protected function _createSubscription($iPendingId, $aCartInfo, $sReturnType = 'approve')
     #     {
@@ -238,7 +238,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSubscription
+  Funcao correspondente ao metodo PHP getSubscription
 
   ## Parametros
     - $sSubscriptionId
@@ -246,7 +246,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _getSubscription(params) do
+  def getSubscription(params) do
     # TODO: Implementacao futura
         # protected function _getSubscription($sSubscriptionId)
     #     {
@@ -256,7 +256,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _cancelSubscription
+  Funcao correspondente ao metodo PHP cancelSubscription
 
   ## Parametros
     - $sSubscriptionId
@@ -264,7 +264,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _cancelSubscription(params) do
+  def cancelSubscription(params) do
     # TODO: Implementacao futura
         # protected function _cancelSubscription($sSubscriptionId)
     #     {
@@ -276,7 +276,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _createProduct
+  Funcao correspondente ao metodo PHP createProduct
 
   ## Parametros
     - $aItem
@@ -284,7 +284,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _createProduct(params) do
+  def createProduct(params) do
     # TODO: Implementacao futura
         # protected function _createProduct($aItem)
     #     {
@@ -295,7 +295,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getProduct
+  Funcao correspondente ao metodo PHP getProduct
 
   ## Parametros
     - $sProductId
@@ -303,7 +303,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _getProduct(params) do
+  def getProduct(params) do
     # TODO: Implementacao futura
         # protected function _getProduct($sProductId)
     #     {
@@ -313,7 +313,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _createPlan
+  Funcao correspondente ao metodo PHP createPlan
 
   ## Parametros
     - $sProductId
@@ -322,7 +322,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _createPlan(params) do
+  def createPlan(params) do
     # TODO: Implementacao futura
         # protected function _createPlan($sProductId, $aItem)
     #     {
@@ -332,7 +332,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPlan
+  Funcao correspondente ao metodo PHP getPlan
 
   ## Parametros
     - $sPlanId
@@ -340,7 +340,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _getPlan(params) do
+  def getPlan(params) do
     # TODO: Implementacao futura
         # protected function _getPlan($sPlanId)
     #     {
@@ -350,7 +350,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPlans
+  Funcao correspondente ao metodo PHP getPlans
 
   ## Parametros
     - $sProductId
@@ -360,7 +360,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _getPlans(params) do
+  def getPlans(params) do
     # TODO: Implementacao futura
         # protected function _getPlans($sProductId, $iStart = false, $iPerPage = false)
     #     {
@@ -372,7 +372,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getToken
+  Funcao correspondente ao metodo PHP getToken
 
   ## Parametros
     - 
@@ -380,7 +380,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _getToken(params) do
+  def getToken(params) do
     # TODO: Implementacao futura
         # protected function _getToken()
     #     {
@@ -395,7 +395,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _apiCallAuthorize
+  Funcao correspondente ao metodo PHP apiCallAuthorize
 
   ## Parametros
     - $sEndpoint
@@ -406,7 +406,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _apiCallAuthorize(params) do
+  def apiCallAuthorize(params) do
     # TODO: Implementacao futura
         # protected function _apiCallAuthorize($sEndpoint, $aParams = [], $aBasicAuth = [], $sMethod = 'post')
     #     {
@@ -416,7 +416,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _apiCallAuthorized
+  Funcao correspondente ao metodo PHP apiCallAuthorized
 
   ## Parametros
     - $sEndpoint
@@ -428,7 +428,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _apiCallAuthorized(params) do
+  def apiCallAuthorized(params) do
     # TODO: Implementacao futura
         # protected function _apiCallAuthorized($sEndpoint, $aParams = [], $aHeaders = [], $sMethod = 'post-json', $bRawResponse = false)
     #     {
@@ -439,7 +439,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _apiCall
+  Funcao correspondente ao metodo PHP apiCall
 
   ## Parametros
     - $sEndpoint
@@ -452,7 +452,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _apiCall(params) do
+  def apiCall(params) do
     # TODO: Implementacao futura
         # protected function _apiCall($sEndpoint, $aParams = [], $aHeaders = [], $sMethod = 'post-json', $aBasicAuth = [], &$sHttpCode = null)
     #     {
@@ -465,7 +465,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIntervalUnit
+  Funcao correspondente ao metodo PHP getIntervalUnit
 
   ## Parametros
     - $sPeriodUnit
@@ -473,7 +473,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _getIntervalUnit(params) do
+  def getIntervalUnit(params) do
     # TODO: Implementacao futura
         # protected function _getIntervalUnit($sPeriodUnit)
     #     {
@@ -488,7 +488,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getClient
+  Funcao correspondente ao metodo PHP getClient
 
   ## Parametros
     - 
@@ -496,7 +496,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _getClient(params) do
+  def getClient(params) do
     # TODO: Implementacao futura
         # protected function _getClient()
     #     {
@@ -506,7 +506,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _createOrder
+  Funcao correspondente ao metodo PHP createOrder
 
   ## Parametros
     - $iPendingId
@@ -516,7 +516,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _createOrder(params) do
+  def createOrder(params) do
     # TODO: Implementacao futura
         # protected function _createOrder($iPendingId, $aCartInfo, $aParams = [])
     #     {
@@ -526,7 +526,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getOrder
+  Funcao correspondente ao metodo PHP getOrder
 
   ## Parametros
     - $sOrderId
@@ -534,7 +534,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _getOrder(params) do
+  def getOrder(params) do
     # TODO: Implementacao futura
         # protected function _getOrder($sOrderId)
     #     {
@@ -544,7 +544,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _authorizeOrder
+  Funcao correspondente ao metodo PHP authorizeOrder
 
   ## Parametros
     - $sOrderId
@@ -552,7 +552,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _authorizeOrder(params) do
+  def authorizeOrder(params) do
     # TODO: Implementacao futura
         # protected function _authorizeOrder($sOrderId)
     #     {
@@ -562,7 +562,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _captureOrder
+  Funcao correspondente ao metodo PHP captureOrder
 
   ## Parametros
     - $sOrderId
@@ -570,7 +570,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _captureOrder(params) do
+  def captureOrder(params) do
     # TODO: Implementacao futura
         # protected function _captureOrder($sOrderId)
     #     {
@@ -580,7 +580,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _captureAuthorization
+  Funcao correspondente ao metodo PHP captureAuthorization
 
   ## Parametros
     - $sAuthorizationId
@@ -588,7 +588,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _captureAuthorization(params) do
+  def captureAuthorization(params) do
     # TODO: Implementacao futura
         # protected function _captureAuthorization($sAuthorizationId)
     #     {
@@ -598,7 +598,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processException
+  Funcao correspondente ao metodo PHP processException
 
   ## Parametros
     - $sMessage
@@ -607,7 +607,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _processException(params) do
+  def processException(params) do
     # TODO: Implementacao futura
         # protected function _processException($sMessage, &$oException)
     #     {
@@ -617,7 +617,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processEvent
+  Funcao correspondente ao metodo PHP processEvent
 
   ## Parametros
     - 
@@ -625,7 +625,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _processEvent(params) do
+  def processEvent(params) do
     # TODO: Implementacao futura
         # protected function _processEvent()
     #     {
@@ -635,7 +635,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processEventPaymentSaleCompleted
+  Funcao correspondente ao metodo PHP processEventPaymentSaleCompleted
 
   ## Parametros
     - $aEvent
@@ -643,7 +643,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _processEventPaymentSaleCompleted(params) do
+  def processEventPaymentSaleCompleted(params) do
     # TODO: Implementacao futura
         # protected function _processEventPaymentSaleCompleted($aEvent)
     #     {
@@ -653,7 +653,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processEventPaymentCaptureRefunded
+  Funcao correspondente ao metodo PHP processEventPaymentCaptureRefunded
 
   ## Parametros
     - $aEvent
@@ -661,7 +661,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _processEventPaymentCaptureRefunded(params) do
+  def processEventPaymentCaptureRefunded(params) do
     # TODO: Implementacao futura
         # protected function _processEventPaymentCaptureRefunded($aEvent)
     #     {
@@ -671,7 +671,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processEventBillingSubscriptionCancelled
+  Funcao correspondente ao metodo PHP processEventBillingSubscriptionCancelled
 
   ## Parametros
     - $aEvent
@@ -679,7 +679,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _processEventBillingSubscriptionCancelled(params) do
+  def processEventBillingSubscriptionCancelled(params) do
     # TODO: Implementacao futura
         # protected function _processEventBillingSubscriptionCancelled($aEvent)
     #     {
@@ -689,7 +689,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getEventData
+  Funcao correspondente ao metodo PHP getEventData
 
   ## Parametros
     - $aEvent
@@ -697,7 +697,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _getEventData(params) do
+  def getEventData(params) do
     # TODO: Implementacao futura
         # protected function _getEventData($aEvent)
     #     {
@@ -708,7 +708,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMode
+  Funcao correspondente ao metodo PHP getMode
 
   ## Parametros
     - 
@@ -716,7 +716,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _getMode(params) do
+  def getMode(params) do
     # TODO: Implementacao futura
         # protected function _getMode()
     #     {
@@ -727,7 +727,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSessionOrder
+  Funcao correspondente ao metodo PHP getSessionOrder
 
   ## Parametros
     - 
@@ -735,7 +735,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _getSessionOrder(params) do
+  def getSessionOrder(params) do
     # TODO: Implementacao futura
         # protected function _getSessionOrder()
     #     {
@@ -745,7 +745,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setSessionOrder
+  Funcao correspondente ao metodo PHP setSessionOrder
 
   ## Parametros
     - $sValue
@@ -753,7 +753,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _setSessionOrder(params) do
+  def setSessionOrder(params) do
     # TODO: Implementacao futura
         # protected function _setSessionOrder($sValue)
     #     {
@@ -763,7 +763,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSessionSubscription
+  Funcao correspondente ao metodo PHP getSessionSubscription
 
   ## Parametros
     - 
@@ -771,7 +771,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _getSessionSubscription(params) do
+  def getSessionSubscription(params) do
     # TODO: Implementacao futura
         # protected function _getSessionSubscription()
     #     {
@@ -781,7 +781,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setSessionSubscription
+  Funcao correspondente ao metodo PHP setSessionSubscription
 
   ## Parametros
     - $sValue
@@ -789,7 +789,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _setSessionSubscription(params) do
+  def setSessionSubscription(params) do
     # TODO: Implementacao futura
         # protected function _setSessionSubscription($sValue)
     #     {
@@ -799,7 +799,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getClientInfo
+  Funcao correspondente ao metodo PHP getClientInfo
 
   ## Parametros
     - $mixedClient
@@ -807,7 +807,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _getClientInfo(params) do
+  def getClientInfo(params) do
     # TODO: Implementacao futura
         # protected function _getClientInfo($mixedClient)
     #     {
@@ -817,7 +817,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getBillingStatus
+  Funcao correspondente ao metodo PHP getBillingStatus
 
   ## Parametros
     - $mixedBillingInfo
@@ -825,7 +825,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentProviderPayPalApi do
   ## Retorno
     - any
   """
-  def _getBillingStatus(params) do
+  def getBillingStatus(params) do
     # TODO: Implementacao futura
         # protected function _getBillingStatus($mixedBillingInfo)
     #     {

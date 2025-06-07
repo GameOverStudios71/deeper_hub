@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoder do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -19,7 +19,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoder do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($aObject, $oStorage)
     #     {
@@ -992,7 +992,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoder do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _callFuncForObjectsArray
+  Funcao correspondente ao metodo PHP callFuncForObjectsArray
 
   ## Parametros
     - $mixed
@@ -1001,7 +1001,7 @@ defmodule DeeperHub.Inc.Classes.BxDolTranscoder do
   ## Retorno
     - any
   """
-  def _callFuncForObjectsArray(params) do
+  def callFuncForObjectsArray(params) do
     # TODO: Implementacao futura
         # protected function _callFuncForObjectsArray ($mixed, $sFunc)
     #     {

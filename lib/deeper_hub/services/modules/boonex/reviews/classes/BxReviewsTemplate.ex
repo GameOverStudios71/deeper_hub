@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxReviewsTemplate do
   # Heranca de BxBaseModTextTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxReviewsTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$oConfig, &$oDb)
@@ -27,7 +27,7 @@ defmodule DeeperHub.Inc.Classes.BxReviewsTemplate do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addCommonJs
+  Funcao correspondente ao metodo PHP addCommonJs
 
   ## Parametros
     - 
@@ -35,7 +35,7 @@ defmodule DeeperHub.Inc.Classes.BxReviewsTemplate do
   ## Retorno
     - any
   """
-  def _addCommonJs(params) do
+  def addCommonJs(params) do
     # TODO: Implementacao futura
         # protected function _addCommonJs() {
     #         $sRes = $this->addJs(['BxDolVoteStars.js', 'BxReviewsVoteStars.js'], bx_is_dynamic_request());

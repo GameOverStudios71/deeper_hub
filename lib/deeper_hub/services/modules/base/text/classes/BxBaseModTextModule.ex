@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextModule do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct(&$aModule)
@@ -478,7 +478,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _alertParams
+  Funcao correspondente ao metodo PHP alertParams
 
   ## Parametros
     - $aContentInfo
@@ -486,7 +486,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextModule do
   ## Retorno
     - any
   """
-  def _alertParams(params) do
+  def alertParams(params) do
     # TODO: Implementacao futura
         # protected function _alertParams($aContentInfo)
     #     {
@@ -496,7 +496,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _alertParamsAdd
+  Funcao correspondente ao metodo PHP alertParamsAdd
 
   ## Parametros
     - $aContentInfo
@@ -504,7 +504,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextModule do
   ## Retorno
     - any
   """
-  def _alertParamsAdd(params) do
+  def alertParamsAdd(params) do
     # TODO: Implementacao futura
         # protected function _alertParamsAdd($aContentInfo)
     #     {
@@ -514,7 +514,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _alertParamsEdit
+  Funcao correspondente ao metodo PHP alertParamsEdit
 
   ## Parametros
     - $aContentInfo
@@ -522,7 +522,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextModule do
   ## Retorno
     - any
   """
-  def _alertParamsEdit(params) do
+  def alertParamsEdit(params) do
     # TODO: Implementacao futura
         # protected function _alertParamsEdit($aContentInfo)
     #     {
@@ -532,7 +532,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAlertParamTimelineGroup
+  Funcao correspondente ao metodo PHP getAlertParamTimelineGroup
 
   ## Parametros
     - $aContentInfo
@@ -540,7 +540,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextModule do
   ## Retorno
     - any
   """
-  def _getAlertParamTimelineGroup(params) do
+  def getAlertParamTimelineGroup(params) do
     # TODO: Implementacao futura
         # protected function _getAlertParamTimelineGroup($aContentInfo)
     #     {
@@ -569,7 +569,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _buildRssParams
+  Funcao correspondente ao metodo PHP buildRssParams
 
   ## Parametros
     - $sMode
@@ -578,7 +578,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModTextModule do
   ## Retorno
     - any
   """
-  def _buildRssParams(params) do
+  def buildRssParams(params) do
     # TODO: Implementacao futura
         # protected function _buildRssParams($sMode, $aArgs)
     #     {

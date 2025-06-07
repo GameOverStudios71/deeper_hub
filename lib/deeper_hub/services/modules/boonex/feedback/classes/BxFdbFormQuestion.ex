@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbFormQuestion do
   # Heranca de BxTemplStudioFormView
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aInfo
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbFormQuestion do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aInfo, $oTemplate = false)
     #     {
@@ -181,7 +181,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbFormQuestion do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processTranslationsValuesByNameList
+  Funcao correspondente ao metodo PHP processTranslationsValuesByNameList
 
   ## Parametros
     - $sName
@@ -190,7 +190,7 @@ defmodule DeeperHub.Inc.Classes.BxFdbFormQuestion do
   ## Retorno
     - any
   """
-  def _processTranslationsValuesByNameList(params) do
+  def processTranslationsValuesByNameList(params) do
     # TODO: Implementacao futura
         # protected function _processTranslationsValuesByNameList($sName, $iIndex)
     #     {

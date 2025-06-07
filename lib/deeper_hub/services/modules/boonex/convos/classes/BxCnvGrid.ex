@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   # Heranca de BxBaseModGeneralGridAdministration
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -38,7 +38,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -49,7 +49,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -57,7 +57,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls()
     #     {
@@ -67,7 +67,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterSelectOne
+  Funcao correspondente ao metodo PHP getFilterSelectOne
 
   ## Parametros
     - $sFilterName
@@ -78,7 +78,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   ## Retorno
     - any
   """
-  def _getFilterSelectOne(params) do
+  def getFilterSelectOne(params) do
     # TODO: Implementacao futura
         # protected function _getFilterSelectOne($sFilterName, $sFilterValue, $aFilterValues, $bAddSelectOne = true)
     #     {
@@ -107,7 +107,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellHeaderWrapper
+  Funcao correspondente ao metodo PHP getCellHeaderWrapper
 
   ## Parametros
     - $sKey
@@ -118,7 +118,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   ## Retorno
     - any
   """
-  def _getCellHeaderWrapper(params) do
+  def getCellHeaderWrapper(params) do
     # TODO: Implementacao futura
         # protected function _getCellHeaderWrapper ($sKey, $aField, $sHeader, $sAttr)
     #     {
@@ -128,7 +128,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellPreview
+  Funcao correspondente ao metodo PHP getCellPreview
 
   ## Parametros
     - $mixedValue
@@ -139,7 +139,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   ## Retorno
     - any
   """
-  def _getCellPreview(params) do
+  def getCellPreview(params) do
     # TODO: Implementacao futura
         # protected function _getCellPreview ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -149,7 +149,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellLastReplyTimestamp
+  Funcao correspondente ao metodo PHP getCellLastReplyTimestamp
 
   ## Parametros
     - $mixedValue
@@ -160,7 +160,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   ## Retorno
     - any
   """
-  def _getCellLastReplyTimestamp(params) do
+  def getCellLastReplyTimestamp(params) do
     # TODO: Implementacao futura
         # protected function _getCellLastReplyTimestamp ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -170,7 +170,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellCollaborators
+  Funcao correspondente ao metodo PHP getCellCollaborators
 
   ## Parametros
     - $mixedValue
@@ -181,7 +181,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   ## Retorno
     - any
   """
-  def _getCellCollaborators(params) do
+  def getCellCollaborators(params) do
     # TODO: Implementacao futura
         # protected function _getCellCollaborators ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -191,7 +191,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellComments
+  Funcao correspondente ao metodo PHP getCellComments
 
   ## Parametros
     - $mixedValue
@@ -202,7 +202,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   ## Retorno
     - any
   """
-  def _getCellComments(params) do
+  def getCellComments(params) do
     # TODO: Implementacao futura
         # protected function _getCellComments ($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -212,7 +212,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addJsCss
+  Funcao correspondente ao metodo PHP addJsCss
 
   ## Parametros
     - 
@@ -220,7 +220,7 @@ defmodule DeeperHub.Inc.Classes.BxCnvGrid do
   ## Retorno
     - any
   """
-  def _addJsCss(params) do
+  def addJsCss(params) do
     # TODO: Implementacao futura
         # protected function _addJsCss()
     #     {

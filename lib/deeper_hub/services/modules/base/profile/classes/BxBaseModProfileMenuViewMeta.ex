@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   # Heranca de BxTemplMenuUnitMeta
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -81,7 +81,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemMembership
+  Funcao correspondente ao metodo PHP getMenuItemMembership
 
   ## Parametros
     - $aItem
@@ -89,7 +89,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemMembership(params) do
+  def getMenuItemMembership(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemMembership($aItem)
     #     {
@@ -100,7 +100,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemBadges
+  Funcao correspondente ao metodo PHP getMenuItemBadges
 
   ## Parametros
     - $aItem
@@ -108,7 +108,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemBadges(params) do
+  def getMenuItemBadges(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemBadges($aItem)
     #     {
@@ -119,7 +119,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemFriends
+  Funcao correspondente ao metodo PHP getMenuItemFriends
 
   ## Parametros
     - $aItem
@@ -127,7 +127,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemFriends(params) do
+  def getMenuItemFriends(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemFriends($aItem)
     #     {
@@ -137,7 +137,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemSubscribers
+  Funcao correspondente ao metodo PHP getMenuItemSubscribers
 
   ## Parametros
     - $aItem
@@ -145,7 +145,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemSubscribers(params) do
+  def getMenuItemSubscribers(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemSubscribers($aItem)
     #     {
@@ -155,7 +155,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemRelations
+  Funcao correspondente ao metodo PHP getMenuItemRelations
 
   ## Parametros
     - $aItem
@@ -163,7 +163,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemRelations(params) do
+  def getMenuItemRelations(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemRelations($aItem)
     #     {
@@ -173,7 +173,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemViews
+  Funcao correspondente ao metodo PHP getMenuItemViews
 
   ## Parametros
     - $aItem
@@ -181,7 +181,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemViews(params) do
+  def getMenuItemViews(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemViews($aItem)
     #     {
@@ -191,7 +191,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemVotes
+  Funcao correspondente ao metodo PHP getMenuItemVotes
 
   ## Parametros
     - $aItem
@@ -199,7 +199,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemVotes(params) do
+  def getMenuItemVotes(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemVotes($aItem)
     #     {
@@ -209,7 +209,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemReactions
+  Funcao correspondente ao metodo PHP getMenuItemReactions
 
   ## Parametros
     - $aItem
@@ -217,7 +217,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemReactions(params) do
+  def getMenuItemReactions(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemReactions($aItem)
     #     {
@@ -227,7 +227,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemScores
+  Funcao correspondente ao metodo PHP getMenuItemScores
 
   ## Parametros
     - $aItem
@@ -235,7 +235,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemScores(params) do
+  def getMenuItemScores(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemScores($aItem)
     #     {
@@ -245,7 +245,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemComments
+  Funcao correspondente ao metodo PHP getMenuItemComments
 
   ## Parametros
     - $aItem
@@ -253,7 +253,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   ## Retorno
     - any
   """
-  def _getMenuItemComments(params) do
+  def getMenuItemComments(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemComments($aItem)
     #     {
@@ -263,7 +263,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _retrieveContentId
+  Funcao correspondente ao metodo PHP retrieveContentId
 
   ## Parametros
     - 
@@ -271,7 +271,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewMeta do
   ## Retorno
     - any
   """
-  def _retrieveContentId(params) do
+  def retrieveContentId(params) do
     # TODO: Implementacao futura
         # protected function _retrieveContentId()
     #     {

@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolChart do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolChart do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($aObject)
     #     {
@@ -141,7 +141,7 @@ defmodule DeeperHub.Inc.Classes.BxDolChart do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getQuery
+  Funcao correspondente ao metodo PHP getQuery
 
   ## Parametros
     - 
@@ -149,7 +149,7 @@ defmodule DeeperHub.Inc.Classes.BxDolChart do
   ## Retorno
     - any
   """
-  def _getQuery(params) do
+  def getQuery(params) do
     # TODO: Implementacao futura
         # protected function _getQuery()
     #     {
@@ -179,7 +179,7 @@ defmodule DeeperHub.Inc.Classes.BxDolChart do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTimestamp
+  Funcao correspondente ao metodo PHP getTimestamp
 
   ## Parametros
     - $sDate
@@ -188,7 +188,7 @@ defmodule DeeperHub.Inc.Classes.BxDolChart do
   ## Retorno
     - any
   """
-  def _getTimestamp(params) do
+  def getTimestamp(params) do
     # TODO: Implementacao futura
         # protected function _getTimestamp($sDate, $isNowIfError = false)
     #     {
@@ -197,7 +197,7 @@ defmodule DeeperHub.Inc.Classes.BxDolChart do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDate
+  Funcao correspondente ao metodo PHP getDate
 
   ## Parametros
     - $iDate
@@ -205,7 +205,7 @@ defmodule DeeperHub.Inc.Classes.BxDolChart do
   ## Retorno
     - any
   """
-  def _getDate(params) do
+  def getDate(params) do
     # TODO: Implementacao futura
         # protected function _getDate($iDate)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsConnectionFans do
   # Heranca de BxTemplConnection
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsConnectionFans do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject)
     #     {
@@ -182,7 +182,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsConnectionFans do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkAllowedConnectInitiator
+  Funcao correspondente ao metodo PHP checkAllowedConnectInitiator
 
   ## Parametros
     - $oInitiator
@@ -191,7 +191,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsConnectionFans do
   ## Retorno
     - any
   """
-  def _checkAllowedConnectInitiator(params) do
+  def checkAllowedConnectInitiator(params) do
     # TODO: Implementacao futura
         # protected function _checkAllowedConnectInitiator ($oInitiator, $isPerformAction = false)
     #     {
@@ -202,7 +202,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsConnectionFans do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _checkAllowedConnectContent
+  Funcao correspondente ao metodo PHP checkAllowedConnectContent
 
   ## Parametros
     - $oContent
@@ -210,7 +210,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsConnectionFans do
   ## Retorno
     - any
   """
-  def _checkAllowedConnectContent(params) do
+  def checkAllowedConnectContent(params) do
     # TODO: Implementacao futura
         # protected function _checkAllowedConnectContent ($oContent)
     #     {
@@ -220,7 +220,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsConnectionFans do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTriggerObject
+  Funcao correspondente ao metodo PHP getTriggerObject
 
   ## Parametros
     - $sType
@@ -230,7 +230,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsConnectionFans do
   ## Retorno
     - any
   """
-  def _getTriggerObject(params) do
+  def getTriggerObject(params) do
     # TODO: Implementacao futura
         # protected function _getTriggerObject($sType, $iInitiator, $iContent)
     #     {

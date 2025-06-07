@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsResponse do
   # Heranca de BxDolAlertsResponse
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsResponse do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -25,7 +25,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getObjectOwnerId
+  Funcao correspondente ao metodo PHP getObjectOwnerId
 
   ## Parametros
     - $aExtras
@@ -33,7 +33,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsResponse do
   ## Retorno
     - any
   """
-  def _getObjectOwnerId(params) do
+  def getObjectOwnerId(params) do
     # TODO: Implementacao futura
         # protected function _getObjectOwnerId($aExtras)
     #     {
@@ -44,7 +44,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getObjectPrivacyView
+  Funcao correspondente ao metodo PHP getObjectPrivacyView
 
   ## Parametros
     - $aExtras
@@ -52,7 +52,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsResponse do
   ## Retorno
     - any
   """
-  def _getObjectPrivacyView(params) do
+  def getObjectPrivacyView(params) do
     # TODO: Implementacao futura
         # protected function _getObjectPrivacyView($aExtras)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getObjectCf
+  Funcao correspondente ao metodo PHP getObjectCf
 
   ## Parametros
     - $aExtras
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsResponse do
   ## Retorno
     - any
   """
-  def _getObjectCf(params) do
+  def getObjectCf(params) do
     # TODO: Implementacao futura
         # protected function _getObjectCf($aExtras)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSubObjectId
+  Funcao correspondente ao metodo PHP getSubObjectId
 
   ## Parametros
     - $aExtras
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsResponse do
   ## Retorno
     - any
   """
-  def _getSubObjectId(params) do
+  def getSubObjectId(params) do
     # TODO: Implementacao futura
         # protected function _getSubObjectId($aExtras)
     #     {
@@ -99,7 +99,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getEventUpdate
+  Funcao correspondente ao metodo PHP getEventUpdate
 
   ## Parametros
     - &$oAlert
@@ -108,7 +108,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsResponse do
   ## Retorno
     - any
   """
-  def _getEventUpdate(params) do
+  def getEventUpdate(params) do
     # TODO: Implementacao futura
         # protected function _getEventUpdate(&$oAlert, &$aHandler)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -63,7 +63,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellHeaderCommissionaireId
+  Funcao correspondente ao metodo PHP getCellHeaderCommissionaireId
 
   ## Parametros
     - $sKey
@@ -72,7 +72,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   ## Retorno
     - any
   """
-  def _getCellHeaderCommissionaireId(params) do
+  def getCellHeaderCommissionaireId(params) do
     # TODO: Implementacao futura
         # protected function _getCellHeaderCommissionaireId ($sKey, $aField)
     #     {
@@ -83,7 +83,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellCommissionaireId
+  Funcao correspondente ao metodo PHP getCellCommissionaireId
 
   ## Parametros
     - $mixedValue
@@ -94,7 +94,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   ## Retorno
     - any
   """
-  def _getCellCommissionaireId(params) do
+  def getCellCommissionaireId(params) do
     # TODO: Implementacao futura
         # protected function _getCellCommissionaireId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -105,7 +105,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellCommittentId
+  Funcao correspondente ao metodo PHP getCellCommittentId
 
   ## Parametros
     - $mixedValue
@@ -116,7 +116,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   ## Retorno
     - any
   """
-  def _getCellCommittentId(params) do
+  def getCellCommittentId(params) do
     # TODO: Implementacao futura
         # protected function _getCellCommittentId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -126,7 +126,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellPeriodStart
+  Funcao correspondente ao metodo PHP getCellPeriodStart
 
   ## Parametros
     - $mixedValue
@@ -137,7 +137,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   ## Retorno
     - any
   """
-  def _getCellPeriodStart(params) do
+  def getCellPeriodStart(params) do
     # TODO: Implementacao futura
         # protected function _getCellPeriodStart($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -147,7 +147,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellPeriodEnd
+  Funcao correspondente ao metodo PHP getCellPeriodEnd
 
   ## Parametros
     - $mixedValue
@@ -158,7 +158,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   ## Retorno
     - any
   """
-  def _getCellPeriodEnd(params) do
+  def getCellPeriodEnd(params) do
     # TODO: Implementacao futura
         # protected function _getCellPeriodEnd($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -168,7 +168,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAmount
+  Funcao correspondente ao metodo PHP getCellAmount
 
   ## Parametros
     - $mixedValue
@@ -179,7 +179,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   ## Retorno
     - any
   """
-  def _getCellAmount(params) do
+  def getCellAmount(params) do
     # TODO: Implementacao futura
         # protected function _getCellAmount($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -189,7 +189,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDateIssue
+  Funcao correspondente ao metodo PHP getCellDateIssue
 
   ## Parametros
     - $mixedValue
@@ -200,7 +200,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   ## Retorno
     - any
   """
-  def _getCellDateIssue(params) do
+  def getCellDateIssue(params) do
     # TODO: Implementacao futura
         # protected function _getCellDateIssue($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -210,7 +210,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDateDue
+  Funcao correspondente ao metodo PHP getCellDateDue
 
   ## Parametros
     - $mixedValue
@@ -221,7 +221,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   ## Retorno
     - any
   """
-  def _getCellDateDue(params) do
+  def getCellDateDue(params) do
     # TODO: Implementacao futura
         # protected function _getCellDateDue($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -231,7 +231,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellStatus
+  Funcao correspondente ao metodo PHP getCellStatus
 
   ## Parametros
     - $mixedValue
@@ -242,7 +242,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   ## Retorno
     - any
   """
-  def _getCellStatus(params) do
+  def getCellStatus(params) do
     # TODO: Implementacao futura
         # protected function _getCellStatus($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -252,7 +252,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDefaultDate
+  Funcao correspondente ao metodo PHP getCellDefaultDate
 
   ## Parametros
     - $mixedValue
@@ -263,7 +263,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   ## Retorno
     - any
   """
-  def _getCellDefaultDate(params) do
+  def getCellDefaultDate(params) do
     # TODO: Implementacao futura
         # protected function _getCellDefaultDate($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -273,7 +273,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -285,7 +285,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModPaymentGridInvoices do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {

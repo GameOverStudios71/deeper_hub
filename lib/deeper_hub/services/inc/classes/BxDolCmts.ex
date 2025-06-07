@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -21,7 +21,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($sSystem, $iId, $iInit = true, $oTemplate = false)
     #     {
@@ -2409,7 +2409,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAuthorId
+  Funcao correspondente ao metodo PHP getAuthorId
 
   ## Parametros
     - 
@@ -2417,7 +2417,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _getAuthorId(params) do
+  def getAuthorId(params) do
     # TODO: Implementacao futura
         # protected function _getAuthorId ()
     #     {
@@ -2427,7 +2427,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAuthorPassword
+  Funcao correspondente ao metodo PHP getAuthorPassword
 
   ## Parametros
     - 
@@ -2435,7 +2435,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _getAuthorPassword(params) do
+  def getAuthorPassword(params) do
     # TODO: Implementacao futura
         # protected function _getAuthorPassword ()
     #     {
@@ -2445,7 +2445,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAuthorIp
+  Funcao correspondente ao metodo PHP getAuthorIp
 
   ## Parametros
     - 
@@ -2453,7 +2453,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _getAuthorIp(params) do
+  def getAuthorIp(params) do
     # TODO: Implementacao futura
         # protected function _getAuthorIp ()
     #     {
@@ -2463,7 +2463,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAuthorInfo
+  Funcao correspondente ao metodo PHP getAuthorInfo
 
   ## Parametros
     - $iAuthorId = 0
@@ -2471,7 +2471,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _getAuthorInfo(params) do
+  def getAuthorInfo(params) do
     # TODO: Implementacao futura
         # protected function _getAuthorInfo($iAuthorId = 0)
     #     {
@@ -2481,7 +2481,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getAuthorObject
+  Funcao correspondente ao metodo PHP getAuthorObject
 
   ## Parametros
     - $iAuthorId = 0
@@ -2489,7 +2489,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _getAuthorObject(params) do
+  def getAuthorObject(params) do
     # TODO: Implementacao futura
         # protected function _getAuthorObject($iAuthorId = 0)
     #     {
@@ -2499,7 +2499,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFormObject
+  Funcao correspondente ao metodo PHP getFormObject
 
   ## Parametros
     - $sAction = BX_CMT_ACTION_POST
@@ -2507,7 +2507,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _getFormObject(params) do
+  def getFormObject(params) do
     # TODO: Implementacao futura
         # protected function _getFormObject($sAction = BX_CMT_ACTION_POST)
     #     {
@@ -2517,7 +2517,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _unsetFormObject
+  Funcao correspondente ao metodo PHP unsetFormObject
 
   ## Parametros
     - $sAction = BX_CMT_ACTION_POST
@@ -2525,7 +2525,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _unsetFormObject(params) do
+  def unsetFormObject(params) do
     # TODO: Implementacao futura
         # protected function _unsetFormObject($sAction = BX_CMT_ACTION_POST)
     #     {
@@ -2535,7 +2535,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getParams
+  Funcao correspondente ao metodo PHP getParams
 
   ## Parametros
     - &$aBp
@@ -2544,7 +2544,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _getParams(params) do
+  def getParams(params) do
     # TODO: Implementacao futura
         # protected function _getParams(&$aBp, &$aDp)
     #     {
@@ -2555,7 +2555,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareAlertParams
+  Funcao correspondente ao metodo PHP prepareAlertParams
 
   ## Parametros
     - $aCmt
@@ -2563,7 +2563,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _prepareAlertParams(params) do
+  def prepareAlertParams(params) do
     # TODO: Implementacao futura
         # protected function _prepareAlertParams($aCmt)
     #     {
@@ -2573,7 +2573,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareAlertParamsReply
+  Funcao correspondente ao metodo PHP prepareAlertParamsReply
 
   ## Parametros
     - $aCmt
@@ -2582,7 +2582,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _prepareAlertParamsReply(params) do
+  def prepareAlertParamsReply(params) do
     # TODO: Implementacao futura
         # protected function _prepareAlertParamsReply($aCmt, $aCmtPrnt)
     #     {
@@ -2592,7 +2592,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareAuditParams
+  Funcao correspondente ao metodo PHP prepareAuditParams
 
   ## Parametros
     - $iId
@@ -2601,7 +2601,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _prepareAuditParams(params) do
+  def prepareAuditParams(params) do
     # TODO: Implementacao futura
         # protected function _prepareAuditParams($iId, $aData)
     #     {
@@ -2611,7 +2611,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareTextForOutput
+  Funcao correspondente ao metodo PHP prepareTextForOutput
 
   ## Parametros
     - $s
@@ -2620,7 +2620,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _prepareTextForOutput(params) do
+  def prepareTextForOutput(params) do
     # TODO: Implementacao futura
         # protected function _prepareTextForOutput ($s, $iCmtId = 0)
     #     {
@@ -2630,7 +2630,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareStructureBp
+  Funcao correspondente ao metodo PHP prepareStructureBp
 
   ## Parametros
     - $sDType
@@ -2639,7 +2639,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _prepareStructureBp(params) do
+  def prepareStructureBp(params) do
     # TODO: Implementacao futura
         # protected function _prepareStructureBp($sDType, &$aBp)
     #     {
@@ -2649,7 +2649,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareParams
+  Funcao correspondente ao metodo PHP prepareParams
 
   ## Parametros
     - &$aBp
@@ -2658,7 +2658,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _prepareParams(params) do
+  def prepareParams(params) do
     # TODO: Implementacao futura
         # protected function _prepareParams(&$aBp, &$aDp)
     #     {
@@ -2668,7 +2668,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _triggerComment
+  Funcao correspondente ao metodo PHP triggerComment
 
   ## Parametros
     - 
@@ -2676,7 +2676,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _triggerComment(params) do
+  def triggerComment(params) do
     # TODO: Implementacao futura
         # protected function _triggerComment()
     #     {
@@ -2687,7 +2687,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _replaceMarkers
+  Funcao correspondente ao metodo PHP replaceMarkers
 
   ## Parametros
     - $mixed
@@ -2695,7 +2695,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _replaceMarkers(params) do
+  def replaceMarkers(params) do
     # TODO: Implementacao futura
         # protected function _replaceMarkers ($mixed)
     #     {
@@ -2705,7 +2705,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getUserChoice
+  Funcao correspondente ao metodo PHP getUserChoice
 
   ## Parametros
     - 
@@ -2713,7 +2713,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _getUserChoice(params) do
+  def getUserChoice(params) do
     # TODO: Implementacao futura
         # protected function _getUserChoice()
     #     {
@@ -2723,7 +2723,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setUserChoice
+  Funcao correspondente ao metodo PHP setUserChoice
 
   ## Parametros
     - $sDp
@@ -2733,7 +2733,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _setUserChoice(params) do
+  def setUserChoice(params) do
     # TODO: Implementacao futura
         # protected function _setUserChoice($sDp, $sBpType, $sBpFilter)
     #     {
@@ -2744,7 +2744,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _sendNotificationEmail
+  Funcao correspondente ao metodo PHP sendNotificationEmail
 
   ## Parametros
     - $iCmtId
@@ -2753,7 +2753,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _sendNotificationEmail(params) do
+  def sendNotificationEmail(params) do
     # TODO: Implementacao futura
         # protected function _sendNotificationEmail($iCmtId, $iCmtParentId)
     #     {
@@ -2763,7 +2763,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isShowDoComment
+  Funcao correspondente ao metodo PHP isShowDoComment
 
   ## Parametros
     - $aParams
@@ -2773,7 +2773,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _isShowDoComment(params) do
+  def isShowDoComment(params) do
     # TODO: Implementacao futura
         # protected function _isShowDoComment($aParams, $isAllowedComment, $bCount)
     #     {
@@ -2783,7 +2783,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isShowCounter
+  Funcao correspondente ao metodo PHP isShowCounter
 
   ## Parametros
     - $aParams
@@ -2793,7 +2793,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _isShowCounter(params) do
+  def isShowCounter(params) do
     # TODO: Implementacao futura
         # protected function _isShowCounter($aParams, $isAllowedComment, $bCount)
     #     {
@@ -2803,7 +2803,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getImageDo
+  Funcao correspondente ao metodo PHP getImageDo
 
   ## Parametros
     - 
@@ -2811,7 +2811,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _getImageDo(params) do
+  def getImageDo(params) do
     # TODO: Implementacao futura
         # protected function _getImageDo()
     #     {
@@ -2821,7 +2821,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIconDo
+  Funcao correspondente ao metodo PHP getIconDo
 
   ## Parametros
     - 
@@ -2829,7 +2829,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _getIconDo(params) do
+  def getIconDo(params) do
     # TODO: Implementacao futura
         # protected function _getIconDo()
     #     {
@@ -2839,7 +2839,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTitleDo
+  Funcao correspondente ao metodo PHP getTitleDo
 
   ## Parametros
     - 
@@ -2847,7 +2847,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _getTitleDo(params) do
+  def getTitleDo(params) do
     # TODO: Implementacao futura
         # protected function _getTitleDo()
     #     {
@@ -2857,7 +2857,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getParents
+  Funcao correspondente ao metodo PHP getParents
 
   ## Parametros
     - $aCmt
@@ -2868,7 +2868,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _getParents(params) do
+  def getParents(params) do
     # TODO: Implementacao futura
         # protected function _getParents($aCmt, $iDepthMax, &$iDepth, &$aParents)
     #     {
@@ -2878,7 +2878,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getStructure
+  Funcao correspondente ao metodo PHP getStructure
 
   ## Parametros
     - $mixedItem
@@ -2889,7 +2889,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _getStructure(params) do
+  def getStructure(params) do
     # TODO: Implementacao futura
         # public function _getStructure($mixedItem, $aBp, &$iLevel, &$aStructure)
     #     {
@@ -2899,7 +2899,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getStructureAPI
+  Funcao correspondente ao metodo PHP getStructureAPI
 
   ## Parametros
     - $mixedItem
@@ -2910,7 +2910,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCmts do
   ## Retorno
     - any
   """
-  def _getStructureAPI(params) do
+  def getStructureAPI(params) do
     # TODO: Implementacao futura
         # public function _getStructureAPI($mixedItem, $aBp, &$iLevel, &$aStructure)
     #     {

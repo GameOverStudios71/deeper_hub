@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioMenuAccountPopup do
   # Heranca de BxTemplStudioMenu
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioMenuAccountPopup do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aObject, $oTemplate)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioMenuAccountPopup do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVisible
+  Funcao correspondente ao metodo PHP isVisible
 
   ## Parametros
     - $a
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioMenuAccountPopup do
   ## Retorno
     - any
   """
-  def _isVisible(params) do
+  def isVisible(params) do
     # TODO: Implementacao futura
         # protected function _isVisible ($a)
     #     {

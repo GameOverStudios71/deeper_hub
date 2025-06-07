@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsModule do
   # Heranca de BxBaseModGeneralModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -210,7 +210,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _updateModuleData
+  Funcao correspondente ao metodo PHP updateModuleData
 
   ## Parametros
     - $sAction
@@ -219,7 +219,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModNotificationsModule do
   ## Retorno
     - any
   """
-  def _updateModuleData(params) do
+  def updateModuleData(params) do
     # TODO: Implementacao futura
         # protected function _updateModuleData($sAction, $sModuleUri)
     #     {

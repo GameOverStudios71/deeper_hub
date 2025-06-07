@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   # Heranca de BxDolAlertsResponse
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -43,7 +43,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processAccountAddForm
+  Funcao correspondente ao metodo PHP processAccountAddForm
 
   ## Parametros
     - $oAlert
@@ -51,7 +51,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   ## Retorno
     - any
   """
-  def _processAccountAddForm(params) do
+  def processAccountAddForm(params) do
     # TODO: Implementacao futura
         # protected function _processAccountAddForm($oAlert)
     #     {
@@ -62,7 +62,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processAccountAdded
+  Funcao correspondente ao metodo PHP processAccountAdded
 
   ## Parametros
     - $oAlert
@@ -70,7 +70,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   ## Retorno
     - any
   """
-  def _processAccountAdded(params) do
+  def processAccountAdded(params) do
     # TODO: Implementacao futura
         # protected function _processAccountAdded($oAlert)
     #     {
@@ -80,7 +80,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processProfileAdd
+  Funcao correspondente ao metodo PHP processProfileAdd
 
   ## Parametros
     - $oAlert
@@ -88,7 +88,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   ## Retorno
     - any
   """
-  def _processProfileAdd(params) do
+  def processProfileAdd(params) do
     # TODO: Implementacao futura
         # protected function _processProfileAdd($oAlert)
     #     {
@@ -99,7 +99,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processProfileDelete
+  Funcao correspondente ao metodo PHP processProfileDelete
 
   ## Parametros
     - $oAlert
@@ -107,7 +107,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   ## Retorno
     - any
   """
-  def _processProfileDelete(params) do
+  def processProfileDelete(params) do
     # TODO: Implementacao futura
         # protected function _processProfileDelete($oAlert)
     #     {
@@ -117,7 +117,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processAccountDelete
+  Funcao correspondente ao metodo PHP processAccountDelete
 
   ## Parametros
     - $oAlert
@@ -125,7 +125,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   ## Retorno
     - any
   """
-  def _processAccountDelete(params) do
+  def processAccountDelete(params) do
     # TODO: Implementacao futura
         # protected function _processAccountDelete($oAlert)
     #     {
@@ -135,7 +135,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processBxAnalyticsGetModules
+  Funcao correspondente ao metodo PHP processBxAnalyticsGetModules
 
   ## Parametros
     - $oAlert
@@ -143,7 +143,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   ## Retorno
     - any
   """
-  def _processBxAnalyticsGetModules(params) do
+  def processBxAnalyticsGetModules(params) do
     # TODO: Implementacao futura
         # protected function _processBxAnalyticsGetModules($oAlert)
     #     {
@@ -153,7 +153,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processBxAnalyticsGetReports
+  Funcao correspondente ao metodo PHP processBxAnalyticsGetReports
 
   ## Parametros
     - $oAlert
@@ -161,7 +161,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   ## Retorno
     - any
   """
-  def _processBxAnalyticsGetReports(params) do
+  def processBxAnalyticsGetReports(params) do
     # TODO: Implementacao futura
         # protected function _processBxAnalyticsGetReports($oAlert)
     #     {
@@ -172,7 +172,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _processBxAnalyticsGetChartDataLine
+  Funcao correspondente ao metodo PHP processBxAnalyticsGetChartDataLine
 
   ## Parametros
     - $oAlert
@@ -180,7 +180,7 @@ defmodule DeeperHub.Inc.Classes.BxInvResponse do
   ## Retorno
     - any
   """
-  def _processBxAnalyticsGetChartDataLine(params) do
+  def processBxAnalyticsGetChartDataLine(params) do
     # TODO: Implementacao futura
         # protected function _processBxAnalyticsGetChartDataLine($oAlert)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioStorages do
   # Heranca de BxTemplStudioWidget
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sPage = ""
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioStorages do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 

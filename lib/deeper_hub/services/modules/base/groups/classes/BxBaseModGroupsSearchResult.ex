@@ -81,7 +81,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setAuthorConditions
+  Funcao correspondente ao metodo PHP setAuthorConditions
 
   ## Parametros
     - $sMode
@@ -91,7 +91,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsSearchResult do
   ## Retorno
     - any
   """
-  def _setAuthorConditions(params) do
+  def setAuthorConditions(params) do
     # TODO: Implementacao futura
         # protected function _setAuthorConditions($sMode, $aParams, &$oProfileAuthor)
     #     {
@@ -101,7 +101,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _setFavoriteConditions
+  Funcao correspondente ao metodo PHP setFavoriteConditions
 
   ## Parametros
     - $sMode
@@ -111,7 +111,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsSearchResult do
   ## Retorno
     - any
   """
-  def _setFavoriteConditions(params) do
+  def setFavoriteConditions(params) do
     # TODO: Implementacao futura
         # protected function _setFavoriteConditions($sMode, $aParams, &$oProfileAuthor)
     #     {
@@ -121,7 +121,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _updateCurrentForContext
+  Funcao correspondente ao metodo PHP updateCurrentForContext
 
   ## Parametros
     - $sMode
@@ -131,7 +131,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGroupsSearchResult do
   ## Retorno
     - any
   """
-  def _updateCurrentForContext(params) do
+  def updateCurrentForContext(params) do
     # TODO: Implementacao futura
         # protected function _updateCurrentForContext($sMode, $aParams, &$oProfileContext)
     #     {

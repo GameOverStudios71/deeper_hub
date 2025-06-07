@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineVotePollAnswers do
   # Heranca de BxBaseModGeneralVotePollAnswers
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -17,7 +17,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineVotePollAnswers do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($sSystem, $iId, $iInit = 1)
     #     {

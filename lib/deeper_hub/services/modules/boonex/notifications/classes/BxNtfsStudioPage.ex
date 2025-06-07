@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsStudioPage do
   # Heranca de BxBaseModNotificationsStudioPage
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sModule
@@ -17,7 +17,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsStudioPage do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($sModule, $mixedPageName, $sPage = "")
     #     {
@@ -81,7 +81,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsStudioPage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDeliveryType
+  Funcao correspondente ao metodo PHP getDeliveryType
 
   ## Parametros
     - $sDeliveryType
@@ -89,7 +89,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsStudioPage do
   ## Retorno
     - any
   """
-  def _getDeliveryType(params) do
+  def getDeliveryType(params) do
     # TODO: Implementacao futura
         # protected function _getDeliveryType($sDeliveryType)
     #     {

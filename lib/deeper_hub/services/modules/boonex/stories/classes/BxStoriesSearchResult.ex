@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxStoriesSearchResult do
   # Heranca de BxBaseModTextSearchResult
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sMode = ''
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxStoriesSearchResult do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($sMode = '', $aParams = [])
     #     {

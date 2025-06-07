@@ -8,7 +8,7 @@ defmodule DeeperHub.Inc.Classes.BxDolSearchResult do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxDolSearchResult do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct ()
@@ -1129,7 +1129,7 @@ defmodule DeeperHub.Inc.Classes.BxDolSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPseudFromParam
+  Funcao correspondente ao metodo PHP getPseudFromParam
 
   ## Parametros
     - 
@@ -1137,7 +1137,7 @@ defmodule DeeperHub.Inc.Classes.BxDolSearchResult do
   ## Retorno
     - any
   """
-  def _getPseudFromParam(params) do
+  def getPseudFromParam(params) do
     # TODO: Implementacao futura
         # 
     #     function _getPseudFromParam ()
@@ -1148,7 +1148,7 @@ defmodule DeeperHub.Inc.Classes.BxDolSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getPseud
+  Funcao correspondente ao metodo PHP getPseud
 
   ## Parametros
     - 
@@ -1156,7 +1156,7 @@ defmodule DeeperHub.Inc.Classes.BxDolSearchResult do
   ## Retorno
     - any
   """
-  def _getPseud(params) do
+  def getPseud(params) do
     # TODO: Implementacao futura
         # 
     #     function _getPseud ()
@@ -1197,7 +1197,7 @@ defmodule DeeperHub.Inc.Classes.BxDolSearchResult do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _replaceMarkers
+  Funcao correspondente ao metodo PHP replaceMarkers
 
   ## Parametros
     - $mixed
@@ -1205,7 +1205,7 @@ defmodule DeeperHub.Inc.Classes.BxDolSearchResult do
   ## Retorno
     - any
   """
-  def _replaceMarkers(params) do
+  def replaceMarkers(params) do
     # TODO: Implementacao futura
         # protected function _replaceMarkers ($mixed)
     #     {

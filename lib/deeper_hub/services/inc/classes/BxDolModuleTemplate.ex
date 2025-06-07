@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolModuleTemplate do
   # Heranca de BxDolTemplate
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolModuleTemplate do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct(&$oConfig, &$oDb, $sRootPath = BX_DIRECTORY_PATH_ROOT, $sRootUrl = BX_DOL_URL_ROOT)
     #     {

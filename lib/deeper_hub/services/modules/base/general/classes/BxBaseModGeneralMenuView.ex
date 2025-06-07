@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuView do
   # Heranca de BxTemplMenu
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuView do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuView do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVisible
+  Funcao correspondente ao metodo PHP isVisible
 
   ## Parametros
     - $a
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuView do
   ## Retorno
     - any
   """
-  def _isVisible(params) do
+  def isVisible(params) do
     # TODO: Implementacao futura
         # protected function _isVisible ($a)
     #     {
@@ -45,7 +45,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuView do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemsCombined
+  Funcao correspondente ao metodo PHP getMenuItemsCombined
 
   ## Parametros
     - 
@@ -53,7 +53,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModGeneralMenuView do
   ## Retorno
     - any
   """
-  def _getMenuItemsCombined(params) do
+  def getMenuItemsCombined(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemsCombined ()
     #     {

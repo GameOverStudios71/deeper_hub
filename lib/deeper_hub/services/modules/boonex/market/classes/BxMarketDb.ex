@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketDb do
   # Heranca de BxBaseModTextDb
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - &$oConfig
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketDb do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 
@@ -457,7 +457,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _deassociateAttachmentWithContent
+  Funcao correspondente ao metodo PHP deassociateAttachmentWithContent
 
   ## Parametros
     - $sTable
@@ -467,7 +467,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketDb do
   ## Retorno
     - any
   """
-  def _deassociateAttachmentWithContent(params) do
+  def deassociateAttachmentWithContent(params) do
     # TODO: Implementacao futura
         # protected function _deassociateAttachmentWithContent($sTable, $iContentId, $iFileId)
     #     {
@@ -477,7 +477,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketDb do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _updateAttachment
+  Funcao correspondente ao metodo PHP updateAttachment
 
   ## Parametros
     - $sTable
@@ -487,7 +487,7 @@ defmodule DeeperHub.Inc.Classes.BxMarketDb do
   ## Retorno
     - any
   """
-  def _updateAttachment(params) do
+  def updateAttachment(params) do
     # TODO: Implementacao futura
         # protected function _updateAttachment($sTable, $aSet, $aWhere)
     #     {

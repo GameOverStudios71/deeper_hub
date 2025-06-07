@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridView do
   # Heranca de BxAclGridLevels
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridView do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -81,7 +81,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridView do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellLevelIcon
+  Funcao correspondente ao metodo PHP getCellLevelIcon
 
   ## Parametros
     - $mixedValue
@@ -92,7 +92,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridView do
   ## Retorno
     - any
   """
-  def _getCellLevelIcon(params) do
+  def getCellLevelIcon(params) do
     # TODO: Implementacao futura
         # protected function _getCellLevelIcon($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -102,7 +102,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridView do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isLifetime
+  Funcao correspondente ao metodo PHP isLifetime
 
   ## Parametros
     - $aRow
@@ -110,7 +110,7 @@ defmodule DeeperHub.Inc.Classes.BxAclGridView do
   ## Retorno
     - any
   """
-  def _isLifetime(params) do
+  def isLifetime(params) do
     # TODO: Implementacao futura
         # protected function _isLifetime($aRow)
     #     {

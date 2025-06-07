@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheFile do
   # Heranca de BxDolCache
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheFile do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct()
@@ -128,7 +128,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheFile do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _removeFileIfTtlExpired
+  Funcao correspondente ao metodo PHP removeFileIfTtlExpired
 
   ## Parametros
     - $sFile
@@ -137,7 +137,7 @@ defmodule DeeperHub.Inc.Classes.BxDolCacheFile do
   ## Retorno
     - any
   """
-  def _removeFileIfTtlExpired(params) do
+  def removeFileIfTtlExpired(params) do
     # TODO: Implementacao futura
         # 
     #     function _removeFileIfTtlExpired ($sFile, $iTTL)

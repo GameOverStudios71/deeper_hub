@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGrid do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGrid do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getProfile
+  Funcao correspondente ao metodo PHP getProfile
 
   ## Parametros
     - $mixedValue
@@ -34,7 +34,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGrid do
   ## Retorno
     - any
   """
-  def _getProfile(params) do
+  def getProfile(params) do
     # TODO: Implementacao futura
         # protected function _getProfile($mixedValue) 
     #     {
@@ -45,7 +45,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _performActionWithProfileAmount
+  Funcao correspondente ao metodo PHP performActionWithProfileAmount
 
   ## Parametros
     - $sAction
@@ -53,7 +53,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGrid do
   ## Retorno
     - any
   """
-  def _performActionWithProfileAmount(params) do
+  def performActionWithProfileAmount(params) do
     # TODO: Implementacao futura
         # protected function _performActionWithProfileAmount($sAction)
     #     {
@@ -63,7 +63,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _onPerformAction
+  Funcao correspondente ao metodo PHP onPerformAction
 
   ## Parametros
     - $aResult
@@ -71,7 +71,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGrid do
   ## Retorno
     - any
   """
-  def _onPerformAction(params) do
+  def onPerformAction(params) do
     # TODO: Implementacao futura
         # protected function _onPerformAction($aResult)
     #     {
@@ -81,7 +81,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFormObject
+  Funcao correspondente ao metodo PHP getFormObject
 
   ## Parametros
     - $sAction
@@ -89,7 +89,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGrid do
   ## Retorno
     - any
   """
-  def _getFormObject(params) do
+  def getFormObject(params) do
     # TODO: Implementacao futura
         # protected function _getFormObject($sAction)
     #     {
@@ -99,7 +99,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGrid do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getId
+  Funcao correspondente ao metodo PHP getId
 
   ## Parametros
     - 
@@ -107,7 +107,7 @@ defmodule DeeperHub.Inc.Classes.BxCreditsGrid do
   ## Retorno
     - any
   """
-  def _getId(params) do
+  def getId(params) do
     # TODO: Implementacao futura
         # protected function _getId()
     #     {

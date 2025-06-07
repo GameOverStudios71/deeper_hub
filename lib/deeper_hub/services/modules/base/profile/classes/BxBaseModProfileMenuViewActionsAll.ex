@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   # Heranca de BxBaseModGeneralMenuViewActions
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -65,7 +65,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemConnectionApi
+  Funcao correspondente ao metodo PHP getMenuItemConnectionApi
 
   ## Parametros
     - $sConnection
@@ -75,7 +75,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemConnectionApi(params) do
+  def getMenuItemConnectionApi(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemConnectionApi($sConnection, $sAction, &$aItem)
     #     {
@@ -86,7 +86,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemProfileFriendAdd
+  Funcao correspondente ao metodo PHP getMenuItemProfileFriendAdd
 
   ## Parametros
     - $aItem
@@ -94,7 +94,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemProfileFriendAdd(params) do
+  def getMenuItemProfileFriendAdd(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemProfileFriendAdd($aItem)
     #     {
@@ -105,7 +105,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemProfileFriendRemove
+  Funcao correspondente ao metodo PHP getMenuItemProfileFriendRemove
 
   ## Parametros
     - $aItem
@@ -113,7 +113,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemProfileFriendRemove(params) do
+  def getMenuItemProfileFriendRemove(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemProfileFriendRemove($aItem)
     #     {
@@ -124,7 +124,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemProfileRelationAdd
+  Funcao correspondente ao metodo PHP getMenuItemProfileRelationAdd
 
   ## Parametros
     - $aItem
@@ -132,7 +132,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemProfileRelationAdd(params) do
+  def getMenuItemProfileRelationAdd(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemProfileRelationAdd($aItem)
     #     {
@@ -142,7 +142,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemProfileRelationRemove
+  Funcao correspondente ao metodo PHP getMenuItemProfileRelationRemove
 
   ## Parametros
     - $aItem
@@ -150,7 +150,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemProfileRelationRemove(params) do
+  def getMenuItemProfileRelationRemove(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemProfileRelationRemove($aItem)
     #     {
@@ -160,7 +160,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemProfileSubscribeAdd
+  Funcao correspondente ao metodo PHP getMenuItemProfileSubscribeAdd
 
   ## Parametros
     - $aItem
@@ -168,7 +168,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemProfileSubscribeAdd(params) do
+  def getMenuItemProfileSubscribeAdd(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemProfileSubscribeAdd($aItem)
     #     {
@@ -179,7 +179,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemProfileSubscribeRemove
+  Funcao correspondente ao metodo PHP getMenuItemProfileSubscribeRemove
 
   ## Parametros
     - $aItem
@@ -187,7 +187,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemProfileSubscribeRemove(params) do
+  def getMenuItemProfileSubscribeRemove(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemProfileSubscribeRemove($aItem)
     #     {
@@ -198,7 +198,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemProfileSetBadges
+  Funcao correspondente ao metodo PHP getMenuItemProfileSetBadges
 
   ## Parametros
     - $aItem
@@ -206,7 +206,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemProfileSetBadges(params) do
+  def getMenuItemProfileSetBadges(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemProfileSetBadges($aItem)
     #     {
@@ -216,7 +216,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemProfileSetAclLevel
+  Funcao correspondente ao metodo PHP getMenuItemProfileSetAclLevel
 
   ## Parametros
     - $aItem
@@ -224,7 +224,7 @@ defmodule DeeperHub.Inc.Classes.BxBaseModProfileMenuViewActionsAll do
   ## Retorno
     - any
   """
-  def _getMenuItemProfileSetAclLevel(params) do
+  def getMenuItemProfileSetAclLevel(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemProfileSetAclLevel($aItem)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolView do
   # Heranca de BxDolObject
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sSystem
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolView do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($sSystem, $iId, $iInit = true, $oTemplate = false)
     #     {
@@ -178,7 +178,7 @@ defmodule DeeperHub.Inc.Classes.BxDolView do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIconDo
+  Funcao correspondente ao metodo PHP getIconDo
 
   ## Parametros
     - 
@@ -186,7 +186,7 @@ defmodule DeeperHub.Inc.Classes.BxDolView do
   ## Retorno
     - any
   """
-  def _getIconDo(params) do
+  def getIconDo(params) do
     # TODO: Implementacao futura
         # protected function _getIconDo()
     #     {
@@ -196,7 +196,7 @@ defmodule DeeperHub.Inc.Classes.BxDolView do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getTitleDo
+  Funcao correspondente ao metodo PHP getTitleDo
 
   ## Parametros
     - 
@@ -204,7 +204,7 @@ defmodule DeeperHub.Inc.Classes.BxDolView do
   ## Retorno
     - any
   """
-  def _getTitleDo(params) do
+  def getTitleDo(params) do
     # TODO: Implementacao futura
         # protected function _getTitleDo()
     #     {

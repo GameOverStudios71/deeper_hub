@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPrivacy do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPrivacy do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct($aObject)
     #     {
@@ -963,7 +963,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPrivacy do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _check
+  Funcao correspondente ao metodo PHP check
 
   ## Parametros
     - $iObjectId
@@ -973,7 +973,7 @@ defmodule DeeperHub.Inc.Classes.BxDolPrivacy do
   ## Retorno
     - any
   """
-  def _check(params) do
+  def check(params) do
     # TODO: Implementacao futura
         # protected function _check($iObjectId, $iViewerId, $aObject)
     #     {

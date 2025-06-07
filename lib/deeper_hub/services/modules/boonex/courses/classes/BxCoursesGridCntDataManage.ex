@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -100,7 +100,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellContentId
+  Funcao correspondente ao metodo PHP getCellContentId
 
   ## Parametros
     - $mixedValue
@@ -111,7 +111,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   ## Retorno
     - any
   """
-  def _getCellContentId(params) do
+  def getCellContentId(params) do
     # TODO: Implementacao futura
         # protected function _getCellContentId($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -121,7 +121,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellContentType
+  Funcao correspondente ao metodo PHP getCellContentType
 
   ## Parametros
     - $mixedValue
@@ -132,7 +132,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   ## Retorno
     - any
   """
-  def _getCellContentType(params) do
+  def getCellContentType(params) do
     # TODO: Implementacao futura
         # protected function _getCellContentType($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -142,7 +142,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellUsage
+  Funcao correspondente ao metodo PHP getCellUsage
 
   ## Parametros
     - $mixedValue
@@ -153,7 +153,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   ## Retorno
     - any
   """
-  def _getCellUsage(params) do
+  def getCellUsage(params) do
     # TODO: Implementacao futura
         # protected function _getCellUsage($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -163,7 +163,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAdded
+  Funcao correspondente ao metodo PHP getCellAdded
 
   ## Parametros
     - $mixedValue
@@ -174,7 +174,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   ## Retorno
     - any
   """
-  def _getCellAdded(params) do
+  def getCellAdded(params) do
     # TODO: Implementacao futura
         # protected function _getCellAdded($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -185,7 +185,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getActionBack
+  Funcao correspondente ao metodo PHP getActionBack
 
   ## Parametros
     - $sType
@@ -198,7 +198,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   ## Retorno
     - any
   """
-  def _getActionBack(params) do
+  def getActionBack(params) do
     # TODO: Implementacao futura
         # protected function _getActionBack($sType, $sKey, $a, $isSmall = false, $isDisabled = false, $aRow = [])
     #     {
@@ -209,7 +209,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getActionAddSt
+  Funcao correspondente ao metodo PHP getActionAddSt
 
   ## Parametros
     - $sType
@@ -222,7 +222,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   ## Retorno
     - any
   """
-  def _getActionAddSt(params) do
+  def getActionAddSt(params) do
     # TODO: Implementacao futura
         # protected function _getActionAddSt($sType, $sKey, $a, $isSmall = false, $isDisabled = false, $aRow = [])
     #     {
@@ -233,7 +233,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getActionAddAt
+  Funcao correspondente ao metodo PHP getActionAddAt
 
   ## Parametros
     - $sType
@@ -246,7 +246,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   ## Retorno
     - any
   """
-  def _getActionAddAt(params) do
+  def getActionAddAt(params) do
     # TODO: Implementacao futura
         # protected function _getActionAddAt($sType, $sKey, $a, $isSmall = false, $isDisabled = false, $aRow = [])
     #     {
@@ -257,7 +257,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getActionEdit
+  Funcao correspondente ao metodo PHP getActionEdit
 
   ## Parametros
     - $sType
@@ -270,7 +270,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   ## Retorno
     - any
   """
-  def _getActionEdit(params) do
+  def getActionEdit(params) do
     # TODO: Implementacao futura
         # protected function _getActionEdit($sType, $sKey, $a, $isSmall = false, $isDisabled = false, $aRow = [])
     #     {
@@ -280,7 +280,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _delete
+  Funcao correspondente ao metodo PHP delete
 
   ## Parametros
     - $mixedId
@@ -288,7 +288,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   ## Retorno
     - any
   """
-  def _delete(params) do
+  def delete(params) do
     # TODO: Implementacao futura
         # protected function _delete($mixedId)
     #     {
@@ -298,7 +298,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -310,7 +310,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -321,7 +321,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getIds
+  Funcao correspondente ao metodo PHP getIds
 
   ## Parametros
     - 
@@ -329,7 +329,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   ## Retorno
     - any
   """
-  def _getIds(params) do
+  def getIds(params) do
     # TODO: Implementacao futura
         # protected function _getIds()
     #     {
@@ -339,7 +339,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getValues
+  Funcao correspondente ao metodo PHP getValues
 
   ## Parametros
     - $iUsage
@@ -347,7 +347,7 @@ defmodule DeeperHub.Inc.Classes.BxCoursesGridCntDataManage do
   ## Retorno
     - any
   """
-  def _getValues(params) do
+  def getValues(params) do
     # TODO: Implementacao futura
         # protected function _getValues($iUsage)
     #     {

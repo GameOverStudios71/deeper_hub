@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioRssPageHelp do
   # Heranca de BxTemplRss
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxDolStudioRssPageHelp do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct($aObject)

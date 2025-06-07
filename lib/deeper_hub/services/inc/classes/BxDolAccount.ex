@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolAccount do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $iAccountId
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolAccount do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct ($iAccountId)
     #     {
@@ -28,7 +28,7 @@ defmodule DeeperHub.Inc.Classes.BxDolAccount do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __clone
+  Funcao correspondente ao metodo PHP clone
 
   ## Parametros
     - 
@@ -36,7 +36,7 @@ defmodule DeeperHub.Inc.Classes.BxDolAccount do
   ## Retorno
     - any
   """
-  def __clone(params) do
+  def clone(params) do
     # TODO: Implementacao futura
         # public function __clone()
     #     {
@@ -942,7 +942,7 @@ defmodule DeeperHub.Inc.Classes.BxDolAccount do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getImageUrl
+  Funcao correspondente ao metodo PHP getImageUrl
 
   ## Parametros
     - $sSize
@@ -951,7 +951,7 @@ defmodule DeeperHub.Inc.Classes.BxDolAccount do
   ## Retorno
     - any
   """
-  def _getImageUrl(params) do
+  def getImageUrl(params) do
     # TODO: Implementacao futura
         # protected function _getImageUrl($sSize, $mixedData)
     #     {

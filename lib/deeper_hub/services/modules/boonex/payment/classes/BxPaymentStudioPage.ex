@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentStudioPage do
   # Heranca de BxTemplStudioModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $sModule
@@ -17,7 +17,7 @@ defmodule DeeperHub.Inc.Classes.BxPaymentStudioPage do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     # 

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsMenuPreview do
   # Heranca de BxTemplMenuCustom
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aObject
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsMenuPreview do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct($aObject, $oTemplate = false)
     #     {
@@ -82,7 +82,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsMenuPreview do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemDefault
+  Funcao correspondente ao metodo PHP getMenuItemDefault
 
   ## Parametros
     - $aItem
@@ -90,7 +90,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsMenuPreview do
   ## Retorno
     - any
   """
-  def _getMenuItemDefault(params) do
+  def getMenuItemDefault(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemDefault ($aItem)
     #     {
@@ -100,7 +100,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsMenuPreview do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getMenuItemEvent
+  Funcao correspondente ao metodo PHP getMenuItemEvent
 
   ## Parametros
     - $aItem
@@ -108,7 +108,7 @@ defmodule DeeperHub.Inc.Classes.BxNtfsMenuPreview do
   ## Retorno
     - any
   """
-  def _getMenuItemEvent(params) do
+  def getMenuItemEvent(params) do
     # TODO: Implementacao futura
         # protected function _getMenuItemEvent($aItem)
     #     {

@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   # Heranca de BxBaseModProfileGridAdministration
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -26,7 +26,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -38,7 +38,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {
@@ -49,7 +49,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -57,7 +57,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls()
     #     {
@@ -358,7 +358,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _performActionChangeRole
+  Funcao correspondente ao metodo PHP performActionChangeRole
 
   ## Parametros
     - $iRole
@@ -366,7 +366,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _performActionChangeRole(params) do
+  def performActionChangeRole(params) do
     # TODO: Implementacao futura
         # protected function _performActionChangeRole($iRole)
     #     {
@@ -376,7 +376,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _performActionEnable
+  Funcao correspondente ao metodo PHP performActionEnable
 
   ## Parametros
     - $isChecked
@@ -384,7 +384,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _performActionEnable(params) do
+  def performActionEnable(params) do
     # TODO: Implementacao futura
         # protected function _performActionEnable($isChecked)
     #     {
@@ -394,7 +394,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _enable
+  Funcao correspondente ao metodo PHP enable
 
   ## Parametros
     - $mixedId
@@ -403,7 +403,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _enable(params) do
+  def enable(params) do
     # TODO: Implementacao futura
         # protected function _enable($mixedId, $isChecked)
     #     {
@@ -413,7 +413,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellEmailConfirmed
+  Funcao correspondente ao metodo PHP getCellEmailConfirmed
 
   ## Parametros
     - $mixedValue
@@ -424,7 +424,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellEmailConfirmed(params) do
+  def getCellEmailConfirmed(params) do
     # TODO: Implementacao futura
         # protected function _getCellEmailConfirmed($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -434,7 +434,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellName
+  Funcao correspondente ao metodo PHP getCellName
 
   ## Parametros
     - $mixedValue
@@ -445,7 +445,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellName(params) do
+  def getCellName(params) do
     # TODO: Implementacao futura
         # protected function _getCellName($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -455,7 +455,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellProfiles
+  Funcao correspondente ao metodo PHP getCellProfiles
 
   ## Parametros
     - $mixedValue
@@ -466,7 +466,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellProfiles(params) do
+  def getCellProfiles(params) do
     # TODO: Implementacao futura
         # protected function _getCellProfiles($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -476,7 +476,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellLogged
+  Funcao correspondente ao metodo PHP getCellLogged
 
   ## Parametros
     - $mixedValue
@@ -487,7 +487,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellLogged(params) do
+  def getCellLogged(params) do
     # TODO: Implementacao futura
         # protected function _getCellLogged($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -497,7 +497,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellLastActive
+  Funcao correspondente ao metodo PHP getCellLastActive
 
   ## Parametros
     - $mixedValue
@@ -508,7 +508,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellLastActive(params) do
+  def getCellLastActive(params) do
     # TODO: Implementacao futura
         # protected function _getCellLastActive($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -519,7 +519,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellAdded
+  Funcao correspondente ao metodo PHP getCellAdded
 
   ## Parametros
     - $mixedValue
@@ -530,7 +530,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellAdded(params) do
+  def getCellAdded(params) do
     # TODO: Implementacao futura
         # protected function _getCellAdded($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -540,7 +540,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellIsConfirmed
+  Funcao correspondente ao metodo PHP getCellIsConfirmed
 
   ## Parametros
     - $mixedValue
@@ -551,7 +551,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _getCellIsConfirmed(params) do
+  def getCellIsConfirmed(params) do
     # TODO: Implementacao futura
         # protected function _getCellIsConfirmed($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -561,7 +561,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getOrderFields
+  Funcao correspondente ao metodo PHP getOrderFields
 
   ## Parametros
     - $bTranslatable = false
@@ -569,7 +569,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _getOrderFields(params) do
+  def getOrderFields(params) do
     # TODO: Implementacao futura
         # protected function _getOrderFields($bTranslatable = false)
     #     {
@@ -579,7 +579,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isCheckboxDisabled
+  Funcao correspondente ao metodo PHP isCheckboxDisabled
 
   ## Parametros
     - $aRow
@@ -587,7 +587,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _isCheckboxDisabled(params) do
+  def isCheckboxDisabled(params) do
     # TODO: Implementacao futura
         # protected function _isCheckboxDisabled($aRow)
     #     {
@@ -597,7 +597,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getContentInfo
+  Funcao correspondente ao metodo PHP getContentInfo
 
   ## Parametros
     - $iId
@@ -605,7 +605,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _getContentInfo(params) do
+  def getContentInfo(params) do
     # TODO: Implementacao futura
         # protected function _getContentInfo($iId)
     #     {
@@ -615,7 +615,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _doDelete
+  Funcao correspondente ao metodo PHP doDelete
 
   ## Parametros
     - $iId
@@ -624,7 +624,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _doDelete(params) do
+  def doDelete(params) do
     # TODO: Implementacao futura
         # protected function _doDelete($iId, $aParams = [])
     #     {
@@ -634,7 +634,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _addJsCss
+  Funcao correspondente ao metodo PHP addJsCss
 
   ## Parametros
     - 
@@ -642,7 +642,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _addJsCss(params) do
+  def addJsCss(params) do
     # TODO: Implementacao futura
         # protected function _addJsCss()
     #     {
@@ -652,7 +652,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _isVisibleGrid
+  Funcao correspondente ao metodo PHP isVisibleGrid
 
   ## Parametros
     - $a
@@ -660,7 +660,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _isVisibleGrid(params) do
+  def isVisibleGrid(params) do
     # TODO: Implementacao futura
         # protected function _isVisibleGrid($a)
     #     {
@@ -671,7 +671,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _exportToCsv
+  Funcao correspondente ao metodo PHP exportToCsv
 
   ## Parametros
     - $aIds
@@ -682,7 +682,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _exportToCsv(params) do
+  def exportToCsv(params) do
     # TODO: Implementacao futura
         # protected function _exportToCsv($aIds, $aFields, $aTitles, $aConverters)
     #     {
@@ -691,7 +691,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _exportToXml
+  Funcao correspondente ao metodo PHP exportToXml
 
   ## Parametros
     - $aIds
@@ -702,7 +702,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _exportToXml(params) do
+  def exportToXml(params) do
     # TODO: Implementacao futura
         # protected function _exportToXml($aIds, $aFields, $aTitles, $aConverters)
     #     {
@@ -712,7 +712,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _exportFieldConverterAdded
+  Funcao correspondente ao metodo PHP exportFieldConverterAdded
 
   ## Parametros
     - $mixedValue
@@ -720,7 +720,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _exportFieldConverterAdded(params) do
+  def exportFieldConverterAdded(params) do
     # TODO: Implementacao futura
         # protected function _exportFieldConverterAdded($mixedValue)
     #     {
@@ -730,7 +730,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _exportFieldConverterChanged
+  Funcao correspondente ao metodo PHP exportFieldConverterChanged
 
   ## Parametros
     - $mixedValue
@@ -738,7 +738,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _exportFieldConverterChanged(params) do
+  def exportFieldConverterChanged(params) do
     # TODO: Implementacao futura
         # protected function _exportFieldConverterChanged($mixedValue)
     #     {
@@ -748,7 +748,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _exportFieldConverterLogged
+  Funcao correspondente ao metodo PHP exportFieldConverterLogged
 
   ## Parametros
     - $mixedValue
@@ -756,7 +756,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _exportFieldConverterLogged(params) do
+  def exportFieldConverterLogged(params) do
     # TODO: Implementacao futura
         # protected function _exportFieldConverterLogged($mixedValue)
     #     {
@@ -766,7 +766,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _exportFieldConverterLangId
+  Funcao correspondente ao metodo PHP exportFieldConverterLangId
 
   ## Parametros
     - $mixedValue
@@ -774,7 +774,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def _exportFieldConverterLangId(params) do
+  def exportFieldConverterLangId(params) do
     # TODO: Implementacao futura
         # protected function _exportFieldConverterLangId($mixedValue)
     #     {
@@ -784,7 +784,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __exportFieldConverterDate
+  Funcao correspondente ao metodo PHP exportFieldConverterDate
 
   ## Parametros
     - $mixedValue
@@ -792,7 +792,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def __exportFieldConverterDate(params) do
+  def exportFieldConverterDate(params) do
     # TODO: Implementacao futura
         # protected function __exportFieldConverterDate($mixedValue)
     #     {
@@ -802,7 +802,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __exportFieldConverterDateTime
+  Funcao correspondente ao metodo PHP exportFieldConverterDateTime
 
   ## Parametros
     - $mixedValue
@@ -810,7 +810,7 @@ defmodule DeeperHub.Inc.Classes.BxAccntGridAdministration do
   ## Retorno
     - any
   """
-  def __exportFieldConverterDateTime(params) do
+  def exportFieldConverterDateTime(params) do
     # TODO: Implementacao futura
         # protected function __exportFieldConverterDateTime($mixedValue)
     #     {

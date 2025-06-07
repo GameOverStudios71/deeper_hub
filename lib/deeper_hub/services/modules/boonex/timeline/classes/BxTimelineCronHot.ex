@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineCronHot do
   # Heranca de BxDolCron
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineCronHot do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct()
     #     {
@@ -46,7 +46,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineCronHot do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareTrackByDates
+  Funcao correspondente ao metodo PHP prepareTrackByDates
 
   ## Parametros
     - 
@@ -54,7 +54,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineCronHot do
   ## Retorno
     - any
   """
-  def _prepareTrackByDates(params) do
+  def prepareTrackByDates(params) do
     # TODO: Implementacao futura
         # protected function _prepareTrackByDates()
     #     {
@@ -64,7 +64,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineCronHot do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _prepareTrackByVotesSum
+  Funcao correspondente ao metodo PHP prepareTrackByVotesSum
 
   ## Parametros
     - 
@@ -72,7 +72,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineCronHot do
   ## Retorno
     - any
   """
-  def _prepareTrackByVotesSum(params) do
+  def prepareTrackByVotesSum(params) do
     # TODO: Implementacao futura
         # protected function _prepareTrackByVotesSum()
     #     {
@@ -82,7 +82,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineCronHot do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _combineArrays
+  Funcao correspondente ao metodo PHP combineArrays
 
   ## Parametros
     - $a1
@@ -91,7 +91,7 @@ defmodule DeeperHub.Inc.Classes.BxTimelineCronHot do
   ## Retorno
     - any
   """
-  def _combineArrays(params) do
+  def combineArrays(params) do
     # TODO: Implementacao futura
         # protected function _combineArrays($a1, $a2)
     #     {

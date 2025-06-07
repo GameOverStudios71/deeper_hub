@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   # Heranca de BxTemplGrid
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aOptions
@@ -16,7 +16,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # public function __construct ($aOptions, $oTemplate = false)
     #     {
@@ -63,7 +63,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterControls
+  Funcao correspondente ao metodo PHP getFilterControls
 
   ## Parametros
     - 
@@ -71,7 +71,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   ## Retorno
     - any
   """
-  def _getFilterControls(params) do
+  def getFilterControls(params) do
     # TODO: Implementacao futura
         # protected function _getFilterControls ()
     #     {
@@ -81,7 +81,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getSearchInput
+  Funcao correspondente ao metodo PHP getSearchInput
 
   ## Parametros
     - 
@@ -89,7 +89,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   ## Retorno
     - any
   """
-  def _getSearchInput(params) do
+  def getSearchInput(params) do
     # TODO: Implementacao futura
         # protected function _getSearchInput()
     #     {
@@ -99,7 +99,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getFilterSelectOne
+  Funcao correspondente ao metodo PHP getFilterSelectOne
 
   ## Parametros
     - $sFilterName
@@ -109,7 +109,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   ## Retorno
     - any
   """
-  def _getFilterSelectOne(params) do
+  def getFilterSelectOne(params) do
     # TODO: Implementacao futura
         # protected function _getFilterSelectOne($sFilterName, $sFilterValue, $aFilterValues)
     #     {
@@ -120,7 +120,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDate
+  Funcao correspondente ao metodo PHP getCellDate
 
   ## Parametros
     - $mixedValue
@@ -131,7 +131,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   ## Retorno
     - any
   """
-  def _getCellDate(params) do
+  def getCellDate(params) do
     # TODO: Implementacao futura
         # protected function _getCellDate($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -142,7 +142,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDateSeen
+  Funcao correspondente ao metodo PHP getCellDateSeen
 
   ## Parametros
     - $mixedValue
@@ -153,7 +153,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   ## Retorno
     - any
   """
-  def _getCellDateSeen(params) do
+  def getCellDateSeen(params) do
     # TODO: Implementacao futura
         # protected function _getCellDateSeen($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -164,7 +164,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellDateJoined
+  Funcao correspondente ao metodo PHP getCellDateJoined
 
   ## Parametros
     - $mixedValue
@@ -175,7 +175,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   ## Retorno
     - any
   """
-  def _getCellDateJoined(params) do
+  def getCellDateJoined(params) do
     # TODO: Implementacao futura
         # protected function _getCellDateJoined($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -186,7 +186,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellWhoSend
+  Funcao correspondente ao metodo PHP getCellWhoSend
 
   ## Parametros
     - $mixedValue
@@ -197,7 +197,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   ## Retorno
     - any
   """
-  def _getCellWhoSend(params) do
+  def getCellWhoSend(params) do
     # TODO: Implementacao futura
         # protected function _getCellWhoSend($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -209,7 +209,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellJoinedAccount
+  Funcao correspondente ao metodo PHP getCellJoinedAccount
 
   ## Parametros
     - $mixedValue
@@ -220,7 +220,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   ## Retorno
     - any
   """
-  def _getCellJoinedAccount(params) do
+  def getCellJoinedAccount(params) do
     # TODO: Implementacao futura
         # protected function _getCellJoinedAccount($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -232,7 +232,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getCellRequest
+  Funcao correspondente ao metodo PHP getCellRequest
 
   ## Parametros
     - $mixedValue
@@ -243,7 +243,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   ## Retorno
     - any
   """
-  def _getCellRequest(params) do
+  def getCellRequest(params) do
     # TODO: Implementacao futura
         # protected function _getCellRequest($mixedValue, $sKey, $aField, $aRow)
     #     {
@@ -253,7 +253,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getProfileCell
+  Funcao correspondente ao metodo PHP getProfileCell
 
   ## Parametros
     - $oProfile
@@ -264,7 +264,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   ## Retorno
     - any
   """
-  def _getProfileCell(params) do
+  def getProfileCell(params) do
     # TODO: Implementacao futura
         # protected function _getProfileCell($oProfile, $sKey, $aField, $aRow)
     #     {
@@ -274,7 +274,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getManageAccountUrl
+  Funcao correspondente ao metodo PHP getManageAccountUrl
 
   ## Parametros
     - $sFilter = ''
@@ -282,7 +282,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   ## Retorno
     - any
   """
-  def _getManageAccountUrl(params) do
+  def getManageAccountUrl(params) do
     # TODO: Implementacao futura
         # protected function _getManageAccountUrl($sFilter = '')
     #     {
@@ -292,7 +292,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getDataSql
+  Funcao correspondente ao metodo PHP getDataSql
 
   ## Parametros
     - $sFilter
@@ -304,7 +304,7 @@ defmodule DeeperHub.Inc.Classes.BxInvGridInvites do
   ## Retorno
     - any
   """
-  def _getDataSql(params) do
+  def getDataSql(params) do
     # TODO: Implementacao futura
         # protected function _getDataSql($sFilter, $sOrderField, $sOrderDir, $iStart, $iPerPage)
     #     {

@@ -10,7 +10,7 @@ defmodule DeeperHub.Inc.Classes.BxDolContentFilter do
 
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - 
@@ -18,7 +18,7 @@ defmodule DeeperHub.Inc.Classes.BxDolContentFilter do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # protected function __construct()
     #     {
@@ -28,7 +28,7 @@ defmodule DeeperHub.Inc.Classes.BxDolContentFilter do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP __clone
+  Funcao correspondente ao metodo PHP clone
 
   ## Parametros
     - 
@@ -36,7 +36,7 @@ defmodule DeeperHub.Inc.Classes.BxDolContentFilter do
   ## Retorno
     - any
   """
-  def __clone(params) do
+  def clone(params) do
     # TODO: Implementacao futura
         # public function __clone()
     #     {
@@ -230,7 +230,7 @@ defmodule DeeperHub.Inc.Classes.BxDolContentFilter do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _getInput
+  Funcao correspondente ao metodo PHP getInput
 
   ## Parametros
     - $sType
@@ -240,7 +240,7 @@ defmodule DeeperHub.Inc.Classes.BxDolContentFilter do
   ## Retorno
     - any
   """
-  def _getInput(params) do
+  def getInput(params) do
     # TODO: Implementacao futura
         # protected function _getInput($sType, $aInput, $iProfileId = 0)
     #     {

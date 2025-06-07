@@ -7,7 +7,7 @@ defmodule DeeperHub.Inc.Classes.BxAclModule do
   # Heranca de BxDolModule
 
   @doc """
-  Funcao correspondente ao metodo PHP __construct
+  Funcao correspondente ao metodo PHP construct
 
   ## Parametros
     - $aModule
@@ -15,7 +15,7 @@ defmodule DeeperHub.Inc.Classes.BxAclModule do
   ## Retorno
     - any
   """
-  def __construct(params) do
+  def construct(params) do
     # TODO: Implementacao futura
         # 
     #     function __construct($aModule)
@@ -374,7 +374,7 @@ defmodule DeeperHub.Inc.Classes.BxAclModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceRegisterItem
+  Funcao correspondente ao metodo PHP serviceRegisterItem
 
   ## Parametros
     - $iClientId
@@ -388,7 +388,7 @@ defmodule DeeperHub.Inc.Classes.BxAclModule do
   ## Retorno
     - any
   """
-  def _serviceRegisterItem(params) do
+  def serviceRegisterItem(params) do
     # TODO: Implementacao futura
         # protected function _serviceRegisterItem($iClientId, $iSellerId, $iItemId, $iItemCount, $sOrder, $sLicense, $sType)
     #     {
@@ -398,7 +398,7 @@ defmodule DeeperHub.Inc.Classes.BxAclModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceReregisterItem
+  Funcao correspondente ao metodo PHP serviceReregisterItem
 
   ## Parametros
     - $iClientId
@@ -411,7 +411,7 @@ defmodule DeeperHub.Inc.Classes.BxAclModule do
   ## Retorno
     - any
   """
-  def _serviceReregisterItem(params) do
+  def serviceReregisterItem(params) do
     # TODO: Implementacao futura
         # protected function _serviceReregisterItem($iClientId, $iSellerId, $iItemIdOld, $iItemIdNew, $sOrder, $sType)
     #     {
@@ -421,7 +421,7 @@ defmodule DeeperHub.Inc.Classes.BxAclModule do
   end
 
   @doc """
-  Funcao correspondente ao metodo PHP _serviceUnregisterItem
+  Funcao correspondente ao metodo PHP serviceUnregisterItem
 
   ## Parametros
     - $iClientId
@@ -435,7 +435,7 @@ defmodule DeeperHub.Inc.Classes.BxAclModule do
   ## Retorno
     - any
   """
-  def _serviceUnregisterItem(params) do
+  def serviceUnregisterItem(params) do
     # TODO: Implementacao futura
         # protected function _serviceUnregisterItem($iClientId, $iSellerId, $iItemId, $iItemCount, $sOrder, $sLicense, $sType)
     #     {
