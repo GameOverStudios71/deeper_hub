@@ -18,7 +18,6 @@ defmodule DeeperHub.Core.Data.Migrations.MigrationRegistry do
       {"20250608000003", DeeperHub.Core.Data.Migrations.CreateSysMenuTemplatesTable},
       {"20250608000004", DeeperHub.Core.Data.Migrations.CreateSysObjectsMenuTable},
       {"20250608000005", DeeperHub.Core.Data.Migrations.CreateSysObjectsPageTable},
-      {"20250608000006", DeeperHub.Core.Data.Migrations.CreateSysObjectsWidgetTable},
       {"20250608000007", DeeperHub.Core.Data.Migrations.CreateSysPagesBlocksTable},
       {"20250608000008", DeeperHub.Core.Data.Migrations.CreateSysPagesBlocksDataTable},
       {"20250608000009", DeeperHub.Core.Data.Migrations.CreateSysPagesContentPlaceholdersTable},
