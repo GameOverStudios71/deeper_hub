@@ -16,9 +16,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsSearchSeed do
     Logger.info("Inserindo registros na tabela sys_objects_search...", module: __MODULE__)
 
     try do
-      Repo.execute("INSERT OR REPLACE INTO sys_objects_search (ID, ObjectName, Title, Order, GlobalSearch, ClassName, ClassPath) VALUES (?, ?, ?, ?, ?, ?, ?)", [1, "sys_pages", "_sys_pages", 1, 1, "BxTemplPagesSearchResult", ""])
-    Repo.execute("INSERT OR REPLACE INTO sys_objects_search (ID, ObjectName, Title, Order, GlobalSearch, ClassName, ClassPath) VALUES (?, ?, ?, ?, ?, ?, ?)", [2, "bx_persons", "_bx_persons", 2, 1, "BxPersonsSearchResult", "modules/boonex/persons/classes/BxPersonsSearchResult.php"])
-    Repo.execute("INSERT OR REPLACE INTO sys_objects_search (ID, ObjectName, Title, Order, GlobalSearch, ClassName, ClassPath) VALUES (?, ?, ?, ?, ?, ?, ?)", [3, "bx_persons_cmts", "_bx_persons_cmts", 3, 1, "BxPersonsCmtsSearchResult", "modules/boonex/persons/classes/BxPersonsCmtsSearchResult.php"])
+      Repo.execute("INSERT OR REPLACE INTO sys_objects_search (ID, ObjectName, Title, 'Order', GlobalSearch, ClassName, ClassPath) VALUES (?, ?, ?, ?, ?, ?, ?)", [1, "sys_pages", "_sys_pages", 1, 1, "BxTemplPagesSearchResult", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_objects_search (ID, ObjectName, Title, 'Order', GlobalSearch, ClassName, ClassPath) VALUES (?, ?, ?, ?, ?, ?, ?)", [2, "bx_persons", "_bx_persons", 2, 1, "BxPersonsSearchResult", "modules/boonex/persons/classes/BxPersonsSearchResult.php"])
+    Repo.execute("INSERT OR REPLACE INTO sys_objects_search (ID, ObjectName, Title, 'Order', GlobalSearch, ClassName, ClassPath) VALUES (?, ?, ?, ?, ?, ?, ?)", [3, "bx_persons_cmts", "_bx_persons_cmts", 3, 1, "BxPersonsCmtsSearchResult", "modules/boonex/persons/classes/BxPersonsCmtsSearchResult.php"])
       Logger.info("Registros inseridos com sucesso na tabela sys_objects_search!", module: __MODULE__)
     rescue
       error ->

@@ -16,7 +16,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAgentsProviderTypesSeed do
     Logger.info("Inserindo registros na tabela sys_agents_provider_types...", module: __MODULE__)
 
     try do
-      Repo.execute("INSERT OR REPLACE INTO sys_agents_provider_types (id, name, title, option_prefix, active, order, class_name, class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [1, "shopify_admin", "_sys_agents_pvd_cpt_shopify_admin", "shf_adm_", 1, 1, "BxDolAIProviderShopifyAdmin", ""])
+      Repo.execute("INSERT OR REPLACE INTO sys_agents_provider_types (id, name, title, option_prefix, active, 'order', class_name, class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [1, "shopify_admin", "_sys_agents_pvd_cpt_shopify_admin", "shf_adm_", 1, 1, "BxDolAIProviderShopifyAdmin", ""])
       Logger.info("Registros inseridos com sucesso na tabela sys_agents_provider_types!", module: __MODULE__)
     rescue
       error ->

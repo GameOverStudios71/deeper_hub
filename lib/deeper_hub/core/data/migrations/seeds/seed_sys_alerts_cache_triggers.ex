@@ -16,7 +16,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAlertsCacheTriggersSeed do
     Logger.info("Inserindo registros na tabela sys_alerts_cache_triggers...", module: __MODULE__)
 
     try do
-      Repo.execute("INSERT OR REPLACE INTO sys_alerts_cache_triggers (id, unit, action, cache_key) VALUES (?, ?, ?, ?)", [1, "sys_profiles_subscriptions", "connection_added", "menu_sys_profile_stats_profile-stats-subscribed-me_{content}_{_hash}.php"])
+      Repo.execute("INSERT OR REPLACE INTO sys_alerts_cache_triggers (id, unit, 'action', cache_key) VALUES (?, ?, ?, ?)", [1, "sys_profiles_subscriptions", "connection_added", "menu_sys_profile_stats_profile-stats-subscribed-me_{content}_{_hash}.php"])
       Logger.info("Registros inseridos com sucesso na tabela sys_alerts_cache_triggers!", module: __MODULE__)
     rescue
       error ->

@@ -16,10 +16,10 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysPagesTypesSeed do
     Logger.info("Inserindo registros na tabela sys_pages_types...", module: __MODULE__)
 
     try do
-      Repo.execute("INSERT OR REPLACE INTO sys_pages_types (id, title, template, order) VALUES (?, ?, ?, ?)", [1, "_sys_page_type_default", "", 1])
-    Repo.execute("INSERT OR REPLACE INTO sys_pages_types (id, title, template, order) VALUES (?, ?, ?, ?)", [2, "_sys_page_type_wo_hf", "pt_wo_hf.html", 2])
-    Repo.execute("INSERT OR REPLACE INTO sys_pages_types (id, title, template, order) VALUES (?, ?, ?, ?)", [3, "_sys_page_type_standard", "pt_standard.html", 3])
-    Repo.execute("INSERT OR REPLACE INTO sys_pages_types (id, title, template, order) VALUES (?, ?, ?, ?)", [4, "_sys_page_type_application", "pt_application.html", 4])
+      Repo.execute("INSERT OR REPLACE INTO sys_pages_types (id, title, template, 'order') VALUES (?, ?, ?, ?)", [1, "_sys_page_type_default", "", 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_pages_types (id, title, template, 'order') VALUES (?, ?, ?, ?)", [2, "_sys_page_type_wo_hf", "pt_wo_hf.html", 2])
+    Repo.execute("INSERT OR REPLACE INTO sys_pages_types (id, title, template, 'order') VALUES (?, ?, ?, ?)", [3, "_sys_page_type_standard", "pt_standard.html", 3])
+    Repo.execute("INSERT OR REPLACE INTO sys_pages_types (id, title, template, 'order') VALUES (?, ?, ?, ?)", [4, "_sys_page_type_application", "pt_application.html", 4])
       Logger.info("Registros inseridos com sucesso na tabela sys_pages_types!", module: __MODULE__)
     rescue
       error ->

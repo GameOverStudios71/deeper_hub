@@ -16,8 +16,8 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysStdRolesSeed do
     Logger.info("Inserindo registros na tabela sys_std_roles...", module: __MODULE__)
 
     try do
-      Repo.execute("INSERT OR REPLACE INTO sys_std_roles (id, name, title, description, active, order) VALUES (?, ?, ?, ?, ?, ?)", [1, "master", "_adm_rl_txt_role_master", "_adm_rl_txt_role_master_dsc", 1, 1])
-    Repo.execute("INSERT OR REPLACE INTO sys_std_roles (id, name, title, description, active, order) VALUES (?, ?, ?, ?, ?, ?)", [2, "operator", "_adm_rl_txt_role_operator", "_adm_rl_txt_role_operator_dsc", 1, 2])
+      Repo.execute("INSERT OR REPLACE INTO sys_std_roles (id, name, title, description, active, 'order') VALUES (?, ?, ?, ?, ?, ?)", [1, "master", "_adm_rl_txt_role_master", "_adm_rl_txt_role_master_dsc", 1, 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_roles (id, name, title, description, active, 'order') VALUES (?, ?, ?, ?, ?, ?)", [2, "operator", "_adm_rl_txt_role_operator", "_adm_rl_txt_role_operator_dsc", 1, 2])
       Logger.info("Registros inseridos com sucesso na tabela sys_std_roles!", module: __MODULE__)
     rescue
       error ->

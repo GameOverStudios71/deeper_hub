@@ -361,9 +361,10 @@ def gerar_create_table_sql(tabela, campos, relacoes=None, chaves_primarias=None,
             "where", "with", "without"
         ]
         
-        # Se for palavra reservada, colocar entre aspas duplas
+        # Se for palavra reservada, usar aspas simples para escapar
         if nome_campo.lower() in palavras_reservadas:
-            nome_campo_formatado = f'"{nome_campo}"'
+            nome_campo_formatado = f"'{nome_campo}'"
+            print(f"    AVISO: Coluna '{nome_campo}' é palavra reservada. Usando escape: '{nome_campo}'")
         else:
             nome_campo_formatado = nome_campo
             
@@ -382,7 +383,7 @@ def gerar_create_table_sql(tabela, campos, relacoes=None, chaves_primarias=None,
             pk_colunas_formatadas = []
             for pk_col_nome in chaves_primarias:
                 if pk_col_nome.lower() in palavras_reservadas:
-                    pk_colunas_formatadas.append(f'"{pk_col_nome}"')
+                    pk_colunas_formatadas.append(f"'{pk_col_nome}'")
                 else:
                     pk_colunas_formatadas.append(pk_col_nome)
             colunas.append(f"  PRIMARY KEY ({', '.join(pk_colunas_formatadas)})")
@@ -429,7 +430,7 @@ def gerar_create_table_sql(tabela, campos, relacoes=None, chaves_primarias=None,
             colunas_unique_formatadas = []
             for col_nome in colunas_unique:
                 if col_nome.lower() in palavras_reservadas:
-                    colunas_unique_formatadas.append(f'"{col_nome}"')
+                    colunas_unique_formatadas.append(f"'{col_nome}'")
                 else:
                     colunas_unique_formatadas.append(col_nome)
 
@@ -534,26 +535,55 @@ def criar_router(tabelas):
     except PermissionError:
         print(f"Aviso: Não foi possível criar o router - arquivo em uso ou sem permissão")
 
+
+
 # Função para gerar seeds das tabelas
 def criar_seeds(conexao, tabela):
     print(f"Gerando seeds para a tabela: {tabela}")
-    
+
     # Diretório para os seeds
     seeds_dir = os.path.join("../../lib", "deeper_hub", "core", "data", "migrations", "seeds")
-    
+
     # Verificar se a tabela tem dados
-    cursor = conexao.cursor() 
+    cursor = conexao.cursor()
     cursor.execute(f"SELECT COUNT(*) FROM {tabela}")
     count = cursor.fetchone()[0]
-    
+
     if count == 0:
         print(f"Tabela {tabela} não possui registros. Seed não gerado.")
         return
-    
+
     # Obter dados da tabela
     cursor.execute(f"SELECT * FROM {tabela}")
     registros = cursor.fetchall()
-    colunas = [desc[0] for desc in cursor.description]
+    colunas_originais = [desc[0] for desc in cursor.description]
+
+    # Lista de palavras reservadas (mesma usada na criação da tabela)
+    palavras_reservadas = [
+        "abort", "action", "add", "after", "all", "alter", "analyze", "and", "as", "asc",
+        "attach", "autoincrement", "before", "begin", "between", "by", "cascade", "case", "cast",
+        "check", "collate", "column", "commit", "conflict", "constraint", "create", "cross",
+        "current", "current_date", "current_time", "current_timestamp", "database", "default",
+        "deferrable", "deferred", "delete", "desc", "detach", "distinct", "drop", "each",
+        "else", "end", "escape", "except", "exclusive", "exists", "explain", "fail", "for",
+        "foreign", "from", "full", "glob", "group", "having", "if", "ignore", "immediate",
+        "in", "index", "indexed", "initially", "inner", "insert", "instead", "intersect", "into",
+        "is", "isnull", "join", "key", "left", "like", "limit", "match", "natural", "no", "not",
+        "notnull", "null", "of", "offset", "on", "or", "order", "outer", "plan", "pragma",
+        "primary", "query", "raise", "recursive", "references", "regexp", "reindex", "release",
+        "rename", "replace", "restrict", "right", "rollback", "row", "savepoint", "select",
+        "set", "table", "temp", "temporary", "then", "to", "transaction", "trigger", "type",
+        "union", "unique", "update", "using", "vacuum", "values", "view", "virtual", "when",
+        "where", "with", "without"
+    ]
+
+    # Aplicar escape nas colunas para o INSERT (usar aspas simples para evitar conflito com strings Elixir)
+    colunas_escapadas = []
+    for col in colunas_originais:
+        if col.lower() in palavras_reservadas:
+            colunas_escapadas.append(f"'{col}'")
+        else:
+            colunas_escapadas.append(col)
     
     # Obter informações sobre os campos
     cursor.execute(f"SHOW COLUMNS FROM {tabela}")
@@ -577,7 +607,7 @@ def criar_seeds(conexao, tabela):
     for registro in registros:
         valores = []
         for i, valor in enumerate(registro):
-            coluna = colunas[i]
+            coluna = colunas_originais[i]
             tipo = tipo_colunas.get(coluna, '')
             
             if valor is None:
@@ -606,7 +636,7 @@ def criar_seeds(conexao, tabela):
         
         valores_str = ", ".join(valores)
         placeholders = ", ".join(["?" for _ in valores])
-        insert = f"""Repo.execute("INSERT OR REPLACE INTO {tabela} ({', '.join(colunas)}) VALUES ({placeholders})", [{valores_str}])"""
+        insert = f"""Repo.execute("INSERT OR REPLACE INTO {tabela} ({', '.join(colunas_escapadas)}) VALUES ({placeholders})", [{valores_str}])"""
         inserts.append(insert)
     
     inserts_str = "\n    ".join(inserts)

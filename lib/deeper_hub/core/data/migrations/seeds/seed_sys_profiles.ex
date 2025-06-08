@@ -16,8 +16,8 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysProfilesSeed do
     Logger.info("Inserindo registros na tabela sys_profiles...", module: __MODULE__)
 
     try do
-      Repo.execute("INSERT OR REPLACE INTO sys_profiles (id, account_id, type, content_id, cfw_value, cfw_items, cfu_items, cfu_locked, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, 1, "system", 1, 2147483647, 2147483647, 2147483647, 0, "active"])
-    Repo.execute("INSERT OR REPLACE INTO sys_profiles (id, account_id, type, content_id, cfw_value, cfw_items, cfu_items, cfu_locked, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [2, 2, "system", 2, 2147483647, 2147483647, 2147483647, 0, "active"])
+      Repo.execute("INSERT OR REPLACE INTO sys_profiles (id, account_id, 'type', content_id, cfw_value, cfw_items, cfu_items, cfu_locked, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, 1, "system", 1, 2147483647, 2147483647, 2147483647, 0, "active"])
+    Repo.execute("INSERT OR REPLACE INTO sys_profiles (id, account_id, 'type', content_id, cfw_value, cfw_items, cfu_items, cfu_locked, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [2, 2, "system", 2, 2147483647, 2147483647, 2147483647, 0, "active"])
       Logger.info("Registros inseridos com sucesso na tabela sys_profiles!", module: __MODULE__)
     rescue
       error ->

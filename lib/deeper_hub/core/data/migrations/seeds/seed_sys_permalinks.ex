@@ -16,9 +16,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysPermalinksSeed do
     Logger.info("Inserindo registros na tabela sys_permalinks...", module: __MODULE__)
 
     try do
-      Repo.execute("INSERT OR REPLACE INTO sys_permalinks (id, standard, permalink, check, compare_by_prefix) VALUES (?, ?, ?, ?, ?)", [1, "page.php?i=", "page/", "permalinks_pages", 1])
-    Repo.execute("INSERT OR REPLACE INTO sys_permalinks (id, standard, permalink, check, compare_by_prefix) VALUES (?, ?, ?, ?, ?)", [2, "modules/?r=", "m/", "permalinks_modules", 1])
-    Repo.execute("INSERT OR REPLACE INTO sys_permalinks (id, standard, permalink, check, compare_by_prefix) VALUES (?, ?, ?, ?, ?)", [3, "storage.php?o=", "s/", "permalinks_storage", 1])
+      Repo.execute("INSERT OR REPLACE INTO sys_permalinks (id, standard, permalink, 'check', compare_by_prefix) VALUES (?, ?, ?, ?, ?)", [1, "page.php?i=", "page/", "permalinks_pages", 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_permalinks (id, standard, permalink, 'check', compare_by_prefix) VALUES (?, ?, ?, ?, ?)", [2, "modules/?r=", "m/", "permalinks_modules", 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_permalinks (id, standard, permalink, 'check', compare_by_prefix) VALUES (?, ?, ?, ?, ?)", [3, "storage.php?o=", "s/", "permalinks_storage", 1])
       Logger.info("Registros inseridos com sucesso na tabela sys_permalinks!", module: __MODULE__)
     rescue
       error ->
