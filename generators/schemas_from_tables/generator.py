@@ -45,19 +45,75 @@ def obter_chave_primaria(conexao, tabela):
 def obter_relacoes(conexao):
     cursor = conexao.cursor()
     cursor.execute("""
-    SELECT 
-        TABLE_NAME, 
-        COLUMN_NAME, 
-        REFERENCED_TABLE_NAME, 
-        REFERENCED_COLUMN_NAME 
-    FROM 
-        INFORMATION_SCHEMA.KEY_COLUMN_USAGE 
-    WHERE 
-        REFERENCED_TABLE_SCHEMA = DATABASE() 
+    SELECT
+        TABLE_NAME,
+        COLUMN_NAME,
+        REFERENCED_TABLE_NAME,
+        REFERENCED_COLUMN_NAME
+    FROM
+        INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+    WHERE
+        REFERENCED_TABLE_SCHEMA = DATABASE()
         AND REFERENCED_TABLE_NAME IS NOT NULL
     """)
     relacoes = cursor.fetchall()
     return relacoes
+
+# Função para obter constraints UNIQUE de uma tabela
+def obter_constraints_unique(conexao, tabela):
+    """
+    Obtém as constraints UNIQUE de uma tabela no MySQL.
+    Retorna uma lista de tuplas (constraint_name, [colunas]).
+    """
+    if not conexao:
+        print(f"Aviso: Conexão não disponível para obter constraints UNIQUE da tabela {tabela}.")
+        return []
+
+    cursor = None
+    try:
+        cursor = conexao.cursor()
+        # Buscar constraints UNIQUE usando INFORMATION_SCHEMA
+        query = """
+        SELECT
+            tc.CONSTRAINT_NAME,
+            GROUP_CONCAT(kcu.COLUMN_NAME ORDER BY kcu.ORDINAL_POSITION) as COLUMNS
+        FROM
+            INFORMATION_SCHEMA.TABLE_CONSTRAINTS tc
+        JOIN
+            INFORMATION_SCHEMA.KEY_COLUMN_USAGE kcu
+            ON tc.CONSTRAINT_NAME = kcu.CONSTRAINT_NAME
+            AND tc.TABLE_SCHEMA = kcu.TABLE_SCHEMA
+            AND tc.TABLE_NAME = kcu.TABLE_NAME
+        WHERE
+            tc.TABLE_SCHEMA = DATABASE()
+            AND tc.TABLE_NAME = %s
+            AND tc.CONSTRAINT_TYPE = 'UNIQUE'
+        GROUP BY
+            tc.CONSTRAINT_NAME
+        ORDER BY
+            tc.CONSTRAINT_NAME
+        """
+        cursor.execute(query, (tabela,))
+        constraints = cursor.fetchall()
+
+        if not constraints:
+            return []
+
+        # Processar resultados para retornar lista de tuplas (nome_constraint, [colunas])
+        unique_constraints = []
+        for constraint in constraints:
+            constraint_name = constraint[0]
+            columns_str = constraint[1]
+            columns_list = [col.strip() for col in columns_str.split(',')]
+            unique_constraints.append((constraint_name, columns_list))
+
+        return unique_constraints
+    except Exception as e:
+        print(f"Erro ao obter constraints UNIQUE para {tabela}: {e}")
+        return []
+    finally:
+        if cursor:
+            cursor.close()
 
 # Função para limpar diretórios de migrations e schemas
 def limpar_diretorios():
@@ -194,42 +250,45 @@ def criar_migration(tabela, campos, relacoes=None, conexao=None):
     base_output_path = os.path.join("../../lib", "deeper_hub", "core", "data", "migrations")
     if not os.path.exists(base_output_path):
         os.makedirs(base_output_path)
-    
+
     # Obter informações sobre a chave primária da tabela
     chaves_primarias = None
+    constraints_unique = None
     if conexao:
         chaves_primarias = obter_chave_primaria(conexao, tabela)
+        constraints_unique = obter_constraints_unique(conexao, tabela)
         print(f"Chaves primárias para {tabela}: {chaves_primarias}")
-    
+        print(f"Constraints UNIQUE para {tabela}: {constraints_unique}")
+
     # Converter nome da tabela para formato de módulo Elixir (CamelCase)
     modulo_nome = ''.join(word.capitalize() for word in tabela.split('_'))
-    
+
     # Caminho do arquivo de migration
     # Adicionando milissegundos ao timestamp para evitar nomes duplicados
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")[:17]  # Pegando apenas os 3 primeiros dígitos dos milissegundos
     arquivo_path = os.path.join(base_output_path, f"{timestamp}_{tabela}.ex")
-    
+
     # Gerar SQL para criar a tabela
-    sql_create_table = gerar_create_table_sql(tabela, campos, relacoes, chaves_primarias)
-    
+    sql_create_table = gerar_create_table_sql(tabela, campos, relacoes, chaves_primarias, constraints_unique)
+
     # Adicionar indentação correta para o heredoc em Elixir
     # Cada linha deve ter 4 espaços de indentação para alinhar com as aspas triplas de fechamento
     sql_indentado = "    " + sql_create_table.replace("\n", "\n    ")
-    
+
     # Ler o template de migration
     template_path = "migration_template.md"
     template = ler_template(template_path)
-    
+
     # Preparar as substituições
     substituicoes = {
         "MODULE_NAME": modulo_nome,
         "TABLE_NAME": tabela,
         "CREATE_TABLE_SQL": sql_indentado.replace("`", "")
     }
-    
+
     # Substituir os placeholders
     conteudo = substituir_placeholders(template, substituicoes)
-    
+
     try:
         with open(arquivo_path, 'w', encoding='utf-8') as arquivo:
             arquivo.write(conteudo)
@@ -238,7 +297,7 @@ def criar_migration(tabela, campos, relacoes=None, conexao=None):
         print(f"Aviso: Não foi possível criar a migration para {tabela} - arquivo em uso ou sem permissão")
 
 # Função para gerar SQL para criar tabela
-def gerar_create_table_sql(tabela, campos, relacoes=None, chaves_primarias=None):
+def gerar_create_table_sql(tabela, campos, relacoes=None, chaves_primarias=None, constraints_unique=None):
     # Iniciar o SQL para criar a tabela
     sql = f"CREATE TABLE IF NOT EXISTS {tabela} (\n"
     
@@ -363,6 +422,22 @@ def gerar_create_table_sql(tabela, campos, relacoes=None, chaves_primarias=None)
                         print(f"AVISO: Tabela {tabela} não tem colunas de ID identificáveis. Usando 'id' como padrão.")
                         print("Isso pode causar erros se a coluna 'id' não existir na tabela.")
     
+    # Adicionar constraints UNIQUE se existirem
+    if constraints_unique:
+        for constraint_name, colunas_unique in constraints_unique:
+            # Formatar nomes das colunas para SQLite (tratar palavras reservadas)
+            colunas_unique_formatadas = []
+            for col_nome in colunas_unique:
+                if col_nome.lower() in palavras_reservadas:
+                    colunas_unique_formatadas.append(f'"{col_nome}"')
+                else:
+                    colunas_unique_formatadas.append(col_nome)
+
+            # Adicionar constraint UNIQUE
+            unique_constraint = f"  UNIQUE ({', '.join(colunas_unique_formatadas)})"
+            colunas.append(unique_constraint)
+            print(f"    Adicionando constraint UNIQUE: {constraint_name} ({', '.join(colunas_unique)})")
+
     # Adicionar chaves estrangeiras se existirem
     if relacoes:
         for relacao in relacoes:
@@ -370,16 +445,16 @@ def gerar_create_table_sql(tabela, campos, relacoes=None, chaves_primarias=None)
             coluna_origem = relacao[1]
             tabela_referencia = relacao[2]
             coluna_referencia = relacao[3]
-            
+
             if tabela_origem == tabela:
                 # SQLite usa uma sintaxe mais simples para chaves estrangeiras
                 foreign_key = f"  FOREIGN KEY ({coluna_origem}) REFERENCES {tabela_referencia}({coluna_referencia})"
                 colunas.append(foreign_key)
-    
+
     # Finalizar o SQL
     sql += ",\n".join(colunas)
     sql += "\n);"
-    
+
     return sql
 
 # Função para criar resource para uma tabela específica usando templates
@@ -531,7 +606,7 @@ def criar_seeds(conexao, tabela):
         
         valores_str = ", ".join(valores)
         placeholders = ", ".join(["?" for _ in valores])
-        insert = f"""Repo.execute("INSERT INTO {tabela} ({', '.join(colunas)}) VALUES ({placeholders})", [{valores_str}])"""
+        insert = f"""Repo.execute("INSERT OR REPLACE INTO {tabela} ({', '.join(colunas)}) VALUES ({placeholders})", [{valores_str}])"""
         inserts.append(insert)
     
     inserts_str = "\n    ".join(inserts)
