@@ -42,6 +42,7 @@ defmodule DeeperHub.Core.Data.Migrations.MigrationRegistry do
       {"20250608000027", DeeperHub.Core.Data.Migrations.CreateSysObjectsContentInfoTable},
       {"20250608000028", DeeperHub.Core.Data.Migrations.CreateSysStdWidgetsTable},
       {"20250608000029", DeeperHub.Core.Data.Migrations.CreateSysStdPagesWidgetsTable},
+      {"20250608000030", DeeperHub.Core.Data.Migrations.CreateSysStdWidgetsBookmarksTable}
     ]
   end
 
