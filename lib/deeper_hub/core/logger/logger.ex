@@ -7,10 +7,74 @@ defmodule DeeperHub.Core.Logger do
 
   Este módulo implementa macros para cada nível de log (:debug, :info, :warning, :error, :critical)
   que capturam automaticamente o módulo chamador e aplicam formatação consistente.
+
+  ## Funcionalidades de Arquivo de Log
+
+  - Logs de nível :error e :critical são automaticamente gravados em arquivos no diretório "logs/"
+  - Arquivos são nomeados no formato "error_YYYY-MM-DD.log"
+  - O diretório de logs é criado automaticamente se não existir
+  - Função de limpeza automática de logs antigos disponível
+
+  ## Exemplos
+
+      # Logs básicos (aparecem no console)
+      Logger.info("Sistema iniciado")
+      Logger.warning("Configuração não encontrada")
+
+      # Logs de erro (aparecem no console E são gravados em arquivo)
+      Logger.error("Falha na conexão com banco de dados")
+      Logger.critical("Sistema em estado crítico")
+
+      # Limpeza de logs antigos (manter apenas últimos 30 dias)
+      DeeperHub.Core.Logger.cleanup_old_logs(30)
   """
 
   require Logger
   import IO.ANSI
+
+  @logs_dir "logs"
+
+  @doc """
+  Limpa arquivos de log mais antigos que o número especificado de dias.
+  """
+  @spec cleanup_old_logs(integer()) :: :ok
+  def cleanup_old_logs(days_to_keep \\ 30) do
+    ensure_logs_directory()
+
+    cutoff_date = Date.utc_today() |> Date.add(-days_to_keep)
+
+    case File.ls(@logs_dir) do
+      {:ok, files} ->
+        files
+        |> Enum.filter(&String.starts_with?(&1, "error_"))
+        |> Enum.filter(&String.ends_with?(&1, ".log"))
+        |> Enum.each(fn filename ->
+          # Extrair data do nome do arquivo (formato: error_YYYY-MM-DD.log)
+          case Regex.run(~r/error_(\d{4}-\d{2}-\d{2})\.log/, filename) do
+            [_, date_str] ->
+              case Date.from_iso8601(date_str) do
+                {:ok, file_date} ->
+                  if Date.compare(file_date, cutoff_date) == :lt do
+                    filepath = Path.join(@logs_dir, filename)
+                    File.rm(filepath)
+                    IO.puts("[LOGGER] Removido log antigo: #{filename}")
+                  end
+                {:error, _} -> :ok
+              end
+            _ -> :ok
+          end
+        end)
+      {:error, _} -> :ok
+    end
+
+    :ok
+  end
+
+  @doc """
+  Retorna o caminho do diretório de logs.
+  """
+  @spec logs_directory() :: String.t()
+  def logs_directory, do: @logs_dir
 
   @doc """
   Registra uma mensagem de log no nível :debug.
@@ -172,6 +236,12 @@ defmodule DeeperHub.Core.Logger do
         ]
 
         IO.puts(log_parts)
+
+        # Gravar erros e críticos em arquivo
+        if effective_level in [:error, :critical] do
+          formatted_message = formatar_conteudo_mensagem(message_content)
+          write_error_to_file(timestamp, module_name_str, formatted_message)
+        end
       end
 
       :ok
@@ -186,5 +256,58 @@ defmodule DeeperHub.Core.Logger do
   @spec formatar_conteudo_mensagem(any()) :: String.t()
   defp formatar_conteudo_mensagem(message) when is_binary(message), do: message
   defp formatar_conteudo_mensagem(message), do: inspect(message, pretty: true, limit: 5000)
+
+  @doc false
+  @spec ensure_logs_directory() :: :ok
+  defp ensure_logs_directory do
+    case File.mkdir_p(@logs_dir) do
+      :ok -> :ok
+      {:error, reason} ->
+        IO.puts("[LOGGER ERROR] Falha ao criar diretório de logs: #{inspect(reason)}")
+        :ok
+    end
+  end
+
+  @doc false
+  @spec write_error_to_file(String.t(), String.t(), String.t()) :: :ok
+  defp write_error_to_file(timestamp, module_name, message) do
+    ensure_logs_directory()
+
+    date = Date.utc_today() |> Date.to_string()
+    filename = "error_#{date}.log"
+    filepath = Path.join(@logs_dir, filename)
+
+    log_entry = "#{timestamp} [#{module_name}] #{message}\n"
+
+    case File.write(filepath, log_entry, [:append, :utf8]) do
+      :ok -> :ok
+      {:error, reason} ->
+        IO.puts("[LOGGER ERROR] Falha ao escrever no arquivo de log: #{inspect(reason)}")
+        :ok
+    end
+  end
+
+  @doc """
+  Função de teste para demonstrar o sistema de logging com gravação em arquivo.
+  Esta função gera logs de diferentes níveis para testar a funcionalidade.
+  """
+  @spec test_logging() :: :ok
+  def test_logging do
+    IO.puts("=== Testando Sistema de Logging ===")
+
+    # Logs que aparecem apenas no console
+    debug("Mensagem de debug - apenas console", test: true)
+    info("Sistema de logging inicializado", test: true)
+    warning("Este é um aviso de teste", test: true)
+
+    # Logs que aparecem no console E são gravados em arquivo
+    error("Erro de teste - será gravado em arquivo", test: true)
+    critical("Erro crítico de teste - será gravado em arquivo", test: true)
+
+    IO.puts("=== Teste concluído ===")
+    IO.puts("Verifique o diretório 'logs/' para ver os arquivos de erro gerados.")
+
+    :ok
+  end
 end
 # </file>
