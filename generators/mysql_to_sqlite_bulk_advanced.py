@@ -4,7 +4,6 @@ import mysql.connector
 import time
 from datetime import datetime
 import re
-import argparse
 
 def criar_diretorio_se_nao_existir(caminho):
     """Cria um diretório se ele não existir."""
@@ -384,11 +383,7 @@ def migrar_dados_em_lote(conexao_mysql, conexao_sqlite, tabela, estrutura, taman
     return registros_migrados, erros_count, erro_mensagem
 
 def main():
-    parser = argparse.ArgumentParser(description="Migra tabelas de MySQL para SQLite.")
-    parser.add_argument('--table', type=str, help='Nome da tabela específica para migrar. Se não fornecido, todas as tabelas são migradas.')
-    args = parser.parse_args()
-
-    # Configurações do banco de dados MySQL (ORIGEM)
+    # Configurações de conexão MySQL
     config_mysql = {
         'host': 'localhost',
         'user': 'root',
@@ -397,7 +392,7 @@ def main():
     }
     
     # Caminho do banco SQLite
-    sqlite_db_path = os.path.join("databases", "deeper_hub_dev.db")
+    sqlite_db_path = os.path.join("..", "priv", "data", "deeper_hub.db")
     
     # Garantir que o diretório existe
     os.makedirs(os.path.dirname(sqlite_db_path), exist_ok=True)
@@ -414,49 +409,9 @@ def main():
         conexao_sqlite = sqlite3.connect(sqlite_db_path)
         print("Conectado ao SQLite com sucesso")
         
-        # Determinar tabelas a migrar (todas ou uma específica)
-        if args.table:
-            # Verificar se a tabela especificada existe no MySQL
-            cursor_check_table_exists = conexao_mysql.cursor()
-            # Usar placeholders para evitar injeção de SQL, embora SHOW TABLES LIKE seja geralmente seguro
-            cursor_check_table_exists.execute("SHOW TABLES LIKE %s", (args.table,))
-            if cursor_check_table_exists.fetchone():
-                tabelas_a_migrar = [args.table]
-                print(f"Alvo da migração: Tabela específica '{args.table}'")
-            else:
-                print(f"Erro: Tabela '{args.table}' não encontrada no banco de dados MySQL '{MYSQL_DATABASE}'. Saindo.")
-                if conexao_mysql.is_connected():
-                    conexao_mysql.close()
-                if 'conexao_sqlite' in locals() and conexao_sqlite: # conexao_sqlite pode não ter sido criada ainda
-                    try:
-                        conexao_sqlite.close()
-                        print("Conexão SQLite fechada devido a erro.")
-                    except Exception as e_close_sqlite_err:
-                        print(f"Erro ao fechar conexão SQLite: {e_close_sqlite_err}")
-                cursor_check_table_exists.close() # Fechar cursor antes de retornar
-                return
-            cursor_check_table_exists.close()
-        else:
-            print("Alvo da migração: Todas as tabelas.")
-            tabelas_a_migrar = obter_tabelas_mysql(conexao_mysql)
-
-        total_tabelas = len(tabelas_a_migrar) # Agora se refere a tabelas_a_migrar
-
-        if total_tabelas == 0:
-            if args.table:
-                # Este caso já foi tratado acima (tabela não encontrada)
-                # A lógica anterior já deveria ter retornado.
-                print(f"Nenhuma tabela encontrada para migrar (especificada: {args.table}). Verifique o nome da tabela.")
-            else:
-                print("Nenhuma tabela encontrada no banco de dados MySQL para migrar. Saindo.")
-            
-            if conexao_mysql.is_connected():
-               conexao_mysql.close()
-            if 'conexao_sqlite' in locals() and conexao_sqlite:
-               conexao_sqlite.close()
-            return
-        else:
-            print(f"Total de tabelas a serem processadas: {total_tabelas}")
+        # Obter todas as tabelas do MySQL
+        tabelas = obter_tabelas_mysql(conexao_mysql)
+        print(f"Encontradas {len(tabelas)} tabelas no MySQL")
         
         # Estatísticas
         total_tabelas = len(tabelas)
@@ -467,7 +422,7 @@ def main():
         erros_mensagens = {}  # Armazenar mensagens de erro por tabela
         
         # Migrar cada tabela
-        for tabela in tabelas_a_migrar:
+        for tabela in tabelas:
             try:
                 tabelas_processadas += 1
                 print(f"\nProcessando tabela {tabelas_processadas}/{total_tabelas}: {tabela}")
