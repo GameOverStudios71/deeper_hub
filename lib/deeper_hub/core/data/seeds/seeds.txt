@@ -1,0 +1,4 @@
+# Lista de todos os seeds
+seeds = [
+    DeeperHub.Core.Data.Seeds.SeedSysStdPages,
+]

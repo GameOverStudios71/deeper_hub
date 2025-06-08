@@ -48,21 +48,18 @@ def criar_seeds(conexao, tabela):
     cursor.execute(f"SELECT * FROM {tabela}")
     dados = cursor.fetchall()
     colunas = [desc[0] for desc in cursor.description]
-    
+
     if not dados:
+        print(f"Tabela {tabela} está vazia. Seed não será criado.")
         return
-    
-    # Converter os dados para um formato que possa ser usado no Elixir
+
     linhas = []
     for registro in dados:
         campos = []
         for i, valor in enumerate(registro):
-            coluna = colunas[i]
-            # Converter valores para o formato Elixir
             if valor is None:
                 campos.append("nil")
             elif isinstance(valor, (datetime, date)):
-                # Converter para o formato ~N[yyyy-mm-dd hh:mm:ss]
                 campos.append(f"~N[{valor.strftime('%Y-%m-%d %H:%M:%S')}]")
             elif isinstance(valor, str):
                 campos.append(f"\"{valor.replace('\"', '\\\"')}\"")
@@ -72,7 +69,7 @@ def criar_seeds(conexao, tabela):
                 campos.append(str(valor))
             else:
                 campos.append(f"\"{str(valor).replace('\"', '\\\"')}\"")
-        linha = "%{}" if not campos else "%{ " + ", ".join(f"{coluna}: {valor}" for coluna, valor in zip(colunas, campos)) + " }"
+        linha = "[]" if not campos else "[" + ", ".join(campos) + "]"
         linhas.append(linha)
     
     # Gerar o conteúdo do arquivo de seed
@@ -81,10 +78,11 @@ def criar_seeds(conexao, tabela):
   Executa o seed para a tabela {tabela}.
   \"\"\"
   def run do
-    # Inserir dados para {tabela}
-    [
+    data = [
       {',\n      '.join(linhas)}
     ]
+    
+    data
   end
 end"""
     
@@ -111,42 +109,20 @@ def criar_seed_manager(tabelas_com_seed):
     modulos_seed = [f"DeeperHub.Core.Data.Seeds.Seed{tabela.title().replace('_', '')}" for tabela in tabelas_com_seed]
     lista_seeds = "\n    ".join([f"{modulo}," for modulo in modulos_seed])
 
-    conteudo = f"""defmodule DeeperHub.Core.Data.Seeds.SeedsRegistry do
-  @moduledoc \"\"\"
-  Gerenciador de seeds para o banco de dados.
-  Executa todos os seeds em sequência.
-  \"\"\"
-
-  @doc \"\"\"
-  Executa todos os seeds.
-  \"\"\"
-  def run do
-    IO.puts("Iniciando execução de todos os seeds...")
-
-    # Lista de todos os seeds
-    seeds = [
+    conteudo = f"""# Lista de todos os seeds
+seeds = [
     {lista_seeds}
-    ]
-
-    # Executar cada seed
-    Enum.each(seeds, fn seed ->
-      IO.puts("\\nExecutando seed: \\#{{seed}}")
-      seed.run()
-    end)
-
-    IO.puts("\\nTodos os seeds foram executados com sucesso!")
-  end
-end"""
+]"""
     
     # Escrever o arquivo
     seeds_dir = os.path.join("../lib", "deeper_hub", "core", "data", "seeds")
-    manager_path = os.path.join(seeds_dir, "seeds_registry.ex")
+    manager_path = os.path.join(seeds_dir, "seeds.txt")
     try:
         with open(manager_path, 'w', encoding='utf-8') as arquivo:
             arquivo.write(conteudo)
-        print(f"Gerenciador de seeds criado: {manager_path}")
+        print(f"Lista de seeds criada: {manager_path}")
     except Exception as e:
-        print(f"Erro ao criar gerenciador de seeds {manager_path}: {e}")
+        print(f"Erro ao criar lista de seeds {manager_path}: {e}")
 
 if __name__ == "__main__":
     import argparse
