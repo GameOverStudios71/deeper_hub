@@ -78,9 +78,24 @@ def criar_seeds(conexao, tabela):
   Executa o seed para a tabela {tabela}.
   \"\"\"
   def run do
+    require DeeperHub.Core.Logger
     data = [
       {',\n      '.join(linhas)}
     ]
+    
+    table_name = \"{tabela}\"
+    columns = { "[" + ", ".join([f'\"{c}\"' for c in colunas]) + "]" }
+    placeholders = Enum.map(1..length(columns), fn _i -> \"?\" end) |> Enum.join(\", \")
+    sql = \"INSERT INTO #{{table_name}} (#{{Enum.join(columns, \", \")}}) VALUES (#{{placeholders}})\"
+    
+    Enum.each(data, fn record ->
+      case DeeperHub.Core.Data.Repo.execute(sql, record) do
+        {{ :ok, result }} ->
+          DeeperHub.Core.Logger.info(\"Registro inserido com sucesso na tabela #{{table_name}}: #{{inspect(result)}}\")
+        {{ :error, reason }} ->
+          DeeperHub.Core.Logger.warning(\"Erro ao inserir registro na tabela #{{table_name}}: #{{inspect(reason)}}\", [])
+      end
+    end)
     
     data
   end

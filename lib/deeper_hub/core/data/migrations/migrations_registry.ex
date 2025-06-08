@@ -50,7 +50,31 @@ defmodule DeeperHub.Core.Data.Migrations.MigrationRegistry do
   """
   def available_seeds do
     [
-      DeeperHub.Core.Data.Seeds.SeedSysStdPages
+      DeeperHub.Core.Data.Seeds.SeedSysContentInfoGrids,
+      DeeperHub.Core.Data.Seeds.SeedSysFormDisplays,
+      DeeperHub.Core.Data.Seeds.SeedSysFormDisplayInputs,
+      DeeperHub.Core.Data.Seeds.SeedSysFormInputs,
+      DeeperHub.Core.Data.Seeds.SeedSysGridActions,
+      DeeperHub.Core.Data.Seeds.SeedSysGridFields,
+      DeeperHub.Core.Data.Seeds.SeedSysMenuItems,
+      DeeperHub.Core.Data.Seeds.SeedSysMenuSets,
+      DeeperHub.Core.Data.Seeds.SeedSysMenuTemplates,
+      DeeperHub.Core.Data.Seeds.SeedSysObjectsContentInfo,
+      DeeperHub.Core.Data.Seeds.SeedSysObjectsForm,
+      DeeperHub.Core.Data.Seeds.SeedSysObjectsGrid,
+      DeeperHub.Core.Data.Seeds.SeedSysObjectsMenu,
+      DeeperHub.Core.Data.Seeds.SeedSysObjectsPage,
+      DeeperHub.Core.Data.Seeds.SeedSysObjectsView,
+      DeeperHub.Core.Data.Seeds.SeedSysPagesBlocks,
+      DeeperHub.Core.Data.Seeds.SeedSysPagesContentPlaceholders,
+      DeeperHub.Core.Data.Seeds.SeedSysPagesLayouts,
+      DeeperHub.Core.Data.Seeds.SeedSysPagesTypes,
+      DeeperHub.Core.Data.Seeds.SeedSysPermalinks,
+      DeeperHub.Core.Data.Seeds.SeedSysRewriteRules,
+      DeeperHub.Core.Data.Seeds.SeedSysSeoLinks,
+      DeeperHub.Core.Data.Seeds.SeedSysStdPages,
+      DeeperHub.Core.Data.Seeds.SeedSysStdPagesWidgets,
+      DeeperHub.Core.Data.Seeds.SeedSysStdWidgets,
     ]
   end
 
@@ -79,59 +103,18 @@ defmodule DeeperHub.Core.Data.Migrations.MigrationRegistry do
           Logger.debug("Dados já são mapas", module: __MODULE__)
           data
         end
-        
-        try do
-          # Tentar usar DeeperHub.DBConnectionPool diretamente
-          Logger.debug("Tentando inserir dados com DeeperHub.DBConnectionPool", module: __MODULE__)
-          if function_exported?(DeeperHub.DBConnectionPool, :insert_all, 3) do
-            DeeperHub.DBConnectionPool.insert_all(table_name, transformed_data, on_conflict: :nothing)
-            Logger.info("Dados inseridos na tabela #{table_name} com DeeperHub.DBConnectionPool", module: __MODULE__)
-          else
-            Logger.warning("Função insert_all/3 não disponível em DeeperHub.DBConnectionPool", module: __MODULE__)
-            raise "Função não disponível"
-          end
-        rescue
-          e ->
-            Logger.error("Erro ao inserir dados com DeeperHub.DBConnectionPool: #{inspect(e)}", module: __MODULE__)
-            try do
-              # Tentar usar DeeperHub.Repo diretamente
-              Logger.debug("Tentando inserir dados com DeeperHub.Repo.insert_all/3", module: __MODULE__)
-              DeeperHub.Repo.insert_all(table_name, transformed_data, on_conflict: :nothing)
-              Logger.info("Dados inseridos na tabela #{table_name} com DeeperHub.Repo", module: __MODULE__)
-            rescue
-              e2 ->
-                Logger.error("Erro ao inserir dados com DeeperHub.Repo.insert_all/3: #{inspect(e2)}", module: __MODULE__)
-                try do
-                  # Tentar obter repo do ambiente
-                  Logger.debug("Tentando obter repo do ambiente", module: __MODULE__)
-                  repo = Application.get_env(:deeper_hub, DeeperHub.Repo)
-                  Logger.debug("Repo obtido: #{inspect(repo)}", module: __MODULE__)
-                  repo.insert_all(table_name, transformed_data, on_conflict: :nothing)
-                  Logger.info("Dados inseridos na tabela #{table_name} com repo do ambiente", module: __MODULE__)
-                rescue
-                  e3 ->
-                    Logger.error("Erro ao inserir dados com repo do ambiente: #{inspect(e3)}", module: __MODULE__)
-                    try do
-                      # Tentar usar uma função genérica de inserção
-                      Logger.debug("Tentando inserir dados com função genérica Repo.insert_all/3", module: __MODULE__)
-                      Repo.insert_all(table_name, transformed_data, on_conflict: :nothing)
-                      Logger.info("Dados inseridos na tabela #{table_name} com Repo genérico", module: __MODULE__)
-                    rescue
-                      e4 ->
-                        Logger.error("Erro ao inserir dados com Repo genérico: #{inspect(e4)}", module: __MODULE__)
-                        try do
-                          # Tentar um método SQL direto ou outra abordagem
-                          Logger.debug("Tentando inserir dados com método alternativo", module: __MODULE__)
-                          insert_alternative(table_name, transformed_data)
-                          Logger.info("Dados inseridos na tabela #{table_name} com método alternativo", module: __MODULE__)
-                        rescue
-                          e5 ->
-                            Logger.error("Erro ao inserir dados com método alternativo: #{inspect(e5)}", module: __MODULE__)
-                            Logger.warning("Nenhum método de inserção funcionou. Dados não inseridos para #{table_name}", module: __MODULE__)
-                        end
-                    end
-                end
-            end
+
+        insertion_result = try_insert_with_pool(table_name, transformed_data) ||
+                          try_insert_with_repo(table_name, transformed_data) ||
+                          try_insert_with_env_repo(table_name, transformed_data) ||
+                          try_insert_with_generic_repo(table_name, transformed_data) ||
+                          try_insert_dynamic_db_module(table_name, transformed_data) ||
+                          try_insert_alternative(table_name, transformed_data)
+
+        case insertion_result do
+          {:success, method} -> Logger.info("Inserção bem-sucedida usando #{method} para tabela #{table_name}", module: __MODULE__)
+          {:error, :all_failed} -> Logger.error("Falha na inserção de dados para #{table_name}. Nenhum método funcionou.", module: __MODULE__)
+          {:error, reason} -> Logger.debug("Tentativa falhou por: #{reason}", module: __MODULE__)
         end
       else
         Logger.info("Nenhum dado para inserir na tabela #{table_name}", module: __MODULE__)
@@ -139,6 +122,180 @@ defmodule DeeperHub.Core.Data.Migrations.MigrationRegistry do
     end)
 
     Logger.info("Seeds executados com sucesso.", module: __MODULE__)
+    :ok
+  end
+
+  defp try_insert_with_pool(table_name, data) do
+    try do
+      # Verificar se o módulo existe antes de chamar
+      if Code.ensure_loaded?(DeeperHub.DBConnectionPool) and function_exported?(DeeperHub.DBConnectionPool, :insert_all, 3) do
+        Logger.debug("Tentando inserir dados com DeeperHub.DBConnectionPool", module: __MODULE__)
+        DeeperHub.DBConnectionPool.insert_all(table_name, data, on_conflict: :nothing)
+        {:success, :db_connection_pool}
+      else
+        {:error, :module_not_loaded_or_function_not_available}
+      end
+    rescue
+      _e -> {:error, :pool_failed}
+    end
+  end
+
+  defp try_insert_with_repo(table_name, data) do
+    try do
+      if Code.ensure_loaded?(DeeperHub.Repo) and function_exported?(DeeperHub.Repo, :insert_all, 3) do
+        Logger.debug("Tentando inserir dados com DeeperHub.Repo", module: __MODULE__)
+        DeeperHub.Repo.insert_all(table_name, data, on_conflict: :nothing)
+        {:success, :repo}
+      else
+        {:error, :repo_not_loaded_or_function_not_available}
+      end
+    rescue
+      _e -> {:error, :repo_failed}
+    end
+  end
+
+  defp try_insert_with_env_repo(table_name, data) do
+    try do
+      Logger.debug("Tentando obter repo do ambiente", module: __MODULE__)
+      repo = Application.get_env(:deeper_hub, DeeperHub.Repo)
+      Logger.debug("Repo obtido: #{inspect(repo)}", module: __MODULE__)
+      if repo && function_exported?(repo, :insert_all, 3) do
+        repo.insert_all(table_name, data, on_conflict: :nothing)
+        {:success, :env_repo}
+      else
+        {:error, :env_repo_not_available_or_function_not_available}
+      end
+    rescue
+      _e -> {:error, :env_repo_failed}
+    end
+  end
+
+  defp try_insert_with_generic_repo(table_name, data) do
+    try do
+      if Code.ensure_loaded?(DeeperHub.Core.Data.Repo) and function_exported?(DeeperHub.Core.Data.Repo, :insert_all, 3) do
+        Logger.debug("Tentando inserir dados com DeeperHub.Core.Data.Repo", module: __MODULE__)
+        DeeperHub.Core.Data.Repo.insert_all(table_name, data, on_conflict: :nothing)
+        {:success, :generic_repo}
+      else
+        {:error, :deeper_hub_repo_not_loaded_or_function_not_available}
+      end
+    rescue
+      _e -> {:error, :deeper_hub_repo_failed}
+    end
+  end
+
+  defp try_insert_dynamic_db_module(table_name, data) do
+    try do
+      Logger.debug("Tentando encontrar um módulo de banco de dados dinamicamente", module: __MODULE__)
+      # Tentar encontrar um módulo de banco de dados disponível
+      possible_modules = [
+        DeeperHub.Core.Data.Repo,
+        DeeperHub.Core.Repo,
+        DeeperHub.Data.Repo,
+        DeeperHub.DB,
+        DeeperHub.Database
+      ]
+
+      result = Enum.find_value(possible_modules, {:error, :no_module_found}, fn mod ->
+        if Code.ensure_loaded?(mod) do
+          Logger.debug("Módulo #{inspect(mod)} encontrado, verificando funções", module: __MODULE__)
+          cond do
+            function_exported?(mod, :insert_all, 3) ->
+              Logger.debug("Tentando insert_all/3 com #{inspect(mod)}", module: __MODULE__)
+              mod.insert_all(table_name, data, on_conflict: :nothing)
+              {:success, "dynamic_#{inspect(mod)}"}
+            function_exported?(mod, :insert, 2) ->
+              Logger.debug("Tentando insert/2 com #{inspect(mod)}", module: __MODULE__)
+              Enum.each(data, fn record ->
+                mod.insert(table_name, record)
+              end)
+              {:success, "dynamic_insert_#{inspect(mod)}"}
+            function_exported?(mod, :execute, 2) or function_exported?(mod, :execute, 3) ->
+              Logger.debug("Tentando execute/2 ou execute/3 com #{inspect(mod)} para inserção manual", module: __MODULE__)
+              insert_manual(mod, table_name, data)
+              {:success, "dynamic_execute_#{inspect(mod)}"}
+            function_exported?(mod, :query, 1) or function_exported?(mod, :query, 2) ->
+              Logger.debug("Tentando query/1 ou query/2 com #{inspect(mod)} para inserção manual", module: __MODULE__)
+              insert_manual(mod, table_name, data)
+              {:success, "dynamic_query_#{inspect(mod)}"}
+            true ->
+              {:error, :no_suitable_function}
+          end
+        else
+          {:error, :module_not_loaded}
+        end
+      end)
+
+      # Tentar usar DeeperHub.Core.Data.Crud.create/2 se disponível
+      if result == {:error, :no_module_found} do
+        try_crud_create(table_name, data)
+      else
+        result
+      end
+    rescue
+      _e ->
+        Logger.debug("Falha ao tentar módulo de banco de dados dinâmico", module: __MODULE__)
+        try_crud_create(table_name, data)
+    end
+  end
+
+  defp try_crud_create(table_name, data) do
+    try do
+      if Code.ensure_loaded?(DeeperHub.Core.Data.Crud) and function_exported?(DeeperHub.Core.Data.Crud, :create, 2) do
+        Logger.debug("Tentando usar DeeperHub.Core.Data.Crud.create/2 para inserção", module: __MODULE__)
+        Enum.each(data, fn record ->
+          DeeperHub.Core.Data.Crud.create(table_name, record)
+        end)
+        {:success, :crud_create}
+      else
+        {:error, :crud_module_not_loaded_or_function_not_available}
+      end
+    rescue
+      _e ->
+        Logger.debug("Falha ao tentar DeeperHub.Core.Data.Crud.create/2", module: __MODULE__)
+        {:error, :crud_create_failed}
+    end
+  end
+
+  defp try_insert_alternative(table_name, data) do
+    try do
+      Logger.debug("Tentando inserir dados com método alternativo", module: __MODULE__)
+      # Verificando se existe um módulo de banco de dados genérico ou conexão direta
+      result = insert_alternative(table_name, data)
+      if result == :ok do
+        {:success, :alternative}
+      else
+        {:error, :alternative_failed}
+      end
+    rescue
+      _e ->
+        Logger.debug("Método alternativo falhou", module: __MODULE__)
+        {:error, :all_failed}
+    end
+  end
+
+  defp insert_manual(db_module, table_name, data) do
+    # Tentar construir uma query de inserção manual
+    Enum.each(data, fn record ->
+      fields = Map.keys(record)
+      values = Map.values(record)
+      fields_str = Enum.join(fields, ", ")
+      placeholders = Enum.map(1..length(values), fn i -> "?#{i}" end) |> Enum.join(", ")
+      query = "INSERT INTO #{table_name} (#{fields_str}) VALUES (#{placeholders})"
+      Logger.debug("Executando query manual: #{query}", module: __MODULE__)
+
+      # Tentar usar execute/3 ou execute/2
+      cond do
+        function_exported?(db_module, :execute, 3) ->
+          db_module.execute(query, values, [])
+        function_exported?(db_module, :execute, 2) ->
+          db_module.execute(query, values)
+        function_exported?(db_module, :query, 2) ->
+          db_module.query(query, values)
+        true ->
+          db_module.query(query)
+      end
+    end)
     :ok
   end
 

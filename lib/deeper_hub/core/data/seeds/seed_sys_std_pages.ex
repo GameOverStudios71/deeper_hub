@@ -3,6 +3,7 @@ defmodule DeeperHub.Core.Data.Seeds.SeedSysStdPages do
   Executa o seed para a tabela sys_std_pages.
   """
   def run do
+    require DeeperHub.Core.Logger
     data = [
       [1, 3, "home", "_adm_page_cpt_home", "_adm_page_cpt_home", "bc-home.svg"],
       [2, 4, "dashboard", "_adm_page_cpt_dashboard", "_adm_page_cpt_dashboard", "wi-dashboard.svg"],
@@ -25,6 +26,20 @@ defmodule DeeperHub.Core.Data.Seeds.SeedSysStdPages do
       [19, 3, "bx_persons", "_bx_persons", "_bx_persons", "bx_persons@modules/boonex/persons/|std-icon.svg"],
       [20, 3, "bx_profiler", "_bx_profiler", "_bx_profiler", "bx_profiler@modules/boonex/profiler/|std-icon.svg"]
     ]
+    
+    table_name = "sys_std_pages"
+    columns = ["id", "index", "name", "header", "caption", "icon"]
+    placeholders = Enum.map(1..length(columns), fn _i -> "?" end) |> Enum.join(", ")
+    sql = "INSERT INTO #{table_name} (#{Enum.join(columns, ", ")}) VALUES (#{placeholders})"
+    
+    Enum.each(data, fn record ->
+      case DeeperHub.Core.Data.Repo.execute(sql, record) do
+        { :ok, result } ->
+          DeeperHub.Core.Logger.info("Registro inserido com sucesso na tabela #{table_name}: #{inspect(result)}")
+        { :error, reason } ->
+          DeeperHub.Core.Logger.warning("Erro ao inserir registro na tabela #{table_name}: #{inspect(reason)}", [])
+      end
+    end)
     
     data
   end
