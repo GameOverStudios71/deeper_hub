@@ -2,21 +2,29 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysKeysSeed do
   @moduledoc """
   Seed para a tabela sys_keys.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
+  Inclui sistema de controle para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
+  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
+  @seed_name "sys_keys_seed"
+
   @doc """
-  Insere os registros na tabela.
-  Usa INSERT OR REPLACE para evitar erros de UNIQUE CONSTRAINT.
+  Executa o seed com controle de execução.
+  Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    Logger.info("Inserindo registros na tabela sys_keys...", module: __MODULE__)
+    if SeedRegistry.seed_executed?(@seed_name) do
+      Logger.info("Seed para sys_keys já foi executado anteriormente. Pulando...", module: __MODULE__)
+      :already_executed
+    else
+      Logger.info("Executando seed para a tabela sys_keys...", module: __MODULE__)
 
-    try do
-      Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["ee2634e0a58569840c68f8431afe989e", "", 1749465885, "Zj?G+?qi5qGbWynUYNge9TN+pjWs?eyz"])
+      try do
+        Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["ee2634e0a58569840c68f8431afe989e", "", 1749465885, "Zj?G+?qi5qGbWynUYNge9TN+pjWs?eyz"])
     Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["5c31503eb5398d9a77363427fd573a01", "", 1749465901, "Zj?G+?qi5qGbWynUYNge9TN+pjWs?eyz"])
     Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["220d863ec83d857240d99b7f3cf69546", "", 1749465931, "Zj?G+?qi5qGbWynUYNge9TN+pjWs?eyz"])
     Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["4b14f32b93ca0fac8030e5214edd995c", "", 1749465909, "Zj?G+?qi5qGbWynUYNge9TN+pjWs?eyz"])
@@ -28,12 +36,27 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysKeysSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["b9331e3865a4d5a0e03dd3af157bfa0b", "", 1749465955, "Zj?G+?qi5qGbWynUYNge9TN+pjWs?eyz"])
     Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["95b03df2090fea2c7fbb5f308c30e96e", "", 1749467006, "Zj?G+?qi5qGbWynUYNge9TN+pjWs?eyz"])
     Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["dc25e40aa860f0a4ff13777dd448be4d", "", 1749467006, "Zj?G+?qi5qGbWynUYNge9TN+pjWs?eyz"])
-      Logger.info("Registros inseridos com sucesso na tabela sys_keys!", module: __MODULE__)
-    rescue
-      error ->
-        Logger.error("Erro ao inserir registros na tabela sys_keys: #{inspect(error)}", module: __MODULE__)
-        reraise error, __STACKTRACE__
+
+        # Marcar como executado com sucesso
+        SeedRegistry.mark_seed_executed(@seed_name)
+        Logger.info("Seed para sys_keys executado com sucesso!", module: __MODULE__)
+        :ok
+      rescue
+        error ->
+          error_message = "#{Exception.message(error)}"
+          SeedRegistry.mark_seed_failed(@seed_name, error_message)
+          Logger.error("Erro ao executar seed para sys_keys: #{error_message}", module: __MODULE__)
+          {:error, error}
+      end
     end
+  end
+
+  @doc """
+  Força a re-execução do seed removendo o registro de execução.
+  """
+  def reset do
+    Logger.info("Resetando seed para sys_keys...", module: __MODULE__)
+    SeedRegistry.reset_seed(@seed_name)
   end
 
   @doc """
@@ -44,4 +67,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysKeysSeed do
     Repo.execute("DELETE FROM sys_keys")
     Logger.info("Tabela sys_keys limpa com sucesso.", module: __MODULE__)
   end
+
+  @doc """
+  Retorna o nome do seed para controle.
+  """
+  def seed_name, do: @seed_name
 end

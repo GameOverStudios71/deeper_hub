@@ -2,21 +2,29 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysMenuItemsSeed do
   @moduledoc """
   Seed para a tabela sys_menu_items.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
+  Inclui sistema de controle para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
+  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
+  @seed_name "sys_menu_items_seed"
+
   @doc """
-  Insere os registros na tabela.
-  Usa INSERT OR REPLACE para evitar erros de UNIQUE CONSTRAINT.
+  Executa o seed com controle de execução.
+  Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    Logger.info("Inserindo registros na tabela sys_menu_items...", module: __MODULE__)
+    if SeedRegistry.seed_executed?(@seed_name) do
+      Logger.info("Seed para sys_menu_items já foi executado anteriormente. Pulando...", module: __MODULE__)
+      :already_executed
+    else
+      Logger.info("Executando seed para a tabela sys_menu_items...", module: __MODULE__)
 
-    try do
-      Repo.execute("INSERT OR REPLACE INTO sys_menu_items (id, parent_id, set_name, module, name, title_system, title, title_attr, link, onclick, target, area_label, icon, icon_only, addon, addon_cache, markers, submenu_object, submenu_popup, visible_for_levels, visibility_custom, hidden_on, hidden_on_cxt, hidden_on_pt, hidden_on_col, config_api, 'primary', collapsed, active, active_api, copyable, editable, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, 0, "sys_site", "system", "home", "_sys_menu_item_title_system_home", "_sys_menu_item_title_home", "", "", "", "", "", "home col-gray", 0, "", 0, "", "", 0, 2147483647, "", "", "", 0, 0, "", 0, 0, 1, 0, 1, 1, 1])
+      try do
+        Repo.execute("INSERT OR REPLACE INTO sys_menu_items (id, parent_id, set_name, module, name, title_system, title, title_attr, link, onclick, target, area_label, icon, icon_only, addon, addon_cache, markers, submenu_object, submenu_popup, visible_for_levels, visibility_custom, hidden_on, hidden_on_cxt, hidden_on_pt, hidden_on_col, config_api, 'primary', collapsed, active, active_api, copyable, editable, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, 0, "sys_site", "system", "home", "_sys_menu_item_title_system_home", "_sys_menu_item_title_home", "", "", "", "", "", "home col-gray", 0, "", 0, "", "", 0, 2147483647, "", "", "", 0, 0, "", 0, 0, 1, 0, 1, 1, 1])
     Repo.execute("INSERT OR REPLACE INTO sys_menu_items (id, parent_id, set_name, module, name, title_system, title, title_attr, link, onclick, target, area_label, icon, icon_only, addon, addon_cache, markers, submenu_object, submenu_popup, visible_for_levels, visibility_custom, hidden_on, hidden_on_cxt, hidden_on_pt, hidden_on_col, config_api, 'primary', collapsed, active, active_api, copyable, editable, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [2, 0, "sys_site", "system", "about", "_sys_menu_item_title_system_about", "_sys_menu_item_title_about", "", "page.php?i=about", "", "", "", "info-circle col-blue3-dark", 0, "", 0, "", "", 0, 2147483647, "", "", "", 0, 0, "", 0, 0, 1, 0, 1, 1, 2])
     Repo.execute("INSERT OR REPLACE INTO sys_menu_items (id, parent_id, set_name, module, name, title_system, title, title_attr, link, onclick, target, area_label, icon, icon_only, addon, addon_cache, markers, submenu_object, submenu_popup, visible_for_levels, visibility_custom, hidden_on, hidden_on_cxt, hidden_on_pt, hidden_on_col, config_api, 'primary', collapsed, active, active_api, copyable, editable, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [3, 0, "sys_site", "system", "search", "_sys_menu_item_title_system_search", "_sys_menu_item_title_search", "", "javascript:void(0);", "bx_menu_slide_inline('#bx-sliding-menu-search', this, 'site');", "", "", "search", 0, "", 0, "", "", 0, 2147483647, "", "", "", 0, 0, "", 0, 0, 1, 0, 1, 1, 3])
     Repo.execute("INSERT OR REPLACE INTO sys_menu_items (id, parent_id, set_name, module, name, title_system, title, title_attr, link, onclick, target, area_label, icon, icon_only, addon, addon_cache, markers, submenu_object, submenu_popup, visible_for_levels, visibility_custom, hidden_on, hidden_on_cxt, hidden_on_pt, hidden_on_col, config_api, 'primary', collapsed, active, active_api, copyable, editable, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [4, 0, "sys_site", "system", "more-auto", "_sys_menu_item_title_system_more_auto", "_sys_menu_item_title_more_auto", "", "javascript:void(0)", "", "", "", "ellipsis-v", 0, "", 0, "", "", 0, 2147483647, "", "", "", 0, 0, "", 0, 0, 1, 0, 0, 1, 9999])
@@ -206,12 +214,27 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysMenuItemsSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_menu_items (id, parent_id, set_name, module, name, title_system, title, title_attr, link, onclick, target, area_label, icon, icon_only, addon, addon_cache, markers, submenu_object, submenu_popup, visible_for_levels, visibility_custom, hidden_on, hidden_on_cxt, hidden_on_pt, hidden_on_col, config_api, 'primary', collapsed, active, active_api, copyable, editable, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [188, 0, "bx_persons_menu_manage_tools", "bx_persons", "manage-cf", "_bx_persons_menu_item_title_system_manage_cf", "_bx_persons_menu_item_title_manage_cf", "", "javascript:void(0)", "javascript:{js_object}.onClickManageCf({content_id});", "_self", "", "filter", 0, "", 0, "", "", 0, 2147483647, "", "", "", 0, 0, "", 0, 0, 1, 0, 0, 1, 6])
     Repo.execute("INSERT OR REPLACE INTO sys_menu_items (id, parent_id, set_name, module, name, title_system, title, title_attr, link, onclick, target, area_label, icon, icon_only, addon, addon_cache, markers, submenu_object, submenu_popup, visible_for_levels, visibility_custom, hidden_on, hidden_on_cxt, hidden_on_pt, hidden_on_col, config_api, 'primary', collapsed, active, active_api, copyable, editable, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [189, 0, "bx_persons_menu_manage_tools", "bx_persons", "delete-with-content", "_bx_persons_menu_item_title_system_delete_with_content", "_bx_persons_menu_item_title_delete_with_content", "", "javascript:void(0)", "javascript:{js_object}.onClickDeleteWithContent({content_id});", "_self", "", "far trash-alt", 0, "", 0, "", "", 0, 2147483647, "", "", "", 0, 0, "", 0, 0, 1, 0, 0, 1, 99])
     Repo.execute("INSERT OR REPLACE INTO sys_menu_items (id, parent_id, set_name, module, name, title_system, title, title_attr, link, onclick, target, area_label, icon, icon_only, addon, addon_cache, markers, submenu_object, submenu_popup, visible_for_levels, visibility_custom, hidden_on, hidden_on_cxt, hidden_on_pt, hidden_on_col, config_api, 'primary', collapsed, active, active_api, copyable, editable, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [190, 0, "sys_account_dashboard_manage_tools", "bx_persons", "persons-administration", "_bx_persons_menu_item_title_system_admt_persons", "_bx_persons_menu_item_title_admt_persons", "", "page.php?i=persons-administration", "", "_self", "", "user", 0, "a:2:{s:6:\"module\";s:10:\"bx_persons\";s:6:\"method\";s:27:\"get_menu_addon_manage_tools\";}", 0, "", "", 0, 192, "", "", "", 0, 0, "", 0, 0, 1, 0, 0, 1, 3])
-      Logger.info("Registros inseridos com sucesso na tabela sys_menu_items!", module: __MODULE__)
-    rescue
-      error ->
-        Logger.error("Erro ao inserir registros na tabela sys_menu_items: #{inspect(error)}", module: __MODULE__)
-        reraise error, __STACKTRACE__
+
+        # Marcar como executado com sucesso
+        SeedRegistry.mark_seed_executed(@seed_name)
+        Logger.info("Seed para sys_menu_items executado com sucesso!", module: __MODULE__)
+        :ok
+      rescue
+        error ->
+          error_message = "#{Exception.message(error)}"
+          SeedRegistry.mark_seed_failed(@seed_name, error_message)
+          Logger.error("Erro ao executar seed para sys_menu_items: #{error_message}", module: __MODULE__)
+          {:error, error}
+      end
     end
+  end
+
+  @doc """
+  Força a re-execução do seed removendo o registro de execução.
+  """
+  def reset do
+    Logger.info("Resetando seed para sys_menu_items...", module: __MODULE__)
+    SeedRegistry.reset_seed(@seed_name)
   end
 
   @doc """
@@ -222,4 +245,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysMenuItemsSeed do
     Repo.execute("DELETE FROM sys_menu_items")
     Logger.info("Tabela sys_menu_items limpa com sucesso.", module: __MODULE__)
   end
+
+  @doc """
+  Retorna o nome do seed para controle.
+  """
+  def seed_name, do: @seed_name
 end

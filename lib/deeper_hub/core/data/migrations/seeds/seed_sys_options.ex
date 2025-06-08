@@ -2,21 +2,29 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysOptionsSeed do
   @moduledoc """
   Seed para a tabela sys_options.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
+  Inclui sistema de controle para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
+  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
+  @seed_name "sys_options_seed"
+
   @doc """
-  Insere os registros na tabela.
-  Usa INSERT OR REPLACE para evitar erros de UNIQUE CONSTRAINT.
+  Executa o seed com controle de execução.
+  Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    Logger.info("Inserindo registros na tabela sys_options...", module: __MODULE__)
+    if SeedRegistry.seed_executed?(@seed_name) do
+      Logger.info("Seed para sys_options já foi executado anteriormente. Pulando...", module: __MODULE__)
+      :already_executed
+    else
+      Logger.info("Executando seed para a tabela sys_options...", module: __MODULE__)
 
-    try do
-      Repo.execute("INSERT OR REPLACE INTO sys_options (id, category_id, name, caption, info, value, 'type', extra, 'check', check_params, check_error, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, 1, "sys_cron_time", "_adm_stg_cpt_option_sys_cron_time", "", "0", "digit", "", "", "", "", 2])
+      try do
+        Repo.execute("INSERT OR REPLACE INTO sys_options (id, category_id, name, caption, info, value, 'type', extra, 'check', check_params, check_error, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, 1, "sys_cron_time", "_adm_stg_cpt_option_sys_cron_time", "", "0", "digit", "", "", "", "", 2])
     Repo.execute("INSERT OR REPLACE INTO sys_options (id, category_id, name, caption, info, value, 'type', extra, 'check', check_params, check_error, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [2, 1, "sys_upgrade_channel", "_adm_stg_cpt_option_sys_upgrade_channel", "", "beta", "select", "stable,beta", "", "", "", 4])
     Repo.execute("INSERT OR REPLACE INTO sys_options (id, category_id, name, caption, info, value, 'type', extra, 'check', check_params, check_error, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [3, 1, "sys_revision", "_adm_stg_cpt_option_sys_revision", "", "4", "digit", "", "", "", "", 5])
     Repo.execute("INSERT OR REPLACE INTO sys_options (id, category_id, name, caption, info, value, 'type', extra, 'check', check_params, check_error, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [4, 1, "sys_eq_time", "_adm_stg_cpt_option_sys_eq_time", "", "0", "digit", "", "", "", "", 6])
@@ -515,12 +523,27 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysOptionsSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_options (id, category_id, name, caption, info, value, 'type', extra, 'check', check_params, check_error, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [305, 34, "bx_profiler_long_page_log", "Log long page opens", "", "on", "checkbox", "", "", "", "", 1])
     Repo.execute("INSERT OR REPLACE INTO sys_options (id, category_id, name, caption, info, value, 'type', extra, 'check', check_params, check_error, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [306, 34, "bx_profiler_long_page_time", "Time in seconds of long page open", "", "5", "digit", "", "", "", "", 2])
     Repo.execute("INSERT OR REPLACE INTO sys_options (id, category_id, name, caption, info, value, 'type', extra, 'check', check_params, check_error, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [307, 34, "bx_profiler_long_page_debug", "Log additional debug info with each long page open", "", "on", "checkbox", "", "", "", "", 3])
-      Logger.info("Registros inseridos com sucesso na tabela sys_options!", module: __MODULE__)
-    rescue
-      error ->
-        Logger.error("Erro ao inserir registros na tabela sys_options: #{inspect(error)}", module: __MODULE__)
-        reraise error, __STACKTRACE__
+
+        # Marcar como executado com sucesso
+        SeedRegistry.mark_seed_executed(@seed_name)
+        Logger.info("Seed para sys_options executado com sucesso!", module: __MODULE__)
+        :ok
+      rescue
+        error ->
+          error_message = "#{Exception.message(error)}"
+          SeedRegistry.mark_seed_failed(@seed_name, error_message)
+          Logger.error("Erro ao executar seed para sys_options: #{error_message}", module: __MODULE__)
+          {:error, error}
+      end
     end
+  end
+
+  @doc """
+  Força a re-execução do seed removendo o registro de execução.
+  """
+  def reset do
+    Logger.info("Resetando seed para sys_options...", module: __MODULE__)
+    SeedRegistry.reset_seed(@seed_name)
   end
 
   @doc """
@@ -531,4 +554,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysOptionsSeed do
     Repo.execute("DELETE FROM sys_options")
     Logger.info("Tabela sys_options limpa com sucesso.", module: __MODULE__)
   end
+
+  @doc """
+  Retorna o nome do seed para controle.
+  """
+  def seed_name, do: @seed_name
 end

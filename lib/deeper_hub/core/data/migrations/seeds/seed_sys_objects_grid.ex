@@ -2,21 +2,29 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsGridSeed do
   @moduledoc """
   Seed para a tabela sys_objects_grid.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
+  Inclui sistema de controle para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
+  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
+  @seed_name "sys_objects_grid_seed"
+
   @doc """
-  Insere os registros na tabela.
-  Usa INSERT OR REPLACE para evitar erros de UNIQUE CONSTRAINT.
+  Executa o seed com controle de execução.
+  Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    Logger.info("Inserindo registros na tabela sys_objects_grid...", module: __MODULE__)
+    if SeedRegistry.seed_executed?(@seed_name) do
+      Logger.info("Seed para sys_objects_grid já foi executado anteriormente. Pulando...", module: __MODULE__)
+      :already_executed
+    else
+      Logger.info("Executando seed para a tabela sys_objects_grid...", module: __MODULE__)
 
-    try do
-      Repo.execute("INSERT OR REPLACE INTO sys_objects_grid (id, object, source_type, source, 'table', field_id, field_order, field_active, order_get_field, order_get_dir, paginate_url, paginate_per_page, paginate_simple, paginate_get_start, paginate_get_per_page, filter_fields, filter_fields_translatable, filter_mode, filter_get, sorting_fields, sorting_fields_translatable, visible_for_levels, responsive, show_total_count, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, "sys_studio_lang_keys", "Sql", "SELECT `tlk`.`ID` AS `id`, `tlk`.`Key` AS `key`, `tlc`.`Name` AS `module`, `tls`.`String` AS `string` FROM `sys_localization_keys` AS `tlk` LEFT JOIN `sys_localization_categories` AS `tlc` ON `tlk`.`IDCategory`=`tlc`.`ID` LEFT JOIN `sys_localization_strings` AS `tls` ON `tlk`.`ID`=`tls`.`IDKey` WHERE `tls`.`IDLanguage`='%d'", "sys_localization_keys", "id", "", "", "order_field", "order_dir", "", 20, nil, "start", "", "key,string", "", "like", "filter", "key,module,string", "", 2147483647, 1, 0, "BxTemplStudioPolyglotKeys", ""])
+      try do
+        Repo.execute("INSERT OR REPLACE INTO sys_objects_grid (id, object, source_type, source, 'table', field_id, field_order, field_active, order_get_field, order_get_dir, paginate_url, paginate_per_page, paginate_simple, paginate_get_start, paginate_get_per_page, filter_fields, filter_fields_translatable, filter_mode, filter_get, sorting_fields, sorting_fields_translatable, visible_for_levels, responsive, show_total_count, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, "sys_studio_lang_keys", "Sql", "SELECT `tlk`.`ID` AS `id`, `tlk`.`Key` AS `key`, `tlc`.`Name` AS `module`, `tls`.`String` AS `string` FROM `sys_localization_keys` AS `tlk` LEFT JOIN `sys_localization_categories` AS `tlc` ON `tlk`.`IDCategory`=`tlc`.`ID` LEFT JOIN `sys_localization_strings` AS `tls` ON `tlk`.`ID`=`tls`.`IDKey` WHERE `tls`.`IDLanguage`='%d'", "sys_localization_keys", "id", "", "", "order_field", "order_dir", "", 20, nil, "start", "", "key,string", "", "like", "filter", "key,module,string", "", 2147483647, 1, 0, "BxTemplStudioPolyglotKeys", ""])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_grid (id, object, source_type, source, 'table', field_id, field_order, field_active, order_get_field, order_get_dir, paginate_url, paginate_per_page, paginate_simple, paginate_get_start, paginate_get_per_page, filter_fields, filter_fields_translatable, filter_mode, filter_get, sorting_fields, sorting_fields_translatable, visible_for_levels, responsive, show_total_count, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [2, "sys_studio_lang_etemplates", "Sql", "SELECT * FROM `sys_email_templates` WHERE 1 ", "sys_email_templates", "ID", "", "", "order_field", "order_dir", "", 20, nil, "start", "", "Module", "NameSystem,Subject,Body", "auto", "filter", "Module", "NameSystem", 2147483647, 1, 0, "BxTemplStudioPolyglotEtemplates", ""])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_grid (id, object, source_type, source, 'table', field_id, field_order, field_active, order_get_field, order_get_dir, paginate_url, paginate_per_page, paginate_simple, paginate_get_start, paginate_get_per_page, filter_fields, filter_fields_translatable, filter_mode, filter_get, sorting_fields, sorting_fields_translatable, visible_for_levels, responsive, show_total_count, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [3, "sys_studio_roles", "Sql", "SELECT * FROM `sys_std_roles` WHERE 1 ", "sys_std_roles", "id", "order", "active", "order_field", "order_dir", "", 100, nil, "start", "", "name", "title,description", "auto", "filter", "", "", 2147483647, 1, 0, "BxTemplStudioRolesLevels", ""])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_grid (id, object, source_type, source, 'table', field_id, field_order, field_active, order_get_field, order_get_dir, paginate_url, paginate_per_page, paginate_simple, paginate_get_start, paginate_get_per_page, filter_fields, filter_fields_translatable, filter_mode, filter_get, sorting_fields, sorting_fields_translatable, visible_for_levels, responsive, show_total_count, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [4, "sys_studio_roles_actions", "Sql", "SELECT *, '0' AS `active` FROM `sys_std_roles_actions` WHERE 1 ", "sys_std_roles_actions", "id", "", "active", "order_field", "order_dir", "", 20, nil, "start", "", "name", "title,description", "auto", "filter", "", "", 2147483647, 1, 0, "BxTemplStudioRolesActions", ""])
@@ -60,12 +68,27 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsGridSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_objects_grid (id, object, source_type, source, 'table', field_id, field_order, field_active, order_get_field, order_get_dir, paginate_url, paginate_per_page, paginate_simple, paginate_get_start, paginate_get_per_page, filter_fields, filter_fields_translatable, filter_mode, filter_get, sorting_fields, sorting_fields_translatable, visible_for_levels, responsive, show_total_count, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [42, "sys_studio_agents_providers", "Sql", "SELECT `tp`.*, `tpt`.`title` AS `provider_type` FROM `sys_agents_providers` AS `tp` LEFT JOIN `sys_agents_provider_types` AS `tpt` ON `tp`.`type_id`=`tpt`.`id` WHERE 1 ", "sys_agents_providers", "id", "order", "active", "order_field", "order_dir", "", 100, nil, "start", "", "tp`.`title,tpt`.`name,tpt`.`title", "", "like", "filter", "", "", 2147483647, 1, 0, "BxTemplStudioAgentsProviders", ""])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_grid (id, object, source_type, source, 'table', field_id, field_order, field_active, order_get_field, order_get_dir, paginate_url, paginate_per_page, paginate_simple, paginate_get_start, paginate_get_per_page, filter_fields, filter_fields_translatable, filter_mode, filter_get, sorting_fields, sorting_fields_translatable, visible_for_levels, responsive, show_total_count, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [43, "bx_persons_administration", "Sql", "SELECT `td`.*, `ta`.`email` AS `account`, `ta`.`logged` AS `last_online`, `tp`.`status` AS `status`, `tp`.`id` as `profile_id` FROM `bx_persons_data` AS `td` LEFT JOIN `sys_profiles` AS `tp` ON `td`.`id`=`tp`.`content_id` AND `tp`.`type`='bx_persons' LEFT JOIN `sys_accounts` AS `ta` ON `tp`.`account_id`=`ta`.`id` WHERE 1 ", "bx_persons_data", "id", "last_online", "status", "order_field", "order_dir", "", 20, nil, "start", "", "fullname,email", "", "like", "filter", "reports", "", 192, 1, 0, "BxPersonsGridAdministration", "modules/boonex/persons/classes/BxPersonsGridAdministration.php"])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_grid (id, object, source_type, source, 'table', field_id, field_order, field_active, order_get_field, order_get_dir, paginate_url, paginate_per_page, paginate_simple, paginate_get_start, paginate_get_per_page, filter_fields, filter_fields_translatable, filter_mode, filter_get, sorting_fields, sorting_fields_translatable, visible_for_levels, responsive, show_total_count, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [44, "bx_persons_common", "Sql", "SELECT `td`.*, `ta`.`email` AS `account`, `ta`.`logged` AS `last_online`, `tp`.`status` AS `status` FROM `bx_persons_data` AS `td` LEFT JOIN `sys_profiles` AS `tp` ON `td`.`id`=`tp`.`content_id` AND `tp`.`type`='bx_persons' LEFT JOIN `sys_accounts` AS `ta` ON `tp`.`account_id`=`ta`.`id` WHERE 1 ", "bx_persons_data", "id", "last_online", "status", "order_field", "order_dir", "", 20, nil, "start", "", "fullname", "", "like", "filter", "", "", 2147483647, 1, 0, "BxPersonsGridCommon", "modules/boonex/persons/classes/BxPersonsGridCommon.php"])
-      Logger.info("Registros inseridos com sucesso na tabela sys_objects_grid!", module: __MODULE__)
-    rescue
-      error ->
-        Logger.error("Erro ao inserir registros na tabela sys_objects_grid: #{inspect(error)}", module: __MODULE__)
-        reraise error, __STACKTRACE__
+
+        # Marcar como executado com sucesso
+        SeedRegistry.mark_seed_executed(@seed_name)
+        Logger.info("Seed para sys_objects_grid executado com sucesso!", module: __MODULE__)
+        :ok
+      rescue
+        error ->
+          error_message = "#{Exception.message(error)}"
+          SeedRegistry.mark_seed_failed(@seed_name, error_message)
+          Logger.error("Erro ao executar seed para sys_objects_grid: #{error_message}", module: __MODULE__)
+          {:error, error}
+      end
     end
+  end
+
+  @doc """
+  Força a re-execução do seed removendo o registro de execução.
+  """
+  def reset do
+    Logger.info("Resetando seed para sys_objects_grid...", module: __MODULE__)
+    SeedRegistry.reset_seed(@seed_name)
   end
 
   @doc """
@@ -76,4 +99,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsGridSeed do
     Repo.execute("DELETE FROM sys_objects_grid")
     Logger.info("Tabela sys_objects_grid limpa com sucesso.", module: __MODULE__)
   end
+
+  @doc """
+  Retorna o nome do seed para controle.
+  """
+  def seed_name, do: @seed_name
 end

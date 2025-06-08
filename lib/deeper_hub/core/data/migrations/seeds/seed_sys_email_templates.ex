@@ -2,21 +2,29 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysEmailTemplatesSeed do
   @moduledoc """
   Seed para a tabela sys_email_templates.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
+  Inclui sistema de controle para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
+  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
+  @seed_name "sys_email_templates_seed"
+
   @doc """
-  Insere os registros na tabela.
-  Usa INSERT OR REPLACE para evitar erros de UNIQUE CONSTRAINT.
+  Executa o seed com controle de execução.
+  Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    Logger.info("Inserindo registros na tabela sys_email_templates...", module: __MODULE__)
+    if SeedRegistry.seed_executed?(@seed_name) do
+      Logger.info("Seed para sys_email_templates já foi executado anteriormente. Pulando...", module: __MODULE__)
+      :already_executed
+    else
+      Logger.info("Executando seed para a tabela sys_email_templates...", module: __MODULE__)
 
-    try do
-      Repo.execute("INSERT OR REPLACE INTO sys_email_templates (ID, Module, NameSystem, Name, Subject, Body) VALUES (?, ?, ?, ?, ?, ?)", [1, "system", "_sys_et_txt_name_system_admin_email", "t_AdminEmail", "_sys_et_txt_subject_admin_email", "_sys_et_txt_body_admin_email"])
+      try do
+        Repo.execute("INSERT OR REPLACE INTO sys_email_templates (ID, Module, NameSystem, Name, Subject, Body) VALUES (?, ?, ?, ?, ?, ?)", [1, "system", "_sys_et_txt_name_system_admin_email", "t_AdminEmail", "_sys_et_txt_subject_admin_email", "_sys_et_txt_body_admin_email"])
     Repo.execute("INSERT OR REPLACE INTO sys_email_templates (ID, Module, NameSystem, Name, Subject, Body) VALUES (?, ?, ?, ?, ?, ?)", [2, "system", "_sys_et_txt_name_system_confirmation", "t_Confirmation", "_sys_et_txt_subject_confirmation", "_sys_et_txt_body_confirmation"])
     Repo.execute("INSERT OR REPLACE INTO sys_email_templates (ID, Module, NameSystem, Name, Subject, Body) VALUES (?, ?, ?, ?, ?, ?)", [3, "system", "_sys_et_txt_name_system_forgot", "t_Forgot", "_sys_et_txt_subject_forgot", "_sys_et_txt_body_forgot"])
     Repo.execute("INSERT OR REPLACE INTO sys_email_templates (ID, Module, NameSystem, Name, Subject, Body) VALUES (?, ?, ?, ?, ?, ?)", [4, "system", "_sys_et_txt_name_system_mem_expiration", "t_MemExpiration", "_sys_et_txt_subject_mem_expiration", "_sys_et_txt_body_mem_expiration"])
@@ -40,12 +48,27 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysEmailTemplatesSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_email_templates (ID, Module, NameSystem, Name, Subject, Body) VALUES (?, ?, ?, ?, ?, ?)", [22, "system", "_sys_et_txt_name_account_change_status_suspended", "t_ChangeStatusAccountSuspend", "_sys_et_txt_subject_account_change_status_suspended", "_sys_et_txt_body_account_change_status_suspended"])
     Repo.execute("INSERT OR REPLACE INTO sys_email_templates (ID, Module, NameSystem, Name, Subject, Body) VALUES (?, ?, ?, ?, ?, ?)", [23, "system", "_sys_et_txt_name_manage_approve", "t_ManageApprove", "_sys_et_txt_subject_manage_approve", "_sys_et_txt_body_manage_approve"])
     Repo.execute("INSERT OR REPLACE INTO sys_email_templates (ID, Module, NameSystem, Name, Subject, Body) VALUES (?, ?, ?, ?, ?, ?)", [24, "bx_persons", "_bx_persons_email_friend_request", "bx_persons_friend_request", "_bx_persons_email_friend_request_subject", "_bx_persons_email_friend_request_body"])
-      Logger.info("Registros inseridos com sucesso na tabela sys_email_templates!", module: __MODULE__)
-    rescue
-      error ->
-        Logger.error("Erro ao inserir registros na tabela sys_email_templates: #{inspect(error)}", module: __MODULE__)
-        reraise error, __STACKTRACE__
+
+        # Marcar como executado com sucesso
+        SeedRegistry.mark_seed_executed(@seed_name)
+        Logger.info("Seed para sys_email_templates executado com sucesso!", module: __MODULE__)
+        :ok
+      rescue
+        error ->
+          error_message = "#{Exception.message(error)}"
+          SeedRegistry.mark_seed_failed(@seed_name, error_message)
+          Logger.error("Erro ao executar seed para sys_email_templates: #{error_message}", module: __MODULE__)
+          {:error, error}
+      end
     end
+  end
+
+  @doc """
+  Força a re-execução do seed removendo o registro de execução.
+  """
+  def reset do
+    Logger.info("Resetando seed para sys_email_templates...", module: __MODULE__)
+    SeedRegistry.reset_seed(@seed_name)
   end
 
   @doc """
@@ -56,4 +79,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysEmailTemplatesSeed do
     Repo.execute("DELETE FROM sys_email_templates")
     Logger.info("Tabela sys_email_templates limpa com sucesso.", module: __MODULE__)
   end
+
+  @doc """
+  Retorna o nome do seed para controle.
+  """
+  def seed_name, do: @seed_name
 end

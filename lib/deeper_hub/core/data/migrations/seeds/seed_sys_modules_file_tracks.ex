@@ -2,21 +2,29 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysModulesFileTracksSeed do
   @moduledoc """
   Seed para a tabela sys_modules_file_tracks.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
+  Inclui sistema de controle para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
+  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
+  @seed_name "sys_modules_file_tracks_seed"
+
   @doc """
-  Insere os registros na tabela.
-  Usa INSERT OR REPLACE para evitar erros de UNIQUE CONSTRAINT.
+  Executa o seed com controle de execução.
+  Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    Logger.info("Inserindo registros na tabela sys_modules_file_tracks...", module: __MODULE__)
+    if SeedRegistry.seed_executed?(@seed_name) do
+      Logger.info("Seed para sys_modules_file_tracks já foi executado anteriormente. Pulando...", module: __MODULE__)
+      :already_executed
+    else
+      Logger.info("Executando seed para a tabela sys_modules_file_tracks...", module: __MODULE__)
 
-    try do
-      Repo.execute("INSERT OR REPLACE INTO sys_modules_file_tracks (id, module_id, file, hash) VALUES (?, ?, ?, ?)", [1, 2, "data/langs/system/en.xml", "59e484d925b368ec4c3baf7569f4f51b"])
+      try do
+        Repo.execute("INSERT OR REPLACE INTO sys_modules_file_tracks (id, module_id, file, hash) VALUES (?, ?, ?, ?)", [1, 2, "data/langs/system/en.xml", "59e484d925b368ec4c3baf7569f4f51b"])
     Repo.execute("INSERT OR REPLACE INTO sys_modules_file_tracks (id, module_id, file, hash) VALUES (?, ?, ?, ?)", [2, 2, "template/images/icons/std-icon.svg", "13174038a8def9a0608d5e9aecfd7744"])
     Repo.execute("INSERT OR REPLACE INTO sys_modules_file_tracks (id, module_id, file, hash) VALUES (?, ?, ?, ?)", [3, 3, "classes/BxArtificerAlertsResponse.php", "8ded87de8989c371c53a1dead42fadc2"])
     Repo.execute("INSERT OR REPLACE INTO sys_modules_file_tracks (id, module_id, file, hash) VALUES (?, ?, ?, ?)", [4, 3, "classes/BxArtificerConfig.php", "01084aab48fe3de81cc6cb7903c6e5a0"])
@@ -2308,12 +2316,27 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysModulesFileTracksSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_modules_file_tracks (id, module_id, file, hash) VALUES (?, ?, ?, ?)", [2290, 5, "request.php", "c615666c7d27e53b5e95126ebaac11d3"])
     Repo.execute("INSERT OR REPLACE INTO sys_modules_file_tracks (id, module_id, file, hash) VALUES (?, ?, ?, ?)", [2291, 5, "template/css/profiler.css", "3549f19ed6b05d6e81a9f0145f877004"])
     Repo.execute("INSERT OR REPLACE INTO sys_modules_file_tracks (id, module_id, file, hash) VALUES (?, ?, ?, ?)", [2292, 5, "template/images/icons/std-icon.svg", "ce9edaca95d4f14b41d80a7c26e41ab4"])
-      Logger.info("Registros inseridos com sucesso na tabela sys_modules_file_tracks!", module: __MODULE__)
-    rescue
-      error ->
-        Logger.error("Erro ao inserir registros na tabela sys_modules_file_tracks: #{inspect(error)}", module: __MODULE__)
-        reraise error, __STACKTRACE__
+
+        # Marcar como executado com sucesso
+        SeedRegistry.mark_seed_executed(@seed_name)
+        Logger.info("Seed para sys_modules_file_tracks executado com sucesso!", module: __MODULE__)
+        :ok
+      rescue
+        error ->
+          error_message = "#{Exception.message(error)}"
+          SeedRegistry.mark_seed_failed(@seed_name, error_message)
+          Logger.error("Erro ao executar seed para sys_modules_file_tracks: #{error_message}", module: __MODULE__)
+          {:error, error}
+      end
     end
+  end
+
+  @doc """
+  Força a re-execução do seed removendo o registro de execução.
+  """
+  def reset do
+    Logger.info("Resetando seed para sys_modules_file_tracks...", module: __MODULE__)
+    SeedRegistry.reset_seed(@seed_name)
   end
 
   @doc """
@@ -2324,4 +2347,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysModulesFileTracksSeed do
     Repo.execute("DELETE FROM sys_modules_file_tracks")
     Logger.info("Tabela sys_modules_file_tracks limpa com sucesso.", module: __MODULE__)
   end
+
+  @doc """
+  Retorna o nome do seed para controle.
+  """
+  def seed_name, do: @seed_name
 end

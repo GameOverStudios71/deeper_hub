@@ -2,21 +2,29 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysFormInputsSeed do
   @moduledoc """
   Seed para a tabela sys_form_inputs.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
+  Inclui sistema de controle para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
+  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
+  @seed_name "sys_form_inputs_seed"
+
   @doc """
-  Insere os registros na tabela.
-  Usa INSERT OR REPLACE para evitar erros de UNIQUE CONSTRAINT.
+  Executa o seed com controle de execução.
+  Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    Logger.info("Inserindo registros na tabela sys_form_inputs...", module: __MODULE__)
+    if SeedRegistry.seed_executed?(@seed_name) do
+      Logger.info("Seed para sys_form_inputs já foi executado anteriormente. Pulando...", module: __MODULE__)
+      :already_executed
+    else
+      Logger.info("Executando seed para a tabela sys_form_inputs...", module: __MODULE__)
 
-    try do
-      Repo.execute("INSERT OR REPLACE INTO sys_form_inputs (id, object, module, name, value, 'values', checked, 'type', caption_system, caption, info, help, icon, required, 'unique', collapsed, html, privacy, rateable, attrs, attrs_tr, attrs_wrapper, checker_func, checker_params, checker_error, db_pass, db_params, editable, deletable) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, "sys_login", "system", "role", "1", "", 0, "hidden", "_sys_form_login_input_caption_system_role", "", "", "", "", 0, 0, 0, 0, 0, "", "", "", "", "", "", "", "", "", 0, 0])
+      try do
+        Repo.execute("INSERT OR REPLACE INTO sys_form_inputs (id, object, module, name, value, 'values', checked, 'type', caption_system, caption, info, help, icon, required, 'unique', collapsed, html, privacy, rateable, attrs, attrs_tr, attrs_wrapper, checker_func, checker_params, checker_error, db_pass, db_params, editable, deletable) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, "sys_login", "system", "role", "1", "", 0, "hidden", "_sys_form_login_input_caption_system_role", "", "", "", "", 0, 0, 0, 0, 0, "", "", "", "", "", "", "", "", "", 0, 0])
     Repo.execute("INSERT OR REPLACE INTO sys_form_inputs (id, object, module, name, value, 'values', checked, 'type', caption_system, caption, info, help, icon, required, 'unique', collapsed, html, privacy, rateable, attrs, attrs_tr, attrs_wrapper, checker_func, checker_params, checker_error, db_pass, db_params, editable, deletable) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [2, "sys_login", "system", "relocate", "", "", 0, "hidden", "_sys_form_login_input_caption_system_relocate", "", "", "", "", 0, 0, 0, 0, 0, "", "", "", "", "", "", "", "", "", 0, 0])
     Repo.execute("INSERT OR REPLACE INTO sys_form_inputs (id, object, module, name, value, 'values', checked, 'type', caption_system, caption, info, help, icon, required, 'unique', collapsed, html, privacy, rateable, attrs, attrs_tr, attrs_wrapper, checker_func, checker_params, checker_error, db_pass, db_params, editable, deletable) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [3, "sys_login", "system", "ID", "", "", 0, "text", "_sys_form_login_input_caption_system_id", "_sys_form_login_input_email", "", "", "", 1, 0, 0, 0, 0, "", "", "", "", "", "", "", "", "", 0, 0])
     Repo.execute("INSERT OR REPLACE INTO sys_form_inputs (id, object, module, name, value, 'values', checked, 'type', caption_system, caption, info, help, icon, required, 'unique', collapsed, html, privacy, rateable, attrs, attrs_tr, attrs_wrapper, checker_func, checker_params, checker_error, db_pass, db_params, editable, deletable) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [4, "sys_login", "system", "Password", "", "", 0, "password", "_sys_form_login_input_caption_system_password", "_sys_form_login_input_password", "", "", "", 1, 0, 0, 0, 0, "", "", "", "", "", "", "", "", "", 0, 0])
@@ -180,12 +188,27 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysFormInputsSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_form_inputs (id, object, module, name, value, 'values', checked, 'type', caption_system, caption, info, help, icon, required, 'unique', collapsed, html, privacy, rateable, attrs, attrs_tr, attrs_wrapper, checker_func, checker_params, checker_error, db_pass, db_params, editable, deletable) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [162, "bx_person", "bx_persons", "friends_count", "", "", 0, "text", "_bx_persons_form_profile_input_sys_friends_count", "_bx_persons_form_profile_input_friends_count", "", "", "", 0, 0, 0, 0, 0, "", "", "", "", "", "", "", "", "", 1, 0])
     Repo.execute("INSERT OR REPLACE INTO sys_form_inputs (id, object, module, name, value, 'values', checked, 'type', caption_system, caption, info, help, icon, required, 'unique', collapsed, html, privacy, rateable, attrs, attrs_tr, attrs_wrapper, checker_func, checker_params, checker_error, db_pass, db_params, editable, deletable) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [163, "bx_person", "bx_persons", "followers_count", "", "", 0, "text", "_bx_persons_form_profile_input_sys_followers_count", "_bx_persons_form_profile_input_followers_count", "", "", "", 0, 0, 0, 0, 0, "", "", "", "", "", "", "", "", "", 1, 0])
     Repo.execute("INSERT OR REPLACE INTO sys_form_inputs (id, object, module, name, value, 'values', checked, 'type', caption_system, caption, info, help, icon, required, 'unique', collapsed, html, privacy, rateable, attrs, attrs_tr, attrs_wrapper, checker_func, checker_params, checker_error, db_pass, db_params, editable, deletable) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [164, "bx_person_skills", "bx_persons", "skill_name", "", "", 0, "text", "_bx_persons_skills_form_profile_input_sys_skill_name", "_bx_persons_skills_form_profile_input_skill_name", "", "", "", 1, 0, 0, 0, 0, "", "", "", "", "Avail", "", "_bx_persons_skills_form_profile_input_skill_name_err", "Xss", "", 1, 0])
-      Logger.info("Registros inseridos com sucesso na tabela sys_form_inputs!", module: __MODULE__)
-    rescue
-      error ->
-        Logger.error("Erro ao inserir registros na tabela sys_form_inputs: #{inspect(error)}", module: __MODULE__)
-        reraise error, __STACKTRACE__
+
+        # Marcar como executado com sucesso
+        SeedRegistry.mark_seed_executed(@seed_name)
+        Logger.info("Seed para sys_form_inputs executado com sucesso!", module: __MODULE__)
+        :ok
+      rescue
+        error ->
+          error_message = "#{Exception.message(error)}"
+          SeedRegistry.mark_seed_failed(@seed_name, error_message)
+          Logger.error("Erro ao executar seed para sys_form_inputs: #{error_message}", module: __MODULE__)
+          {:error, error}
+      end
     end
+  end
+
+  @doc """
+  Força a re-execução do seed removendo o registro de execução.
+  """
+  def reset do
+    Logger.info("Resetando seed para sys_form_inputs...", module: __MODULE__)
+    SeedRegistry.reset_seed(@seed_name)
   end
 
   @doc """
@@ -196,4 +219,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysFormInputsSeed do
     Repo.execute("DELETE FROM sys_form_inputs")
     Logger.info("Tabela sys_form_inputs limpa com sucesso.", module: __MODULE__)
   end
+
+  @doc """
+  Retorna o nome do seed para controle.
+  """
+  def seed_name, do: @seed_name
 end

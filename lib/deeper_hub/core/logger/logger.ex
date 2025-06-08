@@ -35,6 +35,25 @@ defmodule DeeperHub.Core.Logger do
   @logs_dir "logs"
 
   @doc """
+  Limpa todos os arquivos de log existentes na inicialização do sistema.
+  """
+  @spec clear_all_logs() :: :ok
+  def clear_all_logs do
+    case File.ls(@logs_dir) do
+      {:ok, files} ->
+        files
+        |> Enum.filter(&String.ends_with?(&1, ".log"))
+        |> Enum.each(fn filename ->
+          filepath = Path.join(@logs_dir, filename)
+          File.rm(filepath)
+        end)
+        IO.puts("[LOGGER] Arquivos de log limpos na inicialização.")
+      {:error, _} -> :ok
+    end
+    :ok
+  end
+
+  @doc """
   Limpa arquivos de log mais antigos que o número especificado de dias.
   """
   @spec cleanup_old_logs(integer()) :: :ok
@@ -277,9 +296,21 @@ defmodule DeeperHub.Core.Logger do
     filename = "error_#{date}.log"
     filepath = Path.join(@logs_dir, filename)
 
-    log_entry = "#{timestamp} [#{module_name}] #{message}\n"
+    # Corrigir caracteres com encoding incorreto
+    clean_message = message
+    |> String.replace("execuÃ§Ã£o", "execucao")
+    |> String.replace("ParÃ¢metros", "Parametros")
+    |> String.replace("Ã§", "c")
+    |> String.replace("Ã£", "a")
+    |> String.replace("Ã¢", "a")
+    |> String.replace("Ã©", "e")
+    |> String.replace("Ã­", "i")
+    |> String.replace("Ã³", "o")
+    |> String.replace("Ãº", "u")
 
-    case File.write(filepath, log_entry, [:append, :utf8]) do
+    log_entry = "#{timestamp} [#{module_name}] #{clean_message}\n"
+
+    case File.write(filepath, log_entry, [:append]) do
       :ok -> :ok
       {:error, reason} ->
         IO.puts("[LOGGER ERROR] Falha ao escrever no arquivo de log: #{inspect(reason)}")

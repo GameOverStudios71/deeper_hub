@@ -2,21 +2,29 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysFormDisplaysSeed do
   @moduledoc """
   Seed para a tabela sys_form_displays.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
+  Inclui sistema de controle para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
+  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
+  @seed_name "sys_form_displays_seed"
+
   @doc """
-  Insere os registros na tabela.
-  Usa INSERT OR REPLACE para evitar erros de UNIQUE CONSTRAINT.
+  Executa o seed com controle de execução.
+  Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    Logger.info("Inserindo registros na tabela sys_form_displays...", module: __MODULE__)
+    if SeedRegistry.seed_executed?(@seed_name) do
+      Logger.info("Seed para sys_form_displays já foi executado anteriormente. Pulando...", module: __MODULE__)
+      :already_executed
+    else
+      Logger.info("Executando seed para a tabela sys_form_displays...", module: __MODULE__)
 
-    try do
-      Repo.execute("INSERT OR REPLACE INTO sys_form_displays (id, display_name, module, object, title, view_mode) VALUES (?, ?, ?, ?, ?, ?)", [1, "sys_login", "system", "sys_login", "_sys_form_display_login", 0])
+      try do
+        Repo.execute("INSERT OR REPLACE INTO sys_form_displays (id, display_name, module, object, title, view_mode) VALUES (?, ?, ?, ?, ?, ?)", [1, "sys_login", "system", "sys_login", "_sys_form_display_login", 0])
     Repo.execute("INSERT OR REPLACE INTO sys_form_displays (id, display_name, module, object, title, view_mode) VALUES (?, ?, ?, ?, ?, ?)", [2, "sys_login_step2", "system", "sys_login", "_sys_form_display_login_step2", 0])
     Repo.execute("INSERT OR REPLACE INTO sys_form_displays (id, display_name, module, object, title, view_mode) VALUES (?, ?, ?, ?, ?, ?)", [3, "sys_login_step3", "system", "sys_login", "_sys_form_display_login_step3", 0])
     Repo.execute("INSERT OR REPLACE INTO sys_form_displays (id, display_name, module, object, title, view_mode) VALUES (?, ?, ?, ?, ?, ?)", [4, "sys_account_create", "system", "sys_account", "_sys_form_display_account_create", 0])
@@ -56,12 +64,27 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysFormDisplaysSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_form_displays (id, display_name, module, object, title, view_mode) VALUES (?, ?, ?, ?, ?, ?)", [38, "bx_person_view_full", "bx_persons", "bx_person", "_bx_persons_form_profile_display_view_full", 1])
     Repo.execute("INSERT OR REPLACE INTO sys_form_displays (id, display_name, module, object, title, view_mode) VALUES (?, ?, ?, ?, ?, ?)", [39, "bx_person_skills", "bx_persons", "bx_person_skills", "_bx_persons_skills_form_profile_display_add", 0])
     Repo.execute("INSERT OR REPLACE INTO sys_form_displays (id, display_name, module, object, title, view_mode) VALUES (?, ?, ?, ?, ?, ?)", [40, "bx_person_skills_view", "bx_persons", "bx_person_skills", "_bx_persons_skills_form_profile_display_view", 1])
-      Logger.info("Registros inseridos com sucesso na tabela sys_form_displays!", module: __MODULE__)
-    rescue
-      error ->
-        Logger.error("Erro ao inserir registros na tabela sys_form_displays: #{inspect(error)}", module: __MODULE__)
-        reraise error, __STACKTRACE__
+
+        # Marcar como executado com sucesso
+        SeedRegistry.mark_seed_executed(@seed_name)
+        Logger.info("Seed para sys_form_displays executado com sucesso!", module: __MODULE__)
+        :ok
+      rescue
+        error ->
+          error_message = "#{Exception.message(error)}"
+          SeedRegistry.mark_seed_failed(@seed_name, error_message)
+          Logger.error("Erro ao executar seed para sys_form_displays: #{error_message}", module: __MODULE__)
+          {:error, error}
+      end
     end
+  end
+
+  @doc """
+  Força a re-execução do seed removendo o registro de execução.
+  """
+  def reset do
+    Logger.info("Resetando seed para sys_form_displays...", module: __MODULE__)
+    SeedRegistry.reset_seed(@seed_name)
   end
 
   @doc """
@@ -72,4 +95,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysFormDisplaysSeed do
     Repo.execute("DELETE FROM sys_form_displays")
     Logger.info("Tabela sys_form_displays limpa com sucesso.", module: __MODULE__)
   end
+
+  @doc """
+  Retorna o nome do seed para controle.
+  """
+  def seed_name, do: @seed_name
 end

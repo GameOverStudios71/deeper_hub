@@ -2,21 +2,29 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysLocalizationStringsSeed do
   @moduledoc """
   Seed para a tabela sys_localization_strings.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
+  Inclui sistema de controle para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
+  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
+  @seed_name "sys_localization_strings_seed"
+
   @doc """
-  Insere os registros na tabela.
-  Usa INSERT OR REPLACE para evitar erros de UNIQUE CONSTRAINT.
+  Executa o seed com controle de execução.
+  Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    Logger.info("Inserindo registros na tabela sys_localization_strings...", module: __MODULE__)
+    if SeedRegistry.seed_executed?(@seed_name) do
+      Logger.info("Seed para sys_localization_strings já foi executado anteriormente. Pulando...", module: __MODULE__)
+      :already_executed
+    else
+      Logger.info("Executando seed para a tabela sys_localization_strings...", module: __MODULE__)
 
-    try do
-      Repo.execute("INSERT OR REPLACE INTO sys_localization_strings (IDKey, IDLanguage, String) VALUES (?, ?, ?)", [1, 1, "Create {0}"])
+      try do
+        Repo.execute("INSERT OR REPLACE INTO sys_localization_strings (IDKey, IDLanguage, String) VALUES (?, ?, ?)", [1, 1, "Create {0}"])
     Repo.execute("INSERT OR REPLACE INTO sys_localization_strings (IDKey, IDLanguage, String) VALUES (?, ?, ?)", [2, 1, "Message was successfully sent."])
     Repo.execute("INSERT OR REPLACE INTO sys_localization_strings (IDKey, IDLanguage, String) VALUES (?, ?, ?)", [3, 1, "You are a full-featured member of our community. You can, however, suspend your profile to become temporarily unavailable for others."])
     Repo.execute("INSERT OR REPLACE INTO sys_localization_strings (IDKey, IDLanguage, String) VALUES (?, ?, ?)", [4, 1, "Your profile activation is in progress. Usually it takes up to 24 hours. Thank you for your patience."])
@@ -4634,12 +4642,27 @@ If it is not enabled then please consider implement this optimization, since it 
     Repo.execute("INSERT OR REPLACE INTO sys_localization_strings (IDKey, IDLanguage, String) VALUES (?, ?, ?)", [4481, 1, "Profiler Administation"])
     Repo.execute("INSERT OR REPLACE INTO sys_localization_strings (IDKey, IDLanguage, String) VALUES (?, ?, ?)", [4482, 1, "Profiler"])
     Repo.execute("INSERT OR REPLACE INTO sys_localization_strings (IDKey, IDLanguage, String) VALUES (?, ?, ?)", [4483, 1, "Profiler"])
-      Logger.info("Registros inseridos com sucesso na tabela sys_localization_strings!", module: __MODULE__)
-    rescue
-      error ->
-        Logger.error("Erro ao inserir registros na tabela sys_localization_strings: #{inspect(error)}", module: __MODULE__)
-        reraise error, __STACKTRACE__
+
+        # Marcar como executado com sucesso
+        SeedRegistry.mark_seed_executed(@seed_name)
+        Logger.info("Seed para sys_localization_strings executado com sucesso!", module: __MODULE__)
+        :ok
+      rescue
+        error ->
+          error_message = "#{Exception.message(error)}"
+          SeedRegistry.mark_seed_failed(@seed_name, error_message)
+          Logger.error("Erro ao executar seed para sys_localization_strings: #{error_message}", module: __MODULE__)
+          {:error, error}
+      end
     end
+  end
+
+  @doc """
+  Força a re-execução do seed removendo o registro de execução.
+  """
+  def reset do
+    Logger.info("Resetando seed para sys_localization_strings...", module: __MODULE__)
+    SeedRegistry.reset_seed(@seed_name)
   end
 
   @doc """
@@ -4650,4 +4673,9 @@ If it is not enabled then please consider implement this optimization, since it 
     Repo.execute("DELETE FROM sys_localization_strings")
     Logger.info("Tabela sys_localization_strings limpa com sucesso.", module: __MODULE__)
   end
+
+  @doc """
+  Retorna o nome do seed para controle.
+  """
+  def seed_name, do: @seed_name
 end

@@ -2,21 +2,29 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysPagesLayoutsSeed do
   @moduledoc """
   Seed para a tabela sys_pages_layouts.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
+  Inclui sistema de controle para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
+  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
+  @seed_name "sys_pages_layouts_seed"
+
   @doc """
-  Insere os registros na tabela.
-  Usa INSERT OR REPLACE para evitar erros de UNIQUE CONSTRAINT.
+  Executa o seed com controle de execução.
+  Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    Logger.info("Inserindo registros na tabela sys_pages_layouts...", module: __MODULE__)
+    if SeedRegistry.seed_executed?(@seed_name) do
+      Logger.info("Seed para sys_pages_layouts já foi executado anteriormente. Pulando...", module: __MODULE__)
+      :already_executed
+    else
+      Logger.info("Executando seed para a tabela sys_pages_layouts...", module: __MODULE__)
 
-    try do
-      Repo.execute("INSERT OR REPLACE INTO sys_pages_layouts (id, name, icon, title, template, cells_number) VALUES (?, ?, ?, ?, ?, ?)", [1, "bar_left", "layout_bar_left.png", "_sys_layout_bar_left", "layout_bar_left.html", 2])
+      try do
+        Repo.execute("INSERT OR REPLACE INTO sys_pages_layouts (id, name, icon, title, template, cells_number) VALUES (?, ?, ?, ?, ?, ?)", [1, "bar_left", "layout_bar_left.png", "_sys_layout_bar_left", "layout_bar_left.html", 2])
     Repo.execute("INSERT OR REPLACE INTO sys_pages_layouts (id, name, icon, title, template, cells_number) VALUES (?, ?, ?, ?, ?, ?)", [2, "bar_right", "layout_bar_right.png", "_sys_layout_bar_right", "layout_bar_right.html", 2])
     Repo.execute("INSERT OR REPLACE INTO sys_pages_layouts (id, name, icon, title, template, cells_number) VALUES (?, ?, ?, ?, ?, ?)", [3, "3_columns", "layout_3_columns.png", "_sys_layout_3_columns", "layout_3_columns.html", 3])
     Repo.execute("INSERT OR REPLACE INTO sys_pages_layouts (id, name, icon, title, template, cells_number) VALUES (?, ?, ?, ?, ?, ?)", [4, "2_columns", "layout_2_columns.png", "_sys_layout_2_columns", "layout_2_columns.html", 2])
@@ -37,12 +45,27 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysPagesLayoutsSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_pages_layouts (id, name, icon, title, template, cells_number) VALUES (?, ?, ?, ?, ?, ?)", [19, "1_column_half", "layout_1_column_half.png", "_sys_layout_1_column_half", "layout_1_column_half.html", 1])
     Repo.execute("INSERT OR REPLACE INTO sys_pages_layouts (id, name, icon, title, template, cells_number) VALUES (?, ?, ?, ?, ?, ?)", [20, "1_column_wiki", "layout_1_column_wiki.png", "_sys_layout_1_column_wiki", "layout_1_column_wiki.html", 1])
     Repo.execute("INSERT OR REPLACE INTO sys_pages_layouts (id, name, icon, title, template, cells_number) VALUES (?, ?, ?, ?, ?, ?)", [21, "topbottom_area_col2_col5_col3", "layout_topbottom_area_col2_col5_col3.png", "_sys_layout_topbottom_area_col2_col5_col3", "layout_topbottom_area_col2_col5_col3.html", 5])
-      Logger.info("Registros inseridos com sucesso na tabela sys_pages_layouts!", module: __MODULE__)
-    rescue
-      error ->
-        Logger.error("Erro ao inserir registros na tabela sys_pages_layouts: #{inspect(error)}", module: __MODULE__)
-        reraise error, __STACKTRACE__
+
+        # Marcar como executado com sucesso
+        SeedRegistry.mark_seed_executed(@seed_name)
+        Logger.info("Seed para sys_pages_layouts executado com sucesso!", module: __MODULE__)
+        :ok
+      rescue
+        error ->
+          error_message = "#{Exception.message(error)}"
+          SeedRegistry.mark_seed_failed(@seed_name, error_message)
+          Logger.error("Erro ao executar seed para sys_pages_layouts: #{error_message}", module: __MODULE__)
+          {:error, error}
+      end
     end
+  end
+
+  @doc """
+  Força a re-execução do seed removendo o registro de execução.
+  """
+  def reset do
+    Logger.info("Resetando seed para sys_pages_layouts...", module: __MODULE__)
+    SeedRegistry.reset_seed(@seed_name)
   end
 
   @doc """
@@ -53,4 +76,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysPagesLayoutsSeed do
     Repo.execute("DELETE FROM sys_pages_layouts")
     Logger.info("Tabela sys_pages_layouts limpa com sucesso.", module: __MODULE__)
   end
+
+  @doc """
+  Retorna o nome do seed para controle.
+  """
+  def seed_name, do: @seed_name
 end

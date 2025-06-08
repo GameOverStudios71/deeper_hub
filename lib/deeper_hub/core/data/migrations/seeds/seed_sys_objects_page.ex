@@ -2,21 +2,29 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsPageSeed do
   @moduledoc """
   Seed para a tabela sys_objects_page.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
+  Inclui sistema de controle para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
+  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
+  @seed_name "sys_objects_page_seed"
+
   @doc """
-  Insere os registros na tabela.
-  Usa INSERT OR REPLACE para evitar erros de UNIQUE CONSTRAINT.
+  Executa o seed com controle de execução.
+  Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    Logger.info("Inserindo registros na tabela sys_objects_page...", module: __MODULE__)
+    if SeedRegistry.seed_executed?(@seed_name) do
+      Logger.info("Seed para sys_objects_page já foi executado anteriormente. Pulando...", module: __MODULE__)
+      :already_executed
+    else
+      Logger.info("Executando seed para a tabela sys_objects_page...", module: __MODULE__)
 
-    try do
-      Repo.execute("INSERT OR REPLACE INTO sys_objects_page (id, author, added, object, uri, title_system, title, module, cover, cover_image, cover_title, type_id, layout_id, sticky_columns, submenu, visible_for_levels, visible_for_levels_editable, url, content_info, meta_title, meta_description, meta_keywords, meta_robots, cache_lifetime, cache_editable, inj_head, inj_footer, config_api, deletable, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, 0, 0, "sys_home", "home", "_sys_page_title_system_home", "_sys_page_title_home", "system", 2, 0, "", 1, 13, 1, "sys_homepage_submenu", 2147483647, 1, "page.php?i=home", "", "", "", "", "", 0, 1, "", "", "", 0, "BxTemplPageHome", ""])
+      try do
+        Repo.execute("INSERT OR REPLACE INTO sys_objects_page (id, author, added, object, uri, title_system, title, module, cover, cover_image, cover_title, type_id, layout_id, sticky_columns, submenu, visible_for_levels, visible_for_levels_editable, url, content_info, meta_title, meta_description, meta_keywords, meta_robots, cache_lifetime, cache_editable, inj_head, inj_footer, config_api, deletable, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, 0, 0, "sys_home", "home", "_sys_page_title_system_home", "_sys_page_title_home", "system", 2, 0, "", 1, 13, 1, "sys_homepage_submenu", 2147483647, 1, "page.php?i=home", "", "", "", "", "", 0, 1, "", "", "", 0, "BxTemplPageHome", ""])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_page (id, author, added, object, uri, title_system, title, module, cover, cover_image, cover_title, type_id, layout_id, sticky_columns, submenu, visible_for_levels, visible_for_levels_editable, url, content_info, meta_title, meta_description, meta_keywords, meta_robots, cache_lifetime, cache_editable, inj_head, inj_footer, config_api, deletable, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [2, 0, 0, "sys_about", "about", "_sys_page_title_system_about", "_sys_page_title_about", "system", 1, 0, "", 1, 5, 0, "", 2147483647, 1, "page.php?i=about", "", "", "", "", "", 0, 1, "", "", "", 0, "", ""])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_page (id, author, added, object, uri, title_system, title, module, cover, cover_image, cover_title, type_id, layout_id, sticky_columns, submenu, visible_for_levels, visible_for_levels_editable, url, content_info, meta_title, meta_description, meta_keywords, meta_robots, cache_lifetime, cache_editable, inj_head, inj_footer, config_api, deletable, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [3, 0, 0, "sys_terms", "terms", "_sys_page_title_system_terms", "_sys_page_title_terms", "system", 1, 0, "", 1, 5, 0, "", 2147483647, 1, "page.php?i=terms", "", "", "", "", "", 0, 1, "", "", "", 0, "", ""])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_page (id, author, added, object, uri, title_system, title, module, cover, cover_image, cover_title, type_id, layout_id, sticky_columns, submenu, visible_for_levels, visible_for_levels_editable, url, content_info, meta_title, meta_description, meta_keywords, meta_robots, cache_lifetime, cache_editable, inj_head, inj_footer, config_api, deletable, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [4, 0, 0, "sys_privacy", "privacy", "_sys_page_title_system_privacy", "_sys_page_title_privacy", "system", 1, 0, "", 1, 5, 0, "", 2147483647, 1, "page.php?i=privacy", "", "", "", "", "", 0, 1, "", "", "", 0, "", ""])
@@ -76,12 +84,27 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsPageSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_objects_page (id, author, added, object, uri, title_system, title, module, cover, cover_image, cover_title, type_id, layout_id, sticky_columns, submenu, visible_for_levels, visible_for_levels_editable, url, content_info, meta_title, meta_description, meta_keywords, meta_robots, cache_lifetime, cache_editable, inj_head, inj_footer, config_api, deletable, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [58, 0, 0, "bx_persons_search", "persons-search", "_bx_persons_page_title_sys_entries_search", "_bx_persons_page_title_entries_search", "bx_persons", 1, 0, "", 1, 5, 0, "", 2147483647, 1, "page.php?i=persons-search", "", "", "", "", "", 0, 1, "", "", "", 0, "BxPersonsPageBrowse", "modules/boonex/persons/classes/BxPersonsPageBrowse.php"])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_page (id, author, added, object, uri, title_system, title, module, cover, cover_image, cover_title, type_id, layout_id, sticky_columns, submenu, visible_for_levels, visible_for_levels_editable, url, content_info, meta_title, meta_description, meta_keywords, meta_robots, cache_lifetime, cache_editable, inj_head, inj_footer, config_api, deletable, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [59, 0, 0, "bx_persons_manage", "persons-manage", "_bx_persons_page_title_sys_manage", "_bx_persons_page_title_manage", "bx_persons", 1, 0, "", 1, 5, 0, "", 2147483647, 1, "page.php?i=persons-manage", "", "", "", "", "", 0, 1, "", "", "", 0, "BxPersonsPageBrowse", "modules/boonex/persons/classes/BxPersonsPageBrowse.php"])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_page (id, author, added, object, uri, title_system, title, module, cover, cover_image, cover_title, type_id, layout_id, sticky_columns, submenu, visible_for_levels, visible_for_levels_editable, url, content_info, meta_title, meta_description, meta_keywords, meta_robots, cache_lifetime, cache_editable, inj_head, inj_footer, config_api, deletable, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [60, 0, 0, "bx_persons_administration", "persons-administration", "_bx_persons_page_title_sys_manage_administration", "_bx_persons_page_title_manage", "bx_persons", 1, 0, "", 1, 5, 0, "", 192, 1, "page.php?i=persons-administration", "", "", "", "", "", 0, 1, "", "", "", 0, "BxPersonsPageBrowse", "modules/boonex/persons/classes/BxPersonsPageBrowse.php"])
-      Logger.info("Registros inseridos com sucesso na tabela sys_objects_page!", module: __MODULE__)
-    rescue
-      error ->
-        Logger.error("Erro ao inserir registros na tabela sys_objects_page: #{inspect(error)}", module: __MODULE__)
-        reraise error, __STACKTRACE__
+
+        # Marcar como executado com sucesso
+        SeedRegistry.mark_seed_executed(@seed_name)
+        Logger.info("Seed para sys_objects_page executado com sucesso!", module: __MODULE__)
+        :ok
+      rescue
+        error ->
+          error_message = "#{Exception.message(error)}"
+          SeedRegistry.mark_seed_failed(@seed_name, error_message)
+          Logger.error("Erro ao executar seed para sys_objects_page: #{error_message}", module: __MODULE__)
+          {:error, error}
+      end
     end
+  end
+
+  @doc """
+  Força a re-execução do seed removendo o registro de execução.
+  """
+  def reset do
+    Logger.info("Resetando seed para sys_objects_page...", module: __MODULE__)
+    SeedRegistry.reset_seed(@seed_name)
   end
 
   @doc """
@@ -92,4 +115,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsPageSeed do
     Repo.execute("DELETE FROM sys_objects_page")
     Logger.info("Tabela sys_objects_page limpa com sucesso.", module: __MODULE__)
   end
+
+  @doc """
+  Retorna o nome do seed para controle.
+  """
+  def seed_name, do: @seed_name
 end

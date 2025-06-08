@@ -2,21 +2,29 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysPagesBlocksSeed do
   @moduledoc """
   Seed para a tabela sys_pages_blocks.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
+  Inclui sistema de controle para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
+  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
+  @seed_name "sys_pages_blocks_seed"
+
   @doc """
-  Insere os registros na tabela.
-  Usa INSERT OR REPLACE para evitar erros de UNIQUE CONSTRAINT.
+  Executa o seed com controle de execução.
+  Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    Logger.info("Inserindo registros na tabela sys_pages_blocks...", module: __MODULE__)
+    if SeedRegistry.seed_executed?(@seed_name) do
+      Logger.info("Seed para sys_pages_blocks já foi executado anteriormente. Pulando...", module: __MODULE__)
+      :already_executed
+    else
+      Logger.info("Executando seed para a tabela sys_pages_blocks...", module: __MODULE__)
 
-    try do
-      Repo.execute("INSERT OR REPLACE INTO sys_pages_blocks (id, object, cell_id, module, title_system, title, designbox_id, class, submenu, tabs, async, visible_for_levels, hidden_on, 'type', content, content_empty, text, text_updated, help, cache_lifetime, config_api, deletable, copyable, active, active_api, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, "", 0, "skeletons", "", "_sys_block_type_raw", 11, "", "", 0, 0, 2147483647, "", "raw", "", "", "", 0, "", 0, "", 0, 1, 1, 0, 0])
+      try do
+        Repo.execute("INSERT OR REPLACE INTO sys_pages_blocks (id, object, cell_id, module, title_system, title, designbox_id, class, submenu, tabs, async, visible_for_levels, hidden_on, 'type', content, content_empty, text, text_updated, help, cache_lifetime, config_api, deletable, copyable, active, active_api, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, "", 0, "skeletons", "", "_sys_block_type_raw", 11, "", "", 0, 0, 2147483647, "", "raw", "", "", "", 0, "", 0, "", 0, 1, 1, 0, 0])
     Repo.execute("INSERT OR REPLACE INTO sys_pages_blocks (id, object, cell_id, module, title_system, title, designbox_id, class, submenu, tabs, async, visible_for_levels, hidden_on, 'type', content, content_empty, text, text_updated, help, cache_lifetime, config_api, deletable, copyable, active, active_api, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [2, "", 0, "skeletons", "", "_sys_block_type_html", 11, "", "", 0, 0, 2147483647, "", "html", "", "", "", 0, "", 0, "", 0, 1, 1, 0, 0])
     Repo.execute("INSERT OR REPLACE INTO sys_pages_blocks (id, object, cell_id, module, title_system, title, designbox_id, class, submenu, tabs, async, visible_for_levels, hidden_on, 'type', content, content_empty, text, text_updated, help, cache_lifetime, config_api, deletable, copyable, active, active_api, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [3, "", 0, "skeletons", "", "_sys_block_type_creative", 11, "", "", 0, 0, 2147483647, "", "creative", "", "", "", 0, "", 0, "", 0, 1, 1, 0, 0])
     Repo.execute("INSERT OR REPLACE INTO sys_pages_blocks (id, object, cell_id, module, title_system, title, designbox_id, class, submenu, tabs, async, visible_for_levels, hidden_on, 'type', content, content_empty, text, text_updated, help, cache_lifetime, config_api, deletable, copyable, active, active_api, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [4, "", 0, "skeletons", "", "_sys_block_type_bento_grid", 11, "", "", 0, 0, 2147483647, "", "bento_grid", "", "", "", 0, "", 0, "", 0, 1, 1, 0, 0])
@@ -450,12 +458,27 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysPagesBlocksSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_pages_blocks (id, object, cell_id, module, title_system, title, designbox_id, class, submenu, tabs, async, visible_for_levels, hidden_on, 'type', content, content_empty, text, text_updated, help, cache_lifetime, config_api, deletable, copyable, active, active_api, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [129, "", 0, "bx_persons", "_bx_persons_page_block_title_sys_active_entries_view_showcase", "_bx_persons_page_block_title_active_entries_view_showcase", 11, "", "", 0, 0, 2147483647, "", "service", "a:3:{s:6:\"module\";s:10:\"bx_persons\";s:6:\"method\";s:22:\"browse_active_profiles\";s:6:\"params\";a:3:{s:9:\"unit_view\";s:16:\"showcase_wo_info\";s:13:\"empty_message\";b:0;s:13:\"ajax_paginate\";b:0;}}", "", "", 0, "", 0, "", 0, 1, 1, 0, 11])
     Repo.execute("INSERT OR REPLACE INTO sys_pages_blocks (id, object, cell_id, module, title_system, title, designbox_id, class, submenu, tabs, async, visible_for_levels, hidden_on, 'type', content, content_empty, text, text_updated, help, cache_lifetime, config_api, deletable, copyable, active, active_api, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [130, "", 0, "bx_persons", "_bx_persons_page_block_title_sys_active_profiles", "_bx_persons_page_block_title_active_profiles", 11, "", "", 0, 0, 2147483647, "", "service", "a:3:{s:6:\"module\";s:10:\"bx_persons\";s:6:\"method\";s:22:\"browse_active_profiles\";s:6:\"params\";a:3:{s:9:\"unit_view\";s:12:\"unit_wo_info\";s:13:\"empty_message\";b:0;s:13:\"ajax_paginate\";b:0;}}", "", "", 0, "", 0, "", 0, 1, 1, 0, 12])
     Repo.execute("INSERT OR REPLACE INTO sys_pages_blocks (id, object, cell_id, module, title_system, title, designbox_id, class, submenu, tabs, async, visible_for_levels, hidden_on, 'type', content, content_empty, text, text_updated, help, cache_lifetime, config_api, deletable, copyable, active, active_api, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [131, "", 0, "bx_persons", "_bx_persons_page_block_title_sys_familiar_profiles", "_bx_persons_page_block_title_familiar_profiles", 11, "", "", 0, 0, 2147483647, "", "service", "a:3:{s:6:\"module\";s:10:\"bx_persons\";s:6:\"method\";s:24:\"browse_familiar_profiles\";s:6:\"params\";a:4:{s:10:\"connection\";s:20:\"sys_profiles_friends\";s:9:\"unit_view\";s:4:\"unit\";s:13:\"empty_message\";b:0;s:13:\"ajax_paginate\";b:1;}}", "", "", 0, "", 0, "", 0, 1, 1, 0, 13])
-      Logger.info("Registros inseridos com sucesso na tabela sys_pages_blocks!", module: __MODULE__)
-    rescue
-      error ->
-        Logger.error("Erro ao inserir registros na tabela sys_pages_blocks: #{inspect(error)}", module: __MODULE__)
-        reraise error, __STACKTRACE__
+
+        # Marcar como executado com sucesso
+        SeedRegistry.mark_seed_executed(@seed_name)
+        Logger.info("Seed para sys_pages_blocks executado com sucesso!", module: __MODULE__)
+        :ok
+      rescue
+        error ->
+          error_message = "#{Exception.message(error)}"
+          SeedRegistry.mark_seed_failed(@seed_name, error_message)
+          Logger.error("Erro ao executar seed para sys_pages_blocks: #{error_message}", module: __MODULE__)
+          {:error, error}
+      end
     end
+  end
+
+  @doc """
+  Força a re-execução do seed removendo o registro de execução.
+  """
+  def reset do
+    Logger.info("Resetando seed para sys_pages_blocks...", module: __MODULE__)
+    SeedRegistry.reset_seed(@seed_name)
   end
 
   @doc """
@@ -466,4 +489,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysPagesBlocksSeed do
     Repo.execute("DELETE FROM sys_pages_blocks")
     Logger.info("Tabela sys_pages_blocks limpa com sucesso.", module: __MODULE__)
   end
+
+  @doc """
+  Retorna o nome do seed para controle.
+  """
+  def seed_name, do: @seed_name
 end

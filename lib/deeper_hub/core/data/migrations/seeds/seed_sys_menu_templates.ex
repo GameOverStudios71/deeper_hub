@@ -2,21 +2,29 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysMenuTemplatesSeed do
   @moduledoc """
   Seed para a tabela sys_menu_templates.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
+  Inclui sistema de controle para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
+  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
+  @seed_name "sys_menu_templates_seed"
+
   @doc """
-  Insere os registros na tabela.
-  Usa INSERT OR REPLACE para evitar erros de UNIQUE CONSTRAINT.
+  Executa o seed com controle de execução.
+  Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    Logger.info("Inserindo registros na tabela sys_menu_templates...", module: __MODULE__)
+    if SeedRegistry.seed_executed?(@seed_name) do
+      Logger.info("Seed para sys_menu_templates já foi executado anteriormente. Pulando...", module: __MODULE__)
+      :already_executed
+    else
+      Logger.info("Executando seed para a tabela sys_menu_templates...", module: __MODULE__)
 
-    try do
-      Repo.execute("INSERT OR REPLACE INTO sys_menu_templates (id, template, title, visible) VALUES (?, ?, ?, ?)", [1, "menu_empty.html", "_sys_menu_template_title_empty", 1])
+      try do
+        Repo.execute("INSERT OR REPLACE INTO sys_menu_templates (id, template, title, visible) VALUES (?, ?, ?, ?)", [1, "menu_empty.html", "_sys_menu_template_title_empty", 1])
     Repo.execute("INSERT OR REPLACE INTO sys_menu_templates (id, template, title, visible) VALUES (?, ?, ?, ?)", [2, "menu_footer.html", "_sys_menu_template_title_footer", 0])
     Repo.execute("INSERT OR REPLACE INTO sys_menu_templates (id, template, title, visible) VALUES (?, ?, ?, ?)", [3, "menu_horizontal.html", "_sys_menu_template_title_hor", 1])
     Repo.execute("INSERT OR REPLACE INTO sys_menu_templates (id, template, title, visible) VALUES (?, ?, ?, ?)", [4, "menu_vertical_lite.html", "_sys_menu_template_title_ver_lite", 1])
@@ -49,12 +57,27 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysMenuTemplatesSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_menu_templates (id, template, title, visible) VALUES (?, ?, ?, ?)", [31, "menu_main_in_panel.html", "_sys_menu_template_title_main_in_panel", 0])
     Repo.execute("INSERT OR REPLACE INTO sys_menu_templates (id, template, title, visible) VALUES (?, ?, ?, ?)", [32, "menu_multilevel.html", "_sys_menu_template_title_multilevel", 1])
     Repo.execute("INSERT OR REPLACE INTO sys_menu_templates (id, template, title, visible) VALUES (?, ?, ?, ?)", [5893, "menu_sidebar_site.html", "_bx_artificer_menu_template_title_sidebar_site", 1])
-      Logger.info("Registros inseridos com sucesso na tabela sys_menu_templates!", module: __MODULE__)
-    rescue
-      error ->
-        Logger.error("Erro ao inserir registros na tabela sys_menu_templates: #{inspect(error)}", module: __MODULE__)
-        reraise error, __STACKTRACE__
+
+        # Marcar como executado com sucesso
+        SeedRegistry.mark_seed_executed(@seed_name)
+        Logger.info("Seed para sys_menu_templates executado com sucesso!", module: __MODULE__)
+        :ok
+      rescue
+        error ->
+          error_message = "#{Exception.message(error)}"
+          SeedRegistry.mark_seed_failed(@seed_name, error_message)
+          Logger.error("Erro ao executar seed para sys_menu_templates: #{error_message}", module: __MODULE__)
+          {:error, error}
+      end
     end
+  end
+
+  @doc """
+  Força a re-execução do seed removendo o registro de execução.
+  """
+  def reset do
+    Logger.info("Resetando seed para sys_menu_templates...", module: __MODULE__)
+    SeedRegistry.reset_seed(@seed_name)
   end
 
   @doc """
@@ -65,4 +88,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysMenuTemplatesSeed do
     Repo.execute("DELETE FROM sys_menu_templates")
     Logger.info("Tabela sys_menu_templates limpa com sucesso.", module: __MODULE__)
   end
+
+  @doc """
+  Retorna o nome do seed para controle.
+  """
+  def seed_name, do: @seed_name
 end

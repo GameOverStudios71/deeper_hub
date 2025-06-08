@@ -12,6 +12,9 @@ defmodule DeeperHub.Application do
 
   @impl true
   def start(_type, _args) do
+    # Limpar arquivos de log da sessão anterior
+    DeeperHub.Core.Logger.clear_all_logs()
+
     DeeperHub.Core.Logger.info("Iniciando o sistema DeeperHub...")
 
     # Inicializa primeiro apenas o repositório para garantir que o banco de dados esteja disponível

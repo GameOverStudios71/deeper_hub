@@ -2,21 +2,29 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsFormSeed do
   @moduledoc """
   Seed para a tabela sys_objects_form.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
+  Inclui sistema de controle para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
+  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
+  @seed_name "sys_objects_form_seed"
+
   @doc """
-  Insere os registros na tabela.
-  Usa INSERT OR REPLACE para evitar erros de UNIQUE CONSTRAINT.
+  Executa o seed com controle de execução.
+  Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    Logger.info("Inserindo registros na tabela sys_objects_form...", module: __MODULE__)
+    if SeedRegistry.seed_executed?(@seed_name) do
+      Logger.info("Seed para sys_objects_form já foi executado anteriormente. Pulando...", module: __MODULE__)
+      :already_executed
+    else
+      Logger.info("Executando seed para a tabela sys_objects_form...", module: __MODULE__)
 
-    try do
-      Repo.execute("INSERT OR REPLACE INTO sys_objects_form (id, object, module, title, 'action', form_attrs, submit_name, 'table', 'key', uri, uri_title, params, deletable, active, parent_form, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, "sys_login", "system", "_sys_form_login", "member.php", "a:3:{s:2:\"id\";s:14:\"sys-form-login\";s:6:\"action\";s:10:\"member.php\";s:8:\"onsubmit\";s:31:\"return validateLoginForm(this);\";}", "a:3:{i:0;s:4:\"role\";i:1;s:10:\"do_sendsms\";i:2;s:12:\"do_checkcode\";}", "", "", "", "", "a:1:{s:14:\"checker_helper\";s:24:\"BxFormLoginCheckerHelper\";}", 0, 1, "", "BxTemplFormLogin", ""])
+      try do
+        Repo.execute("INSERT OR REPLACE INTO sys_objects_form (id, object, module, title, 'action', form_attrs, submit_name, 'table', 'key', uri, uri_title, params, deletable, active, parent_form, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, "sys_login", "system", "_sys_form_login", "member.php", "a:3:{s:2:\"id\";s:14:\"sys-form-login\";s:6:\"action\";s:10:\"member.php\";s:8:\"onsubmit\";s:31:\"return validateLoginForm(this);\";}", "a:3:{i:0;s:4:\"role\";i:1;s:10:\"do_sendsms\";i:2;s:12:\"do_checkcode\";}", "", "", "", "", "a:1:{s:14:\"checker_helper\";s:24:\"BxFormLoginCheckerHelper\";}", 0, 1, "", "BxTemplFormLogin", ""])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_form (id, object, module, title, 'action', form_attrs, submit_name, 'table', 'key', uri, uri_title, params, deletable, active, parent_form, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [2, "sys_account", "system", "_sys_form_account", "", "", "a:2:{i:0;s:10:\"do_publish\";i:1;s:9:\"do_submit\";}", "sys_accounts", "id", "", "", "a:1:{s:14:\"checker_helper\";s:26:\"BxFormAccountCheckerHelper\";}", 0, 1, "", "BxTemplFormAccount", ""])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_form (id, object, module, title, 'action', form_attrs, submit_name, 'table', 'key', uri, uri_title, params, deletable, active, parent_form, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [3, "sys_profile", "system", "_sys_form_profile", "", "", "do_submit", "sys_profiles", "id", "", "", "", 0, 1, "", "BxTemplFormProfile", ""])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_form (id, object, module, title, 'action', form_attrs, submit_name, 'table', 'key', uri, uri_title, params, deletable, active, parent_form, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [4, "sys_forgot_password", "system", "_sys_form_forgot_password", "", "", "do_submit", "", "", "", "", "a:1:{s:14:\"checker_helper\";s:33:\"BxFormForgotPasswordCheckerHelper\";}", 0, 1, "", "BxTemplFormForgotPassword", ""])
@@ -35,12 +43,27 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsFormSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_objects_form (id, object, module, title, 'action', form_attrs, submit_name, 'table', 'key', uri, uri_title, params, deletable, active, parent_form, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [17, "sys_acl", "system", "_sys_form_acl", "", "", "do_submit", "", "", "", "", "", 0, 1, "", "", ""])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_form (id, object, module, title, 'action', form_attrs, submit_name, 'table', 'key', uri, uri_title, params, deletable, active, parent_form, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [18, "bx_person", "bx_persons", "_bx_persons_form_profile", "", "a:1:{s:7:\"enctype\";s:19:\"multipart/form-data\";}", "do_submit", "bx_persons_data", "id", "", "", "", 0, 1, "", "BxPersonsFormEntry", "modules/boonex/persons/classes/BxPersonsFormEntry.php"])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_form (id, object, module, title, 'action', form_attrs, submit_name, 'table', 'key', uri, uri_title, params, deletable, active, parent_form, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [19, "bx_person_skills", "bx_persons", "_bx_persons_skills_form_profile", "", "a:1:{s:7:\"enctype\";s:19:\"multipart/form-data\";}", "do_submit", "bx_persons_skills", "skill_id", "", "", "", 0, 1, "bx_person", "BxDolFormNested", "inc/classes/BxDolFormNested.php"])
-      Logger.info("Registros inseridos com sucesso na tabela sys_objects_form!", module: __MODULE__)
-    rescue
-      error ->
-        Logger.error("Erro ao inserir registros na tabela sys_objects_form: #{inspect(error)}", module: __MODULE__)
-        reraise error, __STACKTRACE__
+
+        # Marcar como executado com sucesso
+        SeedRegistry.mark_seed_executed(@seed_name)
+        Logger.info("Seed para sys_objects_form executado com sucesso!", module: __MODULE__)
+        :ok
+      rescue
+        error ->
+          error_message = "#{Exception.message(error)}"
+          SeedRegistry.mark_seed_failed(@seed_name, error_message)
+          Logger.error("Erro ao executar seed para sys_objects_form: #{error_message}", module: __MODULE__)
+          {:error, error}
+      end
     end
+  end
+
+  @doc """
+  Força a re-execução do seed removendo o registro de execução.
+  """
+  def reset do
+    Logger.info("Resetando seed para sys_objects_form...", module: __MODULE__)
+    SeedRegistry.reset_seed(@seed_name)
   end
 
   @doc """
@@ -51,4 +74,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsFormSeed do
     Repo.execute("DELETE FROM sys_objects_form")
     Logger.info("Tabela sys_objects_form limpa com sucesso.", module: __MODULE__)
   end
+
+  @doc """
+  Retorna o nome do seed para controle.
+  """
+  def seed_name, do: @seed_name
 end
