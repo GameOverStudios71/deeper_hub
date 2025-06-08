@@ -1,29 +1,17 @@
 defmodule DeeperHub.Core.Data.Schemas.SysObjectsForm do
   @moduledoc """
-  Represents the schema for the 'sys_objects_form' table.
-  This module uses DeeperHub.Core.Data.SchemaBase to provide CRUD operations.
+  Schema para a tabela sys_objects_form.
+  Fornece funções para acessar e manipular dados da tabela.
   """
-  use DeeperHub.Core.Data.SchemaBase, table_name: "sys_objects_form"
 
-  # Example Ecto.Schema (optional):
-  # use Ecto.Schema
-  # import Ecto.Changeset
+  use DeeperHub.Core.Data.SchemaBase,
+    table_name: "sys_objects_form",
+    primary_key: :id
+
+  # Você pode adicionar funções específicas para esta tabela aqui
+  # Exemplo:
   #
-  # @primary_key {:id, :id, autogenerate: true}
-  # schema "sys_objects_form" do
-  #   field :object, :string
-  #   field :module, :string
-  #   field :title, :string
-  #   field :class_name, :string
-  #   field :class_file, :string
-  #
-  #   # timestamps()
-  # end
-  #
-  # def changeset(struct_or_schema, attrs) do
-  #   # struct_or_schema
-  #   # |> cast(attrs, [:object, :module, :title, :class_name, :class_file])
-  #   # |> validate_required([:object])
-  #   {struct_or_schema, attrs}
+  # def find_by_name(name, opts \\ %{}) do
+  #   get_by(:name, name, opts)
   # end
 end

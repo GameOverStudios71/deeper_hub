@@ -8,7 +8,7 @@ defmodule DeeperHub.Core.Console.ConsoleManager do
   e facilidade de uso para operações comuns.
   """
   use GenServer
-  require DeeperHub.Core.Logger
+  require Logger
 
   # Estrutura para representar uma sessão de console
   defmodule Session do
@@ -121,7 +121,7 @@ defmodule DeeperHub.Core.Console.ConsoleManager do
 
   @impl true
   def init(_opts) do
-    DeeperHub.Core.Logger.info("Console iniciado")
+    Logger.info("ConsoleManager iniciado.")
     {:ok, %{sessions: %{}}}
   end
 
@@ -143,7 +143,7 @@ defmodule DeeperHub.Core.Console.ConsoleManager do
       send_response(options.client_pid, get_welcome_message())
     end
 
-    DeeperHub.Core.Logger.info("Nova sessão de console criada: #{session_id}")
+    Logger.info("Nova sessão de console criada: #{session_id}")
     {:reply, {:ok, session_id}, %{state | sessions: updated_sessions}}
   end
 
@@ -151,7 +151,7 @@ defmodule DeeperHub.Core.Console.ConsoleManager do
   def handle_call({:execute_command, session_id, command, client_pid}, _from, state) do
     case Map.get(state.sessions, session_id) do
       nil ->
-        DeeperHub.Core.Logger.warning("ConsoleManager: Tentativa de executar comando em sessão não encontrada: #{session_id}")
+        Logger.warning("ConsoleManager: Tentativa de executar comando em sessão não encontrada: #{session_id}")
         {:reply, {:error, :session_not_found}, state}
 
       session ->
@@ -209,7 +209,7 @@ defmodule DeeperHub.Core.Console.ConsoleManager do
 
         # Remover a sessão do estado
         updated_sessions = Map.delete(state.sessions, session_id)
-        DeeperHub.Core.Logger.info("Sessão de console encerrada: #{session_id}")
+        Logger.info("Sessão de console encerrada: #{session_id}")
         {:reply, :ok, %{state | sessions: updated_sessions}}
     end
   end

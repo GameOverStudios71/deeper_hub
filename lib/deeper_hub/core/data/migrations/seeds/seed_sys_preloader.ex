@@ -1,0 +1,88 @@
+defmodule DeeperHub.Core.Data.Migrations.Seeds.SysPreloaderSeed do
+  @moduledoc """
+  Seed para a tabela sys_preloader.
+  Insere os registros iniciais na tabela.
+  """
+
+  alias DeeperHub.Core.Data.Repo
+
+  @doc """
+  Insere os registros na tabela.
+  """
+  def run do
+    IO.puts("Inserindo registros na tabela sys_preloader...")
+
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [1, 1, 1])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [2, 1, 2])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [3, 1, 3])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [4, 1, 4])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [5, 1, 10])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [6, 1, 11])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [7, 1, 12])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [8, 1, 13])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [9, 1, 14])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [10, 1, 15])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [11, 1, 20])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [12, 1, 21])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [13, 1, 22])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [14, 1, 23])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [15, 1, 30])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [16, 1, 31])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [17, 1, 32])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [18, 1, 33])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [19, 1, 34])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [20, 1, 35])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [21, 1, 36])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [22, 1, 37])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [23, 1, 0])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [24, 1, 1])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [25, 1, 2])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [26, 1, 3])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [27, 1, 4])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [28, 1, 5])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [29, 1, 6])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [30, 1, 7])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [31, 1, 8])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [32, 1, 9])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [33, 1, 10])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [34, 1, 11])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [35, 1, 12])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [36, 1, 13])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [37, 1, 14])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [38, 1, 15])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [39, 1, 20])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [40, 1, 21])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [41, 1, 22])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [42, 1, 23])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [43, 1, 24])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [44, 1, 25])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [45, 1, 30])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [46, 1, 31])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [47, 1, 32])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [48, 1, 33])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [49, 1, 34])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [50, 1, 35])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [51, 1, 36])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [52, 1, 37])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [53, 1, 38])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [54, 1, 39])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [55, 1, 40])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [56, 1, 41])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [57, 1, 42])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [58, 1, 43])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [59, 1, 44])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [60, 1, 45])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [61, 1, 1])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [62, 1, 2])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [63, 1, 3])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [64, 1, 4])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [65, 1, 5])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [66, 1, 6])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [67, 1, 7])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [68, 1, 0])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [69, 1, 0])
+    Repo.execute("INSERT INTO sys_preloader (id, module, type, content, active, order) VALUES (?, ?, ?)", [70, 1, 0])
+
+    IO.puts("Registros inseridos com sucesso!")
+  end
+end

@@ -1,0 +1,86 @@
+defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAlertsHandlersSeed do
+  @moduledoc """
+  Seed para a tabela sys_alerts_handlers.
+  Insere os registros iniciais na tabela.
+  """
+
+  alias DeeperHub.Core.Data.Repo
+
+  @doc """
+  Insere os registros na tabela.
+  """
+  def run do
+    IO.puts("Inserindo registros na tabela sys_alerts_handlers...")
+
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [1, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [2, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [3, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [4, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [5, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [6, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [7, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [8, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [9, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [10, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [11, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [12, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [13, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [14, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [15, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [16, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [17, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [18, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [19, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [20, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [21, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [22, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [23, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [24, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [25, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [26, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [27, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [28, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [29, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [30, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [31, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [32, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [33, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [34, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [35, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [36, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [37, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [38, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [39, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [40, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [41, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [42, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [43, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [44, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [45, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [46, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [47, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [48, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [49, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [50, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [51, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [52, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [53, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [54, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [55, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [56, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [57, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [58, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [59, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [60, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [61, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [62, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [63, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [64, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [65, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [66, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [67, 1])
+    Repo.execute("INSERT INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?)", [68, 1])
+
+    IO.puts("Registros inseridos com sucesso!")
+  end
+end
