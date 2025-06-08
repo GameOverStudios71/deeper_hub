@@ -1,44 +1,27 @@
 defmodule DeeperHub.Core.Data.Migrations.CreateSysObjectsFormTable do
   @moduledoc """
   Migração para criar a tabela sys_objects_form no banco de dados.
-
-  Esta migração cria a estrutura básica para armazenar informações de formulários de objetos
-  no sistema DeeperHub.
   """
 
   alias DeeperHub.Core.Data.Repo
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
-  @doc """
-  Executa a migração para criar a tabela sys_objects_form.
-
-  Retorna `:ok` se a migração foi aplicada com sucesso,
-  ou `{:error, reason}` se ocorreu algum erro.
-  """
   @spec up() :: :ok | {:error, any()}
   def up do
     Logger.info("Criando tabela sys_objects_form...", module: __MODULE__)
 
     sql = """
     CREATE TABLE IF NOT EXISTS sys_objects_form (
-      id INTEGER PRIMARY KEY,
-      module_name TEXT NOT NULL DEFAULT '',
-      form_name TEXT NOT NULL DEFAULT '',
-      title TEXT NOT NULL,
-      action TEXT NOT NULL DEFAULT '',
-      form_attrs TEXT NOT NULL,
-      submit_name TEXT NOT NULL DEFAULT '',
-      submit_value TEXT NOT NULL DEFAULT '',
-      submit_effect TEXT NOT NULL DEFAULT '',
-      params TEXT NOT NULL,
-      deletable INTEGER NOT NULL DEFAULT 0,
-      override_class_name TEXT NOT NULL DEFAULT '',
-      override_class_file TEXT NOT NULL DEFAULT ''
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      object TEXT NOT NULL UNIQUE,
+      module TEXT,
+      title TEXT,
+      class_name TEXT,
+      class_file TEXT
     );
 
-    CREATE INDEX IF NOT EXISTS idx_sys_objects_form_module_name ON sys_objects_form(module_name);
-    CREATE INDEX IF NOT EXISTS idx_sys_objects_form_form_name ON sys_objects_form(form_name);
+    CREATE INDEX IF NOT EXISTS idx_sys_objects_form_object ON sys_objects_form(object);
     """
 
     case Repo.execute(sql) do
@@ -52,12 +35,6 @@ defmodule DeeperHub.Core.Data.Migrations.CreateSysObjectsFormTable do
     end
   end
 
-  @doc """
-  Reverte a migração, removendo a tabela sys_objects_form.
-
-  Retorna `:ok` se a reversão foi aplicada com sucesso,
-  ou `{:error, reason}` se ocorreu algum erro.
-  """
   @spec down() :: :ok | {:error, any()}
   def down do
     Logger.info("Removendo tabela sys_objects_form...", module: __MODULE__)
@@ -72,10 +49,7 @@ defmodule DeeperHub.Core.Data.Migrations.CreateSysObjectsFormTable do
         :ok
 
       {:error, reason} ->
-        Logger.error("Falha ao remover tabela sys_objects_form: #{inspect(reason)}",
-          module: __MODULE__
-        )
-
+        Logger.error("Falha ao remover tabela sys_objects_form: #{inspect(reason)}", module: __MODULE__)
         {:error, reason}
     end
   end

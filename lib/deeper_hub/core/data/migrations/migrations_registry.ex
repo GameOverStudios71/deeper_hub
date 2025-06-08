@@ -30,6 +30,18 @@ defmodule DeeperHub.Core.Data.Migrations.MigrationRegistry do
       {"20250608000015", DeeperHub.Core.Data.Migrations.CreateSysSeoLinksTable},
       {"20250608000016", DeeperHub.Core.Data.Migrations.CreateSysSeoUriRewritesTable},
       {"20250608000017", DeeperHub.Core.Data.Migrations.CreateSysStdPagesTable},
+      {"20250608000018", DeeperHub.Core.Data.Migrations.CreateSysObjectsFormTable},
+      {"20250608000019", DeeperHub.Core.Data.Migrations.CreateSysFormInputsTable},
+      {"20250608000020", DeeperHub.Core.Data.Migrations.CreateSysFormDisplaysTable},
+      {"20250608000021", DeeperHub.Core.Data.Migrations.CreateSysFormDisplayInputsTable},
+      {"20250608000022", DeeperHub.Core.Data.Migrations.CreateSysObjectsGridTable},
+      {"20250608000023", DeeperHub.Core.Data.Migrations.CreateSysGridFieldsTable},
+      {"20250608000024", DeeperHub.Core.Data.Migrations.CreateSysGridActionsTable},
+      {"20250608000025", DeeperHub.Core.Data.Migrations.CreateSysContentInfoGridsTable},
+      {"20250608000026", DeeperHub.Core.Data.Migrations.CreateSysObjectsViewTable},
+      {"20250608000027", DeeperHub.Core.Data.Migrations.CreateSysObjectsContentInfoTable},
+      {"20250608000028", DeeperHub.Core.Data.Migrations.CreateSysStdWidgetsTable},
+      {"20250608000029", DeeperHub.Core.Data.Migrations.CreateSysStdPagesWidgetsTable},
     ]
   end
 
