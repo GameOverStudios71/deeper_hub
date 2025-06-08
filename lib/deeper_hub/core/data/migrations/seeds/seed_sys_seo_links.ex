@@ -12,7 +12,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysSeoLinksSeed do
   def run do
     IO.puts("Inserindo registros na tabela sys_seo_links...")
 
-    Repo.execute("INSERT INTO sys_seo_links (id, module, page_uri, param_name, param_value, uri, added) VALUES (?, ?)", [1, 1749379473])
+    Repo.execute("INSERT INTO sys_seo_links (id, module, page_uri, param_name, param_value, uri, added) VALUES (?, ?, ?, ?, ?, ?, ?)", [1, "bx_persons", "persons-profile-friends", "profile_id", "1", "admin", 1749379473])
 
     IO.puts("Registros inseridos com sucesso!")
   end

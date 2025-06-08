@@ -12,7 +12,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysLocalizationLanguagesSeed do
   def run do
     IO.puts("Inserindo registros na tabela sys_localization_languages...")
 
-    Repo.execute("INSERT INTO sys_localization_languages (ID, Name, Flag, Title, Direction, LanguageCountry, Enabled) VALUES (?, ?)", [1, 1])
+    Repo.execute("INSERT INTO sys_localization_languages (ID, Name, Flag, Title, Direction, LanguageCountry, Enabled) VALUES (?, ?, ?, ?, ?, ?, ?)", [1, "en", "gb", "English", "LTR", "", 1])
 
     IO.puts("Registros inseridos com sucesso!")
   end

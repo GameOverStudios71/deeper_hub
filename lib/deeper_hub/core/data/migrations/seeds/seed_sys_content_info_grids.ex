@@ -12,8 +12,8 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysContentInfoGridsSeed do
   def run do
     IO.puts("Inserindo registros na tabela sys_content_info_grids...")
 
-    Repo.execute("INSERT INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?)", [1])
-    Repo.execute("INSERT INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?)", [2])
+    Repo.execute("INSERT INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [1, "bx_persons", "bx_persons_administration", "td`.`id", "", ""])
+    Repo.execute("INSERT INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [2, "bx_persons", "bx_persons_common", "td`.`id", "", ""])
 
     IO.puts("Registros inseridos com sucesso!")
   end

@@ -12,7 +12,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsEditorSeed do
   def run do
     IO.puts("Inserindo registros na tabela sys_objects_editor...")
 
-    Repo.execute("INSERT INTO sys_objects_editor (id, object, title, skin, override_class_name, override_class_file) VALUES (?)", [1])
+    Repo.execute("INSERT INTO sys_objects_editor (id, object, title, skin, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?)", [1, "sys_quill", "Quill", "snow", "BxTemplEditorQuill", ""])
 
     IO.puts("Registros inseridos com sucesso!")
   end

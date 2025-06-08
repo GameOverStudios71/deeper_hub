@@ -12,8 +12,8 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsContentInfoSeed do
   def run do
     IO.puts("Inserindo registros na tabela sys_objects_content_info...")
 
-    Repo.execute("INSERT INTO sys_objects_content_info (id, name, title, alert_unit, alert_action_add, alert_action_update, alert_action_delete, class_name, class_file) VALUES (?)", [1])
-    Repo.execute("INSERT INTO sys_objects_content_info (id, name, title, alert_unit, alert_action_add, alert_action_update, alert_action_delete, class_name, class_file) VALUES (?)", [2])
+    Repo.execute("INSERT INTO sys_objects_content_info (id, name, title, alert_unit, alert_action_add, alert_action_update, alert_action_delete, class_name, class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, "bx_persons", "_bx_persons", "bx_persons", "added", "edited", "deleted", "", ""])
+    Repo.execute("INSERT INTO sys_objects_content_info (id, name, title, alert_unit, alert_action_add, alert_action_update, alert_action_delete, class_name, class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [2, "bx_persons_cmts", "_bx_persons_cmts", "bx_persons", "commentPost", "commentUpdated", "commentRemoved", "BxDolContentInfoCmts", ""])
 
     IO.puts("Registros inseridos com sucesso!")
   end

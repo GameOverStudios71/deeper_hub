@@ -12,8 +12,8 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsSmsSeed do
   def run do
     IO.puts("Inserindo registros na tabela sys_objects_sms...")
 
-    Repo.execute("INSERT INTO sys_objects_sms (id, object, title, override_class_name, override_class_file) VALUES (?)", [1])
-    Repo.execute("INSERT INTO sys_objects_sms (id, object, title, override_class_name, override_class_file) VALUES (?)", [2])
+    Repo.execute("INSERT INTO sys_objects_sms (id, object, title, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?)", [1, "sys_twilio", "Twilio", "BxDolSmsTwilio", ""])
+    Repo.execute("INSERT INTO sys_objects_sms (id, object, title, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?)", [2, "sys_smsru", "SMS.RU", "BxDolSmsSmsRu", ""])
 
     IO.puts("Registros inseridos com sucesso!")
   end

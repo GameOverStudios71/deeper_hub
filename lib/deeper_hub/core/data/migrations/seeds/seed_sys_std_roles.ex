@@ -12,8 +12,8 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysStdRolesSeed do
   def run do
     IO.puts("Inserindo registros na tabela sys_std_roles...")
 
-    Repo.execute("INSERT INTO sys_std_roles (id, name, title, description, active, order) VALUES (?, ?, ?)", [1, 1, 1])
-    Repo.execute("INSERT INTO sys_std_roles (id, name, title, description, active, order) VALUES (?, ?, ?)", [2, 1, 2])
+    Repo.execute("INSERT INTO sys_std_roles (id, name, title, description, active, order) VALUES (?, ?, ?, ?, ?, ?)", [1, "master", "_adm_rl_txt_role_master", "_adm_rl_txt_role_master_dsc", 1, 1])
+    Repo.execute("INSERT INTO sys_std_roles (id, name, title, description, active, order) VALUES (?, ?, ?, ?, ?, ?)", [2, "operator", "_adm_rl_txt_role_operator", "_adm_rl_txt_role_operator_dsc", 1, 2])
 
     IO.puts("Registros inseridos com sucesso!")
   end

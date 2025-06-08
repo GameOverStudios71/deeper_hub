@@ -12,8 +12,8 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsLocationMapSeed do
   def run do
     IO.puts("Inserindo registros na tabela sys_objects_location_map...")
 
-    Repo.execute("INSERT INTO sys_objects_location_map (id, object, module, title, class_name, class_file) VALUES (?)", [1])
-    Repo.execute("INSERT INTO sys_objects_location_map (id, object, module, title, class_name, class_file) VALUES (?)", [2])
+    Repo.execute("INSERT INTO sys_objects_location_map (id, object, module, title, class_name, class_file) VALUES (?, ?, ?, ?, ?, ?)", [1, "sys_google_static", "system", "_sys_location_map_google_static", "BxDolLocationMapGoogleStatic", ""])
+    Repo.execute("INSERT INTO sys_objects_location_map (id, object, module, title, class_name, class_file) VALUES (?, ?, ?, ?, ?, ?)", [2, "sys_leaflet", "system", "_sys_location_map_leaflet", "BxDolLocationMapLeaflet", ""])
 
     IO.puts("Registros inseridos com sucesso!")
   end

@@ -12,7 +12,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAlertsCacheTriggersSeed do
   def run do
     IO.puts("Inserindo registros na tabela sys_alerts_cache_triggers...")
 
-    Repo.execute("INSERT INTO sys_alerts_cache_triggers (id, unit, action, cache_key) VALUES (?)", [1])
+    Repo.execute("INSERT INTO sys_alerts_cache_triggers (id, unit, action, cache_key) VALUES (?, ?, ?, ?)", [1, "sys_profiles_subscriptions", "connection_added", "menu_sys_profile_stats_profile-stats-subscribed-me_{content}_{_hash}.php"])
 
     IO.puts("Registros inseridos com sucesso!")
   end

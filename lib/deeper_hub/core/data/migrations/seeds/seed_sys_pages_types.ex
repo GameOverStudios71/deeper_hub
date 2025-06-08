@@ -12,10 +12,10 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysPagesTypesSeed do
   def run do
     IO.puts("Inserindo registros na tabela sys_pages_types...")
 
-    Repo.execute("INSERT INTO sys_pages_types (id, title, template, order) VALUES (?, ?)", [1, 1])
-    Repo.execute("INSERT INTO sys_pages_types (id, title, template, order) VALUES (?, ?)", [2, 2])
-    Repo.execute("INSERT INTO sys_pages_types (id, title, template, order) VALUES (?, ?)", [3, 3])
-    Repo.execute("INSERT INTO sys_pages_types (id, title, template, order) VALUES (?, ?)", [4, 4])
+    Repo.execute("INSERT INTO sys_pages_types (id, title, template, order) VALUES (?, ?, ?, ?)", [1, "_sys_page_type_default", "", 1])
+    Repo.execute("INSERT INTO sys_pages_types (id, title, template, order) VALUES (?, ?, ?, ?)", [2, "_sys_page_type_wo_hf", "pt_wo_hf.html", 2])
+    Repo.execute("INSERT INTO sys_pages_types (id, title, template, order) VALUES (?, ?, ?, ?)", [3, "_sys_page_type_standard", "pt_standard.html", 3])
+    Repo.execute("INSERT INTO sys_pages_types (id, title, template, order) VALUES (?, ?, ?, ?)", [4, "_sys_page_type_application", "pt_application.html", 4])
 
     IO.puts("Registros inseridos com sucesso!")
   end

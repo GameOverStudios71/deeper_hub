@@ -488,15 +488,21 @@ def criar_seeds(conexao, tabela):
                 valores.append("true" if valor else "false")
             elif isinstance(valor, bytes):
                 try:
-                    decoded_valor = valor.decode('utf-8', errors='replace')
-                    # Ensure that a literal \' is replaced by '\n                    cleaned_valor = decoded_valor.replace("\\\'", "'")
-                    valores.append(f"bytearray(b\"{cleaned_valor}\")")
+                    # Tenta decodificar como UTF-8.
+                    decoded_valor = valor.decode('utf-8')
+                    # Escapar barras invertidas e aspas duplas para strings Elixir
+                    escaped_valor = decoded_valor.replace('\\', '\\\\').replace('"', '\\"')
+                    valores.append(f'"{escaped_valor}"')
+                except UnicodeDecodeError:
+                    # Se não for UTF-8 válido, formata como literal binário Elixir (sequência de bytes)
+                    byte_values = ", ".join(map(str, valor))
+                    valores.append(f'<<{byte_values}>>')
                 except Exception as e:
-                    valores.append(f"bytearray(b\"__decode_error_{e.__class__.__name__}\")")
-            #else:
-                # Escapar aspas simples para Elixir
-                #valor_str = str(valor).replace("'", "\\'")
-                #valores.append(f"\"{valor_str}\"")
+                    valores.append(f'"__bytes_processing_error_{e.__class__.__name__}"')
+            else:  # Trata outros tipos (principalmente strings)
+                # Escapar barras invertidas e aspas duplas para strings Elixir
+                valor_str = str(valor).replace('\\', '\\\\').replace('"', '\\"')
+                valores.append(f'"{valor_str}"')
         
         valores_str = ", ".join(valores)
         placeholders = ", ".join(["?" for _ in valores])

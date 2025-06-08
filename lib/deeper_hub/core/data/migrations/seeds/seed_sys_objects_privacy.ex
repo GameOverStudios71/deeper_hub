@@ -12,10 +12,10 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsPrivacySeed do
   def run do
     IO.puts("Inserindo registros na tabela sys_objects_privacy...")
 
-    Repo.execute("INSERT INTO sys_objects_privacy (id, object, module, action, title, default_group, spaces, table, table_field_id, table_field_author, override_class_name, override_class_file) VALUES (?)", [1])
-    Repo.execute("INSERT INTO sys_objects_privacy (id, object, module, action, title, default_group, spaces, table, table_field_id, table_field_author, override_class_name, override_class_file) VALUES (?)", [2])
-    Repo.execute("INSERT INTO sys_objects_privacy (id, object, module, action, title, default_group, spaces, table, table_field_id, table_field_author, override_class_name, override_class_file) VALUES (?)", [3])
-    Repo.execute("INSERT INTO sys_objects_privacy (id, object, module, action, title, default_group, spaces, table, table_field_id, table_field_author, override_class_name, override_class_file) VALUES (?)", [4])
+    Repo.execute("INSERT INTO sys_objects_privacy (id, object, module, action, title, default_group, spaces, table, table_field_id, table_field_author, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, "sys_form_inputs_allow_view_to", "system", "view", "_sys_privacy_forms_input_allow_view_to", "3", "all", "sys_form_inputs_privacy", "id", "author_id", "", ""])
+    Repo.execute("INSERT INTO sys_objects_privacy (id, object, module, action, title, default_group, spaces, table, table_field_id, table_field_author, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [2, "bx_persons_allow_view_to", "bx_persons", "view", "_bx_persons_form_profile_input_allow_view_to", "3", "", "bx_persons_data", "id", "author", "BxPersonsPrivacy", "modules/boonex/persons/classes/BxPersonsPrivacy.php"])
+    Repo.execute("INSERT INTO sys_objects_privacy (id, object, module, action, title, default_group, spaces, table, table_field_id, table_field_author, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [3, "bx_persons_allow_post_to", "bx_persons", "post", "_bx_persons_form_profile_input_allow_post_to", "5", "", "bx_persons_data", "id", "author", "BxPersonsPrivacyPost", "modules/boonex/persons/classes/BxPersonsPrivacyPost.php"])
+    Repo.execute("INSERT INTO sys_objects_privacy (id, object, module, action, title, default_group, spaces, table, table_field_id, table_field_author, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [4, "bx_persons_allow_contact_to", "bx_persons", "contact", "_bx_persons_form_profile_input_allow_contact_to", "3", "", "bx_persons_data", "id", "author", "BxPersonsPrivacyContact", "modules/boonex/persons/classes/BxPersonsPrivacyContact.php"])
 
     IO.puts("Registros inseridos com sucesso!")
   end
