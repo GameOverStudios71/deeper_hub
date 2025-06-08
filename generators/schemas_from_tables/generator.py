@@ -155,6 +155,39 @@ def criar_schema(tabela, campos, relacoes=None):
     except PermissionError:
         print(f"Aviso: Não foi possível criar o schema para {tabela} - arquivo em uso ou sem permissão")
 
+def obter_chave_primaria(conexao, tabela):
+    """
+    Obtém os nomes das colunas da chave primária de uma tabela no MySQL.
+    Retorna uma lista de nomes de colunas da chave primária, na ordem correta.
+    """
+    if not conexao:
+        print(f"Aviso: Conexão não disponível para obter chave primária da tabela {tabela}.")
+        return []
+    
+    cursor = None
+    try:
+        cursor = conexao.cursor()
+        # Usar SHOW INDEXES ou SHOW KEYS. SHOW KEYS é mais comum para isso.
+        # Column_name é o campo que contém o nome da coluna (índice 4 em SHOW KEYS).
+        # Seq_in_index (índice 3) é 1-based e indica a ordem da coluna na chave.
+        query = f"SHOW KEYS FROM `{tabela}` WHERE Key_name = 'PRIMARY' ORDER BY Seq_in_index ASC"
+        cursor.execute(query)
+        chaves = cursor.fetchall()
+        
+        if not chaves:
+            # print(f"Nenhuma chave primária encontrada para a tabela {tabela} no MySQL.")
+            return []
+            
+        nomes_colunas_pk = [chave[4] for chave in chaves] # chave[4] é Column_name
+        return nomes_colunas_pk
+    except Exception as e:
+        print(f"Erro ao obter chave primária para {tabela}: {e}")
+        return []
+    finally:
+        if cursor:
+            cursor.close()
+
+
 # Função para criar migration para uma tabela específica usando templates
 def criar_migration(tabela, campos, relacoes=None, conexao=None):
     # Diretório para salvar as migrations
@@ -281,27 +314,19 @@ def gerar_create_table_sql(tabela, campos, relacoes=None, chaves_primarias=None)
     
     # Adicionar chave primária se não estiver nas colunas e não houver AUTOINCREMENT
     if not any(("PRIMARY KEY" in coluna) or ("AUTOINCREMENT" in coluna) for coluna in colunas):
-        # Verificar se temos informações sobre a chave primária da tabela original
+        # Usar as chaves primárias obtidas do MySQL para definir a PRIMARY KEY na tabela SQLite.
+        # A lógica de 'id INTEGER PRIMARY KEY AUTOINCREMENT' já é tratada na definição da coluna (linhas 228-235)
+        # se 'id' for auto_increment no MySQL. Portanto, aqui apenas adicionamos a cláusula PRIMARY KEY
+        # se ela não foi definida individualmente por uma coluna auto_increment.
         if chaves_primarias and len(chaves_primarias) > 0:
-            # Se for uma única coluna e for 'id', podemos usar AUTOINCREMENT
-            if len(chaves_primarias) == 1 and chaves_primarias[0].lower() == 'id':
-                # Substituir a coluna id existente
-                for i, coluna in enumerate(colunas):
-                    if coluna.strip().startswith("id "):
-                        colunas[i] = "  id INTEGER PRIMARY KEY AUTOINCREMENT"
-                        break
-            else:
-                # Se for uma chave composta ou não for 'id', adicionar como PRIMARY KEY
-                # Verificar se os nomes das colunas precisam ser escapados (palavras reservadas)
-                pk_colunas = []
-                for pk_col in chaves_primarias:
-                    if pk_col.lower() in palavras_reservadas:
-                        pk_colunas.append(f'"{pk_col}"')
-                    else:
-                        pk_colunas.append(pk_col)
-                
-                # Adicionar a definição da chave primária
-                colunas.append(f"  PRIMARY KEY ({', '.join(pk_colunas)})")
+            # palavras_reservadas é definida anteriormente nesta função.
+            pk_colunas_formatadas = []
+            for pk_col_nome in chaves_primarias:
+                if pk_col_nome.lower() in palavras_reservadas:
+                    pk_colunas_formatadas.append(f'"{pk_col_nome}"')
+                else:
+                    pk_colunas_formatadas.append(pk_col_nome)
+            colunas.append(f"  PRIMARY KEY ({', '.join(pk_colunas_formatadas)})")
         else:
             # Sem informações da chave primária original, usar heurística
             # Verificar se existe coluna id

@@ -343,14 +343,14 @@ defmodule DeeperHub.Core.Data.Migrations do
 
   @doc """
   Executa todos os seeds disponíveis.
-  
+
   Retorna `:ok` se todos os seeds foram executados com sucesso,
   ou `{:error, reason}` se ocorreu algum erro.
   """
   @spec run_seeds() :: :ok | {:error, any()}
   def run_seeds do
     Logger.info("Executando seeds do banco de dados...", module: __MODULE__)
-    
+
     try do
       # Executa os seeds usando o registro de migrações
       DeeperHub.Core.Data.Migrations.MigrationRegistry.run_seeds()
