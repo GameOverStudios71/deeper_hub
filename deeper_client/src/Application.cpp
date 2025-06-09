@@ -9,8 +9,10 @@
 Application::Application()
     : m_Window(nullptr), m_ImGuiContext(nullptr), m_Backend("http://localhost:4000") {
     InitGLFW();
-    InitImGui();
-    InitBackend();
+    if (m_Window != nullptr) {
+        InitImGui();
+        InitBackend();
+    }
 }
 
 // Adicionar método
@@ -72,6 +74,11 @@ Application::~Application() {
 }
 
 void Application::Run() {
+    if (m_Window == nullptr) {
+        std::cerr << "Não é possível executar: janela não foi criada." << std::endl;
+        return;
+    }
+
     while (!glfwWindowShouldClose(m_Window)) {
         glfwPollEvents();
 
@@ -97,24 +104,35 @@ void Application::Run() {
 }
 
 void Application::InitGLFW() {
+    // Set error callback before initialization
+    glfwSetErrorCallback([](int error, const char* description) {
+        std::cerr << "Erro GLFW " << error << ": " << description << std::endl;
+    });
+
     if (!glfwInit()) {
         std::cerr << "Falha ao inicializar GLFW" << std::endl;
         return;
     }
 
-    // GL 3.0 + GLSL 130
-    const char* glsl_version = "#version 130";
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+    // Use OpenGL 2.1 for better compatibility
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+
+    // Make window resizable and visible
+    glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
+    glfwWindowHint(GLFW_VISIBLE, GLFW_TRUE);
 
     // Create window with graphics context
     m_Window = glfwCreateWindow(1280, 720, "DeeperHub Client", nullptr, nullptr);
     if (m_Window == nullptr) {
-        std::cerr << "Falha ao criar janela GLFW" << std::endl;
+        std::cerr << "Falha ao criar janela GLFW. Verifique se o OpenGL está disponível." << std::endl;
+        glfwTerminate();
         return;
     }
     glfwMakeContextCurrent(m_Window);
     glfwSwapInterval(1); // Enable vsync
+
+    std::cout << "Janela GLFW criada com sucesso!" << std::endl;
 }
 
 void Application::InitImGui() {
@@ -129,7 +147,7 @@ void Application::InitImGui() {
 
     // Setup Platform/Renderer backends
     ImGui_ImplGlfw_InitForOpenGL(m_Window, true);
-    ImGui_ImplOpenGL3_Init("#version 130");
+    ImGui_ImplOpenGL3_Init("#version 110");
 }
 
 void Application::Shutdown() {

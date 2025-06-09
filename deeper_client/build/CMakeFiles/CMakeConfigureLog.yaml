@@ -3007,3 +3007,528 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/zlib-src/cmake/detect-arch.cmake:26 (try_run)"
+      - "build/_deps/zlib-src/CMakeLists.txt:47 (include)"
+    directories:
+      source: "C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Admin/Composite/deeper_client/external/cpr/cmake;"
+    buildResult:
+      variable: "compile_result_unused"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/make.exe -f Makefile cmTC_7f3ea/fast
+        C:/mingw64/bin/make.exe  -f CMakeFiles\\cmTC_7f3ea.dir\\build.make CMakeFiles/cmTC_7f3ea.dir/build
+        make[1]: Entering directory 'C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_7f3ea.dir/detect-arch.c.obj
+        C:\\mingw64\\bin\\gcc.exe   -std=c11 -o CMakeFiles\\cmTC_7f3ea.dir\\detect-arch.c.obj -c C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\zlib-src\\cmake\\detect-arch.c
+        C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\zlib-src\\cmake\\detect-arch.c:8:6: error: #error archfound x86_64
+            8 |     #error archfound x86_64
+              |      ^~~~~
+        make[1]: *** [CMakeFiles\\cmTC_7f3ea.dir\\build.make:80: CMakeFiles/cmTC_7f3ea.dir/detect-arch.c.obj] Error 1
+        make[1]: Leaving directory 'C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        make: *** [Makefile:133: cmTC_7f3ea/fast] Error 2
+        
+      exitCode: 2
+    runResult:
+      variable: "run_result_unused"
+      cached: true
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "build/_deps/curl-src/CMake/Macros.cmake:50 (try_compile)"
+      - "build/_deps/curl-src/CMakeLists.txt:176 (curl_internal_test)"
+    directories:
+      source: "C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Admin/Composite/deeper_client/build/_deps/curl-src/CMake;C:/Users/Admin/Composite/deeper_client/external/cpr/cmake;"
+    buildResult:
+      variable: "HAVE_WIN32_WINNT"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/make.exe -f Makefile cmTC_f03ca/fast
+        C:/mingw64/bin/make.exe  -f CMakeFiles\\cmTC_f03ca.dir\\build.make CMakeFiles/cmTC_f03ca.dir/build
+        make[1]: Entering directory 'C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_f03ca.dir/CurlTests.c.obj
+        C:\\mingw64\\bin\\gcc.exe   -DHAVE_WIN32_WINNT -o CMakeFiles\\cmTC_f03ca.dir\\CurlTests.c.obj -c C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\curl-src\\CMake\\CurlTests.c
+        C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\curl-src\\CMake\\CurlTests.c:424:9: note: '#pragma message: _WIN32_WINNT=0xa00'
+          424 | #pragma message("_WIN32_WINNT=" expand(_WIN32_WINNT))
+              |         ^~~~~~~
+        Linking C executable cmTC_f03ca.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_f03ca.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_f03ca.dir/objects.a
+        C:\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_f03ca.dir/objects.a @CMakeFiles\\cmTC_f03ca.dir\\objects1.rsp
+        C:\\mingw64\\bin\\gcc.exe  -DHAVE_WIN32_WINNT -Wl,--whole-archive CMakeFiles\\cmTC_f03ca.dir/objects.a -Wl,--no-whole-archive -o cmTC_f03ca.exe -Wl,--out-implib,libcmTC_f03ca.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_f03ca.dir\\linkLibs.rsp
+        make[1]: Leaving directory 'C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/cpr/include/CMakeLists.txt:64 (try_compile)"
+    directories:
+      source: "C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wpedantic -Werror"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Admin/Composite/deeper_client/external/cpr/cmake;"
+    buildResult:
+      variable: "STD_FS_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/make.exe -f Makefile cmTC_58f77/fast
+        C:/mingw64/bin/make.exe  -f CMakeFiles\\cmTC_58f77.dir\\build.make CMakeFiles/cmTC_58f77.dir/build
+        make[1]: Entering directory 'C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_58f77.dir/std_fs_support_test.cpp.obj
+        C:\\mingw64\\bin\\g++.exe   -Wall -Wextra -Wpedantic -Werror  -std=c++17 -o CMakeFiles\\cmTC_58f77.dir\\std_fs_support_test.cpp.obj -c C:\\Users\\Admin\\Composite\\deeper_client\\external\\cpr\\cmake\\std_fs_support_test.cpp
+        Linking CXX executable cmTC_58f77.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_58f77.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_58f77.dir/objects.a
+        C:\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_58f77.dir/objects.a @CMakeFiles\\cmTC_58f77.dir\\objects1.rsp
+        C:\\mingw64\\bin\\g++.exe  -Wall -Wextra -Wpedantic -Werror  -Wl,--whole-archive CMakeFiles\\cmTC_58f77.dir/objects.a -Wl,--no-whole-archive -o cmTC_58f77.exe -Wl,--out-implib,libcmTC_58f77.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_58f77.dir\\linkLibs.rsp
+        make[1]: Leaving directory 'C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/zlib-src/cmake/detect-arch.cmake:26 (try_run)"
+      - "build/_deps/zlib-src/CMakeLists.txt:47 (include)"
+    directories:
+      source: "C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Admin/Composite/deeper_client/external/cpr/cmake;"
+    buildResult:
+      variable: "compile_result_unused"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/make.exe -f Makefile cmTC_467e8/fast
+        C:/mingw64/bin/make.exe  -f CMakeFiles\\cmTC_467e8.dir\\build.make CMakeFiles/cmTC_467e8.dir/build
+        make[1]: Entering directory 'C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_467e8.dir/detect-arch.c.obj
+        C:\\mingw64\\bin\\gcc.exe   -std=c11 -o CMakeFiles\\cmTC_467e8.dir\\detect-arch.c.obj -c C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\zlib-src\\cmake\\detect-arch.c
+        C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\zlib-src\\cmake\\detect-arch.c:8:6: error: #error archfound x86_64
+            8 |     #error archfound x86_64
+              |      ^~~~~
+        make[1]: *** [CMakeFiles\\cmTC_467e8.dir\\build.make:80: CMakeFiles/cmTC_467e8.dir/detect-arch.c.obj] Error 1
+        make[1]: Leaving directory 'C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        make: *** [Makefile:133: cmTC_467e8/fast] Error 2
+        
+      exitCode: 2
+    runResult:
+      variable: "run_result_unused"
+      cached: true
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "build/_deps/curl-src/CMake/Macros.cmake:50 (try_compile)"
+      - "build/_deps/curl-src/CMakeLists.txt:176 (curl_internal_test)"
+    directories:
+      source: "C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Admin/Composite/deeper_client/build/_deps/curl-src/CMake;C:/Users/Admin/Composite/deeper_client/external/cpr/cmake;"
+    buildResult:
+      variable: "HAVE_WIN32_WINNT"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/make.exe -f Makefile cmTC_ff74d/fast
+        C:/mingw64/bin/make.exe  -f CMakeFiles\\cmTC_ff74d.dir\\build.make CMakeFiles/cmTC_ff74d.dir/build
+        make[1]: Entering directory 'C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_ff74d.dir/CurlTests.c.obj
+        C:\\mingw64\\bin\\gcc.exe   -DHAVE_WIN32_WINNT -o CMakeFiles\\cmTC_ff74d.dir\\CurlTests.c.obj -c C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\curl-src\\CMake\\CurlTests.c
+        C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\curl-src\\CMake\\CurlTests.c:424:9: note: '#pragma message: _WIN32_WINNT=0xa00'
+          424 | #pragma message("_WIN32_WINNT=" expand(_WIN32_WINNT))
+              |         ^~~~~~~
+        Linking C executable cmTC_ff74d.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_ff74d.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_ff74d.dir/objects.a
+        C:\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_ff74d.dir/objects.a @CMakeFiles\\cmTC_ff74d.dir\\objects1.rsp
+        C:\\mingw64\\bin\\gcc.exe  -DHAVE_WIN32_WINNT -Wl,--whole-archive CMakeFiles\\cmTC_ff74d.dir/objects.a -Wl,--no-whole-archive -o cmTC_ff74d.exe -Wl,--out-implib,libcmTC_ff74d.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_ff74d.dir\\linkLibs.rsp
+        make[1]: Leaving directory 'C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/cpr/include/CMakeLists.txt:64 (try_compile)"
+    directories:
+      source: "C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wpedantic -Werror"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Admin/Composite/deeper_client/external/cpr/cmake;"
+    buildResult:
+      variable: "STD_FS_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/make.exe -f Makefile cmTC_0fff6/fast
+        C:/mingw64/bin/make.exe  -f CMakeFiles\\cmTC_0fff6.dir\\build.make CMakeFiles/cmTC_0fff6.dir/build
+        make[1]: Entering directory 'C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_0fff6.dir/std_fs_support_test.cpp.obj
+        C:\\mingw64\\bin\\g++.exe   -Wall -Wextra -Wpedantic -Werror  -std=c++17 -o CMakeFiles\\cmTC_0fff6.dir\\std_fs_support_test.cpp.obj -c C:\\Users\\Admin\\Composite\\deeper_client\\external\\cpr\\cmake\\std_fs_support_test.cpp
+        Linking CXX executable cmTC_0fff6.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_0fff6.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_0fff6.dir/objects.a
+        C:\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_0fff6.dir/objects.a @CMakeFiles\\cmTC_0fff6.dir\\objects1.rsp
+        C:\\mingw64\\bin\\g++.exe  -Wall -Wextra -Wpedantic -Werror  -Wl,--whole-archive CMakeFiles\\cmTC_0fff6.dir/objects.a -Wl,--no-whole-archive -o cmTC_0fff6.exe -Wl,--out-implib,libcmTC_0fff6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_0fff6.dir\\linkLibs.rsp
+        make[1]: Leaving directory 'C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/zlib-src/cmake/detect-arch.cmake:26 (try_run)"
+      - "build/_deps/zlib-src/CMakeLists.txt:47 (include)"
+    directories:
+      source: "C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Admin/Composite/deeper_client/external/cpr/cmake;"
+    buildResult:
+      variable: "compile_result_unused"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/make.exe -f Makefile cmTC_7fbd3/fast
+        C:/mingw64/bin/make.exe  -f CMakeFiles\\cmTC_7fbd3.dir\\build.make CMakeFiles/cmTC_7fbd3.dir/build
+        make[1]: Entering directory 'C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_7fbd3.dir/detect-arch.c.obj
+        C:\\mingw64\\bin\\gcc.exe   -std=c11 -o CMakeFiles\\cmTC_7fbd3.dir\\detect-arch.c.obj -c C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\zlib-src\\cmake\\detect-arch.c
+        C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\zlib-src\\cmake\\detect-arch.c:8:6: error: #error archfound x86_64
+            8 |     #error archfound x86_64
+              |      ^~~~~
+        make[1]: *** [CMakeFiles\\cmTC_7fbd3.dir\\build.make:80: CMakeFiles/cmTC_7fbd3.dir/detect-arch.c.obj] Error 1
+        make[1]: Leaving directory 'C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        make: *** [Makefile:133: cmTC_7fbd3/fast] Error 2
+        
+      exitCode: 2
+    runResult:
+      variable: "run_result_unused"
+      cached: true
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "build/_deps/curl-src/CMake/Macros.cmake:50 (try_compile)"
+      - "build/_deps/curl-src/CMakeLists.txt:176 (curl_internal_test)"
+    directories:
+      source: "C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Admin/Composite/deeper_client/build/_deps/curl-src/CMake;C:/Users/Admin/Composite/deeper_client/external/cpr/cmake;"
+    buildResult:
+      variable: "HAVE_WIN32_WINNT"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/make.exe -f Makefile cmTC_7d67a/fast
+        C:/mingw64/bin/make.exe  -f CMakeFiles\\cmTC_7d67a.dir\\build.make CMakeFiles/cmTC_7d67a.dir/build
+        make[1]: Entering directory 'C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_7d67a.dir/CurlTests.c.obj
+        C:\\mingw64\\bin\\gcc.exe   -DHAVE_WIN32_WINNT -o CMakeFiles\\cmTC_7d67a.dir\\CurlTests.c.obj -c C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\curl-src\\CMake\\CurlTests.c
+        C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\curl-src\\CMake\\CurlTests.c:424:9: note: '#pragma message: _WIN32_WINNT=0xa00'
+          424 | #pragma message("_WIN32_WINNT=" expand(_WIN32_WINNT))
+              |         ^~~~~~~
+        Linking C executable cmTC_7d67a.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_7d67a.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_7d67a.dir/objects.a
+        C:\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_7d67a.dir/objects.a @CMakeFiles\\cmTC_7d67a.dir\\objects1.rsp
+        C:\\mingw64\\bin\\gcc.exe  -DHAVE_WIN32_WINNT -Wl,--whole-archive CMakeFiles\\cmTC_7d67a.dir/objects.a -Wl,--no-whole-archive -o cmTC_7d67a.exe -Wl,--out-implib,libcmTC_7d67a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_7d67a.dir\\linkLibs.rsp
+        make[1]: Leaving directory 'C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/cpr/include/CMakeLists.txt:64 (try_compile)"
+    directories:
+      source: "C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wpedantic -Werror"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Admin/Composite/deeper_client/external/cpr/cmake;"
+    buildResult:
+      variable: "STD_FS_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/make.exe -f Makefile cmTC_1266f/fast
+        C:/mingw64/bin/make.exe  -f CMakeFiles\\cmTC_1266f.dir\\build.make CMakeFiles/cmTC_1266f.dir/build
+        make[1]: Entering directory 'C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_1266f.dir/std_fs_support_test.cpp.obj
+        C:\\mingw64\\bin\\g++.exe   -Wall -Wextra -Wpedantic -Werror  -std=c++17 -o CMakeFiles\\cmTC_1266f.dir\\std_fs_support_test.cpp.obj -c C:\\Users\\Admin\\Composite\\deeper_client\\external\\cpr\\cmake\\std_fs_support_test.cpp
+        Linking CXX executable cmTC_1266f.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_1266f.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_1266f.dir/objects.a
+        C:\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_1266f.dir/objects.a @CMakeFiles\\cmTC_1266f.dir\\objects1.rsp
+        C:\\mingw64\\bin\\g++.exe  -Wall -Wextra -Wpedantic -Werror  -Wl,--whole-archive CMakeFiles\\cmTC_1266f.dir/objects.a -Wl,--no-whole-archive -o cmTC_1266f.exe -Wl,--out-implib,libcmTC_1266f.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_1266f.dir\\linkLibs.rsp
+        make[1]: Leaving directory 'C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/zlib-src/cmake/detect-arch.cmake:26 (try_run)"
+      - "build/_deps/zlib-src/CMakeLists.txt:47 (include)"
+    directories:
+      source: "C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Admin/Composite/deeper_client/external/cpr/cmake;"
+    buildResult:
+      variable: "compile_result_unused"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/make.exe -f Makefile cmTC_9f599/fast
+        C:/mingw64/bin/make.exe  -f CMakeFiles\\cmTC_9f599.dir\\build.make CMakeFiles/cmTC_9f599.dir/build
+        make[1]: Entering directory 'C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_9f599.dir/detect-arch.c.obj
+        C:\\mingw64\\bin\\gcc.exe   -std=c11 -o CMakeFiles\\cmTC_9f599.dir\\detect-arch.c.obj -c C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\zlib-src\\cmake\\detect-arch.c
+        C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\zlib-src\\cmake\\detect-arch.c:8:6: error: #error archfound x86_64
+            8 |     #error archfound x86_64
+              |      ^~~~~
+        make[1]: *** [CMakeFiles\\cmTC_9f599.dir\\build.make:80: CMakeFiles/cmTC_9f599.dir/detect-arch.c.obj] Error 1
+        make[1]: Leaving directory 'C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        make: *** [Makefile:133: cmTC_9f599/fast] Error 2
+        
+      exitCode: 2
+    runResult:
+      variable: "run_result_unused"
+      cached: true
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "build/_deps/curl-src/CMake/Macros.cmake:50 (try_compile)"
+      - "build/_deps/curl-src/CMakeLists.txt:176 (curl_internal_test)"
+    directories:
+      source: "C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Admin/Composite/deeper_client/build/_deps/curl-src/CMake;C:/Users/Admin/Composite/deeper_client/external/cpr/cmake;"
+    buildResult:
+      variable: "HAVE_WIN32_WINNT"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/make.exe -f Makefile cmTC_e19a6/fast
+        C:/mingw64/bin/make.exe  -f CMakeFiles\\cmTC_e19a6.dir\\build.make CMakeFiles/cmTC_e19a6.dir/build
+        make[1]: Entering directory 'C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_e19a6.dir/CurlTests.c.obj
+        C:\\mingw64\\bin\\gcc.exe   -DHAVE_WIN32_WINNT -o CMakeFiles\\cmTC_e19a6.dir\\CurlTests.c.obj -c C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\curl-src\\CMake\\CurlTests.c
+        C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\curl-src\\CMake\\CurlTests.c:424:9: note: '#pragma message: _WIN32_WINNT=0xa00'
+          424 | #pragma message("_WIN32_WINNT=" expand(_WIN32_WINNT))
+              |         ^~~~~~~
+        Linking C executable cmTC_e19a6.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_e19a6.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_e19a6.dir/objects.a
+        C:\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_e19a6.dir/objects.a @CMakeFiles\\cmTC_e19a6.dir\\objects1.rsp
+        C:\\mingw64\\bin\\gcc.exe  -DHAVE_WIN32_WINNT -Wl,--whole-archive CMakeFiles\\cmTC_e19a6.dir/objects.a -Wl,--no-whole-archive -o cmTC_e19a6.exe -Wl,--out-implib,libcmTC_e19a6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_e19a6.dir\\linkLibs.rsp
+        make[1]: Leaving directory 'C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/cpr/include/CMakeLists.txt:64 (try_compile)"
+    directories:
+      source: "C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wpedantic -Werror"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Admin/Composite/deeper_client/external/cpr/cmake;"
+    buildResult:
+      variable: "STD_FS_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/make.exe -f Makefile cmTC_20001/fast
+        C:/mingw64/bin/make.exe  -f CMakeFiles\\cmTC_20001.dir\\build.make CMakeFiles/cmTC_20001.dir/build
+        make[1]: Entering directory 'C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_20001.dir/std_fs_support_test.cpp.obj
+        C:\\mingw64\\bin\\g++.exe   -Wall -Wextra -Wpedantic -Werror  -std=c++17 -o CMakeFiles\\cmTC_20001.dir\\std_fs_support_test.cpp.obj -c C:\\Users\\Admin\\Composite\\deeper_client\\external\\cpr\\cmake\\std_fs_support_test.cpp
+        Linking CXX executable cmTC_20001.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_20001.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_20001.dir/objects.a
+        C:\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_20001.dir/objects.a @CMakeFiles\\cmTC_20001.dir\\objects1.rsp
+        C:\\mingw64\\bin\\g++.exe  -Wall -Wextra -Wpedantic -Werror  -Wl,--whole-archive CMakeFiles\\cmTC_20001.dir/objects.a -Wl,--no-whole-archive -o cmTC_20001.exe -Wl,--out-implib,libcmTC_20001.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_20001.dir\\linkLibs.rsp
+        make[1]: Leaving directory 'C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/zlib-src/cmake/detect-arch.cmake:26 (try_run)"
+      - "build/_deps/zlib-src/CMakeLists.txt:47 (include)"
+    directories:
+      source: "C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Admin/Composite/deeper_client/external/cpr/cmake;"
+    buildResult:
+      variable: "compile_result_unused"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/make.exe -f Makefile cmTC_f05d5/fast
+        C:/mingw64/bin/make.exe  -f CMakeFiles\\cmTC_f05d5.dir\\build.make CMakeFiles/cmTC_f05d5.dir/build
+        make[1]: Entering directory 'C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_f05d5.dir/detect-arch.c.obj
+        C:\\mingw64\\bin\\gcc.exe   -std=c11 -o CMakeFiles\\cmTC_f05d5.dir\\detect-arch.c.obj -c C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\zlib-src\\cmake\\detect-arch.c
+        C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\zlib-src\\cmake\\detect-arch.c:8:6: error: #error archfound x86_64
+            8 |     #error archfound x86_64
+              |      ^~~~~
+        make[1]: *** [CMakeFiles\\cmTC_f05d5.dir\\build.make:80: CMakeFiles/cmTC_f05d5.dir/detect-arch.c.obj] Error 1
+        make[1]: Leaving directory 'C:/Users/Admin/Composite/deeper_client/build/_deps/zlib-build/CMakeFiles/CMakeTmp'
+        make: *** [Makefile:133: cmTC_f05d5/fast] Error 2
+        
+      exitCode: 2
+    runResult:
+      variable: "run_result_unused"
+      cached: true
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "build/_deps/curl-src/CMake/Macros.cmake:50 (try_compile)"
+      - "build/_deps/curl-src/CMakeLists.txt:176 (curl_internal_test)"
+    directories:
+      source: "C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Admin/Composite/deeper_client/build/_deps/curl-src/CMake;C:/Users/Admin/Composite/deeper_client/external/cpr/cmake;"
+    buildResult:
+      variable: "HAVE_WIN32_WINNT"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/make.exe -f Makefile cmTC_6c44e/fast
+        C:/mingw64/bin/make.exe  -f CMakeFiles\\cmTC_6c44e.dir\\build.make CMakeFiles/cmTC_6c44e.dir/build
+        make[1]: Entering directory 'C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_6c44e.dir/CurlTests.c.obj
+        C:\\mingw64\\bin\\gcc.exe   -DHAVE_WIN32_WINNT -o CMakeFiles\\cmTC_6c44e.dir\\CurlTests.c.obj -c C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\curl-src\\CMake\\CurlTests.c
+        C:\\Users\\Admin\\Composite\\deeper_client\\build\\_deps\\curl-src\\CMake\\CurlTests.c:424:9: note: '#pragma message: _WIN32_WINNT=0xa00'
+          424 | #pragma message("_WIN32_WINNT=" expand(_WIN32_WINNT))
+              |         ^~~~~~~
+        Linking C executable cmTC_6c44e.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_6c44e.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_6c44e.dir/objects.a
+        C:\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_6c44e.dir/objects.a @CMakeFiles\\cmTC_6c44e.dir\\objects1.rsp
+        C:\\mingw64\\bin\\gcc.exe  -DHAVE_WIN32_WINNT -Wl,--whole-archive CMakeFiles\\cmTC_6c44e.dir/objects.a -Wl,--no-whole-archive -o cmTC_6c44e.exe -Wl,--out-implib,libcmTC_6c44e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_6c44e.dir\\linkLibs.rsp
+        make[1]: Leaving directory 'C:/Users/Admin/Composite/deeper_client/build/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "external/cpr/include/CMakeLists.txt:64 (try_compile)"
+    directories:
+      source: "C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp"
+      binary: "C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -Wall -Wextra -Wpedantic -Werror"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "C:/Users/Admin/Composite/deeper_client/external/cpr/cmake;"
+    buildResult:
+      variable: "STD_FS_SUPPORTED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/mingw64/bin/make.exe -f Makefile cmTC_e0f48/fast
+        C:/mingw64/bin/make.exe  -f CMakeFiles\\cmTC_e0f48.dir\\build.make CMakeFiles/cmTC_e0f48.dir/build
+        make[1]: Entering directory 'C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_e0f48.dir/std_fs_support_test.cpp.obj
+        C:\\mingw64\\bin\\g++.exe   -Wall -Wextra -Wpedantic -Werror  -std=c++17 -o CMakeFiles\\cmTC_e0f48.dir\\std_fs_support_test.cpp.obj -c C:\\Users\\Admin\\Composite\\deeper_client\\external\\cpr\\cmake\\std_fs_support_test.cpp
+        Linking CXX executable cmTC_e0f48.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_e0f48.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_e0f48.dir/objects.a
+        C:\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_e0f48.dir/objects.a @CMakeFiles\\cmTC_e0f48.dir\\objects1.rsp
+        C:\\mingw64\\bin\\g++.exe  -Wall -Wextra -Wpedantic -Werror  -Wl,--whole-archive CMakeFiles\\cmTC_e0f48.dir/objects.a -Wl,--no-whole-archive -o cmTC_e0f48.exe -Wl,--out-implib,libcmTC_e0f48.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_e0f48.dir\\linkLibs.rsp
+        make[1]: Leaving directory 'C:/Users/Admin/Composite/deeper_client/build/external/cpr/include/std_fs/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+...
