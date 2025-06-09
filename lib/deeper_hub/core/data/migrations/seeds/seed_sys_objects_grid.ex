@@ -2,22 +2,22 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsGridSeed do
   @moduledoc """
   Seed para a tabela sys_objects_grid.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
-  Inclui sistema de controle para evitar re-execução desnecessária.
+  Inclui controle de execução para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
-  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
   @seed_name "sys_objects_grid_seed"
+  @seeds_dir "seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
   Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    if SeedRegistry.seed_executed?(@seed_name) do
+    if seed_already_executed?() do
       Logger.info("Seed para sys_objects_grid já foi executado anteriormente. Pulando...", module: __MODULE__)
       :already_executed
     else
@@ -69,14 +69,13 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsGridSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_objects_grid (id, object, source_type, source, 'table', field_id, field_order, field_active, order_get_field, order_get_dir, paginate_url, paginate_per_page, paginate_simple, paginate_get_start, paginate_get_per_page, filter_fields, filter_fields_translatable, filter_mode, filter_get, sorting_fields, sorting_fields_translatable, visible_for_levels, responsive, show_total_count, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [43, "bx_persons_administration", "Sql", "SELECT `td`.*, `ta`.`email` AS `account`, `ta`.`logged` AS `last_online`, `tp`.`status` AS `status`, `tp`.`id` as `profile_id` FROM `bx_persons_data` AS `td` LEFT JOIN `sys_profiles` AS `tp` ON `td`.`id`=`tp`.`content_id` AND `tp`.`type`='bx_persons' LEFT JOIN `sys_accounts` AS `ta` ON `tp`.`account_id`=`ta`.`id` WHERE 1 ", "bx_persons_data", "id", "last_online", "status", "order_field", "order_dir", "", 20, nil, "start", "", "fullname,email", "", "like", "filter", "reports", "", 192, 1, 0, "BxPersonsGridAdministration", "modules/boonex/persons/classes/BxPersonsGridAdministration.php"])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_grid (id, object, source_type, source, 'table', field_id, field_order, field_active, order_get_field, order_get_dir, paginate_url, paginate_per_page, paginate_simple, paginate_get_start, paginate_get_per_page, filter_fields, filter_fields_translatable, filter_mode, filter_get, sorting_fields, sorting_fields_translatable, visible_for_levels, responsive, show_total_count, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [44, "bx_persons_common", "Sql", "SELECT `td`.*, `ta`.`email` AS `account`, `ta`.`logged` AS `last_online`, `tp`.`status` AS `status` FROM `bx_persons_data` AS `td` LEFT JOIN `sys_profiles` AS `tp` ON `td`.`id`=`tp`.`content_id` AND `tp`.`type`='bx_persons' LEFT JOIN `sys_accounts` AS `ta` ON `tp`.`account_id`=`ta`.`id` WHERE 1 ", "bx_persons_data", "id", "last_online", "status", "order_field", "order_dir", "", 20, nil, "start", "", "fullname", "", "like", "filter", "", "", 2147483647, 1, 0, "BxPersonsGridCommon", "modules/boonex/persons/classes/BxPersonsGridCommon.php"])
 
-        # Marcar como executado com sucesso
-        SeedRegistry.mark_seed_executed(@seed_name)
+        # Marcar como executado
+        mark_seed_executed()
         Logger.info("Seed para sys_objects_grid executado com sucesso!", module: __MODULE__)
         :ok
       rescue
         error ->
           error_message = "#{Exception.message(error)}"
-          SeedRegistry.mark_seed_failed(@seed_name, error_message)
           Logger.error("Erro ao executar seed para sys_objects_grid: #{error_message}", module: __MODULE__)
           {:error, error}
       end
@@ -84,11 +83,13 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsGridSeed do
   end
 
   @doc """
-  Força a re-execução do seed removendo o registro de execução.
+  Força a re-execução do seed removendo o arquivo de controle.
   """
   def reset do
     Logger.info("Resetando seed para sys_objects_grid...", module: __MODULE__)
-    SeedRegistry.reset_seed(@seed_name)
+    seed_file = Path.join(@seeds_dir, @seed_name)
+    File.rm(seed_file)
+    Logger.info("Seed sys_objects_grid será re-executado na próxima inicialização.", module: __MODULE__)
   end
 
   @doc """
@@ -100,8 +101,23 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsGridSeed do
     Logger.info("Tabela sys_objects_grid limpa com sucesso.", module: __MODULE__)
   end
 
-  @doc """
-  Retorna o nome do seed para controle.
-  """
-  def seed_name, do: @seed_name
+  # Funções privadas para controle de execução
+  defp seed_already_executed? do
+    ensure_seeds_dir()
+    seed_file = Path.join(@seeds_dir, @seed_name)
+    File.exists?(seed_file)
+  end
+
+  defp mark_seed_executed do
+    ensure_seeds_dir()
+    seed_file = Path.join(@seeds_dir, @seed_name)
+    timestamp = DateTime.utc_now() |> DateTime.to_iso8601()
+    File.write(seed_file, "executed_at: #{timestamp}")
+  end
+
+  defp ensure_seeds_dir do
+    unless File.exists?(@seeds_dir) do
+      File.mkdir_p(@seeds_dir)
+    end
+  end
 end

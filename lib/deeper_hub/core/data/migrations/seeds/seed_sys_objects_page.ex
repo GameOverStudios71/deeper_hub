@@ -2,22 +2,22 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsPageSeed do
   @moduledoc """
   Seed para a tabela sys_objects_page.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
-  Inclui sistema de controle para evitar re-execução desnecessária.
+  Inclui controle de execução para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
-  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
   @seed_name "sys_objects_page_seed"
+  @seeds_dir "seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
   Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    if SeedRegistry.seed_executed?(@seed_name) do
+    if seed_already_executed?() do
       Logger.info("Seed para sys_objects_page já foi executado anteriormente. Pulando...", module: __MODULE__)
       :already_executed
     else
@@ -85,14 +85,13 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsPageSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_objects_page (id, author, added, object, uri, title_system, title, module, cover, cover_image, cover_title, type_id, layout_id, sticky_columns, submenu, visible_for_levels, visible_for_levels_editable, url, content_info, meta_title, meta_description, meta_keywords, meta_robots, cache_lifetime, cache_editable, inj_head, inj_footer, config_api, deletable, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [59, 0, 0, "bx_persons_manage", "persons-manage", "_bx_persons_page_title_sys_manage", "_bx_persons_page_title_manage", "bx_persons", 1, 0, "", 1, 5, 0, "", 2147483647, 1, "page.php?i=persons-manage", "", "", "", "", "", 0, 1, "", "", "", 0, "BxPersonsPageBrowse", "modules/boonex/persons/classes/BxPersonsPageBrowse.php"])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_page (id, author, added, object, uri, title_system, title, module, cover, cover_image, cover_title, type_id, layout_id, sticky_columns, submenu, visible_for_levels, visible_for_levels_editable, url, content_info, meta_title, meta_description, meta_keywords, meta_robots, cache_lifetime, cache_editable, inj_head, inj_footer, config_api, deletable, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [60, 0, 0, "bx_persons_administration", "persons-administration", "_bx_persons_page_title_sys_manage_administration", "_bx_persons_page_title_manage", "bx_persons", 1, 0, "", 1, 5, 0, "", 192, 1, "page.php?i=persons-administration", "", "", "", "", "", 0, 1, "", "", "", 0, "BxPersonsPageBrowse", "modules/boonex/persons/classes/BxPersonsPageBrowse.php"])
 
-        # Marcar como executado com sucesso
-        SeedRegistry.mark_seed_executed(@seed_name)
+        # Marcar como executado
+        mark_seed_executed()
         Logger.info("Seed para sys_objects_page executado com sucesso!", module: __MODULE__)
         :ok
       rescue
         error ->
           error_message = "#{Exception.message(error)}"
-          SeedRegistry.mark_seed_failed(@seed_name, error_message)
           Logger.error("Erro ao executar seed para sys_objects_page: #{error_message}", module: __MODULE__)
           {:error, error}
       end
@@ -100,11 +99,13 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsPageSeed do
   end
 
   @doc """
-  Força a re-execução do seed removendo o registro de execução.
+  Força a re-execução do seed removendo o arquivo de controle.
   """
   def reset do
     Logger.info("Resetando seed para sys_objects_page...", module: __MODULE__)
-    SeedRegistry.reset_seed(@seed_name)
+    seed_file = Path.join(@seeds_dir, @seed_name)
+    File.rm(seed_file)
+    Logger.info("Seed sys_objects_page será re-executado na próxima inicialização.", module: __MODULE__)
   end
 
   @doc """
@@ -116,8 +117,23 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsPageSeed do
     Logger.info("Tabela sys_objects_page limpa com sucesso.", module: __MODULE__)
   end
 
-  @doc """
-  Retorna o nome do seed para controle.
-  """
-  def seed_name, do: @seed_name
+  # Funções privadas para controle de execução
+  defp seed_already_executed? do
+    ensure_seeds_dir()
+    seed_file = Path.join(@seeds_dir, @seed_name)
+    File.exists?(seed_file)
+  end
+
+  defp mark_seed_executed do
+    ensure_seeds_dir()
+    seed_file = Path.join(@seeds_dir, @seed_name)
+    timestamp = DateTime.utc_now() |> DateTime.to_iso8601()
+    File.write(seed_file, "executed_at: #{timestamp}")
+  end
+
+  defp ensure_seeds_dir do
+    unless File.exists?(@seeds_dir) do
+      File.mkdir_p(@seeds_dir)
+    end
+  end
 end

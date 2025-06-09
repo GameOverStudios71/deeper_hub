@@ -15,6 +15,9 @@ defmodule DeeperHub.Application do
     # Limpar arquivos de log da sessão anterior
     DeeperHub.Core.Logger.clear_all_logs()
 
+    # OPCIONAL: Descomentar linha abaixo para forçar re-execução de todos os seeds a cada inicialização
+    # DeeperHub.Core.Data.Migrations.MigrationRegistry.reset_all_seeds()
+
     DeeperHub.Core.Logger.info("Iniciando o sistema DeeperHub...")
 
     # Inicializa primeiro apenas o repositório para garantir que o banco de dados esteja disponível

@@ -2,22 +2,22 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAccountsSeed do
   @moduledoc """
   Seed para a tabela sys_accounts.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
-  Inclui sistema de controle para evitar re-execução desnecessária.
+  Inclui controle de execução para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
-  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
   @seed_name "sys_accounts_seed"
+  @seeds_dir "seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
   Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    if SeedRegistry.seed_executed?(@seed_name) do
+    if seed_already_executed?() do
       Logger.info("Seed para sys_accounts já foi executado anteriormente. Pulando...", module: __MODULE__)
       :already_executed
     else
@@ -27,14 +27,13 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAccountsSeed do
         Repo.execute("INSERT OR REPLACE INTO sys_accounts (id, profile_id, name, picture, email, email_confirmed, phone, phone_confirmed, receive_updates, receive_news, password, password_changed, salt, role, lang_id, added, changed, logged, ip, referred, login_attempts, locked, active) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [1, 1, "admin", 0, "crashangel@live.com", 1, "", 0, 1, 1, "bbca86673537ecaa02b635e9029cd031b30c984d", 0, "z,v8RetG", 3, 1, 1749379446, 0, 1749379457, "::1", "", 0, 0, 0])
     Repo.execute("INSERT OR REPLACE INTO sys_accounts (id, profile_id, name, picture, email, email_confirmed, phone, phone_confirmed, receive_updates, receive_news, password, password_changed, salt, role, lang_id, added, changed, logged, ip, referred, login_attempts, locked, active) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [2, 0, "Robot", 0, "", 0, "", 0, 0, 0, "", 0, "", 3, 0, 1749379446, 0, 0, "", "", 0, 0, 0])
 
-        # Marcar como executado com sucesso
-        SeedRegistry.mark_seed_executed(@seed_name)
+        # Marcar como executado
+        mark_seed_executed()
         Logger.info("Seed para sys_accounts executado com sucesso!", module: __MODULE__)
         :ok
       rescue
         error ->
           error_message = "#{Exception.message(error)}"
-          SeedRegistry.mark_seed_failed(@seed_name, error_message)
           Logger.error("Erro ao executar seed para sys_accounts: #{error_message}", module: __MODULE__)
           {:error, error}
       end
@@ -42,11 +41,13 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAccountsSeed do
   end
 
   @doc """
-  Força a re-execução do seed removendo o registro de execução.
+  Força a re-execução do seed removendo o arquivo de controle.
   """
   def reset do
     Logger.info("Resetando seed para sys_accounts...", module: __MODULE__)
-    SeedRegistry.reset_seed(@seed_name)
+    seed_file = Path.join(@seeds_dir, @seed_name)
+    File.rm(seed_file)
+    Logger.info("Seed sys_accounts será re-executado na próxima inicialização.", module: __MODULE__)
   end
 
   @doc """
@@ -58,8 +59,23 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAccountsSeed do
     Logger.info("Tabela sys_accounts limpa com sucesso.", module: __MODULE__)
   end
 
-  @doc """
-  Retorna o nome do seed para controle.
-  """
-  def seed_name, do: @seed_name
+  # Funções privadas para controle de execução
+  defp seed_already_executed? do
+    ensure_seeds_dir()
+    seed_file = Path.join(@seeds_dir, @seed_name)
+    File.exists?(seed_file)
+  end
+
+  defp mark_seed_executed do
+    ensure_seeds_dir()
+    seed_file = Path.join(@seeds_dir, @seed_name)
+    timestamp = DateTime.utc_now() |> DateTime.to_iso8601()
+    File.write(seed_file, "executed_at: #{timestamp}")
+  end
+
+  defp ensure_seeds_dir do
+    unless File.exists?(@seeds_dir) do
+      File.mkdir_p(@seeds_dir)
+    end
+  end
 end

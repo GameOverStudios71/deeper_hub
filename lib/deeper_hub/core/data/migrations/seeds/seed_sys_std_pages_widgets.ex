@@ -2,22 +2,22 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysStdPagesWidgetsSeed do
   @moduledoc """
   Seed para a tabela sys_std_pages_widgets.
   Insere os registros iniciais na tabela usando INSERT OR REPLACE para evitar conflitos.
-  Inclui sistema de controle para evitar re-execução desnecessária.
+  Inclui controle de execução para evitar re-execução desnecessária.
   """
 
   alias DeeperHub.Core.Data.Repo
-  alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
   require DeeperHub.Core.Logger
 
   @seed_name "sys_std_pages_widgets_seed"
+  @seeds_dir "seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
   Verifica se já foi executado antes de inserir os dados.
   """
   def run do
-    if SeedRegistry.seed_executed?(@seed_name) do
+    if seed_already_executed?() do
       Logger.info("Seed para sys_std_pages_widgets já foi executado anteriormente. Pulando...", module: __MODULE__)
       :already_executed
     else
@@ -44,14 +44,13 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysStdPagesWidgetsSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [18, 1, 18, 18])
     Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [19, 1, 19, 19])
 
-        # Marcar como executado com sucesso
-        SeedRegistry.mark_seed_executed(@seed_name)
+        # Marcar como executado
+        mark_seed_executed()
         Logger.info("Seed para sys_std_pages_widgets executado com sucesso!", module: __MODULE__)
         :ok
       rescue
         error ->
           error_message = "#{Exception.message(error)}"
-          SeedRegistry.mark_seed_failed(@seed_name, error_message)
           Logger.error("Erro ao executar seed para sys_std_pages_widgets: #{error_message}", module: __MODULE__)
           {:error, error}
       end
@@ -59,11 +58,13 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysStdPagesWidgetsSeed do
   end
 
   @doc """
-  Força a re-execução do seed removendo o registro de execução.
+  Força a re-execução do seed removendo o arquivo de controle.
   """
   def reset do
     Logger.info("Resetando seed para sys_std_pages_widgets...", module: __MODULE__)
-    SeedRegistry.reset_seed(@seed_name)
+    seed_file = Path.join(@seeds_dir, @seed_name)
+    File.rm(seed_file)
+    Logger.info("Seed sys_std_pages_widgets será re-executado na próxima inicialização.", module: __MODULE__)
   end
 
   @doc """
@@ -75,8 +76,23 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysStdPagesWidgetsSeed do
     Logger.info("Tabela sys_std_pages_widgets limpa com sucesso.", module: __MODULE__)
   end
 
-  @doc """
-  Retorna o nome do seed para controle.
-  """
-  def seed_name, do: @seed_name
+  # Funções privadas para controle de execução
+  defp seed_already_executed? do
+    ensure_seeds_dir()
+    seed_file = Path.join(@seeds_dir, @seed_name)
+    File.exists?(seed_file)
+  end
+
+  defp mark_seed_executed do
+    ensure_seeds_dir()
+    seed_file = Path.join(@seeds_dir, @seed_name)
+    timestamp = DateTime.utc_now() |> DateTime.to_iso8601()
+    File.write(seed_file, "executed_at: #{timestamp}")
+  end
+
+  defp ensure_seeds_dir do
+    unless File.exists?(@seeds_dir) do
+      File.mkdir_p(@seeds_dir)
+    end
+  end
 end
