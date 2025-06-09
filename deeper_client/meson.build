@@ -34,9 +34,24 @@ imgui_dep = declare_dependency(
   link_with : imgui_lib,
   include_directories : include_directories('includes/imgui/', 'includes/imgui/backends'))
 
+# Lista de dependências
+deps = [imgui_dep, opengl_lib, gdi32_lib]
+if dwmapi_lib.found()
+  deps += dwmapi_lib
+endif
+
+# Arquivos fonte do projeto
+project_src = [
+  'src/main.cpp',
+  'src/window_manager.cpp',
+  'src/http_client.cpp',
+  'src/ui_manager.cpp',
+  'src/opengl_context.cpp'
+]
+
 # Executável principal
 executable('deeper_client',
-  'src/main.cpp',
-  dependencies : [imgui_dep],
-  link_args : ['-lopengl32', '-lgdi32', '-ldwmapi'],
+  project_src,
+  dependencies : deps,
   install : true)
+
