@@ -32,6 +32,9 @@ BUILD_STATIC_CURL:BOOL=OFF
 //Build static libraries
 BUILD_STATIC_LIBS:BOOL=OFF
 
+//utilities
+BUILD_UTILS:BOOL=OFF
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/mingw64/bin/addr2line.exe
 
@@ -697,6 +700,18 @@ FETCHCONTENT_UPDATES_DISCONNECTED_ZLIB:BOOL=OFF
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=C:/Program Files/Git/cmd/git.exe
 
+//EGL mode
+GLEW_EGL:BOOL=OFF
+
+//OSMesa mode
+GLEW_OSMESA:BOOL=OFF
+
+//Regal mode
+GLEW_REGAL:BOOL=OFF
+
+//X11 mode
+GLEW_X11:BOOL=ON
+
 //Value Computed by CMake
 GLFW_BINARY_DIR:STATIC=C:/Users/Admin/Composite/deeper_client/build/external/glfw
 
@@ -943,6 +958,15 @@ deeper_client_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 deeper_client_SOURCE_DIR:STATIC=C:/Users/Admin/Composite/deeper_client
+
+//Value Computed by CMake
+glew_BINARY_DIR:STATIC=C:/Users/Admin/Composite/deeper_client/build/external/glew/build/cmake
+
+//Value Computed by CMake
+glew_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+glew_SOURCE_DIR:STATIC=C:/Users/Admin/Composite/deeper_client/external/glew/build/cmake
 
 //Value Computed by CMake
 nlohmann_json_BINARY_DIR:STATIC=C:/Users/Admin/Composite/deeper_client/build/external/nlohmann_json

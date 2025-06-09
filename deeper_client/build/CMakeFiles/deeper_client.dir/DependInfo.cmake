@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/Admin/Composite/deeper_client/external/imgui/imgui_widgets.cpp" "CMakeFiles/deeper_client.dir/external/imgui/imgui_widgets.cpp.obj" "gcc" "CMakeFiles/deeper_client.dir/external/imgui/imgui_widgets.cpp.obj.d"
   "C:/Users/Admin/Composite/deeper_client/src/Application.cpp" "CMakeFiles/deeper_client.dir/src/Application.cpp.obj" "gcc" "CMakeFiles/deeper_client.dir/src/Application.cpp.obj.d"
   "C:/Users/Admin/Composite/deeper_client/src/BackendConnector.cpp" "CMakeFiles/deeper_client.dir/src/BackendConnector.cpp.obj" "gcc" "CMakeFiles/deeper_client.dir/src/BackendConnector.cpp.obj.d"
+  "C:/Users/Admin/Composite/deeper_client/src/Shader.cpp" "CMakeFiles/deeper_client.dir/src/Shader.cpp.obj" "gcc" "CMakeFiles/deeper_client.dir/src/Shader.cpp.obj.d"
   "C:/Users/Admin/Composite/deeper_client/src/main.cpp" "CMakeFiles/deeper_client.dir/src/main.cpp.obj" "gcc" "CMakeFiles/deeper_client.dir/src/main.cpp.obj.d"
   )
 

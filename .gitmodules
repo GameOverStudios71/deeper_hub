@@ -13,3 +13,6 @@
 [submodule "deeper_client/external/nlohmann_json"]
 	path = deeper_client/external/nlohmann_json
 	url = https://github.com/nlohmann/json.git
+[submodule "deeper_client/external/glew"]
+	path = deeper_client/external/glew
+	url = https://github.com/nigels-com/glew.git

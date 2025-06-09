@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/deeper_client.dir/src/Application.cpp.obj.d"
   "CMakeFiles/deeper_client.dir/src/BackendConnector.cpp.obj"
   "CMakeFiles/deeper_client.dir/src/BackendConnector.cpp.obj.d"
+  "CMakeFiles/deeper_client.dir/src/Shader.cpp.obj"
+  "CMakeFiles/deeper_client.dir/src/Shader.cpp.obj.d"
   "CMakeFiles/deeper_client.dir/src/main.cpp.obj"
   "CMakeFiles/deeper_client.dir/src/main.cpp.obj.d"
   "deeper_client.exe"

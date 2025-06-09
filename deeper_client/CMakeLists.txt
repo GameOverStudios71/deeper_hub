@@ -21,6 +21,8 @@ add_subdirectory(external/cpr)
 add_subdirectory(external/nlohmann_json)
 
 
+
+
 # Configurar ImGui
 set(IMGUI_SOURCES
     external/imgui/imgui.cpp
@@ -41,6 +43,7 @@ add_executable(deeper_client
     src/main.cpp
     src/Application.cpp
     src/BackendConnector.cpp
+    src/Shader.cpp
     ${IMGUI_SOURCES}
 )
 

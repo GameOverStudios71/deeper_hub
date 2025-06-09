@@ -7,11 +7,17 @@
 #include <GL/gl.h>
 
 Application::Application()
-    : m_Window(nullptr), m_ImGuiContext(nullptr), m_Backend("http://localhost:4000") {
+    : m_Window(nullptr), m_ImGuiContext(nullptr), m_Backend("http://localhost:4000"),
+      m_BlurEnabled(false), m_ColorOverlayEnabled(false), m_DistortionEnabled(false) {
     InitGLFW();
     if (m_Window != nullptr) {
         InitImGui();
         InitBackend();
+
+        // Inicializar sistema de efeitos simples
+        if (!m_EffectsRenderer.Initialize()) {
+            std::cerr << "Aviso: Sistema de efeitos visuais não pôde ser inicializado" << std::endl;
+        }
     }
 }
 
@@ -35,6 +41,22 @@ void Application::InitBackend() {
 void Application::RenderUI() {
     // Janela principal
     ImGui::Begin("DeeperHub Terminal");
+
+    // Controles de efeitos visuais
+    ImGui::Text("=== Efeitos Visuais ===");
+    ImGui::Checkbox("Ativar Blur Gaussiano", &m_BlurEnabled);
+    ImGui::Checkbox("Ativar Overlay de Cor", &m_ColorOverlayEnabled);
+    ImGui::Checkbox("Ativar Distorção", &m_DistortionEnabled);
+
+    // Controle de intensidade do blur
+    if (m_BlurEnabled) {
+        float intensity = m_EffectsRenderer.GetBlurIntensity();
+        if (ImGui::SliderFloat("Intensidade do Blur", &intensity, 0.1f, 3.0f)) {
+            m_EffectsRenderer.SetBlurIntensity(intensity);
+        }
+    }
+
+    ImGui::Separator();
     
     // Área de saída
     ImGui::BeginChild("Saída", ImVec2(0, -ImGui::GetFrameHeightWithSpacing()), true);
@@ -82,6 +104,9 @@ void Application::Run() {
     while (!glfwWindowShouldClose(m_Window)) {
         glfwPollEvents();
 
+        int display_w, display_h;
+        glfwGetFramebufferSize(m_Window, &display_w, &display_h);
+
         // Start the Dear ImGui frame
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
@@ -92,11 +117,23 @@ void Application::Run() {
 
         // Rendering
         ImGui::Render();
-        int display_w, display_h;
-        glfwGetFramebufferSize(m_Window, &display_w, &display_h);
         glViewport(0, 0, display_w, display_h);
-        glClearColor(0.45f, 0.55f, 0.60f, 1.00f);
+        glClearColor(0.45f, 0.55f, 0.60f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
+
+        // Aplicar efeitos visuais se habilitados
+        if (m_BlurEnabled) {
+            m_EffectsRenderer.ApplyBlurEffect();
+        }
+
+        if (m_ColorOverlayEnabled) {
+            m_EffectsRenderer.ApplyColorOverlay();
+        }
+
+        if (m_DistortionEnabled) {
+            m_EffectsRenderer.ApplyDistortionEffect();
+        }
+
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
         glfwSwapBuffers(m_Window);
@@ -133,6 +170,7 @@ void Application::InitGLFW() {
     glfwSwapInterval(1); // Enable vsync
 
     std::cout << "Janela GLFW criada com sucesso!" << std::endl;
+    std::cout << "OpenGL Version: " << glGetString(GL_VERSION) << std::endl;
 }
 
 void Application::InitImGui() {

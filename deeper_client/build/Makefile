@@ -480,6 +480,30 @@ src/BackendConnector.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\deeper_client.dir\build.make CMakeFiles/deeper_client.dir/src/BackendConnector.cpp.s
 .PHONY : src/BackendConnector.cpp.s
 
+src/Shader.obj: src/Shader.cpp.obj
+.PHONY : src/Shader.obj
+
+# target to build an object file
+src/Shader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\deeper_client.dir\build.make CMakeFiles/deeper_client.dir/src/Shader.cpp.obj
+.PHONY : src/Shader.cpp.obj
+
+src/Shader.i: src/Shader.cpp.i
+.PHONY : src/Shader.i
+
+# target to preprocess a source file
+src/Shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\deeper_client.dir\build.make CMakeFiles/deeper_client.dir/src/Shader.cpp.i
+.PHONY : src/Shader.cpp.i
+
+src/Shader.s: src/Shader.cpp.s
+.PHONY : src/Shader.s
+
+# target to generate assembly for a file
+src/Shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\deeper_client.dir\build.make CMakeFiles/deeper_client.dir/src/Shader.cpp.s
+.PHONY : src/Shader.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -551,6 +575,9 @@ help:
 	@echo ... src/BackendConnector.obj
 	@echo ... src/BackendConnector.i
 	@echo ... src/BackendConnector.s
+	@echo ... src/Shader.obj
+	@echo ... src/Shader.i
+	@echo ... src/Shader.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
