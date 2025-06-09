@@ -8,22 +8,25 @@
 // Protótipos de funções
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+void ToggleFullscreen(HWND hwnd);
 
 // Variáveis globais
 HWND hwnd;
 HDC hdc;
 HGLRC hglrc;
+bool g_IsFullscreen = false;
+RECT g_WindowRect = {0, 0, 800, 600}; // Tamanho padrão da janela quando não estiver em tela cheia
 
 int main(int argc, char** argv) {
     // Registrar classe de janela
     WNDCLASSEXW wc = { sizeof(wc), CS_OWNDC, WndProc, 0L, 0L, GetModuleHandle(NULL), NULL, NULL, NULL, NULL, L"ImGui Example", NULL };
     ::RegisterClassExW(&wc);
     
-    // Criar janela
+    // Criar janela inicialmente em modo normal (será alterada para fullscreen logo depois)
     hwnd = ::CreateWindowW(wc.lpszClassName, L"Deeper Client", 
                           WS_OVERLAPPEDWINDOW, 
                           CW_USEDEFAULT, CW_USEDEFAULT, 
-                          CW_USEDEFAULT, CW_USEDEFAULT, 
+                          800, 600, 
                           NULL, NULL, wc.hInstance, NULL);
     
     // Inicializar OpenGL
@@ -46,9 +49,11 @@ int main(int argc, char** argv) {
     ImGui_ImplWin32_Init(hwnd);
     ImGui_ImplOpenGL3_Init("#version 130");
     
-    // Mostrar janela maximizada
-    ::ShowWindow(hwnd, SW_SHOWMAXIMIZED);
-    ::UpdateWindow(hwnd);
+    // Salvar posição e tamanho da janela antes de entrar em tela cheia
+    ::GetWindowRect(hwnd, &g_WindowRect);
+    
+    // Entrar em modo tela cheia
+    ToggleFullscreen(hwnd);
     
     // Cores de fundo
     ImVec4 clear_color = ImVec4(0.15f, 0.15f, 0.15f, 1.00f);
@@ -89,6 +94,7 @@ int main(int argc, char** argv) {
             ImGui::Begin("Main Window", NULL, window_flags);
             
             ImGui::Text("Bem-vindo ao Deeper Client");
+            ImGui::Text("Pressione Alt+Enter para alternar entre tela cheia e modo janela");
             ImGui::Separator();
             
             if (ImGui::Button("Configurações", ImVec2(150, 30))) {
@@ -127,6 +133,41 @@ int main(int argc, char** argv) {
     return 0;
 }
 
+// Função para alternar entre tela cheia e modo janela
+void ToggleFullscreen(HWND hwnd) {
+    if (!g_IsFullscreen) {
+        // Salvar posição e tamanho da janela antes de entrar em tela cheia
+        ::GetWindowRect(hwnd, &g_WindowRect);
+        
+        // Obter handle do monitor que contém a janela
+        HMONITOR hmon = ::MonitorFromWindow(hwnd, MONITOR_DEFAULTTONEAREST);
+        MONITORINFO mi = { sizeof(mi) };
+        ::GetMonitorInfo(hmon, &mi);
+        
+        // Entrar em modo tela cheia
+        ::SetWindowLong(hwnd, GWL_STYLE, WS_POPUP | WS_VISIBLE);
+        ::SetWindowPos(hwnd, HWND_TOP,
+                      mi.rcMonitor.left, mi.rcMonitor.top,
+                      mi.rcMonitor.right - mi.rcMonitor.left,
+                      mi.rcMonitor.bottom - mi.rcMonitor.top,
+                      SWP_FRAMECHANGED);
+        ::ShowWindow(hwnd, SW_SHOW);
+    } else {
+        // Restaurar estilo da janela
+        ::SetWindowLong(hwnd, GWL_STYLE, WS_OVERLAPPEDWINDOW | WS_VISIBLE);
+        
+        // Restaurar posição e tamanho da janela
+        ::SetWindowPos(hwnd, NULL,
+                      g_WindowRect.left, g_WindowRect.top,
+                      g_WindowRect.right - g_WindowRect.left,
+                      g_WindowRect.bottom - g_WindowRect.top,
+                      SWP_FRAMECHANGED);
+        ::ShowWindow(hwnd, SW_SHOW);
+    }
+    
+    g_IsFullscreen = !g_IsFullscreen;
+}
+
 // Manipulador de mensagens da janela
 LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     if (ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam))
@@ -142,6 +183,13 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     case WM_DESTROY:
         ::PostQuitMessage(0);
         return 0;
+    case WM_KEYDOWN:
+        // Alt+Enter para alternar modo tela cheia
+        if (wParam == VK_RETURN && (GetKeyState(VK_MENU) & 0x8000)) {
+            ToggleFullscreen(hWnd);
+            return 0;
+        }
+        break;
     }
     return ::DefWindowProcW(hWnd, msg, wParam, lParam);
 }
