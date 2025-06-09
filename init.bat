@@ -1,0 +1,1 @@
+set PATH=C:\mingw64\bin;%CD%;%CD%\shortcuts;%PATH%
