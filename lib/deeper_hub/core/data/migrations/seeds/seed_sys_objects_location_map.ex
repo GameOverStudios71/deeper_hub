@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsLocationMapSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_objects_location_map_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.

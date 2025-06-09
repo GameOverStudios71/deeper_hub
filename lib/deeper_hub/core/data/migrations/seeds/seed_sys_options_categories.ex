@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysOptionsCategoriesSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_options_categories_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -58,6 +58,26 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysOptionsCategoriesSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [32, 5, "bx_profiler_sql_querues", "SQL Queries", 0, 2])
     Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [33, 5, "bx_profiler_modules_queries", "Modules Queries", 0, 3])
     Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [34, 5, "bx_profiler_page_opens", "Pages opens", 0, 4])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [35, 6, "bx_accounts", "_bx_accounts", 0, 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [36, 7, "bx_analytics_general", "_bx_analytics_adm_stg_cpt_category_general", 0, 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [37, 8, "bx_anon_follow", "_bx_anon_follow", 0, 2])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [38, 9, "bx_attendant_on_profile_creation", "_bx_attendant_adm_stg_cpt_category_on_profile_creation", 0, 2])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [50, 12, "bx_charts_chart_chart_growth", "_bx_charts_adm_stg_cpt_category_chart_growth", 0, 4])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [48, 12, "bx_charts_chart_most_active_profiles", "_bx_charts_adm_stg_cpt_category_chart_most_active_profiles", 0, 2])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [49, 12, "bx_charts_chart_most_followed_profiles", "_bx_charts_adm_stg_cpt_category_chart_most_followed_profiles", 0, 3])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [47, 12, "bx_charts_chart1", "_bx_charts_adm_stg_cpt_category_chart_top_contents_by_likes", 0, 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [51, 13, "bx_antispam_general", "_bx_antispam_adm_stg_cpt_category_general", 0, 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [52, 13, "bx_antispam_ip_table", "_bx_antispam_adm_stg_cpt_category_ip_table", 0, 2])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [53, 13, "bx_antispam_dnsbl", "_bx_antispam_adm_stg_cpt_category_dnsbl", 0, 3])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [54, 13, "bx_antispam_akismet", "_bx_antispam_adm_stg_cpt_category_akismet", 0, 4])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [55, 13, "bx_antispam_stopforumspam", "_bx_antispam_adm_stg_cpt_category_stopforumspam", 0, 5])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [56, 13, "bx_antispam_disposable_email_domains", "_bx_antispam_adm_stg_cpt_category_disposable_email_domains", 0, 6])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [57, 13, "bx_antispam_profanity_filter", "_bx_antispam_adm_stg_cpt_category_profanity_filter", 0, 7])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [58, 13, "bx_antispam_toxicity_filter", "_bx_antispam_adm_stg_cpt_category_toxicity_filter", 0, 8])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [59, 14, "bx_contact", "_bx_contact", 0, 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [60, 15, "bx_googletagman_general", "_sys_connect_adm_stg_cpt_category_general", 0, 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [61, 16, "bx_reminders", "_bx_reminders", 0, 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_categories (id, type_id, name, caption, hidden, 'order') VALUES (?, ?, ?, ?, ?, ?)", [62, 17, "bx_convos", "_bx_cnv", 0, 1])
 
         # Marcar como executado
         mark_seed_executed()

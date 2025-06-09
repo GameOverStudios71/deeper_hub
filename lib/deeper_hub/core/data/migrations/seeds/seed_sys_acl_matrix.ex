@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAclMatrixSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_acl_matrix_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -150,6 +150,40 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAclMatrixSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [7, 42, nil, nil, nil, nil, nil])
     Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [8, 42, nil, nil, nil, nil, nil])
     Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [8, 43, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [7, 44, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [8, 44, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [8, 45, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [7, 46, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [8, 46, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [1, 47, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [2, 47, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [3, 47, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [4, 47, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [5, 47, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [6, 47, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [7, 47, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [8, 47, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [9, 47, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [3, 48, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [7, 48, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [8, 48, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [9, 48, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [3, 49, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [7, 49, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [8, 49, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [9, 49, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [3, 50, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [7, 50, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [8, 50, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [9, 50, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [1, 51, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [2, 51, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [3, 51, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [4, 51, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [5, 51, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [7, 51, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [8, 51, nil, nil, nil, nil, nil])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_matrix (IDLevel, IDAction, AllowedCount, AllowedPeriodLen, AllowedPeriodStart, AllowedPeriodEnd, AdditionalParamValue) VALUES (?, ?, ?, ?, ?, ?, ?)", [9, 51, nil, nil, nil, nil, nil])
 
         # Marcar como executado
         mark_seed_executed()

@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAclActionsSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_acl_actions_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -67,6 +67,14 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAclActionsSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_acl_actions (ID, Module, Name, AdditionalParamName, Title, 'Desc', Countable, DisabledForLevels) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [41, "bx_persons", "view entry", nil, "_bx_persons_acl_action_view_profile", "", 1, 0])
     Repo.execute("INSERT OR REPLACE INTO sys_acl_actions (ID, Module, Name, AdditionalParamName, Title, 'Desc', Countable, DisabledForLevels) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [42, "bx_persons", "edit any entry", nil, "_bx_persons_acl_action_edit_any_profile", "", 1, 3])
     Repo.execute("INSERT OR REPLACE INTO sys_acl_actions (ID, Module, Name, AdditionalParamName, Title, 'Desc', Countable, DisabledForLevels) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [43, "bx_persons", "delete any entry", nil, "_bx_persons_acl_action_delete_any_profile", "", 1, 3])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_actions (ID, Module, Name, AdditionalParamName, Title, 'Desc', Countable, DisabledForLevels) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [44, "bx_accounts", "edit any entry", nil, "_bx_accnt_acl_action_edit_any_account", "", 1, 3])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_actions (ID, Module, Name, AdditionalParamName, Title, 'Desc', Countable, DisabledForLevels) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [45, "bx_accounts", "delete any entry", nil, "_bx_accnt_acl_action_delete_any_account", "", 1, 3])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_actions (ID, Module, Name, AdditionalParamName, Title, 'Desc', Countable, DisabledForLevels) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [46, "bx_analytics", "use analytics", nil, "_bx_analytics_acl_action_use_analytics", "", 1, 3])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_actions (ID, Module, Name, AdditionalParamName, Title, 'Desc', Countable, DisabledForLevels) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [47, "bx_contact", "contact", nil, "_bx_contact_acl_action_contact", "", 1, 0])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_actions (ID, Module, Name, AdditionalParamName, Title, 'Desc', Countable, DisabledForLevels) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [48, "bx_reminders", "view", nil, "_bx_reminders_acl_action_view", "", 0, 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_actions (ID, Module, Name, AdditionalParamName, Title, 'Desc', Countable, DisabledForLevels) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [49, "bx_convos", "create entry", nil, "_bx_cnv_acl_action_create_entry", "", 1, 3])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_actions (ID, Module, Name, AdditionalParamName, Title, 'Desc', Countable, DisabledForLevels) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [50, "bx_convos", "delete entry", nil, "_bx_cnv_acl_action_delete_entry", "", 1, 3])
+    Repo.execute("INSERT OR REPLACE INTO sys_acl_actions (ID, Module, Name, AdditionalParamName, Title, 'Desc', Countable, DisabledForLevels) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [51, "bx_convos", "view entry", nil, "_bx_cnv_acl_action_view_entry", "", 0, 0])
 
         # Marcar como executado
         mark_seed_executed()

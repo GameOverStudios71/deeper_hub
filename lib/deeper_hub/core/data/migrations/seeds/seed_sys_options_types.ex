@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysOptionsTypesSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_options_types_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -29,6 +29,16 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysOptionsTypesSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_options_types (id, 'group', name, caption, icon, 'order') VALUES (?, ?, ?, ?, ?, ?)", [3, "templates", "bx_artificer", "_bx_artificer_stg_cpt_type", "bx_artificer@modules/boonex/artificer/|std-icon.svg", 2])
     Repo.execute("INSERT OR REPLACE INTO sys_options_types (id, 'group', name, caption, icon, 'order') VALUES (?, ?, ?, ?, ?, ?)", [4, "modules", "bx_persons", "_bx_persons", "bx_persons@modules/boonex/persons/|std-icon.svg", 1])
     Repo.execute("INSERT OR REPLACE INTO sys_options_types (id, 'group', name, caption, icon, 'order') VALUES (?, ?, ?, ?, ?, ?)", [5, "modules", "bx_profiler", "Profiler", "bx_profiler@modules/boonex/profiler/|std-icon.svg", 2])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_types (id, 'group', name, caption, icon, 'order') VALUES (?, ?, ?, ?, ?, ?)", [6, "modules", "bx_accounts", "_bx_accounts", "bx_accounts@modules/boonex/accounts/|std-icon.svg", 3])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_types (id, 'group', name, caption, icon, 'order') VALUES (?, ?, ?, ?, ?, ?)", [7, "modules", "bx_analytics", "_bx_analytics_adm_stg_cpt_type", "bx_analytics@modules/boonex/analytics/|std-icon.svg", 5])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_types (id, 'group', name, caption, icon, 'order') VALUES (?, ?, ?, ?, ?, ?)", [8, "modules", "bx_anon_follow", "_bx_anon_follow", "bx_anon_follow@modules/boonex/anon_follow/|std-icon.svg", 7])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_types (id, 'group', name, caption, icon, 'order') VALUES (?, ?, ?, ?, ?, ?)", [9, "modules", "bx_attendant", "_bx_attendant_adm_stg_cpt_type", "bx_attendant@modules/boonex/attendant/|std-icon.svg", 9])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_types (id, 'group', name, caption, icon, 'order') VALUES (?, ?, ?, ?, ?, ?)", [12, "modules", "bx_charts", "_bx_charts_adm_stg_cpt_type", "bx_charts@modules/boonex/charts/|std-icon.svg", 11])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_types (id, 'group', name, caption, icon, 'order') VALUES (?, ?, ?, ?, ?, ?)", [13, "modules", "bx_antispam", "_bx_antispam_adm_stg_cpt_type", "bx_antispam@modules/boonex/antispam/|std-icon.svg", 12])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_types (id, 'group', name, caption, icon, 'order') VALUES (?, ?, ?, ?, ?, ?)", [14, "modules", "bx_contact", "_bx_contact", "bx_contact@modules/boonex/contact/|std-icon.svg", 13])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_types (id, 'group', name, caption, icon, 'order') VALUES (?, ?, ?, ?, ?, ?)", [15, "modules", "bx_googletagman", "_bx_googletagman_adm_stg_cpt_type", "bx_googletagman@modules/boonex/google_tagmanager/|std-icon.svg", 14])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_types (id, 'group', name, caption, icon, 'order') VALUES (?, ?, ?, ?, ?, ?)", [16, "modules", "bx_reminders", "_bx_reminders", "bx_reminders@modules/boonex/reminders/|std-icon.svg", 15])
+    Repo.execute("INSERT OR REPLACE INTO sys_options_types (id, 'group', name, caption, icon, 'order') VALUES (?, ?, ?, ?, ?, ?)", [17, "modules", "bx_convos", "_bx_cnv", "bx_convos@modules/boonex/convos/|std-icon.svg", 16])
 
         # Marcar como executado
         mark_seed_executed()

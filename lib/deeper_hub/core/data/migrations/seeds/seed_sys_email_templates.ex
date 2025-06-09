@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysEmailTemplatesSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_email_templates_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -48,6 +48,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysEmailTemplatesSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_email_templates (ID, Module, NameSystem, Name, Subject, Body) VALUES (?, ?, ?, ?, ?, ?)", [22, "system", "_sys_et_txt_name_account_change_status_suspended", "t_ChangeStatusAccountSuspend", "_sys_et_txt_subject_account_change_status_suspended", "_sys_et_txt_body_account_change_status_suspended"])
     Repo.execute("INSERT OR REPLACE INTO sys_email_templates (ID, Module, NameSystem, Name, Subject, Body) VALUES (?, ?, ?, ?, ?, ?)", [23, "system", "_sys_et_txt_name_manage_approve", "t_ManageApprove", "_sys_et_txt_subject_manage_approve", "_sys_et_txt_body_manage_approve"])
     Repo.execute("INSERT OR REPLACE INTO sys_email_templates (ID, Module, NameSystem, Name, Subject, Body) VALUES (?, ?, ?, ?, ?, ?)", [24, "bx_persons", "_bx_persons_email_friend_request", "bx_persons_friend_request", "_bx_persons_email_friend_request_subject", "_bx_persons_email_friend_request_body"])
+    Repo.execute("INSERT OR REPLACE INTO sys_email_templates (ID, Module, NameSystem, Name, Subject, Body) VALUES (?, ?, ?, ?, ?, ?)", [25, "bx_contact", "_bx_contact_et_contact_form_message", "bx_contact_contact_form_message", "_bx_contact_et_contact_form_message_subject", "_bx_contact_et_contact_form_message_body"])
+    Repo.execute("INSERT OR REPLACE INTO sys_email_templates (ID, Module, NameSystem, Name, Subject, Body) VALUES (?, ?, ?, ?, ?, ?)", [26, "bx_convos", "_bx_cnv_email_new_message", "bx_cnv_new_message", "_bx_cnv_email_new_message_subject", "_bx_cnv_email_new_message_body"])
+    Repo.execute("INSERT OR REPLACE INTO sys_email_templates (ID, Module, NameSystem, Name, Subject, Body) VALUES (?, ?, ?, ?, ?, ?)", [27, "bx_convos", "_bx_cnv_email_new_reply", "bx_cnv_new_reply", "_bx_cnv_email_new_reply_subject", "_bx_cnv_email_new_reply_body"])
 
         # Marcar como executado
         mark_seed_executed()

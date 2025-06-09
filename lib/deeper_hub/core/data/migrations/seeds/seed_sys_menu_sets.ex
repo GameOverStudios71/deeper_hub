@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysMenuSetsSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_menu_sets_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -63,6 +63,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysMenuSetsSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_menu_sets (set_name, module, title, deletable) VALUES (?, ?, ?, ?)", ["bx_persons_view_submenu", "bx_persons", "_bx_persons_menu_set_title_view_profile_submenu", 0])
     Repo.execute("INSERT OR REPLACE INTO sys_menu_sets (set_name, module, title, deletable) VALUES (?, ?, ?, ?)", ["bx_persons_snippet_meta", "bx_persons", "_sys_menu_set_title_snippet_meta", 0])
     Repo.execute("INSERT OR REPLACE INTO sys_menu_sets (set_name, module, title, deletable) VALUES (?, ?, ?, ?)", ["bx_persons_menu_manage_tools", "bx_persons", "_bx_persons_menu_set_title_manage_tools", 0])
+    Repo.execute("INSERT OR REPLACE INTO sys_menu_sets (set_name, module, title, deletable) VALUES (?, ?, ?, ?)", ["bx_accounts_menu_manage_tools", "bx_accounts", "_bx_accnt_menu_set_title_manage_tools", 0])
+    Repo.execute("INSERT OR REPLACE INTO sys_menu_sets (set_name, module, title, deletable) VALUES (?, ?, ?, ?)", ["bx_convos_view", "bx_convos", "_bx_cnv_menu_set_title_view_entry", 0])
+    Repo.execute("INSERT OR REPLACE INTO sys_menu_sets (set_name, module, title, deletable) VALUES (?, ?, ?, ?)", ["bx_convos_submenu", "bx_convos", "_bx_cnv_menu_set_title_submenu", 0])
 
         # Marcar como executado
         mark_seed_executed()

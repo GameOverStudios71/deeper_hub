@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysSearchExtendedSortingFieldsSee
   require DeeperHub.Core.Logger
 
   @seed_name "sys_search_extended_sorting_fields_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.

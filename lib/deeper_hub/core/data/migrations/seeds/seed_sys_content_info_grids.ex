@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysContentInfoGridsSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_content_info_grids_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -26,6 +26,26 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysContentInfoGridsSeed do
       try do
         Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [1, "bx_persons", "bx_persons_administration", "td`.`id", "", ""])
     Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [2, "bx_persons", "bx_persons_common", "td`.`id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [24, "bx_groups", "bx_groups_common", "td`.`id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [23, "bx_groups", "bx_groups_administration", "td`.`id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [28, "bx_reviews", "bx_reviews_common", "id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [27, "bx_reviews", "bx_reviews_administration", "id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [43, "bx_classes", "bx_classes_common", "id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [42, "bx_classes", "bx_classes_administration", "id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [33, "bx_ads", "bx_ads_administration", "id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [18, "bx_forum", "bx_forum", "id", "", "a:1:{s:4:\"sort\";a:2:{s:5:\"stick\";s:4:\"desc\";s:12:\"lr_timestamp\";s:4:\"desc\";}}"])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [19, "bx_forum", "bx_forum_administration", "id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [20, "bx_forum", "bx_forum_common", "id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [21, "bx_glossary", "bx_glossary_administration", "id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [22, "bx_glossary", "bx_glossary_common", "id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [25, "bx_events", "bx_events_administration", "td`.`id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [26, "bx_events", "bx_events_common", "td`.`id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [41, "bx_albums", "bx_albums_common", "id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [34, "bx_ads", "bx_ads_common", "id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [44, "bx_channels", "bx_channels_administration", "td`.`id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [48, "bx_courses", "bx_courses_common", "td`.`id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [40, "bx_albums", "bx_albums_administration", "id", "", ""])
+    Repo.execute("INSERT OR REPLACE INTO sys_content_info_grids (id, object, grid_object, grid_field_id, condition, selection) VALUES (?, ?, ?, ?, ?, ?)", [47, "bx_courses", "bx_courses_administration", "td`.`id", "", ""])
 
         # Marcar como executado
         mark_seed_executed()

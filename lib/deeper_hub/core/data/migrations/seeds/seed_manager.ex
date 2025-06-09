@@ -12,6 +12,15 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SeedManager do
     
     # Lista de todos os seeds
     seeds = [
+      DeeperHub.Core.Data.Migrations.Seeds.BxAdsCategoriesSeed,
+      DeeperHub.Core.Data.Migrations.Seeds.BxAdsCategoriesTypesSeed,
+      DeeperHub.Core.Data.Migrations.Seeds.BxAdsSourcesSeed,
+      DeeperHub.Core.Data.Migrations.Seeds.BxAdsSourcesOptionsSeed,
+      DeeperHub.Core.Data.Migrations.Seeds.BxAntispamDnsblRulesSeed,
+      DeeperHub.Core.Data.Migrations.Seeds.BxConvosFoldersSeed,
+      DeeperHub.Core.Data.Migrations.Seeds.BxNotificationsHandlersSeed,
+      DeeperHub.Core.Data.Migrations.Seeds.BxNotificationsSettingsSeed,
+      DeeperHub.Core.Data.Migrations.Seeds.BxRemindersTypesSeed,
       DeeperHub.Core.Data.Migrations.Seeds.SysAccountsSeed,
       DeeperHub.Core.Data.Migrations.Seeds.SysAclActionsSeed,
       DeeperHub.Core.Data.Migrations.Seeds.SysAclLevelsSeed,

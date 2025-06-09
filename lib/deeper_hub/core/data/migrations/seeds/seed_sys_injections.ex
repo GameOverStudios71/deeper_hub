@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysInjectionsSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_injections_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -30,6 +30,10 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysInjectionsSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_injections (id, name, page_index, 'key', 'type', data, 'replace', active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [4, "sys_body", 0, "injection_footer", "text", "", 0, 1])
     Repo.execute("INSERT OR REPLACE INTO sys_injections (id, name, page_index, 'key', 'type', data, 'replace', active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [5, "bx_artificer_head", 0, "injection_head", "service", "a:3:{s:6:\"module\";s:12:\"bx_artificer\";s:6:\"method\";s:14:\"include_css_js\";s:6:\"params\";a:1:{i:0;s:4:\"head\";}}", 0, 1])
     Repo.execute("INSERT OR REPLACE INTO sys_injections (id, name, page_index, 'key', 'type', data, 'replace', active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [6, "bx_artificer_footer", 0, "injection_footer", "service", "a:3:{s:6:\"module\";s:12:\"bx_artificer\";s:6:\"method\";s:14:\"include_css_js\";s:6:\"params\";a:1:{i:0;s:6:\"footer\";}}", 0, 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_injections (id, name, page_index, 'key', 'type', data, 'replace', active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [7, "bx_anon_follow", 0, "injection_header", "service", "a:2:{s:6:\"module\";s:14:\"bx_anon_follow\";s:6:\"method\";s:10:\"include_js\";}", 0, 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_injections (id, name, page_index, 'key', 'type', data, 'replace', active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [8, "bx_attendant", 0, "injection_footer", "service", "a:2:{s:6:\"module\";s:12:\"bx_attendant\";s:6:\"method\";s:18:\"handle_action_view\";}", 0, 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_injections (id, name, page_index, 'key', 'type', data, 'replace', active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [9, "bx_googletagman_track_js", 0, "injection_head_begin", "service", "a:3:{s:6:\"module\";s:15:\"bx_googletagman\";s:6:\"method\";s:9:\"injection\";s:6:\"params\";a:1:{i:0;s:20:\"injection_head_begin\";}}", 0, 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_injections (id, name, page_index, 'key', 'type', data, 'replace', active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [10, "bx_googletagman_track_no_js", 0, "injection_header", "service", "a:3:{s:6:\"module\";s:15:\"bx_googletagman\";s:6:\"method\";s:9:\"injection\";s:6:\"params\";a:1:{i:0;s:16:\"injection_header\";}}", 0, 1])
 
         # Marcar como executado
         mark_seed_executed()

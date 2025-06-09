@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysPagesContentPlaceholdersSeed d
   require DeeperHub.Core.Logger
 
   @seed_name "sys_pages_content_placeholders_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.

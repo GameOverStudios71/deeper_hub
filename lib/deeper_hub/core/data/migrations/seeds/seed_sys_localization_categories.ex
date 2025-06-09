@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysLocalizationCategoriesSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_localization_categories_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -30,6 +30,31 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysLocalizationCategoriesSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [4, "Boonex Artificer Template"])
     Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [5, "Persons"])
     Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [6, "Boonex Profiler"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [7, "Accounts"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [8, "Ads"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [9, "Albums"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [10, "Analytics"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [11, "Anonymous Follow"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [12, "Antispam"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [13, "Attendant"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [16, "Charts"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [15, "Channels"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [17, "Classes"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [18, "Contact"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [19, "Conversations"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [20, "Courses"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [21, "Credits"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [22, "Discussions"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [23, "Google Tag Manager"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [24, "Feedback"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [25, "Donations"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [26, "Reminders"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [27, "MassMailer"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [28, "Notifications"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [29, "Glossary"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [30, "Groups"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [31, "Events"])
+    Repo.execute("INSERT OR REPLACE INTO sys_localization_categories (ID, Name) VALUES (?, ?)", [32, "Reviews"])
 
         # Marcar como executado
         mark_seed_executed()

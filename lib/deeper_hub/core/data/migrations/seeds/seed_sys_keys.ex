@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysKeysSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_keys_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -36,6 +36,11 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysKeysSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["b9331e3865a4d5a0e03dd3af157bfa0b", "", 1749465955, "Zj?G+?qi5qGbWynUYNge9TN+pjWs?eyz"])
     Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["95b03df2090fea2c7fbb5f308c30e96e", "", 1749467006, "Zj?G+?qi5qGbWynUYNge9TN+pjWs?eyz"])
     Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["dc25e40aa860f0a4ff13777dd448be4d", "", 1749467006, "Zj?G+?qi5qGbWynUYNge9TN+pjWs?eyz"])
+    Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["6026d191364c454f2fa5b0cf8a09db3d", "", 1749515524, "vXebv?W86yVk+vbdqHBHQWxUrAGtE=s&"])
+    Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["d1329a15e8d963d3c77022beadde2147", "", 1749515524, "vXebv?W86yVk+vbdqHBHQWxUrAGtE=s&"])
+    Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["56bb04d59fe53c0b2cdbe9c59bd217a6", "", 1749515787, "vXebv?W86yVk+vbdqHBHQWxUrAGtE=s&"])
+    Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["e39fc0b0ddff1a704bb58888b3b5b91f", "", 1749515933, "vXebv?W86yVk+vbdqHBHQWxUrAGtE=s&"])
+    Repo.execute("INSERT OR REPLACE INTO sys_keys ('key', data, expire, salt) VALUES (?, ?, ?, ?)", ["ad92f115a76489d0f909dbf9f87428d6", "", 1749515945, "vXebv?W86yVk+vbdqHBHQWxUrAGtE=s&"])
 
         # Marcar como executado
         mark_seed_executed()

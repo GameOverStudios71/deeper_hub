@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.{{MODULE_NAME}}Seed do
   require DeeperHub.Core.Logger
 
   @seed_name "{{TABLE_NAME}}_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.

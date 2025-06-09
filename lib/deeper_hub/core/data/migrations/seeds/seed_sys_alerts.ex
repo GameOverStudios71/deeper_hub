@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAlertsSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_alerts_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -113,6 +113,16 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAlertsSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_alerts (id, unit, 'action', handler_id) VALUES (?, ?, ?, ?)", [87, "sys_accounts_pictures_resized", "file_deleted", 66])
     Repo.execute("INSERT OR REPLACE INTO sys_alerts (id, unit, 'action', handler_id) VALUES (?, ?, ?, ?)", [88, "sys_accounts_pictures", "file_deleted", 67])
     Repo.execute("INSERT OR REPLACE INTO sys_alerts (id, unit, 'action', handler_id) VALUES (?, ?, ?, ?)", [89, "system", "begin", 68])
+    Repo.execute("INSERT OR REPLACE INTO sys_alerts (id, unit, 'action', handler_id) VALUES (?, ?, ?, ?)", [90, "sys_profiles_subscriptions", "connection_added", 69])
+    Repo.execute("INSERT OR REPLACE INTO sys_alerts (id, unit, 'action', handler_id) VALUES (?, ?, ?, ?)", [91, "sys_profiles_subscriptions", "connection_removed", 69])
+    Repo.execute("INSERT OR REPLACE INTO sys_alerts (id, unit, 'action', handler_id) VALUES (?, ?, ?, ?)", [92, "bx_persons", "menu_custom_item", 69])
+    Repo.execute("INSERT OR REPLACE INTO sys_alerts (id, unit, 'action', handler_id) VALUES (?, ?, ?, ?)", [93, "bx_organizations", "menu_custom_item", 69])
+    Repo.execute("INSERT OR REPLACE INTO sys_alerts (id, unit, 'action', handler_id) VALUES (?, ?, ?, ?)", [94, "profile", "add", 70])
+    Repo.execute("INSERT OR REPLACE INTO sys_alerts (id, unit, 'action', handler_id) VALUES (?, ?, ?, ?)", [97, "system", "save_setting", 73])
+    Repo.execute("INSERT OR REPLACE INTO sys_alerts (id, unit, 'action', handler_id) VALUES (?, ?, ?, ?)", [98, "bx_payment", "finalize_checkout", 74])
+    Repo.execute("INSERT OR REPLACE INTO sys_alerts (id, unit, 'action', handler_id) VALUES (?, ?, ?, ?)", [99, "bx_convos", "commentPost", 75])
+    Repo.execute("INSERT OR REPLACE INTO sys_alerts (id, unit, 'action', handler_id) VALUES (?, ?, ?, ?)", [100, "bx_convos", "commentRemoved", 75])
+    Repo.execute("INSERT OR REPLACE INTO sys_alerts (id, unit, 'action', handler_id) VALUES (?, ?, ?, ?)", [101, "profile", "delete", 75])
 
         # Marcar como executado
         mark_seed_executed()

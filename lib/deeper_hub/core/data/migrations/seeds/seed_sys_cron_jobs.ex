@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysCronJobsSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_cron_jobs_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -36,6 +36,8 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysCronJobsSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_cron_jobs (id, name, time, class, file, service_call, ts, timing) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [10, "sys_queue_push", "* * * * *", "BxDolCronQueuePush", "inc/classes/BxDolCronQueuePush.php", "", 0, 0.0])
     Repo.execute("INSERT OR REPLACE INTO sys_cron_jobs (id, name, time, class, file, service_call, ts, timing) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [11, "sys_audit_clean", "* * * * *", "BxDolCronAudit", "inc/classes/BxDolCronAudit.php", "", 0, 0.0])
     Repo.execute("INSERT OR REPLACE INTO sys_cron_jobs (id, name, time, class, file, service_call, ts, timing) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [12, "sys_background_jobs", "* * * * *", "BxDolCronBackgroundJobs", "inc/classes/BxDolCronBackgroundJobs.php", "", 0, 0.0])
+    Repo.execute("INSERT OR REPLACE INTO sys_cron_jobs (id, name, time, class, file, service_call, ts, timing) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [15, "bx_charts_cron", "0 1 * * *", "BxChartsCron", "modules/boonex/charts/classes/BxChartsCron.php", "", 0, 0.0])
+    Repo.execute("INSERT OR REPLACE INTO sys_cron_jobs (id, name, time, class, file, service_call, ts, timing) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [16, "bx_reminders", "0 0 * * *", "BxRemindersCron", "modules/boonex/reminders/classes/BxRemindersCron.php", "", 0, 0.0])
 
         # Marcar como executado
         mark_seed_executed()

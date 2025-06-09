@@ -25,4 +25,7 @@ deeper_hub-*.tar
 
 /mingw64.7z
 
-/lib/deeper_hub/services/
+/lib/deeper_hub/core/data/web_interface/router.ex
+/lib/deeper_hub/core/data/migrations/migrations/
+/lib/deeper_hub/core/data/migrations/schemas/
+/lib/deeper_hub/core/data/web_interface/resources/

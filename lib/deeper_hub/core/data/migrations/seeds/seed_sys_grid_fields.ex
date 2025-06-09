@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysGridFieldsSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_grid_fields_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -266,6 +266,24 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysGridFieldsSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [240, "bx_persons_common", "fullname", "_bx_persons_grid_column_title_adm_fullname", "48%", 0, 0, "", "", 2])
     Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [241, "bx_persons_common", "last_online", "_bx_persons_grid_column_title_adm_last_online", "30%", 1, 25, "", "", 3])
     Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [242, "bx_persons_common", "actions", "", "20%", 0, 0, "", "", 4])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [243, "bx_accounts_administration", "checkbox", "_sys_select", "2%", 0, 0, "", "", 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [244, "bx_accounts_administration", "switcher", "_bx_accnt_grid_column_title_adm_active", "6%", 0, 0, "", "", 2])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [245, "bx_accounts_administration", "name", "_bx_accnt_grid_column_title_adm_name", "12%", 0, 16, "", "", 3])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [246, "bx_accounts_administration", "email", "_bx_accnt_grid_column_title_adm_email", "16%", 0, 16, "", "", 4])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [247, "bx_accounts_administration", "is_confirmed", "_bx_accnt_grid_column_title_adm_is_confirmed", "4%", 0, 0, "", "", 5])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [248, "bx_accounts_administration", "profiles", "_bx_accnt_grid_column_title_adm_profiles", "24%", 0, 0, "", "", 6])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [249, "bx_accounts_administration", "logged", "_bx_accnt_grid_column_title_adm_logged", "10%", 0, 15, "", "", 7])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [250, "bx_accounts_administration", "last_active", "_bx_accnt_grid_column_title_adm_last_active", "10%", 0, 15, "", "", 8])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [251, "bx_accounts_administration", "added", "_bx_accnt_grid_column_title_adm_added", "10%", 0, 15, "", "", 9])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [252, "bx_accounts_administration", "actions", "", "6%", 0, 0, "", "", 10])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [253, "bx_anon_follow_grid_subscribed_me", "name", "_sys_name", "70%", 0, 0, "", "", 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [254, "bx_anon_follow_grid_subscribed_me", "actions", "", "30%", 0, 0, "", "", 2])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [255, "bx_anon_follow_grid_subscriptions", "name", "_sys_name", "70%", 0, 0, "", "", 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [256, "bx_anon_follow_grid_subscriptions", "actions", "", "30%", 0, 0, "", "", 2])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [257, "bx_convos", "checkbox", "_sys_select", "2%", 0, 0, "", "", 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [258, "bx_convos", "collaborators", "_bx_cnv_field_collaborators", "25%", 0, 0, "", "", 2])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [259, "bx_convos", "last_reply_timestamp", "_bx_cnv_field_preview", "68%", 0, 0, "", "", 3])
+    Repo.execute("INSERT OR REPLACE INTO sys_grid_fields (id, object, name, title, width, translatable, chars_limit, params, hidden_on, 'order') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [260, "bx_convos", "comments", "_bx_cnv_field_comments", "5%", 0, 0, "", "", 4])
 
         # Marcar como executado
         mark_seed_executed()

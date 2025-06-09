@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysStdPagesSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_std_pages_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -44,6 +44,31 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysStdPagesSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [18, 3, "bx_artificer", "", "", "bx_artificer@modules/boonex/artificer/|std-icon.svg"])
     Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [19, 3, "bx_persons", "_bx_persons", "_bx_persons", "bx_persons@modules/boonex/persons/|std-icon.svg"])
     Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [20, 3, "bx_profiler", "_bx_profiler", "_bx_profiler", "bx_profiler@modules/boonex/profiler/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [21, 3, "bx_accounts", "_bx_accnt", "_bx_accnt", "bx_accounts@modules/boonex/accounts/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [49, 3, "bx_events", "_bx_events", "_bx_events", "bx_events@modules/boonex/events/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [48, 3, "bx_groups", "_bx_groups", "_bx_groups", "bx_groups@modules/boonex/groups/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [24, 3, "bx_analytics", "_bx_analytics", "_bx_analytics", "bx_analytics@modules/boonex/analytics/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [25, 3, "bx_anon_follow", "_bx_anon_follow", "_bx_anon_follow", "bx_anon_follow@modules/boonex/anon_follow/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [26, 3, "bx_antispam", "_bx_antispam", "_bx_antispam", "bx_antispam@modules/boonex/antispam/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [27, 3, "bx_attendant", "_bx_attendant", "_bx_attendant", "bx_attendant@modules/boonex/attendant/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [31, 3, "bx_charts", "_bx_charts", "_bx_charts", "bx_charts@modules/boonex/charts/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [60, 3, "bx_classes", "_bx_classes", "_bx_classes", "bx_classes@modules/boonex/classes/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [50, 3, "bx_reviews", "_bx_reviews", "_bx_reviews", "bx_reviews@modules/boonex/reviews/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [34, 3, "bx_contact", "_bx_contact", "_bx_contact", "bx_contact@modules/boonex/contact/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [54, 3, "bx_ads", "_bx_ads", "_bx_ads", "bx_ads@modules/boonex/ads/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [57, 3, "bx_credits", "_bx_credits", "_bx_credits", "bx_credits@modules/boonex/credits/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [62, 3, "bx_convos", "_bx_cnv", "_bx_cnv", "bx_convos@modules/boonex/convos/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [40, 3, "bx_forum", "_bx_forum", "_bx_forum", "bx_forum@modules/boonex/forum/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [41, 3, "bx_googletagman", "_bx_googletagman", "_bx_googletagman", "bx_googletagman@modules/boonex/google_tagmanager/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [42, 3, "bx_feedback", "_bx_feedback", "_bx_feedback", "bx_feedback@modules/boonex/feedback/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [43, 3, "bx_donations", "_bx_donations", "_bx_donations", "bx_donations@modules/boonex/donations/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [44, 3, "bx_reminders", "_bx_reminders", "_bx_reminders", "bx_reminders@modules/boonex/reminders/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [45, 3, "bx_massmailer", "_bx_massmailer", "_bx_massmailer", "bx_massmailer@modules/boonex/massmailer/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [46, 3, "bx_notifications", "_bx_ntfs", "_bx_ntfs", "bx_notifications@modules/boonex/notifications/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [47, 3, "bx_glossary", "_bx_glossary", "_bx_glossary", "bx_glossary@modules/boonex/glossary/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [59, 3, "bx_albums", "_bx_albums", "_bx_albums", "bx_albums@modules/boonex/albums/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [61, 3, "bx_channels", "_bx_channels", "_bx_channels", "bx_channels@modules/boonex/channels/|std-icon.svg"])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages (id, 'index', name, header, caption, icon) VALUES (?, ?, ?, ?, ?, ?)", [64, 3, "bx_courses", "_bx_courses", "_bx_courses", "bx_courses@modules/boonex/courses/|std-icon.svg"])
 
         # Marcar como executado
         mark_seed_executed()

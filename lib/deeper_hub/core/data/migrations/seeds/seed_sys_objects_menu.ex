@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsMenuSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_objects_menu_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -75,6 +75,9 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysObjectsMenuSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_objects_menu (id, object, title, set_name, module, template_id, config_api, persistent, deletable, active, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [49, "bx_persons_view_submenu", "_bx_persons_menu_title_view_profile_submenu", "bx_persons_view_submenu", "bx_persons", 18, "", 0, 0, 1, "BxPersonsMenuView", "modules/boonex/persons/classes/BxPersonsMenuView.php"])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_menu (id, object, title, set_name, module, template_id, config_api, persistent, deletable, active, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [50, "bx_persons_snippet_meta", "_sys_menu_title_snippet_meta", "bx_persons_snippet_meta", "bx_persons", 15, "", 0, 0, 1, "BxPersonsMenuSnippetMeta", "modules/boonex/persons/classes/BxPersonsMenuSnippetMeta.php"])
     Repo.execute("INSERT OR REPLACE INTO sys_objects_menu (id, object, title, set_name, module, template_id, config_api, persistent, deletable, active, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [51, "bx_persons_menu_manage_tools", "_bx_persons_menu_title_manage_tools", "bx_persons_menu_manage_tools", "bx_persons", 6, "", 0, 0, 1, "BxPersonsMenuManageTools", "modules/boonex/persons/classes/BxPersonsMenuManageTools.php"])
+    Repo.execute("INSERT OR REPLACE INTO sys_objects_menu (id, object, title, set_name, module, template_id, config_api, persistent, deletable, active, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [52, "bx_accounts_menu_manage_tools", "_bx_accnt_menu_title_manage_tools", "bx_accounts_menu_manage_tools", "bx_accounts", 6, "", 0, 0, 1, "BxAccntMenuManageTools", "modules/boonex/accounts/classes/BxAccntMenuManageTools.php"])
+    Repo.execute("INSERT OR REPLACE INTO sys_objects_menu (id, object, title, set_name, module, template_id, config_api, persistent, deletable, active, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [53, "bx_convos_view", "_bx_cnv_menu_title_view_entry", "bx_convos_view", "bx_convos", 9, "", 0, 0, 1, "BxCnvMenuView", "modules/boonex/convos/classes/BxCnvMenuView.php"])
+    Repo.execute("INSERT OR REPLACE INTO sys_objects_menu (id, object, title, set_name, module, template_id, config_api, persistent, deletable, active, override_class_name, override_class_file) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [54, "bx_convos_submenu", "_bx_cnv_menu_title_submenu", "bx_convos_submenu", "bx_convos", 8, "", 0, 0, 1, "", ""])
 
         # Marcar como executado
         mark_seed_executed()

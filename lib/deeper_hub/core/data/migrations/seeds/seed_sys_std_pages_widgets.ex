@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysStdPagesWidgetsSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_std_pages_widgets_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -43,6 +43,31 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysStdPagesWidgetsSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [17, 1, 17, 17])
     Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [18, 1, 18, 18])
     Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [19, 1, 19, 19])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [20, 1, 20, 20])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [48, 1, 48, 43])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [47, 1, 47, 42])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [23, 1, 23, 23])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [24, 1, 24, 24])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [25, 1, 25, 25])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [26, 1, 26, 26])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [30, 1, 30, 29])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [59, 1, 59, 53])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [49, 1, 49, 44])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [33, 1, 33, 31])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [53, 1, 53, 48])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [56, 1, 56, 51])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [61, 1, 61, 55])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [39, 1, 39, 35])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [40, 1, 40, 36])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [41, 1, 41, 37])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [42, 1, 42, 38])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [43, 1, 43, 38])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [44, 1, 44, 39])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [45, 1, 45, 40])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [46, 1, 46, 41])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [58, 1, 58, 52])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [60, 1, 60, 54])
+    Repo.execute("INSERT OR REPLACE INTO sys_std_pages_widgets (id, page_id, widget_id, 'order') VALUES (?, ?, ?, ?)", [63, 1, 63, 56])
 
         # Marcar como executado
         mark_seed_executed()

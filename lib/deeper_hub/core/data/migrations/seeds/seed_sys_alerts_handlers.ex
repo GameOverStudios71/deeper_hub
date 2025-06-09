@@ -10,7 +10,7 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAlertsHandlersSeed do
   require DeeperHub.Core.Logger
 
   @seed_name "sys_alerts_handlers_seed"
-  @seeds_dir "seeds_executed"
+  @seeds_dir "priv/seeds_executed"
 
   @doc """
   Executa o seed com controle de execução.
@@ -92,6 +92,11 @@ defmodule DeeperHub.Core.Data.Migrations.Seeds.SysAlertsHandlersSeed do
     Repo.execute("INSERT OR REPLACE INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?, ?, ?, ?, ?)", [66, "sys_image_transcoder_local_file_delete_sys_accounts_picture", "", "", "a:4:{s:6:\"module\";s:6:\"system\";s:6:\"method\";s:32:\"alert_response_file_delete_local\";s:6:\"params\";a:1:{i:0;s:20:\"sys_accounts_picture\";}s:5:\"class\";s:18:\"TemplImageServices\";}", 1])
     Repo.execute("INSERT OR REPLACE INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?, ?, ?, ?, ?)", [67, "sys_image_transcoder_orig_file_delete_sys_accounts_picture", "", "", "a:4:{s:6:\"module\";s:6:\"system\";s:6:\"method\";s:31:\"alert_response_file_delete_orig\";s:6:\"params\";a:1:{i:0;s:20:\"sys_accounts_picture\";}s:5:\"class\";s:18:\"TemplImageServices\";}", 1])
     Repo.execute("INSERT OR REPLACE INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?, ?, ?, ?, ?)", [68, "bx_profiler", "BxProfilerAlertsResponse", "modules/boonex/profiler/classes/BxProfilerAlertsResponse.php", "", 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?, ?, ?, ?, ?)", [69, "bx_anon_follow", "BxAnonFollowAlertsResponse", "modules/boonex/anon_follow/classes/BxAnonFollowAlertsResponse.php", "", 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?, ?, ?, ?, ?)", [70, "bx_attendant", "BxAttendantAlertsResponse", "modules/boonex/attendant/classes/BxAttendantAlertsResponse.php", "", 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?, ?, ?, ?, ?)", [73, "bx_charts", "BxChartsAlertsResponse", "modules/boonex/charts/classes/BxChartsAlertsResponse.php", "", 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?, ?, ?, ?, ?)", [74, "bx_googletagman", "BxGoogleTagManAlertsResponse", "modules/boonex/google_tagmanager/classes/BxGoogleTagManAlertsResponse.php", "", 1])
+    Repo.execute("INSERT OR REPLACE INTO sys_alerts_handlers (id, name, class, file, service_call, active) VALUES (?, ?, ?, ?, ?, ?)", [75, "bx_convos", "BxCnvAlertsResponse", "modules/boonex/convos/classes/BxCnvAlertsResponse.php", "", 1])
 
         # Marcar como executado
         mark_seed_executed()
