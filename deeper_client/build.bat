@@ -1,14 +1,6 @@
 @echo off
-
-del build\deeper_client.exe
-
-REM Certifique-se de que o MinGW está no PATH
-set PATH=C:\mingw64\bin;%PATH%
-
-REM Compile o projeto
-cd build & ninja
-
-echo "+++++[ Compilação concluída ]+++++"
-
-deeper_client.exe
+if not exist build mkdir build
+cd build
+cmake -G "MinGW Makefiles" -DCMAKE_MAKE_PROGRAM="C:/mingw64/bin/make.exe" -DCMAKE_C_COMPILER="C:/mingw64/bin/gcc.exe" -DCMAKE_CXX_COMPILER="C:/mingw64/bin/g++.exe" ..
+cmake --build . --config Release
 cd ..

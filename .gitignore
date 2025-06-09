@@ -2,8 +2,7 @@
 /_build/
 
 # Meson Client
-/build/
-/includes/
+_deps/
 
 # If you run "mix test --cover", coverage assets end up here.
 /cover/
