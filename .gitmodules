@@ -1,0 +1,3 @@
+[submodule "deeper_client/includes/imgui"]
+	path = deeper_client/includes/imgui
+	url = https://github.com/ocornut/imgui.git
