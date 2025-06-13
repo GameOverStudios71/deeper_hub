@@ -69,6 +69,7 @@ const PagesModule = {
      */
     create() {
         const fields = [
+            { name: 'name', label: 'Name (Internal)', type: 'text', required: true, placeholder: 'my_page' },
             { name: 'title', label: 'Title', type: 'text', required: true },
             { name: 'uri', label: 'URI', type: 'text', required: true, placeholder: '/my-page' },
             { name: 'title_system', label: 'System Title', type: 'text' },
@@ -97,6 +98,7 @@ const PagesModule = {
 
             const fields = [
                 { name: 'id', type: 'hidden', default: page.id },
+                { name: 'name', label: 'Name (Internal)', type: 'text', required: true, default: page.name },
                 { name: 'title', label: 'Title', type: 'text', required: true, default: page.title },
                 { name: 'uri', label: 'URI', type: 'text', required: true, default: page.uri },
                 { name: 'title_system', label: 'System Title', type: 'text', default: page.title_system },
@@ -146,9 +148,22 @@ const PagesModule = {
             const formData = Components.getFormData();
             
             // Validate required fields
-            if (!formData.title || !formData.uri) {
-                AdminApp.showNotification('Title and URI are required', 'error');
+            if (!formData.name || !formData.title || !formData.uri) {
+                AdminApp.showNotification('Name, Title and URI are required', 'error');
                 return;
+            }
+
+            // Ensure URI starts with /
+            if (!formData.uri.startsWith('/')) {
+                formData.uri = '/' + formData.uri;
+            }
+
+            // Generate name from title if not provided
+            if (!formData.name && formData.title) {
+                formData.name = formData.title.toLowerCase()
+                    .replace(/[^a-z0-9]/g, '_')
+                    .replace(/_+/g, '_')
+                    .replace(/^_|_$/g, '');
             }
 
             const response = await API.pages.create(formData);

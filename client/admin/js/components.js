@@ -334,38 +334,46 @@ const Components = {
      */
     createForm(fields, data = {}, options = {}) {
         const formId = Utils.generateId();
-        
+
         const formFields = fields.map(field => {
-            const value = Utils.getNestedProperty(data, field.name) || field.default || '';
-            
+            // Get value from data, field.default, or empty string
+            let value = '';
+            if (data && data.hasOwnProperty(field.name)) {
+                value = data[field.name];
+            } else if (field.hasOwnProperty('default')) {
+                value = field.default;
+            }
+
             let input = '';
             switch (field.type) {
                 case 'text':
                 case 'email':
                 case 'url':
                 case 'password':
-                    input = `<input type="${field.type}" name="${field.name}" value="${Utils.escapeHtml(value)}" ${field.required ? 'required' : ''} ${field.readonly ? 'readonly' : ''}>`;
+                case 'number':
+                    input = `<input type="${field.type}" name="${field.name}" value="${Utils.escapeHtml(value)}" ${field.required ? 'required' : ''} ${field.readonly ? 'readonly' : ''} ${field.placeholder ? `placeholder="${Utils.escapeHtml(field.placeholder)}"` : ''}>`;
                     break;
-                    
+
                 case 'textarea':
-                    input = `<textarea name="${field.name}" rows="${field.rows || 4}" ${field.required ? 'required' : ''} ${field.readonly ? 'readonly' : ''}>${Utils.escapeHtml(value)}</textarea>`;
+                    input = `<textarea name="${field.name}" rows="${field.rows || 4}" ${field.required ? 'required' : ''} ${field.readonly ? 'readonly' : ''} ${field.placeholder ? `placeholder="${Utils.escapeHtml(field.placeholder)}"` : ''}>${Utils.escapeHtml(value)}</textarea>`;
                     break;
-                    
+
                 case 'select':
-                    const options = (field.options || []).map(opt => 
-                        `<option value="${opt.value}" ${opt.value === value ? 'selected' : ''}>${Utils.escapeHtml(opt.text)}</option>`
+                    const options = (field.options || []).map(opt =>
+                        `<option value="${opt.value}" ${opt.value == value ? 'selected' : ''}>${Utils.escapeHtml(opt.text)}</option>`
                     ).join('');
                     input = `<select name="${field.name}" ${field.required ? 'required' : ''}>${options}</select>`;
                     break;
-                    
+
                 case 'checkbox':
-                    input = `<input type="checkbox" name="${field.name}" value="1" ${value ? 'checked' : ''}> ${Utils.escapeHtml(field.label)}`;
+                    const isChecked = value === true || value === 'true' || value === 1 || value === '1';
+                    input = `<input type="checkbox" name="${field.name}" value="1" ${isChecked ? 'checked' : ''}> ${Utils.escapeHtml(field.label)}`;
                     break;
-                    
+
                 case 'hidden':
                     input = `<input type="hidden" name="${field.name}" value="${Utils.escapeHtml(value)}">`;
                     break;
-                    
+
                 default:
                     input = `<input type="text" name="${field.name}" value="${Utils.escapeHtml(value)}">`;
             }
@@ -420,17 +428,25 @@ const Components = {
             return {};
         }
 
-        const formData = new FormData(form);
         const data = {};
 
-        for (const [key, value] of formData.entries()) {
-            // Handle checkboxes
-            if (form.querySelector(`input[name="${key}"][type="checkbox"]`)) {
-                data[key] = value === '1' || value === 'on';
+        // Get all form elements
+        const elements = form.querySelectorAll('input, select, textarea');
+
+        elements.forEach(element => {
+            const name = element.name;
+            if (!name) return;
+
+            if (element.type === 'checkbox') {
+                data[name] = element.checked;
+            } else if (element.type === 'radio') {
+                if (element.checked) {
+                    data[name] = element.value;
+                }
             } else {
-                Utils.setNestedProperty(data, key, value);
+                data[name] = element.value;
             }
-        }
+        });
 
         return data;
     },

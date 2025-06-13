@@ -113,18 +113,18 @@ const WidgetsModule = {
             { name: 'name', label: 'Name', type: 'text', required: true, placeholder: 'my_widget' },
             { name: 'title', label: 'Title', type: 'text', required: true, placeholder: 'My Widget' },
             { name: 'description', label: 'Description', type: 'textarea', rows: 2, placeholder: 'Widget description...' },
-            { 
-                name: 'type', 
-                label: 'Type', 
-                type: 'select', 
+            {
+                name: 'widget_type_id',
+                label: 'Type',
+                type: 'select',
                 required: true,
                 options: [
-                    { value: 'text', text: '📝 Text Widget' },
-                    { value: 'html', text: '🌐 HTML Widget' },
-                    { value: 'menu', text: '📋 Menu Widget' },
-                    { value: 'recent_posts', text: '📰 Recent Posts' },
-                    { value: 'search', text: '🔍 Search Widget' },
-                    { value: 'custom', text: '⚙️ Custom Widget' }
+                    { value: '1', text: '📝 Text Widget' },
+                    { value: '2', text: '🌐 HTML Widget' },
+                    { value: '3', text: '📋 Menu Widget' },
+                    { value: '4', text: '📰 Recent Posts' },
+                    { value: '5', text: '🔍 Search Widget' },
+                    { value: '6', text: '⚙️ Custom Widget' }
                 ]
             },
             { 
@@ -168,19 +168,19 @@ const WidgetsModule = {
                 { name: 'name', label: 'Name', type: 'text', required: true, default: widget.name },
                 { name: 'title', label: 'Title', type: 'text', required: true, default: widget.title },
                 { name: 'description', label: 'Description', type: 'textarea', rows: 2, default: widget.description },
-                { 
-                    name: 'type', 
-                    label: 'Type', 
-                    type: 'select', 
+                {
+                    name: 'widget_type_id',
+                    label: 'Type',
+                    type: 'select',
                     required: true,
-                    default: widget.type,
+                    default: widget.widget_type_id,
                     options: [
-                        { value: 'text', text: '📝 Text Widget' },
-                        { value: 'html', text: '🌐 HTML Widget' },
-                        { value: 'menu', text: '📋 Menu Widget' },
-                        { value: 'recent_posts', text: '📰 Recent Posts' },
-                        { value: 'search', text: '🔍 Search Widget' },
-                        { value: 'custom', text: '⚙️ Custom Widget' }
+                        { value: '1', text: '📝 Text Widget' },
+                        { value: '2', text: '🌐 HTML Widget' },
+                        { value: '3', text: '📋 Menu Widget' },
+                        { value: '4', text: '📰 Recent Posts' },
+                        { value: '5', text: '🔍 Search Widget' },
+                        { value: '6', text: '⚙️ Custom Widget' }
                     ]
                 },
                 { 
@@ -331,10 +331,13 @@ const WidgetsModule = {
             const formData = Components.getFormData();
             
             // Validate required fields
-            if (!formData.name || !formData.title || !formData.type || !formData.position) {
-                AdminApp.showNotification('Name, Title, Type and Position are required', 'error');
+            if (!formData.name || !formData.title || !formData.widget_type_id) {
+                AdminApp.showNotification('Name, Title and Type are required', 'error');
                 return;
             }
+
+            // Convert widget_type_id to integer
+            formData.widget_type_id = parseInt(formData.widget_type_id);
 
             const response = await API.widgets.create(formData);
             
