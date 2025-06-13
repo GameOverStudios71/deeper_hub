@@ -4,7 +4,178 @@ defmodule DeeperHub.CMS.Settings do
   """
 
   alias DeeperHub.Core.Data.Connection
-  alias DeeperHub.CMS.Settings.Theme
+  alias DeeperHub.CMS.Settings.{SettingCategory, SettingType, Setting, Theme}
+
+  # ============================================================================
+  # SETTING CATEGORIES
+  # ============================================================================
+
+  @doc """
+  Lista todas as categorias de configuração.
+  """
+  def list_setting_categories do
+    sql = """
+    SELECT id, name, title, description, icon, is_active, is_system, created_at, order_index
+    FROM cms_setting_categories
+    ORDER BY order_index ASC, title ASC
+    """
+
+    case Connection.query(sql, []) do
+      {:ok, %{rows: rows}} ->
+        categories = Enum.map(rows, &row_to_setting_category/1)
+        {:ok, categories}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Lista categorias ativas.
+  """
+  def list_active_setting_categories do
+    sql = """
+    SELECT id, name, title, description, icon, is_active, is_system, created_at, order_index
+    FROM cms_setting_categories
+    WHERE is_active = true
+    ORDER BY order_index ASC, title ASC
+    """
+
+    case Connection.query(sql, []) do
+      {:ok, %{rows: rows}} ->
+        categories = Enum.map(rows, &row_to_setting_category/1)
+        {:ok, categories}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  # ============================================================================
+  # SETTING TYPES
+  # ============================================================================
+
+  @doc """
+  Lista todos os tipos de configuração.
+  """
+  def list_setting_types do
+    sql = """
+    SELECT id, name, title, description, input_type, validation_rules, default_options,
+           is_active, is_system, created_at, order_index
+    FROM cms_setting_types
+    ORDER BY order_index ASC, title ASC
+    """
+
+    case Connection.query(sql, []) do
+      {:ok, %{rows: rows}} ->
+        types = Enum.map(rows, &row_to_setting_type/1)
+        {:ok, types}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  # ============================================================================
+  # SETTINGS
+  # ============================================================================
+
+  @doc """
+  Lista todas as configurações.
+  """
+  def list_settings do
+    sql = """
+    SELECT s.id, s.category_id, s.setting_type_id, s.name, s.title, s.description,
+           s.value, s.default_value, s.options, s.validation_rules, s.placeholder,
+           s.help_text, s.is_required, s.is_readonly, s.is_translatable, s.is_active,
+           s.is_system, s.created_at, s.updated_at, s.order_index,
+           c.title as category_title, t.title as type_title, t.input_type
+    FROM cms_settings s
+    LEFT JOIN cms_setting_categories c ON s.category_id = c.id
+    LEFT JOIN cms_setting_types t ON s.setting_type_id = t.id
+    ORDER BY c.order_index ASC, s.order_index ASC, s.title ASC
+    """
+
+    case Connection.query(sql, []) do
+      {:ok, %{rows: rows}} ->
+        settings = Enum.map(rows, &row_to_setting/1)
+        {:ok, settings}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Lista configurações por categoria.
+  """
+  def list_settings_by_category(category_id) do
+    sql = """
+    SELECT s.id, s.category_id, s.setting_type_id, s.name, s.title, s.description,
+           s.value, s.default_value, s.options, s.validation_rules, s.placeholder,
+           s.help_text, s.is_required, s.is_readonly, s.is_translatable, s.is_active,
+           s.is_system, s.created_at, s.updated_at, s.order_index,
+           c.title as category_title, t.title as type_title, t.input_type
+    FROM cms_settings s
+    LEFT JOIN cms_setting_categories c ON s.category_id = c.id
+    LEFT JOIN cms_setting_types t ON s.setting_type_id = t.id
+    WHERE s.category_id = $1 AND s.is_active = true
+    ORDER BY s.order_index ASC, s.title ASC
+    """
+
+    case Connection.query(sql, [category_id]) do
+      {:ok, %{rows: rows}} ->
+        settings = Enum.map(rows, &row_to_setting/1)
+        {:ok, settings}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Busca configuração por nome.
+  """
+  def get_setting_by_name(name) do
+    sql = """
+    SELECT s.id, s.category_id, s.setting_type_id, s.name, s.title, s.description,
+           s.value, s.default_value, s.options, s.validation_rules, s.placeholder,
+           s.help_text, s.is_required, s.is_readonly, s.is_translatable, s.is_active,
+           s.is_system, s.created_at, s.updated_at, s.order_index,
+           c.title as category_title, t.title as type_title, t.input_type
+    FROM cms_settings s
+    LEFT JOIN cms_setting_categories c ON s.category_id = c.id
+    LEFT JOIN cms_setting_types t ON s.setting_type_id = t.id
+    WHERE s.name = $1
+    """
+
+    case Connection.query(sql, [name]) do
+      {:ok, %{rows: [row]}} ->
+        setting = row_to_setting(row)
+        {:ok, setting}
+      {:ok, %{rows: []}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Atualiza valor de uma configuração.
+  """
+  def update_setting_value(name, value) do
+    now = DateTime.utc_now()
+
+    sql = """
+    UPDATE cms_settings
+    SET value = $2, updated_at = $3
+    WHERE name = $1
+    """
+
+    case Connection.query(sql, [name, value, now]) do
+      {:ok, %{num_rows: 1}} ->
+        get_setting_by_name(name)
+      {:ok, %{num_rows: 0}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
 
   # ============================================================================
   # THEMES
@@ -252,6 +423,69 @@ defmodule DeeperHub.CMS.Settings do
   # ============================================================================
   # HELPERS PRIVADOS
   # ============================================================================
+
+  defp row_to_setting_category([id, name, title, description, icon, is_active, is_system, created_at, order_index]) do
+    SettingCategory.new(%{
+      id: id,
+      name: name,
+      title: title,
+      description: description,
+      icon: icon,
+      is_active: is_active,
+      is_system: is_system,
+      created_at: created_at,
+      order_index: order_index
+    })
+  end
+
+  defp row_to_setting_type([id, name, title, description, input_type, validation_rules, default_options,
+                            is_active, is_system, created_at, order_index]) do
+    SettingType.new(%{
+      id: id,
+      name: name,
+      title: title,
+      description: description,
+      input_type: input_type,
+      validation_rules: validation_rules,
+      default_options: default_options,
+      is_active: is_active,
+      is_system: is_system,
+      created_at: created_at,
+      order_index: order_index
+    })
+  end
+
+  defp row_to_setting([id, category_id, setting_type_id, name, title, description,
+                       value, default_value, options, validation_rules, placeholder,
+                       help_text, is_required, is_readonly, is_translatable, is_active,
+                       is_system, created_at, updated_at, order_index,
+                       category_title, type_title, input_type]) do
+    Setting.new(%{
+      id: id,
+      category_id: category_id,
+      setting_type_id: setting_type_id,
+      name: name,
+      title: title,
+      description: description,
+      value: value,
+      default_value: default_value,
+      options: options,
+      validation_rules: validation_rules,
+      placeholder: placeholder,
+      help_text: help_text,
+      is_required: is_required,
+      is_readonly: is_readonly,
+      is_translatable: is_translatable,
+      is_active: is_active,
+      is_system: is_system,
+      created_at: created_at,
+      updated_at: updated_at,
+      order_index: order_index,
+      category_title: category_title,
+      type_title: type_title,
+      input_type: input_type
+    })
+  end
 
   defp row_to_theme([id, name, title, description, template_path, css_file, js_file,
                      preview_image, version, author, author_url, supports_dark_mode,
