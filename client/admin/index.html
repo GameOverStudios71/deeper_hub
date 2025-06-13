@@ -17,9 +17,12 @@
     
     <!-- Admin JavaScript -->
     <script src="js/utils.js"></script>
-    <script src="js/api.js"></script>
     <script src="js/components.js"></script>
-    <script src="js/admin.js"></script>
+    <script src="js/core/api.js"></script>
+    <script src="js/core/app.js"></script>
+    <script src="js/modules/pages.js"></script>
+    <script src="js/modules/users.js"></script>
+    <script src="js/init.js"></script>
 </head>
 
 <body>
@@ -263,11 +266,6 @@
         </div>
     </div>
 
-    <!-- Initialize Admin App -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            AdminApp.init();
-        });
-    </script>
+    <!-- App initialization is handled by init.js -->
 </body>
 </html>

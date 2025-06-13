@@ -436,3 +436,6 @@ const Utils = {
         }
     }
 };
+
+// Expose to global scope
+window.Utils = Utils;

@@ -5,7 +5,44 @@
 
 const Components = {
     /**
-     * Create a notification
+     * Show notification
+     */
+    showNotification(message, type = 'info') {
+        const container = document.getElementById('notifications-container') || this.createNotificationContainer();
+
+        const notification = Utils.dom.create('div', {
+            className: `notification ${type}`,
+            innerHTML: `
+                <span>${Utils.escapeHtml(message)}</span>
+                <button onclick="this.parentElement.remove()">×</button>
+            `
+        });
+
+        container.appendChild(notification);
+
+        // Auto-remove after 5 seconds
+        setTimeout(() => {
+            if (notification.parentElement) {
+                notification.remove();
+            }
+        }, 5000);
+    },
+
+    /**
+     * Create notification container if it doesn't exist
+     */
+    createNotificationContainer() {
+        const container = Utils.dom.create('div', {
+            id: 'notifications-container',
+            style: 'position: fixed; top: 20px; right: 20px; z-index: 10000;'
+        });
+
+        document.body.appendChild(container);
+        return container;
+    },
+
+    /**
+     * Create a notification (legacy method)
      */
     createNotification(message, type = 'info', duration = 5000) {
         const notification = Utils.dom.create('div', {
@@ -87,6 +124,103 @@ const Components = {
         const container = document.getElementById('modal-container');
         container.classList.remove('active');
         Utils.dom.empty(container);
+    },
+
+    /**
+     * Create confirmation dialog
+     */
+    confirm(message, title = 'Confirm', onConfirm, onCancel) {
+        const confirmHtml = `
+            <div style="padding: 20px; text-align: center;">
+                <div style="margin-bottom: 20px;">
+                    <span class="red-168-text" style="font-size: 48px;">⚠️</span>
+                </div>
+                <p class="white-168-text" style="margin-bottom: 20px; line-height: 1.5;">
+                    ${Utils.escapeHtml(message)}
+                </p>
+            </div>
+        `;
+
+        const buttons = [
+            {
+                text: 'Cancel',
+                onclick: () => {
+                    this.closeModal();
+                    if (onCancel) onCancel();
+                }
+            },
+            {
+                text: 'Confirm',
+                class: 'danger',
+                onclick: () => {
+                    this.closeModal();
+                    if (onConfirm) onConfirm();
+                }
+            }
+        ];
+
+        this.createModal(title, confirmHtml, buttons);
+    },
+
+    /**
+     * Create loader
+     */
+    createLoader(message = 'Loading...') {
+        return `
+            <div class="loader-container" style="text-align: center; padding: 40px;">
+                <div class="cyan-168-text" style="font-size: 24px; margin-bottom: 10px;">
+                    ⏳
+                </div>
+                <p class="white-168-text">${Utils.escapeHtml(message)}</p>
+            </div>
+        `;
+    },
+
+    /**
+     * Create error display
+     */
+    createError(title, message = '') {
+        return `
+            <div class="error-container" style="text-align: center; padding: 40px;">
+                <div class="red-168-text" style="font-size: 48px; margin-bottom: 20px;">
+                    ❌
+                </div>
+                <h3 class="red-168-text">${Utils.escapeHtml(title)}</h3>
+                ${message ? `<p class="secondary-text">${Utils.escapeHtml(message)}</p>` : ''}
+                <div style="margin-top: 20px;">
+                    <button class="admin-button secondary" onclick="location.reload()">
+                        ↻ Reload Page
+                    </button>
+                </div>
+            </div>
+        `;
+    },
+
+    /**
+     * Create stat card for dashboard
+     */
+    createStatCard(title, value, change = null, type = 'info') {
+        const colors = {
+            info: 'cyan-168-text',
+            success: 'green-168-text',
+            warning: 'yellow-168-text',
+            danger: 'red-168-text',
+            secondary: 'white-168-text'
+        };
+
+        const color = colors[type] || colors.info;
+
+        return `
+            <div class="stat-card" style="border: 1px solid rgb(168, 168, 168); padding: 15px; margin-bottom: 15px;">
+                <div class="stat-value ${color}" style="font-size: 24px; font-weight: bold;">
+                    ${value}
+                </div>
+                <div class="stat-title white-168-text" style="margin-top: 5px;">
+                    ${Utils.escapeHtml(title)}
+                </div>
+                ${change ? `<div class="stat-change secondary-text" style="font-size: 12px; margin-top: 5px;">${change}</div>` : ''}
+            </div>
+        `;
     },
 
     /**
@@ -265,9 +399,18 @@ const Components = {
     getFormData(formId) {
         // If no formId provided, try to find the form in the modal
         if (!formId) {
-            const modal = document.querySelector('.modal-container.active form');
+            const modal = document.querySelector('#modal-container.active form');
             if (modal) {
                 formId = modal.id;
+            } else {
+                // Try to find any form in the active modal
+                const activeModal = document.querySelector('#modal-container.active');
+                if (activeModal) {
+                    const form = activeModal.querySelector('form');
+                    if (form) {
+                        formId = form.id;
+                    }
+                }
             }
         }
 
@@ -409,3 +552,6 @@ const Components = {
         `;
     }
 };
+
+// Expose to global scope
+window.Components = Components;
