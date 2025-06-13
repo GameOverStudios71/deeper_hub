@@ -25,7 +25,7 @@ defmodule DeeperHub.WebInterface.Router do
 
   # API Routes
 
-  # CMS Settings Routes
+  # CMS Settings Routes (rotas específicas primeiro)
   forward("/api/cms/themes", to: DeeperHubWeb.Resources.CMS.ThemeResource)
   forward("/api/cms/pages", to: DeeperHubWeb.Resources.CMS.PageResource)
   forward("/api/cms/widgets", to: DeeperHubWeb.Resources.CMS.WidgetResource)
@@ -41,7 +41,9 @@ defmodule DeeperHub.WebInterface.Router do
   forward("/api/entities", to: DeeperHub.WebInterface.Resources.EntitiesResource)
   forward("/api/fields", to: DeeperHub.WebInterface.Resources.FieldsResource)
   forward("/api/records", to: DeeperHub.WebInterface.Resources.RecordsResource)
-  forward("/api/cms", to: DeeperHub.WebInterface.Resources.CmsAdminResource)
+
+  # CMS Admin genérico (deve vir por último para não capturar rotas específicas)
+  # forward("/api/cms", to: DeeperHub.WebInterface.Resources.CmsAdminResource)
 
   # Sistema Routes
   forward("/api/terminal", to: DeeperHub.WebInterface.Resources.TerminalResource)
@@ -52,6 +54,13 @@ defmodule DeeperHub.WebInterface.Router do
     conn
     |> put_resp_content_type("application/json")
     |> send_resp(200, Jason.encode!(%{status: "ok", api: "DeeperHub API v1"}))
+  end
+
+  # Health check endpoint
+  get "/api/cms/health" do
+    conn
+    |> put_resp_content_type("application/json")
+    |> send_resp(200, Jason.encode!(%{status: "healthy", timestamp: DateTime.utc_now()}))
   end
 
   # Handle CORS preflight requests
