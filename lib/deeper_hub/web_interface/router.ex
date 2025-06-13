@@ -32,6 +32,7 @@ defmodule DeeperHub.WebInterface.Router do
   forward("/api/cms/settings", to: DeeperHubWeb.Resources.CMS.SettingResource)
   forward("/api/cms/users", to: DeeperHubWeb.Resources.CMS.UserResource)
   forward("/api/cms/relationships", to: DeeperHubWeb.Resources.CMS.RelationshipResource)
+  forward("/api/cms/audit", to: DeeperHubWeb.Resources.CMS.AuditResource)
 
   # CMS Dinâmico Routes
   forward("/api/entities", to: DeeperHub.WebInterface.Resources.EntitiesResource)
