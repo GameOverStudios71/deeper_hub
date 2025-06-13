@@ -434,6 +434,35 @@ const Utils = {
                 this.hide(element);
             }
         }
+    },
+
+    /**
+     * Format file size in human readable format
+     */
+    formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    },
+
+    /**
+     * Truncate text to specified length
+     */
+    truncate(text, length = 50) {
+        if (!text) return '';
+        if (text.length <= length) return text;
+        return text.substring(0, length) + '...';
+    },
+
+    /**
+     * Format number with thousands separator
+     */
+    formatNumber(num) {
+        return new Intl.NumberFormat().format(num);
     }
 };
 

@@ -286,82 +286,7 @@ const UsersModule = {
     }
 };
 
-// Create placeholder modules for other sections
-const SettingsModule = {
-    async load(panel) {
-        try {
-            const response = await API.settings.list();
-            const settings = response.data || [];
-
-            const columns = [
-                { key: 'id', title: 'ID', type: 'number' },
-                { key: 'name', title: 'Key' },
-                { key: 'title', title: 'Title' },
-                { key: 'value', title: 'Value', formatter: (value) => Utils.truncate(value, 50) },
-                { key: 'is_active', title: 'Active', type: 'boolean' },
-                {
-                    key: 'actions',
-                    title: 'Actions',
-                    type: 'actions',
-                    actions: [
-                        { text: 'Edit', class: 'primary', onclick: 'SettingsModule.edit' }
-                    ]
-                }
-            ];
-
-            const html = `
-                <div class="tui-window full-width">
-                    <fieldset class="tui-fieldset">
-                        <legend class="center">SETTINGS MANAGEMENT</legend>
-                        <div style="padding: 20px;">
-                            <div style="margin-bottom: 20px;">
-                                <button class="admin-button primary" onclick="SettingsModule.create()">
-                                    + New Setting
-                                </button>
-                                <button class="admin-button secondary" onclick="SettingsModule.refresh()">
-                                    ↻ Refresh
-                                </button>
-                            </div>
-
-                            ${settings.length > 0 ?
-                                Components.createTable(settings, columns) :
-                                Components.createEmptyState('No settings found', 'Create Setting', 'SettingsModule.create()')
-                            }
-                        </div>
-                    </fieldset>
-                </div>
-            `;
-
-            panel.innerHTML = html;
-
-        } catch (error) {
-            console.error('Failed to load settings:', error);
-            panel.innerHTML = Components.createError('Failed to load settings', error.message);
-        }
-    },
-
-    create() {
-        AdminApp.showNotification('Settings creation - Coming soon!', 'info');
-    },
-
-    edit(id) {
-        AdminApp.showNotification('Settings editing - Coming soon!', 'info');
-    },
-
-    refresh() {
-        const panel = document.getElementById('panel-settings');
-        if (panel) {
-            this.load(panel);
-        }
-    }
-};
-
-// Placeholder modules for other sections
-const WidgetsModule = {
-    async load(panel) {
-        panel.innerHTML = Components.createEmptyState('Widgets module - Coming soon!', 'Go to Dashboard', 'AdminApp.showSection("dashboard")');
-    }
-};
+// Placeholder modules for other sections that haven't been implemented yet
 
 const FormsModule = {
     async load(panel) {
@@ -395,8 +320,6 @@ const AuditModule = {
 
 // Expose to global scope
 window.UsersModule = UsersModule;
-window.SettingsModule = SettingsModule;
-window.WidgetsModule = WidgetsModule;
 window.FormsModule = FormsModule;
 window.MenusModule = MenusModule;
 window.MediaModule = MediaModule;
