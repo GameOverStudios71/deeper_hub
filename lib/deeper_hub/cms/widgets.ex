@@ -4,7 +4,7 @@ defmodule DeeperHub.CMS.Widgets do
   """
 
   alias DeeperHub.Core.Data.Connection
-  alias DeeperHub.CMS.Widgets.{Widget, WidgetType, WidgetInstance, WidgetSetting, WidgetBookmark}
+  alias DeeperHub.CMS.Widgets.{Widget, WidgetType}
 
   # ============================================================================
   # WIDGETS

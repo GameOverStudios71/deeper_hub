@@ -4,7 +4,7 @@ defmodule DeeperHub.CMS.Forms do
   """
 
   alias DeeperHub.Core.Data.Connection
-  alias DeeperHub.CMS.Forms.{Form, FormField, FormFieldType, FormDisplay, FormDisplayField, FormPreList, FormPreValue, FormSubmission, FormSubmissionData}
+  alias DeeperHub.CMS.Forms.{Form, FormFieldType}
 
   # ============================================================================
   # FORMS

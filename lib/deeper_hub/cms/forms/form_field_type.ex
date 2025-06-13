@@ -177,7 +177,7 @@ defmodule DeeperHub.CMS.Forms.FormFieldType do
   Verifica se suporta múltiplos valores.
   """
   def supports_multiple?(%__MODULE__{input_type: type}) do
-    type in ["checkbox", "file"] or 
+    type in ["checkbox", "file"] or
     (type == "select" and supports_multiple_select?(%__MODULE__{input_type: type}))
   end
 
@@ -343,7 +343,7 @@ defmodule DeeperHub.CMS.Forms.FormFieldType do
   """
   def summary(%__MODULE__{} = field_type) do
     characteristics = characteristics(field_type)
-    
+
     %{
       id: field_type.id,
       name: field_type.name,
@@ -399,14 +399,14 @@ defmodule DeeperHub.CMS.Forms.FormFieldType do
       "text", "email", "password", "tel", "url", "number", "date", "datetime-local",
       "time", "range", "color", "search", "file", "hidden", "submit", "button", "reset"
     ]
-    
+
     type in html5_types
   end
 
   @doc """
   Retorna atributos HTML recomendados.
   """
-  def recommended_html_attributes(%__MODULE__{input_type: type} = field_type) do
+  def recommended_html_attributes(%__MODULE__{input_type: type} = _field_type) do
     base_attrs = %{
       "type" => type,
       "class" => "form-control"

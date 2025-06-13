@@ -4,7 +4,7 @@ defmodule DeeperHub.CMS.Pages do
   """
 
   alias DeeperHub.Core.Data.Connection
-  alias DeeperHub.CMS.Pages.{Page, PageLayout, PageType, DesignBox, PageBlock, ContentPlaceholder}
+  alias DeeperHub.CMS.Pages.Page
 
   # ============================================================================
   # PAGES
@@ -230,49 +230,38 @@ defmodule DeeperHub.CMS.Pages do
 
         sql = """
         UPDATE cms_pages SET
-          name = $2, uri = $3, title_system = $4, title = $5, description = $6,
-          module = $7, page_type_id = $8, layout_id = $9, meta_title = $10,
-          meta_description = $11, meta_keywords = $12, meta_robots = $13,
-          is_active = $14, is_system = $15, is_home = $16, sticky_columns = $17,
-          cache_lifetime = $18, cache_editable = $19, visible_for_levels = $20,
-          visible_for_levels_editable = $21, inject_head = $22, inject_footer = $23,
-          config_api = $24, custom_css = $25, custom_js = $26, author_id = $27,
-          is_deletable = $28, is_editable = $29, updated_at = $30, published_at = $31
+          name = $2, title = $3, description = $4, content = $5, layout_id = $6,
+          type_id = $7, template = $8, css_class = $9, custom_css = $10, custom_js = $11,
+          meta_title = $12, meta_description = $13, meta_keywords = $14, og_title = $15,
+          og_description = $16, og_image = $17, canonical_url = $18, robots = $19,
+          is_published = $20, is_featured = $21, is_system = $22, updated_at = $23
         WHERE id = $1
         """
 
         params = [
           id,
           validated_attrs[:name],
-          validated_attrs[:uri],
-          validated_attrs[:title_system],
           validated_attrs[:title],
           validated_attrs[:description] || "",
-          validated_attrs[:module] || "cms",
-          validated_attrs[:page_type_id] || 1,
+          validated_attrs[:content] || "",
           validated_attrs[:layout_id] || 1,
+          validated_attrs[:type_id] || 1,
+          validated_attrs[:template] || "",
+          validated_attrs[:css_class] || "",
+          validated_attrs[:custom_css] || "",
+          validated_attrs[:custom_js] || "",
           validated_attrs[:meta_title] || "",
           validated_attrs[:meta_description] || "",
           validated_attrs[:meta_keywords] || "",
-          validated_attrs[:meta_robots] || "index,follow",
-          validated_attrs[:is_active] || true,
+          validated_attrs[:og_title] || "",
+          validated_attrs[:og_description] || "",
+          validated_attrs[:og_image] || "",
+          validated_attrs[:canonical_url] || "",
+          validated_attrs[:robots] || "index,follow",
+          validated_attrs[:is_published] || false,
+          validated_attrs[:is_featured] || false,
           validated_attrs[:is_system] || false,
-          validated_attrs[:is_home] || false,
-          validated_attrs[:sticky_columns] || false,
-          validated_attrs[:cache_lifetime] || 0,
-          validated_attrs[:cache_editable] || true,
-          validated_attrs[:visible_for_levels] || 2147483647,
-          validated_attrs[:visible_for_levels_editable] || true,
-          validated_attrs[:inject_head] || "",
-          validated_attrs[:inject_footer] || "",
-          validated_attrs[:config_api] || "",
-          validated_attrs[:custom_css] || "",
-          validated_attrs[:custom_js] || "",
-          validated_attrs[:author_id],
-          validated_attrs[:is_deletable] || true,
-          validated_attrs[:is_editable] || true,
-          now,
-          validated_attrs[:published_at]
+          now
         ]
 
         case Connection.query(sql, params) do
@@ -298,76 +287,6 @@ defmodule DeeperHub.CMS.Pages do
         :ok
       {:ok, %{num_rows: 0}} ->
         {:error, :not_found_or_system}
-      {:error, error} ->
-        {:error, error}
-    end
-  end
-
-  # ============================================================================
-  # PAGE LAYOUTS
-  # ============================================================================
-
-  @doc """
-  Lista todos os layouts de página.
-  """
-  def list_page_layouts do
-    sql = """
-    SELECT id, name, title, description, template, icon, cells_number,
-           cells_config, is_active, is_system, created_at, updated_at, order_index
-    FROM cms_page_layouts
-    ORDER BY order_index ASC, title ASC
-    """
-
-    case Connection.query(sql, []) do
-      {:ok, %{rows: rows}} ->
-        layouts = Enum.map(rows, &row_to_page_layout/1)
-        {:ok, layouts}
-      {:error, error} ->
-        {:error, error}
-    end
-  end
-
-  @doc """
-  Busca layout por ID.
-  """
-  def get_page_layout(id) do
-    sql = """
-    SELECT id, name, title, description, template, icon, cells_number,
-           cells_config, is_active, is_system, created_at, updated_at, order_index
-    FROM cms_page_layouts
-    WHERE id = $1
-    """
-
-    case Connection.query(sql, [id]) do
-      {:ok, %{rows: [row]}} ->
-        layout = row_to_page_layout(row)
-        {:ok, layout}
-      {:ok, %{rows: []}} ->
-        {:error, :not_found}
-      {:error, error} ->
-        {:error, error}
-    end
-  end
-
-  # ============================================================================
-  # PAGE TYPES
-  # ============================================================================
-
-  @doc """
-  Lista todos os tipos de página.
-  """
-  def list_page_types do
-    sql = """
-    SELECT id, name, title, description, template, icon, is_active,
-           is_system, created_at, order_index
-    FROM cms_page_types
-    ORDER BY order_index ASC, title ASC
-    """
-
-    case Connection.query(sql, []) do
-      {:ok, %{rows: rows}} ->
-        types = Enum.map(rows, &row_to_page_type/1)
-        {:ok, types}
       {:error, error} ->
         {:error, error}
     end
@@ -419,41 +338,6 @@ defmodule DeeperHub.CMS.Pages do
       published_at: published_at,
       page_type_title: page_type_title,
       layout_title: layout_title
-    })
-  end
-
-  defp row_to_page_layout([id, name, title, description, template, icon, cells_number,
-                           cells_config, is_active, is_system, created_at, updated_at, order_index]) do
-    PageLayout.new(%{
-      id: id,
-      name: name,
-      title: title,
-      description: description,
-      template: template,
-      icon: icon,
-      cells_number: cells_number,
-      cells_config: cells_config,
-      is_active: is_active,
-      is_system: is_system,
-      created_at: created_at,
-      updated_at: updated_at,
-      order_index: order_index
-    })
-  end
-
-  defp row_to_page_type([id, name, title, description, template, icon, is_active,
-                         is_system, created_at, order_index]) do
-    PageType.new(%{
-      id: id,
-      name: name,
-      title: title,
-      description: description,
-      template: template,
-      icon: icon,
-      is_active: is_active,
-      is_system: is_system,
-      created_at: created_at,
-      order_index: order_index
     })
   end
 end
