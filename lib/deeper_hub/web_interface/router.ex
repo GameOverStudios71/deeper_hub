@@ -21,6 +21,14 @@ defmodule DeeperHub.WebInterface.Router do
   plug(:dispatch)
 
   # API Routes
+
+  # CMS Dinâmico Routes
+  forward("/api/entities", to: DeeperHub.WebInterface.Resources.EntitiesResource)
+  forward("/api/fields", to: DeeperHub.WebInterface.Resources.FieldsResource)
+  forward("/api/records", to: DeeperHub.WebInterface.Resources.RecordsResource)
+  forward("/api/cms", to: DeeperHub.WebInterface.Resources.CmsAdminResource)
+
+  # Sistema Routes
   forward("/api/terminal", to: DeeperHub.WebInterface.Resources.TerminalResource)
   forward("/api/console", to: DeeperHub.WebInterface.Resources.ConsoleResource)
 

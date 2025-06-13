@@ -13,7 +13,12 @@ defmodule DeeperHub.Core.Data.Migrations.MigrationRegistry do
   """
   def available_migrations do
     [
-
+      {"20250108000001", DeeperHub.Core.Data.Migrations.CreateCmsEntities},
+      {"20250108000002", DeeperHub.Core.Data.Migrations.CreateCmsFields},
+      {"20250108000003", DeeperHub.Core.Data.Migrations.CreateCmsEntityData},
+      {"20250108000004", DeeperHub.Core.Data.Migrations.CreateCmsRelationships},
+      {"20250108000005", DeeperHub.Core.Data.Migrations.CreateCmsUsersPermissions},
+      {"20250108000006", DeeperHub.Core.Data.Migrations.CreateCmsAuditLog},
     ]
   end
 
@@ -22,7 +27,7 @@ defmodule DeeperHub.Core.Data.Migrations.MigrationRegistry do
   """
   def available_seeds do
     [
-
+      DeeperHub.Core.Data.Seeds.CmsInitialDataSeed,
     ]
   end
 
