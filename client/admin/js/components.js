@@ -263,14 +263,32 @@ const Components = {
      * Get form data
      */
     getFormData(formId) {
+        // If no formId provided, try to find the form in the modal
+        if (!formId) {
+            const modal = document.querySelector('.modal-container.active form');
+            if (modal) {
+                formId = modal.id;
+            }
+        }
+
         const form = document.getElementById(formId);
+        if (!form) {
+            console.error('Form not found:', formId);
+            return {};
+        }
+
         const formData = new FormData(form);
         const data = {};
-        
+
         for (const [key, value] of formData.entries()) {
-            Utils.setNestedProperty(data, key, value);
+            // Handle checkboxes
+            if (form.querySelector(`input[name="${key}"][type="checkbox"]`)) {
+                data[key] = value === '1' || value === 'on';
+            } else {
+                Utils.setNestedProperty(data, key, value);
+            }
         }
-        
+
         return data;
     },
 

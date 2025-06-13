@@ -537,6 +537,217 @@ class AdminApplication {
     }
 
     /**
+     * Load widgets section
+     */
+    async loadWidgetsSection(panel) {
+        const response = await API.widgets.list();
+        const widgets = response.data || [];
+
+        const columns = [
+            { key: 'id', title: 'ID', type: 'number' },
+            { key: 'name', title: 'Name' },
+            { key: 'widget_type', title: 'Type' },
+            { key: 'is_active', title: 'Active', type: 'boolean' },
+            { key: 'created_at', title: 'Created', type: 'date' },
+            {
+                key: 'actions',
+                title: 'Actions',
+                type: 'actions',
+                actions: [
+                    { text: 'Edit', class: 'primary', onclick: 'AdminApp.editWidget' },
+                    { text: 'Delete', class: 'danger', onclick: 'AdminApp.deleteWidget' }
+                ]
+            }
+        ];
+
+        const html = `
+            <div class="tui-window full-width">
+                <fieldset class="tui-fieldset">
+                    <legend class="center">WIDGETS MANAGEMENT</legend>
+                    <div style="padding: 20px;">
+                        <div style="margin-bottom: 20px;">
+                            <button class="admin-button primary" onclick="AdminApp.createWidget()">
+                                + New Widget
+                            </button>
+                            <button class="admin-button secondary" onclick="AdminApp.refreshSection('widgets')">
+                                ↻ Refresh
+                            </button>
+                        </div>
+
+                        ${Components.createSearchBox('Search widgets...', 'AdminApp.searchWidgets')}
+
+                        ${widgets.length > 0 ?
+                            Components.createTable(widgets, columns) :
+                            Components.createEmptyState('No widgets found', 'Create Widget', 'AdminApp.createWidget()')
+                        }
+                    </div>
+                </fieldset>
+            </div>
+        `;
+
+        panel.innerHTML = html;
+    }
+
+    /**
+     * Load forms section
+     */
+    async loadFormsSection(panel) {
+        const response = await API.forms.list();
+        const forms = response.data || [];
+
+        const columns = [
+            { key: 'id', title: 'ID', type: 'number' },
+            { key: 'name', title: 'Name' },
+            { key: 'form_type', title: 'Type' },
+            { key: 'is_active', title: 'Active', type: 'boolean' },
+            { key: 'created_at', title: 'Created', type: 'date' },
+            {
+                key: 'actions',
+                title: 'Actions',
+                type: 'actions',
+                actions: [
+                    { text: 'Edit', class: 'primary', onclick: 'AdminApp.editForm' },
+                    { text: 'Submissions', class: 'warning', onclick: 'AdminApp.viewFormSubmissions' },
+                    { text: 'Delete', class: 'danger', onclick: 'AdminApp.deleteForm' }
+                ]
+            }
+        ];
+
+        const html = `
+            <div class="tui-window full-width">
+                <fieldset class="tui-fieldset">
+                    <legend class="center">FORMS MANAGEMENT</legend>
+                    <div style="padding: 20px;">
+                        <div style="margin-bottom: 20px;">
+                            <button class="admin-button primary" onclick="AdminApp.createForm()">
+                                + New Form
+                            </button>
+                            <button class="admin-button secondary" onclick="AdminApp.refreshSection('forms')">
+                                ↻ Refresh
+                            </button>
+                        </div>
+
+                        ${Components.createSearchBox('Search forms...', 'AdminApp.searchForms')}
+
+                        ${forms.length > 0 ?
+                            Components.createTable(forms, columns) :
+                            Components.createEmptyState('No forms found', 'Create Form', 'AdminApp.createForm()')
+                        }
+                    </div>
+                </fieldset>
+            </div>
+        `;
+
+        panel.innerHTML = html;
+    }
+
+    /**
+     * Load menus section
+     */
+    async loadMenusSection(panel) {
+        const response = await API.menus.list();
+        const menus = response.data || [];
+
+        const columns = [
+            { key: 'id', title: 'ID', type: 'number' },
+            { key: 'name', title: 'Name' },
+            { key: 'menu_type', title: 'Type' },
+            { key: 'is_active', title: 'Active', type: 'boolean' },
+            { key: 'created_at', title: 'Created', type: 'date' },
+            {
+                key: 'actions',
+                title: 'Actions',
+                type: 'actions',
+                actions: [
+                    { text: 'Edit', class: 'primary', onclick: 'AdminApp.editMenu' },
+                    { text: 'Items', class: 'warning', onclick: 'AdminApp.editMenuItems' },
+                    { text: 'Delete', class: 'danger', onclick: 'AdminApp.deleteMenu' }
+                ]
+            }
+        ];
+
+        const html = `
+            <div class="tui-window full-width">
+                <fieldset class="tui-fieldset">
+                    <legend class="center">MENUS MANAGEMENT</legend>
+                    <div style="padding: 20px;">
+                        <div style="margin-bottom: 20px;">
+                            <button class="admin-button primary" onclick="AdminApp.createMenu()">
+                                + New Menu
+                            </button>
+                            <button class="admin-button secondary" onclick="AdminApp.refreshSection('menus')">
+                                ↻ Refresh
+                            </button>
+                        </div>
+
+                        ${Components.createSearchBox('Search menus...', 'AdminApp.searchMenus')}
+
+                        ${menus.length > 0 ?
+                            Components.createTable(menus, columns) :
+                            Components.createEmptyState('No menus found', 'Create Menu', 'AdminApp.createMenu()')
+                        }
+                    </div>
+                </fieldset>
+            </div>
+        `;
+
+        panel.innerHTML = html;
+    }
+
+    /**
+     * Load media section
+     */
+    async loadMediaSection(panel) {
+        const response = await API.media.list();
+        const media = response.data || [];
+
+        const columns = [
+            { key: 'id', title: 'ID', type: 'number' },
+            { key: 'filename', title: 'Filename' },
+            { key: 'file_type', title: 'Type' },
+            { key: 'file_size', title: 'Size', formatter: (value) => Utils.formatFileSize(value) },
+            { key: 'created_at', title: 'Uploaded', type: 'date' },
+            {
+                key: 'actions',
+                title: 'Actions',
+                type: 'actions',
+                actions: [
+                    { text: 'View', class: 'primary', onclick: 'AdminApp.viewMedia' },
+                    { text: 'Edit', class: 'warning', onclick: 'AdminApp.editMedia' },
+                    { text: 'Delete', class: 'danger', onclick: 'AdminApp.deleteMedia' }
+                ]
+            }
+        ];
+
+        const html = `
+            <div class="tui-window full-width">
+                <fieldset class="tui-fieldset">
+                    <legend class="center">MEDIA MANAGEMENT</legend>
+                    <div style="padding: 20px;">
+                        <div style="margin-bottom: 20px;">
+                            <button class="admin-button primary" onclick="AdminApp.uploadMedia()">
+                                📁 Upload Files
+                            </button>
+                            <button class="admin-button secondary" onclick="AdminApp.refreshSection('media')">
+                                ↻ Refresh
+                            </button>
+                        </div>
+
+                        ${Components.createSearchBox('Search media...', 'AdminApp.searchMedia')}
+
+                        ${media.length > 0 ?
+                            Components.createTable(media, columns) :
+                            Components.createEmptyState('No media files found', 'Upload Files', 'AdminApp.uploadMedia()')
+                        }
+                    </div>
+                </fieldset>
+            </div>
+        `;
+
+        panel.innerHTML = html;
+    }
+
+    /**
      * Load users section
      */
     async loadUsersSection(panel) {
@@ -582,6 +793,211 @@ class AdminApplication {
                         ${users.length > 0 ?
                             Components.createTable(users, columns) :
                             Components.createEmptyState('No users found', 'Create User', 'AdminApp.createUser()')
+                        }
+                    </div>
+                </fieldset>
+            </div>
+        `;
+
+        panel.innerHTML = html;
+    }
+
+    /**
+     * Load permissions section
+     */
+    async loadPermissionsSection(panel) {
+        const response = await API.users.list();
+        const users = response.data || [];
+
+        const html = `
+            <div class="tui-window full-width">
+                <fieldset class="tui-fieldset">
+                    <legend class="center">PERMISSIONS MANAGEMENT</legend>
+                    <div style="padding: 20px;">
+                        <div style="margin-bottom: 20px;">
+                            <h4 class="white-168-text">User Permissions</h4>
+                            <p class="secondary-text">Manage user access and permissions for different sections of the CMS.</p>
+                        </div>
+
+                        ${users.length > 0 ?
+                            users.map(user => `
+                                <div style="border: 1px solid rgb(168, 168, 168); margin-bottom: 10px; padding: 10px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div>
+                                            <strong class="white-168-text">${user.username}</strong>
+                                            <span class="secondary-text">(${user.email})</span>
+                                            ${user.is_admin ? '<span class="red-168-text"> - ADMIN</span>' : ''}
+                                        </div>
+                                        <button class="admin-button primary" onclick="AdminApp.editUserPermissions('${user.id}')">
+                                            Edit Permissions
+                                        </button>
+                                    </div>
+                                </div>
+                            `).join('') :
+                            Components.createEmptyState('No users found', 'Create User', 'AdminApp.showSection("users")')
+                        }
+                    </div>
+                </fieldset>
+            </div>
+        `;
+
+        panel.innerHTML = html;
+    }
+
+    /**
+     * Load audit section
+     */
+    async loadAuditSection(panel) {
+        const response = await API.audit.logs({ limit: 50 });
+        const logs = response.data || [];
+
+        const columns = [
+            { key: 'id', title: 'ID', type: 'number' },
+            { key: 'table_name', title: 'Table' },
+            { key: 'action', title: 'Action', formatter: (value) => {
+                const colors = { INSERT: 'green-168-text', UPDATE: 'yellow-168-text', DELETE: 'red-168-text' };
+                return `<span class="${colors[value] || 'white-168-text'}">${value}</span>`;
+            }},
+            { key: 'username', title: 'User' },
+            { key: 'created_at', title: 'When', type: 'date' },
+            {
+                key: 'actions',
+                title: 'Actions',
+                type: 'actions',
+                actions: [
+                    { text: 'View', class: 'primary', onclick: 'AdminApp.viewAuditLog' }
+                ]
+            }
+        ];
+
+        const html = `
+            <div class="tui-window full-width">
+                <fieldset class="tui-fieldset">
+                    <legend class="center">AUDIT LOG</legend>
+                    <div style="padding: 20px;">
+                        <div style="margin-bottom: 20px;">
+                            <button class="admin-button secondary" onclick="AdminApp.refreshSection('audit')">
+                                ↻ Refresh
+                            </button>
+                            <button class="admin-button warning" onclick="AdminApp.showAuditStatistics()">
+                                📊 Statistics
+                            </button>
+                        </div>
+
+                        ${Components.createSearchBox('Search logs...', 'AdminApp.searchAuditLogs')}
+
+                        ${logs.length > 0 ?
+                            Components.createTable(logs, columns) :
+                            Components.createEmptyState('No audit logs found')
+                        }
+                    </div>
+                </fieldset>
+            </div>
+        `;
+
+        panel.innerHTML = html;
+    }
+
+    /**
+     * Load settings section
+     */
+    async loadSettingsSection(panel) {
+        const response = await API.settings.list();
+        const settings = response.data || [];
+
+        const columns = [
+            { key: 'setting_key', title: 'Key' },
+            { key: 'setting_value', title: 'Value', formatter: (value) => Utils.truncate(value, 50) },
+            { key: 'description', title: 'Description', formatter: (value) => Utils.truncate(value, 60) },
+            { key: 'updated_at', title: 'Updated', type: 'date' },
+            {
+                key: 'actions',
+                title: 'Actions',
+                type: 'actions',
+                actions: [
+                    { text: 'Edit', class: 'primary', onclick: 'AdminApp.editSetting' }
+                ]
+            }
+        ];
+
+        const html = `
+            <div class="tui-window full-width">
+                <fieldset class="tui-fieldset">
+                    <legend class="center">SYSTEM SETTINGS</legend>
+                    <div style="padding: 20px;">
+                        <div style="margin-bottom: 20px;">
+                            <button class="admin-button primary" onclick="AdminApp.createSetting()">
+                                + New Setting
+                            </button>
+                            <button class="admin-button secondary" onclick="AdminApp.refreshSection('settings')">
+                                ↻ Refresh
+                            </button>
+                            <button class="admin-button warning" onclick="AdminApp.exportSettings()">
+                                📤 Export
+                            </button>
+                            <button class="admin-button danger" onclick="AdminApp.importSettings()">
+                                📥 Import
+                            </button>
+                        </div>
+
+                        ${Components.createSearchBox('Search settings...', 'AdminApp.searchSettings')}
+
+                        ${settings.length > 0 ?
+                            Components.createTable(settings, columns) :
+                            Components.createEmptyState('No settings found', 'Create Setting', 'AdminApp.createSetting()')
+                        }
+                    </div>
+                </fieldset>
+            </div>
+        `;
+
+        panel.innerHTML = html;
+    }
+
+    /**
+     * Load themes section
+     */
+    async loadThemesSection(panel) {
+        const response = await API.themes.list();
+        const themes = response.data || [];
+
+        const columns = [
+            { key: 'id', title: 'ID', type: 'number' },
+            { key: 'name', title: 'Name' },
+            { key: 'version', title: 'Version' },
+            { key: 'is_active', title: 'Active', type: 'boolean' },
+            { key: 'created_at', title: 'Created', type: 'date' },
+            {
+                key: 'actions',
+                title: 'Actions',
+                type: 'actions',
+                actions: [
+                    { text: 'Activate', class: 'success', onclick: 'AdminApp.activateTheme' },
+                    { text: 'Edit', class: 'primary', onclick: 'AdminApp.editTheme' },
+                    { text: 'Delete', class: 'danger', onclick: 'AdminApp.deleteTheme' }
+                ]
+            }
+        ];
+
+        const html = `
+            <div class="tui-window full-width">
+                <fieldset class="tui-fieldset">
+                    <legend class="center">THEMES MANAGEMENT</legend>
+                    <div style="padding: 20px;">
+                        <div style="margin-bottom: 20px;">
+                            <button class="admin-button primary" onclick="AdminApp.createTheme()">
+                                + New Theme
+                            </button>
+                            <button class="admin-button secondary" onclick="AdminApp.refreshSection('themes')">
+                                ↻ Refresh
+                            </button>
+                        </div>
+
+                        ${Components.createSearchBox('Search themes...', 'AdminApp.searchThemes')}
+
+                        ${themes.length > 0 ?
+                            Components.createTable(themes, columns) :
+                            Components.createEmptyState('No themes found', 'Create Theme', 'AdminApp.createTheme()')
                         }
                     </div>
                 </fieldset>
@@ -738,6 +1154,181 @@ class AdminApplication {
         console.log('Auto-saving...');
         this.isDirty = false;
     }
+
+    // ============================================================================
+    // CRUD OPERATIONS
+    // ============================================================================
+
+    /**
+     * Create new page
+     */
+    createPage() {
+        const fields = [
+            { name: 'title', label: 'Title', type: 'text', required: true },
+            { name: 'slug', label: 'Slug', type: 'text', required: true },
+            { name: 'content', label: 'Content', type: 'textarea', rows: 10 },
+            { name: 'status', label: 'Status', type: 'select', options: [
+                { value: 'draft', text: 'Draft' },
+                { value: 'published', text: 'Published' }
+            ]},
+            { name: 'is_homepage', label: 'Is Homepage', type: 'checkbox' }
+        ];
+
+        const formHtml = Components.createForm(fields);
+
+        Components.createModal('Create New Page', formHtml, [
+            { text: 'Cancel', onclick: 'Components.closeModal()' },
+            { text: 'Create', class: 'primary', onclick: 'AdminApp.savePage()' }
+        ]);
+    }
+
+    /**
+     * Create new user
+     */
+    createUser() {
+        const fields = [
+            { name: 'username', label: 'Username', type: 'text', required: true },
+            { name: 'email', label: 'Email', type: 'email', required: true },
+            { name: 'full_name', label: 'Full Name', type: 'text', required: true },
+            { name: 'password', label: 'Password', type: 'password', required: true },
+            { name: 'is_admin', label: 'Administrator', type: 'checkbox' },
+            { name: 'is_active', label: 'Active', type: 'checkbox' }
+        ];
+
+        const formHtml = Components.createForm(fields, { is_active: true });
+
+        Components.createModal('Create New User', formHtml, [
+            { text: 'Cancel', onclick: 'Components.closeModal()' },
+            { text: 'Create', class: 'primary', onclick: 'AdminApp.saveUser()' }
+        ]);
+    }
+
+    /**
+     * Create new setting
+     */
+    createSetting() {
+        const fields = [
+            { name: 'setting_key', label: 'Key', type: 'text', required: true },
+            { name: 'setting_value', label: 'Value', type: 'textarea', rows: 3, required: true },
+            { name: 'description', label: 'Description', type: 'text' },
+            { name: 'setting_type', label: 'Type', type: 'select', options: [
+                { value: 'string', text: 'String' },
+                { value: 'number', text: 'Number' },
+                { value: 'boolean', text: 'Boolean' },
+                { value: 'json', text: 'JSON' }
+            ]}
+        ];
+
+        const formHtml = Components.createForm(fields);
+
+        Components.createModal('Create New Setting', formHtml, [
+            { text: 'Cancel', onclick: 'Components.closeModal()' },
+            { text: 'Create', class: 'primary', onclick: 'AdminApp.saveSetting()' }
+        ]);
+    }
+
+    /**
+     * Save page
+     */
+    async savePage() {
+        try {
+            const formData = Components.getFormData();
+            const response = await API.pages.create(formData);
+
+            if (response.status === 'success') {
+                this.showNotification('Page created successfully!', 'success');
+                Components.closeModal();
+                this.refreshSection('pages');
+            } else {
+                this.showNotification('Failed to create page', 'error');
+            }
+        } catch (error) {
+            console.error('Error creating page:', error);
+            this.showNotification('Error creating page: ' + error.message, 'error');
+        }
+    }
+
+    /**
+     * Save user
+     */
+    async saveUser() {
+        try {
+            const formData = Components.getFormData();
+
+            // Hash password (simple for now)
+            if (formData.password) {
+                formData.password_hash = await this.hashPassword(formData.password);
+                delete formData.password;
+            }
+
+            const response = await API.users.create(formData);
+
+            if (response.status === 'success') {
+                this.showNotification('User created successfully!', 'success');
+                Components.closeModal();
+                this.refreshSection('users');
+            } else {
+                this.showNotification('Failed to create user', 'error');
+            }
+        } catch (error) {
+            console.error('Error creating user:', error);
+            this.showNotification('Error creating user: ' + error.message, 'error');
+        }
+    }
+
+    /**
+     * Save setting
+     */
+    async saveSetting() {
+        try {
+            const formData = Components.getFormData();
+            const response = await API.settings.create(formData);
+
+            if (response.status === 'success') {
+                this.showNotification('Setting created successfully!', 'success');
+                Components.closeModal();
+                this.refreshSection('settings');
+            } else {
+                this.showNotification('Failed to create setting', 'error');
+            }
+        } catch (error) {
+            console.error('Error creating setting:', error);
+            this.showNotification('Error creating setting: ' + error.message, 'error');
+        }
+    }
+
+    /**
+     * Simple password hashing (for demo)
+     */
+    async hashPassword(password) {
+        // In production, this should be done on the server
+        const encoder = new TextEncoder();
+        const data = encoder.encode(password);
+        const hash = await crypto.subtle.digest('SHA-256', data);
+        return Array.from(new Uint8Array(hash))
+            .map(b => b.toString(16).padStart(2, '0'))
+            .join('');
+    }
+
+    /**
+     * Refresh current section
+     */
+    refreshSection(sectionName) {
+        const section = sectionName || this.currentSection;
+        this.loadSection(section);
+    }
+
+    // Placeholder functions for other CRUD operations
+    editPage(id) { this.showNotification(`Edit page ${id} - Not implemented yet`, 'warning'); }
+    deletePage(id) { this.showNotification(`Delete page ${id} - Not implemented yet`, 'warning'); }
+    editUser(id) { this.showNotification(`Edit user ${id} - Not implemented yet`, 'warning'); }
+    deleteUser(id) { this.showNotification(`Delete user ${id} - Not implemented yet`, 'warning'); }
+    editSetting(key) { this.showNotification(`Edit setting ${key} - Not implemented yet`, 'warning'); }
+    createWidget() { this.showNotification('Create widget - Not implemented yet', 'warning'); }
+    createForm() { this.showNotification('Create form - Not implemented yet', 'warning'); }
+    createMenu() { this.showNotification('Create menu - Not implemented yet', 'warning'); }
+    uploadMedia() { this.showNotification('Upload media - Not implemented yet', 'warning'); }
+    createTheme() { this.showNotification('Create theme - Not implemented yet', 'warning'); }
 }
 
 // Create global instance

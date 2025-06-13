@@ -9,6 +9,9 @@ defmodule DeeperHub.WebInterface.Router do
   # Plugs de depuração
   plug(Plug.Logger, log: :debug)
 
+  # CORS Headers
+  plug(:cors_headers)
+
   # Parsers para formatos diferentes
   plug(Plug.Parsers,
     parsers: [:json],
@@ -51,11 +54,27 @@ defmodule DeeperHub.WebInterface.Router do
     |> send_resp(200, Jason.encode!(%{status: "ok", api: "DeeperHub API v1"}))
   end
 
+  # Handle CORS preflight requests
+  options _ do
+    conn
+    |> put_resp_content_type("application/json")
+    |> send_resp(200, Jason.encode!(%{status: "ok"}))
+  end
+
   # Fallback para rotas não encontradas
   match _ do
     conn
     |> put_resp_content_type("application/json")
     |> send_resp(404, Jason.encode!(%{erro: "Rota não encontrada"}))
+  end
+
+  # CORS Headers
+  defp cors_headers(conn, _opts) do
+    conn
+    |> put_resp_header("access-control-allow-origin", "*")
+    |> put_resp_header("access-control-allow-methods", "GET, POST, PUT, DELETE, OPTIONS")
+    |> put_resp_header("access-control-allow-headers", "content-type, authorization, x-requested-with")
+    |> put_resp_header("access-control-max-age", "86400")
   end
 
   # Log de erros

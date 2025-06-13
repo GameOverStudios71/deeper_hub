@@ -5,7 +5,7 @@
 
 class APIClient {
     constructor() {
-        this.baseURL = window.location.origin;
+        this.baseURL = 'http://localhost:4000';
         this.apiBase = '/api/cms';
         this.timeout = 30000; // 30 seconds
         this.retryAttempts = 3;
@@ -357,11 +357,13 @@ class APIClient {
             const query = this.buildQueryString(params);
             return this.get(`/settings${query ? '?' + query : ''}`);
         },
-        
+
         get: (key) => this.get(`/settings/${key}`),
-        
+
+        create: (data) => this.post('/settings', data),
+
         update: (key, data) => this.put(`/settings/${key}`, data),
-        
+
         delete: (key) => this.delete(`/settings/${key}`)
     };
 
