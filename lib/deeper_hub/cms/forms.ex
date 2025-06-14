@@ -234,13 +234,42 @@ defmodule DeeperHub.CMS.Forms do
   Deleta um formulário.
   """
   def delete_form(id) do
-    sql = "DELETE FROM cms_forms WHERE id = $1 AND is_system = false"
+    # Primeiro verificar se o formulário existe e pode ser deletado
+    check_sql = """
+    SELECT is_system
+    FROM cms_forms
+    WHERE id = $1
+    """
 
-    case Connection.query(sql, [id]) do
-      {:ok, %{num_rows: 1}} ->
-        :ok
-      {:ok, %{num_rows: 0}} ->
+    case Connection.query(check_sql, [id]) do
+      {:ok, %{rows: []}} ->
         {:error, :not_found_or_system}
+
+      {:ok, %{rows: [[is_system]]}} ->
+        # Verificar se é formulário do sistema
+        system_form = case is_system do
+          "true" -> true
+          1 -> true
+          true -> true
+          _ -> false
+        end
+
+        if system_form do
+          {:error, :not_found_or_system}
+        else
+          # Deletar o formulário
+          delete_sql = "DELETE FROM cms_forms WHERE id = $1"
+
+          case Connection.query(delete_sql, [id]) do
+            {:ok, %{num_rows: 1}} ->
+              :ok
+            {:ok, %{num_rows: 0}} ->
+              {:error, :not_found_or_system}
+            {:error, error} ->
+              {:error, error}
+          end
+        end
+
       {:error, error} ->
         {:error, error}
     end

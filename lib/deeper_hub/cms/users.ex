@@ -38,7 +38,7 @@ defmodule DeeperHub.CMS.Users do
     SELECT id, username, email, password_hash, full_name, is_active, is_admin,
            created_at, updated_at, last_login
     FROM users
-    WHERE is_active = true
+    WHERE is_active IN ('true', 1, true)
     ORDER BY created_at DESC
     """
 
@@ -59,7 +59,7 @@ defmodule DeeperHub.CMS.Users do
     SELECT id, username, email, password_hash, full_name, is_active, is_admin,
            created_at, updated_at, last_login
     FROM users
-    WHERE is_admin = true AND is_active = true
+    WHERE is_admin IN ('true', 1, true) AND is_active IN ('true', 1, true)
     ORDER BY created_at DESC
     """
 
@@ -263,13 +263,43 @@ defmodule DeeperHub.CMS.Users do
   Deleta um usuário.
   """
   def delete_user(id) do
-    sql = "DELETE FROM users WHERE id = $1"
+    # Primeiro verificar se o usuário existe e pode ser deletado
+    check_sql = """
+    SELECT is_admin
+    FROM users
+    WHERE id = $1
+    """
 
-    case Connection.query(sql, [id]) do
-      {:ok, %{num_rows: 1}} ->
-        :ok
-      {:ok, %{num_rows: 0}} ->
+    case Connection.query(check_sql, [id]) do
+      {:ok, %{rows: []}} ->
         {:error, :not_found}
+
+      {:ok, %{rows: [[is_admin]]}} ->
+        # Verificar se é usuário admin ou root (ID 1)
+        admin_user = case is_admin do
+          "true" -> true
+          1 -> true
+          true -> true
+          _ -> false
+        end
+
+        # Não permitir deletar admin ou usuário root (ID 1)
+        if admin_user or String.to_integer("#{id}") == 1 do
+          {:error, :cannot_delete_admin_or_root}
+        else
+          # Deletar o usuário
+          delete_sql = "DELETE FROM users WHERE id = $1"
+
+          case Connection.query(delete_sql, [id]) do
+            {:ok, %{num_rows: 1}} ->
+              :ok
+            {:ok, %{num_rows: 0}} ->
+              {:error, :not_found}
+            {:error, error} ->
+              {:error, error}
+          end
+        end
+
       {:error, error} ->
         {:error, error}
     end
@@ -353,14 +383,17 @@ defmodule DeeperHub.CMS.Users do
     sql = """
     SELECT is_admin
     FROM users
-    WHERE id = $1 AND is_active = true
+    WHERE id = $1 AND is_active IN ('true', 1, true)
     """
 
     case Connection.query(sql, [user_id]) do
-      {:ok, %{rows: [[true]]}} ->
-        true
-      {:ok, %{rows: [[false]]}} ->
-        false
+      {:ok, %{rows: [[is_admin]]}} ->
+        case is_admin do
+          "true" -> true
+          1 -> true
+          true -> true
+          _ -> false
+        end
       {:ok, %{rows: []}} ->
         false
       {:error, _} ->

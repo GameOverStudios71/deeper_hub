@@ -316,13 +316,55 @@ defmodule DeeperHub.CMS.Pages do
   Deleta uma página.
   """
   def delete_page(id) do
-    sql = "DELETE FROM cms_pages WHERE id = $1 AND is_system = false"
+    # Normalizar ID para string (SQLite funciona melhor com strings)
+    id_str = to_string(id)
 
-    case Connection.query(sql, [id]) do
-      {:ok, %{num_rows: 1}} ->
-        :ok
-      {:ok, %{num_rows: 0}} ->
+    # Primeiro verificar se a página existe e pode ser deletada
+    check_sql = """
+    SELECT is_system, is_deletable
+    FROM cms_pages
+    WHERE id = $1
+    """
+
+    case Connection.query(check_sql, [id_str]) do
+      {:ok, %{rows: []}} ->
         {:error, :not_found_or_system}
+
+      {:ok, %{rows: [[is_system, is_deletable]]}} ->
+        # Verificar se é página do sistema ou não deletável
+        system_page = case is_system do
+          "true" -> true
+          1 -> true
+          true -> true
+          _ -> false
+        end
+
+        deletable = case is_deletable do
+          "false" -> false
+          0 -> false
+          false -> false
+          _ -> true
+        end
+
+        if system_page or not deletable do
+          {:error, :not_found_or_system}
+        else
+          # Deletar a página
+          delete_sql = "DELETE FROM cms_pages WHERE id = $1"
+
+          case Connection.query(delete_sql, [id_str]) do
+            {:ok, %{num_rows: 1}} ->
+              :ok
+            {:ok, %{num_rows: 0}} ->
+              # Log adicional para debug
+              require Logger
+              Logger.warning("Tentativa de deletar página #{id_str} falhou - página pode ter sido deletada por outro processo")
+              {:error, :not_found_or_system}
+            {:error, error} ->
+              {:error, error}
+          end
+        end
+
       {:error, error} ->
         {:error, error}
     end

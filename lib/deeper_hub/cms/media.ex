@@ -85,7 +85,7 @@ defmodule DeeperHub.CMS.Media do
            max_file_size, allowed_extensions, quota_limit, quota_used, is_active,
            is_default, is_public, created_at, updated_at
     FROM cms_media_storage
-    WHERE is_default = true AND is_active = true
+    WHERE is_default IN ('true', 1, true) AND is_active IN ('true', 1, true)
     LIMIT 1
     """
 

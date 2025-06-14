@@ -1343,10 +1343,24 @@ window.Pages = {
                 Utils.showSuccess(`${entityName} deleted successfully!`);
                 this.loadCurrentTab();
             } else {
-                throw new Error(response.message || `Failed to delete ${entityName.toLowerCase()}`);
+                // Verificar se é erro 404 (página já foi deletada)
+                if (response.status === 404 || (response.error && response.error.status === 404)) {
+                    // Página já foi deletada, apenas recarregar a lista
+                    Utils.showSuccess(`${entityName} deleted successfully!`);
+                    this.loadCurrentTab();
+                } else {
+                    throw new Error(response.message || `Failed to delete ${entityName.toLowerCase()}`);
+                }
             }
         } catch (error) {
-            Utils.showError(`Error deleting record: ${error.message}`);
+            // Verificar se é erro 404 (página já foi deletada)
+            if (error.status === 404) {
+                // Página foi deletada com sucesso, apenas recarregar a lista
+                Utils.showSuccess(`${this.tabs[this.currentTab].title.slice(0, -1)} deleted successfully!`);
+                this.loadCurrentTab();
+            } else {
+                Utils.showError(`Error deleting record: ${error.message}`);
+            }
         }
     },
 

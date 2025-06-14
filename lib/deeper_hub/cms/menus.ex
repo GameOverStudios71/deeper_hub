@@ -44,7 +44,7 @@ defmodule DeeperHub.CMS.Menus do
            ms.created_by, mt.title as template_title, mt.name as template_name
     FROM cms_menu_sets ms
     LEFT JOIN cms_menu_templates mt ON ms.template_id = mt.id
-    WHERE ms.is_active = true
+    WHERE ms.is_active IN ('true', 1, true)
     ORDER BY ms.title ASC
     """
 
@@ -208,13 +208,42 @@ defmodule DeeperHub.CMS.Menus do
   Deleta um conjunto de menu.
   """
   def delete_menu_set(id) do
-    sql = "DELETE FROM cms_menu_sets WHERE id = $1 AND is_system = false"
+    # Primeiro verificar se o menu set existe e pode ser deletado
+    check_sql = """
+    SELECT is_system
+    FROM cms_menu_sets
+    WHERE id = $1
+    """
 
-    case Connection.query(sql, [id]) do
-      {:ok, %{num_rows: 1}} ->
-        :ok
-      {:ok, %{num_rows: 0}} ->
+    case Connection.query(check_sql, [id]) do
+      {:ok, %{rows: []}} ->
         {:error, :not_found_or_system}
+
+      {:ok, %{rows: [[is_system]]}} ->
+        # Verificar se é menu do sistema
+        system_menu = case is_system do
+          "true" -> true
+          1 -> true
+          true -> true
+          _ -> false
+        end
+
+        if system_menu do
+          {:error, :not_found_or_system}
+        else
+          # Deletar o menu set
+          delete_sql = "DELETE FROM cms_menu_sets WHERE id = $1"
+
+          case Connection.query(delete_sql, [id]) do
+            {:ok, %{num_rows: 1}} ->
+              :ok
+            {:ok, %{num_rows: 0}} ->
+              {:error, :not_found_or_system}
+            {:error, error} ->
+              {:error, error}
+          end
+        end
+
       {:error, error} ->
         {:error, error}
     end

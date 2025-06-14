@@ -46,7 +46,7 @@ defmodule DeeperHub.CMS.Widgets do
            wt.title as widget_type_title, wt.category as widget_type_category
     FROM cms_widgets w
     LEFT JOIN cms_widget_types wt ON w.widget_type_id = wt.id
-    WHERE w.is_active = true
+    WHERE w.is_active IN ('true', 1, true)
     ORDER BY w.is_featured DESC, w.title ASC
     """
 
