@@ -62,6 +62,19 @@ defmodule DeeperHub.WebInterface.Router do
     |> send_resp(200, Jason.encode!(%{status: "ok", api: "DeeperHub API v1"}))
   end
 
+  # Endpoint para hot reload (apenas em desenvolvimento)
+  if Mix.env() == :dev do
+    get "/api/dev/reload-status" do
+      conn
+      |> put_resp_content_type("application/json")
+      |> send_resp(200, Jason.encode!(%{
+        status: "ok",
+        hot_reload: true,
+        timestamp: System.system_time(:second)
+      }))
+    end
+  end
+
   # Fallback para rotas não encontradas
   match _ do
     conn

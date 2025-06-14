@@ -4,7 +4,7 @@ defmodule DeeperHub.Core.Auth.SimpleHash do
   Não requer compilação de bibliotecas externas.
   """
 
-  use Bitwise
+  import Bitwise
 
   @salt_length 16
 

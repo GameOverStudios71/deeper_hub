@@ -182,33 +182,20 @@ defmodule DeeperHubWeb.Resources.CMS.AuthResource do
 
     case get_current_user_from_token(conn) do
       {:ok, user} ->
-        case generate_token(user) do
-          {:ok, new_token} ->
-            response = %{
-              status: "success",
-              message: "Token renovado com sucesso",
-              data: %{
-                token: new_token,
-                user: sanitize_user(user)
-              }
-            }
+        {:ok, new_token} = generate_token(user)
 
-            conn
-            |> put_resp_content_type("application/json")
-            |> send_resp(200, Jason.encode!(response))
+        response = %{
+          status: "success",
+          message: "Token renovado com sucesso",
+          data: %{
+            token: new_token,
+            user: sanitize_user(user)
+          }
+        }
 
-          {:error, reason} ->
-            Logger.error("Erro ao gerar novo token: #{inspect(reason)}", module: __MODULE__)
-
-            error_response = %{
-              status: "error",
-              message: "Erro ao renovar token"
-            }
-
-            conn
-            |> put_resp_content_type("application/json")
-            |> send_resp(500, Jason.encode!(error_response))
-        end
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(200, Jason.encode!(response))
 
       {:error, _reason} ->
         error_response = %{
@@ -241,12 +228,8 @@ defmodule DeeperHubWeb.Resources.CMS.AuthResource do
         is_active = to_boolean(user.is_active)
 
         if is_active and verify_password(password, user.password_hash) do
-          case generate_token(user) do
-            {:ok, token} ->
-              {:ok, user, token}
-            {:error, reason} ->
-              {:error, reason}
-          end
+          {:ok, token} = generate_token(user)
+          {:ok, user, token}
         else
           if not is_active do
             {:error, :user_inactive}

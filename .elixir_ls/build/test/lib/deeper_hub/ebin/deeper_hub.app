@@ -84,6 +84,7 @@
                         'Elixir.DeeperHub.Core.Terminal.OutputFormatter',
                         'Elixir.DeeperHub.Core.Terminal.Session',
                         'Elixir.DeeperHub.Core.Terminal.SessionManager',
+                        'Elixir.DeeperHub.Dev.HotReload',
                         'Elixir.DeeperHub.WebInterface.Resources.CmsAdminResource',
                         'Elixir.DeeperHub.WebInterface.Resources.ConsoleResource',
                         'Elixir.DeeperHub.WebInterface.Resources.EntitiesResource',

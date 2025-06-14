@@ -608,7 +608,7 @@ defmodule DeeperHub.CMS.Forms do
      validation_message, is_required, is_unique, is_searchable, is_sortable, is_filterable,
      options_source, options_list_id, options_data, css_class, wrapper_class, label_class,
      input_attrs, conditional_logic, is_active, order_index, created_at, updated_at,
-     field_type_title, form_title] = row
+     _field_type_title, _form_title] = row
 
     FormField.new(%{
       id: id,
@@ -643,7 +643,7 @@ defmodule DeeperHub.CMS.Forms do
   defp row_to_form_display(row) do
     [id, form_id, name, title, description, display_type, template, css_class,
      columns_number, show_labels, show_required_mark, group_fields, is_active,
-     is_default, order_index, created_at, form_title] = row
+     is_default, order_index, created_at, _form_title] = row
 
     FormDisplay.new(%{
       id: id,

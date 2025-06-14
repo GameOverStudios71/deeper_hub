@@ -55,6 +55,9 @@ defmodule DeeperHub.MixProject do
       {:jason, "~> 1.4"},
       {:cors_plug, "~> 3.0"},
 
+      # Hot reload para desenvolvimento
+      {:file_system, "~> 1.0", only: :dev},
+
       # Auth
       # {:joken, "~> 2.6"},
       # {:guardian, "~> 2.3"},

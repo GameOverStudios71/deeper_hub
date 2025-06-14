@@ -814,20 +814,5 @@ defmodule DeeperHub.CMS.Settings do
     }
   end
 
-  # Legacy function for backward compatibility
-  defp row_to_theme_setting([id, theme_id, setting_name, setting_value, setting_type, setting_group, setting_order, is_active, created_at, updated_at, theme_title]) do
-    %{
-      id: id,
-      theme_id: theme_id,
-      setting_name: setting_name,
-      setting_value: setting_value,
-      setting_type: setting_type,
-      setting_group: setting_group,
-      setting_order: setting_order,
-      is_active: is_active == 1,
-      created_at: created_at,
-      updated_at: updated_at,
-      theme_title: theme_title
-    }
-  end
+
 end

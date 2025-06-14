@@ -71,6 +71,13 @@ defmodule DeeperHub.Application do
       {DeeperHub.Core.Console.ConsoleManager, []}
     ]
 
+    # Adicionar hot reload apenas em desenvolvimento
+    children = if Mix.env() == :dev do
+      [{DeeperHub.Dev.HotReload, []} | children]
+    else
+      children
+    end
+
     # Configuração do supervisor principal
     # Obtém configurações de resiliência do ambiente
     supervisor_config = Application.get_env(:deeper_hub, :supervisor, [])
