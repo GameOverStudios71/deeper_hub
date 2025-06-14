@@ -7,6 +7,9 @@ defmodule DeeperHub.CMS.Pages do
   alias DeeperHub.CMS.Pages.Page
   alias DeeperHub.CMS.Pages.PageLayout
   alias DeeperHub.CMS.Pages.PageType
+  alias DeeperHub.CMS.Pages.DesignBox
+  alias DeeperHub.CMS.Pages.PageBlock
+  alias DeeperHub.CMS.Pages.ContentPlaceholder
 
   # ============================================================================
   # PAGES
@@ -634,6 +637,141 @@ defmodule DeeperHub.CMS.Pages do
     }
   end
 
+  # ============================================================================
+  # DESIGN BOXES
+  # ============================================================================
+
+  @doc """
+  Lista todas as design boxes.
+  """
+  def list_design_boxes do
+    sql = """
+    SELECT id, name, title, description, template, css_class, icon, is_active,
+           is_system, created_at, order_index
+    FROM cms_design_boxes
+    ORDER BY order_index ASC, title ASC
+    """
+
+    case Connection.query(sql, []) do
+      {:ok, %{rows: rows}} ->
+        boxes = Enum.map(rows, &row_to_design_box/1)
+        {:ok, boxes}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Obtém uma design box específica pelo ID.
+  """
+  def get_design_box(id) do
+    sql = """
+    SELECT id, name, title, description, template, css_class, icon, is_active,
+           is_system, created_at, order_index
+    FROM cms_design_boxes
+    WHERE id = ?
+    """
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{rows: [row]}} ->
+        box = row_to_design_box(row)
+        {:ok, box}
+      {:ok, %{rows: []}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Cria uma nova design box.
+  """
+  def create_design_box(attrs) do
+    sql = """
+    INSERT INTO cms_design_boxes (name, title, description, template, css_class, icon, is_active,
+                                  is_system, order_index)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """
+
+    params = [
+      attrs[:name],
+      attrs[:title],
+      attrs[:description] || "",
+      attrs[:template] || "",
+      attrs[:css_class] || "",
+      attrs[:icon] || "",
+      if(attrs[:is_active] == false, do: 0, else: 1),
+      if(attrs[:is_system] == true, do: 1, else: 0),
+      attrs[:order_index] || 0
+    ]
+
+    case Connection.query(sql, params) do
+      {:ok, %{num_rows: 0}} ->
+        # Para SQLite, INSERT bem-sucedido retorna num_rows: 0
+        # Vamos buscar a design box pelo nome único que acabamos de inserir
+        case Connection.query("SELECT id FROM cms_design_boxes WHERE name = ? ORDER BY id DESC LIMIT 1", [attrs[:name]]) do
+          {:ok, %{rows: [[id]]}} ->
+            get_design_box(id)
+          {:ok, %{rows: []}} ->
+            {:error, :not_found}
+          {:error, error} ->
+            {:error, error}
+        end
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Atualiza uma design box.
+  """
+  def update_design_box(id, attrs) do
+    sql = """
+    UPDATE cms_design_boxes
+    SET name = ?, title = ?, description = ?, template = ?, css_class = ?, icon = ?, is_active = ?,
+        is_system = ?, order_index = ?
+    WHERE id = ?
+    """
+
+    params = [
+      attrs[:name],
+      attrs[:title],
+      attrs[:description] || "",
+      attrs[:template] || "",
+      attrs[:css_class] || "",
+      attrs[:icon] || "",
+      if(attrs[:is_active] == false, do: 0, else: 1),
+      if(attrs[:is_system] == true, do: 1, else: 0),
+      attrs[:order_index] || 0,
+      id
+    ]
+
+    case Connection.query(sql, params) do
+      {:ok, %{num_rows: 1}} ->
+        get_design_box(id)
+      {:ok, %{num_rows: 0}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Remove uma design box.
+  """
+  def delete_design_box(id) do
+    sql = "DELETE FROM cms_design_boxes WHERE id = ?"
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{num_rows: 1}} ->
+        {:ok, :deleted}
+      {:ok, %{num_rows: 0}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
   defp row_to_page_type(row) do
     [id, name, title, description, template, icon, is_active,
      is_system, created_at, order_index] = row
@@ -645,6 +783,277 @@ defmodule DeeperHub.CMS.Pages do
       description: description,
       template: template,
       icon: icon,
+      is_active: is_active == 1,
+      is_system: is_system == 1,
+      created_at: created_at,
+      order_index: order_index
+    }
+  end
+
+  # ============================================================================
+  # PAGE BLOCKS
+  # ============================================================================
+
+  @doc """
+  Lista todos os blocos de página.
+  """
+  def list_page_blocks do
+    sql = """
+    SELECT id, page_id, cell_id, module, name, title_system, title, description,
+           type, content, content_empty, design_box_id, css_class, custom_css,
+           is_active, is_async, tabs, visible_for_levels, hidden_on, cache_lifetime,
+           config_api, help, is_deletable, is_copyable, is_editable, order_index,
+           created_at, updated_at
+    FROM cms_page_blocks
+    ORDER BY page_id ASC, order_index ASC
+    """
+
+    case Connection.query(sql, []) do
+      {:ok, %{rows: rows}} ->
+        blocks = Enum.map(rows, &row_to_page_block/1)
+        {:ok, blocks}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Cria um novo bloco de página.
+  """
+  def create_page_block(attrs) do
+    sql = """
+    INSERT INTO cms_page_blocks (page_id, cell_id, module, name, title_system, title, description,
+                                 type, content, content_empty, design_box_id, css_class, custom_css,
+                                 is_active, is_async, tabs, visible_for_levels, hidden_on, cache_lifetime,
+                                 config_api, help, is_deletable, is_copyable, is_editable, order_index)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """
+
+    params = [
+      attrs[:page_id],
+      attrs[:cell_id] || 1,
+      attrs[:module] || "cms",
+      attrs[:name],
+      attrs[:title_system],
+      attrs[:title],
+      attrs[:description] || "",
+      attrs[:type] || "html",
+      attrs[:content] || "",
+      attrs[:content_empty] || "",
+      attrs[:design_box_id] || 1,
+      attrs[:css_class] || "",
+      attrs[:custom_css] || "",
+      if(attrs[:is_active] == false, do: 0, else: 1),
+      if(attrs[:is_async] == true, do: 1, else: 0),
+      if(attrs[:tabs] == true, do: 1, else: 0),
+      attrs[:visible_for_levels] || 2147483647,
+      attrs[:hidden_on] || "",
+      attrs[:cache_lifetime] || 0,
+      attrs[:config_api] || "",
+      attrs[:help] || "",
+      if(attrs[:is_deletable] == false, do: 0, else: 1),
+      if(attrs[:is_copyable] == false, do: 0, else: 1),
+      if(attrs[:is_editable] == false, do: 0, else: 1),
+      attrs[:order_index] || 0
+    ]
+
+    case Connection.query(sql, params) do
+      {:ok, %{num_rows: 0}} ->
+        # Para SQLite, INSERT bem-sucedido retorna num_rows: 0
+        case Connection.query("SELECT id FROM cms_page_blocks WHERE name = ? AND page_id = ? ORDER BY id DESC LIMIT 1", [attrs[:name], attrs[:page_id]]) do
+          {:ok, %{rows: [[id]]}} ->
+            get_page_block(id)
+          {:ok, %{rows: []}} ->
+            {:error, :not_found}
+          {:error, error} ->
+            {:error, error}
+        end
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Obtém um bloco específico pelo ID.
+  """
+  def get_page_block(id) do
+    sql = """
+    SELECT id, page_id, cell_id, module, name, title_system, title, description,
+           type, content, content_empty, design_box_id, css_class, custom_css,
+           is_active, is_async, tabs, visible_for_levels, hidden_on, cache_lifetime,
+           config_api, help, is_deletable, is_copyable, is_editable, order_index,
+           created_at, updated_at
+    FROM cms_page_blocks
+    WHERE id = ?
+    """
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{rows: [row]}} ->
+        block = row_to_page_block(row)
+        {:ok, block}
+      {:ok, %{rows: []}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  # ============================================================================
+  # CONTENT PLACEHOLDERS
+  # ============================================================================
+
+  @doc """
+  Lista todos os placeholders de conteúdo.
+  """
+  def list_content_placeholders do
+    sql = """
+    SELECT id, name, title, description, module, template, placeholder_type,
+           default_content, is_active, is_system, created_at, order_index
+    FROM cms_content_placeholders
+    ORDER BY order_index ASC, title ASC
+    """
+
+    case Connection.query(sql, []) do
+      {:ok, %{rows: rows}} ->
+        placeholders = Enum.map(rows, &row_to_content_placeholder/1)
+        {:ok, placeholders}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Cria um novo placeholder de conteúdo.
+  """
+  def create_content_placeholder(attrs) do
+    sql = """
+    INSERT INTO cms_content_placeholders (name, title, description, module, template, placeholder_type,
+                                          default_content, is_active, is_system, order_index)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """
+
+    params = [
+      attrs[:name],
+      attrs[:title],
+      attrs[:description] || "",
+      attrs[:module] || "cms",
+      attrs[:template] || "",
+      attrs[:placeholder_type] || "content",
+      attrs[:default_content] || "",
+      if(attrs[:is_active] == false, do: 0, else: 1),
+      if(attrs[:is_system] == true, do: 1, else: 0),
+      attrs[:order_index] || 0
+    ]
+
+    case Connection.query(sql, params) do
+      {:ok, %{num_rows: 0}} ->
+        # Para SQLite, INSERT bem-sucedido retorna num_rows: 0
+        case Connection.query("SELECT id FROM cms_content_placeholders WHERE name = ? ORDER BY id DESC LIMIT 1", [attrs[:name]]) do
+          {:ok, %{rows: [[id]]}} ->
+            get_content_placeholder(id)
+          {:ok, %{rows: []}} ->
+            {:error, :not_found}
+          {:error, error} ->
+            {:error, error}
+        end
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Obtém um placeholder específico pelo ID.
+  """
+  def get_content_placeholder(id) do
+    sql = """
+    SELECT id, name, title, description, module, template, placeholder_type,
+           default_content, is_active, is_system, created_at, order_index
+    FROM cms_content_placeholders
+    WHERE id = ?
+    """
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{rows: [row]}} ->
+        placeholder = row_to_content_placeholder(row)
+        {:ok, placeholder}
+      {:ok, %{rows: []}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  defp row_to_design_box(row) do
+    [id, name, title, description, template, css_class, icon, is_active,
+     is_system, created_at, order_index] = row
+
+    %DesignBox{
+      id: id,
+      name: name,
+      title: title,
+      description: description,
+      template: template,
+      css_class: css_class,
+      icon: icon,
+      is_active: is_active == 1,
+      is_system: is_system == 1,
+      created_at: created_at,
+      order_index: order_index
+    }
+  end
+
+  defp row_to_page_block(row) do
+    [id, page_id, cell_id, module, name, title_system, title, description,
+     type, content, content_empty, design_box_id, css_class, custom_css,
+     is_active, is_async, tabs, visible_for_levels, hidden_on, cache_lifetime,
+     config_api, help, is_deletable, is_copyable, is_editable, order_index,
+     created_at, updated_at] = row
+
+    %PageBlock{
+      id: id,
+      page_id: page_id,
+      cell_id: cell_id,
+      module: module,
+      name: name,
+      title_system: title_system,
+      title: title,
+      description: description,
+      type: type,
+      content: content,
+      content_empty: content_empty,
+      design_box_id: design_box_id,
+      css_class: css_class,
+      custom_css: custom_css,
+      is_active: is_active == 1,
+      is_async: is_async == 1,
+      tabs: tabs == 1,
+      visible_for_levels: visible_for_levels,
+      hidden_on: hidden_on,
+      cache_lifetime: cache_lifetime,
+      config_api: config_api,
+      help: help,
+      is_deletable: is_deletable == 1,
+      is_copyable: is_copyable == 1,
+      is_editable: is_editable == 1,
+      order_index: order_index,
+      created_at: created_at,
+      updated_at: updated_at
+    }
+  end
+
+  defp row_to_content_placeholder(row) do
+    [id, name, title, description, module, template, placeholder_type,
+     default_content, is_active, is_system, created_at, order_index] = row
+
+    %ContentPlaceholder{
+      id: id,
+      name: name,
+      title: title,
+      description: description,
+      module: module,
+      template: template,
+      placeholder_type: placeholder_type,
+      default_content: default_content,
       is_active: is_active == 1,
       is_system: is_system == 1,
       created_at: created_at,

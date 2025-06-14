@@ -305,6 +305,204 @@ defmodule DeeperHubWeb.Resources.CMS.PageResource do
     end
   end
 
+  # ===== DESIGN BOXES ROUTES =====
+
+  # GET /api/cms/pages/design-boxes - Lista todas as design boxes
+  get "/design-boxes" do
+    Logger.info("Listando design boxes", module: __MODULE__)
+
+    case Pages.list_design_boxes() do
+      {:ok, boxes} ->
+        response = %{
+          status: "success",
+          data: boxes,
+          count: length(boxes)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(200, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao listar design boxes: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao listar design boxes",
+          details: inspect(reason)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(500, Jason.encode!(error_response))
+    end
+  end
+
+  # POST /api/cms/pages/design-boxes - Cria uma nova design box
+  post "/design-boxes" do
+    Logger.info("Criando nova design box", module: __MODULE__)
+
+    box_data = convert_keys_to_atoms(conn.body_params)
+
+    case Pages.create_design_box(box_data) do
+      {:ok, box} ->
+        response = %{
+          status: "success",
+          data: box,
+          message: "Design box criada com sucesso"
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(201, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao criar design box: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao criar design box",
+          details: inspect(reason)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(400, Jason.encode!(error_response))
+    end
+  end
+
+  # ===== PAGE BLOCKS ROUTES =====
+
+  # GET /api/cms/pages/blocks - Lista todos os blocos
+  get "/blocks" do
+    Logger.info("Listando blocos de página", module: __MODULE__)
+
+    case Pages.list_page_blocks() do
+      {:ok, blocks} ->
+        response = %{
+          status: "success",
+          data: blocks,
+          count: length(blocks)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(200, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao listar blocos: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao listar blocos",
+          details: inspect(reason)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(500, Jason.encode!(error_response))
+    end
+  end
+
+  # POST /api/cms/pages/blocks - Cria um novo bloco
+  post "/blocks" do
+    Logger.info("Criando novo bloco", module: __MODULE__)
+
+    block_data = convert_keys_to_atoms(conn.body_params)
+
+    case Pages.create_page_block(block_data) do
+      {:ok, block} ->
+        response = %{
+          status: "success",
+          data: block,
+          message: "Bloco criado com sucesso"
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(201, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao criar bloco: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao criar bloco",
+          details: inspect(reason)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(400, Jason.encode!(error_response))
+    end
+  end
+
+  # ===== CONTENT PLACEHOLDERS ROUTES =====
+
+  # GET /api/cms/pages/placeholders - Lista todos os placeholders
+  get "/placeholders" do
+    Logger.info("Listando placeholders de conteúdo", module: __MODULE__)
+
+    case Pages.list_content_placeholders() do
+      {:ok, placeholders} ->
+        response = %{
+          status: "success",
+          data: placeholders,
+          count: length(placeholders)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(200, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao listar placeholders: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao listar placeholders",
+          details: inspect(reason)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(500, Jason.encode!(error_response))
+    end
+  end
+
+  # POST /api/cms/pages/placeholders - Cria um novo placeholder
+  post "/placeholders" do
+    Logger.info("Criando novo placeholder", module: __MODULE__)
+
+    placeholder_data = convert_keys_to_atoms(conn.body_params)
+
+    case Pages.create_content_placeholder(placeholder_data) do
+      {:ok, placeholder} ->
+        response = %{
+          status: "success",
+          data: placeholder,
+          message: "Placeholder criado com sucesso"
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(201, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao criar placeholder: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao criar placeholder",
+          details: inspect(reason)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(400, Jason.encode!(error_response))
+    end
+  end
+
   # GET /api/cms/pages/:id - Obtém uma página específica
   get "/:id" do
     page_id = conn.path_params["id"]
