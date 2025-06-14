@@ -13,7 +13,9 @@ defmodule DeeperHub.WebInterface.Router do
   plug(CORSPlug,
     origin: ["http://localhost:8080", "http://127.0.0.1:8080"],
     credentials: true,
-    max_age: 86400
+    max_age: 86400,
+    headers: ["Authorization", "Content-Type", "Accept", "Origin", "User-Agent", "DNT", "Cache-Control", "X-Mx-ReqToken", "Keep-Alive", "X-Requested-With", "If-Modified-Since"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
   )
 
   # Parsers para formatos diferentes

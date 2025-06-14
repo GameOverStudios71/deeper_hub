@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test</title>
+</head>
+<body>
+    <h1>API Test</h1>
+    <button onclick="testCreatePage()">Test Create Page</button>
+    <div id="result"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/cms-client.js"></script>
+    
+    <script>
+        async function testCreatePage() {
+            console.log('Testing...');
+
+            // Usar timestamp para garantir valores únicos
+            const timestamp = Date.now();
+            const testData = {
+                title: `Test Page ${timestamp}`,
+                name: `test_page_${timestamp}`,
+                title_system: `Test System ${timestamp}`,
+                uri: `/test-page-${timestamp}`,
+                page_type_id: 1,
+                layout_id: 1
+            };
+
+            console.log('📋 Sending data:', testData);
+            console.log('📋 Data types:', {
+                title: typeof testData.title,
+                name: typeof testData.name,
+                title_system: typeof testData.title_system,
+                uri: typeof testData.uri,
+                page_type_id: typeof testData.page_type_id,
+                layout_id: typeof testData.layout_id
+            });
+
+            try {
+                const result = await cms.createPage(testData);
+
+                console.log('Success:', result);
+                document.getElementById('result').innerHTML = '<pre style="color: green;">' + JSON.stringify(result, null, 2) + '</pre>';
+            } catch (error) {
+                console.log('Error:', error);
+                console.log('Error details:', error.data);
+                document.getElementById('result').innerHTML = '<pre style="color: red;">Error: ' + error.message + '\n\nDetails: ' + JSON.stringify(error.data, null, 2) + '</pre>';
+            }
+        }
+    </script>
+</body>
+</html>

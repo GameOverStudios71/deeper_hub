@@ -45,7 +45,6 @@ class CMSClient {
      * Make HTTP request to backend
      */
     async request(method, endpoint, data = null, options = {}) {
-
         const config = {
             method: method.toUpperCase(),
             headers: this.getHeaders(options.contentType),
@@ -107,7 +106,8 @@ class CMSClient {
         if (response.status === "success") {
             const result = {
                 success: true,
-                data: response.data
+                data: response.data,
+                message: response.message
             };
 
             // Add pagination if count is provided
@@ -713,6 +713,7 @@ class CMSClient {
     }
 
     async createPage(data) {
+        console.log('🔥 createPage called with data:', data);
         return this.post('/pages', data);
     }
 
