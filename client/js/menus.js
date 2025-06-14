@@ -1,31 +1,531 @@
 /**
- * Menus module
+ * Menus module - Expanded with 3 tables
  */
 window.Menus = {
-    
+
     currentPage: 1,
     searchQuery: '',
     filterStatus: '',
-    menuSets: [],
-    menuTemplates: [],
-    pages: [],
-    currentMenuSetId: null,
+    currentTab: 'menuSets',
+    data: [],
+
+    // Tab configuration
+    tabs: {
+        menuSets: {
+            title: 'Menu Sets',
+            icon: 'fas fa-sitemap',
+            description: 'Manage menu sets and their configurations',
+            apiEndpoint: 'menus'
+        },
+        menuTemplates: {
+            title: 'Menu Templates',
+            icon: 'fas fa-th-large',
+            description: 'Manage menu templates and styles',
+            apiEndpoint: 'menus/templates'
+        },
+        menuItems: {
+            title: 'Menu Items',
+            icon: 'fas fa-list',
+            description: 'Manage individual menu items',
+            apiEndpoint: 'menus/items'
+        }
+    },
 
     /**
      * Initialize menus module
      */
     async init() {
         try {
-            await this.loadMenuTemplates();
-            await this.loadPages();
-            await this.loadMenuSets();
+            await this.switchTab(this.currentTab);
         } catch (error) {
             App.handleError(error, 'Menus');
         }
     },
 
     /**
-     * Load menu sets
+     * Switch between tabs
+     */
+    async switchTab(tabKey) {
+        this.currentTab = tabKey;
+        this.currentPage = 1;
+        this.searchQuery = '';
+        this.filterStatus = '';
+
+        this.renderTabInterface();
+        await this.loadTabData();
+    },
+
+    /**
+     * Render the tab interface
+     */
+    renderTabInterface() {
+        const tabConfig = this.tabs[this.currentTab];
+        const entityName = tabConfig.title.slice(0, -1); // Remove 's' from plural
+
+        const html = `
+            ${App.createModuleHeader('Menus Management', [
+                {
+                    text: `Add New ${entityName}`,
+                    icon: 'fas fa-plus',
+                    class: 'btn-success',
+                    onclick: 'Menus.showCreateForm()'
+                }
+            ])}
+
+            ${this.createTabNavigation()}
+
+            ${this.createTabSearchBar()}
+
+            <div class="tab-content p-20">
+                <div id="tabDataTable">
+                    <div class="text-center p-20">
+                        <i class="fas fa-spinner fa-spin"></i> Loading ${tabConfig.title.toLowerCase()}...
+                    </div>
+                </div>
+
+                <div id="tabPagination" class="mt-20"></div>
+            </div>
+        `;
+
+        App.showModuleContent(html);
+        this.bindTabEvents();
+    },
+
+    /**
+     * Create tab navigation
+     */
+    createTabNavigation() {
+        let html = `
+            <div class="tab-navigation">
+                <div class="nav-tabs">
+        `;
+
+        Object.keys(this.tabs).forEach(tabKey => {
+            const tab = this.tabs[tabKey];
+            const isActive = tabKey === this.currentTab ? 'active' : '';
+
+            html += `
+                <button class="nav-link ${isActive}" onclick="Menus.switchTab('${tabKey}')">
+                    <i class="${tab.icon}"></i> ${tab.title}
+                </button>
+            `;
+        });
+
+        html += `
+                </div>
+                <div class="tab-description">
+                    <small class="text-muted">
+                        <i class="${this.tabs[this.currentTab].icon}"></i>
+                        ${this.tabs[this.currentTab].description}
+                    </small>
+                </div>
+            </div>
+        `;
+
+        return html;
+    },
+
+    /**
+     * Create search bar for current tab
+     */
+    createTabSearchBar() {
+        const tabConfig = this.tabs[this.currentTab];
+        const searchPlaceholder = `Search ${tabConfig.title.toLowerCase()}...`;
+
+        let filters = [];
+
+        // Add status filter for tables that have is_active
+        if (['menuSets', 'menuTemplates', 'menuItems'].includes(this.currentTab)) {
+            filters.push({
+                id: 'statusFilter',
+                placeholder: 'Filter by status',
+                options: [
+                    { value: 'active', text: 'Active' },
+                    { value: 'inactive', text: 'Inactive' }
+                ]
+            });
+        }
+
+        const actions = [];
+
+        return App.createSearchBar(searchPlaceholder, filters, actions);
+    },
+
+    /**
+     * Load data for current tab
+     */
+    async loadTabData() {
+        try {
+            const tabConfig = this.tabs[this.currentTab];
+            const params = {
+                page: this.currentPage,
+                limit: 20,
+                sort: 'created_at',
+                order: 'desc'
+            };
+
+            if (this.searchQuery) {
+                params.search = this.searchQuery;
+            }
+
+            if (this.filterStatus) {
+                params.is_active = this.filterStatus === 'active';
+            }
+
+            let response;
+            switch (this.currentTab) {
+                case 'menuSets':
+                    response = await cms.getMenuSets(params);
+                    break;
+                case 'menuTemplates':
+                    response = await cms.getMenuTemplates(params);
+                    break;
+                case 'menuItems':
+                    response = await cms.getMenuItems(params);
+                    break;
+                default:
+                    throw new Error(`Unknown tab: ${this.currentTab}`);
+            }
+
+            if (response.success) {
+                this.data = response.data || [];
+                this.renderTabTable();
+                this.renderTabPagination(response.pagination);
+            } else {
+                throw new Error(response.message || 'Failed to load data');
+            }
+        } catch (error) {
+            console.error(`Error loading ${this.currentTab} data:`, error);
+            Utils.showError(`Error loading ${this.currentTab}: ${error.message}`);
+
+            document.getElementById('tabDataTable').innerHTML = `
+                <div class="text-center p-20">
+                    <i class="fas fa-exclamation-triangle text-warning"></i>
+                    <p>Error loading ${this.currentTab}: ${error.message}</p>
+                    <button class="btn btn-primary" onclick="Menus.loadTabData()">
+                        <i class="fas fa-redo"></i> Retry
+                    </button>
+                </div>
+            `;
+        }
+    },
+
+    /**
+     * Render table for current tab
+     */
+    renderTabTable() {
+        let columns = [];
+        let actions = {
+            edit: 'Menus.showEditForm',
+            delete: 'Menus.deleteRecord'
+        };
+
+        // Define columns based on current tab
+        switch (this.currentTab) {
+            case 'menuSets':
+                columns = [
+                    { field: 'id', title: 'ID', width: '60px' },
+                    { field: 'title', title: 'Title' },
+                    { field: 'name', title: 'Name' },
+                    { field: 'template_title', title: 'Template' },
+                    { field: 'max_depth', title: 'Max Depth' },
+                    { field: 'show_icons', title: 'Icons', type: 'badge' },
+                    { field: 'is_active', title: 'Status', type: 'badge' },
+                    { field: 'created_at', title: 'Created', type: 'date' }
+                ];
+                actions.custom = [
+                    { icon: 'fas fa-list', class: 'btn-info', onclick: 'Menus.manageMenuItems', tooltip: 'Manage Items' },
+                    { icon: 'fas fa-eye', class: 'btn-warning', onclick: 'Menus.previewMenu', tooltip: 'Preview Menu' }
+                ];
+                break;
+            case 'menuTemplates':
+                columns = [
+                    { field: 'id', title: 'ID', width: '60px' },
+                    { field: 'name', title: 'Name' },
+                    { field: 'title', title: 'Title' },
+                    { field: 'template_file', title: 'Template File' },
+                    { field: 'supports_icons', title: 'Icons', type: 'badge' },
+                    { field: 'supports_dropdown', title: 'Dropdown', type: 'badge' },
+                    { field: 'max_levels', title: 'Max Levels' },
+                    { field: 'is_active', title: 'Status', type: 'badge' }
+                ];
+                break;
+            case 'menuItems':
+                columns = [
+                    { field: 'id', title: 'ID', width: '60px' },
+                    { field: 'title', title: 'Title' },
+                    { field: 'name', title: 'Name' },
+                    { field: 'link_type', title: 'Link Type' },
+                    { field: 'link_url', title: 'URL' },
+                    { field: 'icon', title: 'Icon' },
+                    { field: 'order_index', title: 'Order' },
+                    { field: 'is_active', title: 'Status', type: 'badge' }
+                ];
+                actions.custom = [
+                    { icon: 'fas fa-eye', class: 'btn-info', onclick: 'Menus.previewMenuItem', tooltip: 'Preview Item' }
+                ];
+                break;
+        }
+
+        const tableHtml = App.createDataTable(columns, this.data, actions);
+        document.getElementById('tabDataTable').innerHTML = tableHtml;
+    },
+
+    /**
+     * Render pagination for current tab
+     */
+    renderTabPagination(pagination) {
+        if (!pagination) return;
+
+        const paginationHtml = Utils.createPagination(
+            pagination.current_page,
+            pagination.pages,
+            pagination.total,
+            (page) => {
+                this.currentPage = page;
+                this.loadTabData();
+            }
+        );
+
+        document.getElementById('tabPagination').innerHTML = paginationHtml;
+    },
+
+    /**
+     * Bind tab events
+     */
+    bindTabEvents() {
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', Utils.debounce((e) => {
+                this.searchQuery = e.target.value;
+                this.currentPage = 1;
+                this.loadTabData();
+            }, 300));
+        }
+
+        // Status filter
+        const statusFilter = document.getElementById('statusFilter');
+        if (statusFilter) {
+            statusFilter.addEventListener('change', (e) => {
+                this.filterStatus = e.target.value;
+                this.currentPage = 1;
+                this.loadTabData();
+            });
+        }
+    },
+
+    /**
+     * Show create form for current tab
+     */
+    showCreateForm() {
+        const tabConfig = this.tabs[this.currentTab];
+        const entityName = tabConfig.title.slice(0, -1);
+
+        const formHtml = this.createTabForm();
+
+        Utils.showModal(`Add New ${entityName}`, formHtml, [
+            {
+                text: 'Cancel',
+                class: 'btn-secondary',
+                onclick: 'Utils.hideModal()'
+            },
+            {
+                text: `Create ${entityName}`,
+                class: 'btn-success',
+                onclick: 'Menus.saveRecord()'
+            }
+        ]);
+    },
+
+    /**
+     * Show edit form for current tab
+     */
+    showEditForm(id) {
+        const record = this.data.find(item => item.id == id);
+        if (!record) {
+            Utils.showError('Record not found');
+            return;
+        }
+
+        const tabConfig = this.tabs[this.currentTab];
+        const entityName = tabConfig.title.slice(0, -1);
+
+        const formHtml = this.createTabForm(record);
+
+        Utils.showModal(`Edit ${entityName}`, formHtml, [
+            {
+                text: 'Cancel',
+                class: 'btn-secondary',
+                onclick: 'Utils.hideModal()'
+            },
+            {
+                text: `Update ${entityName}`,
+                class: 'btn-primary',
+                onclick: `Menus.saveRecord(${id})`
+            }
+        ]);
+    },
+
+    /**
+     * Create form HTML for current tab
+     */
+    createTabForm(record = null) {
+        const isEdit = record !== null;
+        let formHtml = '<form id="tabForm" class="needs-validation" novalidate>';
+
+        switch (this.currentTab) {
+            case 'menuSets':
+                formHtml += this.createMenuSetForm(record);
+                break;
+            case 'menuTemplates':
+                formHtml += this.createMenuTemplateForm(record);
+                break;
+            case 'menuItems':
+                formHtml += this.createMenuItemForm(record);
+                break;
+            default:
+                formHtml += '<p>Form not implemented for this tab.</p>';
+        }
+
+        formHtml += '</form>';
+        return formHtml;
+    },
+
+    /**
+     * Save record for current tab
+     */
+    async saveRecord(id = null) {
+        try {
+            const form = document.getElementById('tabForm');
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+                return;
+            }
+
+            const formData = Utils.serializeForm(form);
+            const tabConfig = this.tabs[this.currentTab];
+
+            let response;
+            if (id) {
+                // Update existing record
+                switch (this.currentTab) {
+                    case 'menuSets':
+                        response = await cms.updateMenuSet(id, formData);
+                        break;
+                    case 'menuTemplates':
+                        response = await cms.updateMenuTemplate(id, formData);
+                        break;
+                    case 'menuItems':
+                        response = await cms.updateMenuItem(id, formData);
+                        break;
+                    default:
+                        throw new Error(`Update not implemented for ${this.currentTab}`);
+                }
+            } else {
+                // Create new record
+                switch (this.currentTab) {
+                    case 'menuSets':
+                        response = await cms.createMenuSet(formData);
+                        break;
+                    case 'menuTemplates':
+                        response = await cms.createMenuTemplate(formData);
+                        break;
+                    case 'menuItems':
+                        response = await cms.createMenuItem(formData);
+                        break;
+                    default:
+                        throw new Error(`Create not implemented for ${this.currentTab}`);
+                }
+            }
+
+            if (response.success) {
+                Utils.hideModal();
+                Utils.showSuccess(response.message || `${tabConfig.title.slice(0, -1)} ${id ? 'updated' : 'created'} successfully!`);
+                await this.loadTabData();
+            } else {
+                throw new Error(response.message || 'Failed to save record');
+            }
+        } catch (error) {
+            console.error('Error saving record:', error);
+            Utils.showError(`Error saving record: ${error.message}`);
+        }
+    },
+
+    /**
+     * Delete record
+     */
+    async deleteRecord(id) {
+        const record = this.data.find(item => item.id == id);
+        if (!record) {
+            Utils.showError('Record not found');
+            return;
+        }
+
+        const tabConfig = this.tabs[this.currentTab];
+        const entityName = tabConfig.title.slice(0, -1);
+        const recordName = record.name || record.title || `ID ${id}`;
+
+        if (!confirm(`Are you sure you want to delete this ${entityName.toLowerCase()}: ${recordName}?`)) {
+            return;
+        }
+
+        try {
+            let response;
+            switch (this.currentTab) {
+                case 'menuSets':
+                    response = await cms.deleteMenuSet(id);
+                    break;
+                case 'menuTemplates':
+                    response = await cms.deleteMenuTemplate(id);
+                    break;
+                case 'menuItems':
+                    response = await cms.deleteMenuItem(id);
+                    break;
+                default:
+                    throw new Error(`Delete not implemented for ${this.currentTab}`);
+            }
+
+            if (response.success) {
+                Utils.showSuccess(response.message || `${entityName} deleted successfully!`);
+                await this.loadTabData();
+            } else {
+                throw new Error(response.message || 'Failed to delete record');
+            }
+        } catch (error) {
+            console.error('Error deleting record:', error);
+            Utils.showError(`Error deleting record: ${error.message}`);
+        }
+    },
+
+    /**
+     * Search functionality
+     */
+    search() {
+        const searchInput = document.getElementById('searchInput');
+        this.searchQuery = searchInput ? searchInput.value : '';
+        this.currentPage = 1;
+        this.loadTabData();
+    },
+
+    /**
+     * Clear search
+     */
+    clearSearch() {
+        const searchInput = document.getElementById('searchInput');
+        const statusFilter = document.getElementById('statusFilter');
+
+        if (searchInput) searchInput.value = '';
+        if (statusFilter) statusFilter.value = '';
+
+        this.searchQuery = '';
+        this.filterStatus = '';
+        this.currentPage = 1;
+        this.loadTabData();
+    },
+
+    /**
+     * Load menu sets (legacy method for compatibility)
      */
     async loadMenuSets() {
         const params = {
@@ -274,70 +774,261 @@ window.Menus = {
     },
 
     /**
-     * Create menu set form HTML
+     * Create form for Menu Sets tab
      */
-    createMenuSetForm(menuSet = null) {
+    createMenuSetForm(record = null) {
+        const name = record?.name || '';
+        const title = record?.title || '';
+        const description = record?.description || '';
+        const templateId = record?.template_id || '';
+        const cssClass = record?.css_class || '';
+        const customCss = record?.custom_css || '';
+        const maxDepth = record?.max_depth || 3;
+        const showIcons = record?.show_icons !== false;
+        const showBadges = record?.show_badges !== false;
+        const responsive = record?.responsive !== false;
+        const visibleForLevels = record?.visible_for_levels || 2147483647;
+        const isActive = record?.is_active !== false;
+
         return `
-            <form id="menuSetForm">
-                <div class="form-group">
-                    <label for="menuTitle">Title *</label>
-                    <input type="text" id="menuTitle" name="title" class="form-control" required>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" class="form-control" id="name" name="name" value="${name}" required>
+                        <div class="invalid-feedback">Please provide a valid name.</div>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="menuName">Name *</label>
-                    <input type="text" id="menuName" name="name" class="form-control" required 
-                           pattern="^[a-zA-Z0-9_]+$" placeholder="menu_name">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="title">Title *</label>
+                        <input type="text" class="form-control" id="title" name="title" value="${title}" required>
+                        <div class="invalid-feedback">Please provide a valid title.</div>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="menuDescription">Description</label>
-                    <textarea id="menuDescription" name="description" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3">${description}</textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="template_id">Template *</label>
+                        <select class="form-control" id="template_id" name="template_id" required>
+                            <option value="">Select template...</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a template.</div>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="menuTemplate">Template *</label>
-                    <select id="menuTemplate" name="template_id" class="form-control" required>
-                        <option value="">Select template...</option>
-                    </select>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="max_depth">Maximum Depth</label>
+                        <input type="number" class="form-control" id="max_depth" name="max_depth" value="${maxDepth}" min="1" max="10">
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="menuCssClass">CSS Class</label>
-                    <input type="text" id="menuCssClass" name="css_class" class="form-control" 
-                           placeholder="navbar-nav">
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="css_class">CSS Class</label>
+                        <input type="text" class="form-control" id="css_class" name="css_class" value="${cssClass}" placeholder="navbar-nav">
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="maxDepth">Maximum Depth</label>
-                    <input type="number" id="maxDepth" name="max_depth" class="form-control" 
-                           min="1" max="10" value="3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="visible_for_levels">Visible For Levels</label>
+                        <input type="number" class="form-control" id="visible_for_levels" name="visible_for_levels" value="${visibleForLevels}">
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" id="showIcons" name="show_icons" checked> Show Icons
-                    </label>
+            </div>
+            <div class="form-group">
+                <label for="custom_css">Custom CSS</label>
+                <textarea class="form-control" id="custom_css" name="custom_css" rows="3">${customCss}</textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="show_icons">Show Icons</label>
+                        <select class="form-control" id="show_icons" name="show_icons">
+                            <option value="true" ${showIcons ? 'selected' : ''}>Yes</option>
+                            <option value="false" ${!showIcons ? 'selected' : ''}>No</option>
+                        </select>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" id="showBadges" name="show_badges" checked> Show Badges
-                    </label>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="show_badges">Show Badges</label>
+                        <select class="form-control" id="show_badges" name="show_badges">
+                            <option value="true" ${showBadges ? 'selected' : ''}>Yes</option>
+                            <option value="false" ${!showBadges ? 'selected' : ''}>No</option>
+                        </select>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" id="responsive" name="responsive" checked> Responsive
-                    </label>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="responsive">Responsive</label>
+                        <select class="form-control" id="responsive" name="responsive">
+                            <option value="true" ${responsive ? 'selected' : ''}>Yes</option>
+                            <option value="false" ${!responsive ? 'selected' : ''}>No</option>
+                        </select>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" id="menuActive" name="is_active" checked> Active
-                    </label>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="is_active">Status</label>
+                        <select class="form-control" id="is_active" name="is_active">
+                            <option value="true" ${isActive ? 'selected' : ''}>Active</option>
+                            <option value="false" ${!isActive ? 'selected' : ''}>Inactive</option>
+                        </select>
+                    </div>
                 </div>
-            </form>
+            </div>
+        `;
+    },
+
+    /**
+     * Create form for Menu Templates tab
+     */
+    createMenuTemplateForm(record = null) {
+        const name = record?.name || '';
+        const title = record?.title || '';
+        const description = record?.description || '';
+        const templateFile = record?.template_file || '';
+        const cssClass = record?.css_class || '';
+        const jsFile = record?.js_file || '';
+        const supportsIcons = record?.supports_icons !== false;
+        const supportsBadges = record?.supports_badges !== false;
+        const supportsDropdown = record?.supports_dropdown !== false;
+        const supportsMegaMenu = record?.supports_mega_menu === true;
+        const maxLevels = record?.max_levels || 3;
+        const isResponsive = record?.is_responsive !== false;
+        const mobileBreakpoint = record?.mobile_breakpoint || 768;
+        const isActive = record?.is_active !== false;
+        const orderIndex = record?.order_index || 0;
+
+        return `
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" class="form-control" id="name" name="name" value="${name}" required>
+                        <div class="invalid-feedback">Please provide a valid name.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="title">Title *</label>
+                        <input type="text" class="form-control" id="title" name="title" value="${title}" required>
+                        <div class="invalid-feedback">Please provide a valid title.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3">${description}</textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="template_file">Template File *</label>
+                        <input type="text" class="form-control" id="template_file" name="template_file" value="${templateFile}" required>
+                        <div class="invalid-feedback">Please provide a template file.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="css_class">CSS Class</label>
+                        <input type="text" class="form-control" id="css_class" name="css_class" value="${cssClass}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="js_file">JavaScript File</label>
+                        <input type="text" class="form-control" id="js_file" name="js_file" value="${jsFile}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="max_levels">Maximum Levels</label>
+                        <input type="number" class="form-control" id="max_levels" name="max_levels" value="${maxLevels}" min="1" max="10">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="mobile_breakpoint">Mobile Breakpoint (px)</label>
+                        <input type="number" class="form-control" id="mobile_breakpoint" name="mobile_breakpoint" value="${mobileBreakpoint}" min="320">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="order_index">Order Index</label>
+                        <input type="number" class="form-control" id="order_index" name="order_index" value="${orderIndex}" min="0">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="supports_icons">Supports Icons</label>
+                        <select class="form-control" id="supports_icons" name="supports_icons">
+                            <option value="true" ${supportsIcons ? 'selected' : ''}>Yes</option>
+                            <option value="false" ${!supportsIcons ? 'selected' : ''}>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="supports_badges">Supports Badges</label>
+                        <select class="form-control" id="supports_badges" name="supports_badges">
+                            <option value="true" ${supportsBadges ? 'selected' : ''}>Yes</option>
+                            <option value="false" ${!supportsBadges ? 'selected' : ''}>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="supports_dropdown">Supports Dropdown</label>
+                        <select class="form-control" id="supports_dropdown" name="supports_dropdown">
+                            <option value="true" ${supportsDropdown ? 'selected' : ''}>Yes</option>
+                            <option value="false" ${!supportsDropdown ? 'selected' : ''}>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="supports_mega_menu">Supports Mega Menu</label>
+                        <select class="form-control" id="supports_mega_menu" name="supports_mega_menu">
+                            <option value="false" ${!supportsMegaMenu ? 'selected' : ''}>No</option>
+                            <option value="true" ${supportsMegaMenu ? 'selected' : ''}>Yes</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="is_responsive">Is Responsive</label>
+                        <select class="form-control" id="is_responsive" name="is_responsive">
+                            <option value="true" ${isResponsive ? 'selected' : ''}>Yes</option>
+                            <option value="false" ${!isResponsive ? 'selected' : ''}>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="is_active">Status</label>
+                        <select class="form-control" id="is_active" name="is_active">
+                            <option value="true" ${isActive ? 'selected' : ''}>Active</option>
+                            <option value="false" ${!isActive ? 'selected' : ''}>Inactive</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         `;
     },
 

@@ -393,4 +393,162 @@ defmodule DeeperHub.CMS.Menus do
       page_title: page_title
     })
   end
+
+  # ============================================================================
+  # MENU TEMPLATES - CRUD METHODS
+  # ============================================================================
+
+  @doc """
+  Cria um novo template de menu.
+  """
+  def create_menu_template(attrs) do
+    sql = """
+    INSERT INTO cms_menu_templates (name, title, description, template_file, css_class, js_file,
+                                    supports_icons, supports_badges, supports_dropdown, supports_mega_menu,
+                                    max_levels, is_responsive, mobile_breakpoint, is_active, order_index)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """
+
+    params = [
+      attrs[:name],
+      attrs[:title],
+      attrs[:description] || "",
+      attrs[:template_file],
+      attrs[:css_class] || "",
+      attrs[:js_file] || "",
+      if(attrs[:supports_icons] == false, do: 0, else: 1),
+      if(attrs[:supports_badges] == false, do: 0, else: 1),
+      if(attrs[:supports_dropdown] == false, do: 0, else: 1),
+      if(attrs[:supports_mega_menu] == true, do: 1, else: 0),
+      attrs[:max_levels] || 3,
+      if(attrs[:is_responsive] == false, do: 0, else: 1),
+      attrs[:mobile_breakpoint] || 768,
+      if(attrs[:is_active] == false, do: 0, else: 1),
+      attrs[:order_index] || 0
+    ]
+
+    case Connection.query(sql, params) do
+      {:ok, %{num_rows: 0}} ->
+        case Connection.query("SELECT id FROM cms_menu_templates WHERE name = ? ORDER BY id DESC LIMIT 1", [attrs[:name]]) do
+          {:ok, %{rows: [[id]]}} ->
+            get_menu_template(id)
+          {:ok, %{rows: []}} ->
+            {:error, :not_found}
+          {:error, error} ->
+            {:error, error}
+        end
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  # ============================================================================
+  # MENU ITEMS - ADDITIONAL METHODS
+  # ============================================================================
+
+  @doc """
+  Lista todos os itens de menu (sem filtro por menu_set_id).
+  """
+  def list_menu_items do
+    sql = """
+    SELECT mi.id, mi.menu_set_id, mi.parent_id, mi.name, mi.title, mi.description,
+           mi.link_type, mi.link_url, mi.page_id, mi.entity_name, mi.icon, mi.image,
+           mi.css_class, mi.badge_text, mi.badge_color, mi.badge_query, mi.target,
+           mi.onclick, mi.visible_for_levels, mi.submenu_template, mi.mega_menu_content,
+           mi.is_active, mi.is_separator, mi.order_index, mi.created_at, mi.updated_at,
+           p.title as page_title
+    FROM cms_menu_items mi
+    LEFT JOIN cms_pages p ON mi.page_id = p.id
+    ORDER BY mi.menu_set_id ASC, mi.parent_id ASC, mi.order_index ASC
+    """
+
+    case Connection.query(sql, []) do
+      {:ok, %{rows: rows}} ->
+        items = Enum.map(rows, &row_to_menu_item/1)
+        {:ok, items}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Cria um novo item de menu.
+  """
+  def create_menu_item(attrs) do
+    sql = """
+    INSERT INTO cms_menu_items (menu_set_id, parent_id, name, title, description, link_type,
+                                link_url, page_id, entity_name, icon, image, css_class,
+                                badge_text, badge_color, badge_query, target, onclick,
+                                visible_for_levels, submenu_template, mega_menu_content,
+                                is_active, is_separator, order_index)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """
+
+    params = [
+      attrs[:menu_set_id],
+      attrs[:parent_id],
+      attrs[:name],
+      attrs[:title],
+      attrs[:description] || "",
+      attrs[:link_type] || "url",
+      attrs[:link_url] || "",
+      attrs[:page_id],
+      attrs[:entity_name] || "",
+      attrs[:icon] || "",
+      attrs[:image] || "",
+      attrs[:css_class] || "",
+      attrs[:badge_text] || "",
+      attrs[:badge_color] || "",
+      attrs[:badge_query] || "",
+      attrs[:target] || "_self",
+      attrs[:onclick] || "",
+      attrs[:visible_for_levels] || 2147483647,
+      attrs[:submenu_template] || "",
+      attrs[:mega_menu_content] || "",
+      if(attrs[:is_active] == false, do: 0, else: 1),
+      if(attrs[:is_separator] == true, do: 1, else: 0),
+      attrs[:order_index] || 0
+    ]
+
+    case Connection.query(sql, params) do
+      {:ok, %{num_rows: 0}} ->
+        case Connection.query("SELECT id FROM cms_menu_items WHERE name = ? AND menu_set_id = ? ORDER BY id DESC LIMIT 1", [attrs[:name], attrs[:menu_set_id]]) do
+          {:ok, %{rows: [[id]]}} ->
+            get_menu_item(id)
+          {:ok, %{rows: []}} ->
+            {:error, :not_found}
+          {:error, error} ->
+            {:error, error}
+        end
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Obtém um item de menu específico pelo ID.
+  """
+  def get_menu_item(id) do
+    sql = """
+    SELECT mi.id, mi.menu_set_id, mi.parent_id, mi.name, mi.title, mi.description,
+           mi.link_type, mi.link_url, mi.page_id, mi.entity_name, mi.icon, mi.image,
+           mi.css_class, mi.badge_text, mi.badge_color, mi.badge_query, mi.target,
+           mi.onclick, mi.visible_for_levels, mi.submenu_template, mi.mega_menu_content,
+           mi.is_active, mi.is_separator, mi.order_index, mi.created_at, mi.updated_at,
+           p.title as page_title
+    FROM cms_menu_items mi
+    LEFT JOIN cms_pages p ON mi.page_id = p.id
+    WHERE mi.id = ?
+    """
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{rows: [row]}} ->
+        item = row_to_menu_item(row)
+        {:ok, item}
+      {:ok, %{rows: []}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
 end
