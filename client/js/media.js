@@ -1,129 +1,632 @@
 /**
- * Media module
+ * Media module - Media Management with 5 tables
  */
 window.Media = {
-    
+
     currentPage: 1,
     searchQuery: '',
-    currentFolderId: null,
-    mediaFiles: [],
-    mediaFolders: [],
-    selectedFiles: [],
+    filterStatus: '',
+    currentTab: 'storage',
+    data: [],
+
+    // Tab configuration
+    tabs: {
+        storage: {
+            title: 'Storage',
+            icon: 'fas fa-hdd',
+            description: 'Manage storage configurations and settings',
+            apiEndpoint: 'cms/media/storage'
+        },
+        folders: {
+            title: 'Folders',
+            icon: 'fas fa-folder',
+            description: 'Manage media folders and organization',
+            apiEndpoint: 'cms/media/folders'
+        },
+        files: {
+            title: 'Files',
+            icon: 'fas fa-file',
+            description: 'Manage media files and uploads',
+            apiEndpoint: 'cms/media/files'
+        },
+        transformations: {
+            title: 'Transformations',
+            icon: 'fas fa-magic',
+            description: 'Manage media transformation rules',
+            apiEndpoint: 'cms/media/transformations'
+        },
+        fileTransformations: {
+            title: 'File Transformations',
+            icon: 'fas fa-cogs',
+            description: 'Manage applied transformations on files',
+            apiEndpoint: 'cms/media/file-transformations'
+        }
+    },
 
     /**
      * Initialize media module
      */
     async init() {
         try {
-            await this.loadMediaFolders();
-            await this.loadMediaFiles();
+            await this.switchTab(this.currentTab);
         } catch (error) {
             App.handleError(error, 'Media');
         }
     },
 
     /**
-     * Load media files
+     * Switch between tabs
      */
-    async loadMediaFiles() {
-        const params = {
-            page: this.currentPage,
-            limit: 24,
-            sort: 'created_at',
-            order: 'desc'
-        };
+    async switchTab(tabKey) {
+        this.currentTab = tabKey;
+        this.currentPage = 1;
+        this.searchQuery = '';
+        this.filterStatus = '';
 
-        if (this.searchQuery) {
-            params.search = this.searchQuery;
-        }
+        this.renderTabInterface();
+        await this.loadTabData();
+    },
 
-        if (this.currentFolderId) {
-            params.folder_id = this.currentFolderId;
-        }
+    /**
+     * Render the tab interface
+     */
+    renderTabInterface() {
+        const tabConfig = this.tabs[this.currentTab];
+        const entityName = tabConfig.title.slice(0, -1); // Remove 's' from plural
 
         const html = `
-            ${App.createModuleHeader('Media Library', [
+            ${App.createModuleHeader('Media Management', [
                 {
-                    text: 'Upload Files',
-                    icon: 'fas fa-upload',
+                    text: `Add New ${entityName}`,
+                    icon: 'fas fa-plus',
                     class: 'btn-success',
-                    onclick: 'Media.showUploadModal()'
-                },
-                {
-                    text: 'New Folder',
-                    icon: 'fas fa-folder-plus',
-                    class: 'btn-primary',
-                    onclick: 'Media.showCreateFolderForm()'
+                    onclick: 'Media.showCreateForm()'
                 }
             ])}
-            
-            <div class="media-content">
-                <!-- Folder Navigation -->
-                <div class="folder-nav p-20" style="background: #f8f9fa; border-bottom: 1px solid #dee2e6;">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="breadcrumb-nav">
-                            <button class="btn btn-ghost btn-sm" onclick="Media.navigateToFolder(null)">
-                                <i class="fas fa-home"></i> Root
-                            </button>
-                            <span id="folderBreadcrumb"></span>
-                        </div>
-                        
-                        <div class="search-box">
-                            <input type="text" id="mediaSearch" class="form-control" placeholder="Search files..." 
-                                   style="width: 300px;">
-                        </div>
+
+            ${this.createTabNavigation()}
+
+            ${this.createTabSearchBar()}
+
+            <div class="tab-content p-20">
+                <div id="tabDataTable">
+                    <div class="text-center p-20">
+                        <i class="fas fa-spinner fa-spin"></i> Loading ${tabConfig.title.toLowerCase()}...
                     </div>
                 </div>
-                
-                <!-- Folders Grid -->
-                <div id="foldersGrid" class="folders-grid p-20" style="border-bottom: 1px solid #dee2e6;">
-                    <div class="text-center">
-                        <i class="fas fa-spinner fa-spin"></i> Loading folders...
-                    </div>
-                </div>
-                
-                <!-- Files Grid -->
-                <div class="files-section p-20">
-                    <div class="d-flex justify-content-between align-items-center mb-20">
-                        <h4>Files</h4>
-                        <div class="view-controls">
-                            <button class="btn btn-ghost btn-sm" onclick="Media.toggleView('grid')" id="gridViewBtn">
-                                <i class="fas fa-th"></i>
-                            </button>
-                            <button class="btn btn-ghost btn-sm" onclick="Media.toggleView('list')" id="listViewBtn">
-                                <i class="fas fa-list"></i>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div id="filesGrid" class="files-grid">
-                        <div class="text-center p-20">
-                            <i class="fas fa-spinner fa-spin"></i> Loading files...
-                        </div>
-                    </div>
-                    
-                    <div id="filesPagination" class="mt-20"></div>
-                </div>
+
+                <div id="tabPagination" class="mt-20"></div>
             </div>
         `;
 
         App.showModuleContent(html);
-        this.bindEvents();
+        this.bindTabEvents();
+    },
 
+    /**
+     * Create tab navigation
+     */
+    createTabNavigation() {
+        let html = `
+            <div class="tab-navigation">
+                <div class="nav-tabs">
+        `;
+
+        Object.keys(this.tabs).forEach(tabKey => {
+            const tab = this.tabs[tabKey];
+            const isActive = tabKey === this.currentTab ? 'active' : '';
+
+            html += `
+                <button class="nav-link ${isActive}" onclick="Media.switchTab('${tabKey}')">
+                    <i class="${tab.icon}"></i> ${tab.title}
+                </button>
+            `;
+        });
+
+        html += `
+                </div>
+                <div class="tab-description">
+                    <small class="text-muted">
+                        <i class="${this.tabs[this.currentTab].icon}"></i>
+                        ${this.tabs[this.currentTab].description}
+                    </small>
+                </div>
+            </div>
+        `;
+
+        return html;
+    },
+
+    /**
+     * Create search bar for current tab
+     */
+    createTabSearchBar() {
+        const tabConfig = this.tabs[this.currentTab];
+        const searchPlaceholder = `Search ${tabConfig.title.toLowerCase()}...`;
+
+        let filters = [];
+
+        // Add status filter for tables that have is_active
+        if (['storage', 'folders', 'files'].includes(this.currentTab)) {
+            filters.push({
+                id: 'statusFilter',
+                placeholder: 'Filter by status',
+                options: [
+                    { value: 'active', text: 'Active' },
+                    { value: 'inactive', text: 'Inactive' }
+                ]
+            });
+        }
+
+        const actions = [];
+
+        return App.createSearchBar(searchPlaceholder, filters, actions);
+    },
+
+    /**
+     * Load data for current tab
+     */
+    async loadTabData() {
         try {
-            const response = await cms.getMediaFiles(params);
-            
+            const tabConfig = this.tabs[this.currentTab];
+            const params = {
+                page: this.currentPage,
+                limit: 20,
+                sort: 'created_at',
+                order: 'desc'
+            };
+
+            if (this.searchQuery) {
+                params.search = this.searchQuery;
+            }
+
+            if (this.filterStatus) {
+                params.is_active = this.filterStatus === 'active';
+            }
+
+            let response;
+            switch (this.currentTab) {
+                case 'storage':
+                    response = await cms.getMediaStorage(params);
+                    break;
+                case 'folders':
+                    response = await cms.getMediaFolders(params);
+                    break;
+                case 'files':
+                    response = await cms.getMediaFiles(params);
+                    break;
+                case 'transformations':
+                    response = await cms.getMediaTransformations(params);
+                    break;
+                case 'fileTransformations':
+                    response = await cms.getMediaFileTransformations(params);
+                    break;
+                default:
+                    throw new Error(`Unknown tab: ${this.currentTab}`);
+            }
+
             if (response.success) {
-                this.mediaFiles = response.data;
-                this.renderFoldersGrid();
-                this.renderFilesGrid(response.data);
-                this.renderPagination(response.pagination);
+                this.data = response.data || [];
+                this.renderTabTable();
+                this.renderTabPagination(response.pagination);
             } else {
-                throw new Error(response.message || 'Failed to load media files');
+                throw new Error(response.message || 'Failed to load data');
             }
         } catch (error) {
-            $('#filesGrid').html('<div class="text-center p-20">Error loading files: ' + error.message + '</div>');
+            console.error(`Error loading ${this.currentTab} data:`, error);
+            Utils.showError(`Error loading ${this.currentTab}: ${error.message}`);
+
+            document.getElementById('tabDataTable').innerHTML = `
+                <div class="text-center p-20">
+                    <i class="fas fa-exclamation-triangle text-warning"></i>
+                    <p>Error loading ${this.currentTab}: ${error.message}</p>
+                    <button class="btn btn-primary" onclick="Media.loadTabData()">
+                        <i class="fas fa-redo"></i> Retry
+                    </button>
+                </div>
+            `;
         }
+    },
+
+    /**
+     * Render table for current tab
+     */
+    renderTabTable() {
+        let columns = [];
+        let actions = {
+            edit: 'Media.showEditForm',
+            delete: 'Media.deleteRecord'
+        };
+
+        // Define columns based on current tab
+        switch (this.currentTab) {
+            case 'storage':
+                columns = [
+                    { field: 'id', title: 'ID', width: '60px' },
+                    { field: 'name', title: 'Name' },
+                    { field: 'title', title: 'Title' },
+                    { field: 'storage_type', title: 'Type' },
+                    { field: 'base_url', title: 'Base URL' },
+                    { field: 'max_file_size', title: 'Max Size', type: 'filesize' },
+                    { field: 'quota_used', title: 'Used', type: 'filesize' },
+                    { field: 'is_active', title: 'Status', type: 'badge' },
+                    { field: 'is_default', title: 'Default', type: 'badge' }
+                ];
+                actions.custom = [
+                    { icon: 'fas fa-cog', class: 'btn-info', onclick: 'Media.configureStorage', tooltip: 'Configure' }
+                ];
+                break;
+            case 'folders':
+                columns = [
+                    { field: 'id', title: 'ID', width: '60px' },
+                    { field: 'name', title: 'Name' },
+                    { field: 'full_path', title: 'Path' },
+                    { field: 'storage_title', title: 'Storage' },
+                    { field: 'description', title: 'Description' },
+                    { field: 'is_public', title: 'Public', type: 'badge' },
+                    { field: 'is_active', title: 'Status', type: 'badge' },
+                    { field: 'created_at', title: 'Created', type: 'date' }
+                ];
+                actions.custom = [
+                    { icon: 'fas fa-folder-open', class: 'btn-warning', onclick: 'Media.browseFolder', tooltip: 'Browse' }
+                ];
+                break;
+            case 'files':
+                columns = [
+                    { field: 'id', title: 'ID', width: '60px' },
+                    { field: 'original_name', title: 'Name' },
+                    { field: 'mime_type', title: 'Type' },
+                    { field: 'file_size', title: 'Size', type: 'filesize' },
+                    { field: 'folder_name', title: 'Folder' },
+                    { field: 'storage_title', title: 'Storage' },
+                    { field: 'download_count', title: 'Downloads' },
+                    { field: 'is_active', title: 'Status', type: 'badge' },
+                    { field: 'created_at', title: 'Uploaded', type: 'date' }
+                ];
+                actions.custom = [
+                    { icon: 'fas fa-download', class: 'btn-success', onclick: 'Media.downloadFile', tooltip: 'Download' },
+                    { icon: 'fas fa-eye', class: 'btn-info', onclick: 'Media.previewFile', tooltip: 'Preview' }
+                ];
+                break;
+            case 'transformations':
+                columns = [
+                    { field: 'id', title: 'ID', width: '60px' },
+                    { field: 'name', title: 'Name' },
+                    { field: 'transformation_type', title: 'Type' },
+                    { field: 'target_format', title: 'Format' },
+                    { field: 'quality', title: 'Quality' },
+                    { field: 'is_active', title: 'Status', type: 'badge' },
+                    { field: 'created_at', title: 'Created', type: 'date' }
+                ];
+                break;
+            case 'fileTransformations':
+                columns = [
+                    { field: 'id', title: 'ID', width: '60px' },
+                    { field: 'file_name', title: 'File' },
+                    { field: 'transformation_name', title: 'Transformation' },
+                    { field: 'output_path', title: 'Output' },
+                    { field: 'status', title: 'Status' },
+                    { field: 'file_size', title: 'Size', type: 'filesize' },
+                    { field: 'created_at', title: 'Applied', type: 'date' }
+                ];
+                break;
+        }
+
+        const tableHtml = App.createDataTable(columns, this.data, actions);
+        document.getElementById('tabDataTable').innerHTML = tableHtml;
+    },
+
+    /**
+     * Render pagination for current tab
+     */
+    renderTabPagination(pagination) {
+        if (!pagination) return;
+
+        const paginationHtml = Utils.createPagination(
+            pagination.current_page,
+            pagination.pages,
+            pagination.total,
+            (page) => {
+                this.currentPage = page;
+                this.loadTabData();
+            }
+        );
+
+        document.getElementById('tabPagination').innerHTML = paginationHtml;
+    },
+
+    /**
+     * Bind tab events
+     */
+    bindTabEvents() {
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', Utils.debounce((e) => {
+                this.searchQuery = e.target.value;
+                this.currentPage = 1;
+                this.loadTabData();
+            }, 300));
+        }
+
+        // Status filter
+        const statusFilter = document.getElementById('statusFilter');
+        if (statusFilter) {
+            statusFilter.addEventListener('change', (e) => {
+                this.filterStatus = e.target.value;
+                this.currentPage = 1;
+                this.loadTabData();
+            });
+        }
+    },
+
+    /**
+     * Show create form for current tab
+     */
+    showCreateForm() {
+        const tabConfig = this.tabs[this.currentTab];
+        const entityName = tabConfig.title.slice(0, -1);
+
+        const formHtml = this.createTabForm();
+
+        Utils.showModal(`Add New ${entityName}`, formHtml, [
+            {
+                text: 'Cancel',
+                class: 'btn-secondary',
+                onclick: 'Utils.hideModal()'
+            },
+            {
+                text: `Create ${entityName}`,
+                class: 'btn-success',
+                onclick: 'Media.saveRecord()'
+            }
+        ]);
+    },
+
+    /**
+     * Show edit form for current tab
+     */
+    showEditForm(id) {
+        const record = this.data.find(item => item.id == id);
+        if (!record) {
+            Utils.showError('Record not found');
+            return;
+        }
+
+        const tabConfig = this.tabs[this.currentTab];
+        const entityName = tabConfig.title.slice(0, -1);
+
+        const formHtml = this.createTabForm(record);
+
+        Utils.showModal(`Edit ${entityName}`, formHtml, [
+            {
+                text: 'Cancel',
+                class: 'btn-secondary',
+                onclick: 'Utils.hideModal()'
+            },
+            {
+                text: `Update ${entityName}`,
+                class: 'btn-primary',
+                onclick: `Media.saveRecord(${id})`
+            }
+        ]);
+
+        // Populate form with existing data
+        Utils.populateForm('#tabForm', record);
+    },
+
+    /**
+     * Create form HTML for current tab
+     */
+    createTabForm(record = null) {
+        let formHtml = '<form id="tabForm" class="needs-validation" novalidate>';
+
+        switch (this.currentTab) {
+            case 'storage':
+                formHtml += this.createStorageForm(record);
+                break;
+            case 'folders':
+                formHtml += this.createFolderForm(record);
+                break;
+            case 'files':
+                formHtml += this.createFileForm(record);
+                break;
+            case 'transformations':
+                formHtml += this.createTransformationForm(record);
+                break;
+            case 'fileTransformations':
+                formHtml += this.createFileTransformationForm(record);
+                break;
+            default:
+                formHtml += '<p>Form not implemented for this tab.</p>';
+        }
+
+        formHtml += '</form>';
+        return formHtml;
+    },
+
+    /**
+     * Create form for Storage tab
+     */
+    createStorageForm(record = null) {
+        const name = record?.name || '';
+        const title = record?.title || '';
+        const description = record?.description || '';
+        const storageType = record?.storage_type || 'local';
+        const baseUrl = record?.base_url || '';
+        const basePath = record?.base_path || '';
+        const maxFileSize = record?.max_file_size || 10485760;
+        const allowedExtensions = record?.allowed_extensions || '';
+        const quotaLimit = record?.quota_limit || 0;
+        const isActive = record?.is_active !== false;
+        const isDefault = record?.is_default === true;
+        const isPublic = record?.is_public !== false;
+
+        return `
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" class="form-control" id="name" name="name" value="${name}" required>
+                        <div class="invalid-feedback">Please provide a valid name.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="title">Title *</label>
+                        <input type="text" class="form-control" id="title" name="title" value="${title}" required>
+                        <div class="invalid-feedback">Please provide a valid title.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3">${description}</textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="storage_type">Storage Type *</label>
+                        <select class="form-control" id="storage_type" name="storage_type" required>
+                            <option value="local" ${storageType === 'local' ? 'selected' : ''}>Local</option>
+                            <option value="s3" ${storageType === 's3' ? 'selected' : ''}>Amazon S3</option>
+                            <option value="ftp" ${storageType === 'ftp' ? 'selected' : ''}>FTP</option>
+                            <option value="sftp" ${storageType === 'sftp' ? 'selected' : ''}>SFTP</option>
+                            <option value="dropbox" ${storageType === 'dropbox' ? 'selected' : ''}>Dropbox</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a storage type.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="max_file_size">Max File Size (bytes)</label>
+                        <input type="number" class="form-control" id="max_file_size" name="max_file_size" value="${maxFileSize}" min="0">
+                        <small class="form-text text-muted">0 = unlimited</small>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="base_url">Base URL</label>
+                        <input type="url" class="form-control" id="base_url" name="base_url" value="${baseUrl}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="base_path">Base Path</label>
+                        <input type="text" class="form-control" id="base_path" name="base_path" value="${basePath}">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="allowed_extensions">Allowed Extensions (JSON)</label>
+                <textarea class="form-control" id="allowed_extensions" name="allowed_extensions" rows="2">${allowedExtensions}</textarea>
+                <small class="form-text text-muted">JSON array format: ["jpg", "png", "pdf"]</small>
+            </div>
+            <div class="form-group">
+                <label for="quota_limit">Quota Limit (bytes)</label>
+                <input type="number" class="form-control" id="quota_limit" name="quota_limit" value="${quotaLimit}" min="0">
+                <small class="form-text text-muted">0 = unlimited</small>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="is_active">Status</label>
+                        <select class="form-control" id="is_active" name="is_active">
+                            <option value="true" ${isActive ? 'selected' : ''}>Active</option>
+                            <option value="false" ${!isActive ? 'selected' : ''}>Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="is_default">Default Storage</label>
+                        <select class="form-control" id="is_default" name="is_default">
+                            <option value="false" ${!isDefault ? 'selected' : ''}>No</option>
+                            <option value="true" ${isDefault ? 'selected' : ''}>Yes</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="is_public">Public Access</label>
+                        <select class="form-control" id="is_public" name="is_public">
+                            <option value="true" ${isPublic ? 'selected' : ''}>Yes</option>
+                            <option value="false" ${!isPublic ? 'selected' : ''}>No</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        `;
+    },
+
+    /**
+     * Create form for Folders tab
+     */
+    createFolderForm(record = null) {
+        const parentId = record?.parent_id || '';
+        const storageId = record?.storage_id || 1;
+        const name = record?.name || '';
+        const description = record?.description || '';
+        const isPublic = record?.is_public !== false;
+        const isActive = record?.is_active !== false;
+
+        return `
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Folder Name *</label>
+                        <input type="text" class="form-control" id="name" name="name" value="${name}" required>
+                        <div class="invalid-feedback">Please provide a valid folder name.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="storage_id">Storage ID *</label>
+                        <input type="number" class="form-control" id="storage_id" name="storage_id" value="${storageId}" required>
+                        <div class="invalid-feedback">Please provide a valid storage ID.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="parent_id">Parent Folder ID</label>
+                <input type="number" class="form-control" id="parent_id" name="parent_id" value="${parentId}">
+                <small class="form-text text-muted">Leave empty for root folder</small>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3">${description}</textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="is_public">Public Access</label>
+                        <select class="form-control" id="is_public" name="is_public">
+                            <option value="true" ${isPublic ? 'selected' : ''}>Yes</option>
+                            <option value="false" ${!isPublic ? 'selected' : ''}>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="is_active">Status</label>
+                        <select class="form-control" id="is_active" name="is_active">
+                            <option value="true" ${isActive ? 'selected' : ''}>Active</option>
+                            <option value="false" ${!isActive ? 'selected' : ''}>Inactive</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        `;
+    },
+
+    /**
+     * Load media files (legacy method for compatibility)
+     */
+    async loadMediaFiles() {
+        // Redirect to new tab system
+        await this.switchTab('files');
     },
 
     /**

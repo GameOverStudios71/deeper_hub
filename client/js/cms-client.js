@@ -1339,4 +1339,124 @@ class CMSClient {
     async deleteUserPermission(id) {
         return this.delete(`/users/permissions/${id}`);
     }
+
+    // ===== MEDIA API =====
+
+    // Media Storage
+    async getMediaStorage(params = {}) {
+        return this.get('/media/storages', params);
+    }
+
+    async getMediaStorageItem(id) {
+        return this.get(`/media/storages/${id}`);
+    }
+
+    async createMediaStorage(data) {
+        return this.post('/media/storages', data);
+    }
+
+    async updateMediaStorage(id, data) {
+        return this.put(`/media/storages/${id}`, data);
+    }
+
+    async deleteMediaStorage(id) {
+        return this.delete(`/media/storages/${id}`);
+    }
+
+    // Media Folders
+    async getMediaFolders(params = {}) {
+        return this.get('/media/folders', params);
+    }
+
+    async getMediaFolder(id) {
+        return this.get(`/media/folders/${id}`);
+    }
+
+    async createMediaFolder(data) {
+        return this.post('/media/folders', data);
+    }
+
+    async updateMediaFolder(id, data) {
+        return this.put(`/media/folders/${id}`, data);
+    }
+
+    async deleteMediaFolder(id) {
+        return this.delete(`/media/folders/${id}`);
+    }
+
+    // Media Files
+    async getMediaFiles(params = {}) {
+        return this.get('/media/files', params);
+    }
+
+    async getMediaFile(id) {
+        return this.get(`/media/files/${id}`);
+    }
+
+    async createMediaFile(data) {
+        return this.post('/media/files', data);
+    }
+
+    async updateMediaFile(id, data) {
+        return this.put(`/media/files/${id}`, data);
+    }
+
+    async deleteMediaFile(id) {
+        return this.delete(`/media/files/${id}`);
+    }
+
+    async uploadMediaFile(file, metadata = {}) {
+        const formData = new FormData();
+        formData.append('file', file);
+
+        Object.keys(metadata).forEach(key => {
+            formData.append(key, metadata[key]);
+        });
+
+        return this.request('POST', '/media/upload', formData, {}, {
+            'Content-Type': 'multipart/form-data'
+        });
+    }
+
+    // Media Transformations
+    async getMediaTransformations(params = {}) {
+        return this.get('/media/transformations', params);
+    }
+
+    async getMediaTransformation(id) {
+        return this.get(`/media/transformations/${id}`);
+    }
+
+    async createMediaTransformation(data) {
+        return this.post('/media/transformations', data);
+    }
+
+    async updateMediaTransformation(id, data) {
+        return this.put(`/media/transformations/${id}`, data);
+    }
+
+    async deleteMediaTransformation(id) {
+        return this.delete(`/media/transformations/${id}`);
+    }
+
+    // Media File Transformations
+    async getMediaFileTransformations(params = {}) {
+        return this.get('/media/file-transformations', params);
+    }
+
+    async getMediaFileTransformation(id) {
+        return this.get(`/media/file-transformations/${id}`);
+    }
+
+    async createMediaFileTransformation(data) {
+        return this.post('/media/file-transformations', data);
+    }
+
+    async updateMediaFileTransformation(id, data) {
+        return this.put(`/media/file-transformations/${id}`, data);
+    }
+
+    async deleteMediaFileTransformation(id) {
+        return this.delete(`/media/file-transformations/${id}`);
+    }
 }

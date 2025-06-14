@@ -1,0 +1,10 @@
+2025-06-14 04:53:54 [Elixir.DeeperHub.Core.Data.Repo] Falha na consulta. SQL: SELECT ft.id, ft.original_file_id, ft.transformation_id, ft.output_path,
+       ft.output_file_size, ft.transformation_params, ft.status,
+       ft.error_message, ft.processing_time, ft.created_at, ft.completed_at,
+       f.original_name as file_name, t.name as transformation_name
+FROM cms_media_file_transformations ft
+LEFT JOIN cms_media_files f ON ft.original_file_id = f.id
+LEFT JOIN cms_media_transformations t ON ft.transformation_id = t.id
+ORDER BY ft.created_at DESC
+, Parâmetros: [], Erro: %Exqlite.Error{message: "no such column: ft.output_path", statement: "SELECT ft.id, ft.original_file_id, ft.transformation_id, ft.output_path,\n       ft.output_file_size, ft.transformation_params, ft.status,\n       ft.error_message, ft.processing_time, ft.created_at, ft.completed_at,\n       f.original_name as file_name, t.name as transformation_name\nFROM cms_media_file_transformations ft\nLEFT JOIN cms_media_files f ON ft.original_file_id = f.id\nLEFT JOIN cms_media_transformations t ON ft.transformation_id = t.id\nORDER BY ft.created_at DESC\n"}
+2025-06-14 04:53:54 [Elixir.DeeperHubWeb.Resources.CMS.MediaResource] Erro ao listar transformações de arquivos: %Exqlite.Error{message: "no such column: ft.output_path", statement: "SELECT ft.id, ft.original_file_id, ft.transformation_id, ft.output_path,\n       ft.output_file_size, ft.transformation_params, ft.status,\n       ft.error_message, ft.processing_time, ft.created_at, ft.completed_at,\n       f.original_name as file_name, t.name as transformation_name\nFROM cms_media_file_transformations ft\nLEFT JOIN cms_media_files f ON ft.original_file_id = f.id\nLEFT JOIN cms_media_transformations t ON ft.transformation_id = t.id\nORDER BY ft.created_at DESC\n"}

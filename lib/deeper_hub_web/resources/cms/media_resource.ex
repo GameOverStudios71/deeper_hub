@@ -2,7 +2,7 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
   @moduledoc """
   Recurso REST para mídia do CMS.
   Fornece endpoints para gerenciar arquivos e storages de mídia.
-  
+
   Endpoints disponíveis:
   - GET /api/cms/media/storages - Lista todos os storages
   - GET /api/cms/media/storages/active - Lista storages ativos
@@ -39,7 +39,7 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
   # GET /api/cms/media/storages - Lista todos os storages
   get "/storages" do
     Logger.info("Listando todos os storages de mídia", module: __MODULE__)
-    
+
     case Media.list_media_storages() do
       {:ok, storages} ->
         response = %{
@@ -47,20 +47,20 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
           data: storages,
           count: length(storages)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
 
       {:error, reason} ->
         Logger.error("Erro ao listar storages: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao listar storages de mídia",
           details: inspect(reason)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
@@ -70,7 +70,7 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
   # GET /api/cms/media/storages/active - Lista storages ativos
   get "/storages/active" do
     Logger.info("Listando storages ativos", module: __MODULE__)
-    
+
     case Media.list_active_media_storages() do
       {:ok, storages} ->
         response = %{
@@ -78,20 +78,20 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
           data: storages,
           count: length(storages)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
 
       {:error, reason} ->
         Logger.error("Erro ao listar storages ativos: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao listar storages ativos",
           details: inspect(reason)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
@@ -101,14 +101,14 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
   # GET /api/cms/media/storages/default - Obtém storage padrão
   get "/storages/default" do
     Logger.info("Buscando storage padrão", module: __MODULE__)
-    
+
     case Media.get_default_media_storage() do
       {:ok, storage} ->
         response = %{
           status: "success",
           data: storage
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
@@ -118,20 +118,20 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
           status: "error",
           message: "Storage padrão não encontrado"
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(404, Jason.encode!(error_response))
 
       {:error, reason} ->
         Logger.error("Erro ao buscar storage padrão: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao buscar storage padrão",
           details: inspect(reason)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
@@ -142,14 +142,14 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
   get "/storages/:id" do
     storage_id = conn.path_params["id"]
     Logger.info("Buscando storage com ID: #{storage_id}", module: __MODULE__)
-    
+
     case Media.get_media_storage(storage_id) do
       {:ok, storage} ->
         response = %{
           status: "success",
           data: storage
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
@@ -159,20 +159,20 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
           status: "error",
           message: "Storage não encontrado"
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(404, Jason.encode!(error_response))
 
       {:error, reason} ->
         Logger.error("Erro ao buscar storage #{storage_id}: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao buscar storage",
           details: inspect(reason)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
@@ -186,7 +186,7 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
   # GET /api/cms/media/folders - Lista todas as pastas
   get "/folders" do
     Logger.info("Listando todas as pastas de mídia", module: __MODULE__)
-    
+
     case Media.list_media_folders() do
       {:ok, folders} ->
         response = %{
@@ -194,20 +194,20 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
           data: folders,
           count: length(folders)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
 
       {:error, reason} ->
         Logger.error("Erro ao listar pastas: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao listar pastas de mídia",
           details: inspect(reason)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
@@ -218,7 +218,7 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
   get "/folders/storage/:id" do
     storage_id = conn.path_params["id"]
     Logger.info("Listando pastas do storage: #{storage_id}", module: __MODULE__)
-    
+
     case Media.list_media_folders_by_storage(storage_id) do
       {:ok, folders} ->
         response = %{
@@ -227,20 +227,20 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
           count: length(folders),
           storage_id: storage_id
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
 
       {:error, reason} ->
         Logger.error("Erro ao listar pastas do storage #{storage_id}: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao listar pastas do storage",
           details: inspect(reason)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
@@ -254,7 +254,7 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
   # GET /api/cms/media/files - Lista todos os arquivos
   get "/files" do
     Logger.info("Listando todos os arquivos de mídia", module: __MODULE__)
-    
+
     case Media.list_media_files() do
       {:ok, files} ->
         response = %{
@@ -262,20 +262,20 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
           data: files,
           count: length(files)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
 
       {:error, reason} ->
         Logger.error("Erro ao listar arquivos: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao listar arquivos de mídia",
           details: inspect(reason)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
@@ -286,7 +286,7 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
   get "/files/folder/:id" do
     folder_id = conn.path_params["id"]
     Logger.info("Listando arquivos da pasta: #{folder_id}", module: __MODULE__)
-    
+
     case Media.list_media_files_by_folder(folder_id) do
       {:ok, files} ->
         response = %{
@@ -295,20 +295,20 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
           count: length(files),
           folder_id: folder_id
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
 
       {:error, reason} ->
         Logger.error("Erro ao listar arquivos da pasta #{folder_id}: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao listar arquivos da pasta",
           details: inspect(reason)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
@@ -319,14 +319,14 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
   get "/files/:id" do
     file_id = conn.path_params["id"]
     Logger.info("Buscando arquivo com ID: #{file_id}", module: __MODULE__)
-    
+
     case Media.get_media_file(file_id) do
       {:ok, file} ->
         response = %{
           status: "success",
           data: file
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
@@ -336,20 +336,20 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
           status: "error",
           message: "Arquivo não encontrado"
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(404, Jason.encode!(error_response))
 
       {:error, reason} ->
         Logger.error("Erro ao buscar arquivo #{file_id}: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao buscar arquivo",
           details: inspect(reason)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
@@ -363,7 +363,7 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
   # GET /api/cms/media/transformations - Lista transformações
   get "/transformations" do
     Logger.info("Listando transformações de mídia", module: __MODULE__)
-    
+
     case Media.list_media_transformations() do
       {:ok, transformations} ->
         response = %{
@@ -371,20 +371,51 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
           data: transformations,
           count: length(transformations)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
 
       {:error, reason} ->
         Logger.error("Erro ao listar transformações: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao listar transformações",
           details: inspect(reason)
         }
-        
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(500, Jason.encode!(error_response))
+    end
+  end
+
+  # GET /api/cms/media/file-transformations - Lista transformações aplicadas a arquivos
+  get "/file-transformations" do
+    Logger.info("Listando transformações aplicadas a arquivos", module: __MODULE__)
+
+    case Media.list_media_file_transformations() do
+      {:ok, file_transformations} ->
+        response = %{
+          status: "success",
+          data: file_transformations,
+          count: length(file_transformations)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(200, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao listar transformações de arquivos: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao listar transformações de arquivos",
+          details: inspect(reason)
+        }
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))

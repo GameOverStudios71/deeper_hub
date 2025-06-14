@@ -267,6 +267,33 @@ defmodule DeeperHub.CMS.Media do
   end
 
   # ============================================================================
+  # MEDIA FILE TRANSFORMATIONS
+  # ============================================================================
+
+  @doc """
+  Lista todas as transformações aplicadas a arquivos.
+  """
+  def list_media_file_transformations do
+    sql = """
+    SELECT ft.id, ft.original_file_id, ft.transformation_id, ft.file_path,
+           ft.file_size, ft.status, ft.error_message, ft.created_at, ft.completed_at,
+           f.original_name as file_name, t.name as transformation_name
+    FROM cms_media_file_transformations ft
+    LEFT JOIN cms_media_files f ON ft.original_file_id = f.id
+    LEFT JOIN cms_media_transformations t ON ft.transformation_id = t.id
+    ORDER BY ft.created_at DESC
+    """
+
+    case Connection.query(sql, []) do
+      {:ok, %{rows: rows}} ->
+        file_transformations = Enum.map(rows, &row_to_media_file_transformation/1)
+        {:ok, file_transformations}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  # ============================================================================
   # HELPERS PRIVADOS
   # ============================================================================
 
@@ -374,5 +401,23 @@ defmodule DeeperHub.CMS.Media do
       created_at: created_at,
       order_index: order_index
     })
+  end
+
+  defp row_to_media_file_transformation([id, original_file_id, transformation_id, file_path,
+                                         file_size, status, error_message, created_at, completed_at,
+                                         file_name, transformation_name]) do
+    %{
+      id: id,
+      original_file_id: original_file_id,
+      transformation_id: transformation_id,
+      output_path: file_path,
+      file_size: file_size,
+      status: status,
+      error_message: error_message,
+      created_at: created_at,
+      completed_at: completed_at,
+      file_name: file_name,
+      transformation_name: transformation_name
+    }
   end
 end
