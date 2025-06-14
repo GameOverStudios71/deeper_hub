@@ -295,7 +295,7 @@ window.App = {
     /**
      * Create search and filter bar
      */
-    createSearchBar(placeholder = 'Search...', filters = []) {
+    createSearchBar(placeholder = 'Search...', filters = [], actions = []) {
         let html = `
             <div class="search-bar p-20" style="background: #f8f9fa; border-bottom: 1px solid #dee2e6;">
                 <div class="d-flex gap-10 align-items-center">
@@ -311,13 +311,13 @@ window.App = {
                         <select id="${filter.id}" class="form-control">
                             <option value="">${filter.placeholder}</option>
                 `;
-                
+
                 if (filter.options) {
                     filter.options.forEach(option => {
                         html += `<option value="${option.value}">${option.text}</option>`;
                     });
                 }
-                
+
                 html += `
                         </select>
                     </div>
@@ -332,6 +332,20 @@ window.App = {
                     <button class="btn btn-secondary" onclick="App.getCurrentModuleInstance().clearSearch()">
                         <i class="fas fa-times"></i> Clear
                     </button>
+        `;
+
+        // Add action buttons
+        if (actions.length > 0) {
+            actions.forEach(action => {
+                html += `
+                    <button class="btn ${action.class || 'btn-primary'}" onclick="${action.onclick}">
+                        ${action.icon ? `<i class="${action.icon}"></i> ` : ''}${action.text}
+                    </button>
+                `;
+            });
+        }
+
+        html += `
                 </div>
             </div>
         `;

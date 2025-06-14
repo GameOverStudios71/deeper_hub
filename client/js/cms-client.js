@@ -724,12 +724,104 @@ class CMSClient {
         return this.delete(`/pages/${id}`);
     }
 
-    async getPageTypes() {
-        return this.get('/pages/types');
+    async getPageTypes(params = {}) {
+        return this.get('/pages/types', params);
     }
 
-    async getPageLayouts() {
-        return this.get('/pages/layouts');
+    async getPageType(id) {
+        return this.get(`/pages/types/${id}`);
+    }
+
+    async createPageType(data) {
+        return this.post('/pages/types', data);
+    }
+
+    async updatePageType(id, data) {
+        return this.put(`/pages/types/${id}`, data);
+    }
+
+    async deletePageType(id) {
+        return this.delete(`/pages/types/${id}`);
+    }
+
+    async getPageLayouts(params = {}) {
+        return this.get('/pages/layouts', params);
+    }
+
+    async getPageLayout(id) {
+        return this.get(`/pages/layouts/${id}`);
+    }
+
+    async createPageLayout(data) {
+        return this.post('/pages/layouts', data);
+    }
+
+    async updatePageLayout(id, data) {
+        return this.put(`/pages/layouts/${id}`, data);
+    }
+
+    async deletePageLayout(id) {
+        return this.delete(`/pages/layouts/${id}`);
+    }
+
+    async getDesignBoxes(params = {}) {
+        return this.get('/pages/design-boxes', params);
+    }
+
+    async getDesignBox(id) {
+        return this.get(`/pages/design-boxes/${id}`);
+    }
+
+    async createDesignBox(data) {
+        return this.post('/pages/design-boxes', data);
+    }
+
+    async updateDesignBox(id, data) {
+        return this.put(`/pages/design-boxes/${id}`, data);
+    }
+
+    async deleteDesignBox(id) {
+        return this.delete(`/pages/design-boxes/${id}`);
+    }
+
+    async getPageBlocks(params = {}) {
+        return this.get('/pages/blocks', params);
+    }
+
+    async getPageBlock(id) {
+        return this.get(`/pages/blocks/${id}`);
+    }
+
+    async createPageBlock(data) {
+        return this.post('/pages/blocks', data);
+    }
+
+    async updatePageBlock(id, data) {
+        return this.put(`/pages/blocks/${id}`, data);
+    }
+
+    async deletePageBlock(id) {
+        return this.delete(`/pages/blocks/${id}`);
+    }
+
+    async getContentPlaceholders(params = {}) {
+        return this.get('/pages/placeholders', params);
+    }
+
+    async getContentPlaceholder(id) {
+        return this.get(`/pages/placeholders/${id}`);
+    }
+
+    async createContentPlaceholder(data) {
+        return this.post('/pages/placeholders', data);
+    }
+
+    async updateContentPlaceholder(id, data) {
+        return this.put(`/pages/placeholders/${id}`, data);
+    }
+
+    async deleteContentPlaceholder(id) {
+        return this.delete(`/pages/placeholders/${id}`);
     }
 
     // Forms API

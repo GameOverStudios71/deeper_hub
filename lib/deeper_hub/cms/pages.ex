@@ -5,6 +5,8 @@ defmodule DeeperHub.CMS.Pages do
 
   alias DeeperHub.Core.Data.Connection
   alias DeeperHub.CMS.Pages.Page
+  alias DeeperHub.CMS.Pages.PageLayout
+  alias DeeperHub.CMS.Pages.PageType
 
   # ============================================================================
   # PAGES
@@ -339,5 +341,310 @@ defmodule DeeperHub.CMS.Pages do
       page_type_title: page_type_title,
       layout_title: layout_title
     })
+  end
+
+  # ============================================================================
+  # PAGE LAYOUTS
+  # ============================================================================
+
+  @doc """
+  Lista todos os layouts de página.
+  """
+  def list_page_layouts do
+    sql = """
+    SELECT id, name, title, description, template, icon, cells_number,
+           cells_config, is_active, is_system, created_at, updated_at, order_index
+    FROM cms_page_layouts
+    ORDER BY order_index ASC, title ASC
+    """
+
+    case Connection.query(sql, []) do
+      {:ok, %{rows: rows}} ->
+        layouts = Enum.map(rows, &row_to_page_layout/1)
+        {:ok, layouts}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Obtém um layout específico pelo ID.
+  """
+  def get_page_layout(id) do
+    sql = """
+    SELECT id, name, title, description, template, icon, cells_number,
+           cells_config, is_active, is_system, created_at, updated_at, order_index
+    FROM cms_page_layouts
+    WHERE id = ?
+    """
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{rows: [row]}} ->
+        layout = row_to_page_layout(row)
+        {:ok, layout}
+      {:ok, %{rows: []}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Cria um novo layout de página.
+  """
+  def create_page_layout(attrs) do
+    sql = """
+    INSERT INTO cms_page_layouts (name, title, description, template, icon, cells_number,
+                                  cells_config, is_active, is_system, order_index)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """
+
+    params = [
+      attrs[:name],
+      attrs[:title],
+      attrs[:description] || "",
+      attrs[:template] || "",
+      attrs[:icon] || "",
+      attrs[:cells_number] || 1,
+      attrs[:cells_config] || "",
+      if(attrs[:is_active] == false, do: 0, else: 1),
+      if(attrs[:is_system] == true, do: 1, else: 0),
+      attrs[:order_index] || 0
+    ]
+
+    case Connection.query(sql, params) do
+      {:ok, %{num_rows: 0}} ->
+        # Para SQLite, INSERT bem-sucedido retorna num_rows: 0
+        # Precisamos fazer uma segunda query para obter o ID
+        case Connection.query("SELECT last_insert_rowid()", []) do
+          {:ok, %{rows: [[id]]}} ->
+            get_page_layout(id)
+          {:error, error} ->
+            {:error, error}
+        end
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Atualiza um layout de página.
+  """
+  def update_page_layout(id, attrs) do
+    sql = """
+    UPDATE cms_page_layouts
+    SET name = ?, title = ?, description = ?, template = ?, icon = ?, cells_number = ?,
+        cells_config = ?, is_active = ?, is_system = ?, order_index = ?, updated_at = CURRENT_TIMESTAMP
+    WHERE id = ?
+    """
+
+    params = [
+      attrs[:name],
+      attrs[:title],
+      attrs[:description] || "",
+      attrs[:template] || "",
+      attrs[:icon] || "",
+      attrs[:cells_number] || 1,
+      attrs[:cells_config] || "",
+      if(attrs[:is_active] == false, do: 0, else: 1),
+      if(attrs[:is_system] == true, do: 1, else: 0),
+      attrs[:order_index] || 0,
+      id
+    ]
+
+    case Connection.query(sql, params) do
+      {:ok, %{num_rows: 1}} ->
+        get_page_layout(id)
+      {:ok, %{num_rows: 0}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Remove um layout de página.
+  """
+  def delete_page_layout(id) do
+    sql = "DELETE FROM cms_page_layouts WHERE id = ?"
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{num_rows: 1}} ->
+        {:ok, :deleted}
+      {:ok, %{num_rows: 0}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  # ============================================================================
+  # PAGE TYPES
+  # ============================================================================
+
+  @doc """
+  Lista todos os tipos de página.
+  """
+  def list_page_types do
+    sql = """
+    SELECT id, name, title, description, template, icon, is_active,
+           is_system, created_at, order_index
+    FROM cms_page_types
+    ORDER BY order_index ASC, title ASC
+    """
+
+    case Connection.query(sql, []) do
+      {:ok, %{rows: rows}} ->
+        types = Enum.map(rows, &row_to_page_type/1)
+        {:ok, types}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Obtém um tipo específico pelo ID.
+  """
+  def get_page_type(id) do
+    sql = """
+    SELECT id, name, title, description, template, icon, is_active,
+           is_system, created_at, order_index
+    FROM cms_page_types
+    WHERE id = ?
+    """
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{rows: [row]}} ->
+        type = row_to_page_type(row)
+        {:ok, type}
+      {:ok, %{rows: []}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Cria um novo tipo de página.
+  """
+  def create_page_type(attrs) do
+    sql = """
+    INSERT INTO cms_page_types (name, title, description, template, icon, is_active,
+                                is_system, order_index)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    """
+
+    params = [
+      attrs[:name],
+      attrs[:title],
+      attrs[:description] || "",
+      attrs[:template] || "",
+      attrs[:icon] || "",
+      if(attrs[:is_active] == false, do: 0, else: 1),
+      if(attrs[:is_system] == true, do: 1, else: 0),
+      attrs[:order_index] || 0
+    ]
+
+    case Connection.query(sql, params) do
+      {:ok, %{num_rows: 0}} ->
+        # Para SQLite, INSERT bem-sucedido retorna num_rows: 0
+        # Precisamos fazer uma segunda query para obter o ID
+        case Connection.query("SELECT last_insert_rowid()", []) do
+          {:ok, %{rows: [[id]]}} ->
+            get_page_type(id)
+          {:error, error} ->
+            {:error, error}
+        end
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Atualiza um tipo de página.
+  """
+  def update_page_type(id, attrs) do
+    sql = """
+    UPDATE cms_page_types
+    SET name = ?, title = ?, description = ?, template = ?, icon = ?, is_active = ?,
+        is_system = ?, order_index = ?
+    WHERE id = ?
+    """
+
+    params = [
+      attrs[:name],
+      attrs[:title],
+      attrs[:description] || "",
+      attrs[:template] || "",
+      attrs[:icon] || "",
+      if(attrs[:is_active] == false, do: 0, else: 1),
+      if(attrs[:is_system] == true, do: 1, else: 0),
+      attrs[:order_index] || 0,
+      id
+    ]
+
+    case Connection.query(sql, params) do
+      {:ok, %{num_rows: 1}} ->
+        get_page_type(id)
+      {:ok, %{num_rows: 0}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Remove um tipo de página.
+  """
+  def delete_page_type(id) do
+    sql = "DELETE FROM cms_page_types WHERE id = ?"
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{num_rows: 1}} ->
+        {:ok, :deleted}
+      {:ok, %{num_rows: 0}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  defp row_to_page_layout(row) do
+    [id, name, title, description, template, icon, cells_number,
+     cells_config, is_active, is_system, created_at, updated_at, order_index] = row
+
+    %PageLayout{
+      id: id,
+      name: name,
+      title: title,
+      description: description,
+      template: template,
+      icon: icon,
+      cells_number: cells_number,
+      cells_config: cells_config,
+      is_active: is_active == 1,
+      is_system: is_system == 1,
+      created_at: created_at,
+      updated_at: updated_at,
+      order_index: order_index
+    }
+  end
+
+  defp row_to_page_type(row) do
+    [id, name, title, description, template, icon, is_active,
+     is_system, created_at, order_index] = row
+
+    %PageType{
+      id: id,
+      name: name,
+      title: title,
+      description: description,
+      template: template,
+      icon: icon,
+      is_active: is_active == 1,
+      is_system: is_system == 1,
+      created_at: created_at,
+      order_index: order_index
+    }
   end
 end

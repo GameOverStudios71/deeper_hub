@@ -87,8 +87,17 @@ window.Pages = {
         const tabConfig = this.tabs[this.currentTab];
         if (!tabConfig) return;
 
+        const entityName = tabConfig.title.slice(0, -1); // Remove 's' from plural
+
         const html = `
-            ${App.createModuleHeader('Pages Management', [])}
+            ${App.createModuleHeader('Pages Management', [
+                {
+                    text: `Add New ${entityName}`,
+                    icon: 'fas fa-plus',
+                    class: 'btn-success',
+                    onclick: 'Pages.showCreateForm()'
+                }
+            ])}
 
             ${this.createTabNavigation()}
 
@@ -168,6 +177,7 @@ window.Pages = {
      */
     createTabSearchBar() {
         const tabConfig = this.tabs[this.currentTab];
+        const entityName = tabConfig.title.slice(0, -1); // Remove 's' from plural
         const searchPlaceholder = `Search ${tabConfig.title.toLowerCase()}...`;
 
         let filters = [];
@@ -184,14 +194,16 @@ window.Pages = {
             });
         }
 
-        return App.createSearchBar(searchPlaceholder, filters, [
+        const actions = [
             {
-                text: `Add New ${tabConfig.title.slice(0, -1)}`, // Remove 's' from plural
+                text: `Add New ${entityName}`,
                 icon: 'fas fa-plus',
                 class: 'btn-success',
                 onclick: `Pages.showCreateForm()`
             }
-        ]);
+        ];
+
+        return App.createSearchBar(searchPlaceholder, filters, actions);
     },
 
     /**

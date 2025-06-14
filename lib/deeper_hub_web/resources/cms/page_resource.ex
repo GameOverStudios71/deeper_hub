@@ -173,6 +173,138 @@ defmodule DeeperHubWeb.Resources.CMS.PageResource do
     end
   end
 
+  # ===== PAGE LAYOUTS ROUTES =====
+
+  # GET /api/cms/pages/layouts - Lista todos os layouts
+  get "/layouts" do
+    Logger.info("Listando layouts de página", module: __MODULE__)
+
+    case Pages.list_page_layouts() do
+      {:ok, layouts} ->
+        response = %{
+          status: "success",
+          data: layouts,
+          count: length(layouts)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(200, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao listar layouts: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao listar layouts",
+          details: inspect(reason)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(500, Jason.encode!(error_response))
+    end
+  end
+
+  # POST /api/cms/pages/layouts - Cria um novo layout
+  post "/layouts" do
+    Logger.info("Criando novo layout", module: __MODULE__)
+
+    layout_data = convert_keys_to_atoms(conn.body_params)
+
+    case Pages.create_page_layout(layout_data) do
+      {:ok, layout} ->
+        response = %{
+          status: "success",
+          data: layout,
+          message: "Layout criado com sucesso"
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(201, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao criar layout: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao criar layout",
+          details: inspect(reason)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(400, Jason.encode!(error_response))
+    end
+  end
+
+  # ===== PAGE TYPES ROUTES =====
+
+  # GET /api/cms/pages/types - Lista todos os tipos
+  get "/types" do
+    Logger.info("Listando tipos de página", module: __MODULE__)
+
+    case Pages.list_page_types() do
+      {:ok, types} ->
+        response = %{
+          status: "success",
+          data: types,
+          count: length(types)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(200, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao listar tipos: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao listar tipos",
+          details: inspect(reason)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(500, Jason.encode!(error_response))
+    end
+  end
+
+  # POST /api/cms/pages/types - Cria um novo tipo
+  post "/types" do
+    Logger.info("Criando novo tipo", module: __MODULE__)
+
+    type_data = convert_keys_to_atoms(conn.body_params)
+
+    case Pages.create_page_type(type_data) do
+      {:ok, type} ->
+        response = %{
+          status: "success",
+          data: type,
+          message: "Tipo criado com sucesso"
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(201, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao criar tipo: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao criar tipo",
+          details: inspect(reason)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(400, Jason.encode!(error_response))
+    end
+  end
+
   # GET /api/cms/pages/:id - Obtém uma página específica
   get "/:id" do
     page_id = conn.path_params["id"]
@@ -359,6 +491,8 @@ defmodule DeeperHubWeb.Resources.CMS.PageResource do
         |> send_resp(500, Jason.encode!(error_response))
     end
   end
+
+  # Adicionar rotas POST, PUT, DELETE para layouts e types aqui se necessário
 
   # Fallback para rotas não encontradas
   match _ do
