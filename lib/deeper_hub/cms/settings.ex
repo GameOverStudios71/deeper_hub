@@ -514,4 +514,320 @@ defmodule DeeperHub.CMS.Settings do
       updated_at: updated_at
     })
   end
+
+  # ============================================================================
+  # SETTING CATEGORIES - CRUD METHODS
+  # ============================================================================
+
+  @doc """
+  Cria uma nova categoria de configuração.
+  """
+  def create_setting_category(attrs) do
+    sql = """
+    INSERT INTO cms_setting_categories (name, title, description, icon, is_active, order_index)
+    VALUES (?, ?, ?, ?, ?, ?)
+    """
+
+    params = [
+      attrs[:name],
+      attrs[:title],
+      attrs[:description] || "",
+      attrs[:icon] || "",
+      if(attrs[:is_active] == false, do: 0, else: 1),
+      attrs[:order_index] || 0
+    ]
+
+    case Connection.query(sql, params) do
+      {:ok, %{num_rows: 0}} ->
+        case Connection.query("SELECT id FROM cms_setting_categories WHERE name = ? ORDER BY id DESC LIMIT 1", [attrs[:name]]) do
+          {:ok, %{rows: [[id]]}} ->
+            get_setting_category(id)
+          {:ok, %{rows: []}} ->
+            {:error, :not_found}
+          {:error, error} ->
+            {:error, error}
+        end
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Obtém uma categoria específica pelo ID.
+  """
+  def get_setting_category(id) do
+    sql = """
+    SELECT id, name, title, description, icon, is_active, is_system, created_at, order_index
+    FROM cms_setting_categories
+    WHERE id = ?
+    """
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{rows: [row]}} ->
+        category = row_to_setting_category(row)
+        {:ok, category}
+      {:ok, %{rows: []}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  # ============================================================================
+  # SETTING TYPES - CRUD METHODS
+  # ============================================================================
+
+  @doc """
+  Cria um novo tipo de configuração.
+  """
+  def create_setting_type(attrs) do
+    sql = """
+    INSERT INTO cms_setting_types (name, title, description, input_type, validation_rules, default_options, is_active, order_index)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    """
+
+    params = [
+      attrs[:name],
+      attrs[:title],
+      attrs[:description] || "",
+      attrs[:input_type] || "text",
+      attrs[:validation_rules] || "",
+      attrs[:default_options] || "",
+      if(attrs[:is_active] == false, do: 0, else: 1),
+      attrs[:order_index] || 0
+    ]
+
+    case Connection.query(sql, params) do
+      {:ok, %{num_rows: 0}} ->
+        case Connection.query("SELECT id FROM cms_setting_types WHERE name = ? ORDER BY id DESC LIMIT 1", [attrs[:name]]) do
+          {:ok, %{rows: [[id]]}} ->
+            get_setting_type(id)
+          {:ok, %{rows: []}} ->
+            {:error, :not_found}
+          {:error, error} ->
+            {:error, error}
+        end
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Obtém um tipo específico pelo ID.
+  """
+  def get_setting_type(id) do
+    sql = """
+    SELECT id, name, title, description, input_type, validation_rules, default_options, is_active, is_system, created_at, order_index
+    FROM cms_setting_types
+    WHERE id = ?
+    """
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{rows: [row]}} ->
+        type = row_to_setting_type(row)
+        {:ok, type}
+      {:ok, %{rows: []}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  # ============================================================================
+  # SETTINGS - CRUD METHODS
+  # ============================================================================
+
+  @doc """
+  Cria uma nova configuração.
+  """
+  def create_setting(attrs) do
+    sql = """
+    INSERT INTO cms_settings (category_id, setting_type_id, name, title, description, value, default_value,
+                              options, validation_rules, placeholder, help_text, css_class, is_required,
+                              is_readonly, is_translatable, is_active, order_index)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """
+
+    params = [
+      attrs[:category_id],
+      attrs[:setting_type_id],
+      attrs[:name],
+      attrs[:title],
+      attrs[:description] || "",
+      attrs[:value] || "",
+      attrs[:default_value] || "",
+      attrs[:options] || "",
+      attrs[:validation_rules] || "",
+      attrs[:placeholder] || "",
+      attrs[:help_text] || "",
+      attrs[:css_class] || "",
+      if(attrs[:is_required] == true, do: 1, else: 0),
+      if(attrs[:is_readonly] == true, do: 1, else: 0),
+      if(attrs[:is_translatable] == true, do: 1, else: 0),
+      if(attrs[:is_active] == false, do: 0, else: 1),
+      attrs[:order_index] || 0
+    ]
+
+    case Connection.query(sql, params) do
+      {:ok, %{num_rows: 0}} ->
+        case Connection.query("SELECT id FROM cms_settings WHERE name = ? ORDER BY id DESC LIMIT 1", [attrs[:name]]) do
+          {:ok, %{rows: [[id]]}} ->
+            get_setting(id)
+          {:ok, %{rows: []}} ->
+            {:error, :not_found}
+          {:error, error} ->
+            {:error, error}
+        end
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Obtém uma configuração específica pelo ID.
+  """
+  def get_setting(id) do
+    sql = """
+    SELECT s.id, s.category_id, s.setting_type_id, s.name, s.title, s.description,
+           s.value, s.default_value, s.options, s.validation_rules, s.placeholder,
+           s.help_text, s.is_required, s.is_readonly, s.is_translatable, s.is_active,
+           s.is_system, s.created_at, s.updated_at, s.order_index,
+           c.title as category_title, t.title as type_title, t.input_type
+    FROM cms_settings s
+    LEFT JOIN cms_setting_categories c ON s.category_id = c.id
+    LEFT JOIN cms_setting_types t ON s.setting_type_id = t.id
+    WHERE s.id = ?
+    """
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{rows: [row]}} ->
+        setting = row_to_setting(row)
+        {:ok, setting}
+      {:ok, %{rows: []}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  # ============================================================================
+  # THEME SETTINGS - CRUD METHODS
+  # ============================================================================
+
+  @doc """
+  Lista todas as configurações de tema.
+  """
+  def list_theme_settings do
+    sql = """
+    SELECT ts.id, ts.theme_id, ts.setting_id, ts.value, ts.created_at, ts.updated_at,
+           t.title as theme_title, s.name as setting_name, s.title as setting_title,
+           s.description as setting_description, st.input_type as setting_type
+    FROM cms_theme_settings ts
+    LEFT JOIN cms_themes t ON ts.theme_id = t.id
+    LEFT JOIN cms_settings s ON ts.setting_id = s.id
+    LEFT JOIN cms_setting_types st ON s.setting_type_id = st.id
+    ORDER BY ts.theme_id ASC, s.order_index ASC
+    """
+
+    case Connection.query(sql, []) do
+      {:ok, %{rows: rows}} ->
+        theme_settings = Enum.map(rows, &row_to_theme_setting_corrected/1)
+        {:ok, theme_settings}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Cria uma nova configuração de tema.
+  """
+  def create_theme_setting(attrs) do
+    sql = """
+    INSERT INTO cms_theme_settings (theme_id, setting_id, value)
+    VALUES (?, ?, ?)
+    """
+
+    params = [
+      attrs[:theme_id],
+      attrs[:setting_id],
+      attrs[:value] || ""
+    ]
+
+    case Connection.query(sql, params) do
+      {:ok, %{num_rows: 0}} ->
+        case Connection.query("SELECT id FROM cms_theme_settings WHERE theme_id = ? AND setting_id = ? ORDER BY id DESC LIMIT 1", [attrs[:theme_id], attrs[:setting_id]]) do
+          {:ok, %{rows: [[id]]}} ->
+            get_theme_setting(id)
+          {:ok, %{rows: []}} ->
+            {:error, :not_found}
+          {:error, error} ->
+            {:error, error}
+        end
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Obtém uma configuração de tema específica pelo ID.
+  """
+  def get_theme_setting(id) do
+    sql = """
+    SELECT ts.id, ts.theme_id, ts.setting_id, ts.value, ts.created_at, ts.updated_at,
+           t.title as theme_title, s.name as setting_name, s.title as setting_title,
+           s.description as setting_description, st.input_type as setting_type
+    FROM cms_theme_settings ts
+    LEFT JOIN cms_themes t ON ts.theme_id = t.id
+    LEFT JOIN cms_settings s ON ts.setting_id = s.id
+    LEFT JOIN cms_setting_types st ON s.setting_type_id = st.id
+    WHERE ts.id = ?
+    """
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{rows: [row]}} ->
+        theme_setting = row_to_theme_setting_corrected(row)
+        {:ok, theme_setting}
+      {:ok, %{rows: []}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  # ============================================================================
+  # HELPER FUNCTIONS FOR NEW METHODS
+  # ============================================================================
+
+  defp row_to_theme_setting_corrected([id, theme_id, setting_id, value, created_at, updated_at, theme_title, setting_name, setting_title, setting_description, setting_type]) do
+    %{
+      id: id,
+      theme_id: theme_id,
+      setting_id: setting_id,
+      setting_name: setting_name,
+      setting_title: setting_title,
+      setting_description: setting_description,
+      setting_value: value,
+      setting_type: setting_type,
+      created_at: created_at,
+      updated_at: updated_at,
+      theme_title: theme_title
+    }
+  end
+
+  # Legacy function for backward compatibility
+  defp row_to_theme_setting([id, theme_id, setting_name, setting_value, setting_type, setting_group, setting_order, is_active, created_at, updated_at, theme_title]) do
+    %{
+      id: id,
+      theme_id: theme_id,
+      setting_name: setting_name,
+      setting_value: setting_value,
+      setting_type: setting_type,
+      setting_group: setting_group,
+      setting_order: setting_order,
+      is_active: is_active == 1,
+      created_at: created_at,
+      updated_at: updated_at,
+      theme_title: theme_title
+    }
+  end
 end

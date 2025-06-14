@@ -101,6 +101,7 @@
                         'Elixir.DeeperHubWeb.LogoutController',
                         'Elixir.DeeperHubWeb.Resources.CMS.AuditResource',
                         'Elixir.DeeperHubWeb.Resources.CMS.AuthResource',
+                        'Elixir.DeeperHubWeb.Resources.CMS.EntityResource',
                         'Elixir.DeeperHubWeb.Resources.CMS.FormResource',
                         'Elixir.DeeperHubWeb.Resources.CMS.MediaResource',
                         'Elixir.DeeperHubWeb.Resources.CMS.MenuResource',

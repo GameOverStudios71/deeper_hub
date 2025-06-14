@@ -1187,4 +1187,114 @@ class CMSClient {
     async deleteRelationship(id) {
         return this.delete(`/relationships/${id}`);
     }
+
+    // ===== ENTITIES API =====
+
+    async getEntities(params = {}) {
+        return this.get('/entities', params);
+    }
+
+    async getEntity(id) {
+        return this.get(`/entities/${id}`);
+    }
+
+    async createEntity(data) {
+        return this.post('/entities', data);
+    }
+
+    async updateEntity(id, data) {
+        return this.put(`/entities/${id}`, data);
+    }
+
+    async deleteEntity(id) {
+        return this.delete(`/entities/${id}`);
+    }
+
+    // ===== ENTITY FIELDS API =====
+
+    async getEntityFields(params = {}) {
+        return this.get('/entities/fields', params);
+    }
+
+    async getEntityField(id) {
+        return this.get(`/entities/fields/${id}`);
+    }
+
+    async createEntityField(data) {
+        return this.post('/entities/fields', data);
+    }
+
+    async updateEntityField(id, data) {
+        return this.put(`/entities/fields/${id}`, data);
+    }
+
+    async deleteEntityField(id) {
+        return this.delete(`/entities/fields/${id}`);
+    }
+
+    // ===== ENTITY DATA API =====
+
+    async getEntityData(params = {}) {
+        return this.get('/entities/data', params);
+    }
+
+    async getEntityDataRecord(id) {
+        return this.get(`/entities/data/${id}`);
+    }
+
+    async createEntityData(data) {
+        return this.post('/entities/data', data);
+    }
+
+    async updateEntityData(id, data) {
+        return this.put(`/entities/data/${id}`, data);
+    }
+
+    async deleteEntityData(id) {
+        return this.delete(`/entities/data/${id}`);
+    }
+
+    // ===== ENTITY RELATIONSHIP DEFINITIONS API =====
+
+    async getEntityRelationshipDefinitions(params = {}) {
+        return this.get('/entities/relationships', params);
+    }
+
+    async getEntityRelationshipDefinition(id) {
+        return this.get(`/entities/relationships/${id}`);
+    }
+
+    async createEntityRelationshipDefinition(data) {
+        return this.post('/entities/relationships', data);
+    }
+
+    async updateEntityRelationshipDefinition(id, data) {
+        return this.put(`/entities/relationships/${id}`, data);
+    }
+
+    async deleteEntityRelationshipDefinition(id) {
+        return this.delete(`/entities/relationships/${id}`);
+    }
+
+    // ===== ENTITY RELATIONSHIPS API =====
+
+    async getEntityRelationships(params = {}) {
+        return this.get('/entities/entity-relationships', params);
+    }
+
+    async getEntityRelationship(id) {
+        return this.get(`/entities/entity-relationships/${id}`);
+    }
+
+    async createEntityRelationship(data) {
+        return this.post('/entities/entity-relationships', data);
+    }
+
+    async updateEntityRelationship(id, data) {
+        return this.put(`/entities/entity-relationships/${id}`, data);
+    }
+
+    async deleteEntityRelationship(id) {
+        return this.delete(`/entities/entity-relationships/${id}`);
+    }
 }
