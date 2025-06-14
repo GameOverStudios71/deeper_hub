@@ -1,95 +1,614 @@
 /**
- * Users module
+ * Users module - User Management with 2 tables
  */
 window.Users = {
-    
+
     currentPage: 1,
     searchQuery: '',
     filterStatus: '',
-    users: [],
+    currentTab: 'users',
+    data: [],
+
+    // Tab configuration
+    tabs: {
+        users: {
+            title: 'Users',
+            icon: 'fas fa-users',
+            description: 'Manage system users and accounts',
+            apiEndpoint: 'cms/users'
+        },
+        permissions: {
+            title: 'Permissions',
+            icon: 'fas fa-key',
+            description: 'Manage user permissions and access control',
+            apiEndpoint: 'cms/users/permissions'
+        }
+    },
 
     /**
      * Initialize users module
      */
     async init() {
         try {
-            await this.loadUsers();
+            await this.switchTab(this.currentTab);
         } catch (error) {
             App.handleError(error, 'Users');
         }
     },
 
     /**
-     * Load users list
+     * Switch between tabs
      */
-    async loadUsers() {
-        const params = {
-            page: this.currentPage,
-            limit: 20,
-            sort: 'created_at',
-            order: 'desc'
-        };
+    async switchTab(tabKey) {
+        this.currentTab = tabKey;
+        this.currentPage = 1;
+        this.searchQuery = '';
+        this.filterStatus = '';
 
-        if (this.searchQuery) {
-            params.search = this.searchQuery;
-        }
+        this.renderTabInterface();
+        await this.loadTabData();
+    },
 
-        if (this.filterStatus) {
-            params.is_active = this.filterStatus === 'active';
-        }
+    /**
+     * Render the tab interface
+     */
+    renderTabInterface() {
+        const tabConfig = this.tabs[this.currentTab];
+        const entityName = tabConfig.title.slice(0, -1); // Remove 's' from plural
 
         const html = `
-            ${App.createModuleHeader('Users', [
+            ${App.createModuleHeader('User Management', [
                 {
-                    text: 'Add New User',
+                    text: `Add New ${entityName}`,
                     icon: 'fas fa-plus',
                     class: 'btn-success',
                     onclick: 'Users.showCreateForm()'
                 }
             ])}
-            
-            ${App.createSearchBar('Search users...', [
-                {
-                    id: 'statusFilter',
-                    placeholder: 'Filter by status',
-                    options: [
-                        { value: 'active', text: 'Active' },
-                        { value: 'inactive', text: 'Inactive' }
-                    ]
-                }
-            ])}
-            
-            <div class="users-content p-20">
-                <div id="usersTable">
+
+            ${this.createTabNavigation()}
+
+            ${this.createTabSearchBar()}
+
+            <div class="tab-content p-20">
+                <div id="tabDataTable">
                     <div class="text-center p-20">
-                        <i class="fas fa-spinner fa-spin"></i> Loading users...
+                        <i class="fas fa-spinner fa-spin"></i> Loading ${tabConfig.title.toLowerCase()}...
                     </div>
                 </div>
-                
-                <div id="usersPagination" class="mt-20"></div>
+
+                <div id="tabPagination" class="mt-20"></div>
             </div>
         `;
 
         App.showModuleContent(html);
-        this.bindEvents();
+        this.bindTabEvents();
+    },
 
+    /**
+     * Create tab navigation
+     */
+    createTabNavigation() {
+        let html = `
+            <div class="tab-navigation">
+                <div class="nav-tabs">
+        `;
+
+        Object.keys(this.tabs).forEach(tabKey => {
+            const tab = this.tabs[tabKey];
+            const isActive = tabKey === this.currentTab ? 'active' : '';
+
+            html += `
+                <button class="nav-link ${isActive}" onclick="Users.switchTab('${tabKey}')">
+                    <i class="${tab.icon}"></i> ${tab.title}
+                </button>
+            `;
+        });
+
+        html += `
+                </div>
+                <div class="tab-description">
+                    <small class="text-muted">
+                        <i class="${this.tabs[this.currentTab].icon}"></i>
+                        ${this.tabs[this.currentTab].description}
+                    </small>
+                </div>
+            </div>
+        `;
+
+        return html;
+    },
+
+    /**
+     * Create search bar for current tab
+     */
+    createTabSearchBar() {
+        const tabConfig = this.tabs[this.currentTab];
+        const searchPlaceholder = `Search ${tabConfig.title.toLowerCase()}...`;
+
+        let filters = [];
+
+        // Add status filter for users
+        if (this.currentTab === 'users') {
+            filters.push({
+                id: 'statusFilter',
+                placeholder: 'Filter by status',
+                options: [
+                    { value: 'active', text: 'Active' },
+                    { value: 'inactive', text: 'Inactive' }
+                ]
+            });
+        }
+
+        const actions = [];
+
+        return App.createSearchBar(searchPlaceholder, filters, actions);
+    },
+
+    /**
+     * Load data for current tab
+     */
+    async loadTabData() {
         try {
-            const response = await cms.getUsers(params);
-            
+            const tabConfig = this.tabs[this.currentTab];
+            const params = {
+                page: this.currentPage,
+                limit: 20,
+                sort: 'created_at',
+                order: 'desc'
+            };
+
+            if (this.searchQuery) {
+                params.search = this.searchQuery;
+            }
+
+            if (this.filterStatus) {
+                params.is_active = this.filterStatus === 'active';
+            }
+
+            let response;
+            switch (this.currentTab) {
+                case 'users':
+                    response = await cms.getUsers(params);
+                    break;
+                case 'permissions':
+                    response = await cms.getUserPermissions(params);
+                    break;
+                default:
+                    throw new Error(`Unknown tab: ${this.currentTab}`);
+            }
+
             if (response.success) {
-                this.users = response.data;
-                this.renderUsersTable(response.data);
-                this.renderPagination(response.pagination);
+                this.data = response.data || [];
+                this.renderTabTable();
+                this.renderTabPagination(response.pagination);
             } else {
-                throw new Error(response.message || 'Failed to load users');
+                throw new Error(response.message || 'Failed to load data');
             }
         } catch (error) {
-            $('#usersTable').html('<div class="text-center p-20">Error loading users: ' + error.message + '</div>');
+            console.error(`Error loading ${this.currentTab} data:`, error);
+            Utils.showError(`Error loading ${this.currentTab}: ${error.message}`);
+
+            document.getElementById('tabDataTable').innerHTML = `
+                <div class="text-center p-20">
+                    <i class="fas fa-exclamation-triangle text-warning"></i>
+                    <p>Error loading ${this.currentTab}: ${error.message}</p>
+                    <button class="btn btn-primary" onclick="Users.loadTabData()">
+                        <i class="fas fa-redo"></i> Retry
+                    </button>
+                </div>
+            `;
         }
     },
 
     /**
-     * Bind events
+     * Render table for current tab
+     */
+    renderTabTable() {
+        let columns = [];
+        let actions = {
+            edit: 'Users.showEditForm',
+            delete: 'Users.deleteRecord'
+        };
+
+        // Define columns based on current tab
+        switch (this.currentTab) {
+            case 'users':
+                columns = [
+                    { field: 'id', title: 'ID', width: '60px' },
+                    { field: 'username', title: 'Username' },
+                    { field: 'email', title: 'Email' },
+                    { field: 'full_name', title: 'Full Name' },
+                    { field: 'is_admin', title: 'Admin', type: 'badge' },
+                    { field: 'is_active', title: 'Status', type: 'badge' },
+                    { field: 'last_login', title: 'Last Login', type: 'date' },
+                    { field: 'created_at', title: 'Created', type: 'date' }
+                ];
+                actions.custom = [
+                    { icon: 'fas fa-key', class: 'btn-warning', onclick: 'Users.managePermissions', tooltip: 'Manage Permissions' },
+                    { icon: 'fas fa-lock', class: 'btn-info', onclick: 'Users.resetPassword', tooltip: 'Reset Password' }
+                ];
+                break;
+            case 'permissions':
+                columns = [
+                    { field: 'id', title: 'ID', width: '60px' },
+                    { field: 'username', title: 'User' },
+                    { field: 'email', title: 'Email' },
+                    { field: 'entity_name', title: 'Entity' },
+                    { field: 'permission_type', title: 'Permission' },
+                    { field: 'created_at', title: 'Created', type: 'date' }
+                ];
+                break;
+        }
+
+        const tableHtml = App.createDataTable(columns, this.data, actions);
+        document.getElementById('tabDataTable').innerHTML = tableHtml;
+    },
+
+    /**
+     * Render pagination for current tab
+     */
+    renderTabPagination(pagination) {
+        if (!pagination) return;
+
+        const paginationHtml = Utils.createPagination(
+            pagination.current_page,
+            pagination.pages,
+            pagination.total,
+            (page) => {
+                this.currentPage = page;
+                this.loadTabData();
+            }
+        );
+
+        document.getElementById('tabPagination').innerHTML = paginationHtml;
+    },
+
+    /**
+     * Bind tab events
+     */
+    bindTabEvents() {
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', Utils.debounce((e) => {
+                this.searchQuery = e.target.value;
+                this.currentPage = 1;
+                this.loadTabData();
+            }, 300));
+        }
+
+        // Status filter
+        const statusFilter = document.getElementById('statusFilter');
+        if (statusFilter) {
+            statusFilter.addEventListener('change', (e) => {
+                this.filterStatus = e.target.value;
+                this.currentPage = 1;
+                this.loadTabData();
+            });
+        }
+    },
+
+    /**
+     * Show create form for current tab
+     */
+    showCreateForm() {
+        const tabConfig = this.tabs[this.currentTab];
+        const entityName = tabConfig.title.slice(0, -1);
+
+        const formHtml = this.createTabForm();
+
+        Utils.showModal(`Add New ${entityName}`, formHtml, [
+            {
+                text: 'Cancel',
+                class: 'btn-secondary',
+                onclick: 'Utils.hideModal()'
+            },
+            {
+                text: `Create ${entityName}`,
+                class: 'btn-success',
+                onclick: 'Users.saveRecord()'
+            }
+        ]);
+
+        if (this.currentTab === 'users') {
+            this.initPasswordStrength();
+        }
+    },
+
+    /**
+     * Show edit form for current tab
+     */
+    showEditForm(id) {
+        const record = this.data.find(item => item.id == id);
+        if (!record) {
+            Utils.showError('Record not found');
+            return;
+        }
+
+        const tabConfig = this.tabs[this.currentTab];
+        const entityName = tabConfig.title.slice(0, -1);
+
+        const formHtml = this.createTabForm(record);
+
+        Utils.showModal(`Edit ${entityName}`, formHtml, [
+            {
+                text: 'Cancel',
+                class: 'btn-secondary',
+                onclick: 'Utils.hideModal()'
+            },
+            {
+                text: `Update ${entityName}`,
+                class: 'btn-primary',
+                onclick: `Users.saveRecord(${id})`
+            }
+        ]);
+
+        // Populate form with existing data
+        Utils.populateForm('#tabForm', record);
+    },
+
+    /**
+     * Create form HTML for current tab
+     */
+    createTabForm(record = null) {
+        let formHtml = '<form id="tabForm" class="needs-validation" novalidate>';
+
+        switch (this.currentTab) {
+            case 'users':
+                formHtml += this.createUserForm(record);
+                break;
+            case 'permissions':
+                formHtml += this.createPermissionForm(record);
+                break;
+            default:
+                formHtml += '<p>Form not implemented for this tab.</p>';
+        }
+
+        formHtml += '</form>';
+        return formHtml;
+    },
+
+    /**
+     * Create form for Users tab
+     */
+    createUserForm(record = null) {
+        const username = record?.username || '';
+        const email = record?.email || '';
+        const fullName = record?.full_name || '';
+        const isActive = record?.is_active !== false;
+        const isAdmin = record?.is_admin === true;
+        const isEdit = !!record;
+
+        return `
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="username">Username *</label>
+                        <input type="text" class="form-control" id="username" name="username" value="${username}" required>
+                        <div class="invalid-feedback">Please provide a valid username.</div>
+                        <small class="form-text text-muted">Only letters, numbers, and underscores allowed</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" class="form-control" id="email" name="email" value="${email}" required>
+                        <div class="invalid-feedback">Please provide a valid email address.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="full_name">Full Name</label>
+                <input type="text" class="form-control" id="full_name" name="full_name" value="${fullName}">
+            </div>
+            ${!isEdit ? `
+            <div class="form-group">
+                <label for="password">Password *</label>
+                <input type="password" class="form-control" id="password" name="password" required minlength="8">
+                <div class="invalid-feedback">Password must be at least 8 characters long.</div>
+                <div id="passwordStrength" class="mt-2"></div>
+            </div>
+            <div class="form-group">
+                <label for="password_confirm">Confirm Password *</label>
+                <input type="password" class="form-control" id="password_confirm" name="password_confirm" required minlength="8">
+                <div class="invalid-feedback">Please confirm your password.</div>
+            </div>
+            ` : ''}
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="is_active">Status</label>
+                        <select class="form-control" id="is_active" name="is_active">
+                            <option value="true" ${isActive ? 'selected' : ''}>Active</option>
+                            <option value="false" ${!isActive ? 'selected' : ''}>Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="is_admin">Administrator</label>
+                        <select class="form-control" id="is_admin" name="is_admin">
+                            <option value="false" ${!isAdmin ? 'selected' : ''}>No</option>
+                            <option value="true" ${isAdmin ? 'selected' : ''}>Yes</option>
+                        </select>
+                        <small class="form-text text-muted">Administrators have full system access</small>
+                    </div>
+                </div>
+            </div>
+        `;
+    },
+
+    /**
+     * Create form for Permissions tab
+     */
+    createPermissionForm(record = null) {
+        const userId = record?.user_id || '';
+        const entityId = record?.entity_id || '';
+        const permissionType = record?.permission_type || 'read';
+
+        return `
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="user_id">User ID *</label>
+                        <input type="number" class="form-control" id="user_id" name="user_id" value="${userId}" required>
+                        <div class="invalid-feedback">Please provide a valid user ID.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="entity_id">Entity ID</label>
+                        <input type="number" class="form-control" id="entity_id" name="entity_id" value="${entityId}">
+                        <small class="form-text text-muted">Leave empty for global permissions</small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="permission_type">Permission Type *</label>
+                <select class="form-control" id="permission_type" name="permission_type" required>
+                    <option value="read" ${permissionType === 'read' ? 'selected' : ''}>Read</option>
+                    <option value="create" ${permissionType === 'create' ? 'selected' : ''}>Create</option>
+                    <option value="update" ${permissionType === 'update' ? 'selected' : ''}>Update</option>
+                    <option value="delete" ${permissionType === 'delete' ? 'selected' : ''}>Delete</option>
+                    <option value="admin" ${permissionType === 'admin' ? 'selected' : ''}>Admin</option>
+                </select>
+                <div class="invalid-feedback">Please select a permission type.</div>
+                <small class="form-text text-muted">
+                    <strong>Read:</strong> View data<br>
+                    <strong>Create:</strong> Add new records<br>
+                    <strong>Update:</strong> Modify existing records<br>
+                    <strong>Delete:</strong> Remove records<br>
+                    <strong>Admin:</strong> Full control over entity
+                </small>
+            </div>
+        `;
+    },
+
+    /**
+     * Save record for current tab
+     */
+    async saveRecord(id = null) {
+        try {
+            const form = document.getElementById('tabForm');
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+                return;
+            }
+
+            const formData = Utils.serializeForm(form);
+            const tabConfig = this.tabs[this.currentTab];
+
+            // Special validation for users
+            if (this.currentTab === 'users' && !id) {
+                if (formData.password !== formData.password_confirm) {
+                    Utils.showError('Passwords do not match');
+                    return;
+                }
+
+                const strength = this.checkPasswordStrength(formData.password);
+                if (strength.level === 'weak') {
+                    Utils.showError('Password is too weak. Please choose a stronger password.');
+                    return;
+                }
+
+                // Remove password_confirm from data
+                delete formData.password_confirm;
+            }
+
+            let response;
+            if (id) {
+                // Update existing record
+                switch (this.currentTab) {
+                    case 'users':
+                        response = await cms.updateUser(id, formData);
+                        break;
+                    case 'permissions':
+                        response = await cms.updateUserPermission(id, formData);
+                        break;
+                    default:
+                        throw new Error(`Update not implemented for ${this.currentTab}`);
+                }
+            } else {
+                // Create new record
+                switch (this.currentTab) {
+                    case 'users':
+                        response = await cms.createUser(formData);
+                        break;
+                    case 'permissions':
+                        response = await cms.createUserPermission(formData);
+                        break;
+                    default:
+                        throw new Error(`Create not implemented for ${this.currentTab}`);
+                }
+            }
+
+            if (response.success) {
+                Utils.hideModal();
+                Utils.showSuccess(response.message || `${tabConfig.title.slice(0, -1)} ${id ? 'updated' : 'created'} successfully!`);
+                await this.loadTabData();
+            } else {
+                throw new Error(response.message || 'Failed to save record');
+            }
+        } catch (error) {
+            console.error('Error saving record:', error);
+            Utils.showError(`Error saving record: ${error.message}`);
+        }
+    },
+
+    /**
+     * Delete record
+     */
+    async deleteRecord(id) {
+        const record = this.data.find(item => item.id == id);
+        if (!record) {
+            Utils.showError('Record not found');
+            return;
+        }
+
+        const tabConfig = this.tabs[this.currentTab];
+        const entityName = tabConfig.title.slice(0, -1);
+        const recordName = record.username || record.email || `ID ${id}`;
+
+        if (!confirm(`Are you sure you want to delete this ${entityName.toLowerCase()}: ${recordName}?`)) {
+            return;
+        }
+
+        try {
+            let response;
+            switch (this.currentTab) {
+                case 'users':
+                    response = await cms.deleteUser(id);
+                    break;
+                case 'permissions':
+                    response = await cms.deleteUserPermission(id);
+                    break;
+                default:
+                    throw new Error(`Delete not implemented for ${this.currentTab}`);
+            }
+
+            if (response.success) {
+                Utils.showSuccess(response.message || `${entityName} deleted successfully!`);
+                await this.loadTabData();
+            } else {
+                throw new Error(response.message || 'Failed to delete record');
+            }
+        } catch (error) {
+            console.error('Error deleting record:', error);
+            Utils.showError(`Error deleting record: ${error.message}`);
+        }
+    },
+
+    /**
+     * Load users list (legacy method for compatibility)
+     */
+    async loadUsers() {
+        // Redirect to new tab system
+        await this.switchTab('users');
+    },
+
+    /**
+     * Bind events (legacy method for compatibility)
      */
     bindEvents() {
         // Search functionality

@@ -332,7 +332,7 @@ defmodule DeeperHub.CMS.Users do
     SELECT COUNT(*) as count
     FROM permissions p
     JOIN users u ON p.user_id = u.id
-    WHERE p.user_id = $1 
+    WHERE p.user_id = $1
       AND (p.entity_id = $2 OR p.entity_id IS NULL)
       AND p.permission_type = $3
       AND u.is_active = true
@@ -365,6 +365,110 @@ defmodule DeeperHub.CMS.Users do
         false
       {:error, _} ->
         false
+    end
+  end
+
+  @doc """
+  Cria uma nova permissão.
+  """
+  def create_permission(attrs) do
+    case Permission.validate(attrs) do
+      {:ok, validated_attrs} ->
+        now = DateTime.utc_now()
+
+        sql = """
+        INSERT INTO permissions (user_id, entity_id, permission_type, created_at)
+        VALUES ($1, $2, $3, $4)
+        RETURNING id
+        """
+
+        params = [
+          validated_attrs[:user_id],
+          validated_attrs[:entity_id],
+          validated_attrs[:permission_type],
+          now
+        ]
+
+        case Connection.query(sql, params) do
+          {:ok, %{rows: [[id]]}} ->
+            get_permission(id)
+          {:error, error} ->
+            {:error, error}
+        end
+
+      {:error, errors} ->
+        {:error, errors}
+    end
+  end
+
+  @doc """
+  Atualiza uma permissão.
+  """
+  def update_permission(id, attrs) do
+    case Permission.validate(attrs) do
+      {:ok, validated_attrs} ->
+        sql = """
+        UPDATE permissions SET
+          user_id = $2, entity_id = $3, permission_type = $4
+        WHERE id = $1
+        """
+
+        params = [
+          id,
+          validated_attrs[:user_id],
+          validated_attrs[:entity_id],
+          validated_attrs[:permission_type]
+        ]
+
+        case Connection.query(sql, params) do
+          {:ok, _} ->
+            get_permission(id)
+          {:error, error} ->
+            {:error, error}
+        end
+
+      {:error, errors} ->
+        {:error, errors}
+    end
+  end
+
+  @doc """
+  Remove uma permissão.
+  """
+  def delete_permission(id) do
+    sql = "DELETE FROM permissions WHERE id = $1"
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{num_rows: 1}} ->
+        {:ok, :deleted}
+      {:ok, %{num_rows: 0}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Obtém uma permissão específica pelo ID.
+  """
+  def get_permission(id) do
+    sql = """
+    SELECT p.id, p.user_id, p.entity_id, p.permission_type, p.created_at,
+           u.username, u.email, e.name as entity_name
+    FROM permissions p
+    LEFT JOIN users u ON p.user_id = u.id
+    LEFT JOIN entities e ON p.entity_id = e.id
+    WHERE p.id = $1
+    """
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{rows: [row]}} ->
+        permission = row_to_permission(row)
+        {:ok, permission}
+      {:ok, %{rows: []}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
     end
   end
 

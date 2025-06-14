@@ -1297,4 +1297,46 @@ class CMSClient {
     async deleteEntityRelationship(id) {
         return this.delete(`/entities/entity-relationships/${id}`);
     }
+
+    // ===== USERS API =====
+
+    async getUsers(params = {}) {
+        return this.get('/users', params);
+    }
+
+    async getUser(id) {
+        return this.get(`/users/${id}`);
+    }
+
+    async createUser(data) {
+        return this.post('/users', data);
+    }
+
+    async updateUser(id, data) {
+        return this.put(`/users/${id}`, data);
+    }
+
+    async deleteUser(id) {
+        return this.delete(`/users/${id}`);
+    }
+
+    async getUserPermissions(userId = null, params = {}) {
+        if (userId) {
+            return this.get(`/users/${userId}/permissions`, params);
+        } else {
+            return this.get('/users/permissions', params);
+        }
+    }
+
+    async createUserPermission(data) {
+        return this.post('/users/permissions', data);
+    }
+
+    async updateUserPermission(id, data) {
+        return this.put(`/users/permissions/${id}`, data);
+    }
+
+    async deleteUserPermission(id) {
+        return this.delete(`/users/permissions/${id}`);
+    }
 }
