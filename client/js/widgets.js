@@ -167,6 +167,8 @@ window.Widgets = {
      * Load data for current tab
      */
     async loadTabData() {
+        const startTime = performance.now();
+
         try {
             const tabConfig = this.tabs[this.currentTab];
             const params = {
@@ -182,6 +184,11 @@ window.Widgets = {
 
             if (this.filterStatus) {
                 params.is_active = this.filterStatus === 'active';
+            }
+
+            // Debug logging
+            if (window.CMSDebug) {
+                window.CMSDebug.logStateChange('Widgets', 'loadTabData', null, { tab: this.currentTab, params });
             }
 
             let response;

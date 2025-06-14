@@ -24,7 +24,6 @@ defmodule DeeperHub.CMS.Pages.Page do
   Valida dados da página.
   """
   def validate(attrs) do
-    IO.puts("🔍 Validando página com attrs: #{inspect(attrs)}")
     errors = []
 
     # Converte chaves string para atom se necessário
@@ -36,8 +35,6 @@ defmodule DeeperHub.CMS.Pages.Page do
         end
       _ -> attrs
     end
-
-    IO.puts("🔍 Attrs após conversão: #{inspect(attrs)}")
 
     # Validação do name
     name = attrs[:name] || attrs["name"]

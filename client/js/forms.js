@@ -811,13 +811,13 @@ window.Forms = {
         this.filterStatus = '';
         this.currentPage = 1;
         this.loadTabData();
-    }
-};
+    },
 
     /**
      * Load forms list
      */
     async loadForms() {
+        const startTime = performance.now();
         const params = {
             page: this.currentPage,
             limit: 20,
@@ -831,6 +831,11 @@ window.Forms = {
 
         if (this.filterStatus) {
             params.is_active = this.filterStatus === 'active';
+        }
+
+        // Debug logging
+        if (window.CMSDebug) {
+            window.CMSDebug.logStateChange('Forms', 'loadForms', null, params);
         }
 
         const html = `
@@ -870,7 +875,16 @@ window.Forms = {
 
         try {
             const response = await cms.getForms(params);
-            
+            const duration = performance.now() - startTime;
+
+            // Debug performance logging
+            if (window.CMSDebug) {
+                window.CMSDebug.logPerformance('Load forms data', duration, {
+                    recordCount: response.data?.length || 0,
+                    params
+                });
+            }
+
             if (response.success) {
                 this.forms = response.data;
                 this.renderFormsTable(response.data);
@@ -879,6 +893,11 @@ window.Forms = {
                 throw new Error(response.message || 'Failed to load forms');
             }
         } catch (error) {
+            // Debug error logging
+            if (window.CMSDebug) {
+                window.CMSDebug.logError(error, { method: 'loadForms', params });
+            }
+
             $('#formsTable').html('<div class="text-center p-20">Error loading forms: ' + error.message + '</div>');
         }
     },
@@ -1156,7 +1175,12 @@ window.Forms = {
     async saveForm(formId = null) {
         try {
             const formData = Utils.serializeForm('#formForm');
-            
+
+            // Debug logging
+            if (window.CMSDebug) {
+                window.CMSDebug.logFormData('#formForm', formData, formId ? 'update' : 'create');
+            }
+
             // Add current user as creator for new forms
             if (!formId) {
                 const currentUser = Utils.getCurrentUser();
@@ -1168,6 +1192,11 @@ window.Forms = {
                 title: { required: true, label: 'Title' },
                 name: { required: true, label: 'Name', pattern: /^[a-zA-Z0-9_]+$/ }
             });
+
+            // Debug validation logging
+            if (window.CMSDebug) {
+                window.CMSDebug.logValidation('#formForm', validation.valid, validation.errors);
+            }
 
             if (!validation.valid) {
                 Utils.showError('Validation failed: ' + validation.errors.join(', '));

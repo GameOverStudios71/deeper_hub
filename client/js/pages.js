@@ -225,9 +225,24 @@ window.Pages = {
      */
     async loadPages() {
         const params = this.buildParams();
+        const startTime = performance.now();
+
+        // Debug logging
+        if (window.CMSDebug) {
+            window.CMSDebug.logStateChange('Pages', 'loadPages', null, params);
+        }
 
         try {
             const response = await cms.getPages(params);
+            const duration = performance.now() - startTime;
+
+            // Debug performance logging
+            if (window.CMSDebug) {
+                window.CMSDebug.logPerformance('Load pages data', duration, {
+                    recordCount: response.data?.length || 0,
+                    params
+                });
+            }
 
             if (response.success) {
                 this.pages = response.data;
@@ -237,6 +252,11 @@ window.Pages = {
                 throw new Error(response.message || 'Failed to load pages');
             }
         } catch (error) {
+            // Debug error logging
+            if (window.CMSDebug) {
+                window.CMSDebug.logError(error, { method: 'loadPages', params });
+            }
+
             this.showTableError('pages', error.message);
         }
     },
@@ -1098,6 +1118,11 @@ window.Pages = {
             const tabConfig = this.tabs[this.currentTab];
             const entityName = tabConfig.title.slice(0, -1); // Remove 's' from plural
 
+            // Debug logging
+            if (window.CMSDebug) {
+                window.CMSDebug.logFormData('#recordForm', formData, recordId ? 'update' : 'create');
+            }
+
             // Add current user for new records
             if (!recordId) {
                 const currentUser = Utils.getCurrentUser();
@@ -1116,11 +1141,19 @@ window.Pages = {
                 if (formData.layout_id) {
                     formData.layout_id = parseInt(formData.layout_id);
                 }
+                if (formData.author_id) {
+                    formData.author_id = parseInt(formData.author_id);
+                }
             }
 
             // Validation rules based on tab
             const validationRules = this.getValidationRules();
             const validation = Utils.validateForm('#recordForm', validationRules);
+
+            // Debug validation logging
+            if (window.CMSDebug) {
+                window.CMSDebug.logValidation('#recordForm', validation.valid, validation.errors);
+            }
 
             if (!validation.valid) {
                 Utils.showError('Validation failed: ' + validation.errors.join(', '));

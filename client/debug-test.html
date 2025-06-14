@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug System Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .test-button { margin: 5px; padding: 10px 15px; background: #007bff; color: white; border: none; border-radius: 3px; cursor: pointer; }
+        .test-button:hover { background: #0056b3; }
+        .test-result { margin: 10px 0; padding: 10px; background: #f8f9fa; border-radius: 3px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>🐛 Debug System Test</h1>
+    <p>Esta página testa se o sistema de debug está funcionando corretamente em todos os módulos.</p>
+
+    <div class="test-section">
+        <h3>🔧 Sistema de Debug</h3>
+        <button class="test-button" onclick="testDebugSystem()">Testar Sistema de Debug</button>
+        <button class="test-button" onclick="testDebugPanel()">Testar Painel Visual</button>
+        <button class="test-button" onclick="clearDebugLogs()">Limpar Logs</button>
+        <div id="debug-system-result" class="test-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>🔄 API Debug</h3>
+        <button class="test-button" onclick="testApiDebug()">Testar Log de API</button>
+        <button class="test-button" onclick="testApiError()">Testar Erro de API</button>
+        <div id="api-debug-result" class="test-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>📋 Form Debug</h3>
+        <button class="test-button" onclick="testFormDebug()">Testar Log de Formulário</button>
+        <button class="test-button" onclick="testValidationDebug()">Testar Validação</button>
+        <div id="form-debug-result" class="test-result"></div>
+        
+        <form id="testForm" style="margin-top: 10px;">
+            <input type="text" name="test_field" placeholder="Campo de teste" required>
+            <input type="email" name="email" placeholder="Email">
+            <button type="submit">Enviar Teste</button>
+        </form>
+    </div>
+
+    <div class="test-section">
+        <h3>⚡ Performance Debug</h3>
+        <button class="test-button" onclick="testPerformanceDebug()">Testar Performance</button>
+        <button class="test-button" onclick="testSlowOperation()">Testar Operação Lenta</button>
+        <div id="performance-debug-result" class="test-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>💥 Error Debug</h3>
+        <button class="test-button" onclick="testErrorDebug()">Testar Erro JavaScript</button>
+        <button class="test-button" onclick="testPromiseRejection()">Testar Promise Rejeitada</button>
+        <div id="error-debug-result" class="test-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>🔄 State Debug</h3>
+        <button class="test-button" onclick="testStateDebug()">Testar Mudança de Estado</button>
+        <div id="state-debug-result" class="test-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>📊 Debug Stats</h3>
+        <button class="test-button" onclick="showDebugStats()">Mostrar Estatísticas</button>
+        <button class="test-button" onclick="downloadDebugLogs()">Baixar Logs</button>
+        <div id="stats-result" class="test-result"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/debug.js"></script>
+    <script src="js/debug-integration.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/cms-client.js"></script>
+
+    <script>
+        // Funções de teste
+        function testDebugSystem() {
+            const result = document.getElementById('debug-system-result');
+            
+            if (window.CMSDebug) {
+                window.CMSDebug.log('test', 'Sistema de debug funcionando!', { 
+                    timestamp: new Date().toISOString(),
+                    test: 'debug-system'
+                }, 'info');
+                
+                result.innerHTML = '<span class="success">✅ Sistema de debug está funcionando!</span>';
+                result.className = 'test-result success';
+            } else {
+                result.innerHTML = '<span class="error">❌ Sistema de debug não encontrado!</span>';
+                result.className = 'test-result error';
+            }
+        }
+
+        function testDebugPanel() {
+            const result = document.getElementById('debug-system-result');
+            const panel = document.getElementById('cms-debug-panel');
+            
+            if (panel) {
+                panel.style.display = panel.style.display === 'none' ? 'flex' : 'none';
+                result.innerHTML = '<span class="success">✅ Painel de debug alternado!</span>';
+            } else {
+                result.innerHTML = '<span class="error">❌ Painel de debug não encontrado!</span>';
+            }
+        }
+
+        function clearDebugLogs() {
+            if (window.CMSDebug) {
+                window.CMSDebug.clearLogs();
+                document.getElementById('debug-system-result').innerHTML = '<span class="success">✅ Logs limpos!</span>';
+            }
+        }
+
+        function testApiDebug() {
+            const result = document.getElementById('api-debug-result');
+            
+            if (window.cms) {
+                // Testar uma chamada de API real
+                cms.getPages({ limit: 1 }).then(response => {
+                    result.innerHTML = '<span class="success">✅ API debug funcionando! Verifique o painel de debug.</span>';
+                }).catch(error => {
+                    result.innerHTML = '<span class="success">✅ Erro de API capturado! Verifique o painel de debug.</span>';
+                });
+            } else {
+                result.innerHTML = '<span class="error">❌ CMS Client não encontrado!</span>';
+            }
+        }
+
+        function testApiError() {
+            if (window.CMSDebug) {
+                // Simular erro de API
+                window.CMSDebug.logApiResponse('GET', '/api/test/error', 500, 
+                    { message: 'Erro simulado' }, 
+                    new Error('Erro de teste')
+                );
+                document.getElementById('api-debug-result').innerHTML = '<span class="success">✅ Erro de API simulado!</span>';
+            }
+        }
+
+        function testFormDebug() {
+            const formData = {
+                test_field: 'Valor de teste',
+                email: 'test@example.com',
+                number: 123
+            };
+            
+            if (window.CMSDebug) {
+                window.CMSDebug.logFormData('#testForm', formData, 'test');
+                document.getElementById('form-debug-result').innerHTML = '<span class="success">✅ Form debug funcionando!</span>';
+            }
+        }
+
+        function testValidationDebug() {
+            if (window.CMSDebug) {
+                window.CMSDebug.logValidation('#testForm', false, [
+                    'Campo obrigatório não preenchido',
+                    'Email inválido'
+                ]);
+                document.getElementById('form-debug-result').innerHTML = '<span class="success">✅ Validation debug funcionando!</span>';
+            }
+        }
+
+        function testPerformanceDebug() {
+            if (window.CMSDebug) {
+                window.CMSDebug.logPerformance('Operação de teste', 150, {
+                    details: 'Teste de performance'
+                });
+                document.getElementById('performance-debug-result').innerHTML = '<span class="success">✅ Performance debug funcionando!</span>';
+            }
+        }
+
+        function testSlowOperation() {
+            if (window.CMSDebug) {
+                window.CMSDebug.logPerformance('Operação lenta simulada', 2500, {
+                    details: 'Esta operação é considerada lenta'
+                });
+                document.getElementById('performance-debug-result').innerHTML = '<span class="success">✅ Operação lenta simulada!</span>';
+            }
+        }
+
+        function testErrorDebug() {
+            try {
+                // Gerar erro intencional
+                throw new Error('Erro de teste intencional');
+            } catch (error) {
+                if (window.CMSDebug) {
+                    window.CMSDebug.logError(error, { test: 'error-debug' });
+                }
+                document.getElementById('error-debug-result').innerHTML = '<span class="success">✅ Error debug funcionando!</span>';
+            }
+        }
+
+        function testPromiseRejection() {
+            // Criar promise rejeitada
+            Promise.reject('Promise rejeitada para teste').catch(() => {
+                document.getElementById('error-debug-result').innerHTML = '<span class="success">✅ Promise rejection capturada!</span>';
+            });
+        }
+
+        function testStateDebug() {
+            if (window.CMSDebug) {
+                window.CMSDebug.logStateChange('TestModule', 'currentTab', 'old-tab', 'new-tab');
+                document.getElementById('state-debug-result').innerHTML = '<span class="success">✅ State debug funcionando!</span>';
+            }
+        }
+
+        function showDebugStats() {
+            if (window.CMSDebug) {
+                const stats = window.CMSDebug.getStats();
+                document.getElementById('stats-result').innerHTML = `
+                    <strong>Estatísticas do Debug:</strong><br>
+                    Total de logs: ${stats.totalLogs}<br>
+                    Session ID: ${stats.sessionId}<br>
+                    Uptime: ${Math.round(stats.uptime / 1000)}s<br>
+                    Categorias: ${JSON.stringify(stats.categories)}<br>
+                    Níveis: ${JSON.stringify(stats.levels)}
+                `;
+            }
+        }
+
+        function downloadDebugLogs() {
+            if (window.CMSDebug) {
+                window.CMSDebug.downloadLogs();
+                document.getElementById('stats-result').innerHTML = '<span class="success">✅ Download iniciado!</span>';
+            }
+        }
+
+        // Interceptar submit do formulário de teste
+        document.getElementById('testForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            testFormDebug();
+        });
+
+        // Inicializar teste
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                testDebugSystem();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -149,6 +149,8 @@ window.Users = {
      * Load data for current tab
      */
     async loadTabData() {
+        const startTime = performance.now();
+
         try {
             const tabConfig = this.tabs[this.currentTab];
             const params = {
@@ -166,6 +168,11 @@ window.Users = {
                 params.is_active = this.filterStatus === 'active';
             }
 
+            // Debug logging
+            if (window.CMSDebug) {
+                window.CMSDebug.logStateChange('Users', 'loadTabData', null, { tab: this.currentTab, params });
+            }
+
             let response;
             switch (this.currentTab) {
                 case 'users':
@@ -178,6 +185,16 @@ window.Users = {
                     throw new Error(`Unknown tab: ${this.currentTab}`);
             }
 
+            const duration = performance.now() - startTime;
+
+            // Debug performance logging
+            if (window.CMSDebug) {
+                window.CMSDebug.logPerformance(`Load ${this.currentTab} data`, duration, {
+                    recordCount: response.data?.length || 0,
+                    params
+                });
+            }
+
             if (response.success) {
                 this.data = response.data || [];
                 this.renderTabTable();
@@ -186,6 +203,11 @@ window.Users = {
                 throw new Error(response.message || 'Failed to load data');
             }
         } catch (error) {
+            // Debug error logging
+            if (window.CMSDebug) {
+                window.CMSDebug.logError(error, { method: 'loadTabData', tab: this.currentTab, params });
+            }
+
             console.error(`Error loading ${this.currentTab} data:`, error);
             Utils.showError(`Error loading ${this.currentTab}: ${error.message}`);
 
@@ -498,6 +520,11 @@ window.Users = {
 
             const formData = Utils.serializeForm(form);
             const tabConfig = this.tabs[this.currentTab];
+
+            // Debug logging
+            if (window.CMSDebug) {
+                window.CMSDebug.logFormData('#tabForm', formData, id ? 'update' : 'create');
+            }
 
             // Special validation for users
             if (this.currentTab === 'users' && !id) {

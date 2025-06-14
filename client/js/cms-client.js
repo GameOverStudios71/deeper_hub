@@ -45,6 +45,14 @@ class CMSClient {
      * Make HTTP request to backend
      */
     async request(method, endpoint, data = null, options = {}) {
+        const startTime = performance.now();
+        const url = `${this.baseUrl}${endpoint}`;
+
+        // Debug logging
+        if (window.CMSDebug) {
+            window.CMSDebug.logApiRequest(method, url, data);
+        }
+
         const config = {
             method: method.toUpperCase(),
             headers: this.getHeaders(options.contentType),
@@ -66,10 +74,9 @@ class CMSClient {
             }
         }
 
-        const url = `${this.baseUrl}${endpoint}`;
-
         try {
             const response = await fetch(url, config);
+            const duration = performance.now() - startTime;
 
             // Handle different response types
             let responseData;
@@ -81,16 +88,37 @@ class CMSClient {
                 responseData = await response.text();
             }
 
+            // Debug logging
+            if (window.CMSDebug) {
+                window.CMSDebug.logApiResponse(method, url, response.status, responseData);
+                window.CMSDebug.logPerformance(`API ${method.toUpperCase()} ${endpoint}`, duration);
+            }
+
             if (!response.ok) {
                 const error = new Error(responseData.message || `HTTP ${response.status}`);
                 error.status = response.status;
                 error.data = responseData;
+
+                // Debug error logging
+                if (window.CMSDebug) {
+                    window.CMSDebug.logError(error, { url, method, status: response.status });
+                }
+
                 throw error;
             }
 
             // Transform backend response to expected format
             return this.transformBackendResponse(responseData);
         } catch (error) {
+            const duration = performance.now() - startTime;
+
+            // Debug logging
+            if (window.CMSDebug) {
+                window.CMSDebug.logApiResponse(method, url, 0, null, error);
+                window.CMSDebug.logPerformance(`API ${method.toUpperCase()} ${endpoint} (FAILED)`, duration);
+                window.CMSDebug.logError(error, { url, method });
+            }
+
             console.error('API Request failed:', error);
             throw error;
         }
