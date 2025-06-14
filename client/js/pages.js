@@ -767,6 +767,20 @@ window.Pages = {
                 </div>
 
                 <div class="form-group">
+                    <label for="pageName">Name *</label>
+                    <input type="text" id="pageName" name="name" class="form-control" required
+                           pattern="^[a-zA-Z0-9_]+$" placeholder="page_name">
+                    <small class="form-text text-muted">Internal name (letters, numbers, underscores only)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="pageTitleSystem">System Title *</label>
+                    <input type="text" id="pageTitleSystem" name="title_system" class="form-control" required
+                           placeholder="System Title">
+                    <small class="form-text text-muted">Title used in system navigation</small>
+                </div>
+
+                <div class="form-group">
                     <label for="pageUri">URI *</label>
                     <input type="text" id="pageUri" name="uri" class="form-control" required
                            placeholder="/page-url" pattern="^/.*">
@@ -1094,6 +1108,16 @@ window.Pages = {
                 }
             }
 
+            // Convert ID fields to integers for pages
+            if (this.currentTab === 'pages') {
+                if (formData.page_type_id) {
+                    formData.page_type_id = parseInt(formData.page_type_id);
+                }
+                if (formData.layout_id) {
+                    formData.layout_id = parseInt(formData.layout_id);
+                }
+            }
+
             // Validation rules based on tab
             const validationRules = this.getValidationRules();
             const validation = Utils.validateForm('#recordForm', validationRules);
@@ -1131,6 +1155,8 @@ window.Pages = {
             case 'pages':
                 return {
                     title: { required: true, label: 'Title' },
+                    name: { required: true, label: 'Name', pattern: /^[a-zA-Z0-9_]+$/ },
+                    title_system: { required: true, label: 'System Title' },
                     uri: { required: true, label: 'URI', pattern: /^\/.*/ },
                     page_type_id: { required: true, label: 'Page Type' },
                     layout_id: { required: true, label: 'Layout' }

@@ -713,7 +713,6 @@ class CMSClient {
     }
 
     async createPage(data) {
-        console.log('🔥 createPage called with data:', data);
         return this.post('/pages', data);
     }
 

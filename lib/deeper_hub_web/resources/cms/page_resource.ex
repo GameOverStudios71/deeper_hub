@@ -547,13 +547,11 @@ defmodule DeeperHubWeb.Resources.CMS.PageResource do
   # POST /api/cms/pages - Cria uma nova página
   post "/" do
     Logger.info("Criando nova página", module: __MODULE__)
-    Logger.info("Body params recebidos: #{inspect(conn.body_params)}", module: __MODULE__)
 
     case conn.body_params do
       %{} = params when map_size(params) > 0 ->
         # Converter chaves string para atom se necessário
         page_params = convert_keys_to_atoms(params)
-        Logger.info("Params convertidos: #{inspect(page_params)}", module: __MODULE__)
 
         case Pages.create_page(page_params) do
           {:ok, page} ->
