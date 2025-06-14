@@ -2,7 +2,7 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
   @moduledoc """
   Recurso REST para formulários do CMS.
   Fornece endpoints para gerenciar formulários do sistema.
-  
+
   Endpoints disponíveis:
   - GET /api/cms/forms - Lista todos os formulários
   - GET /api/cms/forms/:id - Obtém um formulário específico pelo ID
@@ -33,7 +33,7 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
   # GET /api/cms/forms - Lista todos os formulários
   get "/" do
     Logger.info("Listando todos os formulários", module: __MODULE__)
-    
+
     case Forms.list_forms() do
       {:ok, forms} ->
         response = %{
@@ -41,20 +41,20 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
           data: forms,
           count: length(forms)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
 
       {:error, reason} ->
         Logger.error("Erro ao listar formulários: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao listar formulários",
           details: inspect(reason)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
@@ -64,7 +64,7 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
   # GET /api/cms/forms/active - Lista formulários ativos
   get "/active" do
     Logger.info("Listando formulários ativos", module: __MODULE__)
-    
+
     case Forms.list_active_forms() do
       {:ok, forms} ->
         response = %{
@@ -72,30 +72,32 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
           data: forms,
           count: length(forms)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
 
       {:error, reason} ->
         Logger.error("Erro ao listar formulários ativos: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao listar formulários ativos",
           details: inspect(reason)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
     end
   end
 
+  # ===== FORM FIELD TYPES ROUTES =====
+
   # GET /api/cms/forms/field-types - Lista tipos de campo
   get "/field-types" do
     Logger.info("Listando tipos de campo", module: __MODULE__)
-    
+
     case Forms.list_form_field_types() do
       {:ok, types} ->
         response = %{
@@ -103,23 +105,188 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
           data: types,
           count: length(types)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
 
       {:error, reason} ->
         Logger.error("Erro ao listar tipos de campo: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao listar tipos de campo",
           details: inspect(reason)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
+    end
+  end
+
+  # POST /api/cms/forms/field-types - Cria um novo tipo de campo
+  post "/field-types" do
+    Logger.info("Criando novo tipo de campo", module: __MODULE__)
+
+    type_data = convert_keys_to_atoms(conn.body_params)
+
+    case Forms.create_form_field_type(type_data) do
+      {:ok, type} ->
+        response = %{
+          status: "success",
+          data: type,
+          message: "Tipo de campo criado com sucesso"
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(201, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao criar tipo de campo: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao criar tipo de campo",
+          details: inspect(reason)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(400, Jason.encode!(error_response))
+    end
+  end
+
+  # ===== FORM FIELDS ROUTES =====
+
+  # GET /api/cms/forms/fields - Lista campos de formulário
+  get "/fields" do
+    Logger.info("Listando campos de formulário", module: __MODULE__)
+
+    case Forms.list_form_fields() do
+      {:ok, fields} ->
+        response = %{
+          status: "success",
+          data: fields,
+          count: length(fields)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(200, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao listar campos: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao listar campos",
+          details: inspect(reason)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(500, Jason.encode!(error_response))
+    end
+  end
+
+  # POST /api/cms/forms/fields - Cria um novo campo
+  post "/fields" do
+    Logger.info("Criando novo campo", module: __MODULE__)
+
+    field_data = convert_keys_to_atoms(conn.body_params)
+
+    case Forms.create_form_field(field_data) do
+      {:ok, field} ->
+        response = %{
+          status: "success",
+          data: field,
+          message: "Campo criado com sucesso"
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(201, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao criar campo: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao criar campo",
+          details: inspect(reason)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(400, Jason.encode!(error_response))
+    end
+  end
+
+  # ===== FORM DISPLAYS ROUTES =====
+
+  # GET /api/cms/forms/displays - Lista modos de exibição
+  get "/displays" do
+    Logger.info("Listando modos de exibição", module: __MODULE__)
+
+    case Forms.list_form_displays() do
+      {:ok, displays} ->
+        response = %{
+          status: "success",
+          data: displays,
+          count: length(displays)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(200, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao listar displays: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao listar displays",
+          details: inspect(reason)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(500, Jason.encode!(error_response))
+    end
+  end
+
+  # POST /api/cms/forms/displays - Cria um novo modo de exibição
+  post "/displays" do
+    Logger.info("Criando novo modo de exibição", module: __MODULE__)
+
+    display_data = convert_keys_to_atoms(conn.body_params)
+
+    case Forms.create_form_display(display_data) do
+      {:ok, display} ->
+        response = %{
+          status: "success",
+          data: display,
+          message: "Modo de exibição criado com sucesso"
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(201, Jason.encode!(response))
+
+      {:error, reason} ->
+        Logger.error("Erro ao criar display: #{inspect(reason)}", module: __MODULE__)
+
+        error_response = %{
+          status: "error",
+          message: "Erro ao criar display",
+          details: inspect(reason)
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(400, Jason.encode!(error_response))
     end
   end
 
@@ -127,14 +294,14 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
   get "/name/:name" do
     form_name = conn.path_params["name"]
     Logger.info("Buscando formulário por nome: #{form_name}", module: __MODULE__)
-    
+
     case Forms.get_form_by_name(form_name) do
       {:ok, form} ->
         response = %{
           status: "success",
           data: form
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
@@ -144,20 +311,20 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
           status: "error",
           message: "Formulário não encontrado para nome: #{form_name}"
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(404, Jason.encode!(error_response))
 
       {:error, reason} ->
         Logger.error("Erro ao buscar formulário por nome #{form_name}: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao buscar formulário",
           details: inspect(reason)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
@@ -168,14 +335,14 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
   get "/:id" do
     form_id = conn.path_params["id"]
     Logger.info("Buscando formulário com ID: #{form_id}", module: __MODULE__)
-    
+
     case Forms.get_form(form_id) do
       {:ok, form} ->
         response = %{
           status: "success",
           data: form
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
@@ -185,20 +352,20 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
           status: "error",
           message: "Formulário não encontrado"
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(404, Jason.encode!(error_response))
 
       {:error, reason} ->
         Logger.error("Erro ao buscar formulário #{form_id}: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao buscar formulário",
           details: inspect(reason)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
@@ -208,12 +375,12 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
   # POST /api/cms/forms - Cria um novo formulário
   post "/" do
     Logger.info("Criando novo formulário", module: __MODULE__)
-    
+
     case conn.body_params do
       %{} = params when map_size(params) > 0 ->
         # Converter chaves string para atom se necessário
         form_params = convert_keys_to_atoms(params)
-        
+
         case Forms.create_form(form_params) do
           {:ok, form} ->
             response = %{
@@ -221,20 +388,20 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
               message: "Formulário criado com sucesso",
               data: form
             }
-            
+
             conn
             |> put_resp_content_type("application/json")
             |> send_resp(201, Jason.encode!(response))
 
           {:error, reason} ->
             Logger.error("Erro ao criar formulário: #{inspect(reason)}", module: __MODULE__)
-            
+
             error_response = %{
               status: "error",
               message: "Erro ao criar formulário",
               details: inspect(reason)
             }
-            
+
             conn
             |> put_resp_content_type("application/json")
             |> send_resp(400, Jason.encode!(error_response))
@@ -245,7 +412,7 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
           status: "error",
           message: "Dados do formulário são obrigatórios"
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(400, Jason.encode!(error_response))
@@ -256,12 +423,12 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
   put "/:id" do
     form_id = conn.path_params["id"]
     Logger.info("Atualizando formulário com ID: #{form_id}", module: __MODULE__)
-    
+
     case conn.body_params do
       %{} = params when map_size(params) > 0 ->
         # Converter chaves string para atom se necessário
         form_params = convert_keys_to_atoms(params)
-        
+
         case Forms.update_form(form_id, form_params) do
           {:ok, form} ->
             response = %{
@@ -269,7 +436,7 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
               message: "Formulário atualizado com sucesso",
               data: form
             }
-            
+
             conn
             |> put_resp_content_type("application/json")
             |> send_resp(200, Jason.encode!(response))
@@ -279,20 +446,20 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
               status: "error",
               message: "Formulário não encontrado"
             }
-            
+
             conn
             |> put_resp_content_type("application/json")
             |> send_resp(404, Jason.encode!(error_response))
 
           {:error, reason} ->
             Logger.error("Erro ao atualizar formulário #{form_id}: #{inspect(reason)}", module: __MODULE__)
-            
+
             error_response = %{
               status: "error",
               message: "Erro ao atualizar formulário",
               details: inspect(reason)
             }
-            
+
             conn
             |> put_resp_content_type("application/json")
             |> send_resp(400, Jason.encode!(error_response))
@@ -303,7 +470,7 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
           status: "error",
           message: "Dados para atualização são obrigatórios"
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(400, Jason.encode!(error_response))
@@ -314,14 +481,14 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
   delete "/:id" do
     form_id = conn.path_params["id"]
     Logger.info("Removendo formulário com ID: #{form_id}", module: __MODULE__)
-    
+
     case Forms.delete_form(form_id) do
       :ok ->
         response = %{
           status: "success",
           message: "Formulário removido com sucesso"
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(200, Jason.encode!(response))
@@ -331,20 +498,20 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
           status: "error",
           message: "Formulário não encontrado ou é um formulário do sistema"
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(404, Jason.encode!(error_response))
 
       {:error, reason} ->
         Logger.error("Erro ao remover formulário #{form_id}: #{inspect(reason)}", module: __MODULE__)
-        
+
         error_response = %{
           status: "error",
           message: "Erro ao remover formulário",
           details: inspect(reason)
         }
-        
+
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))

@@ -845,24 +845,148 @@ class CMSClient {
         return this.delete(`/forms/${id}`);
     }
 
-    async getFormFieldTypes() {
-        return this.get('/forms/field-types');
+    // Form Field Types API
+    async getFormFieldTypes(params = {}) {
+        return this.get('/forms/field-types', params);
     }
 
-    async getFormFields(formId) {
-        return this.get(`/forms/${formId}/fields`);
+    async getFormFieldType(id) {
+        return this.get(`/forms/field-types/${id}`);
     }
 
-    async createFormField(formId, data) {
-        return this.post(`/forms/${formId}/fields`, data);
+    async createFormFieldType(data) {
+        return this.post('/forms/field-types', data);
     }
 
-    async updateFormField(formId, fieldId, data) {
-        return this.put(`/forms/${formId}/fields/${fieldId}`, data);
+    async updateFormFieldType(id, data) {
+        return this.put(`/forms/field-types/${id}`, data);
     }
 
-    async deleteFormField(formId, fieldId) {
-        return this.delete(`/forms/${formId}/fields/${fieldId}`);
+    async deleteFormFieldType(id) {
+        return this.delete(`/forms/field-types/${id}`);
+    }
+
+    // Form Fields API
+    async getFormFields(params = {}) {
+        return this.get('/forms/fields', params);
+    }
+
+    async getFormField(id) {
+        return this.get(`/forms/fields/${id}`);
+    }
+
+    async createFormField(data) {
+        return this.post('/forms/fields', data);
+    }
+
+    async updateFormField(id, data) {
+        return this.put(`/forms/fields/${id}`, data);
+    }
+
+    async deleteFormField(id) {
+        return this.delete(`/forms/fields/${id}`);
+    }
+
+    // Form Displays API
+    async getFormDisplays(params = {}) {
+        return this.get('/forms/displays', params);
+    }
+
+    async getFormDisplay(id) {
+        return this.get(`/forms/displays/${id}`);
+    }
+
+    async createFormDisplay(data) {
+        return this.post('/forms/displays', data);
+    }
+
+    async updateFormDisplay(id, data) {
+        return this.put(`/forms/displays/${id}`, data);
+    }
+
+    async deleteFormDisplay(id) {
+        return this.delete(`/forms/displays/${id}`);
+    }
+
+    // Form Display Fields API
+    async getFormDisplayFields(params = {}) {
+        return this.get('/forms/display-fields', params);
+    }
+
+    async getFormDisplayField(id) {
+        return this.get(`/forms/display-fields/${id}`);
+    }
+
+    async createFormDisplayField(data) {
+        return this.post('/forms/display-fields', data);
+    }
+
+    async updateFormDisplayField(id, data) {
+        return this.put(`/forms/display-fields/${id}`, data);
+    }
+
+    async deleteFormDisplayField(id) {
+        return this.delete(`/forms/display-fields/${id}`);
+    }
+
+    // Form Pre Lists API
+    async getFormPreLists(params = {}) {
+        return this.get('/forms/pre-lists', params);
+    }
+
+    async getFormPreList(id) {
+        return this.get(`/forms/pre-lists/${id}`);
+    }
+
+    async createFormPreList(data) {
+        return this.post('/forms/pre-lists', data);
+    }
+
+    async updateFormPreList(id, data) {
+        return this.put(`/forms/pre-lists/${id}`, data);
+    }
+
+    async deleteFormPreList(id) {
+        return this.delete(`/forms/pre-lists/${id}`);
+    }
+
+    // Form Pre Values API
+    async getFormPreValues(params = {}) {
+        return this.get('/forms/pre-values', params);
+    }
+
+    async getFormPreValue(id) {
+        return this.get(`/forms/pre-values/${id}`);
+    }
+
+    async createFormPreValue(data) {
+        return this.post('/forms/pre-values', data);
+    }
+
+    async updateFormPreValue(id, data) {
+        return this.put(`/forms/pre-values/${id}`, data);
+    }
+
+    async deleteFormPreValue(id) {
+        return this.delete(`/forms/pre-values/${id}`);
+    }
+
+    // Form Submissions API
+    async getFormSubmissions(params = {}) {
+        return this.get('/forms/submissions', params);
+    }
+
+    async getFormSubmission(id) {
+        return this.get(`/forms/submissions/${id}`);
+    }
+
+    // Form Submission Data API
+    async getFormSubmissionData(params = {}) {
+        return this.get('/forms/submission-data', params);
+    }
+
+    async getFormSubmissionDataBySubmission(submissionId) {
+        return this.get(`/forms/submissions/${submissionId}/data`);
     }
 
     // Widgets API
