@@ -622,6 +622,252 @@ window.Media = {
     },
 
     /**
+     * Create form for Files tab
+     */
+    createFileForm(record = null) {
+        const folderId = record?.folder_id || '';
+        const storageId = record?.storage_id || 1;
+        const originalName = record?.original_name || '';
+        const title = record?.title || '';
+        const description = record?.description || '';
+        const altText = record?.alt_text || '';
+        const caption = record?.caption || '';
+        const seoTitle = record?.seo_title || '';
+        const seoDescription = record?.seo_description || '';
+        const isPublic = record?.is_public !== false;
+        const isActive = record?.is_active !== false;
+        const isFeatured = record?.is_featured === true;
+
+        return `
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="original_name">File Name *</label>
+                        <input type="text" class="form-control" id="original_name" name="original_name" value="${originalName}" required>
+                        <div class="invalid-feedback">Please provide a valid file name.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" value="${title}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="folder_id">Folder ID</label>
+                        <input type="number" class="form-control" id="folder_id" name="folder_id" value="${folderId}">
+                        <small class="form-text text-muted">Leave empty for root folder</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="storage_id">Storage ID *</label>
+                        <input type="number" class="form-control" id="storage_id" name="storage_id" value="${storageId}" required>
+                        <div class="invalid-feedback">Please provide a valid storage ID.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3">${description}</textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="alt_text">Alt Text</label>
+                        <input type="text" class="form-control" id="alt_text" name="alt_text" value="${altText}">
+                        <small class="form-text text-muted">For accessibility and SEO</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="caption">Caption</label>
+                        <input type="text" class="form-control" id="caption" name="caption" value="${caption}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="seo_title">SEO Title</label>
+                        <input type="text" class="form-control" id="seo_title" name="seo_title" value="${seoTitle}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="seo_description">SEO Description</label>
+                        <input type="text" class="form-control" id="seo_description" name="seo_description" value="${seoDescription}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="is_public">Public Access</label>
+                        <select class="form-control" id="is_public" name="is_public">
+                            <option value="true" ${isPublic ? 'selected' : ''}>Yes</option>
+                            <option value="false" ${!isPublic ? 'selected' : ''}>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="is_active">Status</label>
+                        <select class="form-control" id="is_active" name="is_active">
+                            <option value="true" ${isActive ? 'selected' : ''}>Active</option>
+                            <option value="false" ${!isActive ? 'selected' : ''}>Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="is_featured">Featured</label>
+                        <select class="form-control" id="is_featured" name="is_featured">
+                            <option value="false" ${!isFeatured ? 'selected' : ''}>No</option>
+                            <option value="true" ${isFeatured ? 'selected' : ''}>Yes</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        `;
+    },
+
+    /**
+     * Create form for Transformations tab
+     */
+    createTransformationForm(record = null) {
+        const name = record?.name || '';
+        const title = record?.title || '';
+        const description = record?.description || '';
+        const transformationType = record?.transformation_type || 'resize';
+        const config = record?.config || '{}';
+        const applicableTypes = record?.applicable_types || '["image/*"]';
+        const orderIndex = record?.order_index || 0;
+        const isActive = record?.is_active !== false;
+        const isAutomatic = record?.is_automatic === true;
+
+        return `
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" class="form-control" id="name" name="name" value="${name}" required>
+                        <div class="invalid-feedback">Please provide a valid name.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="title">Title *</label>
+                        <input type="text" class="form-control" id="title" name="title" value="${title}" required>
+                        <div class="invalid-feedback">Please provide a valid title.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3">${description}</textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="transformation_type">Transformation Type *</label>
+                        <select class="form-control" id="transformation_type" name="transformation_type" required>
+                            <option value="resize" ${transformationType === 'resize' ? 'selected' : ''}>Resize</option>
+                            <option value="crop" ${transformationType === 'crop' ? 'selected' : ''}>Crop</option>
+                            <option value="watermark" ${transformationType === 'watermark' ? 'selected' : ''}>Watermark</option>
+                            <option value="compress" ${transformationType === 'compress' ? 'selected' : ''}>Compress</option>
+                            <option value="format" ${transformationType === 'format' ? 'selected' : ''}>Format Conversion</option>
+                            <option value="filter" ${transformationType === 'filter' ? 'selected' : ''}>Filter/Effect</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a transformation type.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="order_index">Order Index</label>
+                        <input type="number" class="form-control" id="order_index" name="order_index" value="${orderIndex}" min="0">
+                        <small class="form-text text-muted">Lower numbers appear first</small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="config">Configuration (JSON)</label>
+                <textarea class="form-control" id="config" name="config" rows="4">${config}</textarea>
+                <small class="form-text text-muted">JSON configuration for the transformation</small>
+            </div>
+            <div class="form-group">
+                <label for="applicable_types">Applicable Types (JSON)</label>
+                <textarea class="form-control" id="applicable_types" name="applicable_types" rows="2">${applicableTypes}</textarea>
+                <small class="form-text text-muted">JSON array of MIME types: ["image/*", "video/*"]</small>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="is_active">Status</label>
+                        <select class="form-control" id="is_active" name="is_active">
+                            <option value="true" ${isActive ? 'selected' : ''}>Active</option>
+                            <option value="false" ${!isActive ? 'selected' : ''}>Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="is_automatic">Automatic</label>
+                        <select class="form-control" id="is_automatic" name="is_automatic">
+                            <option value="false" ${!isAutomatic ? 'selected' : ''}>No</option>
+                            <option value="true" ${isAutomatic ? 'selected' : ''}>Yes</option>
+                        </select>
+                        <small class="form-text text-muted">Apply automatically on upload</small>
+                    </div>
+                </div>
+            </div>
+        `;
+    },
+
+    /**
+     * Create form for File Transformations tab
+     */
+    createFileTransformationForm(record = null) {
+        const originalFileId = record?.original_file_id || '';
+        const transformationId = record?.transformation_id || '';
+        const status = record?.status || 'pending';
+
+        return `
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="original_file_id">Original File ID *</label>
+                        <input type="number" class="form-control" id="original_file_id" name="original_file_id" value="${originalFileId}" required>
+                        <div class="invalid-feedback">Please provide a valid file ID.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="transformation_id">Transformation ID *</label>
+                        <input type="number" class="form-control" id="transformation_id" name="transformation_id" value="${transformationId}" required>
+                        <div class="invalid-feedback">Please provide a valid transformation ID.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select class="form-control" id="status" name="status">
+                    <option value="pending" ${status === 'pending' ? 'selected' : ''}>Pending</option>
+                    <option value="processing" ${status === 'processing' ? 'selected' : ''}>Processing</option>
+                    <option value="completed" ${status === 'completed' ? 'selected' : ''}>Completed</option>
+                    <option value="failed" ${status === 'failed' ? 'selected' : ''}>Failed</option>
+                </select>
+            </div>
+            <div class="alert alert-info">
+                <strong>Note:</strong> File transformations are typically created automatically when files are uploaded or when transformations are applied. Manual creation is for advanced use cases only.
+            </div>
+        `;
+    },
+
+    /**
      * Load media files (legacy method for compatibility)
      */
     async loadMediaFiles() {

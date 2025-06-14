@@ -546,6 +546,52 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
     end
   end
 
+  # POST /api/cms/media/files - Cria novo arquivo
+  post "/files" do
+    Logger.info("Criando novo arquivo de mídia", module: __MODULE__)
+
+    case conn.body_params do
+      %{} = file_data when map_size(file_data) > 0 ->
+        file_attrs = convert_keys_to_atoms(file_data)
+
+        case Media.create_media_file(file_attrs) do
+          {:ok, file} ->
+            response = %{
+              status: "success",
+              message: "Arquivo criado com sucesso",
+              data: file
+            }
+
+            conn
+            |> put_resp_content_type("application/json")
+            |> send_resp(201, Jason.encode!(response))
+
+          {:error, reason} ->
+            Logger.error("Erro ao criar arquivo: #{inspect(reason)}", module: __MODULE__)
+
+            error_response = %{
+              status: "error",
+              message: "Erro ao criar arquivo",
+              details: inspect(reason)
+            }
+
+            conn
+            |> put_resp_content_type("application/json")
+            |> send_resp(400, Jason.encode!(error_response))
+        end
+
+      _ ->
+        error_response = %{
+          status: "error",
+          message: "Dados do arquivo são obrigatórios"
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(400, Jason.encode!(error_response))
+    end
+  end
+
   # ============================================================================
   # TRANSFORMATIONS
   # ============================================================================
@@ -581,6 +627,52 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
     end
   end
 
+  # POST /api/cms/media/transformations - Cria nova transformação
+  post "/transformations" do
+    Logger.info("Criando nova transformação de mídia", module: __MODULE__)
+
+    case conn.body_params do
+      %{} = transformation_data when map_size(transformation_data) > 0 ->
+        transformation_attrs = convert_keys_to_atoms(transformation_data)
+
+        case Media.create_media_transformation(transformation_attrs) do
+          {:ok, transformation} ->
+            response = %{
+              status: "success",
+              message: "Transformação criada com sucesso",
+              data: transformation
+            }
+
+            conn
+            |> put_resp_content_type("application/json")
+            |> send_resp(201, Jason.encode!(response))
+
+          {:error, reason} ->
+            Logger.error("Erro ao criar transformação: #{inspect(reason)}", module: __MODULE__)
+
+            error_response = %{
+              status: "error",
+              message: "Erro ao criar transformação",
+              details: inspect(reason)
+            }
+
+            conn
+            |> put_resp_content_type("application/json")
+            |> send_resp(400, Jason.encode!(error_response))
+        end
+
+      _ ->
+        error_response = %{
+          status: "error",
+          message: "Dados da transformação são obrigatórios"
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(400, Jason.encode!(error_response))
+    end
+  end
+
   # GET /api/cms/media/file-transformations - Lista transformações aplicadas a arquivos
   get "/file-transformations" do
     Logger.info("Listando transformações aplicadas a arquivos", module: __MODULE__)
@@ -609,6 +701,52 @@ defmodule DeeperHubWeb.Resources.CMS.MediaResource do
         conn
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
+    end
+  end
+
+  # POST /api/cms/media/file-transformations - Cria nova transformação de arquivo
+  post "/file-transformations" do
+    Logger.info("Criando nova transformação de arquivo", module: __MODULE__)
+
+    case conn.body_params do
+      %{} = file_transformation_data when map_size(file_transformation_data) > 0 ->
+        file_transformation_attrs = convert_keys_to_atoms(file_transformation_data)
+
+        case Media.create_media_file_transformation(file_transformation_attrs) do
+          {:ok, file_transformation} ->
+            response = %{
+              status: "success",
+              message: "Transformação de arquivo criada com sucesso",
+              data: file_transformation
+            }
+
+            conn
+            |> put_resp_content_type("application/json")
+            |> send_resp(201, Jason.encode!(response))
+
+          {:error, reason} ->
+            Logger.error("Erro ao criar transformação de arquivo: #{inspect(reason)}", module: __MODULE__)
+
+            error_response = %{
+              status: "error",
+              message: "Erro ao criar transformação de arquivo",
+              details: inspect(reason)
+            }
+
+            conn
+            |> put_resp_content_type("application/json")
+            |> send_resp(400, Jason.encode!(error_response))
+        end
+
+      _ ->
+        error_response = %{
+          status: "error",
+          message: "Dados da transformação de arquivo são obrigatórios"
+        }
+
+        conn
+        |> put_resp_content_type("application/json")
+        |> send_resp(400, Jason.encode!(error_response))
     end
   end
 

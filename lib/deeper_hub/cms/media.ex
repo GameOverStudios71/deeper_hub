@@ -422,6 +422,86 @@ defmodule DeeperHub.CMS.Media do
   end
 
   @doc """
+  Cria um novo arquivo de mídia.
+  """
+  def create_media_file(attrs) do
+    # Validação básica
+    original_name = attrs[:original_name]
+    storage_id = attrs[:storage_id]
+    file_size = attrs[:file_size]
+    mime_type = attrs[:mime_type]
+
+    cond do
+      not is_binary(original_name) or String.trim(original_name) == "" ->
+        {:error, ["Nome do arquivo é obrigatório"]}
+
+      not is_integer(storage_id) and not is_binary(storage_id) ->
+        {:error, ["Storage ID é obrigatório"]}
+
+      not is_integer(file_size) and not is_binary(file_size) ->
+        {:error, ["Tamanho do arquivo é obrigatório"]}
+
+      not is_binary(mime_type) or String.trim(mime_type) == "" ->
+        {:error, ["Tipo MIME é obrigatório"]}
+
+      true ->
+        sql = """
+        INSERT INTO cms_media_files
+        (folder_id, storage_id, original_name, file_name, file_path, full_path, file_size,
+         mime_type, file_extension, file_hash, title, description, alt_text, caption,
+         seo_title, seo_description, is_public, is_active, is_featured, created_at, updated_at, uploaded_by)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22)
+        RETURNING id
+        """
+
+        now = DateTime.utc_now() |> DateTime.to_iso8601()
+
+        # Gerar nome do arquivo e extensão
+        file_name = attrs[:file_name] || original_name
+        file_extension = attrs[:file_extension] || Path.extname(original_name) |> String.trim_leading(".")
+
+        # Gerar paths
+        file_path = attrs[:file_path] || "/uploads/#{file_name}"
+        full_path = attrs[:full_path] || file_path
+
+        # Gerar hash (simulado)
+        file_hash = attrs[:file_hash] || :crypto.hash(:sha256, original_name <> now) |> Base.encode16(case: :lower)
+
+        params = [
+          attrs[:folder_id],
+          storage_id,
+          original_name,
+          file_name,
+          file_path,
+          full_path,
+          file_size,
+          mime_type,
+          file_extension,
+          file_hash,
+          attrs[:title] || "",
+          attrs[:description] || "",
+          attrs[:alt_text] || "",
+          attrs[:caption] || "",
+          attrs[:seo_title] || "",
+          attrs[:seo_description] || "",
+          attrs[:is_public] || true,
+          attrs[:is_active] || true,
+          attrs[:is_featured] || false,
+          now,
+          now,
+          attrs[:uploaded_by] || 1
+        ]
+
+        case Connection.query(sql, params) do
+          {:ok, %{rows: [[id]]}} ->
+            get_media_file(id)
+          {:error, error} ->
+            {:error, error}
+        end
+    end
+  end
+
+  @doc """
   Busca arquivo por ID.
   """
   def get_media_file(id) do
@@ -456,6 +536,79 @@ defmodule DeeperHub.CMS.Media do
   # ============================================================================
 
   @doc """
+  Cria uma nova transformação de mídia.
+  """
+  def create_media_transformation(attrs) do
+    # Validação básica
+    name = attrs[:name]
+    title = attrs[:title]
+    transformation_type = attrs[:transformation_type]
+
+    cond do
+      not is_binary(name) or String.trim(name) == "" ->
+        {:error, ["Nome da transformação é obrigatório"]}
+
+      not is_binary(title) or String.trim(title) == "" ->
+        {:error, ["Título da transformação é obrigatório"]}
+
+      not is_binary(transformation_type) or String.trim(transformation_type) == "" ->
+        {:error, ["Tipo de transformação é obrigatório"]}
+
+      true ->
+        sql = """
+        INSERT INTO cms_media_transformations
+        (name, title, description, transformation_type, config, applicable_types, is_active, is_automatic, order_index, created_at)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+        RETURNING id
+        """
+
+        now = DateTime.utc_now() |> DateTime.to_iso8601()
+
+        params = [
+          name,
+          title,
+          attrs[:description] || "",
+          transformation_type,
+          attrs[:config] || "{}",
+          attrs[:applicable_types] || "[\"*/*\"]",
+          attrs[:is_active] || true,
+          attrs[:is_automatic] || false,
+          attrs[:order_index] || 0,
+          now
+        ]
+
+        case Connection.query(sql, params) do
+          {:ok, %{rows: [[id]]}} ->
+            get_media_transformation(id)
+          {:error, error} ->
+            {:error, error}
+        end
+    end
+  end
+
+  @doc """
+  Busca transformação por ID.
+  """
+  def get_media_transformation(id) do
+    sql = """
+    SELECT id, name, title, description, transformation_type, config, applicable_types,
+           is_active, is_automatic, created_at, order_index
+    FROM cms_media_transformations
+    WHERE id = $1
+    """
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{rows: [row]}} ->
+        transformation = row_to_media_transformation(row)
+        {:ok, transformation}
+      {:ok, %{rows: []}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
   Lista todas as transformações.
   """
   def list_media_transformations do
@@ -478,6 +631,82 @@ defmodule DeeperHub.CMS.Media do
   # ============================================================================
   # MEDIA FILE TRANSFORMATIONS
   # ============================================================================
+
+  @doc """
+  Cria uma nova transformação aplicada a arquivo.
+  """
+  def create_media_file_transformation(attrs) do
+    # Validação básica
+    original_file_id = attrs[:original_file_id]
+    transformation_id = attrs[:transformation_id]
+
+    cond do
+      not is_integer(original_file_id) and not is_binary(original_file_id) ->
+        {:error, ["ID do arquivo original é obrigatório"]}
+
+      not is_integer(transformation_id) and not is_binary(transformation_id) ->
+        {:error, ["ID da transformação é obrigatório"]}
+
+      true ->
+        sql = """
+        INSERT INTO cms_media_file_transformations
+        (original_file_id, transformation_id, file_name, file_path, full_path, file_size, status, created_at)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+        RETURNING id
+        """
+
+        now = DateTime.utc_now() |> DateTime.to_iso8601()
+
+        # Valores padrão para campos obrigatórios
+        file_name = attrs[:file_name] || "pending_transformation"
+        file_path = attrs[:file_path] || "/tmp/pending"
+        full_path = attrs[:full_path] || "/tmp/pending_transformation"
+        file_size = attrs[:file_size] || 0
+
+        params = [
+          original_file_id,
+          transformation_id,
+          file_name,
+          file_path,
+          full_path,
+          file_size,
+          attrs[:status] || "pending",
+          now
+        ]
+
+        case Connection.query(sql, params) do
+          {:ok, %{rows: [[id]]}} ->
+            get_media_file_transformation(id)
+          {:error, error} ->
+            {:error, error}
+        end
+    end
+  end
+
+  @doc """
+  Busca transformação de arquivo por ID.
+  """
+  def get_media_file_transformation(id) do
+    sql = """
+    SELECT ft.id, ft.original_file_id, ft.transformation_id, ft.file_path,
+           ft.file_size, ft.status, ft.error_message, ft.created_at, ft.completed_at,
+           f.original_name as file_name, t.name as transformation_name
+    FROM cms_media_file_transformations ft
+    LEFT JOIN cms_media_files f ON ft.original_file_id = f.id
+    LEFT JOIN cms_media_transformations t ON ft.transformation_id = t.id
+    WHERE ft.id = $1
+    """
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{rows: [row]}} ->
+        file_transformation = row_to_media_file_transformation(row)
+        {:ok, file_transformation}
+      {:ok, %{rows: []}} ->
+        {:error, :not_found}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
 
   @doc """
   Lista todas as transformações aplicadas a arquivos.
