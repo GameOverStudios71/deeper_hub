@@ -100,6 +100,128 @@ defmodule DeeperHub.CMS.Media do
     end
   end
 
+  @doc """
+  Cria um novo storage de mídia.
+  """
+  def create_media_storage(attrs) do
+    case MediaStorage.validate(attrs) do
+      {:ok, validated_attrs} ->
+        sql = """
+        INSERT INTO cms_media_storage
+        (name, title, description, storage_type, config, base_url, base_path,
+         max_file_size, allowed_extensions, quota_limit, quota_used, is_active,
+         is_default, is_public, created_at, updated_at)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16)
+        RETURNING id
+        """
+
+        now = DateTime.utc_now() |> DateTime.to_iso8601()
+
+        params = [
+          validated_attrs[:name],
+          validated_attrs[:title],
+          validated_attrs[:description] || "",
+          validated_attrs[:storage_type],
+          validated_attrs[:config] || "{}",
+          validated_attrs[:base_url] || "",
+          validated_attrs[:base_path] || "",
+          validated_attrs[:max_file_size] || 10485760,
+          validated_attrs[:allowed_extensions] || "[]",
+          validated_attrs[:quota_limit] || 0,
+          validated_attrs[:quota_used] || 0,
+          validated_attrs[:is_active] || true,
+          validated_attrs[:is_default] || false,
+          validated_attrs[:is_public] || true,
+          now,
+          now
+        ]
+
+        case Connection.query(sql, params) do
+          {:ok, %{rows: [[id]]}} ->
+            get_media_storage(id)
+          {:error, error} ->
+            {:error, error}
+        end
+
+      {:error, errors} ->
+        {:error, errors}
+    end
+  end
+
+  @doc """
+  Atualiza um storage de mídia.
+  """
+  def update_media_storage(id, attrs) do
+    case get_media_storage(id) do
+      {:ok, _storage} ->
+        case MediaStorage.validate(attrs) do
+          {:ok, validated_attrs} ->
+            sql = """
+            UPDATE cms_media_storage
+            SET name = $2, title = $3, description = $4, storage_type = $5,
+                config = $6, base_url = $7, base_path = $8, max_file_size = $9,
+                allowed_extensions = $10, quota_limit = $11, quota_used = $12,
+                is_active = $13, is_default = $14, is_public = $15, updated_at = $16
+            WHERE id = $1
+            """
+
+            now = DateTime.utc_now() |> DateTime.to_iso8601()
+
+            params = [
+              id,
+              validated_attrs[:name],
+              validated_attrs[:title],
+              validated_attrs[:description] || "",
+              validated_attrs[:storage_type],
+              validated_attrs[:config] || "{}",
+              validated_attrs[:base_url] || "",
+              validated_attrs[:base_path] || "",
+              validated_attrs[:max_file_size] || 10485760,
+              validated_attrs[:allowed_extensions] || "[]",
+              validated_attrs[:quota_limit] || 0,
+              validated_attrs[:quota_used] || 0,
+              validated_attrs[:is_active] || true,
+              validated_attrs[:is_default] || false,
+              validated_attrs[:is_public] || true,
+              now
+            ]
+
+            case Connection.query(sql, params) do
+              {:ok, _} ->
+                get_media_storage(id)
+              {:error, error} ->
+                {:error, error}
+            end
+
+          {:error, errors} ->
+            {:error, errors}
+        end
+
+      {:error, :not_found} ->
+        {:error, :not_found}
+    end
+  end
+
+  @doc """
+  Remove um storage de mídia.
+  """
+  def delete_media_storage(id) do
+    case get_media_storage(id) do
+      {:ok, storage} ->
+        sql = "DELETE FROM cms_media_storage WHERE id = $1"
+
+        case Connection.query(sql, [id]) do
+          {:ok, _} ->
+            {:ok, storage}
+          {:error, error} ->
+            {:error, error}
+        end
+
+      {:error, :not_found} ->
+        {:error, :not_found}
+    end
+  end
+
   # ============================================================================
   # MEDIA FOLDERS
   # ============================================================================
@@ -146,6 +268,92 @@ defmodule DeeperHub.CMS.Media do
       {:ok, %{rows: rows}} ->
         folders = Enum.map(rows, &row_to_media_folder/1)
         {:ok, folders}
+      {:error, error} ->
+        {:error, error}
+    end
+  end
+
+  @doc """
+  Cria uma nova pasta de mídia.
+  """
+  def create_media_folder(attrs) do
+    # Validação básica
+    name = attrs[:name]
+    storage_id = attrs[:storage_id]
+
+    cond do
+      not is_binary(name) or String.trim(name) == "" ->
+        {:error, ["Nome da pasta é obrigatório"]}
+
+      not is_integer(storage_id) and not is_binary(storage_id) ->
+        {:error, ["Storage ID é obrigatório"]}
+
+      true ->
+        sql = """
+        INSERT INTO cms_media_folders
+        (parent_id, storage_id, name, path, full_path, description, is_public, is_active, created_at, updated_at)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+        RETURNING id
+        """
+
+        now = DateTime.utc_now() |> DateTime.to_iso8601()
+        parent_id = attrs[:parent_id]
+
+        # Construir path e full_path baseado no parent
+        {path, full_path} = if parent_id do
+          case get_media_folder(parent_id) do
+            {:ok, parent_folder} ->
+              path = "#{parent_folder.path}/#{name}"
+              full_path = "#{parent_folder.full_path}/#{name}"
+              {path, full_path}
+            _ ->
+              {name, name}
+          end
+        else
+          {name, name}
+        end
+
+        params = [
+          parent_id,
+          storage_id,
+          name,
+          path,
+          full_path,
+          attrs[:description] || "",
+          attrs[:is_public] || true,
+          attrs[:is_active] || true,
+          now,
+          now
+        ]
+
+        case Connection.query(sql, params) do
+          {:ok, %{rows: [[id]]}} ->
+            get_media_folder(id)
+          {:error, error} ->
+            {:error, error}
+        end
+    end
+  end
+
+  @doc """
+  Busca pasta por ID.
+  """
+  def get_media_folder(id) do
+    sql = """
+    SELECT f.id, f.parent_id, f.storage_id, f.name, f.path, f.full_path,
+           f.description, f.is_public, f.is_active, f.created_at, f.updated_at,
+           s.title as storage_title
+    FROM cms_media_folders f
+    LEFT JOIN cms_media_storage s ON f.storage_id = s.id
+    WHERE f.id = $1
+    """
+
+    case Connection.query(sql, [id]) do
+      {:ok, %{rows: [row]}} ->
+        folder = row_to_media_folder(row)
+        {:ok, folder}
+      {:ok, %{rows: []}} ->
+        {:error, :not_found}
       {:error, error} ->
         {:error, error}
     end

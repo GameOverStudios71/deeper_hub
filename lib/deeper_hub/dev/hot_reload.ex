@@ -27,7 +27,7 @@ defmodule DeeperHub.Dev.HotReload do
 
   def init(_opts) do
     if Mix.env() == :dev do
-      Logger.info("🔥 Hot Reload ativado - monitorando mudanças...")
+      Logger.info("Reload ativado - monitorando mudanças...")
 
       # Iniciar o FileSystem watcher
       {:ok, watcher_pid} = FileSystem.start_link(dirs: @watched_dirs)
@@ -89,32 +89,32 @@ defmodule DeeperHub.Dev.HotReload do
   end
 
   defp perform_reload do
-    Logger.info("🔄 Detectada mudança nos arquivos - recompilando...")
+    Logger.info("Detectada mudança nos arquivos - recompilando...")
 
     # Recompilar o projeto
     result = Mix.Task.run("compile", ["--force"])
 
     case result do
       :ok ->
-        Logger.info("✅ Recompilação concluída com sucesso!")
+        Logger.info("Recompilação concluída com sucesso!")
         broadcast_reload_event()
 
       :noop ->
-        Logger.info("✅ Nenhuma mudança detectada para recompilação")
+        Logger.info("Nenhuma mudança detectada para recompilação")
         broadcast_reload_event()
 
       {:error, _} ->
-        Logger.error("❌ Erro na recompilação")
+        Logger.error("Erro na recompilação")
 
       _ ->
-        Logger.info("✅ Recompilação processada (#{inspect(result)})")
+        Logger.info("Recompilação processada (#{inspect(result)})")
         broadcast_reload_event()
     end
   end
 
   defp broadcast_reload_event do
     # Por enquanto apenas log, mas pode ser expandido para WebSocket
-    Logger.info("📡 Notificando clientes sobre reload...")
+    Logger.info("Notificando clientes sobre reload...")
   end
 
   def terminate(_reason, %{watcher_pid: watcher_pid}) when is_pid(watcher_pid) do
