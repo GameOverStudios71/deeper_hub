@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeeperHub CMS - Test Checklist</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .checklist {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .module {
+            margin-bottom: 30px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            background: white;
+        }
+        .module h3 {
+            margin-top: 0;
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .test-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .test-item:hover {
+            background-color: #f8f9fa;
+        }
+        .test-item input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        .test-item.completed {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .status {
+            margin-left: auto;
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        .status.pass {
+            background: #28a745;
+            color: white;
+        }
+        .status.fail {
+            background: #dc3545;
+            color: white;
+        }
+        .status.pending {
+            background: #ffc107;
+            color: #212529;
+        }
+        .credentials {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .progress {
+            background: #e9ecef;
+            border-radius: 4px;
+            height: 20px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .progress-bar {
+            background: #007bff;
+            height: 100%;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .instructions {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 DeeperHub CMS - Test Checklist</h1>
+    
+    <div class="instructions">
+        <h3>📋 Instruções de Teste</h3>
+        <ol>
+            <li>Abra o admin em: <code>http://localhost:8080</code></li>
+            <li>Faça login com as credenciais abaixo</li>
+            <li>Teste cada funcionalidade marcando os checkboxes</li>
+            <li>Reporte qualquer erro encontrado</li>
+        </ol>
+    </div>
+
+    <div class="credentials">
+        <h3>🔐 Credenciais de Login</h3>
+        <p><strong>Email:</strong> <code>sysop@system.com</code></p>
+        <p><strong>Password:</strong> <code>password123</code></p>
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar" id="progressBar" style="width: 0%;">0%</div>
+    </div>
+
+    <div class="checklist">
+        <h2>✅ Checklist de Funcionalidades</h2>
+        <p>Marque cada item conforme testa as funcionalidades:</p>
+    </div>
+
+    <!-- Authentication Module -->
+    <div class="module">
+        <h3>🔐 Authentication</h3>
+        <div class="test-item">
+            <input type="checkbox" id="auth-login">
+            <label for="auth-login">Login com credenciais corretas</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="auth-invalid">
+            <label for="auth-invalid">Erro com credenciais inválidas</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="auth-logout">
+            <label for="auth-logout">Logout funcional</label>
+            <span class="status pending">PENDING</span>
+        </div>
+    </div>
+
+    <!-- Dashboard Module -->
+    <div class="module">
+        <h3>📊 Dashboard</h3>
+        <div class="test-item">
+            <input type="checkbox" id="dash-stats">
+            <label for="dash-stats">Estatísticas carregam corretamente</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="dash-activity">
+            <label for="dash-activity">Atividades recentes aparecem</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="dash-actions">
+            <label for="dash-actions">Ações rápidas funcionam</label>
+            <span class="status pending">PENDING</span>
+        </div>
+    </div>
+
+    <!-- Pages Module -->
+    <div class="module">
+        <h3>📄 Pages</h3>
+        <div class="test-item">
+            <input type="checkbox" id="pages-list">
+            <label for="pages-list">Listar páginas</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="pages-create">
+            <label for="pages-create">Criar nova página</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="pages-edit">
+            <label for="pages-edit">Editar página existente</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="pages-delete">
+            <label for="pages-delete">Excluir página</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="pages-search">
+            <label for="pages-search">Buscar páginas</label>
+            <span class="status pending">PENDING</span>
+        </div>
+    </div>
+
+    <!-- Forms Module -->
+    <div class="module">
+        <h3>📝 Forms</h3>
+        <div class="test-item">
+            <input type="checkbox" id="forms-list">
+            <label for="forms-list">Listar formulários</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="forms-create">
+            <label for="forms-create">Criar formulário</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="forms-edit">
+            <label for="forms-edit">Editar formulário</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="forms-fields">
+            <label for="forms-fields">Gerenciar campos</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="forms-add-field">
+            <label for="forms-add-field">Adicionar campo</label>
+            <span class="status pending">PENDING</span>
+        </div>
+    </div>
+
+    <!-- Widgets Module -->
+    <div class="module">
+        <h3>🧩 Widgets</h3>
+        <div class="test-item">
+            <input type="checkbox" id="widgets-list">
+            <label for="widgets-list">Listar widgets</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="widgets-create">
+            <label for="widgets-create">Criar widget</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="widgets-edit">
+            <label for="widgets-edit">Editar widget</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="widgets-preview">
+            <label for="widgets-preview">Preview de widget</label>
+            <span class="status pending">PENDING</span>
+        </div>
+    </div>
+
+    <!-- Media Module -->
+    <div class="module">
+        <h3>🖼️ Media</h3>
+        <div class="test-item">
+            <input type="checkbox" id="media-list">
+            <label for="media-list">Listar arquivos</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="media-upload">
+            <label for="media-upload">Upload de arquivo</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="media-folder">
+            <label for="media-folder">Criar pasta</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="media-view">
+            <label for="media-view">Visualizar detalhes</label>
+            <span class="status pending">PENDING</span>
+        </div>
+    </div>
+
+    <!-- Menus Module -->
+    <div class="module">
+        <h3>🧭 Menus</h3>
+        <div class="test-item">
+            <input type="checkbox" id="menus-list">
+            <label for="menus-list">Listar menu sets</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="menus-create">
+            <label for="menus-create">Criar menu set</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="menus-edit">
+            <label for="menus-edit">Editar menu set</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="menus-items">
+            <label for="menus-items">Gerenciar itens</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="menus-add-item">
+            <label for="menus-add-item">Adicionar item</label>
+            <span class="status pending">PENDING</span>
+        </div>
+    </div>
+
+    <!-- Users Module -->
+    <div class="module">
+        <h3>👥 Users</h3>
+        <div class="test-item">
+            <input type="checkbox" id="users-list">
+            <label for="users-list">Listar usuários</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="users-create">
+            <label for="users-create">Criar usuário</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="users-edit">
+            <label for="users-edit">Editar usuário</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="users-permissions">
+            <label for="users-permissions">Gerenciar permissões</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="users-password">
+            <label for="users-password">Reset de senha</label>
+            <span class="status pending">PENDING</span>
+        </div>
+    </div>
+
+    <!-- Settings Module -->
+    <div class="module">
+        <h3>⚙️ Settings</h3>
+        <div class="test-item">
+            <input type="checkbox" id="settings-general">
+            <label for="settings-general">Configurações gerais</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="settings-save">
+            <label for="settings-save">Salvar configurações</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="settings-themes">
+            <label for="settings-themes">Gerenciar temas</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="settings-create-theme">
+            <label for="settings-create-theme">Criar tema</label>
+            <span class="status pending">PENDING</span>
+        </div>
+    </div>
+
+    <!-- Audit Module -->
+    <div class="module">
+        <h3>📋 Audit</h3>
+        <div class="test-item">
+            <input type="checkbox" id="audit-list">
+            <label for="audit-list">Listar logs</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="audit-filter">
+            <label for="audit-filter">Filtrar logs</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="audit-details">
+            <label for="audit-details">Ver detalhes</label>
+            <span class="status pending">PENDING</span>
+        </div>
+        <div class="test-item">
+            <input type="checkbox" id="audit-export">
+            <label for="audit-export">Export CSV</label>
+            <span class="status pending">PENDING</span>
+        </div>
+    </div>
+
+    <div class="checklist">
+        <h3>📊 Resultado dos Testes</h3>
+        <p id="testResults">Nenhum teste executado ainda.</p>
+        <button onclick="generateReport()" style="background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">
+            Gerar Relatório
+        </button>
+    </div>
+
+    <script>
+        // Update progress bar
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+            const progress = (checked.length / checkboxes.length) * 100;
+            
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = Math.round(progress) + '%';
+        }
+
+        // Add event listeners to checkboxes
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const testItem = this.closest('.test-item');
+                const status = testItem.querySelector('.status');
+                
+                if (this.checked) {
+                    testItem.classList.add('completed');
+                    status.textContent = 'PASS';
+                    status.className = 'status pass';
+                } else {
+                    testItem.classList.remove('completed');
+                    status.textContent = 'PENDING';
+                    status.className = 'status pending';
+                }
+                
+                updateProgress();
+            });
+        });
+
+        // Generate test report
+        function generateReport() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+            const total = checkboxes.length;
+            const passed = checked.length;
+            const failed = total - passed;
+            
+            const report = `
+                <strong>Relatório de Testes:</strong><br>
+                ✅ Testes Passaram: ${passed}<br>
+                ❌ Testes Falharam: ${failed}<br>
+                📊 Total: ${total}<br>
+                📈 Taxa de Sucesso: ${Math.round((passed / total) * 100)}%
+            `;
+            
+            document.getElementById('testResults').innerHTML = report;
+        }
+
+        // Initialize
+        updateProgress();
+    </script>
+</body>
+</html>

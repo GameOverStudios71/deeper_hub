@@ -53,13 +53,13 @@ defmodule DeeperHub.MixProject do
       {:plug_cowboy, "~> 2.7"},
       {:plug_rest, "~> 0.14.0"},
       {:jason, "~> 1.4"},
-      {:cors_plug, "~> 3.0"}
+      {:cors_plug, "~> 3.0"},
 
       # Auth
       # {:joken, "~> 2.6"},
       # {:guardian, "~> 2.3"},
-      # {:pbkdf2_elixir, "~> 2.2"},
-      # {:bcrypt_elixir, "~> 3.0"},
+      # {:pbkdf2_elixir, "~> 2.2"}
+      # {:bcrypt_elixir, "~> 3.0"}
 
       # Segurança
       # {:sobelow, "~> 0.13", only: [:dev, :test], runtime: false},

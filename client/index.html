@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeeperHub CMS Admin</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Loading Screen -->
+        <div id="loading" class="loading-screen">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+
+        <!-- Login Screen -->
+        <div id="loginScreen" class="login-screen" style="display: none;">
+            <div class="login-container">
+                <div class="login-header">
+                    <h1><i class="fas fa-cog"></i> DeeperHub CMS</h1>
+                    <p>Administrative Panel</p>
+                </div>
+                
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required
+                               value="sysop@system.com" placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required
+                               value="password123" placeholder="Enter your password">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                    
+                    <div id="loginError" class="alert alert-error" style="display: none;"></div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main Admin Interface -->
+        <div id="adminInterface" class="admin-interface" style="display: none;">
+            <!-- Header -->
+            <header class="admin-header">
+                <div class="header-left">
+                    <button id="sidebarToggle" class="btn btn-ghost">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>DeeperHub CMS</h1>
+                </div>
+                
+                <div class="header-right">
+                    <span id="currentUser" class="user-info"></span>
+                    <button id="logoutBtn" class="btn btn-ghost">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </header>
+
+            <!-- Sidebar -->
+            <aside id="sidebar" class="sidebar">
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="#" data-module="dashboard" class="nav-link active">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard
+                        </a></li>
+                        <li><a href="#" data-module="pages" class="nav-link">
+                            <i class="fas fa-file-alt"></i> Pages
+                        </a></li>
+                        <li><a href="#" data-module="forms" class="nav-link">
+                            <i class="fas fa-wpforms"></i> Forms
+                        </a></li>
+                        <li><a href="#" data-module="widgets" class="nav-link">
+                            <i class="fas fa-puzzle-piece"></i> Widgets
+                        </a></li>
+                        <li><a href="#" data-module="media" class="nav-link">
+                            <i class="fas fa-images"></i> Media
+                        </a></li>
+                        <li><a href="#" data-module="menus" class="nav-link">
+                            <i class="fas fa-bars"></i> Menus
+                        </a></li>
+                        <li><a href="#" data-module="users" class="nav-link">
+                            <i class="fas fa-users"></i> Users
+                        </a></li>
+                        <li><a href="#" data-module="settings" class="nav-link">
+                            <i class="fas fa-cog"></i> Settings
+                        </a></li>
+                        <li><a href="#" data-module="audit" class="nav-link">
+                            <i class="fas fa-history"></i> Audit Logs
+                        </a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Alerts Container -->
+                <div id="alerts" class="alerts-container"></div>
+
+                <!-- Module Content -->
+                <div id="moduleContent" class="module-content">
+                    <!-- Content will be loaded here dynamically -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal Container -->
+    <div id="modalContainer" class="modal-container" style="display: none;">
+        <div class="modal-backdrop"></div>
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Modal Title</h3>
+                <button id="modalClose" class="btn btn-ghost">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal content will be loaded here -->
+            </div>
+            <div class="modal-footer" id="modalFooter">
+                <!-- Modal buttons will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Dialog -->
+    <div id="confirmDialog" class="modal-container" style="display: none;">
+        <div class="modal-backdrop"></div>
+        <div class="modal modal-sm">
+            <div class="modal-header">
+                <h3>Confirm Action</h3>
+            </div>
+            <div class="modal-body">
+                <p id="confirmMessage">Are you sure?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="confirmCancel" class="btn btn-secondary">Cancel</button>
+                <button id="confirmOk" class="btn btn-danger">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/cms-client.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/pages.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/widgets.js"></script>
+    <script src="js/media.js"></script>
+    <script src="js/menus.js"></script>
+    <script src="js/users.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/audit.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

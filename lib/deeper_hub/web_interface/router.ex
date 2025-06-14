@@ -9,8 +9,12 @@ defmodule DeeperHub.WebInterface.Router do
   # Plugs de depuração
   plug(Plug.Logger, log: :debug)
 
-  # CORS Headers
-  plug(:cors_headers)
+  # CORS para permitir requisições do frontend
+  plug(CORSPlug,
+    origin: ["http://localhost:8080", "http://127.0.0.1:8080"],
+    credentials: true,
+    max_age: 86400
+  )
 
   # Parsers para formatos diferentes
   plug(Plug.Parsers,
@@ -25,7 +29,10 @@ defmodule DeeperHub.WebInterface.Router do
 
   # API Routes
 
-  # CMS Settings Routes (rotas específicas primeiro)
+  # CMS Authentication Routes
+  forward("/api/cms/auth", to: DeeperHubWeb.Resources.CMS.AuthResource)
+
+  # CMS Settings Routes
   forward("/api/cms/themes", to: DeeperHubWeb.Resources.CMS.ThemeResource)
   forward("/api/cms/pages", to: DeeperHubWeb.Resources.CMS.PageResource)
   forward("/api/cms/widgets", to: DeeperHubWeb.Resources.CMS.WidgetResource)
@@ -41,9 +48,7 @@ defmodule DeeperHub.WebInterface.Router do
   forward("/api/entities", to: DeeperHub.WebInterface.Resources.EntitiesResource)
   forward("/api/fields", to: DeeperHub.WebInterface.Resources.FieldsResource)
   forward("/api/records", to: DeeperHub.WebInterface.Resources.RecordsResource)
-
-  # CMS Admin genérico (deve vir por último para não capturar rotas específicas)
-  # forward("/api/cms", to: DeeperHub.WebInterface.Resources.CmsAdminResource)
+  forward("/api/cms", to: DeeperHub.WebInterface.Resources.CmsAdminResource)
 
   # Sistema Routes
   forward("/api/terminal", to: DeeperHub.WebInterface.Resources.TerminalResource)
@@ -56,34 +61,11 @@ defmodule DeeperHub.WebInterface.Router do
     |> send_resp(200, Jason.encode!(%{status: "ok", api: "DeeperHub API v1"}))
   end
 
-  # Health check endpoint
-  get "/api/cms/health" do
-    conn
-    |> put_resp_content_type("application/json")
-    |> send_resp(200, Jason.encode!(%{status: "healthy", timestamp: DateTime.utc_now()}))
-  end
-
-  # Handle CORS preflight requests
-  options _ do
-    conn
-    |> put_resp_content_type("application/json")
-    |> send_resp(200, Jason.encode!(%{status: "ok"}))
-  end
-
   # Fallback para rotas não encontradas
   match _ do
     conn
     |> put_resp_content_type("application/json")
     |> send_resp(404, Jason.encode!(%{erro: "Rota não encontrada"}))
-  end
-
-  # CORS Headers
-  defp cors_headers(conn, _opts) do
-    conn
-    |> put_resp_header("access-control-allow-origin", "*")
-    |> put_resp_header("access-control-allow-methods", "GET, POST, PUT, DELETE, OPTIONS")
-    |> put_resp_header("access-control-allow-headers", "content-type, authorization, x-requested-with")
-    |> put_resp_header("access-control-max-age", "86400")
   end
 
   # Log de erros

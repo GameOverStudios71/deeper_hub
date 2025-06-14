@@ -349,18 +349,7 @@ defmodule DeeperHubWeb.Resources.CMS.FormResource do
         |> put_resp_content_type("application/json")
         |> send_resp(500, Jason.encode!(error_response))
     end
-  end  # Handle CORS preflight requests
-  options _ do
-    conn
-    |> put_resp_header("access-control-allow-origin", "*")
-    |> put_resp_header("access-control-allow-methods", "GET, POST, PUT, DELETE, OPTIONS")
-    |> put_resp_header("access-control-allow-headers", "content-type, authorization, x-requested-with")
-    |> put_resp_header("access-control-max-age", "86400")
-    |> put_resp_content_type("application/json")
-    |> send_resp(200, Jason.encode!(%{status: "ok"}))
   end
-
-
 
   # Fallback para rotas não encontradas
   match _ do

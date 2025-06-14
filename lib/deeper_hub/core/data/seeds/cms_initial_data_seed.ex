@@ -7,6 +7,7 @@ defmodule DeeperHub.Core.Data.Seeds.CmsInitialDataSeed do
   alias DeeperHub.Core.Data.Repo
   alias DeeperHub.Core.Data.SeedRegistry
   alias DeeperHub.Core.Logger
+  alias DeeperHub.Core.Auth.SimpleHash
   require DeeperHub.Core.Logger
 
   @seed_name "cms_initial_data_seed"
@@ -55,12 +56,12 @@ defmodule DeeperHub.Core.Data.Seeds.CmsInitialDataSeed do
   defp create_admin_user do
     Logger.info("Criando usuário administrador padrão...", module: __MODULE__)
 
-    # Hash da senha "admin123" (em produção, use uma senha mais segura)
-    password_hash = "$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewdBdXwtO8S8VWem"
+    # Hash da senha "password123" usando SimpleHash
+    password_hash = SimpleHash.hash_password("password123")
 
     sql = """
     INSERT OR REPLACE INTO users (id, username, email, password_hash, full_name, is_admin, is_active, created_at, updated_at)
-    VALUES (1, 'admin', 'admin@cms.local', ?, 'Administrador do Sistema', 1, 1, datetime('now'), datetime('now'))
+    VALUES (1, 'sysop', 'sysop@system.com', ?, 'System Operator', 1, 1, datetime('now'), datetime('now'))
     """
 
     case Repo.execute(sql, [password_hash]) do

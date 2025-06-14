@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Pages Module - Expanded</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .test-header {
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .test-content {
+            padding: 20px;
+        }
+        
+        .test-info {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .test-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .btn-primary { background: #007bff; color: white; }
+        .btn-success { background: #28a745; color: white; }
+        .btn-info { background: #17a2b8; color: white; }
+        .btn-warning { background: #ffc107; color: black; }
+        .btn-danger { background: #dc3545; color: white; }
+        .btn-secondary { background: #6c757d; color: white; }
+        
+        .btn:hover {
+            opacity: 0.9;
+        }
+        
+        #moduleContent {
+            min-height: 400px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            background: white;
+        }
+        
+        .tab-navigation {
+            border-bottom: 2px solid #dee2e6;
+            margin-bottom: 20px;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .nav-link {
+            padding: 10px 20px;
+            border: none;
+            background: transparent;
+            color: #007bff;
+            cursor: pointer;
+            border-radius: 4px 4px 0 0;
+        }
+        
+        .nav-link.active {
+            background: #007bff;
+            color: white;
+        }
+        
+        .nav-link:hover:not(.active) {
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1><i class="fas fa-file-alt"></i> Pages Module - Expanded Test</h1>
+            <p>Testing the expanded Pages module with all 6 tabs</p>
+        </div>
+        
+        <div class="test-content">
+            <div class="test-info">
+                <h3><i class="fas fa-info-circle"></i> Test Information</h3>
+                <p><strong>Module:</strong> Pages (Expanded)</p>
+                <p><strong>Tables:</strong> 6 tables (cms_pages, cms_page_layouts, cms_page_types, cms_design_boxes, cms_page_blocks, cms_content_placeholders)</p>
+                <p><strong>Features:</strong> Tab navigation, Universal CRUD, Search & filters, Pagination</p>
+            </div>
+            
+            <div class="test-buttons">
+                <button class="btn btn-primary" onclick="testInitModule()">
+                    <i class="fas fa-play"></i> Initialize Module
+                </button>
+                <button class="btn btn-success" onclick="testSwitchTab('pages')">
+                    <i class="fas fa-file-alt"></i> Pages Tab
+                </button>
+                <button class="btn btn-info" onclick="testSwitchTab('layouts')">
+                    <i class="fas fa-th-large"></i> Layouts Tab
+                </button>
+                <button class="btn btn-warning" onclick="testSwitchTab('types')">
+                    <i class="fas fa-tags"></i> Types Tab
+                </button>
+                <button class="btn btn-danger" onclick="testSwitchTab('boxes')">
+                    <i class="fas fa-cube"></i> Design Boxes Tab
+                </button>
+                <button class="btn btn-secondary" onclick="testSwitchTab('blocks')">
+                    <i class="fas fa-th"></i> Blocks Tab
+                </button>
+                <button class="btn btn-primary" onclick="testSwitchTab('placeholders')">
+                    <i class="fas fa-square"></i> Placeholders Tab
+                </button>
+            </div>
+            
+            <div id="moduleContent">
+                <div style="padding: 40px; text-align: center; color: #666;">
+                    <i class="fas fa-rocket" style="font-size: 48px; margin-bottom: 20px;"></i>
+                    <h3>Ready to Test!</h3>
+                    <p>Click "Initialize Module" to start testing the expanded Pages module.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading and Modal containers -->
+    <div id="loading" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center;">
+            <i class="fas fa-spinner fa-spin" style="font-size: 48px;"></i>
+            <p>Loading...</p>
+        </div>
+    </div>
+    
+    <div id="alerts" style="position: fixed; top: 20px; right: 20px; z-index: 10000;"></div>
+    
+    <div id="modalContainer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10001;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border-radius: 8px; min-width: 500px; max-width: 90%; max-height: 90%; overflow-y: auto;">
+            <div style="padding: 20px; border-bottom: 1px solid #dee2e6;">
+                <h3 id="modalTitle">Modal Title</h3>
+            </div>
+            <div id="modalBody" style="padding: 20px;"></div>
+            <div id="modalFooter" style="padding: 20px; border-top: 1px solid #dee2e6; text-align: right;"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/cms-client.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/pages.js"></script>
+    
+    <script>
+        // Mock App.showModuleContent for testing
+        if (!window.App) {
+            window.App = {};
+        }
+        
+        window.App.showModuleContent = function(html) {
+            document.getElementById('moduleContent').innerHTML = html;
+        };
+        
+        window.App.createModuleHeader = function(title, buttons = []) {
+            let html = `<div style="padding: 20px; border-bottom: 1px solid #dee2e6; background: #f8f9fa;">`;
+            html += `<h2 style="margin: 0; display: inline-block;"><i class="fas fa-file-alt"></i> ${title}</h2>`;
+            if (buttons.length > 0) {
+                html += `<div style="float: right;">`;
+                buttons.forEach(btn => {
+                    html += `<button class="btn ${btn.class}" onclick="${btn.onclick}">`;
+                    html += `<i class="${btn.icon}"></i> ${btn.text}</button> `;
+                });
+                html += `</div>`;
+            }
+            html += `<div style="clear: both;"></div></div>`;
+            return html;
+        };
+        
+        window.App.createSearchBar = function(placeholder, filters = [], buttons = []) {
+            let html = `<div style="padding: 20px; background: #f8f9fa; border-bottom: 1px solid #dee2e6;">`;
+            html += `<div style="display: flex; gap: 10px; align-items: center;">`;
+            html += `<input type="text" id="searchInput" placeholder="${placeholder}" style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">`;
+            
+            filters.forEach(filter => {
+                html += `<select id="${filter.id}" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px;">`;
+                html += `<option value="">${filter.placeholder}</option>`;
+                filter.options.forEach(opt => {
+                    html += `<option value="${opt.value}">${opt.text}</option>`;
+                });
+                html += `</select>`;
+            });
+            
+            buttons.forEach(btn => {
+                html += `<button class="btn ${btn.class}" onclick="${btn.onclick}">`;
+                html += `<i class="${btn.icon}"></i> ${btn.text}</button>`;
+            });
+            
+            html += `</div></div>`;
+            return html;
+        };
+        
+        window.App.createDataTable = function(columns, data, actions) {
+            let html = `<div style="padding: 20px;"><table style="width: 100%; border-collapse: collapse;">`;
+            
+            // Header
+            html += `<thead><tr style="background: #f8f9fa;">`;
+            columns.forEach(col => {
+                html += `<th style="padding: 12px; border: 1px solid #dee2e6; text-align: left;">${col.title}</th>`;
+            });
+            html += `<th style="padding: 12px; border: 1px solid #dee2e6; text-align: center;">Actions</th>`;
+            html += `</tr></thead>`;
+            
+            // Body
+            html += `<tbody>`;
+            if (data.length === 0) {
+                html += `<tr><td colspan="${columns.length + 1}" style="padding: 40px; text-align: center; color: #666;">No data available</td></tr>`;
+            } else {
+                data.forEach(row => {
+                    html += `<tr>`;
+                    columns.forEach(col => {
+                        let value = row[col.field] || '';
+                        if (col.formatter) {
+                            value = col.formatter(value);
+                        } else if (col.type === 'badge') {
+                            value = value ? '<span style="background: #28a745; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px;">Active</span>' : 
+                                          '<span style="background: #dc3545; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px;">Inactive</span>';
+                        } else if (col.type === 'date') {
+                            value = new Date(value).toLocaleDateString();
+                        }
+                        html += `<td style="padding: 12px; border: 1px solid #dee2e6;">${value}</td>`;
+                    });
+                    
+                    // Actions
+                    html += `<td style="padding: 12px; border: 1px solid #dee2e6; text-align: center;">`;
+                    if (actions.edit) {
+                        html += `<button class="btn btn-primary" onclick="${actions.edit}(${row.id})" style="margin-right: 5px; padding: 4px 8px; font-size: 12px;">Edit</button>`;
+                    }
+                    if (actions.delete) {
+                        html += `<button class="btn btn-danger" onclick="${actions.delete}(${row.id})" style="margin-right: 5px; padding: 4px 8px; font-size: 12px;">Delete</button>`;
+                    }
+                    if (actions.custom) {
+                        actions.custom.forEach(customAction => {
+                            html += `<button class="btn ${customAction.class}" onclick="${customAction.onclick}(${row.id})" style="margin-right: 5px; padding: 4px 8px; font-size: 12px;" title="${customAction.tooltip}">`;
+                            html += `<i class="${customAction.icon}"></i></button>`;
+                        });
+                    }
+                    html += `</td>`;
+                    html += `</tr>`;
+                });
+            }
+            html += `</tbody></table></div>`;
+            
+            return html;
+        };
+        
+        // Test functions
+        async function testInitModule() {
+            console.log('Testing Pages module initialization...');
+            try {
+                await Pages.init();
+                Utils.showSuccess('Pages module initialized successfully!');
+            } catch (error) {
+                console.error('Error initializing Pages module:', error);
+                Utils.showError('Error initializing Pages module: ' + error.message);
+            }
+        }
+        
+        async function testSwitchTab(tabKey) {
+            console.log(`Testing switch to tab: ${tabKey}`);
+            try {
+                await Pages.switchTab(tabKey);
+                Utils.showSuccess(`Switched to ${tabKey} tab successfully!`);
+            } catch (error) {
+                console.error(`Error switching to ${tabKey} tab:`, error);
+                Utils.showError(`Error switching to ${tabKey} tab: ` + error.message);
+            }
+        }
+        
+        // Mock CMS client for testing
+        if (!window.cms) {
+            window.cms = {
+                // Mock data
+                mockPages: [
+                    { id: 1, title: 'Home Page', uri: '/', page_type_title: 'Home', is_active: true, is_home: true, created_at: new Date().toISOString() },
+                    { id: 2, title: 'About Us', uri: '/about', page_type_title: 'Standard', is_active: true, is_home: false, created_at: new Date().toISOString() }
+                ],
+                mockLayouts: [
+                    { id: 1, title: '1 Column Layout', name: 'one_column', columns: 1, is_active: true, created_at: new Date().toISOString() },
+                    { id: 2, title: '2 Column Layout', name: 'two_column', columns: 2, is_active: true, created_at: new Date().toISOString() }
+                ],
+                mockTypes: [
+                    { id: 1, title: 'Standard Page', name: 'standard', description: 'Standard page type', is_active: true, created_at: new Date().toISOString() },
+                    { id: 2, title: 'Home Page', name: 'home', description: 'Home page type', is_active: true, created_at: new Date().toISOString() }
+                ],
+                
+                // Mock API methods
+                getPages: () => Promise.resolve({ success: true, data: this.mockPages, pagination: { current_page: 1, pages: 1, total: 2 } }),
+                getPageLayouts: () => Promise.resolve({ success: true, data: this.mockLayouts, pagination: { current_page: 1, pages: 1, total: 2 } }),
+                getPageTypes: () => Promise.resolve({ success: true, data: this.mockTypes, pagination: { current_page: 1, pages: 1, total: 2 } }),
+                getDesignBoxes: () => Promise.resolve({ success: true, data: [], pagination: { current_page: 1, pages: 1, total: 0 } }),
+                getPageBlocks: () => Promise.resolve({ success: true, data: [], pagination: { current_page: 1, pages: 1, total: 0 } }),
+                getContentPlaceholders: () => Promise.resolve({ success: true, data: [], pagination: { current_page: 1, pages: 1, total: 0 } })
+            };
+        }
+        
+        console.log('Test page loaded. Ready to test the expanded Pages module!');
+    </script>
+</body>
+</html>

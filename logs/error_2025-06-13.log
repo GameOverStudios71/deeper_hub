@@ -1,5 +1,0 @@
-2025-06-13 12:10:26 [Elixir.DeeperHubWeb.Resources.CMS.PageResource] Erro ao criar página: ["uri deve começar com / e conter apenas letras, números, hífens e underscores", "name é obrigatório e deve ter pelo menos 2 caracteres"]
-2025-06-13 12:11:09 [Elixir.DeeperHubWeb.Resources.CMS.PageResource] Erro ao criar página: ["uri deve começar com / e conter apenas letras, números, hífens e underscores", "name é obrigatório e deve ter pelo menos 2 caracteres"]
-2025-06-13 12:27:20 [Elixir.DeeperHubWeb.Resources.CMS.PageResource] Erro ao criar página: ["uri deve começar com / e conter apenas letras, números, hífens e underscores", "name é obrigatório e deve ter pelo menos 2 caracteres"]
-2025-06-13 12:27:20 [Elixir.DeeperHubWeb.Resources.CMS.PageResource] Erro ao criar página: ["uri deve começar com / e conter apenas letras, números, hífens e underscores", "name é obrigatório e deve ter pelo menos 2 caracteres"]
-2025-06-13 12:27:38 [Elixir.DeeperHubWeb.Resources.CMS.WidgetResource] Erro ao criar widget: ["widget_type_id é obrigatório e deve ser um número inteiro positivo"]
