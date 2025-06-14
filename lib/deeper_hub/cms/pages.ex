@@ -415,10 +415,12 @@ defmodule DeeperHub.CMS.Pages do
     case Connection.query(sql, params) do
       {:ok, %{num_rows: 0}} ->
         # Para SQLite, INSERT bem-sucedido retorna num_rows: 0
-        # Precisamos fazer uma segunda query para obter o ID
-        case Connection.query("SELECT last_insert_rowid()", []) do
+        # Vamos buscar o layout pelo nome único que acabamos de inserir
+        case Connection.query("SELECT id FROM cms_page_layouts WHERE name = ? ORDER BY id DESC LIMIT 1", [attrs[:name]]) do
           {:ok, %{rows: [[id]]}} ->
             get_page_layout(id)
+          {:ok, %{rows: []}} ->
+            {:error, :not_found}
           {:error, error} ->
             {:error, error}
         end
@@ -548,10 +550,12 @@ defmodule DeeperHub.CMS.Pages do
     case Connection.query(sql, params) do
       {:ok, %{num_rows: 0}} ->
         # Para SQLite, INSERT bem-sucedido retorna num_rows: 0
-        # Precisamos fazer uma segunda query para obter o ID
-        case Connection.query("SELECT last_insert_rowid()", []) do
+        # Vamos buscar o tipo pelo nome único que acabamos de inserir
+        case Connection.query("SELECT id FROM cms_page_types WHERE name = ? ORDER BY id DESC LIMIT 1", [attrs[:name]]) do
           {:ok, %{rows: [[id]]}} ->
             get_page_type(id)
+          {:ok, %{rows: []}} ->
+            {:error, :not_found}
           {:error, error} ->
             {:error, error}
         end
