@@ -22,6 +22,7 @@
         <h3>🔧 Sistema de Debug</h3>
         <button class="test-button" onclick="testDebugSystem()">Testar Sistema de Debug</button>
         <button class="test-button" onclick="testDebugPanel()">Testar Painel Visual</button>
+        <button class="test-button" onclick="testDragPanel()">Testar Drag do Painel</button>
         <button class="test-button" onclick="clearDebugLogs()">Limpar Logs</button>
         <div id="debug-system-result" class="test-result"></div>
     </div>
@@ -116,6 +117,33 @@
             if (window.CMSDebug) {
                 window.CMSDebug.clearLogs();
                 document.getElementById('debug-system-result').innerHTML = '<span class="success">✅ Logs limpos!</span>';
+            }
+        }
+
+        function testDragPanel() {
+            const result = document.getElementById('debug-system-result');
+            const panel = document.getElementById('cms-debug-panel');
+
+            if (panel) {
+                // Mover o painel para uma posição aleatória para demonstrar o drag
+                const randomX = Math.random() * (window.innerWidth - 400);
+                const randomY = Math.random() * (window.innerHeight - 300);
+
+                panel.style.left = randomX + 'px';
+                panel.style.top = randomY + 'px';
+                panel.style.right = 'auto';
+
+                result.innerHTML = '<span class="success">✅ Painel movido! Agora você pode arrastá-lo com o mouse.</span>';
+
+                // Log do teste
+                if (window.CMSDebug) {
+                    window.CMSDebug.log('test', '🖱️ Teste de drag do painel', {
+                        newPosition: { x: randomX, y: randomY },
+                        instructions: 'Clique e arraste o header do painel para movê-lo'
+                    }, 'info');
+                }
+            } else {
+                result.innerHTML = '<span class="error">❌ Painel de debug não encontrado!</span>';
             }
         }
 

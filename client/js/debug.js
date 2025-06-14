@@ -341,7 +341,7 @@ class CMSDebugger {
         const debugPanel = document.createElement('div');
         debugPanel.id = 'cms-debug-panel';
         debugPanel.innerHTML = `
-            <div class="debug-header">
+            <div class="debug-header" title="⋮⋮ Arraste para mover o painel">
                 <span class="debug-title">🐛 CMS Debug</span>
                 <div class="debug-controls">
                     <button id="debug-clear" title="Clear logs">🗑️</button>
@@ -396,6 +396,8 @@ class CMSDebugger {
                 z-index: 10000;
                 display: flex;
                 flex-direction: column;
+                cursor: move;
+                user-select: none;
             }
 
             .debug-header {
@@ -406,11 +408,27 @@ class CMSDebugger {
                 justify-content: space-between;
                 align-items: center;
                 border-radius: 8px 8px 0 0;
+                cursor: move;
+                position: relative;
+            }
+
+            .debug-header:hover {
+                background: #e9ecef;
+            }
+
+            .debug-header::before {
+                content: "⋮⋮";
+                position: absolute;
+                left: 5px;
+                color: #6c757d;
+                font-size: 14px;
+                line-height: 1;
             }
 
             .debug-title {
                 font-weight: bold;
                 color: #495057;
+                margin-left: 15px;
             }
 
             .debug-controls button {
@@ -546,6 +564,7 @@ class CMSDebugger {
         document.body.appendChild(debugPanel);
 
         this.setupDebugPanelEvents();
+        this.makePanelDraggable(debugPanel);
     }
 
     /**
@@ -583,6 +602,118 @@ class CMSDebugger {
         document.getElementById('debug-level-filter')?.addEventListener('change', () => {
             this.updateVisualDebugger();
         });
+    }
+
+    /**
+     * Make debug panel draggable
+     */
+    makePanelDraggable(panel) {
+        const header = panel.querySelector('.debug-header');
+        if (!header) return;
+
+        let isDragging = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+        let xOffset = 0;
+        let yOffset = 0;
+
+        // Get initial position from CSS
+        const rect = panel.getBoundingClientRect();
+        xOffset = rect.left;
+        yOffset = rect.top;
+
+        header.addEventListener('mousedown', dragStart);
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', dragEnd);
+
+        function dragStart(e) {
+            if (e.target.closest('.debug-controls')) {
+                // Don't drag if clicking on control buttons
+                return;
+            }
+
+            initialX = e.clientX - xOffset;
+            initialY = e.clientY - yOffset;
+
+            if (e.target === header || header.contains(e.target)) {
+                isDragging = true;
+                panel.style.cursor = 'grabbing';
+                header.style.cursor = 'grabbing';
+            }
+        }
+
+        function drag(e) {
+            if (isDragging) {
+                e.preventDefault();
+
+                currentX = e.clientX - initialX;
+                currentY = e.clientY - initialY;
+
+                // Keep panel within viewport bounds
+                const maxX = window.innerWidth - panel.offsetWidth;
+                const maxY = window.innerHeight - panel.offsetHeight;
+
+                currentX = Math.max(0, Math.min(currentX, maxX));
+                currentY = Math.max(0, Math.min(currentY, maxY));
+
+                xOffset = currentX;
+                yOffset = currentY;
+
+                panel.style.left = currentX + 'px';
+                panel.style.top = currentY + 'px';
+                panel.style.right = 'auto'; // Remove right positioning
+            }
+        }
+
+        function dragEnd() {
+            if (isDragging) {
+                initialX = currentX;
+                initialY = currentY;
+                isDragging = false;
+                panel.style.cursor = 'move';
+                header.style.cursor = 'move';
+
+                // Save position to localStorage
+                try {
+                    localStorage.setItem('cms_debug_panel_position', JSON.stringify({
+                        x: currentX,
+                        y: currentY
+                    }));
+                } catch (e) {
+                    console.warn('Failed to save debug panel position:', e);
+                }
+            }
+        }
+
+        // Restore saved position
+        this.restorePanelPosition(panel);
+    }
+
+    /**
+     * Restore panel position from localStorage
+     */
+    restorePanelPosition(panel) {
+        try {
+            const saved = localStorage.getItem('cms_debug_panel_position');
+            if (saved) {
+                const position = JSON.parse(saved);
+
+                // Validate position is within current viewport
+                const maxX = window.innerWidth - panel.offsetWidth;
+                const maxY = window.innerHeight - panel.offsetHeight;
+
+                const x = Math.max(0, Math.min(position.x, maxX));
+                const y = Math.max(0, Math.min(position.y, maxY));
+
+                panel.style.left = x + 'px';
+                panel.style.top = y + 'px';
+                panel.style.right = 'auto';
+            }
+        } catch (e) {
+            console.warn('Failed to restore debug panel position:', e);
+        }
     }
 
     /**
