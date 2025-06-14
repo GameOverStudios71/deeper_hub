@@ -341,7 +341,8 @@ defmodule DeeperHub.CMS.Media do
   def get_media_folder(id) do
     sql = """
     SELECT f.id, f.parent_id, f.storage_id, f.name, f.path, f.full_path,
-           f.description, f.is_public, f.is_active, f.created_at, f.updated_at,
+           f.description, f.is_public, f.visible_for_levels, f.is_active,
+           f.is_system, f.created_at, f.updated_at, f.created_by,
            s.title as storage_title
     FROM cms_media_folders f
     LEFT JOIN cms_media_storage s ON f.storage_id = s.id
